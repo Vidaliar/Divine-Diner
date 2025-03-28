@@ -7,9 +7,14 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
 
+    [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private TMP_Text dialogueText;
+
+    [Header("Choices UI")]
+    [SerializeField] private GameObject[] choices;
+    private TMP_Text[] choicesText;
 
     private Story currentStory;
     private bool isPlaying = false;
@@ -35,6 +40,12 @@ public class DialogueManager : MonoBehaviour
     {
         isPlaying = false;
         dialoguePanel.SetActive(false);
+
+        choicesText = new TMP_Text[choices.Length];
+        for (int i = 0; i < choices.Length; i++)
+        {
+            choicesText[i] = choices[i].GetComponent<TMP_Text>();
+        }
     }
 
     private void Update()
@@ -76,5 +87,21 @@ public class DialogueManager : MonoBehaviour
     {
         isPlaying = false;
         dialoguePanel.SetActive(false);
+    }
+
+    public void DisplayChoices()
+    {
+        List<Choice> currentChoices = new List<Choice>();
+
+        if (currentStory.currentChoices.Count > choices.Length)
+        {
+            Debug.LogError($"There are more choices than buttons {choices.Length}");
+            return;
+        }
+
+        for (int i = 0; i < currentStory.currentChoices.Count; i++)
+        {
+            currentChoices.Add(currentStory.currentChoices[i]);
+        }
     }
 }
