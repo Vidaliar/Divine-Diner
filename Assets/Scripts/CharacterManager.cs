@@ -5,10 +5,11 @@ using UnityEngine;
 public class CharacterManager : MonoBehaviour
 {
     public static CharacterManager instance;
+    [Header("Characters")]
     [SerializeField] private List<Character> characters = new List<Character>();
-    public Dictionary<string, Character> Characters = new Dictionary<string, Character>();
+    [SerializeField] private string currentSpeaker;
 
-    private string currentSpeaker;
+    public Dictionary<string, Character> Characters = new Dictionary<string, Character>();
     public string CurrentSpeaker { get => currentSpeaker; set => currentSpeaker = value; }
 
     private void Awake()

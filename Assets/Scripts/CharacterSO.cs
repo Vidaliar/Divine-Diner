@@ -7,18 +7,19 @@ public class CharacterSO : ScriptableObject
 {
     [Header("Character Information")]
     [SerializeField] public string characterName;
-    [SerializeField] private Sprite Neutral
-        ;
+    [SerializeField] private Sprite Neutral;
     [SerializeField] private Sprite Happy;
     [SerializeField] private Sprite Angry;
     [SerializeField] private Sprite Sad;
     public Sprite GetSprite(Enum_Mood mood)
     {
+        Debug.Log("Getting sprite for " + characterName + " with mood " + mood);
         switch (mood)
         {
             case Enum_Mood.Neutral:
                 return Neutral;
             case Enum_Mood.Happy:
+                Debug.Log("Happy");
                 return Happy;
             case Enum_Mood.Sad:
                 return Sad;

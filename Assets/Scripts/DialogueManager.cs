@@ -87,10 +87,10 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        //if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    ContinueDialogue();
-        //}
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ContinueDialogue();
+        }
     }
     public void StartDialogue(TextAsset inkJSON)
     {
@@ -151,7 +151,8 @@ public class DialogueManager : MonoBehaviour
                     break;
                 case PORTRAIT:
                     Debug.Log($"Portrait {tagValue}");
-                    CharacterManager.instance.SetSpeackerMood((Enum_Mood)System.Enum.Parse(typeof(Enum_Mood), tagValue));
+                    Enum_Mood mood = (Enum_Mood)System.Enum.Parse(typeof(Enum_Mood), tagValue);
+                    CharacterManager.instance.SetSpeackerMood(mood);
                     break;
                 case LAYOUT:
                     Debug.Log($"Layout {tagValue}");
