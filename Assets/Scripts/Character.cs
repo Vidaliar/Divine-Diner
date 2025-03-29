@@ -11,6 +11,7 @@ public class Character : MonoBehaviour
 
     private void Awake()
     {
+        portrait = gameObject.GetComponent<Image>();
         SetMood(Enum_Mood.Neutral);
     }
 

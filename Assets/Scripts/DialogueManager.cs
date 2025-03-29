@@ -38,6 +38,8 @@ public class DialogueManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        DontDestroyOnLoad(gameObject);
+
         // Find the UI elements for the dialogue
         dialoguePanel = GameObject.Find("Canvas/DialoguePanel");
         nameText = GameObject.Find("Canvas/DialoguePanel/NameTxt").GetComponent<TMP_Text>();
@@ -145,9 +147,11 @@ public class DialogueManager : MonoBehaviour
             {
                 case SPEAKER:
                     nameText.text = tagValue;
+                    CharacterManager.instance.CurrentSpeaker = tagValue;
                     break;
                 case PORTRAIT:
                     Debug.Log($"Portrait {tagValue}");
+                    CharacterManager.instance.SetSpeackerMood((Enum_Mood)System.Enum.Parse(typeof(Enum_Mood), tagValue));
                     break;
                 case LAYOUT:
                     Debug.Log($"Layout {tagValue}");

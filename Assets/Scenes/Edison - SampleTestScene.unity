@@ -257,8 +257,8 @@ GameObject:
   - component: {fileID: 346391529}
   - component: {fileID: 346391531}
   m_Layer: 5
-  m_Name: Hera
-  m_TagString: Untagged
+  m_Name: Hestia
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -320,27 +320,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 346391527}
   m_CullTransparentMesh: 1
---- !u!95 &346391531
-Animator:
-  serializedVersion: 5
+--- !u!114 &346391531
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 346391527}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ff68f9de19e34844696b979aebbcd6e7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 261b33d516a2a3c429e74284e2ac6e8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterSO: {fileID: 11400000, guid: 00233db748b16cf41bd1d8a7a438e43c, type: 2}
 --- !u!1 &400841084
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,6 +1009,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124657727}
   m_CullTransparentMesh: 1
+--- !u!1 &1220979428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1220979429}
+  - component: {fileID: 1220979430}
+  m_Layer: 0
+  m_Name: Character
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1220979429
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220979428}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1813502545}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1220979430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220979428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 849b7aa65a8d5f54dbffc909fb96d5e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characters: []
 --- !u!1 &1274816786
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,7 +1143,7 @@ GameObject:
   - component: {fileID: 1347659791}
   m_Layer: 5
   m_Name: Aelius
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1180,7 +1217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261b33d516a2a3c429e74284e2ac6e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterSO: {fileID: 0}
+  characterSO: {fileID: 11400000, guid: 523b25b2b239ca14c8d636dcfd418983, type: 2}
 --- !u!1 &1362375395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1911,6 +1948,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1220979429}
   - {fileID: 400841085}
   - {fileID: 1808836793}
   m_Father: {fileID: 0}
