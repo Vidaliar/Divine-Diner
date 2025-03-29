@@ -27,21 +27,23 @@ public class DialogueManager : MonoBehaviour
     private Story currentStory;
     private bool isPlaying = false;
     private bool isTyping = false;
+    private bool canContinue = true;
     private Coroutine typeWriterCor;
     public bool IsPlaying { get => isPlaying; }     // Return the current state of the dialogue
 
     private void Awake()
     {
-        if (instance == null)
+        if (instance == null && instance != this)
         {
             instance = this;
+            DontDestroyOnLoad(this);
         }
-        else if (instance != this)
+        else
         {
-            Destroy(gameObject);
+            Debug.LogWarning("Instance already exists, destroying object!");
+            Destroy(this);
         }
 
-        DontDestroyOnLoad(gameObject);
 
         // Find the UI elements for the dialogue
         dialoguePanel = GameObject.Find("Canvas/DialoguePanel");
@@ -67,7 +69,7 @@ public class DialogueManager : MonoBehaviour
                 Debug.Log("Choice " + index);
                 currentStory.ChooseChoiceIndex(index);
                 ContinueDialogue();
-                HideChoices();
+                canContinue = true;
             });
         }
 
@@ -76,10 +78,7 @@ public class DialogueManager : MonoBehaviour
         {
             choicesText[i] = choices[i].GetComponentInChildren<TMP_Text>();
         }
-    }
 
-    private void Start()
-    {
         isPlaying = false;
         dialoguePanel.SetActive(false);
         HideChoices();
@@ -92,7 +91,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && canContinue)
         {
             // If the text is still typing, skip to the end
             if (isTyping)
@@ -184,6 +183,16 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayChoices()
     {
+        //Prevent the player from continuing until they have made a choice
+        if (currentStory.currentChoices.Count > 0)
+        {
+            canContinue = false;
+        }
+        else
+        {
+            canContinue = true;
+        }
+
         // Hide all choices
         for (int i = 0; i < choices.Length; i++)
         {
@@ -192,13 +201,6 @@ public class DialogueManager : MonoBehaviour
 
         // Find the current choices
         List<Choice> currentChoices = new List<Choice>();
-
-        // A catch in case the currentStory choices exceed the number of buttons
-        //if (currentStory.currentChoices.Count > choices.Length)
-        //{
-        //    Debug.LogError($"There are more choices than buttons {choices.Length}");
-        //    return;
-        //}
 
         // Display the available choices from the current story
         for (int i = 0; i < currentStory.currentChoices.Count; i++)
@@ -212,6 +214,7 @@ public class DialogueManager : MonoBehaviour
             choicesText[i].text = currentStory.currentChoices[i].text;
         }
 
+        // Select the first choice
         StartCoroutine(SelectFirstChoice());
     }
 
