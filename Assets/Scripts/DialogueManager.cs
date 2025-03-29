@@ -31,21 +31,32 @@ public class DialogueManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        dialoguePanel =         GameObject.Find("Canvas/Dialogue");
-        nameText =              GameObject.Find("Canvas/Dialogue/NameTxt").GetComponent<TMP_Text>();
-        dialogueText =          GameObject.Find("Canvas/Dialogue/DialogueTxt").GetComponent<TMP_Text>();
+        // Find the UI elements for the dialogue
+        dialoguePanel =         GameObject.Find("Canvas/DialoguePanel");
+        nameText =              GameObject.Find("Canvas/DialoguePanel/NameTxt").GetComponent<TMP_Text>();
+        dialogueText =          GameObject.Find("Canvas/DialoguePanel/DialogueTxt").GetComponent<TMP_Text>();
+
+        // Find the UI elements for the choices
+        GameObject choicesPanel = GameObject.Find("Canvas/DialogueChoices");
+        choices = new GameObject[choicesPanel.transform.childCount];
+        for (int i = 0; i < choicesPanel.transform.childCount; i++)
+        {
+            choices[i] = choicesPanel.transform.GetChild(i).gameObject;
+            Debug.Log(choices[i].name);
+        }
+
+        choicesText = new TMP_Text[choices.Length];
+        Debug.Log(choices.Length);
+        for (int i = 0; i < choices.Length; i++)
+        {
+            choicesText[i] = choices[i].GetComponentInChildren<TMP_Text>();
+        }
     }
 
     private void Start()
     {
         isPlaying = false;
         dialoguePanel.SetActive(false);
-
-        choicesText = new TMP_Text[choices.Length];
-        for (int i = 0; i < choices.Length; i++)
-        {
-            choicesText[i] = choices[i].GetComponent<TMP_Text>();
-        }
     }
 
     private void Update()
@@ -57,7 +68,7 @@ public class DialogueManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
-            DisplayNextLine();
+            ContinueDialogue();
         }
     }
     public void StartDialogue(TextAsset inkJSON)
@@ -66,16 +77,18 @@ public class DialogueManager : MonoBehaviour
         currentStory = new Story(inkJSON.text);
         isPlaying = true;
         dialoguePanel.SetActive(true);
-        DisplayNextLine();
+        ContinueDialogue();
     }
 
-    public void DisplayNextLine()
+    public void ContinueDialogue()
     {
         if (currentStory.canContinue)
         {
             string text = currentStory.Continue();
             nameText.text = text;
             dialogueText.text = text;
+
+            DisplayChoices();
         }
         else
         {
@@ -91,17 +104,35 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayChoices()
     {
-        List<Choice> currentChoices = new List<Choice>();
-
-        if (currentStory.currentChoices.Count > choices.Length)
+        // Hide all choices
+        for (int i = 0; i < choices.Length; i++)
         {
-            Debug.LogError($"There are more choices than buttons {choices.Length}");
-            return;
+            choices[i].SetActive(false);
         }
 
+        // Find the current choices
+        List<Choice> currentChoices = new List<Choice>();
+
+        // A catch in case the currentStory choices exceed the number of buttons
+        //if (currentStory.currentChoices.Count > choices.Length)
+        //{
+        //    Debug.LogError($"There are more choices than buttons {choices.Length}");
+        //    return;
+        //}
+
+        // Display the available choices from the current story
         for (int i = 0; i < currentStory.currentChoices.Count; i++)
         {
-            currentChoices.Add(currentStory.currentChoices[i]);
+            Debug.Log(currentStory.currentChoices[i].text);
+            if (i >= choices.Length)
+            {
+                Debug.LogError($"There are more choices than buttons {choices.Length}");
+                return;
+            }
+            choices[i].SetActive(true);
+            Debug.Log(choicesText[i]);
+            Debug.Log(currentStory.currentChoices[i].text);
+            choicesText[i].text = currentStory.currentChoices[i].text;
         }
     }
 }
