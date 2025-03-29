@@ -32,16 +32,17 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
+        if (instance == null && instance != this)
         {
             instance = this;
+            DontDestroyOnLoad(this);
         }
-        else if (instance != this)
+        else
         {
-            Destroy(gameObject);
+            Debug.LogWarning("Instance already exists, destroying object!");
+            Destroy(this);
         }
 
-        DontDestroyOnLoad(gameObject);
 
         // Find the UI elements for the dialogue
         dialoguePanel = GameObject.Find("Canvas/DialoguePanel");
@@ -76,10 +77,7 @@ public class DialogueManager : MonoBehaviour
         {
             choicesText[i] = choices[i].GetComponentInChildren<TMP_Text>();
         }
-    }
 
-    private void Start()
-    {
         isPlaying = false;
         dialoguePanel.SetActive(false);
         HideChoices();

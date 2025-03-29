@@ -17,10 +17,12 @@ public class CharacterManager : MonoBehaviour
         if (instance == null && instance != this)
         {
             instance = this;
+            DontDestroyOnLoad(this);
         }
         else
         {
-            Destroy(gameObject);
+            Debug.LogWarning("Instance already exists, destroying object!");
+            Destroy(this);
         }
         ResetCharacter();
 
@@ -36,8 +38,6 @@ public class CharacterManager : MonoBehaviour
             Characters.Add(characters[i].Name, characters[i]);
             Debug.Log("Character: " + characters[i].Name + " added to the dictionary");
         }
-
-        DontDestroyOnLoad(gameObject);
     }
 
     public static void ResetCharacter()
