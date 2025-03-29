@@ -1,7 +1,12 @@
-Once upon a time...
+#speaker: Aelius 
+#portrait: Happy 
+#layout: left
+Once upon a time...                 
+    * There were two choices.
+    * There were four lines of content.
 
- * There were two choices.
- * There were four lines of content.
-
-- They lived happily ever after.
+ #speaker: Hera 
+ #portrait: Happy 
+ #layout: right
+- They lived happily ever after.   
     -> END
