@@ -12,28 +12,39 @@ Here is some sample dialogue entered into this system:
 
 === Sample_Hestia_x_Aelius ===
 
-<color=\#9c460c>Hestia</color>: You did well today, Aelius. You’re learning fast.
+#speaker: Hestia
+#portrait: Happy
+You did well today, Aelius. You’re learning fast.
 
-Aelius: Thanks, Hestia. Did you speak with Hades about the issue with the supplies?
+#speaker: Aelius
+Thanks, Hestia. Did you speak with Hades about the issue with the supplies?
 
-Hestia: Oh, you know how he is. Always putting out fires. Or starting them.
+#speaker: Hestia
+#portrait: Neutral
+Oh, you know how he is. Always putting out fires. Or starting them.
 
-Aelius: If you keep putting it off, it’ll only get worse.
+#speaker: Aelius
+If you keep putting it off, it’ll only get worse.
 
-Hestia: I know, I know. I’ll do it the next time I see him.
+#speaker: Hestia
+I know, I know. I’ll do it the next time I see him.
 
-Aelius: Promise?
+#speaker: Aelius
+Promise?
 
-Hestia: Promise. Now get going. I need to close up.
+#speaker: Hestia
+Promise. Now get going. I need to close up.
 
-Aelius: See you tomorrow, Hestia.
+#speaker: Aelius
+See you tomorrow, Hestia.
 
-Hestia: Goodnight, Aelius.
+#speaker: Hestia
+Goodnight, Aelius.
 ->DONE
 
 === Sample_Zeus_x_Aelius ===
 
-Zeus: What did you say your name was?
+What did you say your name was?
 
 Aelius: Aelius.
 

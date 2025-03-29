@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
+    [Header("Parameters")]
+    [SerializeField] private float typingSpeed = 0.02f;
 
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
@@ -24,7 +26,8 @@ public class DialogueManager : MonoBehaviour
 
     private Story currentStory;
     private bool isPlaying = false;
-
+    private bool isTyping = false;
+    private Coroutine typeWriterCor;
     public bool IsPlaying { get => isPlaying; }     // Return the current state of the dialogue
 
     private void Awake()
@@ -64,6 +67,7 @@ public class DialogueManager : MonoBehaviour
                 Debug.Log("Choice " + index);
                 currentStory.ChooseChoiceIndex(index);
                 ContinueDialogue();
+                HideChoices();
             });
         }
 
@@ -78,6 +82,7 @@ public class DialogueManager : MonoBehaviour
     {
         isPlaying = false;
         dialoguePanel.SetActive(false);
+        HideChoices();
     }
 
     private void Update()
@@ -89,7 +94,18 @@ public class DialogueManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            ContinueDialogue();
+            // If the text is still typing, skip to the end
+            if (isTyping)
+            {
+                StopCoroutine(typeWriterCor);
+                dialogueText.text = currentStory.currentText;
+                isTyping = false;
+                DisplayChoices();
+            }
+            else
+            {
+                ContinueDialogue();
+            }
         }
     }
     public void StartDialogue(TextAsset inkJSON)
@@ -104,12 +120,14 @@ public class DialogueManager : MonoBehaviour
     {
         if (currentStory.canContinue)
         {
-            //Display the dialogue text
-            string text = currentStory.Continue();
-            dialogueText.text = text;
+            // Stop the current coroutine if it's still running
+            if (typeWriterCor != null)
+            {
+                StopCoroutine(typeWriterCor);
+            }
 
-            // Display the player choices
-            DisplayChoices();
+            //Display the dialogue text
+            typeWriterCor = StartCoroutine(TypeWriter(currentStory.Continue()));
 
             // Handle the tags
             HandleTags(currentStory.currentTags);
@@ -197,6 +215,14 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(SelectFirstChoice());
     }
 
+    private void HideChoices()
+    {
+        for (int i = 0; i < choices.Length; i++)
+        {
+            choices[i].SetActive(false);
+        }
+    }
+
     private IEnumerator SelectFirstChoice()
     {
         EventSystem.current.SetSelectedGameObject(null);
@@ -204,8 +230,19 @@ public class DialogueManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(choices[0]);
     }
 
-    private IEnumerator TypeWriter()
+    private IEnumerator TypeWriter(string line)
     {
-        yield return null;
+        dialogueText.text = "";
+
+        isTyping = true;
+        foreach (char letter in line.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+        isTyping = false;
+
+        // Display the player choices
+        DisplayChoices();
     }
 }
