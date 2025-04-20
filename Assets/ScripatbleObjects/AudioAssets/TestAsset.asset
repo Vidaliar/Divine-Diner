@@ -32,11 +32,11 @@ MonoBehaviour:
   - _name: Romance
     _eventReference:
       Guid:
-        Data1: 1553793767
-        Data2: 1145182415
-        Data3: 983869867
-        Data4: -1961516621
-      Path: event:/Sound Effects/Grater
+        Data1: 180906728
+        Data2: 1322650167
+        Data3: -1929127524
+        Data4: 628325772
+      Path: event:/Hephaestus SoundTrack/Hephaestus SoundTrack (Angry) (Pitch)
   - _name: Wind
     _eventReference:
       Guid:
