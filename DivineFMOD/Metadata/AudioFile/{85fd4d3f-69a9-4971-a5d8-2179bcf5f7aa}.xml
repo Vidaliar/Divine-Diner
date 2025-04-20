@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{85fd4d3f-69a9-4971-a5d8-2179bcf5f7aa}">
+		<property name="assetPath">
+			<value>621181__holizna__lofi-melody-part-a-maj.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>10.799979166666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{153d040d-58e5-4eb7-b164-64640d98d8fc}</destination>
+		</relationship>
+	</object>
+</objects>

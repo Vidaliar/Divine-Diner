@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{3f1159fe-0cf9-45d2-b877-f1adb25664a2}">
+		<property name="assetPath">
+			<value>THUN_Dry Thunder Strong Clap Rumble_PSE_GEN3_MO9xZ.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>13.018666666666666</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{153d040d-58e5-4eb7-b164-64640d98d8fc}</destination>
+		</relationship>
+	</object>
+</objects>

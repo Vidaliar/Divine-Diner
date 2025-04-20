@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{c88dec7a-d893-47a7-b7f2-376daf704431}">
+		<property name="assetPath">
+			<value>MUSCInst_Nordic Lights Piano 017_PSE_AMO_8HYO9.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>94.501374999999996</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{153d040d-58e5-4eb7-b164-64640d98d8fc}</destination>
+		</relationship>
+	</object>
+</objects>
