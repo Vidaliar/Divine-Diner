@@ -1,0 +1,76 @@
+title: Start
+tags: 
+colorID: 0
+position: 0,0
+---
+
+// sets background image to sprite called "bg_office"
+<<Scene bg_office>>
+
+<<Testing testing>>
+<<PlayAudio Wind>>
+
+A VISUAL NOVEL EXAMPLE
+
+// adds actor named "Ferrel" using sprite "Ferrel", placed in left-half + center of screen, with green text label
+<<Act Ferrel Ferrel left center green>>
+
+Ferrel: Finally, a quiet day at the office. Maybe I'll be able to get some work done.
+Ferrel: I can't wait to write my visual novel!
+
+// adds actor "Howard" with sprite "Howard" off-screen right, with blue-ish text label
+<<Act Howard Howard 1.25 center #226677>>
+
+// animate Howard into new position in right-half + center, within 0.5 seconds
+<<Move Howard right center 0.5>>
+<<PlayAudio Romance>>
+Howard: Hey Ferrel! I have a question!
+Ferrel: Oh no...
+
+// horizontally flips Ferrel actor to face Howard
+<<Flip Ferrel>>
+
+// Yarn shortcut choices, an easy way to make branching options
+-> Ferrel gets upset with Howard
+	<<Shake Ferrel 1.0>>
+	Ferrel: WHAT DO YOU WANT???
+	Howard: I just wanted to see if you liked using Yarn Spinner.
+	Ferrel: ... It's fine. Thanks. Now leave me alone.
+-> Howard asks Ferrel a question
+	Howard: Do you think Yarn Spinner is easy to use?
+	Ferrel: Not when you're bothering me.
+	Howard: Oh, I didn't realize you were busy. Sorry.
+
+// hide Howard actor and remove from the scene
+<<Hide Howard>>
+
+// Stop all sound playback
+
+Ferrel: Ok, now to finally write that visual novel.
+<<Flip Ferrel>>
+Ferrel: I can finally write my epic romance about -
+
+<<Flip Ferrel>>
+<<wait 1.5>>
+<<Flip Ferrel>>
+
+Ferrel: Wait... where's my laptop? It's not here.
+<<Shake Ferrel>>
+Ferrel: Howard! Have you seen my laptop???
+
+<<Flip Ferrel>>
+<<Move Ferrel 1.25 center 1.0>>
+Ferrel: HOOOOWWWWWAAAAAAARRRRRRDDDD!!!
+
+<<jump Node2>>
+
+// fade to black, from 0% opacity to 100% opacity, in 2.0 seconds
+<<Fade black 0.0 1.0 2.0>>
+THE END.
+
+===
+title: Node2
+position: -216,324
+---
+Add something
+===
