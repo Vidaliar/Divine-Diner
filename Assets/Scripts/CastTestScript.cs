@@ -21,17 +21,20 @@ public class CastTestScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Gets the mouse position and turns it to world coords, stored as 'pos'
         mouseX = Input.GetAxis("Mouse X");
         mouseY = Input.GetAxis("Mouse Y");
 
         Vector2 pos = cam.ScreenToWorldPoint(Input.mousePosition);
         transform.position = pos;
 
-        if(Input.GetMouseButton(0))
+        //Makes new positions in 'line' while the mouse is held down
+        if (Input.GetMouseButton(0))
         {
             if (Vector2.Distance(pos, lastLinePos) > linePointDist)
             {
-                if (line.GetPosition(0) == new Vector3(0,0,0))
+                //Sets the first position to be where the mouse starts and not 0,0,0 and only happens once
+                if (line.GetPosition(0) == new Vector3(0, 0, 0))
                 {
                     line.SetPosition(0, pos);
                 }
