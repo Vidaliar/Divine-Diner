@@ -6,25 +6,25 @@ using UnityEngine.UI;
 
 public class FryingPan : MonoBehaviour
 {
-    [SerializeField] float timeSec = 5.5f;
+    [SerializeField] float timeSec = 5.5f;  //Time until can flip
     [SerializeField] GameObject spaceText;
-    [SerializeField] GameObject flipObj;
-    Vector2 upperPos;
+    [SerializeField] GameObject flipObj;    //The object or food to be flipped
+
+    Vector2 upperPos;   //The position for the top of the flip
     float timer;
     Vector2 startPos;
-    Vector3 startRot;
-    bool flipping = false;
-    // Start is called before the first frame update
+    bool flipping = false;  //Does or doesn't allow flipObj to be flipped
+    int numFlips = 0;
+    
     void Start()
     {
         startPos = flipObj.transform.position;
-        // startRot = flipObj.transform.rotation;
-        upperPos = new Vector2(startPos.x, startPos.y + 3);
+        upperPos = new Vector2(startPos.x, startPos.y + 5);
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //Checks if the timer to flip has gone up enough
         if (timer >= timeSec)
         {
             spaceText.SetActive(true);
@@ -33,25 +33,32 @@ public class FryingPan : MonoBehaviour
                 timer = 0;
                 spaceText.SetActive(false);
                 flipping = true;
+                numFlips++;
             }
         }
 
         timer += Time.deltaTime;
         if (flipping) Flip();
+
+        //If it's been flipped twice and done flipping, transition to next step and don't receive input
+        if (numFlips >= 2 && !flipping)
+        {
+            CookingManager.instance.Transition();
+            this.gameObject.SetActive(false);
+        }
     }
 
+    //Fractionally moves up and rotates the flippable object like it's being flipped
     void Flip()
     {
-        if (timer > 2.5f)
+        if (timer > timeSec/2f)
         {
             flipping = false;
         }
         else
         {
-            Debug.Log(timer / 2.5f);
-            flipObj.transform.position = new Vector2(startPos.x, Mathf.Sin(timer / 2.5f * 3.14f) * upperPos.y + startPos.y);
-            flipObj.transform.Rotate(0, 0, (360f/2.5f)*Time.deltaTime);
-            //rotate -> add to rotation -> add 
+            flipObj.transform.position = new Vector2(startPos.x, Mathf.Sin(timer / (timeSec/2) * 3.14f) * upperPos.y + startPos.y);
+            flipObj.transform.Rotate(0, 0, (180f/(timeSec/2))*Time.deltaTime);
         }
     }
 }
