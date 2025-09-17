@@ -859,7 +859,7 @@ RectTransform:
   m_GameObject: {fileID: 1496080899532580}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 224005039409447594}
@@ -960,7 +960,7 @@ MonoBehaviour:
   - {fileID: 6167349947878513351}
   - {fileID: 6798407037274427283}
   - {fileID: 4115915426429293206}
-  startNode: Start
+  startNode: Hermes_test
   startAutomatically: 1
   runSelectedOptionAsLine: 0
   lineProvider: {fileID: 0}
@@ -1722,6 +1722,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a9b0e3abf0748744ea470e2488c3579b, type: 3}
   - {fileID: 21300000, guid: 174fdc34ac2173a4cb14ca7af36c76ef, type: 3}
   - {fileID: 21300000, guid: f943d9c45ae4e514886786c338100d46, type: 3}
+  - {fileID: 21300000, guid: 292931a8146a2734bb6039b62509acc9, type: 3}
   loadAudio:
   - {fileID: 8300000, guid: 5b23cdd00116c4748b48d312c9dc9f18, type: 3}
   - {fileID: 8300000, guid: 1f9607a7d89d843439ab1d3467d2f54a, type: 3}
@@ -1735,7 +1736,7 @@ MonoBehaviour:
   nameplateBG: {fileID: 114099955469796580}
   namePlate: {fileID: 8095329417957922553}
   genericSprite: {fileID: 114774347424995662}
-  actorScale: 1
+  actorScale: 0.18
 --- !u!1 &5593515298463069415
 GameObject:
   m_ObjectHideFlags: 0
