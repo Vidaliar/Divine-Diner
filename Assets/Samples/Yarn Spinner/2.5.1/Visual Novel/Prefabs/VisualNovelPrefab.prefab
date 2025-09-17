@@ -960,7 +960,7 @@ MonoBehaviour:
   - {fileID: 6167349947878513351}
   - {fileID: 6798407037274427283}
   - {fileID: 4115915426429293206}
-  startNode: Start
+  startNode: Hermes_test
   startAutomatically: 1
   runSelectedOptionAsLine: 0
   lineProvider: {fileID: 0}
@@ -1219,6 +1219,7 @@ MonoBehaviour:
   fadeOutTime: 0
   lineText: {fileID: 740279678716981507}
   showCharacterNameInLineView: 0
+  characterNameText: {fileID: 0}
   characterNameContainer: {fileID: 0}
   useTypewriterEffect: 1
   onCharacterTyped:
@@ -1331,6 +1332,25 @@ MonoBehaviour:
   continueActionKeyCode: 32
   continueActionButtonName: Jump
   continueActionOnButtonRelease: 0
+  continueActionReference: {fileID: 0}
+  continueAction:
+    m_Name: Skip
+    m_Type: 1
+    m_ExpectedControlType: 
+    m_Id: 
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 
+      m_Path: Submit
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Skip
+      m_Flags: 0
+    m_Flags: 0
+  enableActionOnStart: 1
 --- !u!1 &1802931452094068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1698,6 +1718,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0dcd8425cbb8cf34586d8e9d725c067d, type: 3}
   - {fileID: 21300000, guid: 52d51761c4b76cf4a84a0e8e169454a7, type: 3}
   - {fileID: 21300000, guid: 77d8f11e4af00594c8aaf1784c1dd7a8, type: 3}
+  - {fileID: 21300000, guid: 298e5fe89d0265849a0f20ac21078487, type: 3}
+  - {fileID: 21300000, guid: a9b0e3abf0748744ea470e2488c3579b, type: 3}
+  - {fileID: 21300000, guid: 174fdc34ac2173a4cb14ca7af36c76ef, type: 3}
+  - {fileID: 21300000, guid: f943d9c45ae4e514886786c338100d46, type: 3}
   loadAudio:
   - {fileID: 8300000, guid: 5b23cdd00116c4748b48d312c9dc9f18, type: 3}
   - {fileID: 8300000, guid: 1f9607a7d89d843439ab1d3467d2f54a, type: 3}
@@ -1711,6 +1735,7 @@ MonoBehaviour:
   nameplateBG: {fileID: 114099955469796580}
   namePlate: {fileID: 8095329417957922553}
   genericSprite: {fileID: 114774347424995662}
+  actorScale: 0.111
 --- !u!1 &5593515298463069415
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,60 @@
+﻿title: Hermes_test
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom">>
+Aelius: Hey, welcome in.
+
+<<Act "Hermes" "Hermes 3_4" "right" "bottom">>
+Hermes: Hi there, can I get a—
+
+Hermes: Wait, you're new here.
+Aelius: Yes, my name's Aelius, I'm the new cook. Hestia hired me. Today's my first day.
+Hermes: Well hello then, Aelius. I'm Hermes.
+Hermes: But I assume you already guessed that.
+Aelius: I had my suspicions.
+Hermes: (Sarcastic) Very clever of you.
+Hermes: I'm in a hurry, kid — not much time to chat. Could you whip me up some __? Quickly, please.
+Aelius: You got it. I'll do my best.
+
+<<jump Hermes_test_Success>>
+===
+
+title: Hermes_test_Success
+---
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom">>
+Aelius: Got your __ ready as fast as I could.
+Aelius: Hopefully this goes better than the other two…
+Aelius: Or at least better than Zeus. *sigh*
+Aelius: Hope you like it.
+
+<<Act "Hermes" "Hermes 3_4" "right" "bottom">>
+Hermes: Thanks, Aelius. Looks great!
+Hermes: Only wish I had time to sit and enjoy it.
+Hermes: But duty calls — messages to deliver. You get the gist.
+
+Aelius: …
+Hermes: Rough first day?
+Aelius: You could say that.
+Hermes: Let me guess — Zeus stopped in.
+Aelius: How did you know?
+Hermes: Call it intuition. He's very good at ruffling newcomers' feathers.
+Aelius: I cooked his food to perfection; he still didn't seem to want me here.
+Hermes: Listen, Aelius: ignore him. Do your best. Show him you're up to snuff.
+Aelius: It's not that easy—
+Hermes: I really have to go. See you around!
+
+<<Hide "Hermes">>
+<<set $hermes_day1_done = true>>
+===
+
+title: Hermes_test_Fail
+---
+Aelius: Sorry — that took longer than I hoped—
+Hermes: No time. I have to run.
+<<Hide "Hermes">>
+Aelius: Well, that was… something.
+<<set $hermes_day1_done = true>>
+===
+
+
+
