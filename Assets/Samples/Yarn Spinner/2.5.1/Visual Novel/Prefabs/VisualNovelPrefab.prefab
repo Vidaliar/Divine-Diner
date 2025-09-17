@@ -960,7 +960,7 @@ MonoBehaviour:
   - {fileID: 6167349947878513351}
   - {fileID: 6798407037274427283}
   - {fileID: 4115915426429293206}
-  startNode: Hermes_test
+  startNode: Start
   startAutomatically: 1
   runSelectedOptionAsLine: 0
   lineProvider: {fileID: 0}
@@ -1735,7 +1735,7 @@ MonoBehaviour:
   nameplateBG: {fileID: 114099955469796580}
   namePlate: {fileID: 8095329417957922553}
   genericSprite: {fileID: 114774347424995662}
-  actorScale: 0.111
+  actorScale: 1
 --- !u!1 &5593515298463069415
 GameObject:
   m_ObjectHideFlags: 0
