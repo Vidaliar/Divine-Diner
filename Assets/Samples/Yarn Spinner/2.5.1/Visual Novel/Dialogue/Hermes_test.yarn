@@ -2,6 +2,7 @@
 ---
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom">>
+<<PlayAudio "Romance">>
 Aelius: Hey, welcome in.
 
 <<Act "Hermes" "Hermes 3_4" "right" "bottom">>

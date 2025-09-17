@@ -48,6 +48,9 @@ namespace Yarn.Unity.Example {
         List<AudioSource> sounds = new List<AudioSource>(); // big list of all instantiated sounds
 		List<Image> sprites = new List<Image>(); // big list of all instantianted sprites
 
+
+
+
 		// store sprite references for "actors" (characters, etc.)
 		//TODO: Load this from resources folder to spawn charters and destroy them only when they leave the scene
 		[HideInInspector] public Dictionary<string, VNActor> actors = new Dictionary<string, VNActor>(); // tracks names to sprites
@@ -278,31 +281,35 @@ namespace Yarn.Unity.Example {
 			
 			// Debug.Log("Playing Audio");
 			AudioManager.Instance.PlaySound(soundName);
-			// // detect volume setting
-			
+            // // detect volume setting
+
             // if ( volume <= 0.01f ) {
             //     Debug.LogWarningFormat(this, "VN Manager is playing sound {0} at very low volume ({1}), just so you know", soundName, volume );
             // }
-			
-			// // detect loop setting
-			// bool shouldLoop = loop.Contains("loop") || loop.Contains("true");			
-			
-			// // instantiate AudioSource and configure it (don't use
-			// // AudioSource.PlayOneShot because we also want the option to
-			// // use <<StopAudio>> and interrupt it)
-			// AudioSource newAudioSource = Instantiate(genericAudioSource, genericAudioSource.transform.parent);
-			// newAudioSource.name = audioClip.name;
-			// newAudioSource.clip = audioClip;
-			// newAudioSource.volume *= volume;
-			// newAudioSource.loop = shouldLoop;
-			// newAudioSource.Play();
-			// sounds.Add(newAudioSource);
 
-			// // if it doesn't loop, let's set a max lifetime for this sound
-			// if ( shouldLoop == false ) {
-			// 	StartCoroutine( SetDestroyTime( newAudioSource, audioClip.length ) );
-			// }
-		}
+            // // detect loop setting
+            // bool shouldLoop = loop.Contains("loop") || loop.Contains("true");			
+
+            // // instantiate AudioSource and configure it (don't use
+            // // AudioSource.PlayOneShot because we also want the option to
+            // // use <<StopAudio>> and interrupt it)
+            // AudioSource newAudioSource = Instantiate(genericAudioSource, genericAudioSource.transform.parent);
+            // newAudioSource.name = audioClip.name;
+            // newAudioSource.clip = audioClip;
+            // newAudioSource.volume *= volume;
+            // newAudioSource.loop = shouldLoop;
+            // newAudioSource.Play();
+            // sounds.Add(newAudioSource);
+
+            // // if it doesn't loop, let's set a max lifetime for this sound
+            // if ( shouldLoop == false ) {
+            // 	StartCoroutine( SetDestroyTime( newAudioSource, audioClip.length ) );
+            // }
+
+            Debug.Log($"[VN] PlayAudio '{soundName}'");
+            if (AudioManager.Instance == null) { Debug.LogWarning("[VN] AudioManager.Instance is null"); return; }
+            AudioManager.Instance.PlaySound(soundName);
+        }
 
 		/// <summary>
 		/// Stops a sound from playing

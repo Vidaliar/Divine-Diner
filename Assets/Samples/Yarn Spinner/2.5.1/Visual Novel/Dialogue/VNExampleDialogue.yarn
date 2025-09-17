@@ -101,7 +101,7 @@ Zeus: [Annoyed] What is this?
 <<Move Zeus 1.25 center 0>>
 -> Back to the kitchen
 
-<<Act Hestia Hestia right center #3d85c6>>
+<<Act Hestia "Hestia 3_4s" right center #3d85c6>>
 <<Move Aelius -0.25 center 0>>
 <<Move Aelius left center 0.5>>
 <<wait  0.5>>
