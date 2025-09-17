@@ -1,8 +1,9 @@
 ﻿title: Hermes_test
 ---
+<<Fade "#000000" 1 0 0.6>>        // fade back in
+<<PlayAudio "Romance">>  
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom">>
-<<PlayAudio "Romance">>
 Aelius: Hey, welcome in.
 
 <<Act "Hermes" "Hermes 3_4" "right" "bottom">>
@@ -47,6 +48,7 @@ Hermes: I really have to go. See you around!
 <<Hide "Hermes">>
 <<set $hermes_day1_done = true>>
 ===
+
 
 title: Hermes_test_Fail
 ---

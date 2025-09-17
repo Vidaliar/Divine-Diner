@@ -121,9 +121,14 @@ Aelius: [Neutral] He said to remake his food, so-
 	Hestia: [Smile] Don’t beat yourself up. He’s a tough nut to crack.
 	Aelius: [Neutral] …Thank you.
 	Hestia: [Smile] Of course.
-	<<HideAll>>
-	<<PlayAudio "Wind">>
+	<<StopAudio "Romance">>           // stop Zeus BGM first
+	<<PlayAudio "Wind">>              // transition SFX
+	<<Fade "#000000" 0 1 0.6>>        // fade to black
+	<<wait 5>>                        // let Wind run for 5s total
+	<<StopAudio "Wind">>              // ensure Wind is off before Hermes
+	<<HideAll>>                       // clear Zeus/Hestia/etc.
 	<<jump Hermes_test>>
+
 <<endif>>
 
 <<if $cooking is true>>
@@ -156,6 +161,7 @@ Aelius: [Neutral] He said to remake his food, so-
 		Zeus: [Neutral] Bah! There you go again, trying to make me listen to the dry stories you’ve concocted. Fine. I’ll find him myself. Leave me.
 		<<Move Aelius -0.25 center 0.5>>
 		<<HideAll>>
+		<<StopAudioAll>>
 		<<PlayAudio "Wind">>
 		<<jump Hermes_test>>
 	-> Stay silent
@@ -179,8 +185,12 @@ Aelius: [Neutral] He said to remake his food, so-
 		Zeus: [Smile] all the… everything else.
 		Zeus: [Smile] Now then! I must eat! I’ve spent far too long speaking with you, mortal. Be off!
 		<<Move Aelius -0.25 center 0.5>>
-		<<HideAll>>
-		<<PlayAudio "Wind">>
+		<<StopAudio "Romance">>           // stop Zeus BGM first
+		<<PlayAudio "Wind">>              // transition SFX
+		<<Fade "#000000" 0 1 0.6>>        // fade to black
+		<<wait 5>>                        // let Wind run for 5s total
+		<<StopAudio "Wind">>              // ensure Wind is off before Hermes
+		<<HideAll>>                       // clear Zeus/Hestia/etc.
 		<<jump Hermes_test>>
 	-> Stand up for yourself
 		Aelius: [Neutral] You’re gonna have to make do with this.
@@ -195,8 +205,12 @@ Aelius: [Neutral] He said to remake his food, so-
 		Aelius: [Smile] See you again soon?
 		Zeus: [Annoyed] For your sake, you should hope not.
 		<<Move Zeus 1.25 center 0.5>>
-		<<HideAll>>
-		<<PlayAudio "Wind">>
+		<<StopAudio "Romance">>           // stop Zeus BGM first
+		<<PlayAudio "Wind">>              // transition SFX
+		<<Fade "#000000" 0 1 0.6>>        // fade to black
+		<<wait 5>>                        // let Wind run for 5s total
+		<<StopAudio "Wind">>              // ensure Wind is off before Hermes
+		<<HideAll>>                       // clear Zeus/Hestia/etc.
 		<<jump Hermes_test>>
 <<endif>>
 

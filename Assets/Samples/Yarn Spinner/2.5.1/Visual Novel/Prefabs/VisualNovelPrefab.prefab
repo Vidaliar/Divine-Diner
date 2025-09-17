@@ -1736,7 +1736,7 @@ MonoBehaviour:
   nameplateBG: {fileID: 114099955469796580}
   namePlate: {fileID: 8095329417957922553}
   genericSprite: {fileID: 114774347424995662}
-  actorScale: 0.18
+  actorScale: 0.14
 --- !u!1 &5593515298463069415
 GameObject:
   m_ObjectHideFlags: 0
