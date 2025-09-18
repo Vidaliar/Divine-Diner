@@ -14,8 +14,14 @@ public class CookingManager : MonoBehaviour
 {
     public static CookingManager instance;
     CookStep step = CookStep.Prep;
-    int numTotalPrep = 3;
+
+    [SerializeField] GameObject castManager;
+    [SerializeField] GameObject finalFood;
+    int numTotalPrep = 2;
     int numPrep = 1;
+    float worldCamHeight;
+    float worldCamLength;
+    bool canActivateCast;
 
     void Start()
     {
@@ -27,12 +33,22 @@ public class CookingManager : MonoBehaviour
         {
             Destroy(this);
         }
+
+        worldCamHeight = Camera.main.orthographicSize * 2;
+        worldCamLength = worldCamHeight * Screen.width / Screen.height;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (canActivateCast)
+        {
+            if (Input.GetMouseButtonUp(0))
+            {
+                castManager.SetActive(true);
+                canActivateCast = false;
+            }
+        }
     }
 
     public void Transition()
@@ -43,14 +59,20 @@ public class CookingManager : MonoBehaviour
                 if (numPrep == numTotalPrep)
                 {
                     step = CookStep.Cast;
+                    Camera.main.transform.position = new Vector3(worldCamLength * (numPrep++), 0, -10);
+                    canActivateCast = true;
                 }
                 else
                 {
-                    float worldCamHeight = Camera.main.orthographicSize * 2;
-                    float worldCamLength = worldCamHeight * Screen.width / Screen.height;
                     Camera.main.transform.position = new Vector3(worldCamLength * numPrep, 0, -10);
                     numPrep++;
                 }
+                break;
+
+            case CookStep.Cast:
+                Camera.main.transform.position = new Vector3(worldCamLength * (numPrep++), 0, -10);
+                finalFood.SetActive(true);
+                step = CookStep.Complete;
                 break;
 
             default:

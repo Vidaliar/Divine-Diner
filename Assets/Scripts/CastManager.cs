@@ -60,7 +60,7 @@ public class CastManager : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             pathPoints = cast.pointObjects;
-            if(pathPoints.Count > 0) pointScore = 100 / pathPoints.Count;
+            if (pathPoints.Count > 0) pointScore = 100 / pathPoints.Count;
 
             Debug.Log(cast.pointObjects.Count + " is the count of path points list");
             foreach (GameObject point in pathPoints)
@@ -69,6 +69,9 @@ public class CastManager : MonoBehaviour
                 Debug.Log(point.GetComponent<PathPoint>().hit);
             }
             Debug.Log("Score is " + score);
+
+            CookingManager.instance.Transition();
+            gameObject.SetActive(false);
         }
     }
 }
