@@ -1677,6 +1677,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2080188934208423881}
   - component: {fileID: 6167349947878513351}
+  - component: {fileID: 4990589770215028340}
   m_Layer: 0
   m_Name: Visual Novel Manager
   m_TagString: Untagged
@@ -1737,6 +1738,18 @@ MonoBehaviour:
   namePlate: {fileID: 8095329417957922553}
   genericSprite: {fileID: 114774347424995662}
   actorScale: 0.14
+--- !u!114 &4990589770215028340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979875447975149966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faeb40702106c4a4297afb51605caf88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5593515298463069415
 GameObject:
   m_ObjectHideFlags: 0

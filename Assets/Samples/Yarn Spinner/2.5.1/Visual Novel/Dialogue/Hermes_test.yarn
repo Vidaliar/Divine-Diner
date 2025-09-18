@@ -50,6 +50,11 @@ Hermes: I really have to go. See you around!
 
 <<Hide "Hermes">>
 <<set $hermes_day1_done = true>>
+
+Aelius: Thanks for playing Divine Diner!
+
+<<wait 2>>
+<<QuitGame>>
 ===
 
 
