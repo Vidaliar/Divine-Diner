@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/ZeusBeat1.unity
+    guid: cbbb4dc38100a39418837b94b2b4ef86
+  - enabled: 1
+    path: Assets/Scenes/MakenaTestScene.unity
+    guid: f7ee9aa4aa1761943ab4c7bda7c57dee
+  - enabled: 1
     path: Assets/Scenes/TitleScene.unity
     guid: 38ce486b7f1113e43b75b6d0491918d9
   - enabled: 1
