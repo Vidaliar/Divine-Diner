@@ -15,8 +15,10 @@ Hermes: Well hello then, Aelius. I'm Hermes.
 Hermes: But I assume you already guessed that.
 Aelius: I had my suspicions.
 Hermes: (Sarcastic) Very clever of you.
-Hermes: I'm in a hurry, kid — not much time to chat. Could you whip me up some __? Quickly, please.
+Hermes: I'm in a hurry, kid — not much time to chat. Could you whip me up a hamburger? Quickly, please.
 Aelius: You got it. I'll do my best.
+
+
 
 <<jump Hermes_test_Success>>
 ===
@@ -24,7 +26,7 @@ Aelius: You got it. I'll do my best.
 title: Hermes_test_Success
 ---
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom">>
-Aelius: Got your __ ready as fast as I could.
+Aelius: Got your hamburger ready as fast as I could.
 Aelius: Hopefully this goes better than the other two…
 Aelius: Or at least better than Zeus. *sigh*
 Aelius: Hope you like it.
