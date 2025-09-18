@@ -8,7 +8,7 @@ public class CastTestScript : MonoBehaviour
     float mouseY;
     Camera cam;
     LineRenderer line;
-    Vector2 lastLinePos = new Vector2(-100,-100);
+    Vector2 lastLinePos = new Vector2(-100, -100);
     public float linePointDist = 0.3f;
 
     // Start is called before the first frame update
@@ -53,5 +53,10 @@ public class CastTestScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D coll)
     {
         Debug.Log(coll.gameObject.name + " is the collider name");
+    }
+
+    void OnTriggerExit2D(Collider2D coll)
+    {
+        Debug.Log(coll.gameObject.name + " is the collider that exited according to mouse");
     }
 }
