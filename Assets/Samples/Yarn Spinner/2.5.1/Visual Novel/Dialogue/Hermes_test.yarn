@@ -18,13 +18,14 @@ Hermes: (Sarcastic) Very clever of you.
 Hermes: I'm in a hurry, kid — not much time to chat. Could you whip me up a hamburger? Quickly, please.
 Aelius: You got it. I'll do my best.
 
-
+<<StartCooking "MakenaTestScene">>
 
 <<jump Hermes_test_Success>>
 ===
 
 title: Hermes_test_Success
 ---
+<<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom">>
 Aelius: Got your hamburger ready as fast as I could.
 Aelius: Hopefully this goes better than the other two…

@@ -961,7 +961,7 @@ MonoBehaviour:
   - {fileID: 6798407037274427283}
   - {fileID: 4115915426429293206}
   startNode: Start
-  startAutomatically: 1
+  startAutomatically: 0
   runSelectedOptionAsLine: 0
   lineProvider: {fileID: 0}
   verboseLogging: 1
