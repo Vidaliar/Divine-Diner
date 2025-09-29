@@ -17,9 +17,10 @@ public class Grater : MonoBehaviour
     void Start()
     {
         grateObjStartPos = grateObj.transform.position;
+
+        //Y values need to be changed for when grater + cheese assets are made
         minY = grater.transform.position.y - grater.transform.localScale.y / 2;
         maxY = grater.transform.position.y + grater.transform.localScale.y / 2;
-        Debug.Log("Min: " + minY + " max: " + maxY);
     }
 
     // Update is called once per frame

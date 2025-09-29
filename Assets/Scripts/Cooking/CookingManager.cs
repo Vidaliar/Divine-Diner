@@ -15,9 +15,10 @@ public class CookingManager : MonoBehaviour
     public static CookingManager instance;
     CookStep step = CookStep.Prep;
 
+    [SerializeField] List<GameObject> recipeManagers;
     [SerializeField] GameObject castManager;
     [SerializeField] GameObject finalFood;
-    int numTotalPrep = 2;
+    int numTotalPrep = 3;
     int numPrep = 1;
     float worldCamHeight;
     float worldCamLength;
@@ -59,12 +60,13 @@ public class CookingManager : MonoBehaviour
                 if (numPrep == numTotalPrep)
                 {
                     step = CookStep.Cast;
-                    Camera.main.transform.position = new Vector3(worldCamLength * (numPrep++), 0, -10);
+                    Camera.main.transform.position = new Vector3(worldCamLength * numPrep++, 0, -10);
                     canActivateCast = true;
                 }
                 else
                 {
                     Camera.main.transform.position = new Vector3(worldCamLength * numPrep, 0, -10);
+                    recipeManagers[numPrep].SetActive(true);
                     numPrep++;
                 }
                 break;
@@ -72,6 +74,7 @@ public class CookingManager : MonoBehaviour
             case CookStep.Cast:
                 Camera.main.transform.position = new Vector3(worldCamLength * (numPrep++), 0, -10);
                 finalFood.SetActive(true);
+                finalFood.transform.position = new Vector2(Camera.main.transform.position.x, 0);
                 step = CookStep.Complete;
                 break;
 

@@ -58,7 +58,7 @@ public class FryingPan : MonoBehaviour
         else
         {
             flipObj.transform.position = new Vector2(startPos.x, Mathf.Sin(timer / (timeSec/2) * 3.14f) * upperPos.y + startPos.y);
-            flipObj.transform.Rotate(0, 0, (180f/(timeSec/2))*Time.deltaTime);
+            flipObj.transform.Rotate(0, 0, 180f/timeSec/2 * Time.deltaTime);
         }
     }
 }
