@@ -15,6 +15,8 @@ public class CookingManager : MonoBehaviour
     public static CookingManager instance;
     CookStep step = CookStep.Prep;
 
+
+
     [SerializeField] List<GameObject> recipeManagers;
     [SerializeField] GameObject castManager;
     [SerializeField] GameObject finalFood;
