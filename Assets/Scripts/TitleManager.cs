@@ -25,7 +25,7 @@ public class TitleManager : MonoBehaviour
     void NewGame()
     {
         // Load Scene with the name, load destroys current scene
-        SceneManager.LoadScene("Edison - InkySampleTestScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("ZeusBeat1", LoadSceneMode.Single);
     }
     
     void ContinueGame()
