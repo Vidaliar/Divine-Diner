@@ -8,6 +8,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using TMPro;
+using UnityEngine.SceneManagement;
+
+
 
 namespace Yarn.Unity.Example {
 	/// <summary>
@@ -37,9 +40,17 @@ namespace Yarn.Unity.Example {
 		public TMP_Text namePlate;
 		public Image genericSprite; // local prefab, used for instantiating sprites
 
-		// big lists to keep track of all instantiated objects
-		List<AudioSource> sounds = new List<AudioSource>(); // big list of all instantiated sounds
+        [Header("Sprite UI settings")]
+        [Range(0.1f, 1.5f)] public float actorScale = 0.4f; // default size for actors
+
+
+
+        // big lists to keep track of all instantiated objects
+        List<AudioSource> sounds = new List<AudioSource>(); // big list of all instantiated sounds
 		List<Image> sprites = new List<Image>(); // big list of all instantianted sprites
+
+
+
 
 		// store sprite references for "actors" (characters, etc.)
 		//TODO: Load this from resources folder to spawn charters and destroy them only when they leave the scene
@@ -70,11 +81,15 @@ namespace Yarn.Unity.Example {
 			runner.AddCommandHandler<string>("Testing", Testing );
 			runner.AddCommandHandler<string>("PlayAudio", PlayAudio );
 
-			// adds all Resources to internal lists / one big pile... it
-			// will scan inside all subfolders too! note: but when
-			// referencing sprites in the Yarn script, just use the file
-			// name and omit folder names
-			if ( useResourcesFolders ) {
+            
+            runner.AddCommandHandler<string>("StartCooking", StartCooking);
+
+
+            // adds all Resources to internal lists / one big pile... it
+            // will scan inside all subfolders too! note: but when
+            // referencing sprites in the Yarn script, just use the file
+            // name and omit folder names
+            if ( useResourcesFolders ) {
 				var allSpritesInResources = Resources.LoadAll<Sprite>("");
 				loadSprites.AddRange( allSpritesInResources );
 				var allAudioInResources = Resources.LoadAll<AudioClip>("");
@@ -271,31 +286,35 @@ namespace Yarn.Unity.Example {
 			
 			// Debug.Log("Playing Audio");
 			AudioManager.Instance.PlaySound(soundName);
-			// // detect volume setting
-			
+            // // detect volume setting
+
             // if ( volume <= 0.01f ) {
             //     Debug.LogWarningFormat(this, "VN Manager is playing sound {0} at very low volume ({1}), just so you know", soundName, volume );
             // }
-			
-			// // detect loop setting
-			// bool shouldLoop = loop.Contains("loop") || loop.Contains("true");			
-			
-			// // instantiate AudioSource and configure it (don't use
-			// // AudioSource.PlayOneShot because we also want the option to
-			// // use <<StopAudio>> and interrupt it)
-			// AudioSource newAudioSource = Instantiate(genericAudioSource, genericAudioSource.transform.parent);
-			// newAudioSource.name = audioClip.name;
-			// newAudioSource.clip = audioClip;
-			// newAudioSource.volume *= volume;
-			// newAudioSource.loop = shouldLoop;
-			// newAudioSource.Play();
-			// sounds.Add(newAudioSource);
 
-			// // if it doesn't loop, let's set a max lifetime for this sound
-			// if ( shouldLoop == false ) {
-			// 	StartCoroutine( SetDestroyTime( newAudioSource, audioClip.length ) );
-			// }
-		}
+            // // detect loop setting
+            // bool shouldLoop = loop.Contains("loop") || loop.Contains("true");			
+
+            // // instantiate AudioSource and configure it (don't use
+            // // AudioSource.PlayOneShot because we also want the option to
+            // // use <<StopAudio>> and interrupt it)
+            // AudioSource newAudioSource = Instantiate(genericAudioSource, genericAudioSource.transform.parent);
+            // newAudioSource.name = audioClip.name;
+            // newAudioSource.clip = audioClip;
+            // newAudioSource.volume *= volume;
+            // newAudioSource.loop = shouldLoop;
+            // newAudioSource.Play();
+            // sounds.Add(newAudioSource);
+
+            // // if it doesn't loop, let's set a max lifetime for this sound
+            // if ( shouldLoop == false ) {
+            // 	StartCoroutine( SetDestroyTime( newAudioSource, audioClip.length ) );
+            // }
+
+            Debug.Log($"[VN] PlayAudio '{soundName}'");
+            if (AudioManager.Instance == null) { Debug.LogWarning("[VN] AudioManager.Instance is null"); return; }
+            AudioManager.Instance.PlaySound(soundName);
+        }
 
 		/// <summary>
 		/// Stops a sound from playing
@@ -434,10 +453,10 @@ namespace Yarn.Unity.Example {
 				foreach ( var spr in sprites ) {
 					Vector3 regularScalePreserveXFlip = new Vector3( Mathf.Sign(spr.transform.localScale.x), 1f, 1f);
 					if ( spr != highlightedSprite) { // set back to normal
-						spr.transform.localScale = Vector3.MoveTowards( spr.transform.localScale, regularScalePreserveXFlip, Time.deltaTime );
+						//spr.transform.localScale = Vector3.MoveTowards( spr.transform.localScale, regularScalePreserveXFlip, Time.deltaTime ); WILL FIX ZOOM LATER
 						spr.color = Color.Lerp( spr.color, defaultTint, Time.deltaTime * 5f );
 					} else { // a little bit bigger / brighter
-						spr.transform.localScale = Vector3.MoveTowards( spr.transform.localScale, regularScalePreserveXFlip * 1.05f, Time.deltaTime );
+						//spr.transform.localScale = Vector3.MoveTowards( spr.transform.localScale, regularScalePreserveXFlip * 1.05f, Time.deltaTime ); WILL FIX ZOOM LATER
 						spr.color = Color.Lerp( spr.color, highlightTint, Time.deltaTime * 5f );
 						spr.transform.SetAsLastSibling();
 					}
@@ -478,7 +497,8 @@ namespace Yarn.Unity.Example {
 			newSpriteObject.name = spriteName;
 			newSpriteObject.sprite = FetchAsset<Sprite>( spriteName );
 			newSpriteObject.SetNativeSize();
-			newSpriteObject.rectTransform.anchoredPosition = Vector2.Scale( position, screenSize );
+            newSpriteObject.rectTransform.localScale = Vector3.one * actorScale;
+            newSpriteObject.rectTransform.anchoredPosition = Vector2.Scale( position, screenSize );
 			return newSpriteObject;
 		}
 
@@ -625,7 +645,10 @@ namespace Yarn.Unity.Example {
 		}
 
 		
-
+		public void StartCooking(string MakenaTestScene)
+		{
+			SceneManager.LoadScene( MakenaTestScene );
+		}
 
 		#endregion
     } // end class
@@ -659,5 +682,7 @@ namespace Yarn.Unity.Example {
             return "^" + Regex.Escape(pattern).Replace("\\*", ".*").Replace("\\?", ".") + "$";
         }
     }
+
+
 
 } // end namespace
