@@ -6172,7 +6172,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1055622168}
   - component: {fileID: 1055622167}
-  - component: {fileID: 1055622169}
   m_Layer: 0
   m_Name: CookingManager
   m_TagString: Untagged
@@ -6192,6 +6191,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d88fe53a0dfa6f46b3550b2b3835bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vnSceneName: ZeusBeat1
+  returnNode: Hermes_test_Success
+  returnDelay: 0.5
   recipeManagers:
   - {fileID: 693082181}
   - {fileID: 639286994}
@@ -6213,21 +6215,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1055622169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055622166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a02cc0b0a2b87e54ab3ccd8b95a28038, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vnSceneName: ZeusBeat1
-  returnNode: Hermes_test_Success
---- !u!1 &1057818365
+--- !u!1 &1147112077
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
