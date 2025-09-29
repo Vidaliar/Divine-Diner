@@ -1,6 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+
+
+
+
 
 //use scriptable obj of recipe to contain prep ingredients and difficulty, pass those into cookingManager?
 public enum CookStep
@@ -15,6 +21,11 @@ public class CookingManager : MonoBehaviour
     public static CookingManager instance;
     CookStep step = CookStep.Prep;
 
+
+    [Header("Return to VN")]
+    [SerializeField] string vnSceneName = "ZeusBeat1";          // <-- your VN scene name
+    [SerializeField] string returnNode = "Hermes_test_Success"; // <-- node to resume
+    [SerializeField] float returnDelay = 0.5f;
 
 
     [SerializeField] List<GameObject> recipeManagers;
@@ -78,11 +89,23 @@ public class CookingManager : MonoBehaviour
                 finalFood.SetActive(true);
                 finalFood.transform.position = new Vector2(Camera.main.transform.position.x, 0);
                 step = CookStep.Complete;
+
+                // Auto-return after a short beat:
+                if (returnDelay > 0f) Invoke(nameof(FinishCooking), returnDelay);
+                else FinishCooking();
                 break;
+
 
             default:
                 Debug.Log("Hit default in transition");
                 break;
         }
+    }
+
+    void FinishCooking()
+    {
+        VNReturn.NextNode = "Hermes_test_Success";  // 
+        SceneManager.LoadScene("ZeusBeat1");        // your VN scene name
+
     }
 }

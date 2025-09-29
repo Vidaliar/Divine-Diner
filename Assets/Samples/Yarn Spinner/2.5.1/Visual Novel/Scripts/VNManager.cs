@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 
@@ -80,11 +81,15 @@ namespace Yarn.Unity.Example {
 			runner.AddCommandHandler<string>("Testing", Testing );
 			runner.AddCommandHandler<string>("PlayAudio", PlayAudio );
 
-			// adds all Resources to internal lists / one big pile... it
-			// will scan inside all subfolders too! note: but when
-			// referencing sprites in the Yarn script, just use the file
-			// name and omit folder names
-			if ( useResourcesFolders ) {
+            
+            runner.AddCommandHandler<string>("StartCooking", StartCooking);
+
+
+            // adds all Resources to internal lists / one big pile... it
+            // will scan inside all subfolders too! note: but when
+            // referencing sprites in the Yarn script, just use the file
+            // name and omit folder names
+            if ( useResourcesFolders ) {
 				var allSpritesInResources = Resources.LoadAll<Sprite>("");
 				loadSprites.AddRange( allSpritesInResources );
 				var allAudioInResources = Resources.LoadAll<AudioClip>("");
@@ -640,7 +645,10 @@ namespace Yarn.Unity.Example {
 		}
 
 		
-
+		public void StartCooking(string MakenaTestScene)
+		{
+			SceneManager.LoadScene( MakenaTestScene );
+		}
 
 		#endregion
     } // end class
