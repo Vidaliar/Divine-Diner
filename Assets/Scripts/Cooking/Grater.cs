@@ -29,8 +29,7 @@ public class Grater : MonoBehaviour
         Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.DrawRay(pos, Vector2.up * 0.2f, Color.red, 100);
-            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.up, 0.2f);
+            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.up, 0.1f);
             if (hit.collider != null)
             {
                 Debug.Log("Hit is " + hit.collider.gameObject.name);

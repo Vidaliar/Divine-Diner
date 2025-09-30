@@ -45,13 +45,10 @@ public class CastManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
-
         Vector2 pos = cam.ScreenToWorldPoint(Input.mousePosition);
         transform.position = pos;
 
-        drawLineCollider.transform.position = pos;
+        // drawLineCollider.transform.position = pos;
 
         //Draws the line while the mouse button is held down
         if (Input.GetMouseButton(0))
