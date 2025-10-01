@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CastManager : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class CastManager : MonoBehaviour
     [SerializeField] GameObject castGO;
     [SerializeField] float linePointDist = 0.3f;
     [SerializeField] GameObject drawLineCollider;
+    [SerializeField] TMP_Text scoreText;
+    [SerializeField] float passingScore = 80f;
     LineRenderer line;
     Vector2 lastLinePos = new Vector2(-100, -100);
     Camera cam;
@@ -74,7 +77,16 @@ public class CastManager : MonoBehaviour
                 if (point.GetComponent<PathPoint>().hit == true) score += pointScore;
                 Debug.Log(point.GetComponent<PathPoint>().hit);
             }
-            Debug.Log("Score is " + score);
+
+            if (score >= passingScore)
+            {
+                scoreText.text = "Divine!";
+            }
+            else
+            {
+                scoreText.text = "Dubious";
+            }
+            scoreText.gameObject.SetActive(true);
 
             CookingManager.instance.Transition();
             gameObject.SetActive(false);

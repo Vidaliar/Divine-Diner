@@ -50,39 +50,23 @@ public class Mixing : MonoBehaviour
             }
     }
 
-    /*
-    while mousebutton, detect if mouse is going in a circle
-
-
-    */
+    //Honestly not sure if this is the best way to do this math, but it works lol
+    //Calculates the angle between the previous and current mouse position
+    //This way technically allows the player to move the mouse up and down and eventually get it mixed
     void CalculateRotation(Vector2 currentPos)
     {
-        /*
-        Can do 2 ways:
-        1. Calculate Vector2.right to Vector2(prev -> center) and Vector2.right to Vector2(current -> center)
-           then take the difference in radians as the change
-        or
-        2. Calculate Vector2(prev -> center) to Vector2(current -> center)
-        */
+        float centerCurrentX = 1- currentPos.normalized.x;
+        float centerCurrentY = currentPos.normalized.y;
 
-        //Try 1 below
-        float deltaX = currentPos.normalized.x - prevPos.normalized.x;
-        float deltaY = currentPos.normalized.y - prevPos.normalized.y;
+        float centerPrevX = 1 - prevPos.normalized.x;
+        float centerPrevY = prevPos.normalized.y;
 
-        float centerCurrentX = currentPos.normalized.x - Vector2.right.x;
-        float centerCurrentY = currentPos.normalized.y - Vector2.right.y;
+        float currentRadians = Mathf.Atan2(centerCurrentY, centerCurrentX);
+        float prevRadians = Mathf.Atan2(centerPrevY, centerPrevX);
 
-        float centerPrevX = prevPos.normalized.x - Vector2.right.x;
-        float centerPrevY = prevPos.normalized.y - Vector2.right.y;
+        float radians = currentRadians - prevRadians;
 
-        // float deltaX = centerCurrentX - centerPrevX;
-        // float deltaY = centerCurrentY - centerPrevY;
-
-        float radians = Mathf.Atan2(deltaY, deltaX);
-        
-        Debug.Log(radians + " is the radians with deltaX: " + deltaX + " and deltaY: " + deltaY);
-
-        currentMix += radians;
+        currentMix += Mathf.Abs(radians);
         prevPos = currentPos;
     }
 }

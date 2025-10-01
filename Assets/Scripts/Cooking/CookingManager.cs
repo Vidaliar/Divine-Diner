@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 
 
 
-
 //use scriptable obj of recipe to contain prep ingredients and difficulty, pass those into cookingManager?
 public enum CookStep
 {
@@ -31,7 +30,7 @@ public class CookingManager : MonoBehaviour
     [SerializeField] List<GameObject> recipeManagers;
     [SerializeField] GameObject castManager;
     [SerializeField] GameObject finalFood;
-    int numTotalPrep = 3;
+    int numTotalPrep;
     int numPrep = 1;
     float worldCamHeight;
     float worldCamLength;
@@ -50,6 +49,8 @@ public class CookingManager : MonoBehaviour
 
         worldCamHeight = Camera.main.orthographicSize * 2;
         worldCamLength = worldCamHeight * Screen.width / Screen.height;
+
+        numTotalPrep = recipeManagers.Count;
     }
 
     // Update is called once per frame
@@ -89,7 +90,7 @@ public class CookingManager : MonoBehaviour
                 finalFood.SetActive(true);
                 finalFood.transform.position = new Vector2(Camera.main.transform.position.x, 0);
                 step = CookStep.Complete;
-
+                
                 // Auto-return after a short beat:
                 if (returnDelay > 0f) Invoke(nameof(FinishCooking), returnDelay);
                 else FinishCooking();
