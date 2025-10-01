@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8730259318659064773}
   - component: {fileID: 2904135754399722156}
   - component: {fileID: 5617295473184182152}
+  - component: {fileID: 7431263234485304001}
   m_Layer: 0
   m_Name: CastManager
   m_TagString: Player
@@ -149,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14a0398a70b0966439603d0eebe01a1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  castGO: {fileID: 0}
+  castGO: {fileID: 2058617594159581717, guid: bc9feb3a25f830b41a308b3bd5b7dfb1, type: 3}
   linePointDist: 0.3
   drawLineCollider: {fileID: 0}
   pointsInBounds: 1
@@ -188,3 +189,30 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.04
+--- !u!50 &7431263234485304001
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3655290364208952275}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

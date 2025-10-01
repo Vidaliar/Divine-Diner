@@ -43,22 +43,14 @@ public class CastSO : MonoBehaviour
 
     void PlacePointMarkers()
     {
-        
-        int pointNumTEMP = 0;   //DELETE LATER, IS FOR DEBUGGING
         foreach (var point in points)
         {
             GameObject newPathPoint = Instantiate(pathPointPref, point, Quaternion.identity);
             newPathPoint.GetComponent<PathPoint>().pos = newPathPoint.transform.position;
             // Debug.Log("Path point added to pointObjects " + newPathPoint.name + " " + pointNumTEMP);
             pointObjects.Add(newPathPoint);
-            pointNumTEMP++;     //DELETE LATER
         }
     }
-
-    // public GameObject[] GetPointObjectsList()
-    // {
-    //     return pointObjects;
-    // }
 
     void OnTriggerExit2D(Collider2D collision)
     {
