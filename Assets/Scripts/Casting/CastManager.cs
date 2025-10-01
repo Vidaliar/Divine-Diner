@@ -81,10 +81,12 @@ public class CastManager : MonoBehaviour
             if (score >= passingScore)
             {
                 scoreText.text = "Divine!";
+                CookingManager.instance.cookingSuccess = true;
             }
             else
             {
                 scoreText.text = "Dubious";
+                CookingManager.instance.cookingSuccess = false;
             }
             scoreText.gameObject.SetActive(true);
 

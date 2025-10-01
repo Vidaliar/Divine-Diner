@@ -35,6 +35,7 @@ public class CookingManager : MonoBehaviour
     float worldCamHeight;
     float worldCamLength;
     bool canActivateCast;
+    public bool cookingSuccess; 
 
     void Start()
     {
@@ -53,7 +54,7 @@ public class CookingManager : MonoBehaviour
         numTotalPrep = recipeManagers.Count;
     }
 
-    // Update is called once per frame
+    //Waits for canActivateCast to be true to 'turn on' the cast
     void Update()
     {
         if (canActivateCast)
@@ -66,6 +67,7 @@ public class CookingManager : MonoBehaviour
         }
     }
 
+    //Called by recipe managers to go to the next section
     public void Transition()
     {
         switch (step)
@@ -80,6 +82,7 @@ public class CookingManager : MonoBehaviour
                 else
                 {
                     Camera.main.transform.position = new Vector3(worldCamLength * numPrep, 0, -10);
+                    recipeManagers[numPrep].transform.parent.position = new Vector3(worldCamLength * numPrep, 0, 0);
                     recipeManagers[numPrep].SetActive(true);
                     numPrep++;
                 }
@@ -88,9 +91,9 @@ public class CookingManager : MonoBehaviour
             case CookStep.Cast:
                 Camera.main.transform.position = new Vector3(worldCamLength * (numPrep++), 0, -10);
                 finalFood.SetActive(true);
-                finalFood.transform.position = new Vector2(Camera.main.transform.position.x, 0);
+                finalFood.transform.position = new Vector2(Camera.main.transform.position.x, finalFood.transform.position.y);
                 step = CookStep.Complete;
-                
+
                 // Auto-return after a short beat:
                 if (returnDelay > 0f) Invoke(nameof(FinishCooking), returnDelay);
                 else FinishCooking();
@@ -105,7 +108,8 @@ public class CookingManager : MonoBehaviour
 
     void FinishCooking()
     {
-        VNReturn.NextNode = "Hermes_test_Success";  // 
+        if(cookingSuccess) VNReturn.NextNode = "Hermes_test_Success";  // 
+        else VNReturn.NextNode = "Hermes_test_Fail";
         SceneManager.LoadScene("ZeusBeat1");        // your VN scene name
 
     }
