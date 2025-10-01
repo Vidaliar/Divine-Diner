@@ -21,3 +21,11 @@ MonoBehaviour:
         Data3: 122670749
         Data4: -1642143483
       Path: event:/Ambient Tracks/Ambient Track For Kitchen
+  - _name: Sizzle
+    _eventReference:
+      Guid:
+        Data1: 153907256
+        Data2: 1233171610
+        Data3: 2030445725
+        Data4: -233358111
+      Path: event:/Sound Effects/Sizzle (Frying Something)

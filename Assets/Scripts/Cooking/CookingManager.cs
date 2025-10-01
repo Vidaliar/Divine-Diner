@@ -35,7 +35,7 @@ public class CookingManager : MonoBehaviour
     float worldCamHeight;
     float worldCamLength;
     bool canActivateCast;
-    public bool cookingSuccess; 
+    public bool cookingSuccess;
 
     void Start()
     {
@@ -52,6 +52,8 @@ public class CookingManager : MonoBehaviour
         worldCamLength = worldCamHeight * Screen.width / Screen.height;
 
         numTotalPrep = recipeManagers.Count;
+
+        // AudioManager.Instance.PlaySound("KitchenBackground");    //Use once stopping audio is solved
     }
 
     //Waits for canActivateCast to be true to 'turn on' the cast
