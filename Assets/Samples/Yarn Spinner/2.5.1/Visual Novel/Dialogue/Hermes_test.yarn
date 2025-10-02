@@ -1,7 +1,9 @@
 ﻿title: Hermes_test
 ---
 <<Fade "#000000" 1 0 0.6>>        // fade back in
-<<PlayAudio "Romance">>  
+//<<PlayAudio "Romance">>  
+<<StopMusic>> 
+<<Music "Hermes_Theme_154BPM">>
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom">>
 Aelius: Hey, welcome in.
@@ -25,6 +27,8 @@ Aelius: You got it. I'll do my best.
 
 title: Hermes_test_Success
 ---
+<<StopMusic>> 
+<<Music "Hermes_Theme_154BPM">>
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom">>
 Aelius: Got your hamburger ready as fast as I could.

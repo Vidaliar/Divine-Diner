@@ -10,20 +10,21 @@ position: 0,0
 <<Scene lounge>>
 
 <<Testing testing>>
-<<PlayAudio Romance>>
+//<<PlayAudio Romance>>
+<<Music "Zeus_Theme_118BPM">>
 
  
-// adds actor named "Ferrel" using sprite "Ferrel", placed in left-half + center of screen, with green text label
-<<Act Aelius "Aelius 3_4s" left center #674ea7>>
+// adds actor named "Ferrel" using sprite "Ferrel", placed in left-half + bottom of screen, with green text label
+<<Act Aelius "Aelius 3_4s" left bottom #674ea7>>
 <<wait 1>>
-<<PlayAudio Wind>>
+//<<PlayAudio Wind>>
 
 
 // adds actor "Howard" with sprite "Howard" off-screen right, with blue-ish text label
-<<Act "Zeus" "Zeus 3_4s" 1.25 center #bf9000>>
+<<Act "Zeus" "Zeus 3_4s" 1.25 bottom #bf9000>>
 
-// animate Howard into new position in right-half + center, within 0.5 seconds
-<<Move Zeus right center 0.5>>
+// animate Howard into new position in right-half + bottom, within 0.5 seconds
+<<Move Zeus right bottom 0.5>>
 <<wait  0.5>>
 
 Aelius: [Smile] Oh, hello! Welcome to-
@@ -69,17 +70,17 @@ Zeus: [Neutral] Small talk is for small people! I hope you’re better at cookin
 	Aelius: [Neutral] I’m sorry, sir-
 	Zeus: [Angry] <i>I am the king of the gods and I demand a ham and cheese sandwich!</i>
 	Aelius: [Neutral] Of course, sir.
-<<Move Aelius -0.25 center 0.5>>
+<<Move Aelius -0.25 bottom 0.5>>
 
 <<wait  0.5>>
-<<Move Zeus 1.25 center 0>>
+<<Move Zeus 1.25 bottom 0>>
 -> Do a good job cooking
 	<<set $cooking to true>>
 -> Do a bad job cooking
 	<<set $cooking to false>>
 
-<<Move Aelius left center 0.5>>
-<<Move Zeus right center 0>>
+<<Move Aelius left bottom 0.5>>
+<<Move Zeus right bottom 0>>
 <<wait  0.5>>
 Aelius: [Neutral] Here’s your, uh, sandwich, sir. I mean- Lord Zeus.
 Zeus: [Annoyed] What is this?
@@ -96,14 +97,14 @@ Zeus: [Annoyed] What is this?
 	Zeus: [Angry] This is not food, it is an insult!
 	Zeus: [Angry] I absolutely refuse to eat this! Go, try again!
 
-<<Move Aelius -0.25 center 0.5>>
+<<Move Aelius -0.25 bottom 0.5>>
 <<wait  0.5>>
-<<Move Zeus 1.25 center 0>>
+<<Move Zeus 1.25 bottom 0>>
 -> Back to the kitchen
 
-<<Act Hestia "Hestia 3_4s" right center #3d85c6>>
-<<Move Aelius -0.25 center 0>>
-<<Move Aelius left center 0.5>>
+<<Act Hestia "Hestia 3_4s" right bottom #3d85c6>>
+<<Move Aelius -0.25 bottom 0>>
+<<Move Aelius left bottom 0.5>>
 <<wait  0.5>>
 
 Hestia: [Neutral] Is everything alright?
@@ -122,6 +123,7 @@ Aelius: [Neutral] He said to remake his food, so-
 	Aelius: [Neutral] …Thank you.
 	Hestia: [Smile] Of course.
 	<<StopAudio "Romance">>           // stop Zeus BGM first
+	<<StopMusic>>
 	<<PlayAudio "Wind">>              // transition SFX
 	<<Fade "#000000" 0 1 0.6>>        // fade to black
 	<<wait 5>>                        // let Wind run for 5s total
@@ -142,12 +144,12 @@ Aelius: [Neutral] He said to remake his food, so-
 	Aelius: [Neutral] I’ll do my best. Thanks, Hestia.
 
 	->Return to the dining area
-		<<Move Aelius -0.25 center 0.5>>
+		<<Move Aelius -0.25 bottom 0.5>>
 		<<wait  0.5>>
-		<<Move Hestia 1.25 center 0>>
-		<<Move Zeus right center 0>>
+		<<Move Hestia 1.25 bottom 0>>
+		<<Move Zeus right bottom 0>>
 		<<wait  0.5>>
-		<<Move Aelius left center 0.5>>
+		<<Move Aelius left bottom 0.5>>
 		<<wait 0.5>>
 
 	-> Apologize
@@ -159,9 +161,10 @@ Aelius: [Neutral] He said to remake his food, so-
 		Zeus: [Smile] Oh, child! I nearly forgot. Have you seen Ares come by here recently? I’ve been meaning to speak to him.
 		Aelius: [Neutral] Um, no, sir. It’s my first day-
 		Zeus: [Neutral] Bah! There you go again, trying to make me listen to the dry stories you’ve concocted. Fine. I’ll find him myself. Leave me.
-		<<Move Aelius -0.25 center 0.5>>
+		<<Move Aelius -0.25 bottom 0.5>>
 		<<HideAll>>
 		<<StopAudioAll>>
+		<<StopMusic>> 
 		<<PlayAudio "Wind">>
 		<<jump Hermes_test>>
 	-> Stay silent
@@ -184,8 +187,9 @@ Aelius: [Neutral] He said to remake his food, so-
 		Zeus: [Smile] all the bravery… 
 		Zeus: [Smile] all the… everything else.
 		Zeus: [Smile] Now then! I must eat! I’ve spent far too long speaking with you, mortal. Be off!
-		<<Move Aelius -0.25 center 0.5>>
+		<<Move Aelius -0.25 bottom 0.5>>
 		<<StopAudio "Romance">>           // stop Zeus BGM first
+		<<StopMusic>> 
 		<<PlayAudio "Wind">>              // transition SFX
 		<<Fade "#000000" 0 1 0.6>>        // fade to black
 		<<wait 5>>                        // let Wind run for 5s total
@@ -204,8 +208,10 @@ Aelius: [Neutral] He said to remake his food, so-
 		Zeus: [Annoyed] I seem to have lost my appetite.
 		Aelius: [Smile] See you again soon?
 		Zeus: [Annoyed] For your sake, you should hope not.
-		<<Move Zeus 1.25 center 0.5>>
+		<<Move Zeus 1.25 bottom 0.5>>
+		
 		<<StopAudio "Romance">>           // stop Zeus BGM first
+		<<StopMusic>> 
 		<<PlayAudio "Wind">>              // transition SFX
 		<<Fade "#000000" 0 1 0.6>>        // fade to black
 		<<wait 5>>                        // let Wind run for 5s total

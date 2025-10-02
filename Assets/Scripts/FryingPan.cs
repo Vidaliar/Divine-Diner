@@ -3,19 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using FMODUnity;
 
 public class FryingPan : MonoBehaviour
 {
     [SerializeField] float timeSec = 5.5f;  //Time until can flip
     [SerializeField] GameObject spaceText;
     [SerializeField] GameObject flipObj;    //The object or food to be flipped
+    [Header("FMOD SFX")]
+    [SerializeField] StudioEventEmitter sizzleLoopEmitter;  // assign
 
     Vector2 upperPos;   //The position for the top of the flip
     float timer;
     Vector2 startPos;
     bool flipping = false;  //Does or doesn't allow flipObj to be flipped
     int numFlips = 0;
-    
+
+    void OnEnable() { if (sizzleLoopEmitter) sizzleLoopEmitter.Play(); }
+    void OnDisable() { if (sizzleLoopEmitter) sizzleLoopEmitter.Stop(); }
+
     void Start()
     {
         startPos = flipObj.transform.position;
@@ -46,6 +52,7 @@ public class FryingPan : MonoBehaviour
             CookingManager.instance.Transition();
             this.gameObject.SetActive(false);
         }
+
     }
 
     //Fractionally moves up and rotates the flippable object like it's being flipped
