@@ -104,17 +104,16 @@ public class PauseMenu : MonoBehaviour
         if (saveMenu) saveMenu.SetActive(false);
         if (settingsMenu) settingsMenu.SetActive(false);
 
-        ForceResumeTime(); // timeScale = 1, AudioListener.pause = false
+        ForceResumeTime();
 
         if (manageCursor)
         {
-            Cursor.visible = true;                          // was false
-            Cursor.lockState = CursorLockMode.None;         // was Locked
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         if (blurOverlay) blurOverlay.SetActive(false);
     }
-
 
     private void OpenSecondLevel(GameObject menu)
     {

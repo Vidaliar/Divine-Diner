@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using FMODUnity;
 
 public class Seasoning : MonoBehaviour
 {
@@ -12,16 +11,11 @@ public class Seasoning : MonoBehaviour
     [SerializeField] ParticleSystem particleSystem;
     [SerializeField] float movementOffset = 1f;
     [SerializeField] int totalShakes = 10;
-    [Header("FMOD SFX")]
-    [SerializeField] StudioEventEmitter seasoningLoopEmitter;   // assign in Inspector
 
     Vector2 startPos;
     
     int shakeCount = 0;
     bool nextKeyIsD;
-
-    void OnEnable() { if (seasoningLoopEmitter) seasoningLoopEmitter.Play(); }
-    void OnDisable() { if (seasoningLoopEmitter) seasoningLoopEmitter.Stop(); }
 
     void Start()
     {

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/TestNewGame.unity.meta
 guid: 052fec5ff6aa047458fc5aead196e045
+========
+guid: f7ee9aa4aa1761943ab4c7bda7c57dee
+>>>>>>>> SanBranch:Assets/Scenes/MakenaTestScene.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
