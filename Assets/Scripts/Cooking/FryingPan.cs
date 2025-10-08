@@ -8,6 +8,7 @@ public class FryingPan : MonoBehaviour
 {
     [SerializeField] float timeSec = 5.5f;  //Time until can flip
     [SerializeField] GameObject spaceText;
+    [SerializeField] Slider progressBar;
     [SerializeField] GameObject flipObj;    //The object or food to be flipped
 
     Vector2 upperPos;   //The position for the top of the flip
@@ -21,6 +22,8 @@ public class FryingPan : MonoBehaviour
         startPos = flipObj.transform.position;
         upperPos = new Vector2(startPos.x, startPos.y + 5);
         // AudioManager.Instance.PlaySound("Sizzle");       //Use once stopping audio is solved
+        progressBar.minValue = 0;
+        progressBar.maxValue = timeSec;
     }
 
     void Update()
@@ -32,18 +35,25 @@ public class FryingPan : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 timer = 0;
+                progressBar.value = 0;
                 spaceText.SetActive(false);
                 flipping = true;
                 numFlips++;
             }
         }
 
-        timer += Time.deltaTime;
+        if (!flipping)
+        {
+            timer += Time.deltaTime;
+            progressBar.value = timer;
+        }
+
         if (flipping) Flip();
 
         //If it's been flipped twice and done flipping, transition to next step and don't receive input
         if (numFlips >= 2 && !flipping)
         {
+            progressBar.gameObject.SetActive(false);
             CookingManager.instance.Transition();
             this.gameObject.SetActive(false);
         }
