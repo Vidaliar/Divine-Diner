@@ -24,6 +24,7 @@ public class FryingPan : MonoBehaviour
         // AudioManager.Instance.PlaySound("Sizzle");       //Use once stopping audio is solved
         progressBar.minValue = 0;
         progressBar.maxValue = timeSec;
+        progressBar.gameObject.SetActive(true);
     }
 
     void Update()
@@ -65,9 +66,11 @@ public class FryingPan : MonoBehaviour
         if (timer > timeSec / 2f)
         {
             flipping = false;
+            timer = 0;
         }
         else
         {
+            timer += Time.deltaTime;
             flipObj.transform.position = new Vector2(startPos.x, Mathf.Sin(timer / (timeSec / 2) * 3.14f) * upperPos.y + startPos.y);
             flipObj.transform.Rotate(0, 0, (180f / (timeSec / 2)) * Time.deltaTime);
         }
