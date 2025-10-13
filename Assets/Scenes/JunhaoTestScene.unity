@@ -999,8 +999,8 @@ Transform:
   m_GameObject: {fileID: 1085588708}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28, y: -2.49, z: 6}
-  m_LocalScale: {x: 7.3081684, y: 2.5207016, z: 1}
+  m_LocalPosition: {x: 27.9946, y: -2.51, z: 6}
+  m_LocalScale: {x: 7.2971125, y: 3.6804829, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1130,7 +1130,7 @@ Transform:
   m_GameObject: {fileID: 1233970132}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.13, y: -2.42, z: 0}
+  m_LocalPosition: {x: 4.13, y: -3.031, z: 0}
   m_LocalScale: {x: 2.7745, y: 2.7745, z: 2.7745}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1437,7 +1437,7 @@ MonoBehaviour:
   markerWidth: 0.03
   markerMaterial: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   cuttingUI: {fileID: 1653151380}
-  markerColor: {r: 0, g: 1, b: 0, a: 1}
+  markerColor: {r: 0.54901963, g: 0.31764707, b: 0.07450981, a: 1}
   markerOrderOffset: 100
   markerZOffset: -0.001
 --- !u!1 &1737822481
