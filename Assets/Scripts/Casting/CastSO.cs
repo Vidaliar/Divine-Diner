@@ -10,12 +10,13 @@ public class CastSO : MonoBehaviour
     public List<GameObject> pointObjects; //{ get; private set; }
     LineRenderer line;
     Vector2 center;
-    private void Awake()
+    void Awake()
     {
         line = this.GetComponent<LineRenderer>();
         center = transform.position;
 
         pointObjects = new List<GameObject>();
+        // pointObjects = new GameObject[points.Count];
 
         float worldCamHeight = Camera.main.orthographicSize * 2;
         // float worldCamLength = worldCamHeight * Screen.width / Screen.height;
@@ -46,7 +47,20 @@ public class CastSO : MonoBehaviour
         {
             GameObject newPathPoint = Instantiate(pathPointPref, point, Quaternion.identity);
             newPathPoint.GetComponent<PathPoint>().pos = newPathPoint.transform.position;
+            // Debug.Log("Path point added to pointObjects " + newPathPoint.name + " " + pointNumTEMP);
             pointObjects.Add(newPathPoint);
         }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        Debug.Log(collision.gameObject.name + " exited cast");
+        if(collision.gameObject.CompareTag("Player")) CastManager.instance.SetBoundsBool(false);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(collision.gameObject.name + " entered cast");
+        if(collision.gameObject.CompareTag("Player")) CastManager.instance.SetBoundsBool(true);
     }
 }

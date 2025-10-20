@@ -15,11 +15,12 @@ public class FryingPan : MonoBehaviour
     Vector2 startPos;
     bool flipping = false;  //Does or doesn't allow flipObj to be flipped
     int numFlips = 0;
-    
+
     void Start()
     {
         startPos = flipObj.transform.position;
         upperPos = new Vector2(startPos.x, startPos.y + 5);
+        // AudioManager.Instance.PlaySound("Sizzle");       //Use once stopping audio is solved
     }
 
     void Update()
@@ -51,14 +52,14 @@ public class FryingPan : MonoBehaviour
     //Fractionally moves up and rotates the flippable object like it's being flipped
     void Flip()
     {
-        if (timer > timeSec/2f)
+        if (timer > timeSec / 2f)
         {
             flipping = false;
         }
         else
         {
-            flipObj.transform.position = new Vector2(startPos.x, Mathf.Sin(timer / (timeSec/2) * 3.14f) * upperPos.y + startPos.y);
-            flipObj.transform.Rotate(0, 0, (180f/(timeSec/2))*Time.deltaTime);
+            flipObj.transform.position = new Vector2(startPos.x, Mathf.Sin(timer / (timeSec / 2) * 3.14f) * upperPos.y + startPos.y);
+            flipObj.transform.Rotate(0, 0, (180f / (timeSec / 2)) * Time.deltaTime);
         }
     }
 }

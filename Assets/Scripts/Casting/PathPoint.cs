@@ -10,9 +10,13 @@ public class PathPoint : MonoBehaviour
     {
         hit = false;
     }
-    void OnTriggerEnter2D(Collider2D coll)
+
+    //First PathPoint isn't being triggered
+    void OnTriggerStay2D(Collider2D coll)
     {
-        Debug.Log(this.gameObject.name + " got hit");
-        hit = true;
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0))
+        {
+            hit = true;
+        }
     }
 }

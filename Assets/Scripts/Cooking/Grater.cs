@@ -17,9 +17,10 @@ public class Grater : MonoBehaviour
     void Start()
     {
         grateObjStartPos = grateObj.transform.position;
+
+        //Y values need to be changed for when grater + cheese assets are made
         minY = grater.transform.position.y - grater.transform.localScale.y / 2;
         maxY = grater.transform.position.y + grater.transform.localScale.y / 2;
-        Debug.Log("Min: " + minY + " max: " + maxY);
     }
 
     // Update is called once per frame
@@ -28,8 +29,7 @@ public class Grater : MonoBehaviour
         Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.DrawRay(pos, Vector2.up * 0.2f, Color.red, 100);
-            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.up, 0.2f);
+            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.up, 0.1f);
             if (hit.collider != null)
             {
                 Debug.Log("Hit is " + hit.collider.gameObject.name);
