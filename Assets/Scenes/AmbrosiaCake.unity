@@ -760,7 +760,7 @@ PrefabInstance:
       objectReference: {fileID: 1890505336}
     - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
       propertyPath: recipeManagers.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
       propertyPath: recipeManagers.Array.data[0]
@@ -1711,6 +1711,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2904135754399722156, guid: bb6e101dd0fe886408d1b2121e82a2b8, type: 3}
+      propertyPath: castGO
+      value: 
+      objectReference: {fileID: 560799022530788088, guid: 8a4be9acd0a159941987422c2f7c46ba, type: 3}
     - target: {fileID: 2904135754399722156, guid: bb6e101dd0fe886408d1b2121e82a2b8, type: 3}
       propertyPath: scoreText
       value: 

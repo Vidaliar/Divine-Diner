@@ -12,8 +12,8 @@ public class FryingPan : MonoBehaviour
     [SerializeField] GameObject flipObj;    //The object or food to be flipped
 
     Vector2 upperPos;   //The position for the top of the flip
-    float timer;
-    Vector2 startPos;
+    float timer;    //Keeps track of time passed
+    Vector2 startPos;   //Holds the starting position of the flipping object
     bool flipping = false;  //Does or doesn't allow flipObj to be flipped
     int numFlips = 0;
 
