@@ -13,6 +13,8 @@ public class Grater : MonoBehaviour
     int gratingCount = 0;
     Vector2 grateObjStartPos;
 
+    Vector2 grateDirection;
+
     //The min and max determine if the grated object hit the top or bottom of the grater
     float minY;
     float maxY;
@@ -24,8 +26,14 @@ public class Grater : MonoBehaviour
 
         //Y values need to be changed for when grater + cheese assets are made
         //Maybe add a collider and that can be used to reference the size instead of the sprite
-        minY = grater.transform.position.y - grater.transform.localScale.y / 2;
-        maxY = grater.transform.position.y + grater.transform.localScale.y / 2;
+        // minY = grater.transform.position.y - grater.transform.localScale.y / 2;
+        // maxY = grater.transform.position.y + grater.transform.localScale.y / 2;
+
+        maxY = 2.52f;
+        minY = -2.25f;
+
+        grateDirection = new Vector2(0.24f, 0.97f);
+        //grateDirection = new Vector2(1.18, 4.77).normalized;
     }
 
     // Update is called once per frame
@@ -50,13 +58,16 @@ public class Grater : MonoBehaviour
             //Normalized vector to move the pin
             Vector2 direction = new Vector2(pos.x - grateObj.transform.position.x, pos.y - grateObj.transform.position.y).normalized;
 
-            //Set the grate object y value
-            float newY = grateObj.transform.position.y + (direction.y * grateSpeed * Time.deltaTime);
+            //Set the grate object y value (just added the * grateDirection.y)
+            float newY = grateObj.transform.position.y + (direction.y * grateDirection.y * grateSpeed * Time.deltaTime);
             float clampY = Mathf.Clamp(newY, minY, maxY);
 
-            grateObj.transform.position = new Vector2(grateObjStartPos.x, clampY);
+            //newX is all new
+            float newX = grateObj.transform.position.x + (direction.x * grateDirection.x * grateSpeed * Time.deltaTime);
 
-            // grateObj.transform.position = new Vector2(grateObjStartPos.x, Mathf.Clamp(pos.y, minY, maxY));
+            //original was grateObj.transform.position = new Vector2(grateObjStartPos.x, clampY);
+
+            grateObj.transform.position = new Vector2(newX, clampY);
             
             //Checks if the grate object is at an end and checks if it's the correct side, if so count++
             if (grateObj.transform.position.y <= minY && !topSide)
