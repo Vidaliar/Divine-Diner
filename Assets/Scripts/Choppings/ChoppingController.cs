@@ -27,6 +27,9 @@ public class ChoppingController : MonoBehaviour
     [SerializeField] private int markerOrderOffset = 100;
     [SerializeField] private float markerZOffset = -0.001f;
 
+    [SerializeField] private Slicer slicer;
+    private bool AllowCommitEarlyNow => (_verticalPhaseCuts > 0) && (_cutsDone >= _verticalPhaseCuts);
+
     private bool _isBusy = false;
     private bool _inArea2 = false;
     private SelectableItems _current;
@@ -34,6 +37,12 @@ public class ChoppingController : MonoBehaviour
     private bool _cuttingActive = false;
     private int _cutsDone = 0;
     private int _cutsTotal = 0;
+    private int _verticalPhaseCuts = 0;
+    private int _horizontalDenom = 0;
+    private bool _hasCommitted = false;
+
+    private readonly List<float> _vFractions = new(); // vertical line positions in 0..1 (left->right)
+    private readonly List<float> _hFractions = new(); // horizontal line positions in 0..1 (bottom->top)
 
     private int RequiredCuts => Mathf.Max(0, _cutsTotal - 1);
 
@@ -166,9 +175,14 @@ public class ChoppingController : MonoBehaviour
     {
         _cutsTotal = Mathf.Max(1, item.TotalSlices);
         _cutsDone = 0;
+        _verticalPhaseCuts = Mathf.Clamp(item.RoughChopSlices, 0, RequiredCuts);
+        _horizontalDenom = Mathf.Max(1, _cutsTotal - _verticalPhaseCuts);
         _cuttingActive = (RequiredCuts > 0);
+        _hasCommitted = false;
 
-        // Clear chopping UI first
+        _vFractions.Clear();
+        _hFractions.Clear();
+
         ClearMarkers();
         UpdateCuttingUI();
     }
@@ -195,42 +209,75 @@ public class ChoppingController : MonoBehaviour
         int totalPieces = Mathf.Max(1, _cutsTotal);
         int currentPieces = Mathf.Clamp(_cutsDone + 1, 1, totalPieces);
         cuttingUI.UpdateProgress(currentPieces, totalPieces);
+
+        bool canCommit = !_hasCommitted && _current != null && _inArea2
+                     && (AllowCommitEarlyNow || (_cutsDone >= RequiredCuts));
+        cuttingUI.SetCommitInteractable(canCommit);
     }
 
     private void PerformCutOnce()
     {
         if (!_cuttingActive || _current == null) return;
-
         if (_cutsDone >= RequiredCuts) return;
 
         _cutsDone++;
+        int cutIndex = _cutsDone; // 1-based
 
-        //draw a chop line, from left to right
-        DrawMarkerAtFraction(_current, (float)_cutsDone / _cutsTotal);
+        if (cutIndex <= _verticalPhaseCuts)
+        {
+            int vDen = _verticalPhaseCuts + 1;
+            float frac = (float)cutIndex / Mathf.Max(1, vDen);
+            _vFractions.Add(frac);
+            DrawVerticalMarkerAtFraction(_current, frac);
+        }
+        else
+        {
+            int hIndex = cutIndex - _verticalPhaseCuts;
+            float frac = (float)hIndex / Mathf.Max(1, _horizontalDenom);
+            _hFractions.Add(frac);
+            DrawHorizontalMarkerAtFraction(_current, frac);
+        }
 
-        // Update UI
         UpdateCuttingUI();
 
-        // end the chop mode when all completed
-        if (_cutsDone >= _cutsTotal)
-        {
+        if (_cutsDone >= RequiredCuts)
             _cuttingActive = false;
-            UpdateCuttingUI();
-        }
+
+        UpdateCuttingUI();
     }
 
-    private void DrawMarkerAtFraction(SelectableItems item, float fraction01)
+    private void DrawVerticalMarkerAtFraction(SelectableItems item, float fraction01)
     {
-        // 0 < fraction01 <=1£¬count by the world bounds of SpriteRenderer
         var sr = item.GetComponentInChildren<SpriteRenderer>();
         if (sr == null) return;
 
         Bounds b = sr.bounds;
         float x = Mathf.Lerp(b.min.x, b.max.x, Mathf.Clamp01(fraction01));
         float z = sr.transform.position.z + markerZOffset;
-        Vector3 p1 = new Vector3(x, b.min.y, sr.transform.position.z);
-        Vector3 p2 = new Vector3(x, b.max.y, sr.transform.position.z);
 
+        Vector3 p1 = new Vector3(x, b.min.y, z);
+        Vector3 p2 = new Vector3(x, b.max.y, z);
+
+        CreateMarker(sr, p1, p2);
+    }
+
+    private void DrawHorizontalMarkerAtFraction(SelectableItems item, float fraction01)
+    {
+        var sr = item.GetComponentInChildren<SpriteRenderer>();
+        if (sr == null) return;
+
+        Bounds b = sr.bounds;
+        float y = Mathf.Lerp(b.min.y, b.max.y, Mathf.Clamp01(fraction01));
+        float z = sr.transform.position.z + markerZOffset;
+
+        Vector3 p1 = new Vector3(b.min.x, y, z);
+        Vector3 p2 = new Vector3(b.max.x, y, z);
+
+        CreateMarker(sr, p1, p2);
+    }
+
+    private void CreateMarker(SpriteRenderer targetSr, Vector3 p1, Vector3 p2)
+    {
         var go = new GameObject($"CutMarker_{_cutsDone}/{_cutsTotal}");
         var lr = go.AddComponent<LineRenderer>();
         lr.positionCount = 2;
@@ -246,13 +293,12 @@ public class ChoppingController : MonoBehaviour
         lr.startColor = markerColor;
         lr.endColor = markerColor;
 
-        lr.sortingLayerID = sr.sortingLayerID;
-        lr.sortingOrder = sr.sortingOrder + 1;
+        lr.sortingLayerID = targetSr.sortingLayerID;
+        lr.sortingOrder = targetSr.sortingOrder + markerOrderOffset;
 
-        // make line follow the object
-        go.transform.SetParent(item.transform, worldPositionStays: true);
+        go.transform.SetParent(_current.transform, worldPositionStays: true);
 
-        _markers.Add(new MarkerRec { lr = lr, targetSr = sr });
+        _markers.Add(new MarkerRec { lr = lr, targetSr = targetSr });
     }
 
     private Material _runtimeMarkerMat;
@@ -293,6 +339,23 @@ public class ChoppingController : MonoBehaviour
                 m.lr.SetPosition(1, pos1);
             }
         }
+    }
+
+    public void CommitSlice()
+    {
+        if (_current == null || slicer == null) return;
+
+        bool canCommit = !_hasCommitted && _inArea2
+                     && (AllowCommitEarlyNow || (_cutsDone >= RequiredCuts));
+        if (!canCommit) return;
+
+        ClearMarkers();
+
+        // Vertical final slicing with N pieces (TotalSlices)
+        slicer.SliceGridItem(_current, _vFractions, _hFractions);
+
+        _hasCommitted = true;
+        UpdateCuttingUI(); // button becomes non-interactable after commit
     }
 
 

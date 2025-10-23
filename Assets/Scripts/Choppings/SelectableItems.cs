@@ -8,6 +8,7 @@ public class SelectableItems : MonoBehaviour
     [SerializeField] private float highlightMultiplier = 1.2f;
 
     [SerializeField, Min(1)] private int totalSlices = 10; // how many the item can be and should be cut
+    private int roughChopSlices = 5;
 
     private SpriteRenderer _sr;
     private Color _baseColor;
@@ -15,11 +16,20 @@ public class SelectableItems : MonoBehaviour
 
     public bool IsSelected { get; private set; }
     public int TotalSlices => Mathf.Max(1, totalSlices);
+    public int RoughChopSlices => Mathf.Max(1, roughChopSlices);
 
     private void Awake()
     {
         _sr = GetComponent<SpriteRenderer>();
         if (_sr != null) _baseColor = _sr.color;
+
+        roughChopSlices = Mathf.Max(1, Mathf.CeilToInt(totalSlices * 0.5f));
+    }
+
+    private void OnValidate()
+    {
+        totalSlices = Mathf.Max(1, totalSlices);
+        roughChopSlices = Mathf.Max(1, Mathf.CeilToInt(totalSlices * 0.5f));
     }
 
     private void OnMouseEnter()
