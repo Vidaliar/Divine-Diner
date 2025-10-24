@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject settingsMenu;
 
     [Header("background")]
-    public GameObject blurOverlay;
+    [SerializeField] GameObject blurOverlay;
 
     [Header("MainMenu scene")]
     public string mainMenuSceneName = "MainMenu";
@@ -90,8 +91,8 @@ public class PauseMenu : MonoBehaviour
         }
 
         if (blurOverlay) blurOverlay.SetActive(true);
-
-        if (level1Menu) level1Menu.SetActive(true);
+        if (level1Menu) { level1Menu.SetActive(true); level1Menu.transform.SetAsLastSibling(); }
+        if (blurOverlay) blurOverlay.transform.SetAsFirstSibling();
         if (saveMenu) saveMenu.SetActive(false);
         if (settingsMenu) settingsMenu.SetActive(false);
     }
@@ -108,8 +109,8 @@ public class PauseMenu : MonoBehaviour
 
         if (manageCursor)
         {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
 
         if (blurOverlay) blurOverlay.SetActive(false);
