@@ -54,11 +54,17 @@ public class Grater : MonoBehaviour
         //Does the grating
         if (Input.GetMouseButton(0) && grating)
         {
-            //Normalized vector to move the grateObj
-            Vector2 direction = new Vector2(pos.x - grateObj.transform.position.x, pos.y - grateObj.transform.position.y).normalized;
+            //Vector to move the grateObj towards the mouse
+            Vector2 direction = new Vector2(pos.x - grateObj.transform.position.x, pos.y - grateObj.transform.position.y);
+
+            //Normalized direction vector
+            Vector2 normalizedDir = direction.normalized;
+
+            //Minimum length of the mouse to grateObj to avoid a shaky cheese
+            float dirLength = Mathf.Min(direction.magnitude, 1);
 
             //Set the grate object y value (just added the * grateDirection.y)
-            float newY = grateObj.transform.position.y + (direction.y * grateDirection.y * grateSpeed * Time.deltaTime);
+            float newY = grateObj.transform.position.y + (normalizedDir.y * grateDirection.y * (grateSpeed * dirLength) * Time.deltaTime);
             float clampY = Mathf.Clamp(newY, minY, maxY);
 
             //newX is y times the slope of the grateDirection
