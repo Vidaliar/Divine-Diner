@@ -8,7 +8,7 @@ public class Rolling : MonoBehaviour
 {
     [SerializeField] Transform rollingPin;
     [SerializeField] GameObject dough;
-    [SerializeField] int totalRolls;
+    [SerializeField] int totalRolls = 3;
     [SerializeField] float rollSpeed = 3f;
 
     //The dough might already be scaled, so the end scale will be og scale + size diff
@@ -54,6 +54,10 @@ public class Rolling : MonoBehaviour
 
             rollingPin.position = new Vector2(clampX, rollingPin.position.y);
 
+            /*
+            Needs to be changed so that it takes rolls on both sides to have the dough grow
+            */
+            
             //Checks if pin hit the correct side, and if so, increments rolls and expand dough
             if ((clampX >= doughMaxBound && nextIsRight) || (clampX <= doughMinBound && !nextIsRight))
             {
