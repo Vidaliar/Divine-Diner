@@ -8,6 +8,9 @@ public class TitleManager : MonoBehaviour
 {
     [SerializeField] public Button newGameButton, continueGameButton, exitGameButton, settingsButton;
 
+    [Header("New Game Scene")]
+    public string NewGameScene = "filler";
+
     void Start()
     {
         newGameButton.onClick.AddListener(NewGame);
@@ -25,7 +28,7 @@ public class TitleManager : MonoBehaviour
     void NewGame()
     {
         // Load Scene with the name, load destroys current scene
-        SceneManager.LoadScene("ZeusBeat1", LoadSceneMode.Single);
+        SceneManager.LoadScene(NewGameScene, LoadSceneMode.Single);
     }
     
     void ContinueGame()

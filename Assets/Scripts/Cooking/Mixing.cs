@@ -7,52 +7,66 @@ using UnityEngine.UI;
 public class Mixing : MonoBehaviour
 {
     [SerializeField] GameObject controlsText;
-    // [SerializeField] Transform shaker;
     [SerializeField] int totalMixes = 5;
-    [SerializeField] Vector2 center = new Vector2(0,0);
+    [SerializeField] Vector2 center = new Vector2(0, 0);
+    [SerializeField] Slider progressBar;
 
+    //Used to calculate the radial difference of the mouse each frame
     Vector2 prevPos;
 
     int mixCount = 0;
-    float currentMix = 0;   //Once this reaches 2pi, mixCount++ and currentMix = 0
-    const float fullMixValue = 2 * Mathf.PI;
+
+    //Tracks the progress of current mix, once this reaches pi, mixCount++ and currentMix = 0
+    float currentMix = 0;
+    const float fullMixValue = Mathf.PI;
 
     void Start()
     {
         controlsText.SetActive(true);
+
+        progressBar.minValue = 0;
+        progressBar.maxValue = totalMixes * fullMixValue;
+        progressBar.gameObject.SetActive(true);
     }
 
     void Update()
     {
+        //Sets previous position to initially be the mouse position on the first click
         if (Input.GetMouseButtonDown(0))
         {
             prevPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
+
+        //Gets the current mouse position and calculates the angle difference between the current and prev
         if (Input.GetMouseButton(0))
             {
                 Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 CalculateRotation(pos);
-                Debug.Log(currentMix + " is current mix");
+
+                //Updates the progress bar
+                progressBar.value = mixCount * fullMixValue + Mathf.Clamp(currentMix, 0, fullMixValue);
             }
 
+        //Checks if the current mix has done a full rotation, updates mix count and current mix = 0
         if (currentMix >= fullMixValue || currentMix <= -fullMixValue)
         {
             mixCount++;
             currentMix = 0;
-            Debug.Log("MIX COUNT UPDATED TO " + mixCount);
         }
 
+        //If there's been enough mixes, transition to next step
         if (mixCount >= totalMixes)
-            {
-                CookingManager.instance.Transition();
-                controlsText.SetActive(false);
-                gameObject.SetActive(false);
-            }
+        {
+            controlsText.SetActive(false);
+            progressBar.gameObject.SetActive(false);
+            CookingManager.instance.Transition();
+            gameObject.SetActive(false);
+        }
     }
 
     //Honestly not sure if this is the best way to do this math, but it works lol
     //Calculates the angle between the previous and current mouse position
-    //This way technically allows the player to move the mouse up and down and eventually get it mixed
+    //Bug: This way technically allows the player to move the mouse up and down and eventually get it mixed
     void CalculateRotation(Vector2 currentPos)
     {
         float centerCurrentX = 1- currentPos.normalized.x;
@@ -64,8 +78,8 @@ public class Mixing : MonoBehaviour
         float currentRadians = Mathf.Atan2(centerCurrentY, centerCurrentX);
         float prevRadians = Mathf.Atan2(centerPrevY, centerPrevX);
 
-        float radians = currentRadians - prevRadians;
-
+        float radians = Mathf.Abs(currentRadians) - Mathf.Abs(prevRadians);
+       
         currentMix += Mathf.Abs(radians);
         prevPos = currentPos;
     }
