@@ -11,6 +11,7 @@ public class CastManager : MonoBehaviour
     [SerializeField] GameObject drawLineCollider;
     [SerializeField] TMP_Text scoreText;
     [SerializeField] float passingScore = 80f;
+    [SerializeField] int maxTries = 3;
     LineRenderer line;
     Vector2 lastLinePos = new Vector2(-100, -100);
     Camera cam;
@@ -20,6 +21,7 @@ public class CastManager : MonoBehaviour
     float pointScore = 100f;
     int numOutBounds = 0;
     public bool pointsInBounds = true;
+    int numTries = 0;
 
     void Start()
     {
@@ -40,9 +42,6 @@ public class CastManager : MonoBehaviour
         GameObject newCast = Instantiate(castGO, Camera.main.transform.position, Quaternion.identity);
 
         cast = newCast.GetComponent<CastSO>();
-        // pathPoints = cast.pointObjects;
-
-        // if(pathPoints.Count > 0) pointScore = 100 / pathPoints.Count;
     }
 
     // Update is called once per frame
@@ -69,29 +68,46 @@ public class CastManager : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
+            //If not a passing score -> retry
+            //If after 3? tries -> next button/transition
+
             pathPoints = cast.pointObjects;
             if (pathPoints.Count > 0) pointScore = 100f / pathPoints.Count;
 
             foreach (GameObject point in pathPoints)
             {
-                if (point.GetComponent<PathPoint>().hit == true) score += pointScore;
-                Debug.Log(point.GetComponent<PathPoint>().hit);
+                if (point.GetComponent<PathPoint>().hit == false)
+                {
+                    score = 0;
+                    break;
+                }
+                else
+                {
+                    score += pointScore; 
+                }
+                // Debug.Log(point.GetComponent<PathPoint>().hit);
             }
 
             if (score >= passingScore)
             {
                 scoreText.text = "Divine!";
-                CookingManager.instance.cookingSuccess = true;
+                scoreText.gameObject.SetActive(true);
+
+                CookingManager.instance.Transition();
+                gameObject.SetActive(false);
+                // CookingManager.instance.cookingSuccess = true;
             }
             else
             {
-                scoreText.text = "Dubious";
-                CookingManager.instance.cookingSuccess = false;
+                if(numTries >= maxTries)
+                {
+                    //Do 'skip cast' option
+                }
+                RetryCast();
+                // scoreText.text = "Dubious";
+                // CookingManager.instance.cookingSuccess = false;
             }
-            scoreText.gameObject.SetActive(true);
-
-            CookingManager.instance.Transition();
-            gameObject.SetActive(false);
+            
         }
     }
 
@@ -110,5 +126,19 @@ public class CastManager : MonoBehaviour
     public void SetBoundsBool(bool inBounds)
     {
         pointsInBounds = inBounds;
+    }
+
+    public void RetryCast()
+    {
+        line.positionCount = 0;
+        score = 0;
+        numTries++;
+        Debug.Log("Cast is reset. Num tries is " + numTries);
+
+        pathPoints = cast.pointObjects;
+        foreach (GameObject point in pathPoints)
+        {
+            point.GetComponent<PathPoint>().hit = false;
+        }
     }
 }
