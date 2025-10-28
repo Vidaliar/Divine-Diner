@@ -68,7 +68,6 @@ public class CastManager : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            //If not a passing score -> retry
             //If after 3? tries -> next button/transition
 
             pathPoints = cast.pointObjects;
@@ -95,7 +94,7 @@ public class CastManager : MonoBehaviour
 
                 CookingManager.instance.Transition();
                 gameObject.SetActive(false);
-                // CookingManager.instance.cookingSuccess = true;
+                CookingManager.instance.cookingSuccess = true;
             }
             else
             {
