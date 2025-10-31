@@ -115,7 +115,7 @@
 			<value>2</value>
 		</property>
 		<property name="startOffset">
-			<value>3</value>
+			<value>5</value>
 		</property>
 		<property name="looping">
 			<value>true</value>
@@ -336,7 +336,7 @@
 			<value>-1.5</value>
 		</property>
 		<property name="pitch">
-			<value>-0.300000012</value>
+			<value>0.300000012</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{4186877a-d10f-4114-9463-a1f42c318257}</destination>
@@ -347,7 +347,7 @@
 	</object>
 	<object class="SingleSound" id="{c00ff63b-2b8d-4af3-9d21-0087fb89fdf4}">
 		<property name="pitch">
-			<value>2.60000014</value>
+			<value>2.79999995</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{2343629b-6107-4b44-a1a5-2d0441136394}</destination>
@@ -372,7 +372,7 @@
 	</object>
 	<object class="SingleSound" id="{9f72854e-cad2-4445-ba3d-197ccb76a390}">
 		<property name="pitch">
-			<value>0.800000012</value>
+			<value>0.900000036</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{5c73dedc-d148-4f1c-9f89-2371343cab7d}</destination>
@@ -383,7 +383,7 @@
 	</object>
 	<object class="SingleSound" id="{5f38ad2e-53be-4b0f-a60d-0ddacbfce45c}">
 		<property name="pitch">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{39c09518-eac1-46ca-a2ff-4ac98b686aa9}</destination>
@@ -394,7 +394,7 @@
 	</object>
 	<object class="SingleSound" id="{ccb259c6-9b23-4858-be47-23cb7481e81c}">
 		<property name="startOffset">
-			<value>90.5</value>
+			<value>88</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{bef27353-9bae-4099-8f28-3835047232e8}</destination>
@@ -405,7 +405,7 @@
 	</object>
 	<object class="PlayPercentage" id="{571f7416-aff3-45c6-8e9e-ce653115901c}">
 		<property name="percentage">
-			<value>35</value>
+			<value>25</value>
 		</property>
 		<relationship name="sound">
 			<destination>{ccb259c6-9b23-4858-be47-23cb7481e81c}</destination>
@@ -458,7 +458,7 @@
 			<value>-5.5</value>
 		</property>
 		<property name="pitch">
-			<value>6</value>
+			<value>9</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{dccbbb8e-efc3-4248-ac26-2b08ce69ba75}</destination>
@@ -518,7 +518,7 @@
 	</object>
 	<object class="SingleSound" id="{583f33e8-3ef7-4375-9a12-fb0c1038b5f6}">
 		<property name="startOffset">
-			<value>89.5</value>
+			<value>87.5</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{afba20e4-16c8-48f5-835f-89238bb56e66}</destination>
