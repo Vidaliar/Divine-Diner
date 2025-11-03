@@ -760,7 +760,7 @@ PrefabInstance:
       objectReference: {fileID: 1890505336}
     - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
       propertyPath: recipeManagers.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
       propertyPath: recipeManagers.Array.data[0]
@@ -769,7 +769,7 @@ PrefabInstance:
     - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
       propertyPath: recipeManagers.Array.data[1]
       value: 
-      objectReference: {fileID: 1912352139}
+      objectReference: {fileID: 2054769874}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1272,7 +1272,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1062057244
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2139,7 +2139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!120 &1515184282
 LineRenderer:
   serializedVersion: 2
@@ -2777,7 +2777,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1955449106
 Transform:
   m_ObjectHideFlags: 0
