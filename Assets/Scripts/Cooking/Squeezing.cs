@@ -12,6 +12,7 @@ public class Squeezing : MonoBehaviour
     float timeSec = 5.5f;   //Total time needs to be squeezed
     bool handSqueeze = false;   //If it is hand squeezing or tool squeezing
     float timer;    //Keeps track of time passed
+    Coroutine currentAnim;  //Keeps track of the current animation
 
     void Start()
     {
@@ -23,18 +24,16 @@ public class Squeezing : MonoBehaviour
 
     void Update()
     {
-        // if (Input.GetMouseButtonDown(0))
-        // {
-        //     StartCoroutine(ToolSqueezeAnim());
-        // }
-        
-        if(Input.GetMouseButton(0))
+        //Starts the squeezing animation
+        if (Input.GetMouseButtonDown(0))
         {
-            if (!handSqueeze)
-            {
+            if(currentAnim != null) StopCoroutine(currentAnim);
+            currentAnim = StartCoroutine(ToolSqueezeAnim());
+        }
 
-            }
-            //Do 'animation'
+        //While the player holds down the mouse, progress the timer and bar
+        if (Input.GetMouseButton(0))
+        {
             timer += Time.deltaTime;
             progressBar.value = timer;
 
@@ -45,31 +44,62 @@ public class Squeezing : MonoBehaviour
                 this.gameObject.SetActive(false);
             }
         }
+
+        //If the player lets go of the mouse, start the release animation
+        if (Input.GetMouseButtonUp(0))
+        {
+            if (!handSqueeze)
+            {
+                if (currentAnim != null) StopCoroutine(currentAnim);
+                currentAnim = StartCoroutine(ToolReleaseAnim());
+            }
+        }
     }
-    
+
+    //Does the squeeze animation for the tool
     IEnumerator ToolSqueezeAnim()
     {
-        // float topAngle = topOfSqueezeTool.transform.localRotation.eulerAngles.z;
-        for (int i = 0; i<8; i++)
+        while (true)
         {
-            topOfSqueezeTool.transform.Rotate(0, 0, -5);
-            // if(topAngle <= -40 || topAngle <= 320)
-            // {
-            //     yield break;
-            // }
-            // topAngle = topOfSqueezeTool.transform.localRotation.eulerAngles.z;
+            float topAngle = topOfSqueezeTool.transform.localRotation.eulerAngles.z;
+
+            if (topAngle > 0)
+            {
+                topAngle -= 360;
+            }
+            if (topAngle > -40)
+            {
+                topOfSqueezeTool.transform.Rotate(0, 0, -5);
+            }
+            else
+            {
+                break;
+            }
             yield return null;
         }
-        // while(topAngle > -40 || topAngle > 320)
-        // {
-        //     Debug.Log(topAngle);
-        //     topOfSqueezeTool.transform.Rotate(0, 0, -5);
-        //     if(topAngle <= -40 || topAngle <= 320)
-        //     {
-        //         yield break;
-        //     }
-        //     topAngle = topOfSqueezeTool.transform.localRotation.eulerAngles.z;
-        //     yield return null;
-        // }
+    }
+    
+    //Does the release animation for the tool
+    IEnumerator ToolReleaseAnim()
+    {
+        while (true)
+        {
+            float topAngle = Mathf.RoundToInt(topOfSqueezeTool.transform.localRotation.eulerAngles.z);
+
+            if (topAngle > 0)
+            {
+                topAngle -= 360;
+            }
+            if (topAngle < 0)
+            {
+                topOfSqueezeTool.transform.Rotate(0, 0, 5);
+            }
+            else
+            {
+                break;
+            }
+
+            yield return null;
+        }
     }
 }
