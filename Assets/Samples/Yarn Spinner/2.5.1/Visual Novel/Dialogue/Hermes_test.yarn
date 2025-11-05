@@ -1,4 +1,4 @@
-﻿title: Hermes_test
+title: Hermes_test
 ---
 <<Fade "#000000" 1 0 0.6>>        // fade back in
 //<<PlayAudio "Romance">>  
@@ -55,7 +55,7 @@ Hermes: I really have to go. See you around!
 <<Hide "Hermes">>
 <<set $hermes_day1_done = true>>
 
-Aelius: Thanks for playing Divine Diner!
+<<jump Hephaestus_Intro>>
 
 <<wait 2>>
 <<QuitGame>>
@@ -69,6 +69,8 @@ Hermes: No time. I have to run.
 <<Hide "Hermes">>
 Aelius: Well, that was… something.
 <<set $hermes_day1_done = true>>
+
+<<jump Hephaestus_Intro>>
 ===
 
 
