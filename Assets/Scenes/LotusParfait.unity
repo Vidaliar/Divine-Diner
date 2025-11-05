@@ -1994,7 +1994,7 @@ Transform:
   m_GameObject: {fileID: 1086266138}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.67, y: 0, z: 0}
+  m_LocalPosition: {x: 20, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2600,7 +2600,7 @@ Transform:
   m_GameObject: {fileID: 1472075324}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.83, y: 0, z: 0}
+  m_LocalPosition: {x: 40, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3041,8 +3041,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pan: {fileID: 1103514419}
-  totalMoves: 6
-  sauteSpeed: 3
+  progressBar: {fileID: 848156572}
+  maxMoves: 16
+  maxTime: 4
+  numSections: 4
 --- !u!4 &1905377029
 Transform:
   m_ObjectHideFlags: 0
