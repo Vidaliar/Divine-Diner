@@ -8344,6 +8344,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 829987103}
     - target: {fileID: 5414376714745611430, guid: 6f40e07919cc33241803fd8033892982, type: 3}
+      propertyPath: timeSec
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5414376714745611430, guid: 6f40e07919cc33241803fd8033892982, type: 3}
       propertyPath: spaceText
       value: 
       objectReference: {fileID: 1805859727}

@@ -11,11 +11,13 @@ public interface IStateProvider
     {
 
         public int currentDay = 1;// min 0
+        public int currentEpi = 1;
         public SaveData Capture()
         {
             return new SaveData
             {
                 day = currentDay,
+                episode = currentEpi,
                 // ====== future: more data to save ======
                 // scriptId = myStory.CurrentScriptId;
                 // label    = myStory.CurrentLabel;
@@ -30,7 +32,7 @@ public interface IStateProvider
 
             // restore day
             currentDay = data.day;
-
+            currentEpi = data.episode;
             // ====== future: drive the story to the right position ======
             // myStory.LoadScript(data.scriptId);
             // yield return myStory.JumpToLabelAsync(data.label);

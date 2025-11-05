@@ -26,7 +26,10 @@ public class Mixing : MonoBehaviour
 
         progressBar.minValue = 0;
         progressBar.maxValue = totalMixes * fullMixValue;
+        progressBar.value = 0;
         progressBar.gameObject.SetActive(true);
+
+        center = transform.position;
     }
 
     void Update()
@@ -34,7 +37,8 @@ public class Mixing : MonoBehaviour
         //Sets previous position to initially be the mouse position on the first click
         if (Input.GetMouseButtonDown(0))
         {
-            prevPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            prevPos = new Vector2(pos.x - center.x, pos.y-center.y).normalized;
         }
 
         //Gets the current mouse position and calculates the angle difference between the current and prev
@@ -69,8 +73,12 @@ public class Mixing : MonoBehaviour
     //Bug: This way technically allows the player to move the mouse up and down and eventually get it mixed
     void CalculateRotation(Vector2 currentPos)
     {
-        float centerCurrentX = 1- currentPos.normalized.x;
-        float centerCurrentY = currentPos.normalized.y;
+        float currMinCenterx = currentPos.x - center.x;
+        float currMinCentery = currentPos.y - center.y;
+        Vector2 currNormalized = new Vector2(currMinCenterx, currMinCentery).normalized;
+
+        float centerCurrentX = 1 - currNormalized.x;
+        float centerCurrentY = currNormalized.y;
 
         float centerPrevX = 1 - prevPos.normalized.x;
         float centerPrevY = prevPos.normalized.y;
