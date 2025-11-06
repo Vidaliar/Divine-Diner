@@ -8,6 +8,7 @@ public class Grater : MonoBehaviour
     [SerializeField] GameObject grater;
     [SerializeField] int totalGrates;
     [SerializeField] float grateSpeed = 7;
+    [SerializeField] float totalDistance = 25;
 
     bool grating;
     int gratingCount = 0;
@@ -18,6 +19,8 @@ public class Grater : MonoBehaviour
     //The min and max determine if the grated object hit the top or bottom of the grater
     float minY;
     float maxY;
+
+    float currDistance = 0;
 
     bool topSide = false;   //A bool to track which side needs hit 
     void Start()
@@ -70,6 +73,9 @@ public class Grater : MonoBehaviour
             //newX is y times the slope of the grateDirection
             float newX = (grateDirection.x / grateDirection.y) * clampY;
 
+            //Gets the distance of the current and next position
+            currDistance += Vector3.Distance(grateObj.transform.localPosition, new Vector3(newX, clampY, 0));
+
             //Updates the objects location
             grateObj.transform.localPosition = new Vector2(newX, clampY);
             
@@ -93,7 +99,13 @@ public class Grater : MonoBehaviour
         }
 
         //Checks if grateObj has been grated enough and moves on if true
-        if (gratingCount >= totalGrates)
+        // if (gratingCount >= totalGrates)
+        // {
+        //     CookingManager.instance.Transition();
+        //     gameObject.SetActive(false);
+        // }
+
+        if(currDistance >= totalDistance)
         {
             CookingManager.instance.Transition();
             gameObject.SetActive(false);
