@@ -58,7 +58,7 @@ Hermes: I really have to go. See you around!
 <<jump Hephaestus_Intro>>
 
 <<wait 2>>
-<<QuitGame>>
+<<jump Hephaestus_Intro>>
 ===
 
 

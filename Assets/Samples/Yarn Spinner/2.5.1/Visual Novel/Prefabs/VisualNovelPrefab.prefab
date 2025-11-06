@@ -1724,6 +1724,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 174fdc34ac2173a4cb14ca7af36c76ef, type: 3}
   - {fileID: 21300000, guid: f943d9c45ae4e514886786c338100d46, type: 3}
   - {fileID: 21300000, guid: 292931a8146a2734bb6039b62509acc9, type: 3}
+  - {fileID: 21300000, guid: b01312396e7062c458a47d0312195750, type: 3}
   loadAudio:
   - {fileID: 8300000, guid: 5b23cdd00116c4748b48d312c9dc9f18, type: 3}
   - {fileID: 8300000, guid: 1f9607a7d89d843439ab1d3467d2f54a, type: 3}
