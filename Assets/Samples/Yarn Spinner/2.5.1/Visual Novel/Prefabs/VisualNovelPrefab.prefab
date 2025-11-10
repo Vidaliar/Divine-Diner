@@ -844,7 +844,7 @@ GameObject:
   - component: {fileID: 222502711816282974}
   - component: {fileID: 114774347424995662}
   m_Layer: 0
-  m_Name: GenericSprite
+  m_Name: GenericSprite --Do Not Delete --
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1714,20 +1714,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runner: {fileID: 2678071618908635071}
   loadSprites:
-  - {fileID: 21300000, guid: b196625a074ca2b44b6c2d21028a8dfb, type: 3}
-  - {fileID: 21300000, guid: 0e69b0eedb9241b43923fff56185223e, type: 3}
-  - {fileID: 21300000, guid: 0dcd8425cbb8cf34586d8e9d725c067d, type: 3}
+  - {fileID: 21300000, guid: feea92c3546957f468e8456b9612946c, type: 3}
+  - {fileID: 21300000, guid: c5ab0ef2d70dfda4dbbe3f33e18d8c30, type: 3}
+  - {fileID: 21300000, guid: d1349004a6385a94e992ff5b1cb87e98, type: 3}
   - {fileID: 21300000, guid: 52d51761c4b76cf4a84a0e8e169454a7, type: 3}
-  - {fileID: 21300000, guid: 77d8f11e4af00594c8aaf1784c1dd7a8, type: 3}
+  - {fileID: 21300000, guid: 2e6862f5f293ecc4fa1726d9f486e5aa, type: 3}
   - {fileID: 21300000, guid: 298e5fe89d0265849a0f20ac21078487, type: 3}
   - {fileID: 21300000, guid: a9b0e3abf0748744ea470e2488c3579b, type: 3}
   - {fileID: 21300000, guid: 174fdc34ac2173a4cb14ca7af36c76ef, type: 3}
   - {fileID: 21300000, guid: f943d9c45ae4e514886786c338100d46, type: 3}
   - {fileID: 21300000, guid: 292931a8146a2734bb6039b62509acc9, type: 3}
-  loadAudio:
-  - {fileID: 8300000, guid: 5b23cdd00116c4748b48d312c9dc9f18, type: 3}
-  - {fileID: 8300000, guid: 1f9607a7d89d843439ab1d3467d2f54a, type: 3}
-  - {fileID: 8300000, guid: 6076163f000d35246a5a23e13ae9de25, type: 3}
+  loadAudio: []
   useResourcesFolders: 0
   defaultTint: {r: 0.721237, g: 0.79072744, b: 0.8455882, a: 1}
   highlightTint: {r: 1, g: 1, b: 1, a: 1}

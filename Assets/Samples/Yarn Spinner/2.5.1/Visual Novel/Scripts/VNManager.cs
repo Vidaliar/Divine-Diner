@@ -10,8 +10,6 @@ using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-
-
 namespace Yarn.Unity.Example {
 	/// <summary>
 	/// runs Yarn commands and manages sprites for the Visual Novel example
@@ -44,12 +42,9 @@ namespace Yarn.Unity.Example {
         [Range(0.1f, 1.5f)] public float actorScale = 0.4f; // default size for actors
 
 
-
         // big lists to keep track of all instantiated objects
         List<AudioSource> sounds = new List<AudioSource>(); // big list of all instantiated sounds
 		List<Image> sprites = new List<Image>(); // big list of all instantianted sprites
-
-
 
 
 		// store sprite references for "actors" (characters, etc.)
