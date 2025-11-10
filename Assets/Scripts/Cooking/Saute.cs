@@ -9,6 +9,8 @@ public class Saute : MonoBehaviour
     [Header("Objects")]
     [SerializeField] Transform pan;
     [SerializeField] Slider progressBar;
+    [SerializeField] GameObject instructions;
+    [SerializeField] GameObject instuctArrows;
 
     [Header("Numerical values")]
     [SerializeField] int maxMoves = 16;
@@ -48,6 +50,9 @@ public class Saute : MonoBehaviour
         progressBar.value = 0;
         progressBar.gameObject.SetActive(true);
 
+        // instructions.SetActive(true);
+        // instuctArrows.SetActive(true);
+
         prevPosition = pan.position;
     }
 
@@ -77,14 +82,25 @@ public class Saute : MonoBehaviour
             currDistance += Mathf.Abs(prevPosition.x - pan.position.x);
             prevPosition = pan.position;
 
-            if(currDistance >= distance)
+            if (currDistance >= distance)
             {
                 moves++;
                 currDistance = 0;
             }
         }
 
-        Debug.Log("Timer: " + timer);
+        if (timer >= timeSection)
+        {
+            instructions.SetActive(true);
+            instuctArrows.SetActive(true);
+        }
+        else
+        {
+            instructions.SetActive(false);
+            instuctArrows.SetActive(false);
+        }
+
+        // Debug.Log("Timer: " + timer);
         if (timer < timeSection)
         {
             timer += Time.deltaTime;
@@ -103,6 +119,8 @@ public class Saute : MonoBehaviour
         {
             CookingManager.instance.Transition();
             progressBar.gameObject.SetActive(false);
+            instructions.SetActive(false);
+            instuctArrows.SetActive(false);
             this.gameObject.SetActive(false);
         }
     }

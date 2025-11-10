@@ -112,6 +112,7 @@ public class ChoppingController : MonoBehaviour
             PerformCutOnce();
         }
 
+        //WAS ADDED FOR FIRST THURSDAY - CAN DELETE LATER
         bool canCommit = !_hasCommitted && _current != null && _inArea2
                      && ((_cutsDone >= RequiredCuts));
         cuttingUI.SetCommitInteractable(canCommit);
