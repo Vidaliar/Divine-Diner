@@ -76,9 +76,7 @@ namespace Yarn.Unity.Example {
 			runner.AddCommandHandler<string>("Testing", Testing );
 			runner.AddCommandHandler<string>("PlayAudio", PlayAudio );
 
-            
             runner.AddCommandHandler<string>("StartCooking", StartCooking);
-
 
             // adds all Resources to internal lists / one big pile... it
             // will scan inside all subfolders too! note: but when

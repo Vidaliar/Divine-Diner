@@ -13,7 +13,7 @@ position: 0,0
 <<PlayAudio Romance>>
 
  
-// adds actor named "Ferrel" using sprite "Ferrel", placed in left-half + center of screen, with green text label
+// adds actor named "Aelius 3_4s" using sprite "Ferrel", placed in left-half + center of screen, with green text label
 <<Act Aelius "Aelius 3_4s" left center #674ea7>>
 <<wait 1>>
 <<PlayAudio Wind>>
