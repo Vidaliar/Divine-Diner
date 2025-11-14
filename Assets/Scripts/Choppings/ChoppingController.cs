@@ -23,6 +23,10 @@ public class ChoppingController : MonoBehaviour
     [SerializeField] private Material markerMaterial;                 // can leave it defult
     [SerializeField] private CuttingUIController cuttingUI;           // UI
 
+    // input cooldown
+    [SerializeField, Min(0f)] private float inputCooldown = 0.3f;
+    private float _lastInputTime = -999f;
+
     [SerializeField] private Color markerColor = new Color(0f, 1f, 0f, 1f);
     [SerializeField] private int markerOrderOffset = 100;
     [SerializeField] private float markerZOffset = -0.001f;
@@ -102,25 +106,38 @@ public class ChoppingController : MonoBehaviour
     {
         if (_isBusy) return;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && TryConsumeInput())
         {
             TryPickFromArea1();
         }
 
-        if (enableCutting && _cuttingActive && !_isBusy && Input.GetKeyDown(cutKey))
+        if (enableCutting && _cuttingActive && !_isBusy && Input.GetKeyDown(cutKey) && TryConsumeInput())
         {
             PerformCutOnce();
         }
 
         bool canCommit = !_hasCommitted && _current != null && _inArea2
-                     && ((_cutsDone >= RequiredCuts));
+                 && ((_cutsDone >= RequiredCuts));
         cuttingUI.SetCommitInteractable(canCommit);
-        if(canCommit)
+        if (canCommit)
         {
             cuttingUI.Show(false);
             CookingManager.instance.Transition();
             gameObject.SetActive(false);
         }
+    }
+
+    private bool TryConsumeInput()
+    {
+        if (inputCooldown <= 0f)
+            return true;
+
+        float now = Time.time;
+        if (now - _lastInputTime < inputCooldown)
+            return false;
+
+        _lastInputTime = now;
+        return true;
     }
 
     private void TryPickFromArea1()
