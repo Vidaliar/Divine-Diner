@@ -1,0 +1,143 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+public class CastManager : MonoBehaviour
+{
+    public static CastManager instance;
+    [SerializeField] GameObject castGO;
+    [SerializeField] float linePointDist = 0.3f;
+    [SerializeField] GameObject drawLineCollider;
+    [SerializeField] TMP_Text scoreText;
+    [SerializeField] float passingScore = 80f;
+    [SerializeField] int maxTries = 3;
+    LineRenderer line;
+    Vector2 lastLinePos = new Vector2(-100, -100);
+    Camera cam;
+    float score = 0;
+    CastSO cast;
+    List<GameObject> pathPoints;
+    float pointScore = 100f;
+    int numOutBounds = 0;
+    public bool pointsInBounds = true;
+    int numTries = 0;
+
+    void Start()
+    {
+        if (instance == null && instance != this)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+
+        line = this.GetComponent<LineRenderer>();
+        line.positionCount = 0;
+
+        cam = Camera.main;
+
+        GameObject newCast = Instantiate(castGO, Camera.main.transform.position, Quaternion.identity);
+
+        cast = newCast.GetComponent<CastSO>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Vector2 pos = cam.ScreenToWorldPoint(Input.mousePosition);
+        transform.position = pos;
+
+        // drawLineCollider.transform.position = pos;
+
+        //Draws the line while the mouse button is held down
+        if (Input.GetMouseButton(0))
+        {
+            if (Vector2.Distance(pos, lastLinePos) > linePointDist)
+            {
+                line.positionCount++;
+                int pointIndex = line.positionCount - 1;
+                line.SetPosition(pointIndex, pos);
+                lastLinePos = pos;
+
+                CheckPointBounds(pos);
+            }
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            //If after 3? tries -> next button/transition
+
+            pathPoints = cast.pointObjects;
+            if (pathPoints.Count > 0) pointScore = 100f / pathPoints.Count;
+
+            foreach (GameObject point in pathPoints)
+            {
+                if (point.GetComponent<PathPoint>().hit == false)
+                {
+                    score = 0;
+                    break;
+                }
+                else
+                {
+                    score += pointScore; 
+                }
+                // Debug.Log(point.GetComponent<PathPoint>().hit);
+            }
+
+            if (score >= passingScore)
+            {
+                scoreText.text = "Divine!";
+                scoreText.gameObject.SetActive(true);
+
+                CookingManager.instance.Transition();
+                gameObject.SetActive(false);
+                CookingManager.instance.cookingSuccess = true;
+            }
+            else
+            {
+                if(numTries >= maxTries)
+                {
+                    //Do 'skip cast' option
+                }
+                RetryCast();
+                // scoreText.text = "Dubious";
+                // CookingManager.instance.cookingSuccess = false;
+            }
+            
+        }
+    }
+
+    void CheckPointBounds(Vector3 pos)
+    {
+        //Use OnCollisionExit2D on cast 
+        //numOutBounds could be used either way to do a percentage or 'static' score system
+        if (pointsInBounds == false)
+        {
+            Debug.Log("Score deducted by 5");
+            score -= 5; //TEMP, MAYBE MAKE IT DEPEND ON numOutBounds
+            numOutBounds++;
+        }
+    }
+
+    public void SetBoundsBool(bool inBounds)
+    {
+        pointsInBounds = inBounds;
+    }
+
+    public void RetryCast()
+    {
+        line.positionCount = 0;
+        score = 0;
+        numTries++;
+        Debug.Log("Cast is reset. Num tries is " + numTries);
+
+        pathPoints = cast.pointObjects;
+        foreach (GameObject point in pathPoints)
+        {
+            point.GetComponent<PathPoint>().hit = false;
+        }
+    }
+}
