@@ -16,7 +16,7 @@ public struct SaveMeta
 public class SaveData
 {
     public int day;
-
+    public int episode;
     // ====== Future possible data to save ======
     // public string scriptId;
     // public string label;
