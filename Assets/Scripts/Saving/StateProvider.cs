@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public interface IStateProvider
 {
@@ -10,26 +11,27 @@ public interface IStateProvider
     public class StateProvider : MonoBehaviour, IStateProvider
     {
 
-        public int currentDay = 1;// min 0
+        public int currentDay = 1;     // min 0
+        public int currentEpisode = 1; // min 1
+
         public SaveData Capture()
         {
             return new SaveData
             {
                 day = currentDay,
-                // ====== future: more data to save ======
-                // scriptId = myStory.CurrentScriptId;
-                // label    = myStory.CurrentLabel;
-                // lineIndex= myStory.CurrentLineIndex;
-                // bgmId = myAudio.CurrentBgmId; bgmTime = myAudio.CurrentTime;
-                // flags = myFlow.GetFlags();
+                episode = currentEpisode,
+                sceneName = SceneManager.GetActiveScene().name,
             };
         }
+
         public IEnumerator Apply(SaveData data)
         {
-            if (data == null) yield break;
+            if (data == null)
+                yield break;
 
-            // restore day
+            // restore day & episode
             currentDay = data.day;
+            currentEpisode = data.episode;
 
             // ====== future: drive the story to the right position ======
             // myStory.LoadScript(data.scriptId);

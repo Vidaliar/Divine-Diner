@@ -5,7 +5,7 @@ using System.IO;
 using UnityEditor.VersionControl;
 using UnityEngine;
 
-public class SaveSystem : MonoBehaviour
+public class SaveSystem : MonoBehaviour, ISaveSystem
 {
     [Header("StateProvider")]
     public MonoBehaviour stateProviderBehaviour; 
