@@ -88,10 +88,69 @@ public class SaveSystem : MonoBehaviour, ISaveSystem
         return string.IsNullOrEmpty(s) ? "Default" : s;
     }
 
-    //private IEnumerator SaveRoutine(string profile, int slotIndex, string title, string subtitle)
-    //{
-        
-    //}
+    private IEnumerator SaveRoutine(string profile, int slotIndex, string title, string subtitle)
+    {
+        if (provider == null)
+        {
+            Debug.LogWarning("[SaveSystem] not set IStateProvider, unable to save");
+            yield break;
+        }
+
+        // make sure the path of profile
+        Directory.CreateDirectory(ProfileDir(profile));
+
+        // get data
+        var data = provider.Capture();
+
+        // generate the PNG
+        string thumbPath = ThumbPath(profile, slotIndex);
+        var hidden = new System.Collections.Generic.List<GameObject>();
+
+        if (!captureViaCamera && uiToHideTemporarily != null)
+        {
+            foreach (var go in uiToHideTemporarily)
+            {
+                if (go && go.activeSelf) { go.SetActive(false); hidden.Add(go); }
+            }
+        }
+
+        if (captureViaCamera)
+        {
+            if (captureCamera == null) Debug.LogWarning("[SaveSystem] captureViaCamera=true µ«Î´Ö¸¶¨ captureCamera");
+            var tex = ScreenShooter.CaptureCameraToTexture(
+                captureCamera ? captureCamera : Camera.main,
+                thumbWidth, thumbHeight
+            );
+            ScreenShooter.WritePNG(tex, thumbPath);
+            Destroy(tex);
+            yield return null;
+        }
+        else
+        {
+            // ScreenShooter make sure the path again
+            yield return ScreenShooter.CaptureScreen(thumbPath, thumbWidth, thumbHeight);
+        }
+
+        foreach (var go in hidden) go.SetActive(true);
+
+        // write JSON
+        var now = DateTime.Now;
+        var meta = new SaveMeta
+        {
+            title = string.IsNullOrEmpty(title) ? $"Day {data.day} Ep {data.episode}" : title,
+            subtitle = string.IsNullOrEmpty(subtitle) ? now.ToString("yyyy-MM-dd HH:mm") : subtitle,
+            thumbnailPath = thumbPath,
+            timeISO = now.ToString("o")
+        };
+
+        var file = new SaveFile { meta = meta, data = data };
+        string json = JsonUtility.ToJson(file, prettyPrint: true);
+
+        Directory.CreateDirectory(ProfileDir(profile));
+        File.WriteAllText(JsonPath(profile, slotIndex), json);
+
+        Debug.Log($"[SaveSystem] Saved: {profile}/slot{slotIndex} (day={data.day}, ep={data.episode})");
+    }
 
     private IEnumerator LoadRoutine(string profile, int slotIndex)
     {
