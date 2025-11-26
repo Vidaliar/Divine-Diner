@@ -52,5 +52,15 @@ public class SettingsManager : MonoBehaviour
         Current = new SettingsData();
     }
 
+    // Save current settings to disk (PlayerPrefs + JSON)
+    public void SaveToDisk()
+    {
+        string json = JsonUtility.ToJson(Current);
+        PlayerPrefs.SetString(PlayerPrefsKey, json);
+        PlayerPrefs.Save();
+    }
+
+    
+
     
 }
