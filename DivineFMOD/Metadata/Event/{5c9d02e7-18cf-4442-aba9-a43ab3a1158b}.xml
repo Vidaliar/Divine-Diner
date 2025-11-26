@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{5c9d02e7-18cf-4442-aba9-a43ab3a1158b}">
 		<property name="name">
-			<value>Grater</value>
+			<value>Grater (Don't Use)</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{afab6537-3cc9-4fce-ba71-a0b5ab4008d0}</destination>
+			<destination>{b38da990-5c7d-4874-b7ec-d987f32f4617}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{54e64c76-a1b2-4f78-aaa3-225b0faf55de}</destination>

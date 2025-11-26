@@ -15,6 +15,9 @@ public class CuttingUIController : MonoBehaviour
     [Header("Space Text")]
     [SerializeField] private TMP_Text pressSpaceText;     // "Press Space"
 
+    [Header("Commit Button")]
+    [SerializeField] private Button commitButton;
+
     private void OnValidate()
     {
         if (root == null) root = gameObject;
@@ -35,5 +38,10 @@ public class CuttingUIController : MonoBehaviour
 
         if (progressSlider != null) progressSlider.value = v;
         if (pressSpaceText != null) pressSpaceText.enabled = currentCuts < totalCuts;
+    }
+
+    public void SetCommitInteractable(bool canCommit)
+    {
+        if (commitButton != null) commitButton.interactable = canCommit;
     }
 }

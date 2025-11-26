@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+-Manager for the overall cooking minigame
+-Keeps track of the current step in the minigame
+    -Prep, cast, or if the minigame is complete
+-Transitions between each prep step, from the last prep to casting, and from casting to completion
+*/
 
+//Thought: use scriptable obj of recipe to contain prep ingredients and difficulty?, pass those into cookingManager?
 
-
-
-//use scriptable obj of recipe to contain prep ingredients and difficulty, pass those into cookingManager?
+//Enum to track which step the player is at for the overall recipe
 public enum CookStep
 {
     Prep,
@@ -27,13 +32,17 @@ public class CookingManager : MonoBehaviour
     [SerializeField] float returnDelay = 0.5f;
 
 
-    [SerializeField] List<GameObject> recipeManagers;
+    [Header("Managers")]
+    [SerializeField] List<GameObject> recipeManagers;   //Holds all of the required preparation managers
     [SerializeField] GameObject castManager;
+    [SerializeField] CameraMover cameraManager;
+
+    [Header("Objects")]
     [SerializeField] GameObject finalFood;
     int numTotalPrep;
-    int numPrep = 1;
+    int numPrep = 1;    //Keeps track of the current preparation step
     float worldCamHeight;
-    float worldCamLength;
+    float worldCamLength;   //Uses this to make the separation of steps be related to the user's screen size (I think)
     bool canActivateCast;
     public bool cookingSuccess;
 
@@ -59,7 +68,15 @@ public class CookingManager : MonoBehaviour
     //Waits for canActivateCast to be true to 'turn on' the cast
     void Update()
     {
-        if (canActivateCast)
+        if(canActivateCast && step == CookStep.Cast)
+        {
+            // if (Input.GetMouseButtonUp(0))
+            // {
+                castManager.SetActive(true);
+                canActivateCast = false;
+            // }
+        }
+        else if(step == CookStep.Cast)
         {
             if (Input.GetMouseButtonUp(0))
             {
@@ -80,6 +97,11 @@ public class CookingManager : MonoBehaviour
                     step = CookStep.Cast;
                     Camera.main.transform.position = new Vector3(worldCamLength * numPrep++, 0, -10);
                     canActivateCast = true;
+                    //castManager.SetActive(true);
+                    if(Input.GetMouseButton(0))
+                    {
+                        canActivateCast = false;
+                    }
                 }
                 else
                 {
@@ -108,6 +130,7 @@ public class CookingManager : MonoBehaviour
         }
     }
 
+    //Transitions back to the visual novel
     void FinishCooking()
     {
         if(cookingSuccess) VNReturn.NextNode = "Hermes_test_Success";  // 

@@ -10,10 +10,12 @@ public class CastSO : MonoBehaviour
     public List<GameObject> pointObjects; //{ get; private set; }
     LineRenderer line;
     Vector2 center;
+    EdgeCollider2D edgeColl;
     void Awake()
     {
         line = this.GetComponent<LineRenderer>();
         center = transform.position;
+        edgeColl = this.GetComponent<EdgeCollider2D>();
 
         pointObjects = new List<GameObject>();
         // pointObjects = new GameObject[points.Count];
@@ -29,6 +31,7 @@ public class CastSO : MonoBehaviour
 
         DrawCast();
         PlacePointMarkers();
+        UpdateEdgeCollider();
     }
 
     void DrawCast()
@@ -49,6 +52,17 @@ public class CastSO : MonoBehaviour
             newPathPoint.GetComponent<PathPoint>().pos = newPathPoint.transform.position;
             // Debug.Log("Path point added to pointObjects " + newPathPoint.name + " " + pointNumTEMP);
             pointObjects.Add(newPathPoint);
+        }
+    }
+
+    void UpdateEdgeCollider()
+    {
+        // edgeColl.Count = points.Count;
+        edgeColl.SetPoints(points);
+        for(int i=0; i<points.Count; i++)
+        {
+            // edgeColl.points[i] = points[i];
+            Debug.Log(edgeColl.points[i]);
         }
     }
 
