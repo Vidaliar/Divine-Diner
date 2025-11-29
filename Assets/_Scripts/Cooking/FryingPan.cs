@@ -17,6 +17,9 @@ public class FryingPan : MonoBehaviour
     bool flipping = false;  //Does or doesn't allow flipObj to be flipped
     int numFlips = 0;
 
+    bool inPause = false;
+    public CookingManager cManager;
+
     void Start()
     {
         startPos = flipObj.transform.position;
@@ -30,6 +33,9 @@ public class FryingPan : MonoBehaviour
 
     void Update()
     {
+        inPause = cManager.inPause;
+        if (inPause) return; // Makes sure game isn't paused before anything happens
+        
         //Checks if the timer to flip has gone up enough
         if (timer >= timeSec)
         {
@@ -59,6 +65,7 @@ public class FryingPan : MonoBehaviour
             CookingManager.instance.Transition();
             this.gameObject.SetActive(false);
         }
+        
     }
 
     //Fractionally moves up and rotates the flippable object like it's being flipped

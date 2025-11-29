@@ -34,6 +34,9 @@ public class Saute : MonoBehaviour
 
     bool canSaute = false;
 
+    bool inPause = false;
+    public CookingManager cManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,8 +57,11 @@ public class Saute : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        inPause = cManager.inPause;
+        if (inPause) return; // Makes sure game isn't paused before anything happens
+
         //Allows the player to start sauteing after the any previous prep
-        if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0))
         {
             canSaute = true;
         }

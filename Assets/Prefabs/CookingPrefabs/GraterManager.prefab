@@ -47,3 +47,6 @@ MonoBehaviour:
   grateObj: {fileID: 0}
   grater: {fileID: 0}
   totalGrates: 6
+  grateSpeed: 7
+  totalDistance: 25
+  cManager: {fileID: 0}

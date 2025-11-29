@@ -23,6 +23,9 @@ public class Grater : MonoBehaviour
     float currDistance = 0;
 
     bool topSide = false;   //A bool to track which side needs hit 
+
+    bool inPause = false;
+    public CookingManager cManager;
     void Start()
     {
         //grateObjStartPos = grateObj.transform.position;
@@ -41,6 +44,9 @@ public class Grater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        inPause = cManager.inPause;
+        if (inPause) return; // Makes sure game isn't paused before anything happens
+
         Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         //Checks if the player clicked on the grated object, if true -> start grating

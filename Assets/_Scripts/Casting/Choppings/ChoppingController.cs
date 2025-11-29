@@ -46,7 +46,8 @@ public class ChoppingController : MonoBehaviour
 
     private int RequiredCuts => Mathf.Max(0, _cutsTotal - 1);
 
-
+    bool inPause = false;
+    public CookingManager cManager;
     private struct MarkerRec
     {
         public LineRenderer lr;
@@ -101,6 +102,9 @@ public class ChoppingController : MonoBehaviour
     private void Update()
     {
         if (_isBusy) return;
+
+        inPause = cManager.inPause;
+        if (inPause) return; // Makes sure game isn't paused before anything happens
 
         if (Input.GetMouseButtonDown(0))
         {

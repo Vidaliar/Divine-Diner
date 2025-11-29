@@ -153,7 +153,11 @@ MonoBehaviour:
   castGO: {fileID: 2058617594159581717, guid: bc9feb3a25f830b41a308b3bd5b7dfb1, type: 3}
   linePointDist: 0.3
   drawLineCollider: {fileID: 0}
+  scoreText: {fileID: 0}
+  passingScore: 80
+  maxTries: 3
   pointsInBounds: 1
+  cManager: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
 --- !u!58 &5617295473184182152
 CircleCollider2D:
   m_ObjectHideFlags: 0

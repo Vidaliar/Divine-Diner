@@ -49,3 +49,4 @@ MonoBehaviour:
   particleSystem: {fileID: 0}
   movementOffset: 1
   totalShakes: 10
+  cManager: {fileID: 0}

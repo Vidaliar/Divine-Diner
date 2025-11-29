@@ -8,6 +8,10 @@ public class PauseMenu : MonoBehaviour
 {
     [Header("First class menu")]
     public GameObject level1Menu;
+    public GameObject BGBlock;
+    public Button resumeButton;
+    public Button saveLoadButton;
+    public Button settingsButton;
 
     [Header("secondary menu")]
     public GameObject saveMenu;
@@ -19,17 +23,24 @@ public class PauseMenu : MonoBehaviour
     [Header("MainMenu scene")]
     public string mainMenuSceneName = "MainMenu";
 
+    [Header("save/load menu")]
+    public Button saveExit;
+
     [Header("mouse?")]
     public bool manageCursor = true;
 
     [Header("fade")]
     public float fadeDuration = 0.15f;
 
+    [Header("Cooking?")]
+    public CookingManager cManager;
+
     private bool paused;
 
     void Awake()
     {
         // inactive all
+        if (BGBlock) BGBlock.SetActive(false);
         if (level1Menu) level1Menu.SetActive(false);
         if (saveMenu) saveMenu.SetActive(false);
         if (settingsMenu) settingsMenu.SetActive(false);
@@ -38,6 +49,13 @@ public class PauseMenu : MonoBehaviour
         paused = false;
     }
 
+    private void Start()
+    {
+        resumeButton.onClick.AddListener(OnClick_Resume);
+        saveLoadButton.onClick.AddListener(OnClick_OpenSaveMenu);
+        settingsButton.onClick.AddListener(OnClick_OpenSettings);
+        saveExit.onClick.AddListener(CloseSecondLevelAndReturnLevel1);
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -79,6 +97,8 @@ public class PauseMenu : MonoBehaviour
 
     private void PauseAndOpenLevel1()
     {
+        if (cManager) cManager.inPause = true;
+
         paused = true;
 
         Time.timeScale = 0f;
@@ -90,6 +110,7 @@ public class PauseMenu : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
 
+        if (BGBlock) BGBlock.SetActive(true);
         if (blurOverlay) blurOverlay.SetActive(true);
         if (level1Menu) { level1Menu.SetActive(true); level1Menu.transform.SetAsLastSibling(); }
         if (blurOverlay) blurOverlay.transform.SetAsFirstSibling();
@@ -99,8 +120,11 @@ public class PauseMenu : MonoBehaviour
 
     private void ResumeGame()
     {
+        if (cManager) cManager.inPause = false;
+
         paused = false;
 
+        if (BGBlock) BGBlock.SetActive(false);
         if (level1Menu) level1Menu.SetActive(false);
         if (saveMenu) saveMenu.SetActive(false);
         if (settingsMenu) settingsMenu.SetActive(false);

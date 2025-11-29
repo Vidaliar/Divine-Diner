@@ -22,6 +22,8 @@ public class Mixing : MonoBehaviour
 
     bool canMix = false;
 
+    bool inPause = false;
+    public CookingManager cManager;
     void Start()
     {
         controlsText.SetActive(true);
@@ -36,6 +38,9 @@ public class Mixing : MonoBehaviour
 
     void Update()
     {
+        inPause = cManager.inPause;
+        if (inPause) return; // Makes sure game isn't paused before anything happens
+
         //Sets previous position to initially be the mouse position on the first click
         if (Input.GetMouseButtonDown(0))
         {
