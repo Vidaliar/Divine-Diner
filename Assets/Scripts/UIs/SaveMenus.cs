@@ -50,4 +50,77 @@ public class SaveMenus : MonoBehaviour
         if (loadButton != null) loadButton.interactable = false;
         if (deleteButton != null) deleteButton.interactable = false;
     }
+
+    private void RegisterButtonEvents()
+    {
+        if (loadButton != null)
+        {
+            loadButton.onClick.RemoveListener(OnLoadClicked);
+            loadButton.onClick.AddListener(OnLoadClicked);
+        }
+
+        if (deleteButton != null)
+        {
+            deleteButton.onClick.RemoveListener(OnDeleteClicked);
+            deleteButton.onClick.AddListener(OnDeleteClicked);
+        }
+    }
+
+    public void RefreshUI(){ }
+    private void UnregisterButtonEvents()
+    {
+        if (loadButton != null)
+            loadButton.onClick.RemoveListener(OnLoadClicked);
+
+        if (deleteButton != null)
+            deleteButton.onClick.RemoveListener(OnDeleteClicked);
+    }
+
+    private void OnLoadClicked()
+    {
+        if (saveSystem == null)
+        {
+            Debug.LogWarning("[SaveMenus] Cannot load, SaveSystem reference is missing.");
+            return;
+        }
+
+        if (!saveSystem.HasSave(profileName, slotIndex))
+        {
+            Debug.LogWarning($"[SaveMenus] No save in slot {slotIndex} to load.");
+            return;
+        }
+
+        // Call into your SaveSystem to load this slot
+        saveSystem.Load(profileName, slotIndex);
+    }
+
+    private void OnDeleteClicked()
+    {
+        if (saveSystem == null)
+        {
+            Debug.LogWarning("[SaveMenus] Cannot delete, SaveSystem reference is missing.");
+            return;
+        }
+
+        if (!saveSystem.HasSave(profileName, slotIndex))
+        {
+            Debug.LogWarning($"[SaveMenus] No save in slot {slotIndex} to delete.");
+            return;
+        }
+
+        // Delete save file & thumbnail via SaveSystem
+        saveSystem.Delete(profileName, slotIndex);
+
+        // Refresh UI to show empty slot
+        RefreshUI();
+    }
+
+    private void OnDestroy()
+    {
+        if (loadedTexture != null)
+        {
+            Destroy(loadedTexture);
+            loadedTexture = null;
+        }
+    }
 }
