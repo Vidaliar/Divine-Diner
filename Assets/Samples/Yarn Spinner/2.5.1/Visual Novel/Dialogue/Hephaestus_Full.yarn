@@ -2,6 +2,10 @@
 title: Hephaestus_Intro
 ---
 Aelius: Hello! Welcome to the Divine Diner!
+<<<<<<< Updated upstream
+=======
+<<PlayMusic Hephaestus_Theme>>
+>>>>>>> Stashed changes
 
 <<Act "Hephaestus" "Hephaestus" "right" "bottom">>
 Hephaestus: Hrumph
@@ -65,13 +69,30 @@ Hephaestus: You cook, correct?
 Aelius: What would you like?
 Hephaestus: Let's see, how about Helios Steak?
 Aelius: Coming right up!
+<<<<<<< Updated upstream
 <<jump Hephaestus_Return>>
 
 // [cooking minigame transition]
+=======
+
+
+// [cooking minigame transition]
+<<StartCooking "HeliosSteak">>
+
+<<jump Hephaestus_Return>>
+>>>>>>> Stashed changes
 ===
 title: Hephaestus_Return
 ---
 // [cooking minigame success]
+<<<<<<< Updated upstream
+=======
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom">>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom">>
+<<PlayMusic Hephaestus_Theme>>
+
+>>>>>>> Stashed changes
 
 
 Hephaestus: Oh, yes I can taste the care you took. You have done well, Aelius.
@@ -93,6 +114,11 @@ Aelius: Not yet.
 Hephaestus: Don't listen to a thing either of them say, you can call me Hephaestus.
 Aelius: Alright, Hephaestus.
 Hephaestus: Hurmph.
+<<<<<<< Updated upstream
+=======
+<<Hide "Hermes">>
+Aelius: Thanks for playing Divine Diner!
+>>>>>>> Stashed changes
 
 // [Hephaestus walks away]
 ===

@@ -11,10 +11,17 @@ position: 0,0
 
 <<Testing testing>>
 //<<PlayAudio Romance>>
+<<<<<<< Updated upstream
 <<Music "Zeus_Theme_118BPM">>
 
  
 // adds actor named "Ferrel" using sprite "Ferrel", placed in left-half + bottom of screen, with green text label
+=======
+<<PlayMusic Zeus_Theme>>
+
+ 
+// adds actor named "Ferrel" using sprite "Ferrel", placed in left-half + center of screen, with green text label
+>>>>>>> Stashed changes
 <<Act Aelius "Aelius 3_4s" left bottom #674ea7>>
 <<wait 1>>
 //<<PlayAudio Wind>>
@@ -23,7 +30,11 @@ position: 0,0
 // adds actor "Howard" with sprite "Howard" off-screen right, with blue-ish text label
 <<Act "Zeus" "Zeus 3_4s" 1.25 bottom #bf9000>>
 
+<<<<<<< Updated upstream
 // animate Howard into new position in right-half + bottom, within 0.5 seconds
+=======
+// animate Howard into new position in right-half + center, within 0.5 seconds
+>>>>>>> Stashed changes
 <<Move Zeus right bottom 0.5>>
 <<wait  0.5>>
 
@@ -73,6 +84,7 @@ Zeus: [Neutral] Small talk is for small people! I hope you’re better at cookin
 <<Move Aelius -0.25 bottom 0.5>>
 
 <<wait  0.5>>
+<<<<<<< Updated upstream
 <<Move Zeus 1.25 bottom 0>>
 -> Do a good job cooking
 	<<set $cooking to true>>
@@ -81,6 +93,26 @@ Zeus: [Neutral] Small talk is for small people! I hope you’re better at cookin
 
 <<Move Aelius left bottom 0.5>>
 <<Move Zeus right bottom 0>>
+=======
+<<Move Zeus 1.25 center 0>>
+-> Cook
+	<<StartCooking MakenaTestScene>>
+	<<jump after_cooking>>
+
+===
+title: after_cooking
+
+---
+
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+<<PlayMusic Zeus_Theme>>
+
+
+//<<Move Aelius left center 0.5>>
+//<<Move Zeus right center 0.5>>
+>>>>>>> Stashed changes
 <<wait  0.5>>
 Aelius: [Neutral] Here’s your, uh, sandwich, sir. I mean- Lord Zeus.
 Zeus: [Annoyed] What is this?
@@ -122,13 +154,19 @@ Aelius: [Neutral] He said to remake his food, so-
 	Hestia: [Smile] Don’t beat yourself up. He’s a tough nut to crack.
 	Aelius: [Neutral] …Thank you.
 	Hestia: [Smile] Of course.
+<<<<<<< Updated upstream
 	<<StopAudio "Romance">>           // stop Zeus BGM first
 	<<StopMusic>>
 	<<PlayAudio "Wind">>              // transition SFX
+=======
+	//<<StopAudio "Romance">>           // stop Zeus BGM first
+	//<<PlayAudio "Wind">>              // transition SFX
+>>>>>>> Stashed changes
 	<<Fade "#000000" 0 1 0.6>>        // fade to black
 	<<wait 5>>                        // let Wind run for 5s total
-	<<StopAudio "Wind">>              // ensure Wind is off before Hermes
+	//<<StopAudio "Wind">>              // ensure Wind is off before Hermes
 	<<HideAll>>                       // clear Zeus/Hestia/etc.
+	//<<StopMuzic 1.25>>
 	<<jump Hermes_test>>
 
 <<endif>>
@@ -163,9 +201,15 @@ Aelius: [Neutral] He said to remake his food, so-
 		Zeus: [Neutral] Bah! There you go again, trying to make me listen to the dry stories you’ve concocted. Fine. I’ll find him myself. Leave me.
 		<<Move Aelius -0.25 bottom 0.5>>
 		<<HideAll>>
+<<<<<<< Updated upstream
 		<<StopAudioAll>>
 		<<StopMusic>> 
 		<<PlayAudio "Wind">>
+=======
+		//<<StopAudioAll>>
+		//<<PlayAudio "Wind">>
+		//<<StopMuzic 1.25>>
+>>>>>>> Stashed changes
 		<<jump Hermes_test>>
 	-> Stay silent
 		<i><b>Aelius places the dish down silently.</i></b>
@@ -187,14 +231,21 @@ Aelius: [Neutral] He said to remake his food, so-
 		Zeus: [Smile] all the bravery… 
 		Zeus: [Smile] all the… everything else.
 		Zeus: [Smile] Now then! I must eat! I’ve spent far too long speaking with you, mortal. Be off!
+<<<<<<< Updated upstream
 		<<Move Aelius -0.25 bottom 0.5>>
 		<<StopAudio "Romance">>           // stop Zeus BGM first
 		<<StopMusic>> 
 		<<PlayAudio "Wind">>              // transition SFX
+=======
+		<<Move Aelius -0.25 center 0.5>>
+		//<<StopAudio "Romance">>           // stop Zeus BGM first
+		//<<PlayAudio "Wind">>              // transition SFX
+>>>>>>> Stashed changes
 		<<Fade "#000000" 0 1 0.6>>        // fade to black
 		<<wait 5>>                        // let Wind run for 5s total
-		<<StopAudio "Wind">>              // ensure Wind is off before Hermes
+		//<<StopAudio "Wind">>              // ensure Wind is off before Hermes
 		<<HideAll>>                       // clear Zeus/Hestia/etc.
+		//<<StopMuzic 1.25>>
 		<<jump Hermes_test>>
 	-> Stand up for yourself
 		Aelius: [Neutral] You’re gonna have to make do with this.
@@ -208,15 +259,22 @@ Aelius: [Neutral] He said to remake his food, so-
 		Zeus: [Annoyed] I seem to have lost my appetite.
 		Aelius: [Smile] See you again soon?
 		Zeus: [Annoyed] For your sake, you should hope not.
+<<<<<<< Updated upstream
 		<<Move Zeus 1.25 bottom 0.5>>
 		
 		<<StopAudio "Romance">>           // stop Zeus BGM first
 		<<StopMusic>> 
 		<<PlayAudio "Wind">>              // transition SFX
+=======
+		<<Move Zeus 1.25 center 0.5>>
+		//<<StopAudio "Romance">>           // stop Zeus BGM first
+		//<<PlayAudio "Wind">>              // transition SFX
+>>>>>>> Stashed changes
 		<<Fade "#000000" 0 1 0.6>>        // fade to black
 		<<wait 5>>                        // let Wind run for 5s total
-		<<StopAudio "Wind">>              // ensure Wind is off before Hermes
+		//<<StopAudio "Wind">>              // ensure Wind is off before Hermes
 		<<HideAll>>                       // clear Zeus/Hestia/etc.
+		//<<StopMuzic 1.25>>
 		<<jump Hermes_test>>
 <<endif>>
 

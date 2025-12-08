@@ -123,6 +123,134 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1438039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1438041}
+  - component: {fileID: 1438040}
+  m_Layer: 0
+  m_Name: BGM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1438040
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438039}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 985e1e357f8b3bc43ac5cf25b1d3f673, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 2.102941
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1438041
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438039}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &15295424
 GameObject:
   m_ObjectHideFlags: 0
@@ -7958,6 +8086,62 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f70e86d06176dd540b16367dd716fc07, type: 3}
+--- !u!114 &1150214740927285221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230241769740800092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d88fe53a0dfa6f46b3550b2b3835bfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vnSceneName: ZeusBeat1
+  returnSuccessNode: after_cooking
+  returnFailNode: after_cooking
+  returnDelay: 0.5
+  recipeManagers:
+  - {fileID: 693082181}
+  - {fileID: 639286994}
+  - {fileID: 446797863}
+  castManager: {fileID: 1259822155}
+  cameraManager: {fileID: 0}
+  finalFood: {fileID: 2101268477}
+  cookingSuccess: 0
+--- !u!1 &1230241769740800092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1937840506950761969}
+  - component: {fileID: 1150214740927285221}
+  m_Layer: 0
+  m_Name: CookingManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1937840506950761969
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230241769740800092}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.74975, y: -0.54939795, z: -8.552391}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2079329836479321152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8149,87 +8333,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9cc835d868fbb4459a1a7c5e786b051, type: 3}
---- !u!1001 &6450387346178798667
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4855151639054567866, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.74975
-      objectReference: {fileID: 0}
-    - target: {fileID: 4855151639054567866, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.54939795
-      objectReference: {fileID: 0}
-    - target: {fileID: 4855151639054567866, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -8.552391
-      objectReference: {fileID: 0}
-    - target: {fileID: 4855151639054567866, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4855151639054567866, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4855151639054567866, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4855151639054567866, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4855151639054567866, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4855151639054567866, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4855151639054567866, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5230600300772385815, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
-      propertyPath: m_Name
-      value: CookingManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
-      propertyPath: finalFood
-      value: 
-      objectReference: {fileID: 2101268477}
-    - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
-      propertyPath: castManager
-      value: 
-      objectReference: {fileID: 1259822155}
-    - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
-      propertyPath: recipeManagers.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
-      propertyPath: recipeManagers.Array.data[0]
-      value: 
-      objectReference: {fileID: 693082181}
-    - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
-      propertyPath: recipeManagers.Array.data[1]
-      value: 
-      objectReference: {fileID: 639286994}
-    - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
-      propertyPath: recipeManagers.Array.data[2]
-      value: 
-      objectReference: {fileID: 446797863}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
 --- !u!1001 &6503299919921011967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8408,7 +8511,12 @@ SceneRoots:
   - {fileID: 1055363758}
   - {fileID: 1842554753}
   - {fileID: 515773705}
+<<<<<<< Updated upstream
   - {fileID: 6450387346178798667}
+=======
+  - {fileID: 1937840506950761969}
+  - {fileID: 4905455160297496622}
+>>>>>>> Stashed changes
   - {fileID: 1331888966}
   - {fileID: 1744581781}
   - {fileID: 579880204}
@@ -8416,3 +8524,4 @@ SceneRoots:
   - {fileID: 4905455160297496622}
   - {fileID: 2101268479}
   - {fileID: 2032581573}
+  - {fileID: 1438041}
