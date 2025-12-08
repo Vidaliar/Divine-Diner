@@ -1,6 +1,4 @@
-# Auto detect text files and perform LF normalization
-* text=auto
-
+# FMOD Mac bundles: keep LF
 *.bundle text eol=lf
 *.plist  text eol=lf
 
