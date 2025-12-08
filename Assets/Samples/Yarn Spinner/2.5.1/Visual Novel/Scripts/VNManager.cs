@@ -44,10 +44,6 @@ namespace Yarn.Unity.Example {
         [Header("Sprite UI settings")]
         [Range(0.1f, 1.5f)] public float actorScale = 0.4f; // default size for actors
 
-        [Header("Music")]
-        public AudioSource musicSource; // create one in the scene, set Loop = true, PlayOnAwake = false
-
-
 
 
         // big lists to keep track of all instantiated objects
@@ -90,12 +86,6 @@ namespace Yarn.Unity.Example {
 
 
             runner.AddCommandHandler<string>("StartCooking", StartCooking);
-
-            //NEW MUSIC COMMANDS
-            runner.AddCommandHandler<string>("Music", Music);
-            runner.AddCommandHandler("StopMusic", StopMusic);
-            runner.AddCommandHandler<string, float>("FadeMusicTo", FadeMusicTo);
-
 
 
             // adds all Resources to internal lists / one big pile... it
@@ -692,72 +682,9 @@ namespace Yarn.Unity.Example {
 		}
 
 
-<<<<<<< Updated upstream
-        
-        public void Music(string clipName)
-        {
-            var clip = Resources.Load<AudioClip>($"Audio/Music/{clipName}");
-            Debug.Log($"[VN] Music requested: {clipName}, source={(musicSource ? "ok" : "null")}");
-
-            if (!clip) { Debug.LogWarning($"[VN] Music clip '{clipName}' not found in Resources/Audio/Music."); return; }
-            if (musicSource == null) { Debug.LogWarning("[VN] musicSource not assigned."); return; }
-
-            musicSource.loop = true;
-            // if already playing the same clip, do nothing
-            if (musicSource.isPlaying && musicSource.clip == clip) return;
-
-            musicSource.clip = clip;
-            musicSource.volume = 1f;
-            musicSource.Play();
-        }
-
-        public void StopMusic()
-        {
-            if (musicSource != null) musicSource.Stop();
-        }
-
-        
-        public void FadeMusicTo(string clipName, float durationSeconds)
-        {
-            StartCoroutine(FadeMusicRoutine(clipName, durationSeconds));
-        }
-
-        private IEnumerator FadeMusicRoutine(string clipName, float duration)
-        {
-            if (musicSource == null) yield break;
-
-            var next = Resources.Load<AudioClip>($"Audio/Music/{clipName}");
-            if (!next) { Debug.LogWarning($"[VN] Music clip '{clipName}' not found."); yield break; }
-
-            // fade out current
-            float t = 0f, startVol = musicSource.volume;
-            while (t < duration)
-            {
-                t += Time.unscaledDeltaTime;
-                musicSource.volume = Mathf.Lerp(startVol, 0f, t / duration);
-                yield return null;
-            }
-
-            musicSource.Stop();
-            musicSource.clip = next;
-            musicSource.volume = 0f;
-            musicSource.loop = true;
-            musicSource.Play();
-
-            // fade in
-            t = 0f;
-            while (t < duration)
-            {
-                t += Time.unscaledDeltaTime;
-                musicSource.volume = Mathf.Lerp(0f, startVol, t / duration);
-                yield return null;
-            }
-            musicSource.volume = startVol;
-=======
         public void StartCooking(string sceneName)
         {
             SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
->>>>>>> Stashed changes
         }
 
         #endregion

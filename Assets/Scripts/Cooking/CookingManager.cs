@@ -33,8 +33,12 @@ public class CookingManager : MonoBehaviour
     [SerializeField] float returnDelay = 0.5f;
 
 
+    [Header("Managers")]
     [SerializeField] List<GameObject> recipeManagers;   //Holds all of the required preparation managers
     [SerializeField] GameObject castManager;
+    [SerializeField] CameraMover cameraManager;
+
+    [Header("Objects")]
     [SerializeField] GameObject finalFood;
     int numTotalPrep;
     int numPrep = 1;    //Keeps track of the current preparation step
@@ -65,7 +69,15 @@ public class CookingManager : MonoBehaviour
     //Waits for canActivateCast to be true to 'turn on' the cast
     void Update()
     {
-        if (canActivateCast)
+        if(canActivateCast && step == CookStep.Cast)
+        {
+            // if (Input.GetMouseButtonUp(0))
+            // {
+                castManager.SetActive(true);
+                canActivateCast = false;
+            // }
+        }
+        else if(step == CookStep.Cast)
         {
             if (Input.GetMouseButtonUp(0))
             {
@@ -86,6 +98,11 @@ public class CookingManager : MonoBehaviour
                     step = CookStep.Cast;
                     Camera.main.transform.position = new Vector3(worldCamLength * numPrep++, 0, -10);
                     canActivateCast = true;
+                    //castManager.SetActive(true);
+                    if(Input.GetMouseButton(0))
+                    {
+                        canActivateCast = false;
+                    }
                 }
                 else
                 {

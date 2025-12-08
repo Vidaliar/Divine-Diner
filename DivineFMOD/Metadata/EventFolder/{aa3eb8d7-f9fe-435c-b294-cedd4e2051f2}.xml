@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EventFolder" id="{aa3eb8d7-f9fe-435c-b294-cedd4e2051f2}">
+		<property name="name">
+			<value>Hermes SoundTrack</value>
+		</property>
+		<relationship name="folder">
+			<destination>{719537a7-2a5d-48eb-b038-368d52c09e80}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Mixing : MonoBehaviour
 {
     [SerializeField] GameObject controlsText;
-    [SerializeField] int totalMixes = 5;
+    [SerializeField] int totalMixes = 7;
     [SerializeField] Vector2 center = new Vector2(0, 0);
     [SerializeField] Slider progressBar;
 
@@ -19,6 +19,8 @@ public class Mixing : MonoBehaviour
     //Tracks the progress of current mix, once this reaches pi, mixCount++ and currentMix = 0
     float currentMix = 0;
     const float fullMixValue = Mathf.PI;
+
+    bool canMix = false;
 
     void Start()
     {
@@ -38,11 +40,12 @@ public class Mixing : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            prevPos = new Vector2(pos.x - center.x, pos.y-center.y).normalized;
+            prevPos = new Vector2(pos.x - center.x, pos.y - center.y).normalized;
+            canMix = true;
         }
 
         //Gets the current mouse position and calculates the angle difference between the current and prev
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && canMix)
             {
                 Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 CalculateRotation(pos);
@@ -80,8 +83,10 @@ public class Mixing : MonoBehaviour
         float centerCurrentX = 1 - currNormalized.x;
         float centerCurrentY = currNormalized.y;
 
-        float centerPrevX = 1 - prevPos.normalized.x;
-        float centerPrevY = prevPos.normalized.y;
+        // float centerPrevX = 1 - prevPos.normalized.x;
+        // float centerPrevY = prevPos.normalized.y;
+        float centerPrevX = 1 - prevPos.x;
+        float centerPrevY = prevPos.y;
 
         float currentRadians = Mathf.Atan2(centerCurrentY, centerCurrentX);
         float prevRadians = Mathf.Atan2(centerPrevY, centerPrevX);
@@ -89,6 +94,6 @@ public class Mixing : MonoBehaviour
         float radians = Mathf.Abs(currentRadians) - Mathf.Abs(prevRadians);
        
         currentMix += Mathf.Abs(radians);
-        prevPos = currentPos;
+        prevPos = currNormalized;
     }
 }

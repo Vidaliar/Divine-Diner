@@ -102,6 +102,7 @@ public class Saute : MonoBehaviour
         if(totalMoves >= maxMoves)
         {
             CookingManager.instance.Transition();
+            progressBar.gameObject.SetActive(false);
             this.gameObject.SetActive(false);
         }
     }

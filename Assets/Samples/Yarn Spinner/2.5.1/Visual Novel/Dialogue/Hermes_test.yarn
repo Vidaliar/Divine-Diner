@@ -1,13 +1,8 @@
-title: Hermes_test
+﻿title: Hermes_test
 ---
 <<Fade "#000000" 1 0 0.6>>        // fade back in
 //<<PlayAudio "Romance">>  
-<<<<<<< Updated upstream
-<<StopMusic>> 
-<<Music "Hermes_Theme_154BPM">>
-=======
 <<PlayMusic "Hermes_Theme>>
->>>>>>> Stashed changes
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom">>
 Aelius: Hey, welcome in.
@@ -31,8 +26,6 @@ Aelius: You got it. I'll do my best.
 
 title: Hermes_test_Success
 ---
-<<StopMusic>> 
-<<Music "Hermes_Theme_154BPM">>
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom">>
 <<PlayMusic "Hermes_Theme>>
@@ -59,29 +52,13 @@ Hermes: I really have to go. See you around!
 
 <<Hide "Hermes">>
 <<set $hermes_day1_done = true>>
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 <<jump Hephaestus_Intro>>
 
 <<wait 2>>
-<<jump Hephaestus_Intro>>
+<<QuitGame>>
 ===
 
 
-<<<<<<< Updated upstream
-title: Hermes_test_Fail
----
-Aelius: Sorry — that took longer than I hoped—
-Hermes: No time. I have to run.
-<<Hide "Hermes">>
-Aelius: Well, that was… something.
-<<set $hermes_day1_done = true>>
-
-<<jump Hephaestus_Intro>>
-===
-=======
 //title: Hermes_test_Fail
 //---
 //Aelius: Sorry — that took longer than I hoped—
@@ -90,7 +67,6 @@ Aelius: Well, that was… something.
 //Aelius: Well, that was… something.
 //<<set $hermes_day1_done = true>>
 //===
->>>>>>> Stashed changes
 
 
 

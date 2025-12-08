@@ -69,6 +69,24 @@ public class ChoppingController : MonoBehaviour
         if (inputCamera == null) Debug.LogWarning("[GameFlowController] inputCamera Not Set Yet.");
     }
 
+    //FOR FIRST THURSDAY 11/6 - DELETE ALL OF START FUNCTION LATER
+    private void Start()
+    {
+        if (inputCamera == null) return;
+
+        Vector3 world = inputCamera.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 pos2D = new Vector2(0, -1);
+
+        // use raycast to choose, also can work with LayerMask
+        RaycastHit2D hit = Physics2D.Raycast(pos2D, Vector2.zero, 0f, itemLayer);
+        if (hit.collider == null) return;
+
+        var item = hit.collider.GetComponentInParent<SelectableItems>();
+        if (item == null) return;
+
+        StartCoroutine(Co_MoveItemToArea2(item));
+    }
+
     private void OnValidate()
     {
         if (itemMoveDuration < 0.05f) itemMoveDuration = 0.05f;
@@ -92,6 +110,16 @@ public class ChoppingController : MonoBehaviour
         if (enableCutting && _cuttingActive && !_isBusy && Input.GetKeyDown(cutKey))
         {
             PerformCutOnce();
+        }
+
+        bool canCommit = !_hasCommitted && _current != null && _inArea2
+                     && ((_cutsDone >= RequiredCuts));
+        cuttingUI.SetCommitInteractable(canCommit);
+        if(canCommit)
+        {
+            cuttingUI.Show(false);
+            CookingManager.instance.Transition();
+            gameObject.SetActive(false);
         }
     }
 
@@ -210,9 +238,9 @@ public class ChoppingController : MonoBehaviour
         int currentPieces = Mathf.Clamp(_cutsDone + 1, 1, totalPieces);
         cuttingUI.UpdateProgress(currentPieces, totalPieces);
 
-        bool canCommit = !_hasCommitted && _current != null && _inArea2
-                     && (AllowCommitEarlyNow || (_cutsDone >= RequiredCuts));
-        cuttingUI.SetCommitInteractable(canCommit);
+        // bool canCommit = !_hasCommitted && _current != null && _inArea2
+        //              && (AllowCommitEarlyNow || (_cutsDone >= RequiredCuts));
+        // cuttingUI.SetCommitInteractable(canCommit);
     }
 
     private void PerformCutOnce()
