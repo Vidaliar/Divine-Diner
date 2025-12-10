@@ -17,6 +17,8 @@ public class SaveData
 {
     public int day;
     public int episode;
+    public string sceneName;
+
     // ====== Future possible data to save ======
     // public string scriptId;
     // public string label;
