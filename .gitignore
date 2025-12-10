@@ -95,3 +95,5 @@ fmod_editor.log
 /DivineFMOD/.cache
 /DivineFMOD/.unsaved
 /DivineFMOD/.user
+Assets/Plugins/FMOD/platforms/win/lib/x86_64/fmodstudioL.dll
+Assets/Plugins/FMOD/platforms/win/lib/x86_64/fmodstudioL.dll

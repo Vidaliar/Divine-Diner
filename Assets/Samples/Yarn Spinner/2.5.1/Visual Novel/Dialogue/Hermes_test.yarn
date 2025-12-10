@@ -1,7 +1,8 @@
 ﻿title: Hermes_test
 ---
 <<Fade "#000000" 1 0 0.6>>        // fade back in
-<<PlayAudio "Romance">>  
+//<<PlayAudio "Romance">>  
+<<PlayMusic "Hermes_Theme>>
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom">>
 Aelius: Hey, welcome in.
@@ -15,10 +16,10 @@ Hermes: Well hello then, Aelius. I'm Hermes.
 Hermes: But I assume you already guessed that.
 Aelius: I had my suspicions.
 Hermes: (Sarcastic) Very clever of you.
-Hermes: I'm in a hurry, kid — not much time to chat. Could you whip me up a hamburger? Quickly, please.
+Hermes: I'm in a hurry, kid — not much time to chat. Could you whip me up a Lotus Parfait? Quickly, please.
 Aelius: You got it. I'll do my best.
 
-<<StartCooking "MakenaTestScene">>
+<<StartCooking "LotusParfait">>
 
 <<jump Hermes_test_Success>>
 ===
@@ -27,8 +28,9 @@ title: Hermes_test_Success
 ---
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom">>
-Aelius: Got your hamburger ready as fast as I could.
-Aelius: Hopefully this goes better than the other two…
+<<PlayMusic "Hermes_Theme>>
+Aelius: Got your Lotus Parfait ready as fast as I could.
+Aelius: <i>(Hopefully this goes better than the other two…)</i>
 Aelius: Or at least better than Zeus. *sigh*
 Aelius: Hope you like it.
 
@@ -50,22 +52,21 @@ Hermes: I really have to go. See you around!
 
 <<Hide "Hermes">>
 <<set $hermes_day1_done = true>>
-
-Aelius: Thanks for playing Divine Diner!
+<<jump Hephaestus_Intro>>
 
 <<wait 2>>
 <<QuitGame>>
 ===
 
 
-title: Hermes_test_Fail
----
-Aelius: Sorry — that took longer than I hoped—
-Hermes: No time. I have to run.
-<<Hide "Hermes">>
-Aelius: Well, that was… something.
-<<set $hermes_day1_done = true>>
-===
+//title: Hermes_test_Fail
+//---
+//Aelius: Sorry — that took longer than I hoped—
+//Hermes: No time. I have to run.
+//<<Hide "Hermes">>
+//Aelius: Well, that was… something.
+//<<set $hermes_day1_done = true>>
+//===
 
 
 

@@ -19,8 +19,9 @@ namespace Yarn.Unity.Example {
     public class VNManager : DialogueViewBase
     {
 		[SerializeField] DialogueRunner runner;
+        [SerializeField] AudioSource bgm;
 
-		[Header("Assets"), Tooltip("you can manually assign various assets here if you don't want to use /Resources/ folder")]
+        [Header("Assets"), Tooltip("you can manually assign various assets here if you don't want to use /Resources/ folder")]
 		public List<Sprite> loadSprites = new List<Sprite>();
 		public List<AudioClip> loadAudio = new List<AudioClip>();
 
@@ -58,6 +59,8 @@ namespace Yarn.Unity.Example {
 
 		static Vector2 screenSize = new Vector2( 1280f, 720f); // needed for position calcuations, e.g. what does "left" mean?
 
+
+
 		void Awake () {
 			// manually add all Yarn command handlers, so that we don't
 			// have to type out game object names in Yarn scripts (also
@@ -81,7 +84,7 @@ namespace Yarn.Unity.Example {
 			runner.AddCommandHandler<string>("Testing", Testing );
 			runner.AddCommandHandler<string>("PlayAudio", PlayAudio );
 
-            
+
             runner.AddCommandHandler<string>("StartCooking", StartCooking);
 
 
@@ -95,12 +98,46 @@ namespace Yarn.Unity.Example {
 				var allAudioInResources = Resources.LoadAll<AudioClip>("");
 				loadAudio.AddRange( allAudioInResources );
 			}
-		}
 
-		#region YarnCommands
+            // VNManager.Awake()
+            runner.AddCommandHandler<string>("PlayMusic", name => {
+                var clip = Resources.Load<AudioClip>($"Audio/BGM/{name}");
+                if (clip == null) { Debug.LogError($"BGM not found: {name}"); return; }
+                var src = GetComponent<AudioSource>();          // or a serialized AudioSource field
+                src.loop = true; src.spatialBlend = 0f;
+                src.clip = clip; src.Play();
+            });
+            // Register commands (e.g., in Awake, after you have runner)
+            runner.AddCommandHandler("StopMuzic", () => StartCoroutine(FadeOutAndStop(0.5f)));     // default 0.5s fade
+            runner.AddCommandHandler<float>("StopMuzic", seconds => StartCoroutine(FadeOutAndStop(seconds)));
 
-		/// <summary>changes background image</summary>
-		public void DoSceneChange(string spriteName) {
+            
+
+            System.Collections.IEnumerator FadeOutAndStop(float seconds)
+            {
+                if (!bgm) bgm = GetComponent<AudioSource>();
+                if (!bgm || !bgm.isPlaying) yield break;
+
+                if (seconds <= 0f) { bgm.Stop(); yield break; }
+
+                float startVol = bgm.volume, t = 0f;
+                while (t < seconds)
+                {
+                    t += Time.unscaledDeltaTime;
+                    bgm.volume = Mathf.Lerp(startVol, 0f, t / seconds);
+                    yield return null;
+                }
+                bgm.Stop();
+                bgm.volume = startVol; // reset for next PlayMusic
+            }
+
+
+        }
+
+        #region YarnCommands
+
+        /// <summary>changes background image</summary>
+        public void DoSceneChange(string spriteName) {
 			bgImage.sprite = FetchAsset<Sprite>( spriteName );
 		}
 
@@ -644,13 +681,13 @@ namespace Yarn.Unity.Example {
 			return null; // didn't find any matching asset
 		}
 
-		
-		public void StartCooking(string MakenaTestScene)
-		{
-			SceneManager.LoadScene( MakenaTestScene );
-		}
 
-		#endregion
+        public void StartCooking(string sceneName)
+        {
+            SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        }
+
+        #endregion
     } // end class
 
 	/// <summary>
