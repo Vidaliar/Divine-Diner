@@ -197,6 +197,8 @@ Aelius: [Neutral] He said to remake his food, so-
 		<<wait  0.5>>
 		<<Move Aelius left bottom 0.5>>
 		<<wait 0.5>>
+	
+
 	-> So sorry about before, my king.
 		Aelius: [Neutral] So sorry about before, my king. We’ve fixed you a most proper meal.
 		Zeus: [Neutral]  Hmph! We'll see about that...
@@ -255,6 +257,7 @@ Aelius: [Neutral] He said to remake his food, so-
 		Zeus: [Annoyed] I seem to have lost my appetite.
 		Aelius: [Smile] See you again soon?
 		Zeus: [Annoyed] For your sake, you should hope not.
+		<<jump Hermes_test>>
 	-> Your new-and-improved munchies, my holiness.
 		Zeus: My... what?
 		Aelius: Food. It's your food.
