@@ -76,8 +76,10 @@ public class PauseMenu : MonoBehaviour
     // OnClicks
     public void OnClick_Resume()
     {
+        Debug.Log("PauseMenu: Resume clicked in scene " + gameObject.scene.name);
         ResumeGame();
     }
+
 
     public void OnClick_OpenSaveMenu()
     {

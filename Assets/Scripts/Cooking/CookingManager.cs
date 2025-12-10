@@ -136,7 +136,10 @@ public class CookingManager : MonoBehaviour
     //Transitions back to the visual novel
     void FinishCooking()
     {
+        Debug.Log("FinishCooking called, success = " + cookingSuccess +
+                  ", going to node " + (cookingSuccess ? returnSuccessNode : returnFailNode));
         VNReturn.NextNode = cookingSuccess ? returnSuccessNode : returnFailNode;
         SceneManager.LoadScene(vnSceneName);
     }
+
 }

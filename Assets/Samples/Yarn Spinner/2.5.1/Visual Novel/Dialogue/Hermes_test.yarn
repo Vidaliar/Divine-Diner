@@ -4,20 +4,36 @@
 //<<PlayAudio "Romance">>  
 <<PlayMusic "Hermes_Theme>>
 <<Scene "lounge bg draft 3">>
-<<Act "Aelius" "Aelius 3_4s" "left" "bottom">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 Aelius: Hey, welcome in.
 
-<<Act "Hermes" "Hermes 3_4" "right" "bottom">>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
 Hermes: Hi there, can I get a—
 
 Hermes: Wait, you're new here.
 Aelius: Yes, my name's Aelius, I'm the new cook. Hestia hired me. Today's my first day.
 Hermes: Well hello then, Aelius. I'm Hermes.
 Hermes: But I assume you already guessed that.
-Aelius: I had my suspicions.
-Hermes: (Sarcastic) Very clever of you.
-Hermes: I'm in a hurry, kid — not much time to chat. Could you whip me up a Lotus Parfait? Quickly, please.
-Aelius: You got it. I'll do my best.
+-> It's nice to meet you, sir.
+    Aelius: It's nice to meet you, sir.
+    Hermes: None of that formality needed! But it's nice to meet you too.
+    Hermes: I'm in a hurry, kid — not much time to chat. Could you whip me up a Lotus Parfait? Quickly, please.
+    Aelius: You got it. I'll do my best.
+-> I gathered, from the hat and sandals.
+    Aelius: I gathered, from the hat and sandals.
+    Hermes: Good catch. You're the observant type, eh?
+    Hermes: I'm in a hurry, kid — not much time to chat. Could you whip me up a Lotus Parfait? Quickly, please.
+    Aelius: You got it. I'll do my best.
+-> Obviously.
+    Aelius: Obviously.
+    Hermes: Not the one for small talk I take it? Suit yourself.
+    Hermes: I'm in a hurry, kid — not much time to chat. Could you whip me up a Lotus Parfait? Quickly, please.
+    Aelius: You got it. I'll do my best.
+-> I had my suspicions.
+    Aelius: I had my suspicions.
+    Hermes: (Sarcastic) <i>Very<i> clever of you.
+    Hermes: I'm in a hurry, kid — not much time to chat. Could you whip me up a Lotus Parfait? Quickly, please.
+    Aelius: You got it. I'll do my best.
 
 <<StartCooking "LotusParfait">>
 
@@ -27,30 +43,48 @@ Aelius: You got it. I'll do my best.
 title: Hermes_test_Success
 ---
 <<Scene "lounge bg draft 3">>
-<<Act "Aelius" "Aelius 3_4s" "left" "bottom">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<PlayMusic "Hermes_Theme>>
 Aelius: Got your Lotus Parfait ready as fast as I could.
 Aelius: <i>(Hopefully this goes better than the other two…)</i>
 Aelius: Or at least better than Zeus. *sigh*
 Aelius: Hope you like it.
 
-<<Act "Hermes" "Hermes 3_4" "right" "bottom">>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
 Hermes: Thanks, Aelius. Looks great!
 Hermes: Only wish I had time to sit and enjoy it.
-Hermes: But duty calls — messages to deliver. You get the gist.
+Hermes: But duty calls. Messages to deliver, cattle to steal. You get the jist.
 
-Aelius: …
-Hermes: Rough first day?
-Aelius: You could say that.
+Aelius: … Yeah
+Hermes: You're lookin' a litte down in the dumps. Rough first day?
+-> It is, but you don't have to worry about it...
+    Aelius: It is, but you don't have to worry about it..
+    Hermes: Don't sweat it.
+-> Yeah, it's not like I thought it would be.
+    Aelius: Yeah, it's not like I thought it would be.
+    Hermes: What'd you think it'd be?
+    Aelius: I figured the customers might be a bit more polite.
+-> It's none of your business.
+    Aelius: It's none of your business.
+    Hermes: Figured I might as well ask.
+    Aelius: It's fine, I'm fine.
+-> You could say that.
+    Aelius: You could say that.
+    Hermes: I know I'd be spot on.
 Hermes: Let me guess — Zeus stopped in.
 Aelius: How did you know?
-Hermes: Call it intuition. He's very good at ruffling newcomers' feathers.
-Aelius: I cooked his food to perfection; he still didn't seem to want me here.
-Hermes: Listen, Aelius: ignore him. Do your best. Show him you're up to snuff.
-Aelius: It's not that easy—
-Hermes: I really have to go. See you around!
+Hermes: Call it godly intuition. 
+Hermes: But honestly, it's easy to tell. He's very good at ruffling newcomers' feathers.
+Aelius: I just, well... He didn't seem to want me here. I cooked his food to perfection.
+Hermes: Aelius, right? Listen up. People like Zeus are just some honor and glory loving dudes.
+Hermes: Just ignore him. Do your best. Show him you're up to snuff.
+Aelius: It's not that easy-
+Hermes: I really gotta be going. Can't be late on these messages.
+Hermes: I'll see you around!
+Aelius: Well, that was... better, I guess.
 
 <<Hide "Hermes">>
+
 <<set $hermes_day1_done = true>>
 <<jump Hephaestus_Intro>>
 

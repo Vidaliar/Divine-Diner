@@ -4,31 +4,21 @@ title: Hephaestus_Intro
 Aelius: Hello! Welcome to the Divine Diner!
 <<PlayMusic Hephaestus_Theme>>
 
-<<Act "Hephaestus" "Hephaestus" "right" "bottom">>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 Hephaestus: Hrumph
 Aelius: And you are…?
 
 
 Hephaestus: Hephaestus.
-
--> How are you Hephaestus?
--> Good morning Hephaestus!
+Aelius: Good morning Hephaestus!
 
 Hephaestus: Hrumph.
 Aelius: Okay…
 Hephaestus: You're new.
-
--> It's nice to meet you! I'm Aelius (deference)
--> I'm Aelius, I'm looking for my father. (aggressive)
--> Aelius, at your service. (humorous)
+Aelius: It's nice to meet you! I'm Aelius.
 
 Hephaestus: Hrumph.
-
--> So, what would you like to eat? (deference)
--> Do you want to eat something or not? (aggressive)
--> Do you know what you want? (insightful)
--> Okay… So, would you like to get something to eat? (humorous)
-
+Aelius: So, what would you like to eat?
 Hephaestus: Hrm.
 Aelius: Okay…
 
@@ -36,21 +26,22 @@ Hephaestus: So Hestia hired you?
 Aelius: She did, I'm new to Olympus.
 Hephaestus: There must be something to you if she took a liking to a mortal.
 
--> What's wrong with being a mortal? (aggressive)
+-> What's wrong with being a mortal?
+	Aelius: What's wrong with being a mortal?
 	Hephaestus: Ha! Nothing I suppose.
 	Aelius: Okay…
 	Hephaestus: What brings you to Olympus, mortal?
 	Aelius: Part mortal actually, I'm looking for my dad.
 	<<jump h_after_choice>>
--> Probably my winning smile. (humorous)
+-> Probably my winning smile.
+	Aelius: Probably my winning smile.
 	Hephaestus: No, I think it must be something more than that…
 	Aelius: Oh, it was a joke. She's helping me look for my father who is one of the gods.
 	<<jump h_after_choice>>
--> I'm not mortal, mostly, I think… (deference)
+-> I'm not mortal, mostly, I think…
+	Aelius: I'm not mortal, mostly, I think...
 	Hephaestus: Interesting, how would you be so unsure?
 	Aelius: Well Hestia says my father is a god, but I'm not sure what that means.
-	<<jump h_after_choice>>
--> Part mortal, my dad is one of the gods. (insightful)
 	<<jump h_after_choice>>
 
 ===
@@ -77,21 +68,22 @@ title: Hephaestus_Return
 ---
 // [cooking minigame success]
 <<Scene "lounge bg draft 3">>
-<<Act "Aelius" "Aelius 3_4s" "left" "bottom">>
-<<Act "Hephaestus" "Hephaestus" "right" "bottom">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 <<PlayMusic Hephaestus_Theme>>
 
 
 
-Hephaestus: Oh, yes I can taste the care you took. You have done well, Aelius.
+Hephaestus: Oh, this has some bite to it, just the way I like it. You have done well, Aelius.
 
--> Oh, it was nothing.  (deference)
+-> Oh, it was nothing.
+	Aelius: Oh, it was nothing.
 	Hephaestus: Nothing? Nonsense, A craftsperson should take pride in their work!
--> Why thank you. (insightful)
+-> I know.
+	Aelius: I know.
 	Hephaestus: Exactly, A craftsperson should take pride in their work!
--> I know. (aggressive)
-	Hephaestus: Exactly, A craftsperson should take pride in their work!
--> Anytime. (humorous)
+-> Anytime.
+	Aelius: Anytime.
 	Hephaestus: Nothing? Nonsense, A craftsperson should take pride in their work!
 
 Aelius: Oh, um, thank you, Sir.
