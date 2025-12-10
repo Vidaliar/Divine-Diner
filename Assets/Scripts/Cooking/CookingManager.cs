@@ -46,6 +46,8 @@ public class CookingManager : MonoBehaviour
     bool canActivateCast;
     public bool cookingSuccess;
 
+    public bool inPause = false;
+
     void Start()
     {
         if (instance == null && instance != this)

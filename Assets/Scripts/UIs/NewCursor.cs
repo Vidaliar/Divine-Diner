@@ -13,15 +13,18 @@ public class NewMouse : MonoBehaviour
 
     [SerializeField] public Canvas canvas;
     public RectTransform rectTransform;
+    Image cursorImage;
+
     void Start()
     {
         Cursor.visible = false;
+        cursorImage = GetComponent<Image>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        debugShow();
+        stateSwitch();
         Vector2 mouse;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform,
                                                                                     Input.mousePosition,
@@ -30,15 +33,13 @@ public class NewMouse : MonoBehaviour
         transform.position = canvas.transform.TransformPoint(mouse) + offset;
     }
 
-    void debugShow()
+    void stateSwitch()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.L))
         {
-            Cursor.visible = true;
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            Cursor.visible = false;
+            // toggles state of default and custom cursor
+            Cursor.visible = !Cursor.visible;
+            cursorImage.enabled = !cursorImage.enabled;
         }
     }
 }

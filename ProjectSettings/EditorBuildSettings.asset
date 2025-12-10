@@ -12,19 +12,19 @@ EditorBuildSettings:
     path: Assets/Scenes/ZeusBeat1.unity
     guid: cbbb4dc38100a39418837b94b2b4ef86
   - enabled: 1
-    path: Assets/Scenes/MakenaTestScene.unity
+    path: Assets/Scenes/Test/MakenaTestScene.unity
     guid: 13cb13d655135b44a9f2cb6a2b6da9b1
   - enabled: 1
-    path: Assets/Scenes/Edison - InkySampleTestScene.unity
+    path: Assets/Scenes/Edison/Edison - InkySampleTestScene.unity
     guid: 5b664148909c9094694916913b4abed6
   - enabled: 1
-    path: Assets/Scenes/Edison - SampleTestScene.unity
+    path: Assets/Scenes/Edison/Edison - SampleTestScene.unity
     guid: 3460c990e8e19ae42bb315abf5fb361b
   - enabled: 1
-    path: Assets/Scenes/TestSettings.unity
+    path: Assets/Scenes/Test/TestSettings.unity
     guid: f0fe13839cb0a284eb7c8b048366d70e
   - enabled: 1
-    path: Assets/Scenes/TestNewGame.unity
+    path: Assets/Scenes/Test/TestNewGame.unity
     guid: 052fec5ff6aa047458fc5aead196e045
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e4832c56fbe1f64f8e9d21d1f4aeb53, type: 2}

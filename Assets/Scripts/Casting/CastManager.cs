@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Yarn.Unity.Example;
 
 public class CastManager : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class CastManager : MonoBehaviour
     int maxLines;
     int numLines = 0;
 
+    bool inPause = false;
+    public CookingManager cManager;
     void Start()
     {
         if (instance == null && instance != this)
@@ -53,6 +56,9 @@ public class CastManager : MonoBehaviour
     {
         Vector2 pos = cam.ScreenToWorldPoint(Input.mousePosition);
         transform.position = pos;
+
+        inPause = cManager.inPause;
+        if (inPause) return; // Makes sure game isn't paused before anything happens
 
         // drawLineCollider.transform.position = pos;
 

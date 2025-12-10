@@ -23,6 +23,9 @@ public class Rolling : MonoBehaviour
 
     bool canRoll = false;
     bool nextIsRight = true;
+
+    bool inPause = false;
+    public CookingManager cManager;
     void Start()
     {
         xSizeFrac = xSizeDiff / totalRolls;
@@ -31,6 +34,9 @@ public class Rolling : MonoBehaviour
 
     void Update()
     {
+        inPause = cManager.inPause;
+        if (inPause) return; // Makes sure game isn't paused before anything happens
+
         //Dough collider bounds
         float doughMinBound = dough.GetComponent<Collider2D>().bounds.min.x;
         float doughMaxBound = dough.GetComponent<Collider2D>().bounds.max.x;
