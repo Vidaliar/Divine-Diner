@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{a60df513-a0a8-4318-bb27-d61bc081c2c7}">
+		<property name="name">
+			<value>Typing</value>
+		</property>
+		<relationship name="folder">
+			<destination>{abec8350-4ebf-46b0-980f-29408bc97866}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{1d245e0c-c540-4f2a-8d4e-386aaefc51f2}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{1d245e0c-c540-4f2a-8d4e-386aaefc51f2}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Done</value>
+			<value>Typing</value>
+			<value>Faster</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
