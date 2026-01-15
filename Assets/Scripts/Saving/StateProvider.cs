@@ -11,8 +11,11 @@ public interface IStateProvider
     public class StateProvider : MonoBehaviour, IStateProvider
     {
 
-        public int currentDay = 1;     // min 0
-        public int currentEpisode = 1; // min 1
+        public int currentDay = 1;     // 1-7
+        public int currentEpisode = 1; // 1-4
+        public int zeus;
+        public int hermes;
+        public int hephaestus;
 
         public SaveData Capture()
         {
@@ -30,8 +33,12 @@ public interface IStateProvider
                 yield break;
 
             // restore day & episode
-            currentDay = data.day;
-            currentEpisode = data.episode;
+            currentDay = Mathf.Clamp(data.day, 1, 7);
+            currentEpisode = Mathf.Clamp(data.episode, 1, 4);
+
+            zeus = data.zeus;
+            hermes = data.hermes;
+            hephaestus = data.hephaestus;
 
             // ====== future: drive the story to the right position ======
             // myStory.LoadScript(data.scriptId);
