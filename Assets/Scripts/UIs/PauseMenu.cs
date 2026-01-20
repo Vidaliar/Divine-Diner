@@ -97,6 +97,11 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(mainMenuSceneName);
     }
 
+    public void GoingBack()
+    {
+        CloseSecondLevelAndReturnLevel1();
+    }
+
     private void PauseAndOpenLevel1()
     {
         if (cManager) cManager.inPause = true;
