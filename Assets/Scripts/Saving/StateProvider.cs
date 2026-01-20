@@ -3,44 +3,64 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public interface IStateProvider
+/// <summary>
+/// StateProvider
+/// ----------------------------------------------
+/// Purpose:
+///   Holds the current game progress and affection values
+///   and knows how to capture/apply them into/from SaveData.
+/// 
+/// Usage:
+///   1. Attach this script to some GameObject in the scene
+///      (e.g., "GameState").
+///   2. Assign this component to SaveSystem.stateProviderBehaviour
+///      in the inspector.
+///   3. Update currentDay/currentEpisode and affection values
+///      from your story/episode logic.
+///   4. SaveSystem will call Capture() / Apply() automatically
+///      when saving or loading.
+/// ----------------------------------------------
+/// </summary>
+public class StateProvider : MonoBehaviour, IStateProvider
 {
-    SaveData Capture();
-    IEnumerator Apply(SaveData data);
+    [Header("Story progress")]
+    public int currentDay = 1;     // 1-7
+    public int currentEpisode = 1; // 1-4
 
-    public class StateProvider : MonoBehaviour, IStateProvider
+    [Header("Affection placeholders")]
+    public int zeusAffinity;
+    public int hermesAffinity;
+    public int hephaestusAffinity;
+
+    public SaveData Capture()
     {
+        int clampedDay = Mathf.Clamp(currentDay, 1, 7);
+        int clampedEpisode = Mathf.Clamp(currentEpisode, 1, 4);
 
-        public int currentDay = 1;     // min 0
-        public int currentEpisode = 1; // min 1
-
-        public SaveData Capture()
+        return new SaveData
         {
-            return new SaveData
-            {
-                day = currentDay,
-                episode = currentEpisode,
-                sceneName = SceneManager.GetActiveScene().name,
-            };
-        }
+            day = clampedDay,
+            episode = clampedEpisode,
+            sceneName = SceneManager.GetActiveScene().name,
 
-        public IEnumerator Apply(SaveData data)
-        {
-            if (data == null)
-                yield break;
+            zeusAffinity = zeusAffinity,
+            hermesAffinity = hermesAffinity,
+            hephaestusAffinity = hephaestusAffinity
+        };
+    }
 
-            // restore day & episode
-            currentDay = data.day;
-            currentEpisode = data.episode;
+    public IEnumerator Apply(SaveData data)
+    {
+        if (data == null)
+            yield break;
 
-            // ====== future: drive the story to the right position ======
-            // myStory.LoadScript(data.scriptId);
-            // yield return myStory.JumpToLabelAsync(data.label);
-            // myStory.SetLineIndex(data.lineIndex);
-            // myAudio.PlayBGM(data.bgmId, atTime: data.bgmTime);
-            // myFlow.SetFlags(data.flags);
+        currentDay = Mathf.Clamp(data.day, 1, 7);
+        currentEpisode = Mathf.Clamp(data.episode, 1, 4);
 
-            yield return null;
-        }
+        zeusAffinity = data.zeusAffinity;
+        hermesAffinity = data.hermesAffinity;
+        hephaestusAffinity = data.hephaestusAffinity;
+
+        yield return null;
     }
 }
