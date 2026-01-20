@@ -37,7 +37,6 @@ public class StateProvider : MonoBehaviour, IStateProvider
         int clampedDay = Mathf.Clamp(currentDay, 1, 7);
         int clampedEpisode = Mathf.Clamp(currentEpisode, 1, 4);
 
-        return new SaveData
         {
             day = clampedDay,
             episode = clampedEpisode,
@@ -53,6 +52,7 @@ public class StateProvider : MonoBehaviour, IStateProvider
     {
         if (data == null)
             yield break;
+
 
         currentDay = Mathf.Clamp(data.day, 1, 7);
         currentEpisode = Mathf.Clamp(data.episode, 1, 4);
