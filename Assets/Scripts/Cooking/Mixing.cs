@@ -10,6 +10,7 @@ public class Mixing : MonoBehaviour
     [SerializeField] int totalMixes = 7;
     [SerializeField] Vector2 center = new Vector2(0, 0);
     [SerializeField] Slider progressBar;
+    [SerializeField] Animator spoonAnim;
 
     //Used to calculate the radial difference of the mouse each frame
     Vector2 prevPos;
@@ -18,6 +19,7 @@ public class Mixing : MonoBehaviour
 
     //Tracks the progress of current mix, once this reaches pi, mixCount++ and currentMix = 0
     float currentMix = 0;
+    float prevMix = 0;
     const float fullMixValue = Mathf.PI;
 
     bool canMix = false;
@@ -34,6 +36,8 @@ public class Mixing : MonoBehaviour
         progressBar.gameObject.SetActive(true);
 
         center = transform.position;
+
+        spoonAnim.speed = 0;
     }
 
     void Update()
@@ -54,6 +58,7 @@ public class Mixing : MonoBehaviour
             {
                 Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 CalculateRotation(pos);
+                CalculateSpeed();
 
                 //Updates the progress bar
                 progressBar.value = mixCount * fullMixValue + Mathf.Clamp(currentMix, 0, fullMixValue);
@@ -64,6 +69,7 @@ public class Mixing : MonoBehaviour
         {
             mixCount++;
             currentMix = 0;
+            prevMix = 0;
         }
 
         //If there's been enough mixes, transition to next step
@@ -77,7 +83,7 @@ public class Mixing : MonoBehaviour
     }
 
     //Honestly not sure if this is the best way to do this math, but it works lol
-    //Calculates the angle between the previous and current mouse position
+    //Calculates the angle between the previous and current mouse position, also determines the direction of rotation
     //Bug: This way technically allows the player to move the mouse up and down and eventually get it mixed
     void CalculateRotation(Vector2 currentPos)
     {
@@ -95,10 +101,27 @@ public class Mixing : MonoBehaviour
 
         float currentRadians = Mathf.Atan2(centerCurrentY, centerCurrentX);
         float prevRadians = Mathf.Atan2(centerPrevY, centerPrevX);
+        Debug.Log("Current rads: " + currentRadians + ", and prev are: " + prevRadians);
 
         float radians = Mathf.Abs(currentRadians) - Mathf.Abs(prevRadians);
+        Debug.Log("Radians" + radians);
        
+        prevMix = currentMix;
         currentMix += Mathf.Abs(radians);
+        // Debug.Log(prevMix + " and curr now is " + currentMix);
+
         prevPos = currNormalized;
+    }
+
+    void CalculateSpeed()
+    {
+        //Play speed of 1 = 2s animation = 2s to make 1 full rotation, so fullMixValue / Mathf.Abs(prevMix-currentMix)
+        //animState = spoonAnim.GetCurrentAnimatorState();
+        float fractionOfMix = (currentMix-prevMix) / fullMixValue;
+
+        spoonAnim.speed = 2*fractionOfMix / Time.deltaTime;
+        // Debug.Log("Speed is " + spoonAnim.speed);
+        //For 1s = 1.57 currentMix
+        //So 1s * Time.deltaTime = 1.57 * Time.deltaTime
     }
 }

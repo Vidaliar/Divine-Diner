@@ -1583,6 +1583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topOfSqueezeTool: {fileID: 1418470020}
   progressBar: {fileID: 940589786}
+  cManager: {fileID: 0}
 --- !u!4 &1346831676
 Transform:
   m_ObjectHideFlags: 0
@@ -1968,6 +1969,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1732704612 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
+  m_PrefabInstance: {fileID: 725715306}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d88fe53a0dfa6f46b3550b2b3835bfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1870370281
 GameObject:
   m_ObjectHideFlags: 0
@@ -2119,6 +2131,8 @@ MonoBehaviour:
   totalMixes: 5
   center: {x: 0, y: 0}
   progressBar: {fileID: 940589786}
+  spoonAnim: {fileID: 2054870108}
+  cManager: {fileID: 1732704612}
 --- !u!1 &1955449105
 GameObject:
   m_ObjectHideFlags: 0
@@ -2385,6 +2399,7 @@ MonoBehaviour:
   rollSpeed: 3
   xSizeDiff: 5
   ySizeDiff: 2
+  cManager: {fileID: 0}
 --- !u!4 &2054769876
 Transform:
   m_ObjectHideFlags: 0
@@ -2400,6 +2415,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1363924233}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2054870106 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7709597111054934197, guid: 4f03df35d9be80b4880ad70b6c1ed16f, type: 3}
+  m_PrefabInstance: {fileID: 3898507612236506890}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2054870108
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054870106}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 73597dba01d141b499cb84e1ca6137bf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2118982693
 GameObject:
   m_ObjectHideFlags: 0
@@ -2685,6 +2726,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4311930880223211046, guid: 4f03df35d9be80b4880ad70b6c1ed16f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4311930880223211046, guid: 4f03df35d9be80b4880ad70b6c1ed16f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9659259
+      objectReference: {fileID: 0}
+    - target: {fileID: 4311930880223211046, guid: 4f03df35d9be80b4880ad70b6c1ed16f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4311930880223211046, guid: 4f03df35d9be80b4880ad70b6c1ed16f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4311930880223211046, guid: 4f03df35d9be80b4880ad70b6c1ed16f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.258819
+      objectReference: {fileID: 0}
+    - target: {fileID: 4311930880223211046, guid: 4f03df35d9be80b4880ad70b6c1ed16f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -30
+      objectReference: {fileID: 0}
     - target: {fileID: 8335217820741031323, guid: 4f03df35d9be80b4880ad70b6c1ed16f, type: 3}
       propertyPath: m_Color.b
       value: 0.46600214
@@ -2700,7 +2765,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7709597111054934197, guid: 4f03df35d9be80b4880ad70b6c1ed16f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2054870108}
   m_SourcePrefab: {fileID: 100100000, guid: 4f03df35d9be80b4880ad70b6c1ed16f, type: 3}
 --- !u!4 &3898507612236506891 stripped
 Transform:
