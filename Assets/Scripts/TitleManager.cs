@@ -4,9 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
+
 public class TitleManager : MonoBehaviour
 {
     [SerializeField] public Button newGameButton, continueGameButton, exitGameButton, settingsButton;
+    [SerializeField] public SaveSystem saveSystem;
 
     void Start()
     {
@@ -14,6 +17,8 @@ public class TitleManager : MonoBehaviour
         continueGameButton.onClick.AddListener(ContinueGame);
         exitGameButton.onClick.AddListener(ExitGame);
         settingsButton.onClick.AddListener(settings);
+
+
     }
 
     
@@ -31,6 +36,38 @@ public class TitleManager : MonoBehaviour
     void ContinueGame()
     {
         // read most recent save file and load it
+        const string autoProfile = "AutoSave";
+        const int autoSlotIndex = 0;
+
+        if (saveSystem == null)
+        {
+            Debug.LogWarning("[TitleMenu] SaveSystem reference is missing. Cannot continue game.");
+            return;
+        }
+
+        if (!saveSystem.HasSave(autoProfile, autoSlotIndex))
+        {
+            Debug.Log("[TitleMenu] No auto-save found. Starting new game instead.");
+            NewGame();
+            return;
+        }
+
+        var file = saveSystem.ReadSaveFile(autoProfile, autoSlotIndex);
+        if (file == null || file.data == null)
+        {
+            Debug.LogWarning("[TitleMenu] Failed to read auto-save file. Starting new game instead.");
+            NewGame();
+            return;
+        }
+
+        string sceneToLoad = string.IsNullOrEmpty(file.data.sceneName)
+            ? "ZeusBeat1"
+            : file.data.sceneName;
+
+        GlobalLoadContext.Request(autoProfile, autoSlotIndex);
+
+        SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Single);
+
     }
 
     void ExitGame()
