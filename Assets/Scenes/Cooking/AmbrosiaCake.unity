@@ -2128,7 +2128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlsText: {fileID: 1870370281}
-  totalMixes: 5
+  totalMixes: 30
   center: {x: 0, y: 0}
   progressBar: {fileID: 940589786}
   spoonAnim: {fileID: 2054870108}

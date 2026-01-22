@@ -11,6 +11,8 @@ public class Mixing : MonoBehaviour
     [SerializeField] Vector2 center = new Vector2(0, 0);
     [SerializeField] Slider progressBar;
     [SerializeField] Animator spoonAnim;
+    [SerializeField] AnimationState clockwiseAnim;
+    [SerializeField] AnimationState reversedAnim;
 
     //Used to calculate the radial difference of the mouse each frame
     Vector2 prevPos;
@@ -23,6 +25,8 @@ public class Mixing : MonoBehaviour
     const float fullMixValue = Mathf.PI;
 
     bool canMix = false;
+
+    bool goingClockwise = true;
 
     bool inPause = false;
     public CookingManager cManager;
@@ -42,7 +46,7 @@ public class Mixing : MonoBehaviour
 
     void Update()
     {
-        inPause = cManager.inPause;
+        inPause = cManager.inPause;     // can be changed to be CookingManager.instance.inPause;
         if (inPause) return; // Makes sure game isn't paused before anything happens
 
         //Sets previous position to initially be the mouse position on the first click
@@ -108,20 +112,90 @@ public class Mixing : MonoBehaviour
        
         prevMix = currentMix;
         currentMix += Mathf.Abs(radians);
-        // Debug.Log(prevMix + " and curr now is " + currentMix);
-
         prevPos = currNormalized;
+
+        //Checking mixing direction
+        CheckMixDirection(prevRadians, currentRadians);
     }
 
-    void CalculateSpeed()
+    void CheckMixDirection(float prevRadians, float currentRadians)
+    {
+        if(prevRadians >= 0 && currentRadians < 0)
+        {
+            if(prevRadians > 1 && !goingClockwise)
+            {
+                SwitchAnimDirection();
+                goingClockwise = true;
+            }
+            else if(goingClockwise)
+            {
+                SwitchAnimDirection();
+                goingClockwise = false;
+            }
+        }
+        else if(prevRadians <= 0 && currentRadians > 0)
+        {
+            if(prevRadians < -1 && goingClockwise)
+            {
+                SwitchAnimDirection();
+                goingClockwise = false;
+            }
+            else if(!goingClockwise)
+            {
+                SwitchAnimDirection();
+                goingClockwise = true;
+            }
+        }
+        else
+        {
+            if(prevRadians < currentRadians && !goingClockwise)
+            {
+                SwitchAnimDirection();
+                goingClockwise = true;
+            }
+            else if(goingClockwise)
+            {
+                SwitchAnimDirection();
+                goingClockwise = false;
+            }
+        }
+    }
+
+    void CalculateSpeed()   //Maybe rename to be SpoonAnimation? 
     {
         //Play speed of 1 = 2s animation = 2s to make 1 full rotation, so fullMixValue / Mathf.Abs(prevMix-currentMix)
         //animState = spoonAnim.GetCurrentAnimatorState();
         float fractionOfMix = (currentMix-prevMix) / fullMixValue;
 
         spoonAnim.speed = 2*fractionOfMix / Time.deltaTime;
+        //Put if rewind animation or not here?
+
+        // spoonAnim.SetFloat("Speed", spoonAnim.speed);
+        // if(goingClockwise)
+        // {
+        //     spoonAnim.SetFloat("Speed", spoonAnim.speed*-1);
+        //     spoonAnim.Play("ReversedSpoonAnimation");
+        // }
+
+        // SwitchAnimDirection();
+
         // Debug.Log("Speed is " + spoonAnim.speed);
         //For 1s = 1.57 currentMix
         //So 1s * Time.deltaTime = 1.57 * Time.deltaTime
+    }
+
+    void SwitchAnimDirection()
+    {
+        float currAnimTime = spoonAnim.GetCurrentAnimatorStateInfo(0).normalizedTime % 1;
+
+        if(goingClockwise)  //Clockwise uses reversed animation
+        {
+            spoonAnim.Play("SpoonAnimation", 0, Mathf.Abs(1-currAnimTime));
+        }
+        else
+        {
+            spoonAnim.Play("ReversedSpoonAnimation", 0, Mathf.Abs(1-currAnimTime));
+        }
+        // Debug.Log("Anim time: "+currAnimtime);
     }
 }
