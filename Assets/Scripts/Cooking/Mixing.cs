@@ -126,11 +126,13 @@ public class Mixing : MonoBehaviour
             {
                 SwitchAnimDirection();
                 goingClockwise = true;
+                return;
             }
             else if(goingClockwise)
             {
                 SwitchAnimDirection();
                 goingClockwise = false;
+                return;
             }
         }
         else if(prevRadians <= 0 && currentRadians > 0)
@@ -139,11 +141,13 @@ public class Mixing : MonoBehaviour
             {
                 SwitchAnimDirection();
                 goingClockwise = false;
+                return;
             }
             else if(!goingClockwise)
             {
                 SwitchAnimDirection();
                 goingClockwise = true;
+                return;
             }
         }
         else
@@ -152,13 +156,17 @@ public class Mixing : MonoBehaviour
             {
                 SwitchAnimDirection();
                 goingClockwise = true;
+                return;
             }
-            else if(goingClockwise)
+            else if(prevRadians > currentRadians && goingClockwise)
             {
                 SwitchAnimDirection();
                 goingClockwise = false;
+                return;
             }
         }
+
+        Debug.Log("Going clockwise is " + goingClockwise);
     }
 
     void CalculateSpeed()   //Maybe rename to be SpoonAnimation? 
@@ -188,7 +196,7 @@ public class Mixing : MonoBehaviour
     {
         float currAnimTime = spoonAnim.GetCurrentAnimatorStateInfo(0).normalizedTime % 1;
 
-        if(goingClockwise)  //Clockwise uses reversed animation
+        if(goingClockwise)
         {
             spoonAnim.Play("SpoonAnimation", 0, Mathf.Abs(1-currAnimTime));
         }
