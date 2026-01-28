@@ -11,8 +11,6 @@ public class Mixing : MonoBehaviour
     [SerializeField] Vector2 center = new Vector2(0, 0);
     [SerializeField] Slider progressBar;
     [SerializeField] Animator spoonAnim;
-    [SerializeField] AnimationState clockwiseAnim;
-    [SerializeField] AnimationState reversedAnim;
 
     //Used to calculate the radial difference of the mouse each frame
     Vector2 prevPos;
@@ -82,6 +80,7 @@ public class Mixing : MonoBehaviour
             controlsText.SetActive(false);
             progressBar.gameObject.SetActive(false);
             CookingManager.instance.Transition();
+            spoonAnim.speed = 0;
             gameObject.SetActive(false);
         }
     }
