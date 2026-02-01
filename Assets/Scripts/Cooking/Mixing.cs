@@ -11,6 +11,7 @@ public class Mixing : MonoBehaviour
     [SerializeField] Vector2 center = new Vector2(0, 0);
     [SerializeField] Slider progressBar;
     [SerializeField] Animator spoonAnim;
+    [SerializeField] float spoonAnimSpeed = 2;
 
     //Used to calculate the radial difference of the mouse each frame
     Vector2 prevPos;
@@ -57,14 +58,18 @@ public class Mixing : MonoBehaviour
 
         //Gets the current mouse position and calculates the angle difference between the current and prev
         if (Input.GetMouseButton(0) && canMix)
-            {
-                Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                CalculateRotation(pos);
-                CalculateSpeed();
+        {
+            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            // Debug.Log(pos);
+            CalculateRotation(pos);
+            CalculateSpeed();
 
-                //Updates the progress bar
-                progressBar.value = mixCount * fullMixValue + Mathf.Clamp(currentMix, 0, fullMixValue);
-            }
+            //Updates the progress bar
+            progressBar.value = mixCount * fullMixValue + Mathf.Clamp(currentMix, 0, fullMixValue);
+        }
+
+        //Stops the spoon animation if the player lets go of the button
+        if(Input.GetMouseButtonUp(0)) {spoonAnim.speed = 0;}
 
         //Checks if the current mix has done a full rotation, updates mix count and current mix = 0
         if (currentMix >= fullMixValue || currentMix <= -fullMixValue)
@@ -93,24 +98,26 @@ public class Mixing : MonoBehaviour
         float currMinCenterx = currentPos.x - center.x;
         float currMinCentery = currentPos.y - center.y;
         Vector2 currNormalized = new Vector2(currMinCenterx, currMinCentery).normalized;
+        // Debug.Log(prevPos + " is prev and curr is " + currNormalized);
 
         float centerCurrentX = 1 - currNormalized.x;
         float centerCurrentY = currNormalized.y;
 
-        // float centerPrevX = 1 - prevPos.normalized.x;
-        // float centerPrevY = prevPos.normalized.y;
         float centerPrevX = 1 - prevPos.x;
         float centerPrevY = prevPos.y;
 
+        // Debug.Log("Current pos is " + centerCurrentX +","+centerCurrentY + " and prev is " + centerPrevX + "," + centerPrevY);
+
         float currentRadians = Mathf.Atan2(centerCurrentY, centerCurrentX);
         float prevRadians = Mathf.Atan2(centerPrevY, centerPrevX);
-        Debug.Log("Current rads: " + currentRadians + ", and prev are: " + prevRadians);
+        // Debug.Log("Current rads: " + currentRadians + ", and prev are: " + prevRadians);
 
         float radians = Mathf.Abs(currentRadians) - Mathf.Abs(prevRadians);
-        Debug.Log("Radians" + radians);
+        // Debug.Log("Radians" + radians);
        
         prevMix = currentMix;
         currentMix += Mathf.Abs(radians);
+        // Debug.Log("currentMix: " + currentMix + " and prev: " + prevMix);
         prevPos = currNormalized;
 
         //Checking mixing direction
@@ -165,7 +172,7 @@ public class Mixing : MonoBehaviour
             }
         }
 
-        Debug.Log("Going clockwise is " + goingClockwise);
+        // Debug.Log("Going clockwise is " + goingClockwise);
     }
 
     void CalculateSpeed()   //Maybe rename to be SpoonAnimation? 
@@ -174,19 +181,10 @@ public class Mixing : MonoBehaviour
         //animState = spoonAnim.GetCurrentAnimatorState();
         float fractionOfMix = (currentMix-prevMix) / fullMixValue;
 
-        spoonAnim.speed = 2*fractionOfMix / Time.deltaTime;
-        //Put if rewind animation or not here?
+        float animSpeed = spoonAnimSpeed*fractionOfMix / Time.deltaTime;
+        spoonAnim.speed = animSpeed;
+        // Debug.Log(animSpeed);
 
-        // spoonAnim.SetFloat("Speed", spoonAnim.speed);
-        // if(goingClockwise)
-        // {
-        //     spoonAnim.SetFloat("Speed", spoonAnim.speed*-1);
-        //     spoonAnim.Play("ReversedSpoonAnimation");
-        // }
-
-        // SwitchAnimDirection();
-
-        // Debug.Log("Speed is " + spoonAnim.speed);
         //For 1s = 1.57 currentMix
         //So 1s * Time.deltaTime = 1.57 * Time.deltaTime
     }
