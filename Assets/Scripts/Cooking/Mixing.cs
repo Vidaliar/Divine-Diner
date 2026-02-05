@@ -60,7 +60,8 @@ public class Mixing : MonoBehaviour
         if (Input.GetMouseButton(0) && canMix)
         {
             Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            // Debug.Log(pos);
+            Debug.Log(Input.mousePosition);
+            Debug.Log(pos);
             CalculateRotation(pos);
             CalculateSpeed();
 
