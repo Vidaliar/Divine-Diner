@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{ffd01488-3068-4965-813d-aa922cdc477c}">
+		<property name="assetPath">
+			<value>Grater 1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.50210416666666668</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{153d040d-58e5-4eb7-b164-64640d98d8fc}</destination>
+		</relationship>
+	</object>
+</objects>

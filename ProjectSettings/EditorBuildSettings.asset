@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/ZeusBeat1.unity
     guid: cbbb4dc38100a39418837b94b2b4ef86
   - enabled: 1
-    path: Assets/Scenes/Test/MakenaTestScene.unity
+    path: Assets/Scenes/Cooking/MakenaTestScene.unity
     guid: 13cb13d655135b44a9f2cb6a2b6da9b1
   - enabled: 1
     path: Assets/Scenes/Cooking/HeliosSteak.unity
