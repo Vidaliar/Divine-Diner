@@ -66,13 +66,14 @@ MonoBehaviour:
   - {x: 0, y: -0.32}
   - {x: 0, y: -0.18}
   - {x: 0.19, y: -0.1}
-  - {x: 0.376, y: -0.18}
+  - {x: 0.2, y: -0.18}
   - {x: 0.19, y: -0.1}
   - {x: 0, y: -0.18}
   - {x: 0, y: -0.42}
   - {x: 0.2, y: -0.45}
   - {x: 0.37, y: -0.38}
   pointObjects: []
+  numLines: 1
 --- !u!120 &1884332591767791261
 LineRenderer:
   serializedVersion: 2

@@ -45,8 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vnSceneName: ZeusBeat1
-  returnNode: Hermes_test_Success
+  returnSuccessNode: Hernes_test_Success
+  returnFailNode: Hermes_test_Fail
   returnDelay: 0.5
   recipeManagers: []
   castManager: {fileID: 0}
+  cameraManager: {fileID: 0}
   finalFood: {fileID: 0}
+  cookingSuccess: 0

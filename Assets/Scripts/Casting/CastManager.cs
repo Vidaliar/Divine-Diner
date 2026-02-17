@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Yarn.Unity.Example;
 
 public class CastManager : MonoBehaviour
 {
@@ -22,7 +23,11 @@ public class CastManager : MonoBehaviour
     int numOutBounds = 0;
     public bool pointsInBounds = true;
     int numTries = 0;
+    int maxLines;
+    int numLines = 0;
 
+    bool inPause = false;
+    public CookingManager cManager;
     void Start()
     {
         if (instance == null && instance != this)
@@ -42,6 +47,8 @@ public class CastManager : MonoBehaviour
         GameObject newCast = Instantiate(castGO, Camera.main.transform.position, Quaternion.identity);
 
         cast = newCast.GetComponent<CastSO>();
+
+        maxLines = cast.numLines;
     }
 
     // Update is called once per frame
@@ -49,6 +56,9 @@ public class CastManager : MonoBehaviour
     {
         Vector2 pos = cam.ScreenToWorldPoint(Input.mousePosition);
         transform.position = pos;
+
+        inPause = cManager.inPause;
+        if (inPause) return; // Makes sure game isn't paused before anything happens
 
         // drawLineCollider.transform.position = pos;
 
@@ -68,45 +78,49 @@ public class CastManager : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            //If after 3? tries -> next button/transition
-
-            pathPoints = cast.pointObjects;
-            if (pathPoints.Count > 0) pointScore = 100f / pathPoints.Count;
-
-            foreach (GameObject point in pathPoints)
+            numLines++;
+            if (numLines >= maxLines)
             {
-                if (point.GetComponent<PathPoint>().hit == false)
+                //If after 3? tries -> next button/transition
+
+                pathPoints = cast.pointObjects;
+                if (pathPoints.Count > 0) pointScore = 100f / pathPoints.Count;
+
+                foreach (GameObject point in pathPoints)
                 {
-                    score = 0;
-                    break;
+                    if (point.GetComponent<PathPoint>().hit == false)
+                    {
+                        score = 0;
+                        break;
+                    }
+                    else
+                    {
+                        score += pointScore;
+                    }
+                    // Debug.Log(point.GetComponent<PathPoint>().hit);
                 }
+
+                if (score >= passingScore)
+                {
+                    scoreText.text = "Divine!";
+                    scoreText.gameObject.SetActive(true);
+
+                    CookingManager.instance.Transition();
+                    gameObject.SetActive(false);
+                    CookingManager.instance.cookingSuccess = true;
+                }
+
                 else
                 {
-                    score += pointScore; 
+                    if (numTries >= maxTries)
+                    {
+                        //Do 'skip cast' option
+                    }
+                    RetryCast();
+                    // scoreText.text = "Dubious";
+                    // CookingManager.instance.cookingSuccess = false;
                 }
-                // Debug.Log(point.GetComponent<PathPoint>().hit);
             }
-
-            if (score >= passingScore)
-            {
-                scoreText.text = "Divine!";
-                scoreText.gameObject.SetActive(true);
-
-                CookingManager.instance.Transition();
-                gameObject.SetActive(false);
-                CookingManager.instance.cookingSuccess = true;
-            }
-            else
-            {
-                if(numTries >= maxTries)
-                {
-                    //Do 'skip cast' option
-                }
-                RetryCast();
-                // scoreText.text = "Dubious";
-                // CookingManager.instance.cookingSuccess = false;
-            }
-            
         }
     }
 
@@ -139,5 +153,12 @@ public class CastManager : MonoBehaviour
         {
             point.GetComponent<PathPoint>().hit = false;
         }
+    }
+
+    private void SkipCast()
+    {
+        //Do Hestia dialogue
+        //show 'next' button
+        //
     }
 }

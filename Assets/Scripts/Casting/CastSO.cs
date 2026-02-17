@@ -8,13 +8,14 @@ public class CastSO : MonoBehaviour
     [SerializeField] GameObject pathPointPref;
     public List<Vector2> points = new List<Vector2>();
     public List<GameObject> pointObjects; //{ get; private set; }
+    public int numLines = 1;
     LineRenderer line;
-    Vector2 center;
+    // Vector2 center;
     EdgeCollider2D edgeColl;
     void Awake()
     {
         line = this.GetComponent<LineRenderer>();
-        center = transform.position;
+        Vector2 center = transform.position;
         edgeColl = this.GetComponent<EdgeCollider2D>();
 
         pointObjects = new List<GameObject>();
@@ -34,6 +35,7 @@ public class CastSO : MonoBehaviour
         UpdateEdgeCollider();
     }
 
+    //For efficienty, consider combining DrawCast and UpdateEdgeCollider since they loop the same
     void DrawCast()
     {
         line.positionCount = points.Count;
@@ -61,7 +63,7 @@ public class CastSO : MonoBehaviour
         edgeColl.SetPoints(points);
         for(int i=0; i<points.Count; i++)
         {
-            // edgeColl.points[i] = points[i];
+            edgeColl.points[i] = points[i];
             Debug.Log(edgeColl.points[i]);
         }
     }

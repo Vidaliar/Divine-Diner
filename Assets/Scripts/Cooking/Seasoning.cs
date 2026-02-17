@@ -27,6 +27,8 @@ public class Seasoning : MonoBehaviour
     int shakeCount = 0;
     bool nextKeyIsD;    //Keeps track if the next key to press is D, if false it's A
 
+    bool inPause = false;
+    public CookingManager cManager;
     void Start()
     {
         controlsText.SetActive(true);
@@ -35,8 +37,7 @@ public class Seasoning : MonoBehaviour
 
     void Update()
     {
-<<<<<<< Updated upstream
-=======
+
         inPause = cManager.inPause;
         if (inPause) {
             if (seasoningStarted)
@@ -49,8 +50,6 @@ public class Seasoning : MonoBehaviour
                 seasoningInstance.setPaused(false);
         }
 
-
->>>>>>> Stashed changes
         //If A is pressed and next key is A: move shaker, shake count increments, and seasoning falls
         if (Input.GetKeyDown(KeyCode.A) && !nextKeyIsD)
         {

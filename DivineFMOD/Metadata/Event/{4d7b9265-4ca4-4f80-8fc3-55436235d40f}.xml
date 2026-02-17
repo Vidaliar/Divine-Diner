@@ -5,7 +5,7 @@
 			<value>Bell Ring</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{afab6537-3cc9-4fce-ba71-a0b5ab4008d0}</destination>
@@ -60,7 +60,7 @@
 	<object class="MarkerTrack" id="{ef2f036c-5e9b-4ae8-b266-75f2584a7550}" />
 	<object class="GroupTrack" id="{194275e8-ff74-4bac-abff-3cfe712f63c4}">
 		<relationship name="modules">
-			<destination>{d53bd0c2-eb89-457c-b54c-4e920a70aee2}</destination>
+			<destination>{8fae006c-6c71-4722-8630-2f6a60a2c85d}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{0b1639af-1d09-4715-8abe-5f79b96ab5fb}</destination>
@@ -68,7 +68,7 @@
 	</object>
 	<object class="Timeline" id="{7250e354-0e0b-4c97-b99d-cbe03e5fd652}">
 		<relationship name="modules">
-			<destination>{d53bd0c2-eb89-457c-b54c-4e920a70aee2}</destination>
+			<destination>{8fae006c-6c71-4722-8630-2f6a60a2c85d}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{81b670e7-00e4-4d61-bc24-2aa508c777f6}">
@@ -88,12 +88,15 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{b71ca8b9-271f-4f7c-b637-d30b2e40eabc}" />
-	<object class="SingleSound" id="{d53bd0c2-eb89-457c-b54c-4e920a70aee2}">
+	<object class="SingleSound" id="{8fae006c-6c71-4722-8630-2f6a60a2c85d}">
 		<property name="length">
-			<value>2.6109977324263038</value>
+			<value>1.5826510416666666</value>
+		</property>
+		<property name="volume">
+			<value>-16</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{b61f2ecc-5fea-447a-afec-f830c4ae2aac}</destination>
+			<destination>{80e3ccd6-a171-4103-8b02-8d3cef2bad74}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{0b1639af-1d09-4715-8abe-5f79b96ab5fb}">

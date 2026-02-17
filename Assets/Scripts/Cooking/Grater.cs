@@ -6,6 +6,7 @@ public class Grater : MonoBehaviour
 {
     [SerializeField] GameObject grateObj;
     [SerializeField] GameObject grater;
+    [SerializeField] GameObject grateInstructions;
     [SerializeField] int totalGrates;
     [SerializeField] float grateSpeed = 7;
     [SerializeField] float totalDistance = 25;
@@ -23,6 +24,9 @@ public class Grater : MonoBehaviour
     float currDistance = 0;
 
     bool topSide = false;   //A bool to track which side needs hit 
+
+    bool inPause = false;
+    public CookingManager cManager;
     void Start()
     {
         //grateObjStartPos = grateObj.transform.position;
@@ -36,11 +40,16 @@ public class Grater : MonoBehaviour
 
         //The direction along the grater
         grateDirection = new Vector2(0.23f, 0.97f);
+
+        grateInstructions.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
+        inPause = cManager.inPause;
+        if (inPause) return; // Makes sure game isn't paused before anything happens
+
         Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         //Checks if the player clicked on the grated object, if true -> start grating
@@ -105,9 +114,11 @@ public class Grater : MonoBehaviour
         //     gameObject.SetActive(false);
         // }
 
-        if(currDistance >= totalDistance)
+        //Checks if the distance grated is enough
+        if (currDistance >= totalDistance)
         {
             CookingManager.instance.Transition();
+            grateInstructions.SetActive(false);
             gameObject.SetActive(false);
         }
     }

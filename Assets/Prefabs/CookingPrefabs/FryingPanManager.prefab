@@ -46,4 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeSec: 5.5
   spaceText: {fileID: 0}
+  progressBar: {fileID: 0}
   flipObj: {fileID: 0}
+  cManager: {fileID: 0}

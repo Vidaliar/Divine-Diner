@@ -14,6 +14,8 @@ public class Squeezing : MonoBehaviour
     float timer;    //Keeps track of time passed
     Coroutine currentAnim;  //Keeps track of the current animation
 
+    bool inPause = false;
+    public CookingManager cManager;
     void Start()
     {
         progressBar.minValue = 0;
@@ -24,6 +26,9 @@ public class Squeezing : MonoBehaviour
 
     void Update()
     {
+        inPause = cManager.inPause;
+        if (inPause) return; // Makes sure game isn't paused before anything happens
+
         //Starts the squeezing animation
         if (Input.GetMouseButtonDown(0))
         {

@@ -10,20 +10,21 @@ position: 0,0
 <<Scene lounge>>
 
 <<Testing testing>>
-<<PlayAudio Romance>>
+//<<PlayAudio Romance>>
+<<PlayMusic Zeus_Theme>>
 
  
 // adds actor named "Ferrel" using sprite "Ferrel", placed in left-half + center of screen, with green text label
-<<Act Aelius "Aelius 3_4s" left center #674ea7>>
+<<Act Aelius "Aelius 3_4s" left bottom #674ea7>>
 <<wait 1>>
-<<PlayAudio Wind>>
+//<<PlayAudio Wind>>
 
 
 // adds actor "Howard" with sprite "Howard" off-screen right, with blue-ish text label
-<<Act "Zeus" "Zeus 3_4s" 1.25 center #bf9000>>
+<<Act "Zeus" "Zeus 3_4s" 1.25 bottom #bf9000>>
 
 // animate Howard into new position in right-half + center, within 0.5 seconds
-<<Move Zeus right center 0.5>>
+<<Move Zeus right bottom 0.5>>
 <<wait  0.5>>
 
 Aelius: [Smile] Oh, hello! Welcome to-
@@ -34,10 +35,14 @@ Aelius: [Neutral] Um, sorry-
 
 Zeus: [Neutral] Hold on... Are you the mortal?
 
--> Yes, I am!
+-> Yes, sir. I am.
 	Aelius: [Smile] Yes! Uh, it's my first-
--> Who are you?
-	Aelius: [Neutral] Yeah, I am. And who are-
+-> Yeah, I am. And who are you?
+	Aelius: [Neutral] Yeah, I am. And who-
+-> Oh, you know me?
+	Aelius: Oh, you know-
+-> No, I'm a new god.
+	Aelius: No, I'm a new-
 
 Zeus: [Annoyed] Oh, please, child. Don't try to make small talk. Do I look small to you?
 
@@ -45,7 +50,7 @@ Aelius: [Neutral] No...
 
 Zeus: [Neutral] Small talk is for small people! I hope you’re better at cooking than you are at talking, child.
 
--> My name is Aelius.
+-> The name is Aelius.
 	Aelius: [Neutral] My name is Aelius.
 	Zeus: [Angry] What did you just say to me?
 	Aelius: [Neutral] My name. So you don't have to keep calling me a child.
@@ -56,11 +61,23 @@ Zeus: [Neutral] Small talk is for small people! I hope you’re better at cookin
 	Zeus: [Neutral] Good, then. My usual.
 	Aelius: [Neutral] Your… usual?
 	Zeus: [Annoyed] <i>Zeus’s usual.</i>
-	Aelius: [Neutral] Uh-
-	Zeus: [Angry] <i>I am the king of the gods and I demand a ham and cheese sandwich!</i>
+	Aelius: [Neutral] I'm sorry, sir-
+	Zeus: [Angry] <i>I AM THE KING OF THE GODS AND I DEMAND A HAM AND CHEESE SANDWICH!</i>
 	Aelius: [Neutral] Of course, sir.
-	Zeus: [Annoyed] King.
-	Aelius: [Neutral] Sorry. Of course… King Zeus.
+-> Same, dude.
+	Aelius: Same, dude.
+	Zeus: Excuse you?
+	Aelius: Wassup?
+	Zeus: [Angry] Listen here, <i>child</i>. Don’t think for a moment that just because Hestia hired you, you can say what you please.
+	Zeus: [Angry] I do not <i>care</i> who hired you, or why.
+	Zeus: [Annoyed] If you speak to me like that again I’ll turn you into an ant and crush you under my heel.
+	Aelius: [Neutral]  …
+	Zeus: [Neutral] Good, then. My usual.
+	Aelius: Your huh?
+	Zeus: [Annoyed] <i>Zeus’s usual.</i>
+	Aelius: [Neutral] I'm sorry, sir-
+	Zeus: [Angry] <i>I AM THE KING OF THE GODS AND I DEMAND A HAM AND CHEESE SANDWICH!</i>
+	Aelius: [Neutral] Of course, sir.
 -> What can I get you?
 	Aelius: [Neutral] What can I get you?
 	Zeus: [Neutral] My usual.
@@ -69,41 +86,71 @@ Zeus: [Neutral] Small talk is for small people! I hope you’re better at cookin
 	Aelius: [Neutral] I’m sorry, sir-
 	Zeus: [Angry] <i>I am the king of the gods and I demand a ham and cheese sandwich!</i>
 	Aelius: [Neutral] Of course, sir.
-<<Move Aelius -0.25 center 0.5>>
+-> I assure you I am.
+	Aelius: I assure you I am.
+	Zeus: ...Hrumph
+	Zeus: Alright, then. Get me my usual.
+	Aelius: And... what would that be?
+	Zeus: [Annoyed] <i>Zeus’s usual.</i>
+	Aelius: [Neutral] I'm sorry, sir-
+	Zeus: [Angry] <i>I AM THE KING OF THE GODS AND I DEMAND A HAM AND CHEESE SANDWICH!</i>
+	Aelius: [Neutral] Of course, sir.
+
+<<Move Aelius -0.25 bottom 0.5>>
 
 <<wait  0.5>>
 <<Move Zeus 1.25 center 0>>
--> Do a good job cooking
-	<<set $cooking to true>>
--> Do a bad job cooking
-	<<set $cooking to false>>
+-> Cook
+	<<StartCooking MakenaTestScene>>
+	<<jump after_cooking>>
 
-<<Move Aelius left center 0.5>>
-<<Move Zeus right center 0>>
+===
+title: after_cooking
+
+---
+
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+<<PlayMusic Zeus_Theme>>
+
+
+//<<Move Aelius left center 0.5>>
+//<<Move Zeus right center 0.5>>
 <<wait  0.5>>
 Aelius: [Neutral] Here’s your, uh, sandwich, sir. I mean- Lord Zeus.
 Zeus: [Annoyed] What is this?
 
--> Is something wrong?
-	Aelius: [Neutral] Is something wrong?
-	Zeus: [Annoyed] I should be asking you that question, mortal! 
-	Zeus: [Angry] This meal is an insult to look at, and you expect me to eat it?
-	Aelius: [Neutral] I… I’m very sorry, I don’t-
-	Zeus: [Annoyed] I hope you are! Go, try again! This is unacceptable!
-	Aelius: [Neutral] Of course.
+
 -> It's food.
 	Aelius: [Neutral] It’s food.
-	Zeus: [Angry] This is not food, it is an insult!
+	Zeus: [Angry] This is not food, it is an <i>insult<i>!
 	Zeus: [Angry] I absolutely refuse to eat this! Go, try again!
+-> I'm so sorry.
+	Aelius: I'm so sorry.
+	Zeus: I hope you are! Go, try again! This is <i>unacceptable<i>! It is an insult to even look at it!
+-> Is something wrong?
+	Aelius: [Neutral] Is something wrong?
+	Zeus: [Annoyed] I should be asking <i>you<i> that question, child! 
+	Zeus: [Angry] This meal is an insult to look at, and you expect me to <i>eat<i> it?
+	Aelius: [Neutral] I… I’m very sorry, I don’t-
+	Zeus: [Annoyed] I hope you are! Go, try again! This is <i>unacceptable<i>!
+	Aelius: [Neutral] Of course.
+-> Just eat the damn food
+	Aelius: Just eat the damn food.
+	Zeus: WHO IN MY NAME DO YOU THINK YOU ARE?
+	Zeus: I WILL SEE YOU CAST FROM THE HEIGHTS OF OLYMPUS TO THE DEPTHS OF TARTARUS!
+	Zeus: GO! MAKE IT AGAIN! REMOVE YOURSELF AND YOUR INSULTING DISH FROM MY PRESENCE!
+	Aelius: Hmph.
 
 <<Move Aelius -0.25 center 0.5>>
 <<wait  0.5>>
 <<Move Zeus 1.25 center 0>>
 -> Back to the kitchen
 
-<<Act Hestia "Hestia 3_4s" right center #3d85c6>>
-<<Move Aelius -0.25 center 0>>
-<<Move Aelius left center 0.5>>
+<<Act Hestia "Hestia 3_4s" right bottom #3d85c6>>
+<<Move Aelius -0.25 bottom 0>>
+<<Move Aelius left bottom 0.5>>
 <<wait  0.5>>
 
 Hestia: [Neutral] Is everything alright?
@@ -121,12 +168,13 @@ Aelius: [Neutral] He said to remake his food, so-
 	Hestia: [Smile] Don’t beat yourself up. He’s a tough nut to crack.
 	Aelius: [Neutral] …Thank you.
 	Hestia: [Smile] Of course.
-	<<StopAudio "Romance">>           // stop Zeus BGM first
-	<<PlayAudio "Wind">>              // transition SFX
+	//<<StopAudio "Romance">>           // stop Zeus BGM first
+	//<<PlayAudio "Wind">>              // transition SFX
 	<<Fade "#000000" 0 1 0.6>>        // fade to black
 	<<wait 5>>                        // let Wind run for 5s total
-	<<StopAudio "Wind">>              // ensure Wind is off before Hermes
+	//<<StopAudio "Wind">>              // ensure Wind is off before Hermes
 	<<HideAll>>                       // clear Zeus/Hestia/etc.
+	//<<StopMuzic 1.25>>
 	<<jump Hermes_test>>
 
 <<endif>>
@@ -142,34 +190,38 @@ Aelius: [Neutral] He said to remake his food, so-
 	Aelius: [Neutral] I’ll do my best. Thanks, Hestia.
 
 	->Return to the dining area
-		<<Move Aelius -0.25 center 0.5>>
+		<<Move Aelius -0.25 bottom 0.5>>
 		<<wait  0.5>>
-		<<Move Hestia 1.25 center 0>>
-		<<Move Zeus right center 0>>
+		<<Move Hestia 1.25 bottom 0>>
+		<<Move Zeus right bottom 0>>
 		<<wait  0.5>>
-		<<Move Aelius left center 0.5>>
+		<<Move Aelius left bottom 0.5>>
 		<<wait 0.5>>
+	
 
-	-> Apologize
+	-> So sorry about before, my king.
 		Aelius: [Neutral] So sorry about before, my king. We’ve fixed you a most proper meal.
-		Zeus: [Neutral]  Ah, finally! 
+		Zeus: [Neutral]  Hmph! We'll see about that...
 		Aelius: [Smile] Please, enjoy.
-		Zeus: [Smile] This actually looks half-decent, mortal. You just might be fit to serve us gods in a few millennia.
-		Aelius: [Smile] Thank you.
-		Zeus: [Smile] Oh, child! I nearly forgot. Have you seen Ares come by here recently? I’ve been meaning to speak to him.
+		Zeus: [Smile] This... Hrgh... This will do.
+		Aelius: [Smile] Is there anything else I can do for you?
+		Zeus: I doubt it. If it takes you this long to provide a half-decent meal, I wouldn't trust you with...
+		Zeus: Hmm...
+		Zeus: [Smile] Actually, child... Have you seen my son around? Ares? I've been trying to get a hold of him.
 		Aelius: [Neutral] Um, no, sir. It’s my first day-
 		Zeus: [Neutral] Bah! There you go again, trying to make me listen to the dry stories you’ve concocted. Fine. I’ll find him myself. Leave me.
 		<<Move Aelius -0.25 center 0.5>>
 		<<HideAll>>
-		<<StopAudioAll>>
-		<<PlayAudio "Wind">>
+		//<<StopAudioAll>>
+		//<<PlayAudio "Wind">>
+		//<<StopMuzic 1.25>>
 		<<jump Hermes_test>>
 	-> Stay silent
 		<i><b>Aelius places the dish down silently.</i></b>
 		Zeus: [Neutral] Ah, finally.
 		Aelius: [Neutral] …
 		Zeus: [Smile] And some peace and quiet, as well! I’m glad to see you’ve found your place.
-		Zeus: [Neutral] You may just make it, child.
+		Zeus: [Neutral] Good. Stay there. Us Gods don't want to hear your life story.
 		Zeus: [Neutral] …
 		Zeus: [Neutral] You know, I’ve heard why you’re here…
 		Zeus: [Neutral] Looking for your father… Dreadful business.
@@ -183,16 +235,17 @@ Aelius: [Neutral] He said to remake his food, so-
 		Zeus: [Smile] all the wit… 
 		Zeus: [Smile] all the bravery… 
 		Zeus: [Smile] all the… everything else.
-		Zeus: [Smile] Now then! I must eat! I’ve spent far too long speaking with you, mortal. Be off!
+		Zeus: [Smile] Now then! I must eat! I’ve spent far too long speaking with you, child. Be off! Your gaunt figure disgusts me!
 		<<Move Aelius -0.25 center 0.5>>
-		<<StopAudio "Romance">>           // stop Zeus BGM first
-		<<PlayAudio "Wind">>              // transition SFX
+		//<<StopAudio "Romance">>           // stop Zeus BGM first
+		//<<PlayAudio "Wind">>              // transition SFX
 		<<Fade "#000000" 0 1 0.6>>        // fade to black
 		<<wait 5>>                        // let Wind run for 5s total
-		<<StopAudio "Wind">>              // ensure Wind is off before Hermes
+		//<<StopAudio "Wind">>              // ensure Wind is off before Hermes
 		<<HideAll>>                       // clear Zeus/Hestia/etc.
+		//<<StopMuzic 1.25>>
 		<<jump Hermes_test>>
-	-> Stand up for yourself
+	-> You're gonna have to make do with this.
 		Aelius: [Neutral] You’re gonna have to make do with this.
 		Zeus: [Annoyed] Excuse me?
 		Aelius: [Neutral] We’re not making your food again. This is all you’re getting.
@@ -204,13 +257,27 @@ Aelius: [Neutral] He said to remake his food, so-
 		Zeus: [Annoyed] I seem to have lost my appetite.
 		Aelius: [Smile] See you again soon?
 		Zeus: [Annoyed] For your sake, you should hope not.
+		<<jump Hermes_test>>
+	-> Your new-and-improved munchies, my holiness.
+		Zeus: My... what?
+		Aelius: Food. It's your food.
+		Zeus: Hrmph.
+		Zeus: ...
+		Zeus: This is...
+		Aelius: Pretty good, right?
+		Zeus: ...
+		Zeus: Serviceable
+		Aelius: Pretty good.
+		Zeus: Leave me.
+		Aelius: Okie dokie.
 		<<Move Zeus 1.25 center 0.5>>
-		<<StopAudio "Romance">>           // stop Zeus BGM first
-		<<PlayAudio "Wind">>              // transition SFX
+		//<<StopAudio "Romance">>           // stop Zeus BGM first
+		//<<PlayAudio "Wind">>              // transition SFX
 		<<Fade "#000000" 0 1 0.6>>        // fade to black
 		<<wait 5>>                        // let Wind run for 5s total
-		<<StopAudio "Wind">>              // ensure Wind is off before Hermes
+		//<<StopAudio "Wind">>              // ensure Wind is off before Hermes
 		<<HideAll>>                       // clear Zeus/Hestia/etc.
+		//<<StopMuzic 1.25>>
 		<<jump Hermes_test>>
 <<endif>>
 

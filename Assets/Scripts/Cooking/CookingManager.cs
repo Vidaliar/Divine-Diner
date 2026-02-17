@@ -28,7 +28,8 @@ public class CookingManager : MonoBehaviour
 
     [Header("Return to VN")]
     [SerializeField] string vnSceneName = "ZeusBeat1";          // <-- your VN scene name
-    [SerializeField] string returnNode = "Hermes_test_Success"; // <-- node to resume
+    [SerializeField] string returnSuccessNode = "Hephaestus_Return"; // <-- node to resume
+    [SerializeField] string returnFailNode = "Hephaestus_Return";
     [SerializeField] float returnDelay = 0.5f;
 
 
@@ -45,6 +46,8 @@ public class CookingManager : MonoBehaviour
     float worldCamLength;   //Uses this to make the separation of steps be related to the user's screen size (I think)
     bool canActivateCast;
     public bool cookingSuccess;
+
+    public bool inPause = false;
 
     void Start()
     {
@@ -133,9 +136,10 @@ public class CookingManager : MonoBehaviour
     //Transitions back to the visual novel
     void FinishCooking()
     {
-        if(cookingSuccess) VNReturn.NextNode = "Hermes_test_Success";  // 
-        else VNReturn.NextNode = "Hermes_test_Fail";
-        SceneManager.LoadScene("ZeusBeat1");        // your VN scene name
-
+        Debug.Log("FinishCooking called, success = " + cookingSuccess +
+                  ", going to node " + (cookingSuccess ? returnSuccessNode : returnFailNode));
+        VNReturn.NextNode = cookingSuccess ? returnSuccessNode : returnFailNode;
+        SceneManager.LoadScene(vnSceneName);
     }
+
 }
