@@ -25,11 +25,15 @@ public class Rolling : MonoBehaviour
     bool nextIsRight = true;
 
     bool inPause = false;
+
+    Bounds doughBounds;
+
     public CookingManager cManager;
     void Start()
     {
         xSizeFrac = xSizeDiff / totalRolls;
         ySizeFrac = ySizeDiff / totalRolls;
+        UpdateColliderBounds();
     }
 
     void Update()
@@ -38,8 +42,9 @@ public class Rolling : MonoBehaviour
         if (inPause) return; // Makes sure game isn't paused before anything happens
 
         //Dough collider bounds
-        float doughMinBound = dough.GetComponent<Collider2D>().bounds.min.x;
-        float doughMaxBound = dough.GetComponent<Collider2D>().bounds.max.x;
+        //Maybe use different data type to hold all maxY, minY, maxX, and minX, maybe make struct? Maybe Bounds
+        // float doughMinBound = dough.GetComponent<Collider2D>().bounds.min.x;
+        // float doughMaxBound = dough.GetComponent<Collider2D>().bounds.max.x;
 
         //Allows the player to start rolling after the any previous prep
         if (Input.GetMouseButtonDown(0))
@@ -79,5 +84,10 @@ public class Rolling : MonoBehaviour
             CookingManager.instance.Transition();
             this.gameObject.SetActive(false);
         }
+    }
+
+    void UpdateColliderBounds()
+    {
+        doughBounds = dough.GetComponent<Collider2D>().bounds;
     }
 }
