@@ -7079,6 +7079,7 @@ GameObject:
   - component: {fileID: 1221443830}
   - component: {fileID: 1221443829}
   - component: {fileID: 1221443828}
+  - component: {fileID: 1221443831}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7160,6 +7161,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1221443831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221443827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &1259822155 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3655290364208952275, guid: bb6e101dd0fe886408d1b2121e82a2b8, type: 3}
@@ -7355,6 +7370,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1331888966}
+  - component: {fileID: 1331888967}
   m_Layer: 0
   m_Name: SeasoningBurger
   m_TagString: Untagged
@@ -7381,6 +7397,37 @@ Transform:
   - {fileID: 1893125945}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1331888967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331888965}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -510763734
+      Data2: 1128362730
+      Data3: 1404601263
+      Data4: 775545250
+    Path: event:/Sound Effects/Salt Shaker
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 1
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1560734312
 GameObject:
   m_ObjectHideFlags: 0
@@ -13323,6 +13370,10 @@ PrefabInstance:
       propertyPath: particleSystem
       value: 
       objectReference: {fileID: 316914807}
+    - target: {fileID: 2227171333127669184, guid: f70e86d06176dd540b16367dd716fc07, type: 3}
+      propertyPath: seasoningLoopEvent
+      value: event:/Sound Effects/Salt Shaker
+      objectReference: {fileID: 0}
     - target: {fileID: 5305953788581515133, guid: f70e86d06176dd540b16367dd716fc07, type: 3}
       propertyPath: m_Name
       value: SeasoningManager
