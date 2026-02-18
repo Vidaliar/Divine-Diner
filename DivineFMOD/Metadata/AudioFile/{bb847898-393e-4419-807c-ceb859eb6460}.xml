@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{bb847898-393e-4419-807c-ceb859eb6460}">
+		<property name="assetPath">
+			<value>829193__j1987__ceramic_plate.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>28.000158730158731</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{153d040d-58e5-4eb7-b164-64640d98d8fc}</destination>
+		</relationship>
+	</object>
+</objects>

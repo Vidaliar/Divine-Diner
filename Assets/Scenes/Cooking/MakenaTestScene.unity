@@ -7397,6 +7397,7 @@ Transform:
   - {fileID: 1893125945}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  Assets/Scenes/Cooking/MakenaTestScene.unity
 --- !u!114 &1331888967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12267,6 +12268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d88fe53a0dfa6f46b3550b2b3835bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+Assets/Scenes/Cooking/MakenaTestScene.unity
 --- !u!1 &1694122179 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6250676573000166955, guid: c9cc835d868fbb4459a1a7c5e786b051, type: 3}
