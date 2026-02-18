@@ -37,6 +37,7 @@ public class Seasoning : MonoBehaviour
 
     void Update()
     {
+
         inPause = cManager.inPause;
         if (inPause) {
             if (seasoningStarted)
@@ -48,7 +49,6 @@ public class Seasoning : MonoBehaviour
             if (seasoningStarted)
                 seasoningInstance.setPaused(false);
         }
-
 
         //If A is pressed and next key is A: move shaker, shake count increments, and seasoning falls
         if (Input.GetKeyDown(KeyCode.A) && !nextKeyIsD)
