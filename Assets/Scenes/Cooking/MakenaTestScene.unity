@@ -7188,6 +7188,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1055363758}
     m_Modifications:
+    - target: {fileID: 84611544335838820, guid: 96dc987aaef555040ae21a98f6bc364a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904328868104911304, guid: 96dc987aaef555040ae21a98f6bc364a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3603180726515438166, guid: 96dc987aaef555040ae21a98f6bc364a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3691964879286343234, guid: 96dc987aaef555040ae21a98f6bc364a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7266,6 +7278,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3691964879286343234, guid: 96dc987aaef555040ae21a98f6bc364a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192578853383693807, guid: 96dc987aaef555040ae21a98f6bc364a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4714845527671537699, guid: 96dc987aaef555040ae21a98f6bc364a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5999694639205039815, guid: 96dc987aaef555040ae21a98f6bc364a, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9197844685957955428, guid: 96dc987aaef555040ae21a98f6bc364a, type: 3}
@@ -7397,7 +7421,6 @@ Transform:
   - {fileID: 1893125945}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  Assets/Scenes/Cooking/MakenaTestScene.unity
 --- !u!114 &1331888967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12268,7 +12291,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d88fe53a0dfa6f46b3550b2b3835bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-Assets/Scenes/Cooking/MakenaTestScene.unity
 --- !u!1 &1694122179 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6250676573000166955, guid: c9cc835d868fbb4459a1a7c5e786b051, type: 3}
@@ -13454,9 +13476,17 @@ PrefabInstance:
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1330857870117542145, guid: c98170a676690d9419624c55dad1599d, type: 3}
+      propertyPath: gratingLoopEvent
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1330857870117542145, guid: c98170a676690d9419624c55dad1599d, type: 3}
       propertyPath: grateInstructions
       value: 
       objectReference: {fileID: 986883148}
+    - target: {fileID: 1330857870117542145, guid: c98170a676690d9419624c55dad1599d, type: 3}
+      propertyPath: grateTickOneShotEvent
+      value: event:/Sound Effects/Grater Better
+      objectReference: {fileID: 0}
     - target: {fileID: 4452692628968254775, guid: c98170a676690d9419624c55dad1599d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -13866,6 +13896,14 @@ PrefabInstance:
       propertyPath: progressBar
       value: 
       objectReference: {fileID: 830946221}
+    - target: {fileID: 5414376714745611430, guid: 6f40e07919cc33241803fd8033892982, type: 3}
+      propertyPath: sizzleLoopEvent
+      value: event:/Sound Effects/Sizzle (Frying Something)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5414376714745611430, guid: 6f40e07919cc33241803fd8033892982, type: 3}
+      propertyPath: flipOneShotEvent
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5428769226634180636, guid: 6f40e07919cc33241803fd8033892982, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
