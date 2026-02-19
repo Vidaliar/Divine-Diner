@@ -6589,6 +6589,10 @@ PrefabInstance:
       propertyPath: progressBar
       value: 
       objectReference: {fileID: 72282171}
+    - target: {fileID: 5414376714745611430, guid: 6f40e07919cc33241803fd8033892982, type: 3}
+      propertyPath: sizzleLoopEvent
+      value: event:/Sound Effects/Sizzle (Frying Something)
+      objectReference: {fileID: 0}
     - target: {fileID: 5428769226634180636, guid: 6f40e07919cc33241803fd8033892982, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
