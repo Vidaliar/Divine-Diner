@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using FMODUnity; // <-- added
+
 public class ChoppingController : MonoBehaviour
 {
     [SerializeField] private Transform area1ViewPoint;
@@ -32,6 +34,12 @@ public class ChoppingController : MonoBehaviour
     [SerializeField] private float markerZOffset = -0.001f;
 
     [SerializeField] private Slicer slicer;
+
+    // FMOD
+    [Header("FMOD SFX")]
+    [FMODUnity.EventRef]
+    [SerializeField] private string chopOneShotEvent; // set in Inspector, ex: event:/Sound Effects/Chop
+
     private bool AllowCommitEarlyNow => (_verticalPhaseCuts > 0) && (_cutsDone >= _verticalPhaseCuts);
 
     private bool _isBusy = false;
@@ -49,7 +57,6 @@ public class ChoppingController : MonoBehaviour
     private readonly List<float> _hFractions = new(); // horizontal line positions in 0..1 (bottom->top)
 
     private int RequiredCuts => Mathf.Max(0, _cutsTotal - 1);
-
 
     private struct MarkerRec
     {
@@ -81,7 +88,6 @@ public class ChoppingController : MonoBehaviour
         Vector3 world = inputCamera.ScreenToWorldPoint(Input.mousePosition);
         Vector2 pos2D = new Vector2(0, -1);
 
-        // use raycast to choose, also can work with LayerMask
         RaycastHit2D hit = Physics2D.Raycast(pos2D, Vector2.zero, 0f, itemLayer);
         if (hit.collider == null) return;
 
@@ -148,7 +154,6 @@ public class ChoppingController : MonoBehaviour
         Vector3 world = inputCamera.ScreenToWorldPoint(Input.mousePosition);
         Vector2 pos2D = new Vector2(world.x, world.y);
 
-        // use raycast to choose, also can work with LayerMask
         RaycastHit2D hit = Physics2D.Raycast(pos2D, Vector2.zero, 0f, itemLayer);
         if (hit.collider == null) return;
 
@@ -170,17 +175,14 @@ public class ChoppingController : MonoBehaviour
         if (_current != null && _current != item)
             _current.MarkSelected(false);
 
-        // choose
         item.MarkSelected(true);
 
-        // camera move by point placed
         if (cameraController != null && area2ViewPoint != null)
             yield return cameraController.MoveTo(area2ViewPoint);
 
         _inArea2 = true;
         UpdateCuttingUI();
 
-        // items move
         if (targetSpotInArea2 != null)
             yield return StartCoroutine(Co_SmoothMove(item.transform, targetSpotInArea2.position, itemMoveDuration, itemMoveEase));
 
@@ -217,6 +219,7 @@ public class ChoppingController : MonoBehaviour
         if (cuttingUI != null)
             cuttingUI.Show(false);
     }
+
     private void BeginCuttingSession(SelectableItems item)
     {
         _cutsTotal = Mathf.Max(1, item.TotalSlices);
@@ -255,10 +258,6 @@ public class ChoppingController : MonoBehaviour
         int totalPieces = Mathf.Max(1, _cutsTotal);
         int currentPieces = Mathf.Clamp(_cutsDone + 1, 1, totalPieces);
         cuttingUI.UpdateProgress(currentPieces, totalPieces);
-
-        // bool canCommit = !_hasCommitted && _current != null && _inArea2
-        //              && (AllowCommitEarlyNow || (_cutsDone >= RequiredCuts));
-        // cuttingUI.SetCommitInteractable(canCommit);
     }
 
     private void PerformCutOnce()
@@ -267,6 +266,10 @@ public class ChoppingController : MonoBehaviour
         if (_cutsDone >= RequiredCuts) return;
 
         _cutsDone++;
+
+        // FMOD: play one chop per successful cut
+        PlayChopSfx();
+
         int cutIndex = _cutsDone; // 1-based
 
         if (cutIndex <= _verticalPhaseCuts)
@@ -290,6 +293,14 @@ public class ChoppingController : MonoBehaviour
             _cuttingActive = false;
 
         UpdateCuttingUI();
+    }
+
+    private void PlayChopSfx()
+    {
+        if (string.IsNullOrEmpty(chopOneShotEvent)) return;
+
+        Vector3 pos = _current != null ? _current.transform.position : transform.position;
+        RuntimeManager.PlayOneShot(chopOneShotEvent, pos);
     }
 
     private void DrawVerticalMarkerAtFraction(SelectableItems item, float fraction01)
@@ -364,28 +375,6 @@ public class ChoppingController : MonoBehaviour
         }
         return _runtimeMarkerMat;
     }
-    private void RefreshMarkersSorting()
-    {
-        if (_markers.Count == 0) return;
-        for (int i = 0; i < _markers.Count; i++)
-        {
-            var m = _markers[i];
-            if (m.lr == null || m.targetSr == null) continue;
-
-            m.lr.sortingLayerID = m.targetSr.sortingLayerID;
-            m.lr.sortingOrder = m.targetSr.sortingOrder + markerOrderOffset;
-
-            var pos0 = m.lr.GetPosition(0);
-            var pos1 = m.lr.GetPosition(1);
-            float z = m.targetSr.transform.position.z + markerZOffset;
-            if (!Mathf.Approximately(pos0.z, z) || !Mathf.Approximately(pos1.z, z))
-            {
-                pos0.z = z; pos1.z = z;
-                m.lr.SetPosition(0, pos0);
-                m.lr.SetPosition(1, pos1);
-            }
-        }
-    }
 
     public void CommitSlice()
     {
@@ -397,13 +386,11 @@ public class ChoppingController : MonoBehaviour
 
         ClearMarkers();
 
-        // Vertical final slicing with N pieces (TotalSlices)
         slicer.SliceGridItem(_current, _vFractions, _hFractions);
 
         _hasCommitted = true;
-        UpdateCuttingUI(); // button becomes non-interactable after commit
+        UpdateCuttingUI();
     }
-
 
     private void ClearMarkers()
     {
