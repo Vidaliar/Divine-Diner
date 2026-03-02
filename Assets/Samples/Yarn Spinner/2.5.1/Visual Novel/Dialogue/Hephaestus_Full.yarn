@@ -95,7 +95,8 @@ Hephaestus: Don't listen to a thing either of them say, you can call me Hephaest
 Aelius: Alright, Hephaestus.
 Hephaestus: Hurmph.
 <<Hide "Hermes">>
-Aelius: Thanks for playing Divine Diner!
 
 // [Hephaestus walks away]
+<<HideAll>>
+<<jump Hestia_Day1_AfterShift>>
 ===
