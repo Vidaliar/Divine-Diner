@@ -51,7 +51,8 @@ public class ModifiedPause : MonoBehaviour
 
     private void Start()
     {
-        settingsInMainMenuButton.onClick.AddListener(PauseAndOpenLevel1);
+        if (settingsInMainMenuButton != null)
+            settingsInMainMenuButton.onClick.AddListener(PauseAndOpenLevel1);
         resumeButton.onClick.AddListener(OnClick_Resume);
         saveLoadButton.onClick.AddListener(OnClick_OpenSaveMenu);
         settingsButton.onClick.AddListener(OnClick_OpenSettings);
