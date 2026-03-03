@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-//using UnityEditor.VersionControl;
 using UnityEngine;
 
 public class SaveSystem : MonoBehaviour, ISaveSystem
@@ -186,4 +185,27 @@ public class SaveSystem : MonoBehaviour, ISaveSystem
         Time.timeScale = 1f;
         AudioListener.pause = false;
     }
+
+    public SaveFile ReadSaveFile(string profile, int slotIndex)
+    {
+        string path = JsonPath(profile, slotIndex);
+        if (!File.Exists(path))
+        {
+            Debug.LogWarning($"[SaveSystem] ReadSaveFile: {path} does not exist.");
+            return null;
+        }
+
+        try
+        {
+            string json = File.ReadAllText(path);
+            return JsonUtility.FromJson<SaveFile>(json);
+        }
+        catch (Exception e)
+        {
+            Debug.LogWarning($"[SaveSystem] ReadSaveFile: failed to parse json at {path}\n{e}");
+            return null;
+        }
+    }
+
+
 }
