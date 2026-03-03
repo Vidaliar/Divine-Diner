@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
+[DefaultExecutionOrder(-1000)]
 public class AudioSettings : MonoBehaviour
 {
     public static AudioSettings Instance { get; private set; }
@@ -11,6 +13,10 @@ public class AudioSettings : MonoBehaviour
 
     [Header("No Mixer Mode (BGM AudioSource)")]
     [SerializeField] private AudioSource bgmSource;
+
+    [Header("Auto Resolve")]
+    [SerializeField] private bool autoFindBgmByName = true;
+    [SerializeField] private string bgmObjectName = "BGM";
 
     [Header("Mapping")]
     [Range(-80f, -10f)] public float minDb = -60f;
@@ -37,17 +43,68 @@ public class AudioSettings : MonoBehaviour
     private bool _warnedMasterParamMissing;
     private bool _warnedBgmParamMissing;
 
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    private static void BootstrapAfterSceneLoad()
+    {
+        if (Instance != null) return;
+
+#if UNITY_2022_2_OR_NEWER
+        var existing = Object.FindFirstObjectByType<AudioSettings>();
+#else
+        var existing = Object.FindObjectOfType<AudioSettings>();
+#endif
+        if (existing != null) return;
+
+        var go = new GameObject("AudioSettings (Auto)");
+        go.AddComponent<AudioSettings>();
+    }
+
     private void Awake()
     {
-        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        if (bgmSource == null)
-            bgmSource = GameObject.Find("BGM")?.GetComponent<AudioSource>();
+        SceneManager.sceneLoaded += OnSceneLoaded;
 
         LoadFromPrefs();
+        TryResolveBgmSource();
         ApplyAll();
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance == this) Instance = null;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        TryResolveBgmSource();
+        ApplyAll();
+    }
+
+    private void TryResolveBgmSource()
+    {
+        if (audioMixer != null) return;
+        if (bgmSource != null) return;
+
+        if (!autoFindBgmByName) return;
+
+        var go = GameObject.Find(bgmObjectName);
+        if (go != null) bgmSource = go.GetComponent<AudioSource>();
+
+        if (bgmSource == null && !_warnedBgmSourceMissing)
+        {
+            _warnedBgmSourceMissing = true;
+            Debug.LogWarning($"[AudioSettings] No AudioMixer and bgmSource not set. " +
+                             $"Tried find GameObject '{bgmObjectName}' but failed. ");
+        }
     }
 
     private void LoadFromPrefs()
@@ -98,12 +155,14 @@ public class AudioSettings : MonoBehaviour
         if (!audioMixer.SetFloat(masterVolumeParam, masterDb) && !_warnedMasterParamMissing)
         {
             _warnedMasterParamMissing = true;
+            Debug.LogWarning($"[AudioSettings] AudioMixer missing param '{masterVolumeParam}'.");
         }
 
         float bgmDb = MuteBgm ? minDb : Slider01ToDb(BgmVol01);
         if (!audioMixer.SetFloat(bgmVolumeParam, bgmDb) && !_warnedBgmParamMissing)
         {
             _warnedBgmParamMissing = true;
+            Debug.LogWarning($"[AudioSettings] AudioMixer missing param '{bgmVolumeParam}'.");
         }
     }
 
@@ -116,16 +175,13 @@ public class AudioSettings : MonoBehaviour
             bgmSource.mute = MuteBgm;
             bgmSource.volume = Shape01(BgmVol01);
         }
-        else if (!_warnedBgmSourceMissing)
-        {
-            _warnedBgmSourceMissing = true;
-        }
     }
 
     private void WarnSfxPlaceholderOnce()
     {
         if (_warnedSfxPlaceholder) return;
         _warnedSfxPlaceholder = true;
+        Debug.LogWarning("[AudioSettings] SFX settings are placeholder (FMOD not wired).");
     }
 
     public void SetMasterVolume01(float v01) { MasterVol01 = Mathf.Clamp01(v01); SaveToPrefs(); ApplyAll(); }
@@ -135,8 +191,14 @@ public class AudioSettings : MonoBehaviour
     public void ToggleMuteAll() => SetMuteAll(!MuteAll);
     public void ToggleMuteBgm() => SetMuteBgm(!MuteBgm);
 
-    // ===== SFX£ºplaceholder =====
+    // ===== SFX:placeholder =====
     public void SetSfxVolume01(float v01) { SfxVol01 = Mathf.Clamp01(v01); SaveToPrefs(); WarnSfxPlaceholderOnce(); }
     public void SetMuteSfx(bool mute) { MuteSfx = mute; SaveToPrefs(); WarnSfxPlaceholderOnce(); }
     public void ToggleMuteSfx() => SetMuteSfx(!MuteSfx);
+
+    public void SetBgmSource(AudioSource source)
+    {
+        bgmSource = source;
+        ApplyAll();
+    }
 }

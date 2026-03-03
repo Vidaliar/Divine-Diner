@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,26 +21,95 @@ public class AudioSettingsUI : MonoBehaviour
     public bool autoUnmuteOnSliderChange = true;
     [Range(0.1f, 1f)] public float mutedAlpha = 0.45f;
 
-    private AudioSettings S => AudioSettings.Instance;
+    [Header("Init / Retry")]
+    [Min(0f)] public float waitForInstanceTimeout = 1.0f;
+
+    [Min(0f)] public float warnAfterSeconds = 0.2f;
+
+    private AudioSettings _s;
+    private bool _bound;
+    private Coroutine _initCo;
 
     private void Awake()
     {
         if (autoBindByName) AutoBind();
+
+        TryInitImmediate();
     }
 
     private void OnEnable()
     {
-        if (S == null)
+        StartInitRoutine();
+    }
+
+    private void OnDisable()
+    {
+        StopInitRoutine();
+        UnbindOnce();
+    }
+
+    private void StartInitRoutine()
+    {
+        StopInitRoutine();
+        _initCo = StartCoroutine(CoWaitAndInit());
+    }
+
+    private void StopInitRoutine()
+    {
+        if (_initCo != null)
         {
-            Debug.LogError("[AudioSettingsUI] AudioSettings.Instance not found");
-            return;
+            StopCoroutine(_initCo);
+            _initCo = null;
+        }
+    }
+
+    private IEnumerator CoWaitAndInit()
+    {
+        float start = Time.unscaledTime;
+        float lastWarn = -999f;
+
+
+        while (true)
+        {
+            _s = AudioSettings.Instance;
+            if (_s != null) break;
+
+            float elapsed = Time.unscaledTime - start;
+
+            if (warnAfterSeconds > 0f && elapsed >= warnAfterSeconds && Time.unscaledTime - lastWarn >= 0.5f)
+            {
+                lastWarn = Time.unscaledTime;
+                Debug.LogError("[AudioSettingsUI] AudioSettings.Instance not found (waiting...)");
+            }
+
+            if (waitForInstanceTimeout > 0f && elapsed >= waitForInstanceTimeout)
+            {
+                Debug.LogError("[AudioSettingsUI] AudioSettings.Instance not found (timeout). " );
+                yield break;
+            }
+
+            yield return null;
         }
 
-        totalSlider?.SetValueWithoutNotify(S.MasterVol01);
-        bgmSlider?.SetValueWithoutNotify(S.BgmVol01);
-        sfxSlider?.SetValueWithoutNotify(S.SfxVol01);
-
+        SyncFromModel();
         RefreshButtonVisuals();
+        BindOnce();
+    }
+
+    private void TryInitImmediate()
+    {
+        _s = AudioSettings.Instance;
+        if (_s == null) return;
+
+        SyncFromModel();
+        RefreshButtonVisuals();
+        BindOnce();
+    }
+
+    private void BindOnce()
+    {
+        if (_bound) return;
+        _bound = true;
 
         if (muteAllButton) muteAllButton.onClick.AddListener(OnClickMuteAll);
         if (muteBgmButton) muteBgmButton.onClick.AddListener(OnClickMuteBgm);
@@ -50,8 +120,11 @@ public class AudioSettingsUI : MonoBehaviour
         if (sfxSlider) sfxSlider.onValueChanged.AddListener(OnChangeSfx); // placeholder
     }
 
-    private void OnDisable()
+    private void UnbindOnce()
     {
+        if (!_bound) return;
+        _bound = false;
+
         if (muteAllButton) muteAllButton.onClick.RemoveListener(OnClickMuteAll);
         if (muteBgmButton) muteBgmButton.onClick.RemoveListener(OnClickMuteBgm);
         if (muteSfxButton) muteSfxButton.onClick.RemoveListener(OnClickMuteSfx);
@@ -61,61 +134,98 @@ public class AudioSettingsUI : MonoBehaviour
         if (sfxSlider) sfxSlider.onValueChanged.RemoveListener(OnChangeSfx);
     }
 
+    private void SyncFromModel()
+    {
+        if (_s == null) return;
+
+        totalSlider?.SetValueWithoutNotify(_s.MasterVol01);
+        bgmSlider?.SetValueWithoutNotify(_s.BgmVol01);
+        sfxSlider?.SetValueWithoutNotify(_s.SfxVol01);
+    }
+
     private void AutoBind()
     {
-        muteAllButton = muteAllButton ? muteAllButton : transform.Find("MuteAll")?.GetComponent<Button>();
-        muteBgmButton = muteBgmButton ? muteBgmButton : transform.Find("MuteBGM")?.GetComponent<Button>();
-        muteSfxButton = muteSfxButton ? muteSfxButton : transform.Find("MuteSFX")?.GetComponent<Button>();
+        muteAllButton = muteAllButton ? muteAllButton : FindDeepComponent<Button>("MuteAll");
+        muteBgmButton = muteBgmButton ? muteBgmButton : FindDeepComponent<Button>("MuteBGM");
+        muteSfxButton = muteSfxButton ? muteSfxButton : FindDeepComponent<Button>("MuteSFX");
 
-        bgmSlider = bgmSlider ? bgmSlider : transform.Find("BackgroundVS")?.GetComponent<Slider>();
-        sfxSlider = sfxSlider ? sfxSlider : transform.Find("SFXVS")?.GetComponent<Slider>();
-        totalSlider = totalSlider ? totalSlider : transform.Find("TotalVS")?.GetComponent<Slider>();
+        bgmSlider = bgmSlider ? bgmSlider : FindDeepComponent<Slider>("BackgroundVS");
+        sfxSlider = sfxSlider ? sfxSlider : FindDeepComponent<Slider>("SFXVS");
+        totalSlider = totalSlider ? totalSlider : FindDeepComponent<Slider>("TotalVS");
+    }
+
+    private T FindDeepComponent<T>(string childName) where T : Component
+    {
+        var trs = GetComponentsInChildren<Transform>(true);
+        foreach (var t in trs)
+        {
+            if (t.name == childName)
+                return t.GetComponent<T>();
+        }
+        return null;
     }
 
     private void OnClickMuteAll()
     {
-        S.ToggleMuteAll();
+        if (_s == null) return;
+        _s.ToggleMuteAll();
         RefreshButtonVisuals();
     }
 
     private void OnClickMuteBgm()
     {
-        S.ToggleMuteBgm();
+        if (_s == null) return;
+        _s.ToggleMuteBgm();
         RefreshButtonVisuals();
     }
 
     private void OnClickMuteSfx()
     {
-        S.ToggleMuteSfx(); // placeholder
+        if (_s == null) return;
+        _s.ToggleMuteSfx(); // placeholder
         RefreshButtonVisuals();
     }
 
     private void OnChangeMaster(float v)
     {
-        S.SetMasterVolume01(v);
-        if (autoUnmuteOnSliderChange && v > 0.001f && S.MuteAll) S.SetMuteAll(false);
+        if (_s == null) return;
+        _s.SetMasterVolume01(v);
+
+        if (autoUnmuteOnSliderChange && v > 0.001f && _s.MuteAll)
+            _s.SetMuteAll(false);
+
         RefreshButtonVisuals();
     }
 
     private void OnChangeBgm(float v)
     {
-        S.SetBgmVolume01(v);
-        if (autoUnmuteOnSliderChange && v > 0.001f && S.MuteBgm) S.SetMuteBgm(false);
+        if (_s == null) return;
+        _s.SetBgmVolume01(v);
+
+        if (autoUnmuteOnSliderChange && v > 0.001f && _s.MuteBgm)
+            _s.SetMuteBgm(false);
+
         RefreshButtonVisuals();
     }
 
     private void OnChangeSfx(float v)
     {
-        S.SetSfxVolume01(v); // placeholder
-        if (autoUnmuteOnSliderChange && v > 0.001f && S.MuteSfx) S.SetMuteSfx(false);
+        if (_s == null) return;
+        _s.SetSfxVolume01(v); // placeholder
+
+        if (autoUnmuteOnSliderChange && v > 0.001f && _s.MuteSfx)
+            _s.SetMuteSfx(false);
+
         RefreshButtonVisuals();
     }
 
     private void RefreshButtonVisuals()
     {
-        SetButtonMutedVisual(muteAllButton, S.MuteAll);
-        SetButtonMutedVisual(muteBgmButton, S.MuteBgm);
-        SetButtonMutedVisual(muteSfxButton, S.MuteSfx);
+        if (_s == null) return;
+
+        SetButtonMutedVisual(muteAllButton, _s.MuteAll);
+        SetButtonMutedVisual(muteBgmButton, _s.MuteBgm);
+        SetButtonMutedVisual(muteSfxButton, _s.MuteSfx);
     }
 
     private void SetButtonMutedVisual(Button btn, bool muted)

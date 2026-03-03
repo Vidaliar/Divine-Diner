@@ -1226,6 +1226,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runner: {fileID: 0}
+  stateProvider: {fileID: 0}
+  resumeFromSaveOnStart: 1
+  defaultStartNode: 
 --- !u!4 &1134789143
 Transform:
   m_ObjectHideFlags: 0
