@@ -5,7 +5,7 @@
 			<value>Egg Crack</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{afab6537-3cc9-4fce-ba71-a0b5ab4008d0}</destination>
@@ -90,14 +90,14 @@
 	<object class="MixerBusPanner" id="{d8050624-1053-4872-869a-e705e1bdec23}" />
 	<object class="MultiSound" id="{ca94f387-efd7-4f3f-af94-145f77ac4593}">
 		<property name="length">
-			<value>0.390625</value>
+			<value>1.09375</value>
 		</property>
 		<property name="volume">
 			<value>10</value>
 		</property>
 		<relationship name="sounds">
-			<destination>{0aa22525-1fc3-4d9e-b4fc-7a6aafd3d466}</destination>
-			<destination>{f258b7f4-6805-4eb4-96db-c947b23e732e}</destination>
+			<destination>{c31b80f8-9e95-4ad2-b7ff-d756c0d69b9f}</destination>
+			<destination>{b8dabdaa-7db1-46f7-9d42-247c6c883808}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{e27ba984-fcdd-472a-96d4-0633c1348289}">
@@ -121,14 +121,14 @@
 	</object>
 	<object class="MixerBusPanner" id="{4b149f2d-4291-4f9f-9230-a5ebc502cbf1}" />
 	<object class="MixerBusFader" id="{21d5719d-c5fa-4f67-927b-dc49db5ea5bb}" />
-	<object class="SingleSound" id="{0aa22525-1fc3-4d9e-b4fc-7a6aafd3d466}">
+	<object class="SingleSound" id="{c31b80f8-9e95-4ad2-b7ff-d756c0d69b9f}">
 		<relationship name="audioFile">
-			<destination>{8f0caa0e-0c55-4818-b6dd-031023b81672}</destination>
+			<destination>{45268c06-0121-41be-bcbb-f41fffd70f6c}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{f258b7f4-6805-4eb4-96db-c947b23e732e}">
+	<object class="SingleSound" id="{b8dabdaa-7db1-46f7-9d42-247c6c883808}">
 		<relationship name="audioFile">
-			<destination>{8cb20d32-af84-45c2-a607-eeaba4772fbc}</destination>
+			<destination>{79ff46d3-2bf0-47f5-891a-938de83c5e82}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{35107f12-9201-4cf5-975b-8c728b19cacc}">

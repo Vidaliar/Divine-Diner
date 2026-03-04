@@ -4,6 +4,9 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
+using FMODUnity;
+using FMOD.Studio;
+
 public class Saute : MonoBehaviour
 {
     [Header("Objects")]
@@ -18,7 +21,7 @@ public class Saute : MonoBehaviour
     [SerializeField] int numSections = 4;
     // [SerializeField] float sauteSpeed;
 
-    int moves = 0;  //Not sure what to call these rn lol, the back and forth are the moves
+    int moves = 0;  // back-and-forth moves in the current section
     int totalMoves = 0;
     int moveSection;
 
@@ -39,7 +42,13 @@ public class Saute : MonoBehaviour
     bool inPause = false;
     public CookingManager cManager;
 
-    // Start is called before the first frame update
+    [Header("FMOD SFX")]
+    [FMODUnity.EventRef]
+    [SerializeField] private string sauteLoopEvent; // assign in Inspector
+
+    private EventInstance sauteInstance;
+    private bool sauteSfxStarted = false;
+
     void Start()
     {
         maxX = pan.position.x + 1f;
@@ -53,36 +62,36 @@ public class Saute : MonoBehaviour
         progressBar.value = 0;
         progressBar.gameObject.SetActive(true);
 
-        // instructions.SetActive(true);
-        // instuctArrows.SetActive(true);
-
         prevPosition = pan.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
         inPause = cManager.inPause;
-        if (inPause) return; // Makes sure game isn't paused before anything happens
+        if (inPause)
+        {
+            PauseSauteSfx(true);
+            return;
+        }
+        else
+        {
+            PauseSauteSfx(false);
+        }
 
-        //Allows the player to start sauteing after the any previous prep
-            if (Input.GetMouseButtonDown(0))
+        // Allows the player to start sauteing after any previous prep
+        if (Input.GetMouseButtonDown(0))
         {
             canSaute = true;
         }
+
+        // Active saute window: only when the section timer is done
         if (Input.GetMouseButton(0) && canSaute && timer >= timeSection)
         {
+            StartSauteSfx(); // start loop when saute action begins
+
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            //Normalized vector to move the pin
-            // Vector2 direction = new Vector2(mousePos.x - pan.position.x, mousePos.y - pan.position.y).normalized;
-
-            //The x value to set the pin x value as
-            // float newX = pan.position.x + (direction.x * sauteSpeed * Time.deltaTime);
-            // float clampX = Mathf.Clamp(newX, minX, maxX);
-            // float newX = pan.position.x + (direction.x * sauteSpeed * Time.deltaTime);
             float clampX = Mathf.Clamp(mousePos.x, minX, maxX);
-
             pan.position = new Vector2(clampX, pan.position.y);
 
             currDistance += Mathf.Abs(prevPosition.x - pan.position.x);
@@ -95,6 +104,7 @@ public class Saute : MonoBehaviour
             }
         }
 
+        // Show instructions only during active window
         if (timer >= timeSection)
         {
             instructions.SetActive(true);
@@ -106,7 +116,7 @@ public class Saute : MonoBehaviour
             instuctArrows.SetActive(false);
         }
 
-        // Debug.Log("Timer: " + timer);
+        // Timer fills progress bar during the "wait" part of each section
         if (timer < timeSection)
         {
             timer += Time.deltaTime;
@@ -114,20 +124,60 @@ public class Saute : MonoBehaviour
             progressBar.value = totalTime;
         }
 
-        if(moves == numSections)
+        // End of a section (your original logic)
+        if (moves == numSections)
         {
             totalMoves += moves;
             timer = 0;
             moves = 0;
         }
 
-        if(totalMoves >= maxMoves)
+        // Done: transition to next step
+        if (totalMoves >= maxMoves)
         {
+            StopSauteSfx();
+
             CookingManager.instance.Transition();
             progressBar.gameObject.SetActive(false);
             instructions.SetActive(false);
             instuctArrows.SetActive(false);
-            this.gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
+    }
+
+    private void StartSauteSfx()
+    {
+        if (sauteSfxStarted) return;
+        if (string.IsNullOrEmpty(sauteLoopEvent)) return;
+
+        sauteInstance = RuntimeManager.CreateInstance(sauteLoopEvent);
+        sauteInstance.start();
+        sauteSfxStarted = true;
+    }
+
+    private void StopSauteSfx()
+    {
+        if (!sauteSfxStarted) return;
+
+        if (sauteInstance.isValid())
+        {
+            sauteInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            sauteInstance.release();
+        }
+
+        sauteSfxStarted = false;
+    }
+
+    private void PauseSauteSfx(bool pause)
+    {
+        if (!sauteSfxStarted) return;
+        if (!sauteInstance.isValid()) return;
+
+        sauteInstance.setPaused(pause);
+    }
+
+    private void OnDisable()
+    {
+        StopSauteSfx();
     }
 }

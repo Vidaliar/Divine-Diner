@@ -1,0 +1,31 @@
+﻿title: Hestia_Day1_AfterShift
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+
+Hestia: Aelius, you made it through the day!
+Hestia: How was it? Was everything alright?
+Aelius: It was definitely an experience.
+Hestia: Let me guess. Hephaestus?
+
+-> It went well.
+	Aelius: It went well. He was quiet, but I think he respected the food.
+	Hestia: That sounds like him.
+	Hestia: If he said you did well, that is a real compliment.
+	Aelius: He did, actually.
+	Hestia: Then you should be proud, dear.
+
+-> It was a lot.
+	Aelius: It was a lot. I couldn’t really read him at first.
+	Hestia: That’s normal. He spends most of his time in his forge.
+	Hestia: He can be kind, but social things are not his strength.
+	Aelius: That makes sense.
+
+Hestia: Either way, you got through your first real day here.
+Hestia: Get some rest. Tomorrow will feel a little easier.
+Aelius: Thanks, Hestia. Good night.
+Hestia: Good night, my dear.
+
+END DAY
+===
