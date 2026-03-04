@@ -14,20 +14,107 @@ public class Squeezing : MonoBehaviour
     float timer;    //Keeps track of time passed
     Coroutine currentAnim;  //Keeps track of the current animation
 
+    bool started = false;
+
+    KeyCode currKeyCode;
+    Dictionary<KeyCode, List<KeyCode>> keyCodeDict = new Dictionary<KeyCode, List<KeyCode>>();
+    Event e;
+
     bool inPause = false;
     public CookingManager cManager;
-    void Start()
+    void Awake()
     {
         progressBar.minValue = 0;
         progressBar.maxValue = timeSec;
         progressBar.value = 0;
         progressBar.gameObject.SetActive(true);
+
+        //Setting up keyCodeDict
+        List<KeyCode> ADList = new List<KeyCode>();
+        ADList.Add(KeyCode.A);
+        ADList.Add(KeyCode.D);
+
+        List<KeyCode> WSList = new List<KeyCode>();
+        ADList.Add(KeyCode.W);
+        ADList.Add(KeyCode.S);
+
+        keyCodeDict.Add(KeyCode.A, WSList);
+        keyCodeDict.Add(KeyCode.W, ADList);
+        keyCodeDict.Add(KeyCode.D, WSList);
+        keyCodeDict.Add(KeyCode.S, ADList);
     }
 
+    void OnGUI()
+    {
+        e = Event.current;
+        //Get key press (any should work to start)
+        //From initial press, figure out next 2 possible acceptable presses
+        if(!started/*Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)*/)
+        {
+            if(e.type.Equals(EventType.KeyDown)){
+            started = true;
+            // if(Input.GetKeyDown(KeyCode.W)) currKeyCode = KeyCode.W;
+            // else if (Input.GetKeyDown(KeyCode.A)) currKeyCode = KeyCode.A;
+            // else if (Input.GetKeyDown(KeyCode.S)) currKeyCode = KeyCode.S;
+            // else if (Input.GetKeyDown(KeyCode.D)) currKeyCode = KeyCode.D;
+            currKeyCode = e.keyCode;
+            }
+        }
+        
+        else if(e.type.Equals(EventType.KeyDown))
+        {
+            if(keyCodeDict[currKeyCode].Contains(e.keyCode))
+            {
+                
+                Debug.Log("Next key is good");
+                currKeyCode = e.keyCode;
+            }
+            else
+            {
+                Debug.Log("Next key NOT good");
+            }
+            Debug.Log(currKeyCode.ToString() + " is curr key code");
+            foreach(KeyCode key in keyCodeDict[currKeyCode])
+            {
+                Debug.Log(key.ToString());
+            }
+            Debug.Log("After for loop");
+        }
+    }
     void Update()
     {
-        inPause = cManager.inPause;
+        // inPause = cManager.inPause;
+        inPause = CookingManager.instance.inPause;
         if (inPause) return; // Makes sure game isn't paused before anything happens
+
+
+        // e = Event.current;
+        // //Get key press (any should work to start)
+        // //From initial press, figure out next 2 possible acceptable presses
+        // if(!started && e != null/*Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)*/)
+        // {
+        //     if(e.type.Equals(EventType.KeyDown)){
+        //     started = true;
+        //     // if(Input.GetKeyDown(KeyCode.W)) currKeyCode = KeyCode.W;
+        //     // else if (Input.GetKeyDown(KeyCode.A)) currKeyCode = KeyCode.A;
+        //     // else if (Input.GetKeyDown(KeyCode.S)) currKeyCode = KeyCode.S;
+        //     // else if (Input.GetKeyDown(KeyCode.D)) currKeyCode = KeyCode.D;
+        //     currKeyCode = e.keyCode;
+        //     }
+        // }
+        
+        // else if(e.type.Equals(EventType.KeyDown))
+        // {
+        //     if(keyCodeDict[currKeyCode].Contains(e.keyCode))
+        //     {
+        //         Debug.Log("Next key is good");
+        //     }
+        //     else
+        //     {
+        //         Debug.Log("Next key NOT good");
+        //     }
+        // }
+
 
         //Starts the squeezing animation
         if (Input.GetMouseButtonDown(0))
