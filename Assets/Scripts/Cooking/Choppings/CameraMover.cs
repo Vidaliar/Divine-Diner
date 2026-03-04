@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+// using UnityEngine.Event;
 
 /*
 ================================================================================
@@ -53,6 +54,8 @@ public class CameraMover : MonoBehaviour
     [SerializeField, Range(0.1f, 5f)] private float moveDuration = 1.0f;
     [SerializeField] private AnimationCurve ease = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
+    // public UnityEvent doneMoving = new UnityEvent();
+
     private Coroutine _movingCo;
 
     private void Awake()
@@ -93,6 +96,7 @@ public class CameraMover : MonoBehaviour
             yield return null;
         }
         targetCamera.transform.position = end;
+        CookingManager.instance.CamTransitionDone();
         _movingCo = null;
     }
 }

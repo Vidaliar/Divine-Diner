@@ -18,6 +18,11 @@ public class Squeezing : MonoBehaviour
 
     KeyCode currKeyCode;
     Dictionary<KeyCode, List<KeyCode>> keyCodeDict = new Dictionary<KeyCode, List<KeyCode>>();
+
+    Dictionary<KeyCode, KeyCode> clockwiseCodes = new Dictionary<KeyCode, KeyCode>(){{KeyCode.A,KeyCode.W}, {KeyCode.W,KeyCode.D}, {KeyCode.D,KeyCode.S}, {KeyCode.S,KeyCode.A}};
+    Dictionary<KeyCode, KeyCode> counterCodes = new Dictionary<KeyCode, KeyCode>()
+    {{KeyCode.W,KeyCode.A}, {KeyCode.D,KeyCode.W}, {KeyCode.S,KeyCode.D}, {KeyCode.A,KeyCode.S}};
+
     Event e;
 
     bool inPause = false;
@@ -44,43 +49,43 @@ public class Squeezing : MonoBehaviour
         keyCodeDict.Add(KeyCode.S, ADList);
     }
 
-    void OnGUI()
-    {
-        e = Event.current;
-        //Get key press (any should work to start)
-        //From initial press, figure out next 2 possible acceptable presses
-        if(!started/*Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)*/)
-        {
-            if(e.type.Equals(EventType.KeyDown)){
-            started = true;
-            // if(Input.GetKeyDown(KeyCode.W)) currKeyCode = KeyCode.W;
-            // else if (Input.GetKeyDown(KeyCode.A)) currKeyCode = KeyCode.A;
-            // else if (Input.GetKeyDown(KeyCode.S)) currKeyCode = KeyCode.S;
-            // else if (Input.GetKeyDown(KeyCode.D)) currKeyCode = KeyCode.D;
-            currKeyCode = e.keyCode;
-            }
-        }
+    // void OnGUI()
+    // {
+    //     e = Event.current;
+    //     //Get key press (any should work to start)
+    //     //From initial press, figure out next 2 possible acceptable presses
+    //     if(!started/*Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)*/)
+    //     {
+    //         if(e.type.Equals(EventType.KeyDown)){
+    //         started = true;
+    //         // if(Input.GetKeyDown(KeyCode.W)) currKeyCode = KeyCode.W;
+    //         // else if (Input.GetKeyDown(KeyCode.A)) currKeyCode = KeyCode.A;
+    //         // else if (Input.GetKeyDown(KeyCode.S)) currKeyCode = KeyCode.S;
+    //         // else if (Input.GetKeyDown(KeyCode.D)) currKeyCode = KeyCode.D;
+    //         currKeyCode = e.keyCode;
+    //         }
+    //     }
         
-        else if(e.type.Equals(EventType.KeyDown))
-        {
-            if(keyCodeDict[currKeyCode].Contains(e.keyCode))
-            {
+    //     else if(e.type.Equals(EventType.KeyDown))
+    //     {
+    //         if(keyCodeDict[currKeyCode].Contains(e.keyCode))
+    //         {
                 
-                Debug.Log("Next key is good");
-                currKeyCode = e.keyCode;
-            }
-            else
-            {
-                Debug.Log("Next key NOT good");
-            }
-            Debug.Log(currKeyCode.ToString() + " is curr key code");
-            foreach(KeyCode key in keyCodeDict[currKeyCode])
-            {
-                Debug.Log(key.ToString());
-            }
-            Debug.Log("After for loop");
-        }
-    }
+    //             Debug.Log("Next key is good");
+    //             currKeyCode = e.keyCode;
+    //         }
+    //         else
+    //         {
+    //             Debug.Log("Next key NOT good");
+    //         }
+    //         Debug.Log(currKeyCode.ToString() + " is curr key code");
+    //         foreach(KeyCode key in keyCodeDict[currKeyCode])
+    //         {
+    //             Debug.Log(key.ToString());
+    //         }
+    //         Debug.Log("After for loop");
+    //     }
+    // }
     void Update()
     {
         // inPause = cManager.inPause;
@@ -91,17 +96,17 @@ public class Squeezing : MonoBehaviour
         // e = Event.current;
         // //Get key press (any should work to start)
         // //From initial press, figure out next 2 possible acceptable presses
-        // if(!started && e != null/*Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)*/)
-        // {
-        //     if(e.type.Equals(EventType.KeyDown)){
-        //     started = true;
-        //     // if(Input.GetKeyDown(KeyCode.W)) currKeyCode = KeyCode.W;
-        //     // else if (Input.GetKeyDown(KeyCode.A)) currKeyCode = KeyCode.A;
-        //     // else if (Input.GetKeyDown(KeyCode.S)) currKeyCode = KeyCode.S;
-        //     // else if (Input.GetKeyDown(KeyCode.D)) currKeyCode = KeyCode.D;
-        //     currKeyCode = e.keyCode;
-        //     }
-        // }
+        if(!started /*&& e != null*//*Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)*/)
+        {
+            // if(e.type.Equals(EventType.KeyDown)){
+            started = true;
+            if(Input.GetKeyDown(KeyCode.W)) currKeyCode = KeyCode.W;
+            else if (Input.GetKeyDown(KeyCode.A)) currKeyCode = KeyCode.A;
+            else if (Input.GetKeyDown(KeyCode.S)) currKeyCode = KeyCode.S;
+            else if (Input.GetKeyDown(KeyCode.D)) currKeyCode = KeyCode.D;
+            // currKeyCode = e.keyCode;
+            // }
+        }
         
         // else if(e.type.Equals(EventType.KeyDown))
         // {

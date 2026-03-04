@@ -125,6 +125,7 @@ public class Grater : MonoBehaviour
         if (currDistance >= totalDistance)
         {
             StopGratingSfx();
+            Debug.Log("Transition");
             CookingManager.instance.Transition();
             grateInstructions.SetActive(false);
             gameObject.SetActive(false);
