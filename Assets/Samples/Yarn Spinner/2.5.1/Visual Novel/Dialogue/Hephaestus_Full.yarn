@@ -27,19 +27,19 @@ Aelius: She did, I'm new to Olympus.
 Hephaestus: There must be something to you if she took a liking to a mortal.
 
 -> What's wrong with being a mortal?
-	Aelius: What's wrong with being a mortal?
+	//Aelius: What's wrong with being a mortal?
 	Hephaestus: Ha! Nothing I suppose.
 	Aelius: Okay…
 	Hephaestus: What brings you to Olympus, mortal?
 	Aelius: Part mortal actually, I'm looking for my dad.
 	<<jump h_after_choice>>
 -> Probably my winning smile.
-	Aelius: Probably my winning smile.
+	//Aelius: Probably my winning smile.
 	Hephaestus: No, I think it must be something more than that…
-	Aelius: Oh, it was a joke. She's helping me look for my father who is one of the gods.
+	Aelius: Oh, it was a joke. She's helping me look for my father, who is apparently one of the gods.
 	<<jump h_after_choice>>
 -> I'm not mortal, mostly, I think…
-	Aelius: I'm not mortal, mostly, I think...
+	//Aelius: I'm not mortal, mostly, I think...
 	Hephaestus: Interesting, how would you be so unsure?
 	Aelius: Well Hestia says my father is a god, but I'm not sure what that means.
 	<<jump h_after_choice>>
@@ -73,28 +73,31 @@ title: Hephaestus_Return
 <<PlayMusic Hephaestus_Theme>>
 
 
-
-Hephaestus: Oh, this has some bite to it, just the way I like it. You have done well, Aelius.
+->Spicy
+	Hephaestus: Oh, this has some bite to it, just the way I like it. You have done well, Aelius.
+->Sweet
+	Hephaestus: Oh, this is sweeter than I expected, but it's quite good. You have done well, Aelius.
+->Fancy
+	Hephaestus: Oh, yes I can taste the care you took. You have done well, Aelius.
 
 -> Oh, it was nothing.
-	Aelius: Oh, it was nothing.
+	//Aelius: Oh, it was nothing.
 	Hephaestus: Nothing? Nonsense, A craftsperson should take pride in their work!
 -> I know.
-	Aelius: I know.
+	//Aelius: I know.
 	Hephaestus: Exactly, A craftsperson should take pride in their work!
 -> Anytime.
-	Aelius: Anytime.
-	Hephaestus: Nothing? Nonsense, A craftsperson should take pride in their work!
+	//Aelius: Anytime.
+	Hephaestus: Exactly, A craftsperson should take pride in their work!
 
 Aelius: Oh, um, thank you, Sir.
 Hephaestus: Sir? Ah, you've already met his majesty Zeus.
-Hephaestus: You don't need to bother with the honorifics
+Hephaestus: You needn't to bother with the honorifics.
 Hephaestus: You haven't met Ares yet, have you?
 Aelius: Not yet.
 Hephaestus: Don't listen to a thing either of them say, you can call me Hephaestus.
 Aelius: Alright, Hephaestus.
 Hephaestus: Hurmph.
-<<Hide "Hermes">>
 
 // [Hephaestus walks away]
 <<HideAll>>
