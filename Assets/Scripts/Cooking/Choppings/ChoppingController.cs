@@ -180,8 +180,9 @@ public class ChoppingController : MonoBehaviour
 
         item.MarkSelected(true);
 
-        if (cameraController != null && area2ViewPoint != null)
-            yield return cameraController.MoveTo(area2ViewPoint);
+        //The 2 commented lines below were commented for GDC build because of changes made to CameraMover
+        // if (cameraController != null && area2ViewPoint != null)
+        //     yield return cameraController.MoveTo(area2ViewPoint);
 
         _inArea2 = true;
         UpdateCuttingUI();

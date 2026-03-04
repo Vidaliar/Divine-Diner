@@ -419,6 +419,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 520351406}
+  - {fileID: 1346831676}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &229053526
@@ -919,6 +920,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1890505336}
     - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
+      propertyPath: waypointHolder
+      value: 
+      objectReference: {fileID: 1015257304}
+    - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
       propertyPath: recipeManagers.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -968,7 +973,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1346831676}
   - {fileID: 989831856}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1356,7 +1360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2556106242511818078, guid: dbc711cb3c4e16546b9cbb420b85ad2c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7628334668000119148, guid: dbc711cb3c4e16546b9cbb420b85ad2c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1518,6 +1522,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6915476586391404384, guid: 64a91d94530169749b7a5242978a1724, type: 3}
   m_PrefabInstance: {fileID: 2156750162714713474}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1015257303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1015257304}
+  m_Layer: 0
+  m_Name: WaypointHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1015257304
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015257303}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 61.62567, y: -1.0871816, z: 0.0039577484}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1401162165}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1033920161
 GameObject:
   m_ObjectHideFlags: 0
@@ -1962,7 +1998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topOfSqueezeTool: {fileID: 1418470020}
   progressBar: {fileID: 940589786}
-  cManager: {fileID: 0}
+  cManager: {fileID: 1732704612}
 --- !u!4 &1346831676
 Transform:
   m_ObjectHideFlags: 0
@@ -1976,7 +2012,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 770083816}
+  m_Father: {fileID: 219405301}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1363924232
 GameObject:
@@ -2156,6 +2192,37 @@ LineRenderer:
   m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!1 &1401162164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1401162165}
+  m_Layer: 0
+  m_Name: Waypoint1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1401162165
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401162164}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1015257304}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1418470020 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7727617059985993633, guid: 64a91d94530169749b7a5242978a1724, type: 3}
@@ -2513,6 +2580,7 @@ MonoBehaviour:
   spoonAnim: {fileID: 840552586}
   spoonAnimSpeed: 2
   cManager: {fileID: 1732704612}
+  mixingLoopEvent: 
 --- !u!1 &1955449105
 GameObject:
   m_ObjectHideFlags: 0
@@ -2869,6 +2937,7 @@ MonoBehaviour:
   moveBased: 0
   dynamicSizeBasing: 0
   cManager: {fileID: 0}
+  rollingLoopEvent: 
 --- !u!4 &2054769876
 Transform:
   m_ObjectHideFlags: 0
@@ -3136,3 +3205,4 @@ SceneRoots:
   - {fileID: 1959586794}
   - {fileID: 1282057337}
   - {fileID: 219405301}
+  - {fileID: 1015257304}
