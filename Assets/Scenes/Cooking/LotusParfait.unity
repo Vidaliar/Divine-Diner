@@ -3352,11 +3352,11 @@ PrefabInstance:
       objectReference: {fileID: 783800424}
     - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
       propertyPath: returnFailNode
-      value: Hermes_test_Success
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
       propertyPath: returnSuccessNode
-      value: Hermes_test_Success
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
       propertyPath: recipeManagers.Array.size

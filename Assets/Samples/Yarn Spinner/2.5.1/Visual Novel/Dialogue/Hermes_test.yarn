@@ -2,7 +2,7 @@
 ---
 <<Fade "#000000" 1 0 0.6>>        // fade back in
 //<<PlayAudio "Romance">>  
-<<PlayMusic "Hermes_Theme>>
+<<PlayMusic Hermes_Theme>>
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 Aelius: Hey, welcome in.
@@ -16,7 +16,7 @@ Hermes: Well hello then, Aelius. I'm Hermes.
 Hermes: But I assume you already guessed that.
 -> It's nice to meet you, sir.
     //Aelius: It's nice to meet you.
-    Hermes: It's nice to meet ya too! Good seeing a new face around here- it's been <i>so<i> long.
+    Hermes: It's nice to meet ya too! Good seeing a new face around here- it's been <i>so</i> long.
 -> I had my suspicions.
     //Aelius: I had my suspicions.
     Hermes: (Sarcastic) <i>Very<i> clever of you.
@@ -24,13 +24,13 @@ Hermes: But I assume you already guessed that.
     Aelius: You got it. I'll do my best.
 -> Obviously
     //Aelius: Obviously.
-    Hermes: Ha! I <i>do<i> look the part, don't I?
+    Hermes: Ha! I <i>do</i> look the part, don't I?
 
-Hermes: [Neutral] Well, hate to say it, but I'm in a hurry kid. Not much time to stay and chat. Could you whip me up some <b>Nectar<b>? Quickly, please.
+Hermes: [Neutral] Well, hate to say it, but I'm in a hurry kid. Not much time to stay and chat. Could you whip me up some <b>Nectar</b>? Quickly, please.
 Aelius: [Neutral] You got it, I'll do my best.
 
 
-<<StartCooking "LotusParfait">>
+<<StartCooking "Nectar">>
 
 <<jump Hermes_test_Success>>
 ===
@@ -39,10 +39,10 @@ title: Hermes_test_Success
 ---
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
-<<PlayMusic "Hermes_Theme>>
+<<PlayMusic Hermes_Theme>>
 Aelius: Got your Nectar ready as fast as I could.
 Aelius: <i>(Hopefully this goes better than the other two…)</i>
-Aelius: <i>*(Or at least better than Zeus *sigh*)*<i>
+Aelius: <i>*(Or at least better than Zeus *sigh*)*</i>
 Aelius: Hope you like it.
 
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
@@ -70,11 +70,11 @@ Hermes: You're lookin' a litte down in the dumps. Rough first day?
 -> It's none of your business.
     //Aelius: It's none of your business.
     Hermes: Meh, figured I might as well ask.
-    Aelius: It's fine, <i>I'm<i> fine.
+    Aelius: It's fine, <i>I'm</i> fine.
 
 Hermes: Let me guess, Zeus stopped in, eh?
 Aelius: How'd you know?
-Hermes: Call it <i>godly<i> intuition. 
+Hermes: Call it <i>godly</i> intuition. 
 Hermes: But honestly, it's easy to tell. He's very good at ruffling newcomers' feathers.
 Aelius: I just... he didn't seem to want me here. I cooked his food to perfection.
 Hermes: Aelius, right? Listen up. People like Zeus are just some honor and glory loving dudes.
