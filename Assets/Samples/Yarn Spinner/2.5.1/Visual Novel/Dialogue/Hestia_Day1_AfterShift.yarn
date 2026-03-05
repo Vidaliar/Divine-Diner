@@ -7,26 +7,107 @@
 
 Hestia: Aelius, you made it through the day!
 Hestia: How was it? Was everything alright?
-Aelius: It was definitely an experience.
-Hestia: Let me guess. Hephaestus?
+Hestia: I know some of them...don't exactly leave the greatest first impressions.
 
--> It went well.
-	Aelius: It went well. He was quiet, but I think he respected the food.
-	Hestia: That sounds like him.
-	Hestia: If he said you did well, that is a real compliment.
-	Aelius: He did, actually.
-	Hestia: Then you should be proud, dear.
 
--> It was a lot.
-	Aelius: It was a lot. I couldn’t really read him at first.
-	Hestia: That’s normal. He spends most of his time in his forge.
-	Hestia: He can be kind, but social things are not his strength.
-	Aelius: That makes sense.
+-> It was great!
+	Hestia: I'm so glad to hear that dear.
+	Hestia: I was quite worried for you, especially since both Zeus and Hephaestus came in.
+	Aelius: Yeah... I couldn’t get much from Hephaestus.
+	Aelius: And I can see why you warned me about Zeus, he definitely was an "experience".
+	Hestia: He definitely is, how about you tell me about your day?
+	Aelius: Of course!
+	-> Talk About Hermes:
+		Aelius: Hermes was pleasant, but he didn't seem like he had any time to enjoy the meal... or really anything.
+		Aelius: I just hope he doesn’t know what caffeine is...
+		Hestia: Shhhh... we don't mention that word around here.
+		Aelius: Oops - Sorry!!
+		Hestia: It's alright, Hermes... had a problem with that specific thing a few centuries ago.
+		Hestia: *shudders* It was a... "struggle" to get it away from him. Quite literally bouncing off the walls.
+		Hestia: But I am glad that you had a relatively good experience with him today.
+	-> Talk about Hephaestus:
+		Aelius: Hephaestus. I really don't know what he is thinking.
+		Aelius: He tried to be kind, but it felt a little awkward.
+		Hestia: Don't get discouraged by that.
+		Hestia: Hephaestus spends most of his time in his forge, so he doesn't understand some social queues.
+		Aelius: Ah, I understand, I feel a little awkward now.
+		Hestia: That's alright dear, it was only your first time meeting him.
+		Aelius: That's fair, it's just everyone felt so familiar today...
+	-> Talk about Zeus:
+		Aelius: I don’t like Zeus very much.
+		Aelius: He's rude, loud, arrogant, and he looks funny.
+		Hestia: I understand, but he is our King.
+		Hestia: He may not be the nicest being to be around, but he is one of the primary patrons here.
+		Hestia: As much as he will probably be a nuisance to you, please just do what you can. Don't take his words to heart.
+		Aelius: ...I'll try, but only for you Hestia.
+-> It was...alright.
+	Hestia: My dear, what happened?
+	Aelius: It was just a lot today.
+	Aelius: I met Hermes, Hephaestus, and Zeus.
+	Hestia: Ah, I understand. They can be a lot in their own ways.
+	Aelius: Exactly.
+	Hestia: Now, tell me how everything went today.
+	-> Talk about Hermes:
+		Aelius: Hermes was pleasant, but he didn't seem like he had any time to enjoy the meal... or really anything.
+		Aelius: I just hope he doesn’t know what caffeine is...
+		Hestia: Shhhh... we don't mention that word around here.
+		Aelius: Oops - Sorry!!
+		Hestia: It's alright, Hermes... had a problem with that specific thing a few centuries ago.
+		Hestia: *shudders* It was a... "struggle" to get it away from him. Quite literally bouncing off the walls.
+		Hestia: But I am glad that you had a relatively good experience with him today.
+	-> Talk about Hephaestus:
+		Aelius: Hephaestus. I really don't know what he is thinking.
+		Aelius: He tried to be kind, but it felt a little awkward.
+		Hestia: Don't get discouraged by that.
+		Hestia: Hephaestus spends most of his time in his forge, so he doesn't understand some social queues.
+		Aelius: Ah, I understand, I feel a little awkward now.
+		Hestia: That's alright dear, it was only your first time meeting him.
+		Aelius: That's fair, it's just everyone felt so familiar today...
+	->	Talk about Zeus:
+		Aelius: I don’t like Zeus very much.
+		Aelius: He's rude, loud, arrogant, and he looks funny.
+		Hestia: I understand, but he is our King.
+		Hestia: He may not be the nicest being to be around, but he is one of the primary patrons here.
+		Hestia: As much as he will probably be a nuisance to you, please just do what you can. Don't take his words to heart.
+		Aelius: ...I'll try, but only for you Hestia.
+->... I don’t know if I'm cut out for this, Hestia.
+	Aelius: Today was a lot and several of the people today weren't exactly the most pleasant to be around.
+	Aelius: It doesn’t feel like I belong here...
+	Hestia: Aelius dear... I'm sorry that your first experience ended up being this way.
+	Hestia: I wish I could make it different, but all of them have been around millenia and that makes changes difficult for them.
+	Hestia: Now, tell me about your day.
+	Aelius: Ok...
+	-> Talk about Hermes:
+		Aelius: Hermes was pleasant, but he didn't seem like he had any time to enjoy the meal... or really anything.
+		Aelius: I just hope he doesn’t know what caffeine is...
+		Hestia: Shhhh... we don't mention that word around here.
+		Aelius: Oops - Sorry!!
+		Hestia: It's alright, Hermes... had a problem with that specific thing a few centuries ago.
+		Hestia: *shudders* It was a... "struggle" to get it away from him. Quite literally bouncing off the walls.
+		Hestia: But I am glad that you had a relatively good experience with him today.
+	-> Talk about Hephaestus:
+		Aelius: Hephaestus. I really don't know what he is thinking.
+		Aelius: He tried to be kind, but it felt a little awkward.
+		Hestia: Don't get discouraged by that.
+		Hestia: Hephaestus spends most of his time in his forge, so he doesn't understand some social queues.
+		Aelius: Ah, I understand, I feel a little awkward now.
+		Hestia: That's alright dear, it was only your first time meeting him.
+		Aelius: That's fair, it's just everyone felt so familiar today...
+	-> Talk about Zeus:
+		Aelius: I don’t like Zeus very much.
+		Aelius: He's rude, loud, arrogant, and he looks funny.
+		Hestia: I understand, but he is our King.
+		Hestia: He may not be the nicest being to be around, but he is one of the primary patrons here.
+		Hestia: As much as he will probably be a nuisance to you, please just do what you can. Don't take his words to heart.
+		Aelius: ...I'll try, but only for you Hestia.
 
-Hestia: Either way, you got through your first real day here.
-Hestia: Get some rest. Tomorrow will feel a little easier.
-Aelius: Thanks, Hestia. Good night.
-Hestia: Good night, my dear.
+Hestia: Well my dear, I think that today has left you with enough on your mind as it is.
+Hestia: I'll let you go and I'll see you tomorrow morning!
+Aelius: Alright, I'll see you in the morning then, right?
+Hestia: Of course, I always welcome having you here.
+Hestia: Good night my dear!
+Aelius: Good night, Hestia!
+Aelius: THANK YOU FOR PLAYING DIVINE DINER!
 
 END DAY
 ===

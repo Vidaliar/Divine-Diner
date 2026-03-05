@@ -9,44 +9,40 @@
 Hestia: Good morning Aelius, how was your first night here in Olympus?
 Hestia: Hopefully no one has bothered you yet. I know they… have no sense of personal boundaries for newcomers.
 Aelius: Thankfully not, though everything is still just unfamiliar.
-Hestia: I figured it might be like that. I hope that you’ll adjust and maybe call this home soon.
+Hestia: I figured it might be like that, I hope that you’ll adjust and maybe call this home soon.
 Hestia: Now with that being said, are you ready to help me out today?
 
--> Yes!
+->Yes
 	Hestia: Excellent! Since it’s just you and I working, I think I’ll work on inventory and you can work front. It’ll give you a good opportunity to familiarize yourself with the regulars.
 	Aelius: I can do that, thank you!
 	Hestia: Of course dear, just make sure you try to get the orders as perfect as you can, some of the Olympians are a little picky about how their food is served. *Cough* Zeus *Cough*
-
 	-> I’m sure it will be fine!
-		Hestia: Excellent!
-        <<HideAll>>
-		<<jump Zeus_Intro>>
+    	Hestia: Excellent!
+    	<<HideAll>>
+    	<<jump Zeus_Intro>>
 	-> Wait, Zeus comes in?!
-		Hestia: Yes, the King of Olympus does frequent here, but it’s nothing to worry about. You just need to stroke his ego and everything will be alright.
-		Hestia: Oh, one other thing. Zeus might be a bit surprised to see a mortal in here, so don’t let anything he says get to you.
-		Aelius: Oh. Well, hopefully he doesn’t come in today then. I think I’m ready to start now!
-		Hestia: Excellent!
-        <<HideAll>>
-		<<jump Zeus_Intro>>
-
+    	Hestia: Yes, the King of Olympus does frequent here, but it’s nothing to worry about. You just need to stroke his ego and everything will be alright.
+    	Hestia: Oh, one other thing. Zeus might be a bit surprised to see a mortal in here, so don’t let anything he says get to you.
+    	Aelius: Oh. Well, hopefully he doesn’t come in today then. I think I’m ready to start now!
+    	Hestia: Excellent!
+    	<<HideAll>>
+    	<<jump Zeus_Intro>>
 -> I’m not sure yet…
 	Hestia: Aelius dear, you may not have any faith in yourself, but I have faith in you. You are capable of anything you put yourself towards.
 	Hestia: Even if some more unpleasant people walk in *cough* Zeus *cough* I know that you will be able to handle it.
-	Aelius: Thank you Hestia, you’ve been so kind to me. I’d be lost without you.
-	Hestia: Of course dear, if we don’t build each other up, then what do we have?
-	Aelius: Nothing…
-	Hestia: That’s right, so I will build you up so that you can build others up.
-	Hestia: Now I think it’s about opening time, so if you could take care of the front and kitchen while I inventory our stock, you’d be a great help.
-	Aelius: Alright, thanks again Hestia.
-
+	->Thank you
+		Aelius: Thank you Hestia, you’ve been so kind to me. I’d be lost without you.
+		Hestia: Of course dear, if we don’t build each other up, then what do we have?
+		Aelius: Nothing…
+		Hestia: That’s right, so I will build you up so that you can build others up.
+		Hestia: Now I think it’s about opening time, so if you could take care of the front and kitchen while I inventory our stock, you’d be a great help.
+		Aelius: Alright, thanks again Hestia.
+		<<HideAll>>
+		<<jump Zeus_Intro>>
 	-> Wait, Zeus comes in?!
 		Hestia: Yes, the King of Olympus does frequent here, but it’s nothing to worry about. You just need to stroke his ego and everything will be alright.
 		Hestia: Oh, one other thing. Zeus might be a bit surprised to see a mortal in here, so don’t let anything he says get to you.
 		Aelius: Oh. Well, hopefully he doesn’t come in today then.
-		Hestia: I’ll head to the back and you’ll be working the front and kitchen today. You got this Aelius, I have so much faith in you.
-        <<HideAll>>
-		<<jump Zeus_Intro>>
-	-> Okay. I’m ready.
 		Hestia: I’ll head to the back and you’ll be working the front and kitchen today. You got this Aelius, I have so much faith in you.
         <<HideAll>>
 		<<jump Zeus_Intro>>
