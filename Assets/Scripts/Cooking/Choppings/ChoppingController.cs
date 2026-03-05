@@ -168,6 +168,7 @@ public class ChoppingController : MonoBehaviour
 
     private IEnumerator Co_MoveItemToArea2(SelectableItems item)
     {
+        
         _isBusy = true;
 
         if (_current != null && _current != item)
