@@ -17,7 +17,7 @@ Hestia: I know some of them...don't exactly leave the greatest first impressions
 	Aelius: And I can see why you warned me about Zeus, he definitely was an "experience".
 	Hestia: He definitely is, how about you tell me about your day?
 	Aelius: Of course!
-	-> Talk About Hermes:
+	->Talk About Hermes
 		Aelius: Hermes was pleasant, but he didn't seem like he had any time to enjoy the meal... or really anything.
 		Aelius: I just hope he doesn’t know what caffeine is...
 		Hestia: Shhhh... we don't mention that word around here.
@@ -25,7 +25,7 @@ Hestia: I know some of them...don't exactly leave the greatest first impressions
 		Hestia: It's alright, Hermes... had a problem with that specific thing a few centuries ago.
 		Hestia: *shudders* It was a... "struggle" to get it away from him. Quite literally bouncing off the walls.
 		Hestia: But I am glad that you had a relatively good experience with him today.
-	-> Talk about Hephaestus:
+	->Talk about Hephaestus
 		Aelius: Hephaestus. I really don't know what he is thinking.
 		Aelius: He tried to be kind, but it felt a little awkward.
 		Hestia: Don't get discouraged by that.
@@ -33,7 +33,7 @@ Hestia: I know some of them...don't exactly leave the greatest first impressions
 		Aelius: Ah, I understand, I feel a little awkward now.
 		Hestia: That's alright dear, it was only your first time meeting him.
 		Aelius: That's fair, it's just everyone felt so familiar today...
-	-> Talk about Zeus:
+	->Talk about Zeus
 		Aelius: I don’t like Zeus very much.
 		Aelius: He's rude, loud, arrogant, and he looks funny.
 		Hestia: I understand, but he is our King.
@@ -47,7 +47,7 @@ Hestia: I know some of them...don't exactly leave the greatest first impressions
 	Hestia: Ah, I understand. They can be a lot in their own ways.
 	Aelius: Exactly.
 	Hestia: Now, tell me how everything went today.
-	-> Talk about Hermes:
+	-> Talk about Hermes
 		Aelius: Hermes was pleasant, but he didn't seem like he had any time to enjoy the meal... or really anything.
 		Aelius: I just hope he doesn’t know what caffeine is...
 		Hestia: Shhhh... we don't mention that word around here.
@@ -55,7 +55,7 @@ Hestia: I know some of them...don't exactly leave the greatest first impressions
 		Hestia: It's alright, Hermes... had a problem with that specific thing a few centuries ago.
 		Hestia: *shudders* It was a... "struggle" to get it away from him. Quite literally bouncing off the walls.
 		Hestia: But I am glad that you had a relatively good experience with him today.
-	-> Talk about Hephaestus:
+	-> Talk about Hephaestus
 		Aelius: Hephaestus. I really don't know what he is thinking.
 		Aelius: He tried to be kind, but it felt a little awkward.
 		Hestia: Don't get discouraged by that.
@@ -63,7 +63,7 @@ Hestia: I know some of them...don't exactly leave the greatest first impressions
 		Aelius: Ah, I understand, I feel a little awkward now.
 		Hestia: That's alright dear, it was only your first time meeting him.
 		Aelius: That's fair, it's just everyone felt so familiar today...
-	->	Talk about Zeus:
+	->	Talk about Zeus
 		Aelius: I don’t like Zeus very much.
 		Aelius: He's rude, loud, arrogant, and he looks funny.
 		Hestia: I understand, but he is our King.
@@ -77,7 +77,7 @@ Hestia: I know some of them...don't exactly leave the greatest first impressions
 	Hestia: I wish I could make it different, but all of them have been around millenia and that makes changes difficult for them.
 	Hestia: Now, tell me about your day.
 	Aelius: Ok...
-	-> Talk about Hermes:
+	-> Talk about Hermes
 		Aelius: Hermes was pleasant, but he didn't seem like he had any time to enjoy the meal... or really anything.
 		Aelius: I just hope he doesn’t know what caffeine is...
 		Hestia: Shhhh... we don't mention that word around here.
@@ -85,7 +85,7 @@ Hestia: I know some of them...don't exactly leave the greatest first impressions
 		Hestia: It's alright, Hermes... had a problem with that specific thing a few centuries ago.
 		Hestia: *shudders* It was a... "struggle" to get it away from him. Quite literally bouncing off the walls.
 		Hestia: But I am glad that you had a relatively good experience with him today.
-	-> Talk about Hephaestus:
+	-> Talk about Hephaestus
 		Aelius: Hephaestus. I really don't know what he is thinking.
 		Aelius: He tried to be kind, but it felt a little awkward.
 		Hestia: Don't get discouraged by that.
@@ -93,7 +93,7 @@ Hestia: I know some of them...don't exactly leave the greatest first impressions
 		Aelius: Ah, I understand, I feel a little awkward now.
 		Hestia: That's alright dear, it was only your first time meeting him.
 		Aelius: That's fair, it's just everyone felt so familiar today...
-	-> Talk about Zeus:
+	-> Talk about Zeus
 		Aelius: I don’t like Zeus very much.
 		Aelius: He's rude, loud, arrogant, and he looks funny.
 		Hestia: I understand, but he is our King.
@@ -109,5 +109,5 @@ Hestia: Good night my dear!
 Aelius: Good night, Hestia!
 Aelius: THANK YOU FOR PLAYING DIVINE DINER!
 
-END DAY
+//END DAY
 ===
