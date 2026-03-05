@@ -90,7 +90,7 @@ Zeus: [Annoyed] <i>Zeus’s usual.</i>
 <<Move Aelius -0.25 bottom 0.5>>
 
 <<wait  0.5>>
-<<Move Zeus 1.25 center 0>>
+<<Move Zeus 5 center 0>>
 -> Cook
 	<<StartCooking MakenaTestScene>>
 	<<jump after_cooking>>
@@ -109,7 +109,7 @@ title: after_cooking
 //<<Move Aelius left center 0.5>>
 //<<Move Zeus right center 0.5>>
 <<wait  0.5>>
-Aelius: [Neutral] Here’s your, <b>Erymanthian Boar Sandwich<b>, King Zeus.
+Aelius: [Neutral] Here’s your, <b>Erymanthian Boar Sandwich</b>, King Zeus.
 Zeus: [Annoyed] What is this?
 
 
@@ -130,7 +130,7 @@ Aelius: [Neutral] Hmph.
 
 <<Move Aelius -0.25 center 0.5>>
 <<wait  0.5>>
-<<Move Zeus 1.25 center 0>>
+<<Move Zeus 5 center 0>>
 -> Back to the kitchen
 
 <<Act Hestia "Hestia 3_4s" right bottom #3d85c6>>
@@ -180,7 +180,7 @@ Aelius: [Neutral] He said to remake his food, so-
 	->Return to the dining area
 		<<Move Aelius -0.25 bottom 0.5>>
 		<<wait  0.5>>
-		<<Move Hestia 1.25 bottom 0>>
+		<<Move Hestia 5 bottom 0>>
 		<<Move Zeus right bottom 0>>
 		<<wait  0.5>>
 		<<Move Aelius left bottom 0.5>>
