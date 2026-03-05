@@ -3,6 +3,7 @@
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+<<PlayMusic Hestia_MainBody>>
 
 Hestia: Aelius, you made it through the day!
 Hestia: How was it? Was everything alright?

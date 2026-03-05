@@ -3,6 +3,8 @@
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+<<PlayMusic Hestia_MainBody>>
+
 
 Hestia: Good morning Aelius, how was your first night here in Olympus?
 Hestia: Hopefully no one has bothered you yet. I know they… have no sense of personal boundaries for newcomers.
