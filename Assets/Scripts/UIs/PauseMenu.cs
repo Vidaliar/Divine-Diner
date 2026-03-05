@@ -2,29 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
     [Header("First class menu")]
     public GameObject level1Menu;
-    public GameObject BGBlock;
-    public Button resumeButton;
-    public Button saveLoadButton;
-    public Button settingsButton;
 
     [Header("secondary menu")]
     public GameObject saveMenu;
     public GameObject settingsMenu;
 
     [Header("background")]
-    [SerializeField] GameObject blurOverlay;
+    public GameObject blurOverlay;
 
     [Header("MainMenu scene")]
     public string mainMenuSceneName = "MainMenu";
-
-    [Header("save/load menu")]
-    public Button saveExit;
 
     [Header("mouse?")]
     public bool manageCursor = true;
@@ -32,15 +24,11 @@ public class PauseMenu : MonoBehaviour
     [Header("fade")]
     public float fadeDuration = 0.15f;
 
-    [Header("Cooking?")]
-    public CookingManager cManager;
-
     private bool paused;
 
     void Awake()
     {
         // inactive all
-        if (BGBlock) BGBlock.SetActive(false);
         if (level1Menu) level1Menu.SetActive(false);
         if (saveMenu) saveMenu.SetActive(false);
         if (settingsMenu) settingsMenu.SetActive(false);
@@ -49,13 +37,6 @@ public class PauseMenu : MonoBehaviour
         paused = false;
     }
 
-    private void Start()
-    {
-        resumeButton.onClick.AddListener(OnClick_Resume);
-        saveLoadButton.onClick.AddListener(OnClick_OpenSaveMenu);
-        settingsButton.onClick.AddListener(OnClick_OpenSettings);
-        saveExit.onClick.AddListener(CloseSecondLevelAndReturnLevel1);
-    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -76,10 +57,8 @@ public class PauseMenu : MonoBehaviour
     // OnClicks
     public void OnClick_Resume()
     {
-        Debug.Log("PauseMenu: Resume clicked in scene " + gameObject.scene.name);
         ResumeGame();
     }
-
 
     public void OnClick_OpenSaveMenu()
     {
@@ -99,8 +78,6 @@ public class PauseMenu : MonoBehaviour
 
     private void PauseAndOpenLevel1()
     {
-        if (cManager) cManager.inPause = true;
-
         paused = true;
 
         Time.timeScale = 0f;
@@ -112,21 +89,17 @@ public class PauseMenu : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
 
-        if (BGBlock) BGBlock.SetActive(true);
         if (blurOverlay) blurOverlay.SetActive(true);
-        if (level1Menu) { level1Menu.SetActive(true); level1Menu.transform.SetAsLastSibling(); }
-        if (blurOverlay) blurOverlay.transform.SetAsFirstSibling();
+
+        if (level1Menu) level1Menu.SetActive(true);
         if (saveMenu) saveMenu.SetActive(false);
         if (settingsMenu) settingsMenu.SetActive(false);
     }
 
     private void ResumeGame()
     {
-        if (cManager) cManager.inPause = false;
-
         paused = false;
 
-        if (BGBlock) BGBlock.SetActive(false);
         if (level1Menu) level1Menu.SetActive(false);
         if (saveMenu) saveMenu.SetActive(false);
         if (settingsMenu) settingsMenu.SetActive(false);
@@ -135,8 +108,8 @@ public class PauseMenu : MonoBehaviour
 
         if (manageCursor)
         {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         if (blurOverlay) blurOverlay.SetActive(false);

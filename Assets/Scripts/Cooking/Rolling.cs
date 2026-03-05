@@ -4,6 +4,9 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
+using FMODUnity;
+using FMOD.Studio;
+
 public class Rolling : MonoBehaviour
 {
     [Header("Objects")]
@@ -25,7 +28,7 @@ public class Rolling : MonoBehaviour
     [SerializeField] bool dynamicSizeBasing = false;
 
     int rolls = 0;
-    
+
     //The values to add to the scale for each roll
     float xSizeFrac;
     float ySizeFrac;
@@ -45,6 +48,14 @@ public class Rolling : MonoBehaviour
     bool inPause = false;
 
     public CookingManager cManager; //Not needed since CookingManager is a singleton but okie
+
+    [Header("FMOD SFX")]
+    [FMODUnity.EventRef]
+    [SerializeField] private string rollingLoopEvent; // example: event:/Sound Effects/Rolling Dough (New)
+
+    private EventInstance rollingInstance;
+    private bool rollingSfxStarted = false;
+
     void Start()
     {
         xSizeFrac = (xSizeDiff-dough.localScale.x) / totalRolls;
@@ -58,7 +69,16 @@ public class Rolling : MonoBehaviour
     void Update()
     {
         inPause = cManager.inPause;
-        if (inPause) return; // Makes sure game isn't paused before anything happens
+
+        if (inPause)
+        {
+            PauseRollingSfx(true);
+            return; // Makes sure game isn't paused before anything happens
+        }
+        else
+        {
+            PauseRollingSfx(false);
+        }
 
         //Dough collider bounds
         //Maybe use different data type to hold all maxY, minY, maxX, and minX, maybe make struct? Maybe Bounds
@@ -70,6 +90,13 @@ public class Rolling : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             canRoll = true;
+            StartRollingSfx();
+        }
+
+        // Stop loop as soon as player lets go
+        if (Input.GetMouseButtonUp(0))
+        {
+            StopRollingSfx();
         }
 
         if (Input.GetMouseButton(0) && canRoll)
@@ -86,11 +113,8 @@ public class Rolling : MonoBehaviour
 
             // rollingPin.position = new Vector2(clampX, rollingPin.position.y);
 
-            /*
-            Needs to be changed so that it takes rolls on both sides to have the dough grow
-            */
-            
             //Checks if pin hit the correct side, and if so, increments rolls and expand dough
+// <<<<<<< HEAD
             // if ((clampX >= doughMaxBound && nextIsRight) || (clampX <= doughMinBound && !nextIsRight))
             // {
             //     nextIsRight = !nextIsRight;
@@ -98,8 +122,19 @@ public class Rolling : MonoBehaviour
             //     dough.transform.localScale = new Vector2(dough.transform.localScale.x + xSizeFrac, dough.transform.localScale.y + ySizeFrac);
             // }
             CheckPinPosition();
+// =======
+//             if ((clampX >= doughMaxBound && nextIsRight) || (clampX <= doughMinBound && !nextIsRight))
+//             {
+//                 nextIsRight = !nextIsRight;
+//                 rolls++;
+//                 dough.transform.localScale = new Vector2(
+//                     dough.transform.localScale.x + xSizeFrac,
+//                     dough.transform.localScale.y + ySizeFrac
+//                 );
+//             }
+// >>>>>>> main
         }
-        
+
         //Transition to next step if player has rolled enough
         if(rolls >= totalRolls && !moveBased && pinDirection == Vector2.up)
         {
@@ -107,6 +142,7 @@ public class Rolling : MonoBehaviour
         }
         else if(rolls >= totalRolls && !moveBased && pinDirection == Vector2.right)
         {
+            StopRollingSfx();
             CookingManager.instance.Transition();
             this.gameObject.SetActive(false);
         }
@@ -117,12 +153,17 @@ public class Rolling : MonoBehaviour
             //sizeDiff would be something like - if(localScale._ >= sizeDiff_) transition - can transition to hori or next minigame
             //check total distance totalRolls & size ... maybe not
         }
-        else if(moveBased && dough.localScale.x >= xSizeDiff && pinDirection == Vector2.right)
-        {
-            CookingManager.instance.Transition();
-            this.gameObject.SetActive(false);
-        }
+        // else if(moveBased && dough.localScale.x >= xSizeDiff && pinDirection == Vector2.right)
+// =======
+//         if (rolls >= totalRolls)
+// >>>>>>> main
+//         {
+//             StopRollingSfx();
+//             CookingManager.instance.Transition();
+//             this.gameObject.SetActive(false);
+//         }
     }
+
 
     void UpdateColliderBounds()
     {
@@ -225,5 +266,41 @@ public class Rolling : MonoBehaviour
 
         pinDirection = Vector2.right;
         rolls = 0;
+    }
+
+    private void StartRollingSfx()
+    {
+        if (rollingSfxStarted) return;
+        if (string.IsNullOrEmpty(rollingLoopEvent)) return;
+
+        rollingInstance = RuntimeManager.CreateInstance(rollingLoopEvent);
+        rollingInstance.start();
+        rollingSfxStarted = true;
+    }
+
+    private void StopRollingSfx()
+    {
+        if (!rollingSfxStarted) return;
+
+        if (rollingInstance.isValid())
+        {
+            rollingInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            rollingInstance.release();
+        }
+
+        rollingSfxStarted = false;
+    }
+
+    private void PauseRollingSfx(bool pause)
+    {
+        if (!rollingSfxStarted) return;
+        if (!rollingInstance.isValid()) return;
+
+        rollingInstance.setPaused(pause);
+    }
+
+    private void OnDisable()
+    {
+        StopRollingSfx();
     }
 }
