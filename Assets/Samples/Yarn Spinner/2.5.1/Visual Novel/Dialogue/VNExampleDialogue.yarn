@@ -26,7 +26,7 @@ position: 0,0
 
 
 // adds actor "Howard" with sprite "Howard" off-screen right, with blue-ish text label
-<<Act "Zeus" "Zeus 3_4s" 1.25 bottom #bf9000>>
+<<Act "Zeus" "Zeus 3_4s" 1.5 bottom #bf9000>>
 
 // animate Howard into new position in right-half + center, within 0.5 seconds
 <<Move Zeus right bottom 0.5>>
