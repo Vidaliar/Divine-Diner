@@ -9,6 +9,7 @@ public class Squeezing : MonoBehaviour
     // GameObject squeezeIngredient;    Likely to be used to differentiate the four types
     [SerializeField] GameObject topOfSqueezeTool;
     [SerializeField] Slider progressBar;
+    [SerializeField] GameObject instructions;
     [SerializeField] Transform juicedObj;
     [SerializeField] int totalRounds = 5; //1 round = WASD
     private int numKeys = 0;
@@ -41,6 +42,8 @@ public class Squeezing : MonoBehaviour
         progressBar.maxValue = 1;
         progressBar.value = 0;
         progressBar.gameObject.SetActive(true);
+
+        instructions.SetActive(true);
 
         //Setting up keyCodeDict
         List<KeyCode> ADList = new List<KeyCode>();
@@ -147,6 +150,7 @@ public class Squeezing : MonoBehaviour
         {
             CookingManager.instance.Transition();
             progressBar.gameObject.SetActive(false);
+            instructions.SetActive(false);
             gameObject.SetActive(false);
         }
 
