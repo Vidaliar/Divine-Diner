@@ -12,7 +12,7 @@ public class Grater : MonoBehaviour
     [SerializeField] GameObject grateInstructions;
     [SerializeField] int totalGrates;
     [SerializeField] float grateSpeed = 7;
-    [SerializeField] float totalDistance = 25;
+    [SerializeField] float totalDistance = 25;  //Maybe set this to be totalGrates * length of grater? 
 
     bool grating;
     int gratingCount = 0;
@@ -125,6 +125,7 @@ public class Grater : MonoBehaviour
         if (currDistance >= totalDistance)
         {
             StopGratingSfx();
+            Debug.Log("Transition");
             CookingManager.instance.Transition();
             grateInstructions.SetActive(false);
             gameObject.SetActive(false);

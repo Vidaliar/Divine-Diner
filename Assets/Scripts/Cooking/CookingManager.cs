@@ -40,6 +40,7 @@ public class CookingManager : MonoBehaviour
 
     [Header("Objects")]
     [SerializeField] GameObject finalFood;
+    [SerializeField] Transform waypointHolder;
     int numTotalPrep;
     int numPrep = 1;    //Keeps track of the current preparation step
     float worldCamHeight;
@@ -48,6 +49,8 @@ public class CookingManager : MonoBehaviour
     public bool cookingSuccess;
 
     public bool inPause = false;
+
+    private int waypointInd = 0;
 
     void Start()
     {
@@ -65,11 +68,19 @@ public class CookingManager : MonoBehaviour
 
         numTotalPrep = recipeManagers.Count;
 
+        if(waypointHolder.childCount < recipeManagers.Count + 2)
+        {
+            for (int i = 0; i < recipeManagers.Count - waypointHolder.childCount+2; i++)
+            {
+                //Make new waypoints to make sure there are enough
+            }
+        }
+
         // AudioManager.Instance.PlaySound("KitchenBackground");    //Use once stopping audio is solved
     }
 
     //Waits for canActivateCast to be true to 'turn on' the cast
-    void Update()
+    void Update()   //Need to look into getting rid of using this Update
     {
         if(canActivateCast && step == CookStep.Cast)
         {
@@ -92,13 +103,70 @@ public class CookingManager : MonoBehaviour
     //Called by recipe managers to go to the next section
     public void Transition()
     {
+    //     switch (step)
+    //     {
+    //         case CookStep.Prep:
+    // if (step == CookStep.Cast) finalFood.transform.position = waypointHolder.GetChild(waypointInd).position;
+    //             if (numPrep == numTotalPrep) step = CookStep.Cast;
+                if (step == CookStep.Cast)
+                {
+                    finalFood.transform.position = waypointHolder.GetChild(waypointInd).position;
+                    finalFood.SetActive(true);
+                }
+                // {
+                    // step = CookStep.Cast;
+    //                 // Camera.main.transform.position = new Vector3(worldCamLength * numPrep++, 0, -10);
+    //                 canActivateCast = true;
+    //                 //castManager.SetActive(true);
+    //                 if(Input.GetMouseButton(0))
+    //                 {
+    //                     canActivateCast = false;
+    //                 }
+    //             }
+    //             else
+    //             {
+    //                 // Camera.main.transform.position = new Vector3(worldCamLength * numPrep, 0, -10);
+    //                 // recipeManagers[numPrep].transform.parent.position = new Vector3(worldCamLength * numPrep, 0, 0);
+                    if(numPrep < numTotalPrep) recipeManagers[numPrep].transform.parent.position = waypointHolder.GetChild(waypointInd).position;
+    //                 recipeManagers[numPrep].SetActive(true);
+    //                 numPrep++;
+    //             }
+
+                cameraManager.MoveTo(waypointHolder.GetChild(waypointInd));
+                waypointInd++;
+
+        //         break;
+
+        //     case CookStep.Cast:
+        //         // Camera.main.transform.position = new Vector3(worldCamLength * (numPrep++), 0, -10);
+        //         cameraManager.MoveTo(waypointHolder.GetChild(waypointInd));
+
+        //         finalFood.SetActive(true);
+                // finalFood.transform.position = new Vector2(Camera.main.transform.position.x, finalFood.transform.position.y);
+                
+        //         step = CookStep.Complete;
+
+        //         // Auto-return after a short beat:
+        //         if (returnDelay > 0f) Invoke(nameof(FinishCooking), returnDelay);
+        //         else FinishCooking();
+        //         break;
+
+
+        //     default:
+        //         Debug.Log("Hit default in transition");
+        //         break;
+        // }
+    }
+
+    public void CamTransitionDone()
+    {
         switch (step)
         {
-            case CookStep.Prep:
+            case CookStep.Prep: //In Transition, numPrep == numTotalPrep -> step = Cast, so here it's not prep and this if isn't called when it should be
                 if (numPrep == numTotalPrep)
                 {
                     step = CookStep.Cast;
-                    Camera.main.transform.position = new Vector3(worldCamLength * numPrep++, 0, -10);
+                    // Camera.main.transform.position = new Vector3(worldCamLength * numPrep++, 0, -10);
                     canActivateCast = true;
                     //castManager.SetActive(true);
                     if(Input.GetMouseButton(0))
@@ -108,17 +176,24 @@ public class CookingManager : MonoBehaviour
                 }
                 else
                 {
-                    Camera.main.transform.position = new Vector3(worldCamLength * numPrep, 0, -10);
-                    recipeManagers[numPrep].transform.parent.position = new Vector3(worldCamLength * numPrep, 0, 0);
+                    // Camera.main.transform.position = new Vector3(worldCamLength * numPrep, 0, -10);
+                    // recipeManagers[numPrep].transform.parent.position = new Vector3(worldCamLength * numPrep, 0, 0);
+                    // recipeManagers[numPrep].transform.parent.position = waypointHolder.GetChild(numPrep-1).position;
                     recipeManagers[numPrep].SetActive(true);
                     numPrep++;
                 }
+
+                // cameraManager.MoveTo(waypointHolder.GetChild(waypointInd));
+                // waypointInd++;
+
                 break;
 
             case CookStep.Cast:
-                Camera.main.transform.position = new Vector3(worldCamLength * (numPrep++), 0, -10);
+                // Camera.main.transform.position = new Vector3(worldCamLength * (numPrep++), 0, -10);
+                // cameraManager.MoveTo(waypointHolder.GetChild(waypointInd));
+
                 finalFood.SetActive(true);
-                finalFood.transform.position = new Vector2(Camera.main.transform.position.x, finalFood.transform.position.y);
+                // finalFood.transform.position = new Vector2(Camera.main.transform.position.x, finalFood.transform.position.y);
                 step = CookStep.Complete;
 
                 // Auto-return after a short beat:

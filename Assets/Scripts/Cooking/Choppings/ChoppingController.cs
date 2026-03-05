@@ -123,8 +123,11 @@ public class ChoppingController : MonoBehaviour
         }
 
         //WAS ADDED FOR FIRST THURSDAY - CAN DELETE LATER
+        //Bug: When clicking the selectableItem, you move to Area2 and it sets RequiredCuts and _cutsDone to 0,
+        //So _cutsDone >= RequiredCuts and canCommit = true which transitions to the next cooking step 
         bool canCommit = !_hasCommitted && _current != null && _inArea2
                  && ((_cutsDone >= RequiredCuts));
+        Debug.Log(_cutsDone + " and req: " + RequiredCuts + " and can commit: " + canCommit);
         cuttingUI.SetCommitInteractable(canCommit);
         if (canCommit)
         {
@@ -165,6 +168,7 @@ public class ChoppingController : MonoBehaviour
 
     private IEnumerator Co_MoveItemToArea2(SelectableItems item)
     {
+        
         _isBusy = true;
 
         if (_current != null && _current != item)
@@ -177,8 +181,9 @@ public class ChoppingController : MonoBehaviour
 
         item.MarkSelected(true);
 
-        if (cameraController != null && area2ViewPoint != null)
-            yield return cameraController.MoveTo(area2ViewPoint);
+        //The 2 commented lines below were commented for GDC build because of changes made to CameraMover
+        // if (cameraController != null && area2ViewPoint != null)
+        //     yield return cameraController.MoveTo(area2ViewPoint);
 
         _inArea2 = true;
         UpdateCuttingUI();
@@ -223,6 +228,7 @@ public class ChoppingController : MonoBehaviour
     private void BeginCuttingSession(SelectableItems item)
     {
         _cutsTotal = Mathf.Max(1, item.TotalSlices);
+        Debug.Log("" + _cutsTotal);
         _cutsDone = 0;
         _verticalPhaseCuts = Mathf.Clamp(item.RoughChopSlices, 0, RequiredCuts);
         _horizontalDenom = Mathf.Max(1, _cutsTotal - _verticalPhaseCuts);
