@@ -1,5 +1,7 @@
 ﻿title: Hestia_Day1_BeforeShift
 ---
+<<Fade "#000000" 1 0 0.4>>
+<<wait 0.1>>
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
@@ -18,15 +20,21 @@ Hestia: Now with that being said, are you ready to help me out today?
 	Hestia: Of course dear, just make sure you try to get the orders as perfect as you can, some of the Olympians are a little picky about how their food is served. *Cough* Zeus *Cough*
 	-> I’m sure it will be fine!
     	Hestia: Excellent!
-    	<<HideAll>>
-    	<<jump Zeus_Intro>>
+    	<<StopMuzic 0.35>>
+		<<HideAll>>
+		<<Fade "#000000" 0 1 0.35>>
+		<<wait 0.4>>
+		<<jump Zeus_Intro>>
 	-> Wait, Zeus comes in?!
     	Hestia: Yes, the King of Olympus does frequent here, but it’s nothing to worry about. You just need to stroke his ego and everything will be alright.
     	Hestia: Oh, one other thing. Zeus might be a bit surprised to see a mortal in here, so don’t let anything he says get to you.
     	Aelius: Oh. Well, hopefully he doesn’t come in today then. I think I’m ready to start now!
     	Hestia: Excellent!
-    	<<HideAll>>
-    	<<jump Zeus_Intro>>
+    	<<StopMuzic 0.35>>
+		<<HideAll>>
+		<<Fade "#000000" 0 1 0.35>>
+		<<wait 0.4>>
+		<<jump Zeus_Intro>>
 -> I’m not sure yet…
 	Hestia: Aelius dear, you may not have any faith in yourself, but I have faith in you. You are capable of anything you put yourself towards.
 	Hestia: Even if some more unpleasant people walk in *cough* Zeus *cough* I know that you will be able to handle it.
@@ -37,13 +45,19 @@ Hestia: Now with that being said, are you ready to help me out today?
 		Hestia: That’s right, so I will build you up so that you can build others up.
 		Hestia: Now I think it’s about opening time, so if you could take care of the front and kitchen while I inventory our stock, you’d be a great help.
 		Aelius: Alright, thanks again Hestia.
+		<<StopMuzic 0.35>>
 		<<HideAll>>
+		<<Fade "#000000" 0 1 0.35>>
+		<<wait 0.4>>
 		<<jump Zeus_Intro>>
 	-> Wait, Zeus comes in?!
 		Hestia: Yes, the King of Olympus does frequent here, but it’s nothing to worry about. You just need to stroke his ego and everything will be alright.
 		Hestia: Oh, one other thing. Zeus might be a bit surprised to see a mortal in here, so don’t let anything he says get to you.
 		Aelius: Oh. Well, hopefully he doesn’t come in today then.
 		Hestia: I’ll head to the back and you’ll be working the front and kitchen today. You got this Aelius, I have so much faith in you.
-        <<HideAll>>
+        <<StopMuzic 0.35>>
+		<<HideAll>>
+		<<Fade "#000000" 0 1 0.35>>
+		<<wait 0.4>>
 		<<jump Zeus_Intro>>
 ===

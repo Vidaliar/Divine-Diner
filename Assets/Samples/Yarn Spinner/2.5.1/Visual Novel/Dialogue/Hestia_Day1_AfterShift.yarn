@@ -1,5 +1,7 @@
 ﻿title: Hestia_Day1_AfterShift
 ---
+<<Fade "#000000" 1 0 0.4>>
+<<wait 0.1>>
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
@@ -109,5 +111,8 @@ Hestia: Good night my dear!
 Aelius: Good night, Hestia!
 Aelius: THANK YOU FOR PLAYING DIVINE DINER!
 
-//END DAY
+<<wait 0.6>>
+<<StopMuzic 0.8>>
+<<Fade "#000000" 0 1 1.0>>
+<<wait 1.1>>
 ===
