@@ -1,11 +1,10 @@
 ﻿title: Hermes_test
 ---
-<<Fade "#000000" 1 0 0.6>>        // fade back in
-//<<PlayAudio "Romance">>  
+<<Fade "#000000" 1 0 0.4>>
+<<wait 0.1>>
 <<PlayMusic Hermes_Theme>>
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
-Aelius: Hey, welcome in.
 
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
 Hermes: Hi there, can I get a—
@@ -30,13 +29,17 @@ Hermes: [Neutral] Well, hate to say it, but I'm in a hurry kid. Not much time to
 Aelius: [Neutral] You got it, I'll do my best.
 
 
+<<StopMuzic 0.35>>
+<<HideAll>>
+<<Fade "#000000" 0 1 0.35>>
+<<wait 0.4>>
 <<StartCooking "Nectar">>
-
-<<jump Hermes_test_Success>>
 ===
 
 title: Hermes_test_Success
 ---
+<<Fade "#000000" 1 0 0.4>>
+<<wait 0.1>>
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<PlayMusic Hermes_Theme>>
@@ -83,15 +86,17 @@ Aelius: It's not that easy-
 Hermes: I really gotta be going. Can't be late on these messages.
 Hermes: I'll see you around!
 <<Hide "Hermes">>
+<<wait 0.2>>
 Aelius: Well, that was... better, I guess.
 
 
 
 <<set $hermes_day1_done = true>>
+<<StopMuzic 0.35>>
+<<HideAll>>
+<<Fade "#000000" 0 1 0.35>>
+<<wait 0.4>>
 <<jump Hephaestus_Intro>>
-
-<<wait 2>>
-<<QuitGame>>
 ===
 
 

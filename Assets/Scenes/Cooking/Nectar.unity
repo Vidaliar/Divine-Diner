@@ -474,6 +474,8 @@ MonoBehaviour:
   instructions: {fileID: 321027103}
   juicedObj: {fileID: 267349811}
   totalRounds: 5
+  squeezeStepEvent: event:/Sound Effects/Turn a lemon
+  squeezeCompleteEvent: event:/Sound Effects/Turn a lemon
   cManager: {fileID: 0}
 --- !u!1 &267349810
 GameObject:
@@ -1907,6 +1909,8 @@ MonoBehaviour:
   instructions: {fileID: 321027103}
   juicedObj: {fileID: 746900976}
   totalRounds: 5
+  squeezeStepEvent: event:/Sound Effects/Turn a lemon
+  squeezeCompleteEvent: event:/Sound Effects/Turn a lemon
   cManager: {fileID: 0}
 --- !u!1001 &1560253015
 PrefabInstance:
@@ -2358,6 +2362,7 @@ GameObject:
   - component: {fileID: 1835411546}
   - component: {fileID: 1835411545}
   - component: {fileID: 1835411544}
+  - component: {fileID: 1835411547}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2440,6 +2445,20 @@ Transform:
   - {fileID: 353582015}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1835411547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835411543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &1863321384
 GameObject:
   m_ObjectHideFlags: 0

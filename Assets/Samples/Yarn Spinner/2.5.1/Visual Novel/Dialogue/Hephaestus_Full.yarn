@@ -1,9 +1,12 @@
 
 title: Hephaestus_Intro
 ---
-Aelius: Hello! Welcome to the Divine Diner!
+<<Fade "#000000" 1 0 0.4>>
+<<wait 0.1>>
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<PlayMusic Hephaestus_Theme>>
-
+Aelius: Hello! Welcome to the Divine Diner!
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 Hephaestus: Hrumph
 Aelius: And you are…?
@@ -60,13 +63,16 @@ Aelius: Coming right up!
 
 
 // [cooking minigame transition]
+<<StopMuzic 0.35>>
+<<HideAll>>
+<<Fade "#000000" 0 1 0.35>>
+<<wait 0.4>>
 <<StartCooking "HeliosSteak">>
-
-<<jump Hephaestus_Return>>
 ===
 title: Hephaestus_Return
 ---
-// [cooking minigame success]
+<<Fade "#000000" 1 0 0.4>>
+<<wait 0.1>>
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
@@ -100,6 +106,9 @@ Aelius: Alright, Hephaestus.
 Hephaestus: Hurmph.
 
 // [Hephaestus walks away]
+<<StopMuzic 0.35>>
 <<HideAll>>
+<<Fade "#000000" 0 1 0.35>>
+<<wait 0.4>>
 <<jump Hestia_Day1_AfterShift>>
 ===

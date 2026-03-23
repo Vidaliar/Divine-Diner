@@ -1741,6 +1741,13 @@ MonoBehaviour:
   namePlate: {fileID: 8095329417957922553}
   genericSprite: {fileID: 114774347424995662}
   actorScale: 0.14
+  uiClickEvent:
+    Guid:
+      Data1: -1204635873
+      Data2: 1291848317
+      Data3: -403690587
+      Data4: 27011777
+    Path: event:/Sound Effects/UI Pt.3 Button Click
 --- !u!114 &4990589770215028340
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,33 +4,18 @@ title: Start
 ===
 
 title: Zeus_Intro
-tags: 
-colorID: 0
-position: 0,0
 ---
 <<declare $cooking = true>>
-
-
-// sets background image to sprite called "bg_office"
+<<Fade "#000000" 1 0 0.4>>
+<<wait 0.1>>
 <<Scene lounge>>
-
 <<Testing testing>>
-//<<PlayAudio Romance>>
 <<PlayMusic Zeus_Theme>>
-
- 
-// adds actor named "Ferrel" using sprite "Ferrel", placed in left-half + center of screen, with green text label
 <<Act Aelius "Aelius 3_4s" left bottom #674ea7>>
 <<wait 1>>
-//<<PlayAudio Wind>>
-
-
-// adds actor "Howard" with sprite "Howard" off-screen right, with blue-ish text label
 <<Act "Zeus" "Zeus 3_4s" 1.5 bottom #bf9000>>
-
-// animate Howard into new position in right-half + center, within 0.5 seconds
 <<Move Zeus right bottom 0.5>>
-<<wait  0.5>>
+<<wait 0.5>>
 
 Aelius: [Smile] Oh, hello! Welcome to-
 
@@ -89,21 +74,26 @@ Zeus: [Annoyed] <i>Zeus’s usual.</i>
 
 <<Move Aelius -0.25 bottom 0.5>>
 
-<<wait  0.5>>
-<<Move Zeus 5 center 0>>
 -> Cook
-	<<StartCooking MakenaTestScene>>
-	<<jump after_cooking>>
+    <<StopMuzic 0.35>>
+    <<HideAll>>
+    <<Fade "#000000" 0 1 0.35>>
+    <<wait 0.4>>
+    <<StartCooking "MakenaTestScene">>
+	//<<jump after_cooking>>
 
 ===
 title: after_cooking
 
 ---
 
+<<Fade "#000000" 1 0 0.4>>
+<<wait 0.1>>
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
 <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 <<PlayMusic Zeus_Theme>>
+<<wait 0.5>>
 
 
 //<<Move Aelius left center 0.5>>
@@ -205,7 +195,10 @@ Aelius: [Neutral] He said to remake his food, so-
 			Zeus: [Negative] No, you must! You simply must be off! I will not have you stay if you are to be putting off important business!
 			Aelius: [Neutral]...
 			Zeus: [Negative] GO! BE OFF!
+			<<StopMuzic 0.35>>
 			<<HideAll>>
+			<<Fade "#000000" 0 1 0.35>>
+			<<wait 0.4>>
 			<<jump Hermes_test>>
 		-> [Neutral] *Stay silent*"
 		Aelius: [Neutral] ...
@@ -222,7 +215,10 @@ Aelius: [Neutral] He said to remake his food, so-
 			Zeus: [Negative] No, you must! You simply must be off! I will not have you stay if you are to be putting off important business!
 			Aelius: [Neutral]...
 			Zeus: [Negative] GO! BE OFF!
+			<<StopMuzic 0.35>>
 			<<HideAll>>
+			<<Fade "#000000" 0 1 0.35>>
+			<<wait 0.4>>
 			<<jump Hermes_test>>
 		-> [Neutral] *Stay silent*"
 		Zeus: [Neutral] Ah, well! There I go again. Always the thinker, me. Can’t ever quite stop myself.
@@ -238,7 +234,10 @@ Aelius: [Neutral] He said to remake his food, so-
 			Zeus: [Negative] No, you must! You simply must be off! I will not have you stay if you are to be putting off important business!
 			Aelius: [Neutral]...
 			Zeus: [Negative] GO! BE OFF!
+			<<StopMuzic 0.35>>
 			<<HideAll>>
+			<<Fade "#000000" 0 1 0.35>>
+			<<wait 0.4>>
 			<<jump Hermes_test>>
 		-> [Neutral] *Stay silent*"
 		Aelius: [Neutral] ...
@@ -252,9 +251,12 @@ Aelius: [Neutral] He said to remake his food, so-
 		<<Fade "#000000" 0 1 0.6>>        // fade to black
 		<<wait 5>>                        // let Wind run for 5s total
 		//<<StopAudio "Wind">>              // ensure Wind is off before Hermes
-		<<HideAll>>                       // clear Zeus/Hestia/etc.
+			//<<HideAll>                      // clear Zeus/Hestia/etc.
 		//<<StopMuzic 1.25>>
+		<<StopMuzic 0.35>>
 		<<HideAll>>
+		<<Fade "#000000" 0 1 0.35>>
+		<<wait 0.4>>
 		<<jump Hermes_test>>
 	-> You're gonna have to make do with this.
 		Aelius: [Neutral] You’re gonna have to make do with this.
@@ -268,7 +270,10 @@ Aelius: [Neutral] He said to remake his food, so-
 		Zeus: [Annoyed] I seem to have lost my appetite.
 		Aelius: [Smile] See you again soon?
 		Zeus: [Annoyed] For your sake, you should hope not.
+		<<StopMuzic 0.35>>
 		<<HideAll>>
+		<<Fade "#000000" 0 1 0.35>>
+		<<wait 0.4>>
 		<<jump Hermes_test>>
 	-> Your new-and-improved munchies, my holiness.
 		Zeus: My... what?
@@ -287,8 +292,12 @@ Aelius: [Neutral] He said to remake his food, so-
 		<<Fade "#000000" 0 1 0.6>>        // fade to black
 		<<wait 5>>                        // let Wind run for 5s total
 		//<<StopAudio "Wind">>              // ensure Wind is off before Hermes
-		<<HideAll>>                       // clear Zeus/Hestia/etc.
+		//<<HideAll>>                       // clear Zeus/Hestia/etc.
 		//<<StopMuzic 1.25>>
+		<<StopMuzic 0.35>>
+		<<HideAll>>
+		<<Fade "#000000" 0 1 0.35>>
+		<<wait 0.4>>
 		<<jump Hermes_test>>
 <<endif>>
 
