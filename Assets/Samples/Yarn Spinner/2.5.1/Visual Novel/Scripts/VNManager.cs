@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine.SceneManagement;
+using FMODUnity;
+using FMOD.Studio;
 
 
 
@@ -685,6 +687,33 @@ namespace Yarn.Unity.Example {
         public void StartCooking(string sceneName)
         {
             SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        }
+        [Header("FMOD UI SFX")]
+        [SerializeField] private EventReference uiClickEvent;
+
+        public void PlayUIClick()
+        {
+            if (uiClickEvent.IsNull)
+            {
+                Debug.LogWarning("[VN] uiClickEvent is not assigned");
+                return;
+            }
+
+            RuntimeManager.PlayOneShot(uiClickEvent);
+        }
+
+        private void Update()
+        {
+            bool pressedSomething =
+                Input.GetMouseButtonDown(0) ||
+                Input.GetMouseButtonDown(1) ||
+                Input.GetMouseButtonDown(2) ||
+                Input.anyKeyDown;
+
+            if (pressedSomething)
+            {
+                PlayUIClick();
+            }
         }
 
         #endregion

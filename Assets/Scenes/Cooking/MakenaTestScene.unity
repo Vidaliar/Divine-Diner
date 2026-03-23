@@ -223,7 +223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &141336340
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13854,7 +13854,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1330857870117542145, guid: c98170a676690d9419624c55dad1599d, type: 3}
       propertyPath: gratingLoopEvent
-      value: 
+      value: event:/Sound Effects/Grater Better
       objectReference: {fileID: 0}
     - target: {fileID: 1330857870117542145, guid: c98170a676690d9419624c55dad1599d, type: 3}
       propertyPath: grateInstructions

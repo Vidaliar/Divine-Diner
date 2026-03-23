@@ -474,6 +474,8 @@ MonoBehaviour:
   instructions: {fileID: 321027103}
   juicedObj: {fileID: 267349811}
   totalRounds: 5
+  squeezeStepEvent: event:/Sound Effects/Turn a lemon
+  squeezeCompleteEvent: event:/Sound Effects/Turn a lemon
   cManager: {fileID: 0}
 --- !u!1 &267349810
 GameObject:
@@ -1907,6 +1909,8 @@ MonoBehaviour:
   instructions: {fileID: 321027103}
   juicedObj: {fileID: 746900976}
   totalRounds: 5
+  squeezeStepEvent: event:/Sound Effects/Turn a lemon
+  squeezeCompleteEvent: event:/Sound Effects/Turn a lemon
   cManager: {fileID: 0}
 --- !u!1001 &1560253015
 PrefabInstance:
@@ -1974,7 +1978,7 @@ PrefabInstance:
       objectReference: {fileID: 1652592272}
     - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
       propertyPath: returnFailNode
-      value: Hephaestus_Return
+      value: Hermes_test_Success
       objectReference: {fileID: 0}
     - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
       propertyPath: waypointHolder
@@ -1982,7 +1986,7 @@ PrefabInstance:
       objectReference: {fileID: 489244091}
     - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
       propertyPath: returnSuccessNode
-      value: Hephaestus_Return
+      value: Hermes_test_Success
       objectReference: {fileID: 0}
     - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
       propertyPath: recipeManagers.Array.size
@@ -2358,6 +2362,7 @@ GameObject:
   - component: {fileID: 1835411546}
   - component: {fileID: 1835411545}
   - component: {fileID: 1835411544}
+  - component: {fileID: 1835411547}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2438,6 +2443,83 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 353582015}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1835411547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835411543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
+--- !u!1 &1863321384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1863321386}
+  - component: {fileID: 1863321385}
+  m_Layer: 0
+  m_Name: BGM_FMOD
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1863321385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863321384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1628193506
+      Data2: 1288031941
+      Data3: -576791932
+      Data4: -105377910
+    Path: event:/Ambient Tracks/Ambient CCO Kitchen
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!4 &1863321386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863321384}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.88, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1881902924
@@ -2609,3 +2691,4 @@ SceneRoots:
   - {fileID: 337609006}
   - {fileID: 489244091}
   - {fileID: 1652592273}
+  - {fileID: 1863321386}
