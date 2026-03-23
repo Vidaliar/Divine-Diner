@@ -45,6 +45,8 @@ public class Rolling : MonoBehaviour
     Vector2 startPinPos;
     Vector2 prevPinPos;
 
+    bool interactable = true;
+
     bool inPause = false;
 
     public CookingManager cManager; //Not needed since CookingManager is a singleton but okie
@@ -81,8 +83,7 @@ public class Rolling : MonoBehaviour
 
         //Dough collider bounds
         //Maybe use different data type to hold all maxY, minY, maxX, and minX, maybe make struct? Maybe Bounds
-        // float doughMinBound = dough.GetComponent<Collider2D>().bounds.min.x;
-        // float doughMaxBound = dough.GetComponent<Collider2D>().bounds.max.x;
+
         if(moveBased) UpdateColliderBounds();
 
         //Allows the player to start rolling after the any previous prep
@@ -98,40 +99,10 @@ public class Rolling : MonoBehaviour
             StopRollingSfx();
         }
 
-        if (Input.GetMouseButton(0) && canRoll)
+        if (Input.GetMouseButton(0) && canRoll && interactable)
         {
             Roll();
-            // Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            // //Normalized vector to move the pin
-            // Vector2 mouseDirection = new Vector2(mousePos.x - rollingPin.position.x, mousePos.y - rollingPin.position.y).normalized;
-
-            // //The x value to set the pin x value as
-            // float newX = rollingPin.position.x + (mouseDirection.x * rollSpeed * Time.deltaTime);
-            // float clampX = Mathf.Clamp(newX, doughMinBound, doughMaxBound);
-
-            // rollingPin.position = new Vector2(clampX, rollingPin.position.y);
-
-            //Checks if pin hit the correct side, and if so, increments rolls and expand dough
-
-            // if ((clampX >= doughMaxBound && nextIsRight) || (clampX <= doughMinBound && !nextIsRight))
-            // {
-            //     nextIsRight = !nextIsRight;
-            //     rolls++;
-            //     dough.transform.localScale = new Vector2(dough.transform.localScale.x + xSizeFrac, dough.transform.localScale.y + ySizeFrac);
-            // }
             CheckPinPosition();
-// =======
-//             if ((clampX >= doughMaxBound && nextIsRight) || (clampX <= doughMinBound && !nextIsRight))
-//             {
-//                 nextIsRight = !nextIsRight;
-//                 rolls++;
-//                 dough.transform.localScale = new Vector2(
-//                     dough.transform.localScale.x + xSizeFrac,
-//                     dough.transform.localScale.y + ySizeFrac
-//                 );
-//             }
-// >>>>>>> main
         }
 
         //Transition to next step if player has rolled enough
@@ -250,9 +221,12 @@ public class Rolling : MonoBehaviour
 
     void StartHorizontal()
     {
+        // interactable = false;
         //Somewhere needs to check if we switch to hori (done in transition section)
         //Rotate pin
-        rollingPin.Rotate(0,0,90);
+        Animator animator = rollingPin.gameObject.GetComponent<Animator>();
+        animator.Play("RollingPinTransition");
+        // rollingPin.Rotate(0,0,90);
         //Center pin
         rollingPin.position = startPinPos;
         Debug.Log(startPinPos);
@@ -262,6 +236,7 @@ public class Rolling : MonoBehaviour
         pinDirection = Vector2.right;
         rolls = 0;
     }
+
 
     private void StartRollingSfx()
     {
