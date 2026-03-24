@@ -8,6 +8,8 @@ public class ModifiedPause : MonoBehaviour
 {
     [Header("Settings in Main Menu")]
     public Button settingsInMainMenuButton;
+    
+    [SerializeField] string MainMenuSceneName = "TitleScene";
 
     [Header("First class menu")]
     public GameObject background;
@@ -16,7 +18,8 @@ public class ModifiedPause : MonoBehaviour
     public Button resumeButton;
     public Button saveLoadButton;
     public Button settingsButton;
-
+    public Button QuitButton;
+    
 
     [Header("secondary menu")]
     public GameObject saveMenu;
@@ -57,6 +60,7 @@ public class ModifiedPause : MonoBehaviour
         saveLoadButton.onClick.AddListener(OnClick_OpenSaveMenu);
         settingsButton.onClick.AddListener(OnClick_OpenSettings);
         saveExit.onClick.AddListener(CloseSecondLevelAndReturnLevel1);
+        QuitButton.onClick.AddListener(OnClick_Quit);
     }
 
     void Update()
@@ -90,6 +94,11 @@ public class ModifiedPause : MonoBehaviour
     public void OnClick_OpenSettings()
     {
         OpenSecondLevel(settingsMenu);
+    }
+
+    public void OnClick_Quit()
+    {
+        SceneManager.LoadScene(MainMenuSceneName);
     }
 
     private void PauseAndOpenLevel1()
