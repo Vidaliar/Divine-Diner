@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.7924528, g: 0.19063722, b: 0.19063722, a: 1}
     m_HighlightedColor: {r: 0.754717, g: 0.10323961, b: 0.10323961, a: 1}
-    m_PressedColor: {r: 0.2848124, g: 0.9245283, b: 0.16135636, a: 1}
+    m_PressedColor: {r: 0.9254902, g: 0.16078432, b: 0.20039591, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -352,7 +352,7 @@ GameObject:
   - component: {fileID: 263181143}
   - component: {fileID: 263181144}
   m_Layer: 5
-  m_Name: Time
+  m_Name: Progress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1152,30 +1152,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62e4b0a2a7235f40862af786ae66236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bellows: {fileID: 229486823}
-  timeSlider: {fileID: 263181144}
-  windFillImage: {fileID: 0}
-  roundDurationSeconds: 10
-  lowThreshold: 0.5
-  midThreshold: 0.7
-  highThreshold: 0.85
-  highFillColor: {r: 1, g: 0.55, b: 0, a: 1}
-  midFillColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  lowFillColor: {r: 0, g: 1, b: 0, a: 1}
-  noneFillColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  lowRate: 1
-  midRate: 2
-  highRate: 3
-  enableWindZoneBackground: 1
-  windZoneRoot: {fileID: 0}
-  noneZoneBg: {fileID: 0}
-  lowZoneBg: {fileID: 0}
-  midZoneBg: {fileID: 0}
-  highZoneBg: {fileID: 0}
-  noneBgColor: {r: 0.3, g: 0.3, b: 0.3, a: 0.35}
-  lowBgColor: {r: 0, g: 1, b: 0, a: 0.25}
-  midBgColor: {r: 1, g: 1, b: 0, a: 0.25}
-  highBgColor: {r: 1, g: 0.55, b: 0, a: 0.25}
+  fireBellows: {fileID: 229486823}
+  progressSlider: {fileID: 263181144}
+  greenMin: 0.5
+  greenMax: 0.75
+  redColor: {r: 1, g: 0, b: 0, a: 1}
+  greenColor: {r: 0, g: 1, b: 0, a: 1}
+  progressPerSecond: 0.12
+  clampProgressAtFull: 1
+  fireSlider: {fileID: 11577530}
 --- !u!4 &1947463711
 Transform:
   m_ObjectHideFlags: 0
