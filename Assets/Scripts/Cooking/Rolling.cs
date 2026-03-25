@@ -84,7 +84,11 @@ public class Rolling : MonoBehaviour
         //Dough collider bounds
         //Maybe use different data type to hold all maxY, minY, maxX, and minX, maybe make struct? Maybe Bounds
 
-        if(moveBased) UpdateColliderBounds();
+        // if(moveBased) UpdateColliderBounds();
+        UpdateColliderBounds(); //Works best within Update but would like to only get bounds when they change
+        
+        // Bounds doughBounds = dough.gameObject.GetComponent<Collider2D>().bounds;
+        // Debug.Log("IN UPDATE Min:"+doughBounds.min.x + ","+doughBounds.min.y + " | Max:"+doughBounds.max.x+","+doughBounds.max.y);
 
         //Allows the player to start rolling after the any previous prep
         if (Input.GetMouseButtonDown(0))
@@ -106,23 +110,29 @@ public class Rolling : MonoBehaviour
         }
 
         //Transition to next step if player has rolled enough
-
         if(rolls >= totalRolls && !moveBased && pinDirection == Vector2.up)
         {
             StartHorizontal();
         }
+
+        //Checks if the player is done rolling when it isn't move based
         else if(rolls >= totalRolls && !moveBased && pinDirection == Vector2.right)
         {
+            StopRollingSfx();
             CookingManager.instance.Transition();
             this.gameObject.SetActive(false);
         }
-        else if(moveBased && dough.localScale.y >= ySizeDiff && pinDirection == Vector2.up)  //Need to change to check for size instead of num rolls
+
+        //Checks for the player has rolled enough vertically if it's move based
+        else if(moveBased && dough.localScale.y >= ySizeDiff && pinDirection == Vector2.up)
         {
             StartHorizontal();
             //Base it off of sizeDiff or totalRolls & size
             //sizeDiff would be something like - if(localScale._ >= sizeDiff_) transition - can transition to hori or next minigame
             //check total distance totalRolls & size ... maybe not
         }
+
+        //Checks if the player is done rolling when it's move based
         else if(moveBased && dough.localScale.x >= xSizeDiff && pinDirection == Vector2.right)
         {
             StopRollingSfx();
@@ -141,7 +151,7 @@ public class Rolling : MonoBehaviour
         // //Check if doing vertical first messes up hori?
         // minDoughBounds = new Vector2(minDoughBounds.x*dough.localScale.x, minDoughBounds.y*dough.localScale.y);
         // maxDoughBounds = new Vector2(maxDoughBounds.x*dough.localScale.x, maxDoughBounds.y*dough.localScale.y);
-        Debug.Log($"Min: ({minDoughBounds.x},{minDoughBounds.y}) and max: ({maxDoughBounds.x},{maxDoughBounds.y})");
+        Debug.Log($"FUNCTION Min: ({minDoughBounds.x},{minDoughBounds.y}) and max: ({maxDoughBounds.x},{maxDoughBounds.y})");
         Debug.Log(doughBounds.extents.x);
     }
 
@@ -196,7 +206,7 @@ public class Rolling : MonoBehaviour
 
 
     //Checks if pin hit the correct side, and if so, increments rolls and expand dough
-    void CheckPinPosition() //Maybe rename to ScaleDough()
+    void CheckPinPosition()
     {
         if(pinDirection == Vector2.up)
         {
@@ -221,20 +231,34 @@ public class Rolling : MonoBehaviour
 
     void StartHorizontal()
     {
-        // interactable = false;
-        //Somewhere needs to check if we switch to hori (done in transition section)
+        interactable = false;
+        
         //Rotate pin
         Animator animator = rollingPin.gameObject.GetComponent<Animator>();
         animator.Play("RollingPinTransition");
-        // rollingPin.Rotate(0,0,90);
+
         //Center pin
-        rollingPin.position = startPinPos;
-        Debug.Log(startPinPos);
-        //Probably disable movement
-        //Make animation for rotating and centering? Or just IEnumerator and math it here?
+        StartCoroutine(MovePinToStartPos());
 
         pinDirection = Vector2.right;
         rolls = 0;
+    }
+
+    IEnumerator MovePinToStartPos()
+    {
+        float moveDist = (rollingPin.position.y - startPinPos.y) / 100;
+        while(true)
+        {
+            if(rollingPin.position.y - startPinPos.y <= 0.1)
+            {
+                rollingPin.position = startPinPos;
+                interactable = true;
+                break;
+            }
+
+            rollingPin.position = new Vector2(startPinPos.x, rollingPin.position.y - moveDist);
+            yield return new WaitForSeconds(0.01f);
+        }
     }
 
 

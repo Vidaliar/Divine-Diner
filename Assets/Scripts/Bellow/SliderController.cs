@@ -100,7 +100,14 @@ public class SliderController : MonoBehaviour
 
     private void Update()
     {
-        if (finished) return;
+        if (finished)
+        {
+            //Slider is a timer, not a progress bar
+            //This works for having attributes, but without attributes we need a progress bar instead
+            //Progress bar only increments while the wind slider is in the 1 'good' section
+            //Once the progress bar is full/finished transition to next minigame
+            Debug.Log("Call transition here");
+        } 
 
         float dt = Time.deltaTime;
 
@@ -156,6 +163,7 @@ public class SliderController : MonoBehaviour
         timeSlider.maxValue = 1f;
         timeSlider.value = 0f;
         timeSlider.interactable = false;
+        timeSlider.gameObject.SetActive(true);  //From Makena - I assume the slider is off since some minigames (currently) don't use it
     }
 
     private float GetWindValueSafe()
