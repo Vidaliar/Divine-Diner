@@ -13930,6 +13930,26 @@ PrefabInstance:
       propertyPath: drawLineCollider
       value: 
       objectReference: {fileID: 1694122179}
+    - target: {fileID: 2904135754399722156, guid: bb6e101dd0fe886408d1b2121e82a2b8, type: 3}
+      propertyPath: castTraceOneShotEvent.Path
+      value: event:/Sound Effects/Fancy Dish
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904135754399722156, guid: bb6e101dd0fe886408d1b2121e82a2b8, type: 3}
+      propertyPath: castTraceOneShotEvent.Guid.Data1
+      value: -905521448
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904135754399722156, guid: bb6e101dd0fe886408d1b2121e82a2b8, type: 3}
+      propertyPath: castTraceOneShotEvent.Guid.Data2
+      value: 1185894322
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904135754399722156, guid: bb6e101dd0fe886408d1b2121e82a2b8, type: 3}
+      propertyPath: castTraceOneShotEvent.Guid.Data3
+      value: 51683246
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904135754399722156, guid: bb6e101dd0fe886408d1b2121e82a2b8, type: 3}
+      propertyPath: castTraceOneShotEvent.Guid.Data4
+      value: 1171617878
+      objectReference: {fileID: 0}
     - target: {fileID: 3655290364208952275, guid: bb6e101dd0fe886408d1b2121e82a2b8, type: 3}
       propertyPath: m_Name
       value: CastManager
