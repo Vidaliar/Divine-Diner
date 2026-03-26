@@ -61,6 +61,12 @@ public class FryingPan : MonoBehaviour
             if (sizzleStarted) sizzleInstance.setPaused(false);
         }
 
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            Debug.Log("p");
+            Flip();
+        }
+
         // Keep 3D attributes updated (safe even if your event is 2D)
         if (sizzleStarted)
         {
@@ -89,7 +95,7 @@ public class FryingPan : MonoBehaviour
             progressBar.value = timer;
         }
 
-        if (flipping) Flip();
+        // if (flipping) Flip();
 
         // If it's been flipped twice and done flipping, transition to next step and don't receive input
         if (numFlips >= 2 && !flipping)
@@ -105,20 +111,21 @@ public class FryingPan : MonoBehaviour
     // Fractionally moves up and rotates the flippable object like it's being flipped
     void Flip()
     {
-        if (timer > timeSec / 2f)
-        {
-            flipping = false;
-            timer = 0;
-        }
-        else
-        {
-            timer += Time.deltaTime;
-            flipObj.transform.position = new Vector2(
-                startPos.x,
-                Mathf.Sin(timer / (timeSec / 2) * 3.14f) * upperPos.y + startPos.y
-            );
-            flipObj.transform.Rotate(0, 0, (180 / (timeSec / 2)) * Time.deltaTime);
-        }
+        flipObj.GetComponent<Animator>().Play("SteakFlip");
+        // if (timer > timeSec / 2f)
+        // {
+        //     flipping = false;
+        //     timer = 0;
+        // }
+        // else
+        // {
+        //     timer += Time.deltaTime;
+        //     flipObj.transform.position = new Vector2(
+        //         startPos.x,
+        //         Mathf.Sin(timer / (timeSec / 2) * 3.14f) * upperPos.y + startPos.y
+        //     );
+        //     flipObj.transform.Rotate(0, 0, (180 / (timeSec / 2)) * Time.deltaTime);
+        // }
     }
 
     private void StartSizzle()
