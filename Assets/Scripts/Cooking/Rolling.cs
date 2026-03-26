@@ -12,6 +12,7 @@ public class Rolling : MonoBehaviour
     [Header("Objects")]
     [SerializeField] Transform rollingPin;
     [SerializeField] Transform dough;
+    [SerializeField] RollingArrow rollingArrow;
 
     [Header("Rolling Info")]
     [SerializeField] int totalRolls = 3;
@@ -34,7 +35,7 @@ public class Rolling : MonoBehaviour
     float ySizeFrac;
 
     bool canRoll = false;
-    bool nextIsRight = true;
+    bool nextIsRight = true; //When true, the next boundary is right or top, it's the same as pinDirection
     Vector2 pinDirection = Vector2.up;
     
     Vector2 minDoughBounds;
@@ -217,6 +218,7 @@ public class Rolling : MonoBehaviour
                 dough.localScale = new Vector2(dough.transform.localScale.x, dough.transform.localScale.y + ySizeFrac);
                 UpdateColliderBounds();
                 Debug.Log($"After func - min: ({minDoughBounds.x},{minDoughBounds.y}) and max: ({maxDoughBounds.x},{maxDoughBounds.y})");
+                rollingArrow.UpdateArrow(nextIsRight, true);
             }   
         }
         else if((rollingPin.position.x <= minDoughBounds.x && !nextIsRight) || (rollingPin.position.x >= maxDoughBounds.x && nextIsRight))
@@ -226,6 +228,7 @@ public class Rolling : MonoBehaviour
             dough.localScale = new Vector2(dough.transform.localScale.x + xSizeFrac, dough.transform.localScale.y);
             UpdateColliderBounds();
             Debug.Log($"After func - min: ({minDoughBounds.x},{minDoughBounds.y}) and max: ({maxDoughBounds.x},{maxDoughBounds.y})");
+            rollingArrow.UpdateArrow(nextIsRight, false);
         }
     }
 
