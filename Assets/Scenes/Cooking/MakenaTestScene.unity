@@ -390,6 +390,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  defaultControlPoint: {fileID: 0}
 --- !u!4 &188796618
 Transform:
   m_ObjectHideFlags: 0
@@ -13862,7 +13863,7 @@ PrefabInstance:
       objectReference: {fileID: 986883148}
     - target: {fileID: 1330857870117542145, guid: c98170a676690d9419624c55dad1599d, type: 3}
       propertyPath: grateTickOneShotEvent
-      value: event:/Sound Effects/Grater Better
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4452692628968254775, guid: c98170a676690d9419624c55dad1599d, type: 3}
       propertyPath: m_LocalPosition.x

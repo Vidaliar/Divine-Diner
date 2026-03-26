@@ -39,6 +39,11 @@ public class Grater : MonoBehaviour
     private EventInstance gratingInstance;
     private bool gratingSfxStarted = false;
 
+    // Small thresholds so tiny mouse jitter does not trigger the loop
+    [Header("Grating SFX Tuning")]
+    [SerializeField] private float minDragMagnitudeForSfx = 0.05f;
+    [SerializeField] private float minDownwardDirectionForSfx = -0.15f;
+
     void Start()
     {
         maxY = grater.GetComponent<Collider2D>().bounds.max.y;
@@ -49,13 +54,17 @@ public class Grater : MonoBehaviour
         grateDirection = new Vector2(0.23f, 0.97f);
 
         grateInstructions.SetActive(true);
+
+        if (!string.IsNullOrEmpty(gratingLoopEvent))
+        {
+            gratingInstance = RuntimeManager.CreateInstance(gratingLoopEvent);
+        }
     }
 
     void Update()
     {
         inPause = cManager.inPause;
 
-        // Pause handling for FMOD loop
         if (inPause)
         {
             PauseGratingSfx(true);
@@ -78,7 +87,6 @@ public class Grater : MonoBehaviour
                 if (otherObj == grateObj)
                 {
                     grating = true;
-                    StartGratingSfx();
                 }
             }
         }
@@ -89,6 +97,18 @@ public class Grater : MonoBehaviour
             Vector2 direction = new Vector2(pos.x - grateObj.transform.position.x, pos.y - grateObj.transform.position.y);
             Vector2 normalizedDir = direction.normalized;
             float dirLength = Mathf.Min(direction.magnitude, 1);
+
+            // Sound should only play while actively dragging downward
+            bool draggingDown = normalizedDir.y < minDownwardDirectionForSfx && dirLength > minDragMagnitudeForSfx;
+
+            if (draggingDown)
+            {
+                StartGratingSfx();
+            }
+            else
+            {
+                StopGratingSfx();
+            }
 
             float newY = grateObj.transform.position.y + (normalizedDir.y * grateDirection.y * (grateSpeed * dirLength) * Time.deltaTime);
             float clampY = Mathf.Clamp(newY, minY, maxY);
@@ -135,9 +155,8 @@ public class Grater : MonoBehaviour
     private void StartGratingSfx()
     {
         if (gratingSfxStarted) return;
-        if (string.IsNullOrEmpty(gratingLoopEvent)) return;
+        if (!gratingInstance.isValid()) return;
 
-        gratingInstance = RuntimeManager.CreateInstance(gratingLoopEvent);
         gratingInstance.start();
         gratingSfxStarted = true;
     }
@@ -145,13 +164,9 @@ public class Grater : MonoBehaviour
     private void StopGratingSfx()
     {
         if (!gratingSfxStarted) return;
+        if (!gratingInstance.isValid()) return;
 
-        if (gratingInstance.isValid())
-        {
-            gratingInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            gratingInstance.release();
-        }
-
+        gratingInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         gratingSfxStarted = false;
     }
 
@@ -172,5 +187,18 @@ public class Grater : MonoBehaviour
     private void OnDisable()
     {
         StopGratingSfx();
+
+        if (gratingInstance.isValid())
+        {
+            gratingInstance.release();
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (gratingInstance.isValid())
+        {
+            gratingInstance.release();
+        }
     }
 }
