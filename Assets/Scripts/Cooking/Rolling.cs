@@ -218,7 +218,7 @@ public class Rolling : MonoBehaviour
                 dough.localScale = new Vector2(dough.transform.localScale.x, dough.transform.localScale.y + ySizeFrac);
                 UpdateColliderBounds();
                 Debug.Log($"After func - min: ({minDoughBounds.x},{minDoughBounds.y}) and max: ({maxDoughBounds.x},{maxDoughBounds.y})");
-                rollingArrow.UpdateArrow(nextIsRight, true);
+                rollingArrow.UpdateArrow(nextIsRight, true, ySizeFrac);
             }   
         }
         else if((rollingPin.position.x <= minDoughBounds.x && !nextIsRight) || (rollingPin.position.x >= maxDoughBounds.x && nextIsRight))
@@ -228,7 +228,7 @@ public class Rolling : MonoBehaviour
             dough.localScale = new Vector2(dough.transform.localScale.x + xSizeFrac, dough.transform.localScale.y);
             UpdateColliderBounds();
             Debug.Log($"After func - min: ({minDoughBounds.x},{minDoughBounds.y}) and max: ({maxDoughBounds.x},{maxDoughBounds.y})");
-            rollingArrow.UpdateArrow(nextIsRight, false);
+            rollingArrow.UpdateArrow(nextIsRight, false, xSizeFrac);
         }
     }
 
@@ -256,6 +256,9 @@ public class Rolling : MonoBehaviour
             {
                 rollingPin.position = startPinPos;
                 interactable = true;
+
+                float rescale = -1 * ySizeFrac * totalRolls;
+                rollingArrow.UpdateArrow(nextIsRight, false, rescale);
                 break;
             }
 

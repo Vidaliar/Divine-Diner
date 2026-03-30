@@ -21,7 +21,7 @@ public class RollingArrow : MonoBehaviour
     }
 
     //Need to add logic for scaling
-    public void UpdateArrow(bool rightOrTop, bool vertical)
+    public void UpdateArrow(bool rightOrTop, bool vertical, float scale)
     {
         if(vertical)
         {
@@ -38,12 +38,14 @@ public class RollingArrow : MonoBehaviour
         {
             if(rightOrTop)
             {
-                parentArrow.rotation = Quaternion.Euler(0,0,90);
+                parentArrow.rotation = Quaternion.Euler(0,0,270);
             }
             else
             {
-                parentArrow.rotation = Quaternion.Euler(0,0,270);
+                parentArrow.rotation = Quaternion.Euler(0,0,90);
             }   
         }
+
+        line.localScale = new Vector3(line.localScale.x, line.localScale.y + scale, line.localScale.z);
     }
 }
