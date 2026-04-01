@@ -2700,10 +2700,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProgressBar
       objectReference: {fileID: 0}
-    - target: {fileID: 5313738862466305060, guid: bf5dafb5351310d48b937ff05674d5ff, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6197084984949606894, guid: bf5dafb5351310d48b937ff05674d5ff, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2783,14 +2779,6 @@ PrefabInstance:
     - target: {fileID: 6197084984949606894, guid: bf5dafb5351310d48b937ff05674d5ff, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8696403062780718141, guid: bf5dafb5351310d48b937ff05674d5ff, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9053995917004963578, guid: bf5dafb5351310d48b937ff05674d5ff, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3387,30 +3375,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62e4b0a2a7235f40862af786ae66236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bellows: {fileID: 952938026}
-  timeSlider: {fileID: 848156572}
-  windFillImage: {fileID: 1578099518}
-  roundDurationSeconds: 10
-  lowThreshold: 0.5
-  midThreshold: 0.7
-  highThreshold: 0.85
-  highFillColor: {r: 1, g: 0.55, b: 0, a: 1}
-  midFillColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  lowFillColor: {r: 0, g: 1, b: 0, a: 1}
-  noneFillColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  lowRate: 1
-  midRate: 2
-  highRate: 3
-  enableWindZoneBackground: 1
-  windZoneRoot: {fileID: 0}
-  noneZoneBg: {fileID: 0}
-  lowZoneBg: {fileID: 0}
-  midZoneBg: {fileID: 0}
-  highZoneBg: {fileID: 0}
-  noneBgColor: {r: 0.3, g: 0.3, b: 0.3, a: 0.35}
-  lowBgColor: {r: 0, g: 1, b: 0, a: 0.25}
-  midBgColor: {r: 1, g: 1, b: 0, a: 0.25}
-  highBgColor: {r: 1, g: 0.55, b: 0, a: 0.25}
+  fireBellows: {fileID: 0}
+  progressSlider: {fileID: 0}
+  greenMin: 0.5
+  greenMax: 0.75
+  redColor: {r: 1, g: 0, b: 0, a: 1}
+  greenColor: {r: 0, g: 1, b: 0, a: 1}
+  progressPerSecond: 0.12
+  clampProgressAtFull: 1
+  fireSlider: {fileID: 0}
 --- !u!4 &1178002650
 Transform:
   m_ObjectHideFlags: 0
@@ -5026,6 +4999,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   defaultControlPoint: {fileID: 0}
+  pointsRoot: {fileID: 0}
+  segmentsRoot: {fileID: 0}
+  snapToStartPointBeforePlay: 0
 --- !u!4 &1969647324
 Transform:
   m_ObjectHideFlags: 0
