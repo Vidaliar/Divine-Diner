@@ -114,11 +114,17 @@ public class FryingPan : MonoBehaviour
         Animator anim = flipObj.GetComponent<Animator>();
         if (anim != null)
         {
+            Debug.Log("Anim got");
             AnimatorClipInfo[] clipInfo = anim.GetCurrentAnimatorClipInfo(0);
             //Access the current length of the clip
-            // clipLength = clipInfo[0].clip.length;
+            // float clipLength = clipInfo[0].clip.length;
+            // Debug.Log("Length: " + clipLength);
 
-            if(clipInfo == null) anim.Play("SteakFlip");
+            // if(clipInfo == null)
+            // { 
+            //     Debug.Log("Info null");
+                anim.Play("SteakFlip");
+            // }
         }
 
         else if (timer > timeSec / 2f)
