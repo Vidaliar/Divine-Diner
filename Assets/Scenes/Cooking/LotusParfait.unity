@@ -1724,7 +1724,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &516556182
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3118,6 +3118,69 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1066078899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1066078901}
+  - component: {fileID: 1066078900}
+  m_Layer: 0
+  m_Name: BGM_FMOD
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1066078900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066078899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1628193506
+      Data2: 1288031941
+      Data3: -576791932
+      Data4: -105377910
+    Path: event:/Ambient Tracks/Ambient CCO Kitchen
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!4 &1066078901
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066078899}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.88, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1083818291
 GameObject:
   m_ObjectHideFlags: 0
@@ -3387,30 +3450,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62e4b0a2a7235f40862af786ae66236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bellows: {fileID: 952938026}
-  timeSlider: {fileID: 848156572}
-  windFillImage: {fileID: 1578099518}
-  roundDurationSeconds: 10
-  lowThreshold: 0.5
-  midThreshold: 0.7
-  highThreshold: 0.85
-  highFillColor: {r: 1, g: 0.55, b: 0, a: 1}
-  midFillColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  lowFillColor: {r: 0, g: 1, b: 0, a: 1}
-  noneFillColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  lowRate: 1
-  midRate: 2
-  highRate: 3
-  enableWindZoneBackground: 1
-  windZoneRoot: {fileID: 0}
-  noneZoneBg: {fileID: 0}
-  lowZoneBg: {fileID: 0}
-  midZoneBg: {fileID: 0}
-  highZoneBg: {fileID: 0}
-  noneBgColor: {r: 0.3, g: 0.3, b: 0.3, a: 0.35}
-  lowBgColor: {r: 0, g: 1, b: 0, a: 0.25}
-  midBgColor: {r: 1, g: 1, b: 0, a: 0.25}
-  highBgColor: {r: 1, g: 0.55, b: 0, a: 0.25}
+  fireBellows: {fileID: 0}
+  progressSlider: {fileID: 0}
+  greenMin: 0.5
+  greenMax: 0.75
+  redColor: {r: 1, g: 0, b: 0, a: 1}
+  greenColor: {r: 0, g: 1, b: 0, a: 1}
+  progressPerSecond: 0.12
+  clampProgressAtFull: 1
+  fireSlider: {fileID: 0}
 --- !u!4 &1178002650
 Transform:
   m_ObjectHideFlags: 0
@@ -5026,6 +5074,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   defaultControlPoint: {fileID: 0}
+  pointsRoot: {fileID: 0}
+  segmentsRoot: {fileID: 0}
+  snapToStartPointBeforePlay: 0
 --- !u!4 &1969647324
 Transform:
   m_ObjectHideFlags: 0
@@ -6023,3 +6074,4 @@ SceneRoots:
   - {fileID: 1086266139}
   - {fileID: 1969647324}
   - {fileID: 120249957}
+  - {fileID: 1066078901}
