@@ -23,7 +23,6 @@ public class AudioSettingsUI : MonoBehaviour
 
     [Header("Init / Retry")]
     [Min(0f)] public float waitForInstanceTimeout = 1.0f;
-
     [Min(0f)] public float warnAfterSeconds = 0.2f;
 
     private AudioSettings _s;
@@ -33,7 +32,6 @@ public class AudioSettingsUI : MonoBehaviour
     private void Awake()
     {
         if (autoBindByName) AutoBind();
-
         TryInitImmediate();
     }
 
@@ -68,7 +66,6 @@ public class AudioSettingsUI : MonoBehaviour
         float start = Time.unscaledTime;
         float lastWarn = -999f;
 
-
         while (true)
         {
             _s = AudioSettings.Instance;
@@ -84,7 +81,7 @@ public class AudioSettingsUI : MonoBehaviour
 
             if (waitForInstanceTimeout > 0f && elapsed >= waitForInstanceTimeout)
             {
-                Debug.LogError("[AudioSettingsUI] AudioSettings.Instance not found (timeout). " );
+                Debug.LogError("[AudioSettingsUI] AudioSettings.Instance not found (timeout).");
                 yield break;
             }
 
@@ -113,11 +110,11 @@ public class AudioSettingsUI : MonoBehaviour
 
         if (muteAllButton) muteAllButton.onClick.AddListener(OnClickMuteAll);
         if (muteBgmButton) muteBgmButton.onClick.AddListener(OnClickMuteBgm);
-        if (muteSfxButton) muteSfxButton.onClick.AddListener(OnClickMuteSfx); // placeholder
+        if (muteSfxButton) muteSfxButton.onClick.AddListener(OnClickMuteSfx); // FMOD SFX mute
 
         if (totalSlider) totalSlider.onValueChanged.AddListener(OnChangeMaster);
         if (bgmSlider) bgmSlider.onValueChanged.AddListener(OnChangeBgm);
-        if (sfxSlider) sfxSlider.onValueChanged.AddListener(OnChangeSfx); // placeholder
+        if (sfxSlider) sfxSlider.onValueChanged.AddListener(OnChangeSfx); // FMOD SFX volume
     }
 
     private void UnbindOnce()
@@ -182,7 +179,7 @@ public class AudioSettingsUI : MonoBehaviour
     private void OnClickMuteSfx()
     {
         if (_s == null) return;
-        _s.ToggleMuteSfx(); // placeholder
+        _s.ToggleMuteSfx();
         RefreshButtonVisuals();
     }
 
@@ -211,7 +208,7 @@ public class AudioSettingsUI : MonoBehaviour
     private void OnChangeSfx(float v)
     {
         if (_s == null) return;
-        _s.SetSfxVolume01(v); // placeholder
+        _s.SetSfxVolume01(v);
 
         if (autoUnmuteOnSliderChange && v > 0.001f && _s.MuteSfx)
             _s.SetMuteSfx(false);

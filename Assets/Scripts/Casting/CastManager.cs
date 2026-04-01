@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Yarn.Unity.Example;
+using FMODUnity;
 
 public class CastManager : MonoBehaviour
 {
@@ -28,6 +29,17 @@ public class CastManager : MonoBehaviour
 
     bool inPause = false;
     public CookingManager cManager;
+
+    [Header("FMOD SFX")]
+    [SerializeField] private EventReference castTraceOneShotEvent;
+    [SerializeField] private EventReference castSuccessOneShotEvent;
+    [SerializeField] private EventReference castRetryOneShotEvent;
+
+    [Header("Cast Trace SFX Tuning")]
+    [SerializeField] private float traceRetriggerInterval = 1.7f;
+
+    private float nextTraceSfxTime = 0f;
+
     void Start()
     {
         if (instance == null && instance != this)
@@ -62,7 +74,7 @@ public class CastManager : MonoBehaviour
 
         // drawLineCollider.transform.position = pos;
 
-        //Draws the line while the mouse button is held down
+        // Draws the line while the mouse button is held down
         if (Input.GetMouseButton(0))
         {
             if (Vector2.Distance(pos, lastLinePos) > linePointDist)
@@ -73,12 +85,15 @@ public class CastManager : MonoBehaviour
                 lastLinePos = pos;
 
                 CheckPointBounds(pos);
+                PlayTraceSfxIfNeeded();
             }
         }
 
         if (Input.GetMouseButtonUp(0))
         {
             numLines++;
+            nextTraceSfxTime = 0f;
+
             if (numLines >= maxLines)
             {
                 //If after 3? tries -> next button/transition
@@ -104,6 +119,8 @@ public class CastManager : MonoBehaviour
                 {
                     scoreText.text = "Divine!";
                     scoreText.gameObject.SetActive(true);
+
+                    PlayOneShotIfAssigned(castSuccessOneShotEvent);
 
                     CookingManager.instance.Transition();
                     gameObject.SetActive(false);
@@ -146,7 +163,10 @@ public class CastManager : MonoBehaviour
         line.positionCount = 0;
         score = 0;
         numTries++;
+        nextTraceSfxTime = 0f;
         Debug.Log("Cast is reset. Num tries is " + numTries);
+
+        PlayOneShotIfAssigned(castRetryOneShotEvent);
 
         pathPoints = cast.pointObjects;
         foreach (GameObject point in pathPoints)
@@ -160,5 +180,22 @@ public class CastManager : MonoBehaviour
         //Do Hestia dialogue
         //show 'next' button
         //
+    }
+
+    private void PlayTraceSfxIfNeeded()
+    {
+        if (castTraceOneShotEvent.IsNull) return;
+
+        if (Time.time >= nextTraceSfxTime)
+        {
+            RuntimeManager.PlayOneShot(castTraceOneShotEvent, transform.position);
+            nextTraceSfxTime = Time.time + traceRetriggerInterval;
+        }
+    }
+
+    private void PlayOneShotIfAssigned(EventReference eventRef)
+    {
+        if (eventRef.IsNull) return;
+        RuntimeManager.PlayOneShot(eventRef, transform.position);
     }
 }

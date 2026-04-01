@@ -793,6 +793,7 @@ GameObject:
   m_Component:
   - component: {fileID: 503747155}
   - component: {fileID: 503747156}
+  - component: {fileID: 503747157}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -829,6 +830,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioAssets:
   - {fileID: 11400000, guid: f3ab823153183754997303868a5a1b47, type: 2}
+--- !u!114 &503747157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503747154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ff9a49d60bcaf14e99e23b5473e6b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmSource: {fileID: 1834940349}
+  sfxBusPath: bus:/SFX
+  enableFmodSfx: 1
+  curve: 2.2
+  keyMasterVol: aud_master_vol
+  keyBgmVol: aud_bgm_vol
+  keySfxVol: aud_sfx_vol
+  keyMuteAll: aud_mute_all
+  keyMuteBgm: aud_mute_bgm
+  keyMuteSfx: aud_mute_sfx
 --- !u!1 &571418097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,6 +1346,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1834940349 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 9206208487772063366, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+  m_PrefabInstance: {fileID: 104355505}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2058297579
 GameObject:
   m_ObjectHideFlags: 0

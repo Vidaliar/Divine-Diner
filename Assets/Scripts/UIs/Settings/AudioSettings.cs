@@ -1,25 +1,45 @@
 using UnityEngine;
-using UnityEngine.Audio;
-using UnityEngine.SceneManagement;
-[DefaultExecutionOrder(-1000)]
+using FMODUnity;
+using FMOD.Studio;
+
+/*
+SUMMARY (NO MIXER + FMOD SFX BUS)
+- This script does NOT use Unity AudioMixer.
+- Total (Unity) volume:
+    Uses AudioListener.volume (affects all Unity audio, including BGM).
+- BGM (Unity) volume:
+    Uses a dedicated Unity AudioSource (bgmSource). BGM effective loudness is:
+      effectiveBgm = AudioListener.volume * bgmSource.volume
+- SFX (FMOD) volume:
+    Uses an FMOD Bus (e.g., "bus:/SFX").
+    Requirements in FMOD Studio:
+      1) Create an SFX Bus under Master in the Mixer (e.g., SFX).
+      2) Route all SFX events output to that Bus.
+      3) Build Banks and refresh banks in Unity (FMOD > Refresh Banks).
+      4) Copy the Bus path (Copy Path) and paste it into 'sfxBusPath' in Inspector.
+
+- Safety:
+    If the FMOD bus path is wrong / not found, FMOD control is disabled for the session,
+    and Unity (Total/BGM) controls continue working normally.
+*/
+
 public class AudioSettings : MonoBehaviour
 {
     public static AudioSettings Instance { get; private set; }
 
-    [Header("Unity Audio (Optional AudioMixer)")]
-    [SerializeField] private AudioMixer audioMixer;
-    [SerializeField] private string masterVolumeParam = "MasterVol";
-    [SerializeField] private string bgmVolumeParam = "BgmVol";
-
-    [Header("No Mixer Mode (BGM AudioSource)")]
+    [Header("Unity BGM (AudioSource)")]
+    [Tooltip("Assign your BGM AudioSource here for best reliability. If empty, the script will try to find a GameObject named 'BGM' at runtime.")]
     [SerializeField] private AudioSource bgmSource;
 
-    [Header("Auto Resolve")]
-    [SerializeField] private bool autoFindBgmByName = true;
-    [SerializeField] private string bgmObjectName = "BGM";
+    [Header("FMOD SFX (Bus)")]
+    [Tooltip("FMOD SFX bus path. Example: bus:/SFX (use Copy Path in FMOD Studio).")]
+    [SerializeField] private string sfxBusPath = "bus:/SFX";
 
-    [Header("Mapping")]
-    [Range(-80f, -10f)] public float minDb = -60f;
+    [Tooltip("If disabled, FMOD SFX volume/mute will not be applied at all.")]
+    [SerializeField] private bool enableFmodSfx = true;
+
+    [Header("Perceptual Mapping")]
+    [Tooltip("Perceptual curve for slider values (0..1). Larger means finer control at low volume.")]
     [Range(0.1f, 5f)] public float curve = 2.2f;
 
     [Header("PlayerPrefs Keys")]
@@ -32,79 +52,30 @@ public class AudioSettings : MonoBehaviour
 
     public float MasterVol01 { get; private set; } = 1f;
     public float BgmVol01 { get; private set; } = 1f;
-    public float SfxVol01 { get; private set; } = 1f; // placeholder
+    public float SfxVol01 { get; private set; } = 1f;
 
     public bool MuteAll { get; private set; }
     public bool MuteBgm { get; private set; }
-    public bool MuteSfx { get; private set; } // placeholder
+    public bool MuteSfx { get; private set; }
 
-    private bool _warnedSfxPlaceholder;
-    private bool _warnedBgmSourceMissing;
-    private bool _warnedMasterParamMissing;
-    private bool _warnedBgmParamMissing;
-
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-    private static void BootstrapAfterSceneLoad()
-    {
-        if (Instance != null) return;
-
-#if UNITY_2022_2_OR_NEWER
-        var existing = Object.FindFirstObjectByType<AudioSettings>();
-#else
-        var existing = Object.FindObjectOfType<AudioSettings>();
-#endif
-        if (existing != null) return;
-
-        var go = new GameObject("AudioSettings (Auto)");
-        go.AddComponent<AudioSettings>();
-    }
+    private Bus _sfxBus;
+    private bool _fmodSfxReady;
+    private bool _warnedFmodOnce;
+    private bool _warnedBgmOnce;
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
+        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        SceneManager.sceneLoaded += OnSceneLoaded;
-
         LoadFromPrefs();
-        TryResolveBgmSource();
+
+        // Acquire references safely (never throw).
+        EnsureBgmSource();
+        AcquireFmodBusSafe();
+
         ApplyAll();
-    }
-
-    private void OnDestroy()
-    {
-        if (Instance == this) Instance = null;
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        TryResolveBgmSource();
-        ApplyAll();
-    }
-
-    private void TryResolveBgmSource()
-    {
-        if (audioMixer != null) return;
-        if (bgmSource != null) return;
-
-        if (!autoFindBgmByName) return;
-
-        var go = GameObject.Find(bgmObjectName);
-        if (go != null) bgmSource = go.GetComponent<AudioSource>();
-
-        if (bgmSource == null && !_warnedBgmSourceMissing)
-        {
-            _warnedBgmSourceMissing = true;
-            Debug.LogWarning($"[AudioSettings] No AudioMixer and bgmSource not set. " +
-                             $"Tried find GameObject '{bgmObjectName}' but failed. ");
-        }
     }
 
     private void LoadFromPrefs()
@@ -137,68 +108,152 @@ public class AudioSettings : MonoBehaviour
         return Mathf.Pow(v01, curve);
     }
 
-    private float Slider01ToDb(float v01)
+    private void EnsureBgmSource()
     {
-        float shaped = Shape01(v01);
-        return Mathf.Lerp(minDb, 0f, shaped);
+        if (bgmSource != null) return;
+
+        // Common fallback: a GameObject named "BGM" that holds the AudioSource.
+        var go = GameObject.Find("BGM");
+        if (go != null)
+            bgmSource = go.GetComponent<AudioSource>();
+    }
+
+    private void AcquireFmodBusSafe()
+    {
+        _fmodSfxReady = false;
+        if (!enableFmodSfx) return;
+
+        if (string.IsNullOrWhiteSpace(sfxBusPath))
+            return;
+
+        try
+        {
+            _sfxBus = RuntimeManager.GetBus(sfxBusPath);
+            _fmodSfxReady = _sfxBus.isValid();
+
+            if (!_fmodSfxReady && !_warnedFmodOnce)
+            {
+                Debug.LogWarning($"[AudioSettings] FMOD bus invalid: '{sfxBusPath}'. FMOD SFX control disabled for this session.");
+                _warnedFmodOnce = true;
+                enableFmodSfx = false; // stop spamming
+            }
+        }
+        catch (System.Exception e)
+        {
+            if (!_warnedFmodOnce)
+            {
+                Debug.LogWarning($"[AudioSettings] FMOD bus not found: '{sfxBusPath}'. " +
+                                 $"FMOD SFX control disabled for this session. Details: {e.GetType().Name}");
+                _warnedFmodOnce = true;
+            }
+            enableFmodSfx = false; // stop spamming
+        }
     }
 
     private void ApplyAll()
     {
-        if (audioMixer != null) ApplyMixer();
-        else ApplyNoMixer();
+        ApplyUnityTotalAndBgm();
+        ApplyFmodSfxSafe();
     }
 
-    private void ApplyMixer()
+    private void ApplyUnityTotalAndBgm()
     {
-        float masterDb = MuteAll ? minDb : Slider01ToDb(MasterVol01);
-        if (!audioMixer.SetFloat(masterVolumeParam, masterDb) && !_warnedMasterParamMissing)
-        {
-            _warnedMasterParamMissing = true;
-            Debug.LogWarning($"[AudioSettings] AudioMixer missing param '{masterVolumeParam}'.");
-        }
-
-        float bgmDb = MuteBgm ? minDb : Slider01ToDb(BgmVol01);
-        if (!audioMixer.SetFloat(bgmVolumeParam, bgmDb) && !_warnedBgmParamMissing)
-        {
-            _warnedBgmParamMissing = true;
-            Debug.LogWarning($"[AudioSettings] AudioMixer missing param '{bgmVolumeParam}'.");
-        }
-    }
-
-    private void ApplyNoMixer()
-    {
+        // Total (Unity) volume
         AudioListener.volume = MuteAll ? 0f : Shape01(MasterVol01);
 
+        // BGM volume/mute
+        EnsureBgmSource();
         if (bgmSource != null)
         {
             bgmSource.mute = MuteBgm;
             bgmSource.volume = Shape01(BgmVol01);
         }
+        else if (!_warnedBgmOnce)
+        {
+            Debug.LogWarning("[AudioSettings] BGM AudioSource not assigned and GameObject 'BGM' not found. BGM slider will not work until bgmSource is set.");
+            _warnedBgmOnce = true;
+        }
     }
 
-    private void WarnSfxPlaceholderOnce()
+    private void ApplyFmodSfxSafe()
     {
-        if (_warnedSfxPlaceholder) return;
-        _warnedSfxPlaceholder = true;
-        Debug.LogWarning("[AudioSettings] SFX settings are placeholder (FMOD not wired).");
+        if (!enableFmodSfx) return;
+
+        if (!_fmodSfxReady || !_sfxBus.isValid())
+        {
+            AcquireFmodBusSafe();
+            if (!enableFmodSfx || !_fmodSfxReady) return;
+        }
+
+        try
+        {
+            // Make Total feel global for FMOD too:
+            // finalSfxVolume = Total * Sfx
+            float total = Shape01(MasterVol01);
+            float sfx = Shape01(SfxVol01);
+            float finalVol = Mathf.Clamp01(total * sfx);
+
+            bool finalMute = MuteAll || MuteSfx;
+
+            _sfxBus.setVolume(finalVol);
+            _sfxBus.setMute(finalMute);
+        }
+        catch
+        {
+            enableFmodSfx = false;
+            if (!_warnedFmodOnce)
+            {
+                Debug.LogWarning("[AudioSettings] FMOD SFX apply failed; FMOD SFX control disabled for this session.");
+                _warnedFmodOnce = true;
+            }
+        }
     }
 
-    public void SetMasterVolume01(float v01) { MasterVol01 = Mathf.Clamp01(v01); SaveToPrefs(); ApplyAll(); }
-    public void SetBgmVolume01(float v01) { BgmVol01 = Mathf.Clamp01(v01); SaveToPrefs(); ApplyAll(); }
-    public void SetMuteAll(bool mute) { MuteAll = mute; SaveToPrefs(); ApplyAll(); }
-    public void SetMuteBgm(bool mute) { MuteBgm = mute; SaveToPrefs(); ApplyAll(); }
-    public void ToggleMuteAll() => SetMuteAll(!MuteAll);
-    public void ToggleMuteBgm() => SetMuteBgm(!MuteBgm);
+    // ===== Public API for UI =====
 
-    // ===== SFX:placeholder =====
-    public void SetSfxVolume01(float v01) { SfxVol01 = Mathf.Clamp01(v01); SaveToPrefs(); WarnSfxPlaceholderOnce(); }
-    public void SetMuteSfx(bool mute) { MuteSfx = mute; SaveToPrefs(); WarnSfxPlaceholderOnce(); }
-    public void ToggleMuteSfx() => SetMuteSfx(!MuteSfx);
-
-    public void SetBgmSource(AudioSource source)
+    public void SetMasterVolume01(float v01)
     {
-        bgmSource = source;
+        MasterVol01 = Mathf.Clamp01(v01);
+        SaveToPrefs();
         ApplyAll();
     }
+
+    public void SetBgmVolume01(float v01)
+    {
+        BgmVol01 = Mathf.Clamp01(v01);
+        SaveToPrefs();
+        ApplyAll();
+    }
+
+    public void SetSfxVolume01(float v01)
+    {
+        SfxVol01 = Mathf.Clamp01(v01);
+        SaveToPrefs();
+        ApplyAll();
+    }
+
+    public void SetMuteAll(bool mute)
+    {
+        MuteAll = mute;
+        SaveToPrefs();
+        ApplyAll();
+    }
+
+    public void SetMuteBgm(bool mute)
+    {
+        MuteBgm = mute;
+        SaveToPrefs();
+        ApplyAll();
+    }
+
+    public void SetMuteSfx(bool mute)
+    {
+        MuteSfx = mute;
+        SaveToPrefs();
+        ApplyAll();
+    }
+
+    public void ToggleMuteAll() => SetMuteAll(!MuteAll);
+    public void ToggleMuteBgm() => SetMuteBgm(!MuteBgm);
+    public void ToggleMuteSfx() => SetMuteSfx(!MuteSfx);
 }
