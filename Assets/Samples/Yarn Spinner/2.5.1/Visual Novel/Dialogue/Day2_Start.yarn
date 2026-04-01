@@ -1,0 +1,6 @@
+﻿title: Day2_Start
+---
+<<Fade "#000000" 1 0 0.4>>
+<<wait 0.1>>
+<<jump Day2_Ares>>
+===
