@@ -50,7 +50,7 @@ public class CookingManager : MonoBehaviour
 
     public bool inPause = false;
 
-    private int waypointInd = 0;
+    private int waypointInd = 0;    //Maybe just set to 1 and not have the waypointInd = 1; in start
 
     void Start()
     {
@@ -67,6 +67,8 @@ public class CookingManager : MonoBehaviour
         worldCamLength = worldCamHeight * Screen.width / Screen.height;
 
         numTotalPrep = recipeManagers.Count;
+
+        waypointInd = 1;
 
         if(waypointHolder.childCount < recipeManagers.Count + 2)
         {
@@ -108,11 +110,13 @@ public class CookingManager : MonoBehaviour
     //         case CookStep.Prep:
     // if (step == CookStep.Cast) finalFood.transform.position = waypointHolder.GetChild(waypointInd).position;
     //             if (numPrep == numTotalPrep) step = CookStep.Cast;
-                if (step == CookStep.Cast)
-                {
-                    finalFood.transform.position = waypointHolder.GetChild(waypointInd).position;
-                    finalFood.SetActive(true);
-                }
+                
+                //Whole if statement below is part of direct movement
+                // if (step == CookStep.Cast)
+                // {
+                //     finalFood.transform.position = waypointHolder.GetChild(waypointInd).position;
+                //     finalFood.SetActive(true);
+                // }
                 // {
                     // step = CookStep.Cast;
     //                 // Camera.main.transform.position = new Vector3(worldCamLength * numPrep++, 0, -10);
@@ -127,13 +131,16 @@ public class CookingManager : MonoBehaviour
     //             {
     //                 // Camera.main.transform.position = new Vector3(worldCamLength * numPrep, 0, -10);
     //                 // recipeManagers[numPrep].transform.parent.position = new Vector3(worldCamLength * numPrep, 0, 0);
-                    if(numPrep < numTotalPrep) recipeManagers[numPrep].transform.parent.position = waypointHolder.GetChild(waypointInd).position;
+                    
+                    //Line below is part of direct movement
+                    // if(numPrep < numTotalPrep) recipeManagers[numPrep].transform.parent.position = waypointHolder.GetChild(waypointInd).position;
     //                 recipeManagers[numPrep].SetActive(true);
     //                 numPrep++;
     //             }
 
-                cameraManager.MoveTo(waypointHolder.GetChild(waypointInd));
-                waypointInd++;
+                //2 lines below are direct movement
+                // cameraManager.MoveTo(waypointHolder.GetChild(waypointInd));
+                // waypointInd++;
 
         //         break;
 
@@ -156,6 +163,26 @@ public class CookingManager : MonoBehaviour
         //         Debug.Log("Hit default in transition");
         //         break;
         // }
+
+        if (waypointInd >= waypointHolder.childCount)
+        return;
+
+        if (step == CookStep.Cast)
+        {
+            finalFood.transform.position = waypointHolder.GetChild(waypointInd).position;
+            finalFood.SetActive(true);
+        }
+
+        int nextWaypointIndex = waypointInd + 1;
+
+        if (numPrep < numTotalPrep && nextWaypointIndex < waypointHolder.childCount)
+        {
+            recipeManagers[numPrep].transform.parent.position =
+                waypointHolder.GetChild(waypointInd).position;
+        }
+
+        cameraManager.PlayConfiguredPath(waypointInd - 1, waypointInd);
+        waypointInd++;
     }
 
     public void CamTransitionDone()
