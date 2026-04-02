@@ -33,6 +33,8 @@ public class FryingPan : MonoBehaviour
     private EventInstance sizzleInstance;
     private bool sizzleStarted = false;
 
+    private Coroutine flipFinishRoutine;
+
     void Start()
     {
         startPos = flipObj.transform.position;
@@ -67,7 +69,7 @@ public class FryingPan : MonoBehaviour
         //     Flip();
         // }
 
-        // Keep 3D attributes updated (safe even if your event is 2D)
+        // Keep 3D attributes updated 
         if (sizzleStarted)
         {
             sizzleInstance.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
@@ -86,6 +88,19 @@ public class FryingPan : MonoBehaviour
                 spaceText.SetActive(false);
                 flipping = true;
                 numFlips++;
+
+                Animator anim = flipObj.GetComponent<Animator>();
+                if (anim != null)
+                {
+                    Debug.Log("Anim got");
+                    anim.Play("SteakFlip", 0, 0f);
+
+                    if (flipFinishRoutine != null)
+                    {
+                        StopCoroutine(flipFinishRoutine);
+                    }
+                    flipFinishRoutine = StartCoroutine(WaitForFlipAnimation(anim));
+                }
             }
         }
 
@@ -115,16 +130,6 @@ public class FryingPan : MonoBehaviour
         if (anim != null)
         {
             Debug.Log("Anim got");
-            AnimatorClipInfo[] clipInfo = anim.GetCurrentAnimatorClipInfo(0);
-            //Access the current length of the clip
-            // float clipLength = clipInfo[0].clip.length;
-            // Debug.Log("Length: " + clipLength);
-
-            // if(clipInfo == null)
-            // { 
-            //     Debug.Log("Info null");
-                anim.Play("SteakFlip");
-            // }
         }
 
         else if (timer > timeSec / 2f)
@@ -141,6 +146,24 @@ public class FryingPan : MonoBehaviour
             );
             flipObj.transform.Rotate(0, 0, (180 / (timeSec / 2)) * Time.deltaTime);
         }
+    }
+
+    private IEnumerator WaitForFlipAnimation(Animator anim)
+    {
+        yield return null;
+
+        float clipLength = 0.5f;
+        AnimatorClipInfo[] clipInfo = anim.GetCurrentAnimatorClipInfo(0);
+        if (clipInfo != null && clipInfo.Length > 0)
+        {
+            clipLength = clipInfo[0].clip.length;
+        }
+
+        yield return new WaitForSeconds(clipLength);
+
+        flipping = false;
+        timer = 0;
+        flipFinishRoutine = null;
     }
 
     private void StartSizzle()
