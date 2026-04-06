@@ -23,10 +23,6 @@ public class SaveData
     public int hermes;
     public int hephaestus;
 
-    public string yarnProjectName;
-    public string yarnNodeName;
-    public int yarnLineIndex;
-
     // ====== Future possible data to save ======
     // public string scriptId;
     // public string label;
