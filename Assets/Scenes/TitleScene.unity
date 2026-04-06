@@ -123,57 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &429403503
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 429403505}
-  - component: {fileID: 429403504}
-  m_Layer: 0
-  m_Name: SaveSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &429403504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429403503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29982b3d5d0fcf441a108eeb0038f94f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stateProviderBehaviour: {fileID: 0}
-  rootFolder: Saves
-  captureViaCamera: 0
-  captureCamera: {fileID: 0}
-  thumbWidth: 512
-  thumbHeight: 288
-  uiToHideTemporarily: []
---- !u!4 &429403505
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429403503}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 604.96533, y: 380.0792, z: -8.692189}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &793860450
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,7 +989,6 @@ MonoBehaviour:
   continueGameButton: {fileID: 1992348822}
   exitGameButton: {fileID: 928345094}
   settingsButton: {fileID: 870447087}
-  saveSystem: {fileID: 429403504}
 --- !u!4 &1325998724
 Transform:
   m_ObjectHideFlags: 0
@@ -1590,6 +1538,5 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1731367083}
-  - {fileID: 429403505}
   - {fileID: 1325998724}
   - {fileID: 1150784149}
