@@ -115,4 +115,5 @@ Aelius: THANK YOU FOR PLAYING DIVINE DINER!
 <<StopMuzic 0.8>>
 <<Fade "#000000" 0 1 1.0>>
 <<wait 1.1>>
+<<ReturnToTitle>>
 ===

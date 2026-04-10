@@ -88,6 +88,7 @@ namespace Yarn.Unity.Example {
 
 
             runner.AddCommandHandler<string>("StartCooking", StartCooking);
+            runner.AddCommandHandler("ReturnToTitle", ReturnToTitle);
 
 
             // adds all Resources to internal lists / one big pile... it
@@ -688,6 +689,13 @@ namespace Yarn.Unity.Example {
         {
             SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
         }
+        
+        public void ReturnToTitle()
+        {
+	        Time.timeScale = 1f;
+	        SceneManager.LoadScene("TitleScene", LoadSceneMode.Single);
+        }
+        
         [Header("FMOD UI SFX")]
         [SerializeField] private EventReference uiClickEvent;
 
