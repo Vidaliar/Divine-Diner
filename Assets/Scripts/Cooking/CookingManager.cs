@@ -169,7 +169,9 @@ public class CookingManager : MonoBehaviour
 
         if (step == CookStep.Cast)
         {
-            finalFood.transform.position = waypointHolder.GetChild(waypointInd).position;
+            Vector3 newPos = finalFood.transform.position;
+            newPos.x = waypointHolder.GetChild(waypointInd).position.x;
+            finalFood.transform.position = newPos;
             finalFood.SetActive(true);
         }
 

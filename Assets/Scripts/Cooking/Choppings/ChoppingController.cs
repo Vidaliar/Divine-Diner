@@ -93,6 +93,7 @@ public class ChoppingController : MonoBehaviour
 
         var item = hit.collider.GetComponentInParent<SelectableItems>();
         if (item == null) return;
+        item.GetComponent<Collider2D>().enabled = false;
 
         StartCoroutine(Co_MoveItemToArea2(item));
     }
