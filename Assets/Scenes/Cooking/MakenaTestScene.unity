@@ -6353,7 +6353,7 @@ Transform:
   m_GameObject: {fileID: 697085861}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 90, y: -10, z: 0}
+  m_LocalPosition: {x: 80, y: -10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13876,7 +13876,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0993035ecc04ae640a790c1ff3a47f7b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1f0b7e7d3cd553644b39b521a21aa3f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13896,8 +13896,8 @@ Transform:
   m_GameObject: {fileID: 2101268477}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 191.6, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalPosition: {x: 191.6, y: -1.13, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -14253,8 +14253,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1694122179}
     - target: {fileID: 2904135754399722156, guid: bb6e101dd0fe886408d1b2121e82a2b8, type: 3}
+      propertyPath: castTraceLoopEvent.Path
+      value: event:/Sound Effects/Sigil Drawing
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904135754399722156, guid: bb6e101dd0fe886408d1b2121e82a2b8, type: 3}
       propertyPath: castTraceOneShotEvent.Path
       value: event:/Sound Effects/Fancy Dish
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904135754399722156, guid: bb6e101dd0fe886408d1b2121e82a2b8, type: 3}
+      propertyPath: castTraceLoopEvent.Guid.Data1
+      value: -112667035
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904135754399722156, guid: bb6e101dd0fe886408d1b2121e82a2b8, type: 3}
+      propertyPath: castTraceLoopEvent.Guid.Data2
+      value: 1263950458
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904135754399722156, guid: bb6e101dd0fe886408d1b2121e82a2b8, type: 3}
+      propertyPath: castTraceLoopEvent.Guid.Data3
+      value: -936043334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904135754399722156, guid: bb6e101dd0fe886408d1b2121e82a2b8, type: 3}
+      propertyPath: castTraceLoopEvent.Guid.Data4
+      value: -656444098
       objectReference: {fileID: 0}
     - target: {fileID: 2904135754399722156, guid: bb6e101dd0fe886408d1b2121e82a2b8, type: 3}
       propertyPath: castTraceOneShotEvent.Guid.Data1

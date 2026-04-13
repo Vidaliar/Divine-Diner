@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using Yarn.Unity.Example;
 using FMODUnity;
+using FMOD.Studio;
 
 public class CastManager : MonoBehaviour
 {
@@ -31,14 +32,12 @@ public class CastManager : MonoBehaviour
     public CookingManager cManager;
 
     [Header("FMOD SFX")]
-    [SerializeField] private EventReference castTraceOneShotEvent;
+    [SerializeField] private EventReference castTraceLoopEvent;
     [SerializeField] private EventReference castSuccessOneShotEvent;
     [SerializeField] private EventReference castRetryOneShotEvent;
 
-    [Header("Cast Trace SFX Tuning")]
-    [SerializeField] private float traceRetriggerInterval = 1.7f;
-
-    private float nextTraceSfxTime = 0f;
+    private EventInstance castTraceInstance;
+    private bool castTraceStarted = false;
 
     void Start()
     {
@@ -61,18 +60,28 @@ public class CastManager : MonoBehaviour
         cast = newCast.GetComponent<CastSO>();
 
         maxLines = cast.numLines;
+
+        if (!castTraceLoopEvent.IsNull)
+        {
+            castTraceInstance = RuntimeManager.CreateInstance(castTraceLoopEvent);
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector2 pos = cam.ScreenToWorldPoint(Input.mousePosition);
         transform.position = pos;
 
         inPause = cManager.inPause;
-        if (inPause) return; // Makes sure game isn't paused before anything happens
-
-        // drawLineCollider.transform.position = pos;
+        if (inPause)
+        {
+            PauseTraceSfx(true);
+            return;
+        }
+        else
+        {
+            PauseTraceSfx(false);
+        }
 
         // Draws the line while the mouse button is held down
         if (Input.GetMouseButton(0))
@@ -85,19 +94,21 @@ public class CastManager : MonoBehaviour
                 lastLinePos = pos;
 
                 CheckPointBounds(pos);
-                PlayTraceSfxIfNeeded();
+
+                // Start trace sound the moment the player begins a real valid stroke
+                StartTraceSfx();
             }
         }
 
         if (Input.GetMouseButtonUp(0))
         {
+            // Sigil progress is gone on release, so stop immediately
+            StopTraceSfx();
+
             numLines++;
-            nextTraceSfxTime = 0f;
 
             if (numLines >= maxLines)
             {
-                //If after 3? tries -> next button/transition
-
                 pathPoints = cast.pointObjects;
                 if (pathPoints.Count > 0) pointScore = 100f / pathPoints.Count;
 
@@ -112,7 +123,6 @@ public class CastManager : MonoBehaviour
                     {
                         score += pointScore;
                     }
-                    // Debug.Log(point.GetComponent<PathPoint>().hit);
                 }
 
                 if (score >= passingScore)
@@ -122,20 +132,19 @@ public class CastManager : MonoBehaviour
 
                     PlayOneShotIfAssigned(castSuccessOneShotEvent);
 
+                    StopTraceSfx();
                     CookingManager.instance.Transition();
                     gameObject.SetActive(false);
                     CookingManager.instance.cookingSuccess = true;
                 }
-
                 else
                 {
                     if (numTries >= maxTries)
                     {
-                        //Do 'skip cast' option
+                        // Do 'skip cast' option
                     }
+
                     RetryCast();
-                    // scoreText.text = "Dubious";
-                    // CookingManager.instance.cookingSuccess = false;
                 }
             }
         }
@@ -143,12 +152,10 @@ public class CastManager : MonoBehaviour
 
     void CheckPointBounds(Vector3 pos)
     {
-        //Use OnCollisionExit2D on cast 
-        //numOutBounds could be used either way to do a percentage or 'static' score system
         if (pointsInBounds == false)
         {
             Debug.Log("Score deducted by 5");
-            score -= 5; //TEMP, MAYBE MAKE IT DEPEND ON numOutBounds
+            score -= 5;
             numOutBounds++;
         }
     }
@@ -160,10 +167,11 @@ public class CastManager : MonoBehaviour
 
     public void RetryCast()
     {
+        StopTraceSfx();
+
         line.positionCount = 0;
         score = 0;
         numTries++;
-        nextTraceSfxTime = 0f;
         Debug.Log("Cast is reset. Num tries is " + numTries);
 
         PlayOneShotIfAssigned(castRetryOneShotEvent);
@@ -182,20 +190,53 @@ public class CastManager : MonoBehaviour
         //
     }
 
-    private void PlayTraceSfxIfNeeded()
+    private void StartTraceSfx()
     {
-        if (castTraceOneShotEvent.IsNull) return;
+        if (castTraceStarted) return;
+        if (!castTraceInstance.isValid()) return;
 
-        if (Time.time >= nextTraceSfxTime)
-        {
-            RuntimeManager.PlayOneShot(castTraceOneShotEvent, transform.position);
-            nextTraceSfxTime = Time.time + traceRetriggerInterval;
-        }
+        castTraceInstance.start();
+        castTraceStarted = true;
+    }
+
+    private void StopTraceSfx()
+    {
+        if (!castTraceStarted) return;
+        if (!castTraceInstance.isValid()) return;
+
+        castTraceInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        castTraceStarted = false;
+    }
+
+    private void PauseTraceSfx(bool pause)
+    {
+        if (!castTraceStarted) return;
+        if (!castTraceInstance.isValid()) return;
+
+        castTraceInstance.setPaused(pause);
     }
 
     private void PlayOneShotIfAssigned(EventReference eventRef)
     {
         if (eventRef.IsNull) return;
         RuntimeManager.PlayOneShot(eventRef, transform.position);
+    }
+
+    private void OnDisable()
+    {
+        StopTraceSfx();
+
+        if (castTraceInstance.isValid())
+        {
+            castTraceInstance.release();
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (castTraceInstance.isValid())
+        {
+            castTraceInstance.release();
+        }
     }
 }
