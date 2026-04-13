@@ -62,6 +62,22 @@ namespace Yarn.Unity.Example {
 		static Vector2 screenSize = new Vector2( 1280f, 720f); // needed for position calcuations, e.g. what does "left" mean?
 
 
+		private void Start()
+		{
+			Time.timeScale = 1f;
+
+			if (fadeBG != null)
+			{
+				Color c = fadeBG.color;
+				c.a = 0f;
+				fadeBG.color = c;
+			}
+
+			if (nameplateBG != null)
+			{
+				nameplateBG.gameObject.SetActive(false);
+			}
+		}
 
 		void Awake () {
 			// manually add all Yarn command handlers, so that we don't
