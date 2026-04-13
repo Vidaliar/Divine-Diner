@@ -9,6 +9,7 @@ public class CastSO : MonoBehaviour
     public List<Vector2> points = new List<Vector2>();
     public List<GameObject> pointObjects; //{ get; private set; }
     public int numLines = 1;
+    [SerializeField] bool useLinePoints = true;
     LineRenderer line;
     // Vector2 center;
     EdgeCollider2D edgeColl;
@@ -24,13 +25,25 @@ public class CastSO : MonoBehaviour
         float worldCamHeight = Camera.main.orthographicSize * 2;
         // float worldCamLength = worldCamHeight * Screen.width / Screen.height;
 
-        for (int i = 0; i < points.Count; i++)
+        if(!useLinePoints){
+            for (int i = 0; i < points.Count; i++)
+            {
+                points[i] = points[i] * (worldCamHeight / 2);
+                points[i] += center;
+            }
+            DrawCast();
+        }
+        else
         {
-            points[i] = points[i] * (worldCamHeight / 2);
-            points[i] += center;
+            for (int i = 0; i<line.positionCount; i++)
+            {
+                Vector3 point = line.GetPosition(i) * (worldCamHeight/2) + new Vector3 (center.x, center.y, 0);
+                point.z = 0;
+                line.SetPosition(i, point);
+            }
         }
 
-        DrawCast();
+        // DrawCast();
         PlacePointMarkers();
         UpdateEdgeCollider();
     }
