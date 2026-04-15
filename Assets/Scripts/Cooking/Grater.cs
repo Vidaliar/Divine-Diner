@@ -115,7 +115,9 @@ public class Grater : MonoBehaviour
 
             float newX = (grateDirection.x / grateDirection.y) * clampY;
 
-            currDistance += Vector3.Distance(grateObj.transform.localPosition, new Vector3(newX, clampY, 0));
+            float dist = Vector3.Distance(grateObj.transform.localPosition, new Vector3(newX, clampY, 0));
+            currDistance += dist;
+            if(dist > 0) StartGratingSfx();
 
             grateObj.transform.localPosition = new Vector2(newX, clampY);
 

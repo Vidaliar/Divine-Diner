@@ -5,11 +5,12 @@ using UnityEngine;
 // [CreateAssetMenu(fileName = "Cast", menuName = "Cast")]
 public class CastSO : MonoBehaviour
 {
+    [SerializeField] string attribute;
     [SerializeField] GameObject pathPointPref;
+    [SerializeField] bool useLinePoints = true;
     public List<Vector2> points = new List<Vector2>();
     public List<GameObject> pointObjects; //{ get; private set; }
     public int numLines = 1;
-    [SerializeField] bool useLinePoints = true;
     LineRenderer line;
     // Vector2 center;
     EdgeCollider2D edgeColl;
