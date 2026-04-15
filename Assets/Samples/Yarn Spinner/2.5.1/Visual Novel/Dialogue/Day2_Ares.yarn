@@ -1,5 +1,83 @@
-﻿title: Day2_Ares
+﻿title: Day2_Ares_Intro
+---
+<<Scene "lounge bg draft 3">>
+<<PlayMusic Hestia_MainBody>>
+
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
 tags:
 ---
+Ares: Hestia! Why is there a mortal here?!
+Hestia: Don't worry about it! I managed to find some good help, so don't scare Aelius off!
+Ares: How did someone like <i>you</i> get here? You're not dead, not a god, so how are you on Olympus?
+
+// introduce Aelius here
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+
+-> [Positive] Welcome to Divine Diner, what can I get for you?
+        Ares: Did I just get ignored?!
+        Ares: Do you even know who I am?
+        Aelius: Honestly, I don't know.
+        Aelius: I just got here a day and half or so ago, so you don't ring any bells/
+        Ares: <*>Facepalms and takes a breath.</*>
+        Ares: I. Am. Ares.
+        Ares: Lord Ares. And I am the great god of war. I-
+        Aelius: Can I get your order?
+        Ares: ... Yes, but make it quick, I need to explain to you my greatness.
+-> [Neutral] Well, I simply just am here now, that's all there is to it.
+        Aelius: I'm Aelius. Hestia found me and offered me a place here and...
+        Ares: <*>Glares.</*>
+        Aelius: ...If I had known someone great like you came to this establishment, I'd have prepared more.
+        Ares: Well, as long as you know what you've done wrong, I suppose I will let it go.
+        Ares: I'm so generous, don't you think so?
+        Ares: Now let me tell you about my great deeds, so that you understand how great I am.
+        Aelius: <*>Sighs</*> Ok.
+        Aelius: Thank you Lord Ares, what can I get for you? I can listen to you after I serve your food.
+-> [Neutral] Hestia! Why is there a douche with a spear here?
+        Aelius: Can I kick him out?
+        Hestia: <*>Loudly groans.</*>
+        Hestia: Aelius. Ares. Can you both just not do this first thing in the morning? I have things to do, too.
+        Aelius: Fine.
+        Ares: Ugh, whatever.
+        Aelius: Just give me your order, I have a job to do. You can say whatever you want after.
+        Ares: Alright, but since I can't smite you, I'll have to explain my greatness so that you don't make this mistake again.
+
+//Bottleneck 1
+Ares: As for my order, get me the <b>Ambrosia Cake.</b>
+Ares: I'll have you know, despite my looks, I am quite the connoisseur of fine baking - so don't mess this up.
+Ares: I'm holding you to Hestia's standards, and I'll let you know that this is my regular. Don't forget it.
+Aelius: Alright, I'll be back.
+
+//COOKING minigame AND back
+
+Aelius: Here's your cake; you were going to tell me something?
+Ares: Was I? I sort of forgot. This cake is actually pretty good.
+Ares: Aelius, was it?
+Ares: At least I think that's what Hestia called you.
+Aelius: Yes, that's me.
+Ares: I, Ares, will expect food of this quality next time I return.
+Aelius: Um, alright. You got it.
+Ares: Err, I actually have a slight... request. I just remembered something.
+Aelius: Oh? Do tell. What can I do for the mighty Lord Ares?
+Ares: My father, Zeus, may have asked me to join him here for lunch later today.
+Ares: He mentioned something about trying to "connect" with his son. I- I don't actually see him truly trying though... not after all this time.
+Ares: Anyways, if you could pretend like I wasn't already here today, I would be appreciative.
+Aelius: I know we might've not had the best introduction, but I understand where you're coming from.
+Aelius: You could say that I also have a difficult relationship with my father.
+Aelius: Never knew him down in the mortal world, but apparently he is here.
+Aelius: I have my guesses narrowed down, but it feels a little awkward knowing that.
+Aelius: So, I understand your nervousness, even if it's just a little bit. I can forget you were here, at least for Zeus.
+Ares: I'm not nervous! Just a little... confused.
+Ares: Thank you though. I really need to leave though. See you in a little bit.
+
+// Ares exits here
+
+Aelius: I'm glad that's over.
+Hestia: <*>Peaks around the corner and chuckles.</*>
+Hestia: I'm surprised that it didn't go so much worse than it did/
+Aelius: What?
+Aelius: What's that supposed to mean?!
+Hestia: Ares is usually a handful... I'll just leave it at that. Now back to work, these customers won't feed themselves!
+Aelius: Alright... back to work, I suppose.
 
 ===

@@ -448,6 +448,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6167349947878513351, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadSprites.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6167349947878513351, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: loadSprites.Array.data[0]
       value: 
       objectReference: {fileID: 21300000, guid: feea92c3546957f468e8456b9612946c, type: 3}
@@ -463,6 +467,10 @@ PrefabInstance:
       propertyPath: loadSprites.Array.data[4]
       value: 
       objectReference: {fileID: 21300000, guid: 2e6862f5f293ecc4fa1726d9f486e5aa, type: 3}
+    - target: {fileID: 6167349947878513351, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadSprites.Array.data[11]
+      value: 
+      objectReference: {fileID: 21300000, guid: be5eb0827cab4454694478fa88c59038, type: 3}
     - target: {fileID: 6798407037274427283, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: continueButton
       value: 
@@ -1219,7 +1227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runner: {fileID: 104355506}
-  defaultStartNode: Start
+  defaultStartNode: Day2_Start
 --- !u!4 &940884904
 Transform:
   m_ObjectHideFlags: 0

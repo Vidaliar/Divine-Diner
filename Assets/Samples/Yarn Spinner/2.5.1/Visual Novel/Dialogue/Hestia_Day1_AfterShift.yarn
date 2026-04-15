@@ -109,11 +109,12 @@ Aelius: Alright, I'll see you in the morning then, right?
 Hestia: Of course, I always welcome having you here.
 Hestia: Good night my dear!
 Aelius: Good night, Hestia!
-Aelius: THANK YOU FOR PLAYING DIVINE DINER!
+//Aelius: THANK YOU FOR PLAYING DIVINE DINER!
 
 <<wait 0.6>>
 <<StopMuzic 0.8>>
 <<Fade "#000000" 0 1 1.0>>
 <<wait 1.1>>
-<<ReturnToTitle>>
+//<<ReturnToTitle>>
+<<LoadVNScene "Day2">>
 ===

@@ -150,7 +150,14 @@ namespace Yarn.Unity.Example {
                 bgm.volume = startVol; // reset for next PlayMusic
             }
 
+            runner.AddCommandHandler<string>("LoadVNScene", LoadVNScene);
 
+
+        }
+
+        public void LoadVNScene(string sceneName)
+        {
+            SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
         }
 
         #region YarnCommands
