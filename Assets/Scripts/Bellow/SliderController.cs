@@ -47,8 +47,16 @@ public class SliderController : MonoBehaviour
 
     private void Awake()
     {
+        if(fireBellows != null) fireBellows.gameObject.SetActive(true);
         if (fireSlider != null && fireSlider.fillRect != null)
             fireFillImage = fireSlider.fillRect.GetComponent<Image>();
+
+        if(progressSlider!= null){
+            progressSlider.minValue = 0;
+            progressSlider.maxValue = 1;
+            progressSlider.value = 0;
+            progressSlider.gameObject.SetActive(true);
+        }
     }
 
     private void Update()
@@ -73,6 +81,13 @@ public class SliderController : MonoBehaviour
             progressSlider.value = next;
         }
         // Outside green window: do nothing (progress stays exactly as-is).
+
+        if(progressSlider.value >= 1f)
+        {
+            progressSlider.gameObject.SetActive(false);
+            fireBellows.Transition();
+            gameObject.SetActive(false);
+        }
     }
 
     public void ResetProgress()

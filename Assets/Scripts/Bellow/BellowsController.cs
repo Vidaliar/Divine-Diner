@@ -58,6 +58,7 @@ public class BellowsController : MonoBehaviour
     private void Awake()
     {
         if (worldCamera == null) worldCamera = Camera.main;
+        if (windSlider != null) windSlider.gameObject.SetActive(true);
         ApplyUI();
     }
 
@@ -146,5 +147,12 @@ public class BellowsController : MonoBehaviour
     {
         if (!updateSlider || windSlider == null) return;
         windSlider.value = value01;
+    }
+
+    public void Transition()
+    {
+        windSlider.gameObject.SetActive(false);
+        CookingManager.instance.Transition();
+        gameObject.SetActive(false);
     }
 }

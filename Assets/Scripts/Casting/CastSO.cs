@@ -14,7 +14,7 @@ public class CastSO : MonoBehaviour
     LineRenderer line;
     // Vector2 center;
     EdgeCollider2D edgeColl;
-    void Awake()
+    void Start()
     {
         line = this.GetComponent<LineRenderer>();
         Vector2 center = transform.position;
@@ -29,7 +29,8 @@ public class CastSO : MonoBehaviour
         if(!useLinePoints){
             for (int i = 0; i < points.Count; i++)
             {
-                points[i] = points[i] * (worldCamHeight / 2);
+                points[i] = points[i] * (worldCamHeight / 2) * transform.localScale;
+                Debug.Log(transform.localScale);
                 points[i] += center;
             }
             DrawCast();
@@ -39,7 +40,8 @@ public class CastSO : MonoBehaviour
             for (int i = 0; i<line.positionCount; i++)
             {
                 Vector3 point = line.GetPosition(i) * (worldCamHeight/2) + new Vector3 (center.x, center.y, 0);
-                point.z = 0;
+                point = new Vector3(point.x * transform.localScale.x, point.y * transform.localScale.y, 0);
+                // point.z = 0;
                 line.SetPosition(i, point);
             }
         }
