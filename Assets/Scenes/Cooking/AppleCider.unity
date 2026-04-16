@@ -1105,7 +1105,7 @@ GameObject:
   - component: {fileID: 584078847}
   - component: {fileID: 584078846}
   - component: {fileID: 584078845}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Orange_Full
   m_TagString: Untagged
   m_Icon: {fileID: 0}
