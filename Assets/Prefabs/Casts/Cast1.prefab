@@ -46,7 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e679ff663c6a647ac46a167904adee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attribute: 
   pathPointPref: {fileID: 990189662040701396, guid: f05a256393bf6a446ae96f5d7d49a28a, type: 3}
+  useLinePoints: 0
   points:
   - {x: -0.5, y: 0}
   - {x: -0.5, y: -0.5}
@@ -55,6 +57,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5}
   - {x: 0.5, y: 0}
   pointObjects: []
+  numLines: 1
 --- !u!120 &2672045199611864870
 LineRenderer:
   serializedVersion: 2

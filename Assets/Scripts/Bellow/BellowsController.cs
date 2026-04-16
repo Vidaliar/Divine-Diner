@@ -55,10 +55,25 @@ public class BellowsController : MonoBehaviour
     public bool IsHolding => holding;
     public bool HoldReachedCap => holdCapped;
 
+    // Background images
+    private GameObject counterImg;
+    private GameObject grillImg;
+
     private void Awake()
     {
         if (worldCamera == null) worldCamera = Camera.main;
         if (windSlider != null) windSlider.gameObject.SetActive(true);
+
+        counterImg = worldCamera.transform.GetChild(0).gameObject;
+        grillImg = worldCamera.transform.GetChild(1).gameObject;
+
+        if(grillImg != null)
+        {
+            grillImg.SetActive(true);
+            counterImg.SetActive(false);
+        }
+
+
         ApplyUI();
     }
 
@@ -152,6 +167,13 @@ public class BellowsController : MonoBehaviour
     public void Transition()
     {
         windSlider.gameObject.SetActive(false);
+
+        if(grillImg != null)
+        {
+            grillImg.SetActive(false);
+            counterImg.SetActive(true);
+        }
+
         CookingManager.instance.Transition();
         gameObject.SetActive(false);
     }

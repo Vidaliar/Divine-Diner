@@ -63,7 +63,7 @@ public class Grater : MonoBehaviour
 
     void Update()
     {
-        inPause = cManager.inPause;
+        inPause = CookingManager.instance.inPause;
 
         if (inPause)
         {
