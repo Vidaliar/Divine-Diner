@@ -312,7 +312,9 @@ public class ChoppingController : MonoBehaviour
 
     private void DrawVerticalMarkerAtFraction(SelectableItems item, float fraction01)
     {
-        var sr = item.GetComponentInChildren<SpriteRenderer>();
+        var spr = item.GetComponentInChildren<SpriteRenderer>();
+        var sr = item.GetComponent<Collider2D>();
+
         if (sr == null) return;
 
         Bounds b = sr.bounds;
@@ -322,22 +324,28 @@ public class ChoppingController : MonoBehaviour
         Vector3 p1 = new Vector3(x, b.min.y, z);
         Vector3 p2 = new Vector3(x, b.max.y, z);
 
-        CreateMarker(sr, p1, p2);
+        CreateMarker(spr, p1, p2);
     }
 
     private void DrawHorizontalMarkerAtFraction(SelectableItems item, float fraction01)
     {
-        var sr = item.GetComponentInChildren<SpriteRenderer>();
+        var spr = item.GetComponentInChildren<SpriteRenderer>();
+        // Vector3 scale = item.transform.localScale;
+        var sr = item.GetComponent<Collider2D>();
+
         if (sr == null) return;
 
         Bounds b = sr.bounds;
         float y = Mathf.Lerp(b.min.y, b.max.y, Mathf.Clamp01(fraction01));
         float z = sr.transform.position.z + markerZOffset;
 
+        // Debug.Log("" + y + " and y scale " + scale.y + " mutliplied " + (y*scale.y));
+        // Debug.Log("" + b.min.x + " and y scale " + scale.x + " mutliplied " + (b.min.x*scale.x));
+
         Vector3 p1 = new Vector3(b.min.x, y, z);
         Vector3 p2 = new Vector3(b.max.x, y, z);
 
-        CreateMarker(sr, p1, p2);
+        CreateMarker(spr, p1, p2);
     }
 
     private void CreateMarker(SpriteRenderer targetSr, Vector3 p1, Vector3 p2)

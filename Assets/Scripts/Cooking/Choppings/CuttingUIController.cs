@@ -18,6 +18,11 @@ public class CuttingUIController : MonoBehaviour
     [Header("Commit Button")]
     [SerializeField] private Button commitButton;
 
+    void Awake()
+    {
+        if(pressSpaceText != null) pressSpaceText.gameObject.SetActive(true);
+    }
+
     private void OnValidate()
     {
         if (root == null) root = gameObject;
@@ -29,7 +34,7 @@ public class CuttingUIController : MonoBehaviour
     }
 
     /// <summary>
-    /// currentCuts / totalCuts ¡ú Slider 0..1£»show¡°Press Space¡±while not completed
+    /// currentCuts / totalCuts ï¿½ï¿½ Slider 0..1ï¿½ï¿½showï¿½ï¿½Press Spaceï¿½ï¿½while not completed
     /// </summary>
     public void UpdateProgress(int currentCuts, int totalCuts)
     {
