@@ -71,7 +71,11 @@ public class ChoppingController : MonoBehaviour
         if (cameraController == null) cameraController = FindObjectOfType<CameraMover>();
 
         _inArea2 = false;
-        if (cuttingUI != null) cuttingUI.Show(false);
+        if (cuttingUI != null)
+        {
+            cuttingUI.Show(false);
+            cuttingUI.gameObject.SetActive(true);
+        }
 
         if (area1ViewPoint == null) Debug.LogWarning("[GameFlowController] area1ViewPoint Not Set Yet.");
         if (area2ViewPoint == null) Debug.LogWarning("[GameFlowController] area2ViewPoint Not Set Yet.");
@@ -86,14 +90,15 @@ public class ChoppingController : MonoBehaviour
         if (inputCamera == null) return;
 
         Vector3 world = inputCamera.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 pos2D = new Vector2(0, -1);
+        Vector3 pos2D = transform.position + new Vector3(0, -1, 0);
+        Debug.Log("pos2d: "+pos2D);
 
         RaycastHit2D hit = Physics2D.Raycast(pos2D, Vector2.zero, 0f, itemLayer);
         if (hit.collider == null) return;
 
         var item = hit.collider.GetComponentInParent<SelectableItems>();
         if (item == null) return;
-        item.GetComponent<Collider2D>().enabled = false;
+        // item.GetComponent<Collider2D>().enabled = false;
 
         StartCoroutine(Co_MoveItemToArea2(item));
     }
@@ -113,10 +118,10 @@ public class ChoppingController : MonoBehaviour
     {
         if (_isBusy) return;
 
-        if (Input.GetMouseButtonDown(0) && TryConsumeInput())
-        {
-            TryPickFromArea1();
-        }
+        // if (Input.GetMouseButtonDown(0) && TryConsumeInput())
+        // {
+        //     TryPickFromArea1();
+        // }
 
         if (enableCutting && _cuttingActive && !_isBusy && Input.GetKeyDown(cutKey) && TryConsumeInput())
         {
@@ -133,6 +138,7 @@ public class ChoppingController : MonoBehaviour
         if (canCommit)
         {
             cuttingUI.Show(false);
+            cuttingUI.DisableUI();
             CookingManager.instance.Transition();
             gameObject.SetActive(false);
         }
@@ -330,7 +336,6 @@ public class ChoppingController : MonoBehaviour
     private void DrawHorizontalMarkerAtFraction(SelectableItems item, float fraction01)
     {
         var spr = item.GetComponentInChildren<SpriteRenderer>();
-        // Vector3 scale = item.transform.localScale;
         var sr = item.GetComponent<Collider2D>();
 
         if (sr == null) return;

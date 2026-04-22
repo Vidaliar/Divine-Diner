@@ -21,6 +21,11 @@ public class CuttingUIController : MonoBehaviour
     void Awake()
     {
         if(pressSpaceText != null) pressSpaceText.gameObject.SetActive(true);
+        if(progressSlider != null)
+        {
+            progressSlider.maxValue = 1;
+            progressSlider.gameObject.SetActive(true);
+        }
     }
 
     private void OnValidate()
@@ -48,5 +53,11 @@ public class CuttingUIController : MonoBehaviour
     public void SetCommitInteractable(bool canCommit)
     {
         if (commitButton != null) commitButton.interactable = canCommit;
+    }
+
+    public void DisableUI()
+    {
+        if(pressSpaceText != null) pressSpaceText.gameObject.SetActive(false);
+        if(progressSlider != null) progressSlider.gameObject.SetActive(false);
     }
 }
