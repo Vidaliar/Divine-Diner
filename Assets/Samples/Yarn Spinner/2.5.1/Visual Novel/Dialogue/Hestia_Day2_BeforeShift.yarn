@@ -1,0 +1,46 @@
+title: Hestia_Day2_BeforeShift
+tags:
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+
+Aelius: Hello, Hestia! Are you here?
+Hestia: Yes, I'm in the kitchen!
+Hestia: Come on back, dear/
+Aelius: I'll be there in just a moment!
+
+// APPLY KITCHEN BG Here
+
+Aelius: What's going on in here?
+Aelius: It'ss a mess!
+Hestia: Don't worry about it, this happens every few days or so.
+Aelius: What does?
+Hestia: Ah, my apologiess dear - I forget that this is only the second day that you've been here.
+Hestia: Every few days, Hermes brings us all our ingredients, guranteeing their freshness and quality/
+Hestia: I'm not used to having anyone else in before we open for the day, so the mess is still out.
+Aelius: It's no worries, I remember my kitchen always looking rather messy after I brought food home.
+Aelius: Do you need any help putting everything away?
+Hestia: In most cases, I'd love to accept your help, but I have something else I'd like you to do.
+Hestia: Do you think you could prepare the front for today? I'm a little behind at the moment.
+Hestia: It would mainly just be to make sure that all the tables are clean, flip the sign, and sweep around the entrance.
+Hestia: I'll let you know when I get our delivery next time, I'd love to show you how it's done.
+Aelius: Thank you!
+Aelius: I hjust want to help you as much as I can, you gave me an opportunity and I don't want to seem ungrateful.
+Hestia: Thank you dear, I know you aren't ungrateful.
+Hestia: And I'm sorry again for last night.
+Aelius: I'm sorry, too. I slept on it and feel a bit better now.
+Hestia: Good, I'm glad, Aelius.
+Hestia: With that being said, I need to get back to inventory-ing everything.
+Hestia: You can head up front, I'm sure we will have someone come in soon.
+Hestia: You'll have the chance to meet some new faces today, I'm sure of that.
+Aelius: Alright, see you in a bit!
+Hestia: One more thing, if you see Hermes< you might ask if he can take something to your mother.
+Hestia: Knowing him, I'm sure he'd help you out.
+Aelius: I'll keep it in mind if I see him! I'd better head up now!
+<<HideAll>>
+<<jump Day2_Ares_Intro>>
+
+
+
+===

@@ -1,0 +1,79 @@
+title: Hestia_Day2_AfterShift
+tags:
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+
+Hestia: So, how are you feeling today?
+Hestia: Hopefully you had a better experience than yesterday, even if Zeus did come in again.
+Aelius: It was... interesting to say the least..
+Aelius: I had the 'pleasure' of entertaining Ares twice today; I'm not sure if I made a good impression with him or not.
+Aelius: That, and both Hermes and Zeus returned as well.
+Hestia: At least you're meeting some more of the faces around here.
+Hestia: Did anything stand out to you about them? Tell me all about your day.
+
+-> Talk about Ares.
+    Aelius: Ares was a little... off, compared to how I envisioned him before I came here.
+    Aelius: I pictured him a great warrior, but the real Ares seems... douchy and also has daddy issues.
+    Hestia: That's certainly one way to describe him, but it'ss not entirely his fault that he is like that.
+    Aelius: How is that not his fault?
+    Aelius: Is he not in control of his own actions?
+    Hestia: He is... but there's more than just him being a jerk because he wants to.
+    Aelius: From what I've seen, he sure enjoys tormenting Hephaestus.
+    Hestia: That's another issue that he has, but it does stem from family I suppose.
+    Hestia: Honestly, in a way Ares is similar to you, Aelius.
+    Hestia: Zeus, his father, has never really given Ares any sort of acknowledgement - or really anything at all. He may try, but it always goes wrong.
+    Hestia: Zeus chooses not to be present in anything that does not interest him, which has affected not just Ares, but several of the Olympians in a negative way.
+    Aelius: Oh... now I feel a little guilty about how I treated him this morning.
+    Hestia: It's alright my dear, don't take it to heart.
+    Hestia: You didn't know, so how could you have been ready to interact with him?
+    Hestia: What I do know, though, is that if anyone can help to change Ares for the better, you can.
+-> Talk about Zeus and Ares.
+    Aelius: Something that stuck out to me is that Zeus and Ares are pretty similar.
+    Aelius: They're both pretty arrogant and petty, but when they're together, it seems like everything flips on itself.
+    Aelius: The prideful and brash Ares became quiet and respectful when he was with his father.
+    Hestia: Yes, Ares tends to act like a small child in front of Zeus.
+    Hestia: Zeus is his role model, his everything, and more than anything else, Ares wants to be acknowledged by him. To have true acknowledgement, not what Zeus mormally gives him.
+    Aelius: I definitely noticed that, but what was strange was that Zeus didn't seem like his yesterday-self at all.
+    Aelius: He seemed like he was trying to be a father, trying to care, but it wasn't working.
+    Aelius: To be honest, I think his attempt to connect with Ares actually made things worse. I don't think Ares knew how to handle a real conversation with him.
+    Hestia: While it brings me joy to see Zeus *<i>cough</i>* actually making an effort *<i>cough</i>* for once *<i>cough</i>*... the conflict that it made with Ares worries me a bit.
+    Hestia: Ares is truly a good child, but all the neglect that his siblings and he have been through will take a lot more to get through - and they also have to be ready for it, too.
+    Hestia: I hope Zeus keeps trying though - if he can change, we all can.
+-> Talk about Hermes.
+    Aelius: Something I felt today was that I actually got to see the real side of Hermes today.
+    Aelius: I got to see a bit of his perspective on Zeus, and I also received a bit of kindness from him.
+    Hestia: Oh? Do tell!
+    Aelius: Well, I think he was genuinely shocked when I told him that Zeus was "amicable" today with Ares.
+    Aelius: Hermes played it all off like Zeus was just getting old, but I sensed a pang of hurt from him.
+    Hestia: Hmmm... Hermes.
+    Hestia: Hermes is one of Zeus' favorite children, the one who he gives the most trust to do whatever and go wherever he wants here/
+    Hestia: Zeus rarely lets anyone out of Olympus or into the Underworld, even less the mortal world, but Hermes is granted the rare ability to leave.
+    Hestia: That trust gave him a sense of belonging and appreciation from his father, so he might be a little conflicted about Zeus undergoing some changes. That he is losing his place.
+    Aelius: Really? I didn't realize Hermes and Zeus had that kind of relationship.
+    Ares: He just seemed like a loner to me.
+    Hestia: That's... what I've noticed too, he's became pretty distant from everyone.
+    Hestia: You mentioned you had received some kindness from him, though?
+    Aelius: Oh right, yeah!
+    Aelius: I took your suggestion and asked him if he could make a special delivery to the Underworld for me, and he agreed.
+    Aelius: I thought he would have been too busy, but he said it was no issue.
+    Hestia: If anyone else had asked, I'm sure that he would've given an excuse about being busy.
+    Hestia: I believe that just being willing to listen to Hermes talk is helping him significantly.
+    Hestia: Normally he is just told what to do and nothing else, and that has been wearing him down.
+    Hestia: Thanks for being there to help him, I believe that he really needed this.
+
+Hestia: Well, I'm glad that you were able to see a better side of the Olympians today, dear.
+Hestia: I was so worried that they would be unpleasant for you again, but I really think that you're having a positive impact on them. At least Hermes at the moment.
+Aelius: Yeah, I was a little worried this morning, especially when Zeus came in.
+Aelius: I didn't want to get talked down to again.
+Aelius: I am a little worried about Ares though, he left pretty upset after his conversation with Zeus.
+Hestia: Well, if someone acknowledged your suffering and desires after ignoring it for centuries, would you be alright?
+Aelius: [Negative] ... Probably not.
+Hestia: Just give him some time to process everything. I'm sure we will see him again soon.
+Hestia: Anyways, I've kept you for long after your shift today, I'll let you get cleaned up and go rest.
+Aelius: Alright! Thanks, Hestia!
+Aelius: I'll see you tomorrow morning.
+<<HideAll>>
+<<LoadVNScene "Day3">>
+===

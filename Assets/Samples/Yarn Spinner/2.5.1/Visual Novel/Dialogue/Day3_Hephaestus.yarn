@@ -1,0 +1,14 @@
+﻿title: Day3_Hephaestus_Start
+tags:
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+
+Hephaestus: Aelius, hello.
+Aelius: Hello, Hephaestus! Would you like something to eat?
+Hephaestus: Um, yes, well- no or- I guess I wanted to apologize for how I introduced myself the other day.
+Aelius: What for?
+Hephaestus: It's just- I know I'm not always the easiest to get along with sometimes.
+
+===

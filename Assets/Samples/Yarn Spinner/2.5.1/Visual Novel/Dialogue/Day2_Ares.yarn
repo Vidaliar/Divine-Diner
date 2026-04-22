@@ -5,8 +5,7 @@
 
 <<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
 <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
-tags:
----
+
 Ares: Hestia! Why is there a mortal here?!
 Hestia: Don't worry about it! I managed to find some good help, so don't scare Aelius off!
 Ares: How did someone like <i>you</i> get here? You're not dead, not a god, so how are you on Olympus?
@@ -50,7 +49,8 @@ Aelius: Alright, I'll be back.
 
 
 //COOKING minigame AND back
-<<StartCooking "AmbrosiaCake">>
+//<<StartCooking "AmbrosiaCake">>
+<<jump Ares_Return>>
 
 ===
 title: Ares_Return
