@@ -1,0 +1,59 @@
+﻿title: Hestia_Day3_AfterShift
+tags:
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+
+Aelius: [Positive] Hestia, I just closed up! I'm headed back!
+Hestia: Thank you dear!
+Hestia: So, how did today go for you?
+Aelius: [Positive] Well, any day that Zeus decides to show up is interesting, but I did also get to talk to Hera.
+Aelius: I’m afraid Hephaestus has also gotten a few ideas that will likely cause more noise tonight.
+Hestia: Not again...
+Hestia: Anyways, tell me more about your day. I didn’t get to hear much today, since I was rather busy.
+
+-> Talk about Hephaestus.
+    Aelius: Something that happened today would probably be Hephaestus deciding to intentionally – or not – start more conflict with Ares.
+    Aelius: He’s decided to let his heart guide him back to Aphrodite, regardless of how he does it.
+    Hestia: I should’ve expected something like this to happen soon after I brought you here.
+    Hestia: Every so often, Hephaestus will get this reckless courage to take action and regain Aphrodite from Ares, but it always leads to chaos.
+    Hestia: I know he means well, but he doesn’t give himself time to think things over before he does them.
+    Aelius: I want him to have some success, but I worry about what he’s planning.
+    Hestia: Ares doesn’t seem to be the kind of person to let something like that go by without causing problems of his own.
+    Hestia: That’s exactly what I’m afraid of.
+    Hestia: I’m sure we will hear what will happen soon, I’m sure of it.
+-> Talk about Hera.
+    Aelius: Hestia, I’m not really sure how to interpret Hera.
+    Aelius: [Negative] She’s beautiful and polite, but it felt like she was evaluating me the entire time.
+    Hestia: That sounds exactly like Hera, and I can’t really blame her for seeming that way.
+    Hestia: Hera is naturally intrigued by new events and people that come to Olympus.
+    Hestia: Since Zeus always frolics off to the mortal realm, there aren’t many opportunities to get new experiences here, so she likes to come and take a look at what’s new.
+    Hestia: As of today, that seems to be you. Hopefully that didn’t cause any problems.
+    Aelius: No problems for me, but Hera seems a bit like Hermes. She seems a little isolated from the other Olympians, but in a different way.
+    Aelius: Hermes is just socially awkward, but Hera is trying too hard to be socially polite, and from my own experience, pushes people away.
+    Hestia: I’ve tried to talk to her about it, but she says that it’s expected from someone of her station.
+    Aelius: Well, hopefully she comes to her senses soon. A queen is allowed to be happy too.
+    Hestia: I wholeheartedly agree.
+-> Talk about Zeus
+    Zeus: Zeus was even stranger today than usual. He wasn’t really aggressive at all. Instead he was more curious than anything else.
+    Hestia: Now that truly <i>is</i> strange. Especially since you are part human as well.
+    Aelius: I think he is starting to become more aware about what is going on around him now that I’m here.
+    Hestia: Well, change does bring about different conditions and consequences, and not even Zeus in all his kingliness is immune from them.
+    Hestia: The changes you’ve brought with you are already starting to take root, and Zeus is finally opening his eyes to the reality of our family.
+    Aelius: Yeah… he was with Ares for lunch yesterday, and then today he was asking about Hephaestus – and also me.
+    Hestia: He asked about you?
+    Aelius: He wanted to know why I’m doing what I’m doing.
+    Hestia: He really has changed a little bit. The Zeus I remember wouldn’t care about anything that wasn’t him.
+    Aelius: [Positive] This is great right? The stubborn old man is changing.
+    Hestia: Heh, it <i>is</i> great, just don't let him hear you say that.
+
+Hestia: Well, after everything you told me, it seems like you’ve had a pretty good day.
+Aelius: [Positive] Yeah, I’d say so. No one really got upset, which was nice.
+Hestia: That definitely is nice. It is a bit past closing time, so I’ll let you head out for the night.
+Aelius: [Positive] Alright Hestia, I'll see you in the morning!
+<<HideAll>>
+<<LoadVNScene "Day4">>
+
+
+===

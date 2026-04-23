@@ -41,4 +41,18 @@ Hera: I'm glad to see that's not the case!
     Hera: ... YES.
     Hera: Oh... while I have you...
 -> What are people saying? (aggressive)
+    Hera: Oh, you know! People love to gossip. We shouldn’t dwell on how others see us, Aelius.
+    Aelius: Oh?
+    Hera: Yes, it's quite a bad look.
+
+Hera: I'm sure you've noticed by now how...<i>important</i> it is to Zeus that we all like him.
+Aelius: I may have.
+Hera:  I only bring it up because I’ve noticed him spending more time here as of late.
+Hera: It seems he may be coming to realize that his absence has done more harm than good.
+Hera: If that is your doing...I only wish to thank you.
+Aelius: I appreciate that. Enjoy your meal.
+Hera: Yes, I will.
+
+<<HideAll>>
+<<jump Day3_Zeus_Start>>
 ===
