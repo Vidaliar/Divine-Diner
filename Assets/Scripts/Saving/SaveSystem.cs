@@ -14,7 +14,7 @@ public class SaveSystem : MonoBehaviour, ISaveSystem
     public string rootFolder = "Saves";
 
     [Header("PNG settings")]
-    public bool captureViaCamera = false;  // false=screenshot£»true=remove UI
+    public bool captureViaCamera = false;  // false=screenshotï¿½ï¿½true=remove UI
     public Camera captureCamera;           // put the camera that need to shot the PNG
     public int thumbWidth = 512;
     public int thumbHeight = 288;
@@ -45,7 +45,7 @@ public class SaveSystem : MonoBehaviour, ISaveSystem
         }
         catch (Exception e)
         {
-            Debug.LogWarning($"[SaveSystem] ¶ÁÈ¡ Meta Ê§°Ü£º{path}\n{e}");
+            Debug.LogWarning($"[SaveSystem] ï¿½ï¿½È¡ Meta Ê§ï¿½Ü£ï¿½{path}\n{e}");
             return default;
         }
     }
@@ -115,7 +115,7 @@ public class SaveSystem : MonoBehaviour, ISaveSystem
 
         if (captureViaCamera)
         {
-            if (captureCamera == null) Debug.LogWarning("[SaveSystem] captureViaCamera=true µ«Î´Ö¸¶¨ captureCamera");
+            if (captureCamera == null) Debug.LogWarning("[SaveSystem] captureViaCamera=true ï¿½ï¿½Î´Ö¸ï¿½ï¿½ captureCamera");
             var tex = ScreenShooter.CaptureCameraToTexture(
                 captureCamera ? captureCamera : Camera.main,
                 thumbWidth, thumbHeight
@@ -178,7 +178,13 @@ public class SaveSystem : MonoBehaviour, ISaveSystem
             yield break;
         }
 
-        // restore day
+        if (file == null || file.data == null)
+        {
+            Debug.LogWarning("[SaveSystem] Save file is empty or corrupted.");
+            yield break;
+        }
+
+        // restore saved state
         yield return provider.Apply(file.data);
 
         // resume the time/audio
