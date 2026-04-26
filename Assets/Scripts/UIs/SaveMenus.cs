@@ -1,86 +1,46 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.IO;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using System;
-
-
 
 /// <summary>
 /// SaveMenus
-/// ----------------------------------------------
-/// HOW TO USE (per save slot page / per slot item)
-/// ----------------------------------------------
-/// 1. In your scene, make sure you already have:
-///    - A SaveSystem component in some GameObject.
-///    - SaveSystem is responsible for writing JSON & PNG when saving.
+/// Single shared save detail panel controller.
 /// 
-/// 2. For EACH save slot menu page (or each slot item in a list):
-///    - Create a root GameObject for this slot page.
-///    - Under this root, you should have:
-///        * An Image component used to show the screenshot thumbnail.
-///        * A TMP_Text (TextMeshProUGUI) used to show save info (title + time).
-///        * A Button for "Load".
-///        * A Button for "Delete".
+/// Works with:
+/// - one shared detail panel on the right
+/// - one selector on the left (Dropdown or TMP_Dropdown)
+/// - one SaveSystem in scene
 /// 
-/// 3. Attach this SaveMenus script to the root GameObject of that slot page.
-/// 
-/// 4. In the inspector of SaveMenus:
-///    - Save System      : drag your SaveSystem component here.
-///    - Profile Name     : usually "Default" (or any profile string you use).
-///    - Slot Index       : 0 for the first slot, 1 for the second, 2, 3, ...
-///    - Thumbnail Image  : drag the Image you want to display the screenshot.
-///    - Info Text        : drag the TMP_Text that shows save info.
-///    - Load Button      : drag the "Load" button.
-///    - Delete Button    : drag the "Delete" button.
-///    - Empty Sprite     : (optional) sprite used for empty slot.
-///    - Empty Text       : text shown when there is no save in this slot.
-/// 
-/// 5. Multi-slot menu usage:
-///    - If you have 4 different slot pages:
-///        * Page for Slot 0: SaveMenus.slotIndex = 0
-///        * Page for Slot 1: SaveMenus.slotIndex = 1
-///        * Page for Slot 2: SaveMenus.slotIndex = 2
-///        * Page for Slot 3: SaveMenus.slotIndex = 3
-///      Each page will show its own screenshot & info and loads/deletes only its own slot.
-/// 
-///    - If you have a single menu with 4 slot items at the same time:
-///        * Put 4 GameObjects as "slot item roots".
-///        * Attach one SaveMenus to each item, with slotIndex 0 / 1 / 2 / 3.
-///        * All of them share the same SaveSystem reference.
-/// 
-/// 6. When the menu (or each slot item) is enabled:
-///    - OnEnable() will call RefreshUI()
-///    - RefreshUI() will:
-///        * Check if there is a save in this slot (profile + slotIndex)
-///        * If yes: 
-///            - Read SaveMeta via saveSystem.GetMeta(...)
-///            - Set info text (title + subtitle)
-///            - Load PNG from saveSystem.GetThumbnailPath(...) and display it.
-///            - Enable Load / Delete buttons.
-///        * If no:
-///            - Show Empty Sprite / Empty Text.
-///            - Disable Load / Delete buttons.
-/// 
-/// 7. When user presses:
-///    - Load Button:
-///        * Call saveSystem.Load(profileName, slotIndex)
-///    - Delete Button:
-///        * Call saveSystem.Delete(profileName, slotIndex)
-///        * Then RefreshUI() to show empty state.
+/// It controls:
+/// - current selected slot
+/// - screenshot preview
+/// - info text
+/// - Save / Load / Delete buttons
 /// </summary>
 public class SaveMenus : MonoBehaviour
 {
     [Header("Save slot config")]
     [SerializeField] private string profileName = "Default";
-    [SerializeField] private int slotIndex = 0;
+
+    [Tooltip("The actual save slot number currently shown by this panel.")]
+    [SerializeField] private int slotIndex = 1;
+
+    [Tooltip("If using a dropdown, option 0 maps to this slot number.")]
+    [SerializeField] private int firstSelectableSlotIndex = 1;
+
     [SerializeField] private SaveSystem saveSystem;
+
+    [Header("Selector (optional)")]
+    [SerializeField] private Dropdown slotDropdown;
+    [SerializeField] private TMP_Dropdown tmpSlotDropdown;
 
     [Header("UI references")]
     [SerializeField] private Image thumbnailImage;
     [SerializeField] private TMP_Text infoText;
+    [SerializeField] private Button saveButton;
     [SerializeField] private Button loadButton;
     [SerializeField] private Button deleteButton;
 
@@ -88,23 +48,39 @@ public class SaveMenus : MonoBehaviour
     [SerializeField] private Sprite emptySprite;
     [SerializeField] private string emptyText = "Empty Slot";
 
-    // runtime texture created from PNG file
+    [Header("After save")]
+    [SerializeField] private float refreshDelayAfterSave = 0.15f;
+
     private Texture2D loadedTexture;
+
+    private void Awake()
+    {
+        RegisterButtonEvents();
+        RegisterDropdownEvents();
+    }
 
     private void OnEnable()
     {
-        RegisterButtonEvents();
         RefreshUI();
     }
 
     private void OnDisable()
     {
         UnregisterButtonEvents();
+        UnregisterDropdownEvents();
+    }
+
+    private void OnDestroy()
+    {
+        if (loadedTexture != null)
+        {
+            Destroy(loadedTexture);
+            loadedTexture = null;
+        }
     }
 
     /// <summary>
-    /// Manually call this if you save to this slot while the menu is open
-    /// and you want to update the thumbnail & info immediately.
+    /// Refresh current panel using current profileName + slotIndex.
     /// </summary>
     public void RefreshUI()
     {
@@ -116,22 +92,19 @@ public class SaveMenus : MonoBehaviour
         }
 
         bool hasSave = saveSystem.HasSave(profileName, slotIndex);
+
         if (!hasSave)
         {
             SetEmptyVisual();
             return;
         }
 
-        // ----- Read meta (title, subtitle, thumbnail path) -----
         SaveMeta meta = saveSystem.GetMeta(profileName, slotIndex);
 
         if (infoText != null)
         {
             if (!string.IsNullOrEmpty(meta.title) || !string.IsNullOrEmpty(meta.subtitle))
             {
-                // Example:
-                // Day 1 Ep 2
-                // 2025-12-02 18:30
                 infoText.text = $"{meta.title}\n{meta.subtitle}";
             }
             else
@@ -140,7 +113,6 @@ public class SaveMenus : MonoBehaviour
             }
         }
 
-        // ----- Read screenshot PNG and show it -----
         if (thumbnailImage != null)
         {
             string path = saveSystem.GetThumbnailPath(profileName, slotIndex);
@@ -151,7 +123,6 @@ public class SaveMenus : MonoBehaviour
                 {
                     byte[] bytes = File.ReadAllBytes(path);
 
-                    // destroy previous texture if any
                     if (loadedTexture != null)
                     {
                         Destroy(loadedTexture);
@@ -159,18 +130,20 @@ public class SaveMenus : MonoBehaviour
                     }
 
                     loadedTexture = new Texture2D(2, 2, TextureFormat.RGBA32, false);
+
                     if (loadedTexture.LoadImage(bytes))
                     {
-                        var sprite = Sprite.Create(
+                        Sprite sprite = Sprite.Create(
                             loadedTexture,
                             new Rect(0, 0, loadedTexture.width, loadedTexture.height),
                             new Vector2(0.5f, 0.5f)
                         );
+
                         thumbnailImage.sprite = sprite;
                     }
                     else
                     {
-                        Debug.LogWarning($"[SaveMenus] Failed to load image from bytes: {path}");
+                        Debug.LogWarning($"[SaveMenus] Failed to load image bytes: {path}");
                         thumbnailImage.sprite = emptySprite;
                     }
                 }
@@ -186,14 +159,12 @@ public class SaveMenus : MonoBehaviour
             }
         }
 
-        // When there is a save, both buttons are usable
+        // Existing save: all buttons usable
+        if (saveButton != null) saveButton.interactable = true;
         if (loadButton != null) loadButton.interactable = true;
         if (deleteButton != null) deleteButton.interactable = true;
     }
 
-    /// <summary>
-    /// Set visuals for an empty slot (no save file).
-    /// </summary>
     private void SetEmptyVisual()
     {
         if (infoText != null)
@@ -202,28 +173,60 @@ public class SaveMenus : MonoBehaviour
         if (thumbnailImage != null)
             thumbnailImage.sprite = emptySprite;
 
-        // For empty slots: cannot load or delete.
+        // Empty slot: Save is still allowed, Load/Delete are not
+        if (saveButton != null) saveButton.interactable = true;
         if (loadButton != null) loadButton.interactable = false;
         if (deleteButton != null) deleteButton.interactable = false;
     }
 
     /// <summary>
-    /// Optional helper for dynamic switching between slots using one SaveMenus.
-    /// Not required if you simply use one SaveMenus per slot with fixed slotIndex.
+    /// Directly switch to a concrete slot number.
+    /// Example: SetSlot(3) means "now show slot3".
     /// </summary>
     public void SetSlot(int newSlotIndex, string newProfileName = null)
     {
         if (!string.IsNullOrEmpty(newProfileName))
-        {
             profileName = newProfileName;
-        }
 
-        slotIndex = newSlotIndex;
+        slotIndex = Mathf.Max(0, newSlotIndex);
         RefreshUI();
     }
 
+    /// <summary>
+    /// Button/Inspector-friendly wrapper.
+    /// </summary>
+    public void SetSlotByIndex(int newSlotIndex)
+    {
+        SetSlot(newSlotIndex);
+    }
+
+    /// <summary>
+    /// Dropdown option index -> actual save slot number.
+    /// Example if firstSelectableSlotIndex = 1:
+    /// option 0 => slot 1
+    /// option 1 => slot 2
+    /// option 2 => slot 3
+    /// </summary>
+    public void SetSlotBySelectionIndex(int selectionIndex)
+    {
+        int actualSlot = firstSelectableSlotIndex + selectionIndex;
+        SetSlot(actualSlot);
+    }
+
+    public void SetSlot1() => SetSlot(1);
+    public void SetSlot2() => SetSlot(2);
+    public void SetSlot3() => SetSlot(3);
+    public void SetSlot4() => SetSlot(4);
+    public void SetSlot5() => SetSlot(5);
+
     private void RegisterButtonEvents()
     {
+        if (saveButton != null)
+        {
+            saveButton.onClick.RemoveListener(OnSaveClicked);
+            saveButton.onClick.AddListener(OnSaveClicked);
+        }
+
         if (loadButton != null)
         {
             loadButton.onClick.RemoveListener(OnLoadClicked);
@@ -239,11 +242,60 @@ public class SaveMenus : MonoBehaviour
 
     private void UnregisterButtonEvents()
     {
+        if (saveButton != null)
+            saveButton.onClick.RemoveListener(OnSaveClicked);
+
         if (loadButton != null)
             loadButton.onClick.RemoveListener(OnLoadClicked);
 
         if (deleteButton != null)
             deleteButton.onClick.RemoveListener(OnDeleteClicked);
+    }
+
+    private void RegisterDropdownEvents()
+    {
+        if (slotDropdown != null)
+        {
+            slotDropdown.onValueChanged.RemoveListener(OnLegacyDropdownChanged);
+            slotDropdown.onValueChanged.AddListener(OnLegacyDropdownChanged);
+        }
+
+        if (tmpSlotDropdown != null)
+        {
+            tmpSlotDropdown.onValueChanged.RemoveListener(OnTMPDropdownChanged);
+            tmpSlotDropdown.onValueChanged.AddListener(OnTMPDropdownChanged);
+        }
+    }
+
+    private void UnregisterDropdownEvents()
+    {
+        if (slotDropdown != null)
+            slotDropdown.onValueChanged.RemoveListener(OnLegacyDropdownChanged);
+
+        if (tmpSlotDropdown != null)
+            tmpSlotDropdown.onValueChanged.RemoveListener(OnTMPDropdownChanged);
+    }
+
+    private void OnLegacyDropdownChanged(int value)
+    {
+        SetSlotBySelectionIndex(value);
+    }
+
+    private void OnTMPDropdownChanged(int value)
+    {
+        SetSlotBySelectionIndex(value);
+    }
+
+    private void OnSaveClicked()
+    {
+        if (saveSystem == null)
+        {
+            Debug.LogWarning("[SaveMenus] Cannot save, SaveSystem reference is missing.");
+            return;
+        }
+
+        saveSystem.SaveCurrentToSlot(profileName, slotIndex);
+        StartCoroutine(RefreshAfterSave());
     }
 
     private void OnLoadClicked()
@@ -260,7 +312,6 @@ public class SaveMenus : MonoBehaviour
             return;
         }
 
-        // Call into SaveSystem to load this slot
         saveSystem.Load(profileName, slotIndex);
     }
 
@@ -278,19 +329,13 @@ public class SaveMenus : MonoBehaviour
             return;
         }
 
-        // Delete save file & thumbnail via SaveSystem
         saveSystem.Delete(profileName, slotIndex);
-
-        // Refresh UI to show empty slot
         RefreshUI();
     }
 
-    private void OnDestroy()
+    private IEnumerator RefreshAfterSave()
     {
-        if (loadedTexture != null)
-        {
-            Destroy(loadedTexture);
-            loadedTexture = null;
-        }
+        yield return new WaitForSecondsRealtime(refreshDelayAfterSave);
+        RefreshUI();
     }
 }

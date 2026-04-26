@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveSystem : MonoBehaviour, ISaveSystem
 {
@@ -172,22 +173,41 @@ public class SaveSystem : MonoBehaviour, ISaveSystem
             yield break;
         }
 
+        if (file == null || file.data == null)
+        {
+            Debug.LogWarning("[SaveSystem] save file is empty or corrupted.");
+            yield break;
+        }
+
+        if (string.IsNullOrEmpty(file.data.sceneName))
+        {
+            Debug.LogWarning("[SaveSystem] save file has no sceneName.");
+            yield break;
+        }
+
+        string currentScene = SceneManager.GetActiveScene().name;
+        string targetScene = file.data.sceneName;
+
+        // If not in the correct scene, switch scene first.
+        // The actual data restore will happen in the target scene
+        // through AutoLoadOnSceneStart.
+        if (currentScene != targetScene)
+        {
+            Debug.Log($"[SaveSystem] Scene mismatch. Current={currentScene}, Target={targetScene}. Switching scene first.");
+            GlobalLoadContext.Request(profile, slotIndex);
+            SceneManager.LoadScene(targetScene);
+            yield break;
+        }
+
         if (provider == null)
         {
             Debug.LogWarning("[SaveSystem] IStateProvider not set, unable to load");
             yield break;
         }
 
-        if (file == null || file.data == null)
-        {
-            Debug.LogWarning("[SaveSystem] Save file is empty or corrupted.");
-            yield break;
-        }
-
-        // restore saved state
+        // already in the correct scene, apply data now.
         yield return provider.Apply(file.data);
 
-        // resume the time/audio
         Time.timeScale = 1f;
         AudioListener.pause = false;
     }

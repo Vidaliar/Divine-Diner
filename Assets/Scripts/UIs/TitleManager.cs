@@ -1,54 +1,78 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class TitleManager : MonoBehaviour
 {
-    [SerializeField] public Button newGameButton, continueGameButton, exitGameButton, settingsButton;
+    [Header("Main Title Buttons")]
+    [SerializeField] private Button newGameButton;
+    [SerializeField] private Button continueGameButton;
+    [SerializeField] private Button settingsButton;
+    [SerializeField] private Button exitGameButton;
+
+    [Header("Optional Back Buttons")]
+    [SerializeField] private Button backFromLoadMenuButton;
+    [SerializeField] private Button backFromSettingsButton;
+
+    [Header("Menu Panels")]
+    [SerializeField] private GameObject mainMenuPanel;
+    [SerializeField] private GameObject saveLoadMenuPanel;
+    [SerializeField] private GameObject settingsMenuPanel;
 
     [Header("New Game Scene")]
-    public string NewGameScene = "filler";
+    [SerializeField] private string newGameScene = "filler";
 
-    bool isInPause;
-
-    void Start()
+    private void Start()
     {
-        newGameButton.onClick.AddListener(NewGame);
-        continueGameButton.onClick.AddListener(ContinueGame);
-        exitGameButton.onClick.AddListener(ExitGame);
-        //settingsButton.onClick.AddListener(settings);
-        // this is exchanged for junhao's settings
+        if (newGameButton != null)
+            newGameButton.onClick.AddListener(NewGame);
+
+        if (continueGameButton != null)
+            continueGameButton.onClick.AddListener(OpenLoadMenu);
+
+        if (settingsButton != null)
+            settingsButton.onClick.AddListener(OpenSettingsMenu);
+
+        if (exitGameButton != null)
+            exitGameButton.onClick.AddListener(ExitGame);
+
+        if (backFromLoadMenuButton != null)
+            backFromLoadMenuButton.onClick.AddListener(OpenMainMenu);
+
+        if (backFromSettingsButton != null)
+            backFromSettingsButton.onClick.AddListener(OpenMainMenu);
+
+        OpenMainMenu();
     }
 
-    
-    void Update()
+    public void OpenMainMenu()
     {
-        
+        if (mainMenuPanel != null) mainMenuPanel.SetActive(true);
+        if (saveLoadMenuPanel != null) saveLoadMenuPanel.SetActive(false);
+        if (settingsMenuPanel != null) settingsMenuPanel.SetActive(false);
     }
 
-    void NewGame()
+    public void OpenLoadMenu()
     {
-        // Load Scene with the name, load destroys current scene
-        SceneManager.LoadScene(NewGameScene, LoadSceneMode.Single);
-    }
-    
-    void ContinueGame()
-    {
-
+        if (mainMenuPanel != null) mainMenuPanel.SetActive(false);
+        if (saveLoadMenuPanel != null) saveLoadMenuPanel.SetActive(true);
+        if (settingsMenuPanel != null) settingsMenuPanel.SetActive(false);
     }
 
-    void ExitGame()
+    public void OpenSettingsMenu()
+    {
+        if (mainMenuPanel != null) mainMenuPanel.SetActive(false);
+        if (saveLoadMenuPanel != null) saveLoadMenuPanel.SetActive(false);
+        if (settingsMenuPanel != null) settingsMenuPanel.SetActive(true);
+    }
+
+    public void NewGame()
+    {
+        SceneManager.LoadScene(newGameScene, LoadSceneMode.Single);
+    }
+
+    public void ExitGame()
     {
         Application.Quit();
-    }
-
-    void settings()
-    {
-
-        // Load Settings Scene with name (assuming it's a scene). If otherwise let me know ASAP
-        // additive so it doesn't destroy current scene
-        SceneManager.LoadScene("TestSettings", LoadSceneMode.Additive);
     }
 }
