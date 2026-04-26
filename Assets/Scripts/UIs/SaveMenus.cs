@@ -306,7 +306,11 @@ public class SaveMenus : MonoBehaviour
         }
 
         saveSystem.SaveCurrentToSlot(profileName, slotIndex);
-        StartCoroutine(RefreshAfterSave());
+
+        if (isActiveAndEnabled && gameObject.activeInHierarchy)
+        {
+            StartCoroutine(RefreshAfterSave());
+        }
     }
 
     private void OnLoadClicked()

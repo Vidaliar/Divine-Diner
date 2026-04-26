@@ -1,27 +1,75 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-
-/// <summary>
-/// On gameplay scene start, if GlobalLoadContext has a pending
-/// request, call SaveSystem.Load(profile, slotIndex).
-/// Attach this in gameplay scenes (NOT in the title scene).
-/// </summary>
 public class AutoLoadOnSceneStart : MonoBehaviour
 {
-    public SaveSystem saveSystem;
+    [SerializeField] private SaveSystem saveSystem;
 
-    private void Start()
+    private void Awake()
+    {
+        if (saveSystem == null)
+        {
+            saveSystem = GetComponent<SaveSystem>();
+
+            if (saveSystem == null)
+            {
+                saveSystem = FindFirstObjectByType<SaveSystem>();
+
+                if (saveSystem == null)
+                {
+                    saveSystem = FindObjectOfType<SaveSystem>();
+                }
+            }
+        }
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (!GlobalLoadContext.HasPendingRequest)
             return;
+
+        StartCoroutine(LoadAfterSceneReady());
+    }
+
+    private IEnumerator LoadAfterSceneReady()
+    {
+        // Wait one frame so scene objects finish Awake/OnEnable/Start order more safely
+        yield return null;
+
+        if (!GlobalLoadContext.HasPendingRequest)
+            yield break;
+
+        if (saveSystem == null)
+        {
+            saveSystem = GetComponent<SaveSystem>();
+
+            if (saveSystem == null)
+            {
+                saveSystem = FindFirstObjectByType<SaveSystem>();
+
+                if (saveSystem == null)
+                {
+                    saveSystem = FindObjectOfType<SaveSystem>();
+                }
+            }
+        }
 
         if (saveSystem == null)
         {
             Debug.LogWarning("[AutoLoadOnSceneStart] SaveSystem reference is missing.");
             GlobalLoadContext.Clear();
-            return;
+            yield break;
         }
 
         Debug.Log($"[AutoLoadOnSceneStart] Loading from {GlobalLoadContext.ProfileName}/slot{GlobalLoadContext.SlotIndex}");

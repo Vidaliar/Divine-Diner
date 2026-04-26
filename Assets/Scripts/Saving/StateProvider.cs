@@ -14,14 +14,10 @@ public class StateProvider : MonoBehaviour, IStateProvider
     public int hephaestus;   // 0-39
 
     [Header("Yarn dialogue state (node-level)")]
-    [Tooltip("Last Yarn project name used when capturing save.")]
     public string currentYarnProject;
-
-    [Tooltip("Last Yarn node name seen when capturing save.")]
     public string currentYarnNode;
-
-    [Tooltip("Reserved for future line-level resume. Currently unused.")]
     public int currentYarnLineIndex;
+    public string currentYarnLineTextID;
 
     public SaveData Capture()
     {
@@ -40,7 +36,8 @@ public class StateProvider : MonoBehaviour, IStateProvider
 
             yarnProjectName = currentYarnProject,
             yarnNodeName = currentYarnNode,
-            yarnLineIndex = currentYarnLineIndex
+            yarnLineIndex = currentYarnLineIndex,
+            yarnLineTextID = currentYarnLineTextID
         };
     }
 
@@ -59,6 +56,7 @@ public class StateProvider : MonoBehaviour, IStateProvider
         currentYarnProject = data.yarnProjectName;
         currentYarnNode = data.yarnNodeName;
         currentYarnLineIndex = data.yarnLineIndex;
+        currentYarnLineTextID = data.yarnLineTextID;
 
         yield return null;
     }

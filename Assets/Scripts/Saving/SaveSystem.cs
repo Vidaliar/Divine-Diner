@@ -208,6 +208,26 @@ public class SaveSystem : MonoBehaviour, ISaveSystem
         // already in the correct scene, apply data now.
         yield return provider.Apply(file.data);
 
+        Debug.Log($"[SaveSystem] Apply finished in scene: {UnityEngine.SceneManagement.SceneManager.GetActiveScene().name}");
+
+        YarnRestoreController yarnRestoreController = FindFirstObjectByType<YarnRestoreController>();
+
+        if (yarnRestoreController == null)
+        {
+            yarnRestoreController = FindObjectOfType<YarnRestoreController>();
+        }
+
+        if (yarnRestoreController != null)
+        {
+            Debug.Log($"[SaveSystem] Found YarnRestoreController on object: {yarnRestoreController.gameObject.name}");
+            yarnRestoreController.RestoreFromSavedState();
+            Debug.Log("[SaveSystem] Called RestoreFromSavedState()");
+        }
+        else
+        {
+            Debug.LogWarning("[SaveSystem] YarnRestoreController not found in current scene.");
+        }
+
         Time.timeScale = 1f;
         AudioListener.pause = false;
     }
