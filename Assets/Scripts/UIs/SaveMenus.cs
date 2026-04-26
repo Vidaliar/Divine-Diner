@@ -61,6 +61,17 @@ public class SaveMenus : MonoBehaviour
 
     private void OnEnable()
     {
+        Debug.Log(
+            $"[SaveMenus] OnEnable | name={gameObject.name} | scene={gameObject.scene.name} | instanceID={GetInstanceID()} | saveSystem={(saveSystem != null ? saveSystem.name : "NULL")}"
+        );
+
+        if (saveSystem == null)
+        {
+            saveSystem = FindFirstObjectByType<SaveSystem>();
+            Debug.Log($"[SaveMenus] Auto-find SaveSystem => {(saveSystem != null ? saveSystem.name : "NULL")}");
+        }
+
+        RegisterButtonEvents();
         RefreshUI();
     }
 
