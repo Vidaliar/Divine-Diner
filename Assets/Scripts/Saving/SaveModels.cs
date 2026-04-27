@@ -26,6 +26,7 @@ public class SaveData
     public string yarnProjectName;
     public string yarnNodeName;
     public int yarnLineIndex;
+    public string yarnLineTextID;
 
     // ====== Future possible data to save ======
     // public string scriptId;

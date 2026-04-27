@@ -1,0 +1,40 @@
+﻿title: Hestia_Day4_BeforeShift
+tags:
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+
+Hestia: Ah, Aelius, you made it in. Do you mind helping me move these fruits into storage?
+Aelius: [Positive] Sure, I can help you out with that.
+Aelius: [Positive]: I'm guessing Hermes came by this morning?
+Hestia: Yes, he did. He came rather early this morning - much earlier than usual.
+Hestia:  He was trying to run some ‘jokes’ by me, but I’m afraid that I am not the best when it comes to humor.
+
+-> Well, I can’t say I'm the greatest either. (deference)
+    Hestia:  Usually humor does take some effort to understand, I just wish I had the time to process it.
+-> Now you have me curious about the kind of shenanigans he has planned. (humorous)
+    Hestia: I have an idea but I won't ruin the fun.
+    Aelius: [Smirk] Now I'm even more curious.
+-> Then maybe he needs to up his game. (aggressive)
+    Hestia: Perhaps, but I can speak for myself that humor is not easy to write.
+    Aelius: Maybe I will have to try my hand at writing some lines later then...
+
+Hestia: Thank you for helping me move everything. It's usually a hassle to do it all myself!
+Aelius: [Positive] Of course, it's the least I could do for you after everything you've provided for me.
+Hestia: Oh, on a side note: Aphrodite will be coming in today. Likely for the same reasons as Hera did.
+Aelius: Really, Aphrodite?
+Hestia: Yes, the goddess of love. But she rarely is actually here on Olympus.
+Hestia: She tends to walk among the mortals, which has caused some issues…
+Aelius: Issues? You’re not telling me anything, Hestia.
+Hestia: Sorry, I just thought it may be better to hear directly from her what’s wrong.
+Hestia: It is not necessarily my place to gossip about others, but I want to prepare you for anything you might encounter on Olympus.
+Aelius: Thanks, Hestia, I appreciate that.
+Aelius: I do understand the bit about not blabbing about others’ issues though. It was everywhere in the mortal world.
+Hestia: I see it's an issue there as well.
+Hestia: Well, what can we do about it now? Let’s just do the best we can at the moment.
+Hestia: If you’ll take the front for now, that would be appreciated. I need to ask Iris for a favor.
+Aelius: Sounds, good. I'll head up there now!
+<<HideAll>>
+<<jump Day4_Aphrodite_Intro>>
+===

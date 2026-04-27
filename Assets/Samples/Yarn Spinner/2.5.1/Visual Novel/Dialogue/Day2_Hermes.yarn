@@ -1,0 +1,114 @@
+title: Day2_Hermes
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+Aelius: Welcome in, Hermes!
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+Hermes: Hey, Aelius.
+Aelius: How's it going for you today?
+Hermes: I should be askin' you that, kid!
+Aelius: Oh, I'm good. Chillin'.
+Hermes: Feeling better after dealing with Zeus?
+Hermes: I'm telling you, King of the Gods? More like the King of Pettiness.
+Hermes: I don't think I've ever seen such a strong man throw so many fits.
+
+-> Yeah, seriously.
+-> I din't know a grown man could get his robes in twist over a ham and chesse sandwich.
+    Hermes: <i>Laughs</i> Ha! You got some spunk to ya already. Good.
+-> <i>Rolls eyes.</i>
+    Hermes: Oh, I see. Zeus must be rubbing off on you. He has no eye for a good joke, that one.
+
+Hermes: Well, I wanted to let you know I actually have more time today to hang around.
+Hermes: Won't have to eat my food at inhuman speeds - wait, don't think too hard about the logistics of that one.
+Aelius: Deliveries light today? I've been curious about your job.
+Hermes: Yep, luckily for me! And ask away, it's nice to have time to have an actual chat for once.
+
+-> How have the deliveries been going?
+    Hermes: Just been traveling along. It's pretty tiring, but the views can't be beat - I love getting to see so many new places.
+-> So, what kinda stuff do you get up to when delivering?
+    Hermes: Well, between you and me, I manage to scrounge up some time to prank humans and the other gods.
+-> Be honest real quick, how busy are you <i>really</i>?
+    Hermes: A nosy one, you are - don't believe me? It's pretty tiring, but I manage to find some free time here and there.
+
+Hermes: Enough chatter, my stomach 'bout to growl louder than Zeus snores!
+Aelius: Alright, what can I get for you today?
+Hermes: Some <b>Lotus Parfait</b> sounds really good right about now.
+Aelius: I'll get started on that.
+Hermes: Thanks, Aelius.
+
+<<StartCooking "LotusParfait">>
+===
+
+title: Day2_Hermes_Return
+---
+<<Fade "#000000" 1 0 0.4>>
+<<wait 0.1>>
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+Aelius: Whipped up your Lotus Parfait for you!
+-> Fancy
+    <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+    Hermes: This Lotus Parfait looks great! Hope it tastes as good as it looks.
+-> Playful
+    <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+    Hermes: I didn't know food could be cute, but here we are. Can't wait to try it.
+-> Spicy
+    <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+    Hermes: I can smell the spice from here! Tryna get me to rurn faster after this?
+    Hermes: Ares pay you off to get me to deliver his gift to Aphrodite ASAP?
+
+Hermes: That might be the best Lotus Parfait I've ever had, honestly.
+
+-> Medium
+    Hermes: I'm glad Hestia scooped you up, I alreay don't think I could go back to not eating your cooking.
+-> Low
+    Hermes: Hestia had a good eye to scoop you up, I already don't think I could go back to not eating your cooking.
+    Aelius: Glad you appreciate it, it's nice getting to cook for someone again...
+    Hermes: I noticed you're in better spirits than yesterday - grinded out your problems with Zeus?
+    Aelius: Yeah, actually. I was shocked he decided to be... amicable.
+    Hermes: Really now? C'mon, don't be shy on the details, I'm curious.
+    Aelius: Well, Ares had come in to order, and Zeus barged in to talk to him.
+    Aelius: When I served them, they were getting along. Seemed like Zeus was actually in a good mood.
+    Hermes: Zeus? In a <i>good</i> mood? Blasphemy.
+    Aelius: I felt the same! But after Ares left, he actually <i>thanked</i> me.
+    Hermes: I was convinced Zeus didn't know having manners applied to him too.
+    Hermes: Old man must be goin' soft.
+    Aelius: I don't know how you've dealt with him for centuries, honestly. How do you manage it?
+    Hermes: Oh, uh...
+    Hermes: Ah, y'know. It's never dull!
+    Hermes: Get to see the theatrics over Zeus's love for woman... besided Hera, of course.
+    Hermes: Home-wrecking his own marriage.
+    Hermes: If the rumors about why you're here are true, then I bet you can relate, eh?
+
+-> I get it, I won't push it.(deference)
+    Hermes: Thanks, kid.
+    Hermes: Anyways, I should get going.
+-> Guess we're united in daddy issues.(humorous)
+    Hermes: <i>Laughs</i> Ha! I suppose we are.
+    Hermes: Anyway, I should get going.
+-> There's gotta be more to it.(aggressive)
+    Hermess: Sorry, but I really gotta get going.
+
+Aelius: Wait a second. Could you help me out with something?
+Hermes: Hm? What's up?
+Aelius: Well... I wanted to ask if you could maybe make a delivery for me.
+Aelius: It's for my mom. I want to deliver her some of my food... In the Underworld.
+Hermes: Oh, I see. I'm pretty busy but...
+Hermes: Sure, why not.
+Aelius: Really? Thank you so much, Hermes.
+Aelius: Let me go grab the food.
+// put a black screen here for transition
+// GOT TO BE CAREFUL ABOUT THIS BECAUSE THIS WASS MAKING VN NOT JUMP TO NEXT SCENE
+Aelius: Here it is. Thanks again, it really means a lot to me.
+Hermes: Don't sweat it. I'll hurry to make sure it's nice and hot for her.
+Hermes: See ya, Aelius.
+<<HideAll>>
+<<jump Hestia_Day2_AfterShift>>
+
+
+
+
+
+
+
+===

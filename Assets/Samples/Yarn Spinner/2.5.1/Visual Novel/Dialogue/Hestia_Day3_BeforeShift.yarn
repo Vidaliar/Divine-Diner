@@ -1,0 +1,39 @@
+﻿title: Hestia_Day3_BeforeShift
+tags:
+---
+<<Fade "#000000" 1 0 0.4>>
+<<wait 0.1>>
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+
+Aelius: Hey, Hestia! I'm here!
+Hestia: Good morning, Aelius. How was your rest?
+Aelius: Rest feels a little strange here compared to being in the mortal realm.
+Aelius: I feel time goes by, but I don't really feel tired at all. I don't have any physical fatigue, but resting does help with all the thoughts I have.
+Hestia: Oh, what have you been thinking about?
+
+-> [Positive] Just the normal things, you know. (deference)
+    Aelius: There's just a lot to process, I've only been here for a few days now, and I just need some time to process it all.
+    Hestia: Yes, I suppose that would be the most natural response to relocating anywhere.
+    Hestia: Just know that I am here for you, though. I'll help you with anything I can.
+    Aelius: Thank you, Hestia, I'll keep that in mind.
+-> Just about some of the interesting explosions I heard last night. (humorous)
+    Hestia: *<i>Sigh</i>* That is pretty frequent unfortunately, my dear.
+    Hestia: It was likely either Hephaestus and Ares getting at it, or Zeus and Hera are having another one of their marriage arguments.
+    Hestia: There's always some sort of fight going on here...
+    Aelius: Oh, I guess I hadn't noticed that before last night.
+    Aelius: Well, thanks for the heads up about that. I'll keep it in mind.
+-> It's nothing important. (aggressive)
+    Aelius: I just have a lot to think about, and I think that working will help me get my mind off of things.
+    Hestia: Oh, I'm sorry, Aelius, I didn't mean to-
+    Aelius: It's fine, I'll just head up front and get everything set up and ready for customers today.
+
+Hestia: Alright, but I should give you a heads up, though, The Queen of Olympus will be coming in sometime today, though she didn't say when/
+Hestia: I figured you'd enjoy meeting someone new, but um- don't make too many jokes around her. She isn't too fond of them.
+Aelius: I'll try to remember the last bit. After Ares yesterday, I want to make sure I make a good first impression instead of still not knowing if I did or not.
+Hestia: Sounds like a reasonable plan to me.
+Hestia: Well then, I'll let you get to it. Talk to you in a bit!
+<<HideAll>>
+<<jump Day3_Hephaestus_Start>>
+===

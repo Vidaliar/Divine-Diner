@@ -1,0 +1,91 @@
+﻿title: Day3_Zeus_Start
+tags:
+---
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+<<Scene "lounge bg draft 3">>
+
+Zeus: HEPHAESTUS!
+<<Act Aelius "Aelius 3_4s" left bottom #674ea7>>
+Aelius: King Zeus-
+Zeus: CHILD! AELIUS! HAVE YOU SEEN HEPHAESTUS?
+
+-> He came in this morning. (deference)
+    Zeus: Ah. He's gone, then?
+    Aelius: Yeah. Sorry about that.
+    Zeus: Oh, no, it's quite alright.
+-> I dunno. (humor)
+    Zeus: Do you not keep track of who comes through your establishment?
+    Aelius: Nah.
+    Zeus: Alright then.
+-> No. (aggressive)
+    Zeus: Ah, well. That’s too bad.
+
+Zeus: I’ll just keep barging in until we cross paths.
+Zeus: Regardless! I’ve worked up quite the appetite!
+Aelius: Oh, of course. What would you like to eat today?
+Zeus: I haven't had the <b>Helios Steak</b> in quite some time.
+Aelius: Wonderful.
+
+// HELIOS STEAK 
+
+Aelius: Your food, King Zeus.
+-> Fancy
+    Zeus: I almost feel bad eating something that looks this delicious.
+    Aelius: [Positive] Oh, thank you!
+-> Playful
+    Zeus: How... endearing.
+-> Spicy
+    Zeus: Ah! Quite the kick in the rear, this delivers!
+    Aelius: I hope you enjoy it.
+    Zeus: I certainly don’t dislike it.
+
+Aelius: Well, if that will be all-
+Zeus: Actually, if you wouldn’t mind…
+
+-> What is it? (deference)
+-> Wanna hang? (humor)
+    Zeus: ...
+    Zeus: Something like that.
+-> Spit it out. (aggressive)
+    Zeus: Ah, well... How do I put this?
+
+Zeus: I hear you’ve been… making yourself familiar with the other gods.
+Aelius: I guess that’s one way of putting it.
+Zeus: Yes, well. I suppose my question is… why?
+
+-> You’re my family. (deference)
+    Zeus: I...
+    Zeus: Huh.
+    Aelius: What?
+    Zeus: I suppose… with all the bickering…
+    Zeus: Sometimes I forget that we are all one family.
+    Aelius: [Smirk] The bickering is what makes you family.
+    Zeus: Hah!
+    Zeus: Maybe so.
+    Zeus: I appreciate you speaking with me. As well as the food.
+    Aelius: Of course, King Zeus.
+-> Hestia kidnapped me. (humor)
+    Zeus: Hah!
+    Zeus: Yes... Us gods have a tendency to take <i>unwitting participants</i>.
+    Aelius: [Positive] Yeah, well. It's not all bad.
+    Aelius: There are a few good eggs.
+    Zeus: Yes, I am pretty great.
+    Zeus: Though I’m not sure I appreciate being compared to an egg.
+    Aelius: I'll keep that in mind.
+    Zeus: Thank you for speaking with me. And thank you for the food.
+    Aelius: Any time, your Kingliness.
+-> I like cooking. (aggressive)
+    Zeus: Ah...
+    Zeus: So it has nothing to do with us, then?
+    Aelius: I mean-
+    Zeus: No, that's...
+    Zeus: That makes sense.
+    Zeus: We are a difficult bunch.
+    Zeus: ...
+    Zeus: Ahem! I should be off.
+    Zeus: Thank you for the meal, child.
+
+<<HideAll>>
+<<jump Hestia_Day3_AfterShift>>
+
+===

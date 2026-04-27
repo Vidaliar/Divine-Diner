@@ -2,5 +2,5 @@
 ---
 <<Fade "#000000" 1 0 0.4>>
 <<wait 0.1>>
-<<jump Day2_Ares_Intro>>
+<<jump Hestia_Day2_BeforeShift>>
 ===

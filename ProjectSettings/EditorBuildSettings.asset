@@ -29,7 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test/TestNewGame.unity
     guid: 052fec5ff6aa047458fc5aead196e045
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Cooking/LotusParfait.unity
     guid: 49066d3a4a46ef947a22c66bc29f4d0d
   - enabled: 1
@@ -38,5 +38,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Day2.unity
     guid: 906adf6f3e2ae194cacc21ff33656a90
+  - enabled: 1
+    path: Assets/Scenes/Cooking/AmbrosiaCake.unity
+    guid: c1dc3ea24e98e4a4f8df0cde88a17fa8
+  - enabled: 1
+    path: Assets/Scenes/Day3.unity
+    guid: 8a93871c4f3d96b408438a0a01f2cb4b
+  - enabled: 1
+    path: Assets/Scenes/Day4.unity
+    guid: bbb3bb0b75cbbfe4893c094a17a8a9bf
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e4832c56fbe1f64f8e9d21d1f4aeb53, type: 2}

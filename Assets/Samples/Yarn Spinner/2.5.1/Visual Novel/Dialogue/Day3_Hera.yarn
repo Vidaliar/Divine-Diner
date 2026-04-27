@@ -1,0 +1,58 @@
+﻿title: Day3_Hera_Start
+tags:
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+Aelius: Hey, welcome in!
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+Hera: Ah, hello. You must be the mortal.
+
+-> That I am. (deference)
+    Hera: Very nice to meet you. What is your name?
+-> [Positive] No, you’re the new mortal. (humor)
+    Hera: Am I, now? That doesn’t sound quite right.
+    Aelius: Dunno what to tell you, kiddo. Welcome to Olympus.
+    Hera: Right...
+    Hera: Either way, introductions are in order, yes? What may I call you?
+-> So what if I am? (aggressive)
+    Hera: I mean no offensse. I only wish to make your acquaintance.
+    Hera: What is your name?
+
+Aelius: Aelius.
+Hera: It’s a pleasure, Aelius. I’m Hera.
+Aelius: Hera. Nice to meet you, too.
+Aelius: What can I get for you?
+Hera: I'll have the <b>Ambrosia Cake</b>, if you'd be so kind.
+
+// put Ambrosia cake here
+
+Aelius: Your food, my Lady.
+Hera: Ah, thank you! This looks quite nice.
+Hera: You know... with what people are saying, I was worried you may be a touch difficult to get along with.
+Hera: I'm glad to see that's not the case!
+
+-> Aelius: I'm glad to hear it. (deference)
+    Hera: I’m sure I’ll be back again… You’re an easier conversationalist than most on this mountain.
+    Aelius: Happy to be of service.
+    Hera: Oh! Before you go...
+-> [Smirk] So news got out that I'm a Taurus? (humor)
+    Hera: Ah... That explains a lot, actually.
+    Aelius: It does?
+    Hera: ... YES.
+    Hera: Oh... while I have you...
+-> What are people saying? (aggressive)
+    Hera: Oh, you know! People love to gossip. We shouldn’t dwell on how others see us, Aelius.
+    Aelius: Oh?
+    Hera: Yes, it's quite a bad look.
+
+Hera: I'm sure you've noticed by now how...<i>important</i> it is to Zeus that we all like him.
+Aelius: I may have.
+Hera:  I only bring it up because I’ve noticed him spending more time here as of late.
+Hera: It seems he may be coming to realize that his absence has done more harm than good.
+Hera: If that is your doing...I only wish to thank you.
+Aelius: I appreciate that. Enjoy your meal.
+Hera: Yes, I will.
+
+<<HideAll>>
+<<jump Day3_Zeus_Start>>
+===

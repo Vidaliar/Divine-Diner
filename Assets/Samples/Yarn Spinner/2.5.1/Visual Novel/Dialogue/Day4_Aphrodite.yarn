@@ -1,0 +1,61 @@
+﻿title: Day4_Aphrodite_Intro
+tags:
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+Aphrodite: Ah, hello! You are Aelius, correct?
+Aelius: Yes, and you are...?
+Aphrodite: Aphrodite, my dear.
+Aelius: Right, goddess of love. Haven't seen you around before.
+Aphrodite: Haha, you’re right – as much as I love dear Hestia, I prefer to spend most of my time among mortals.
+Aphrodite: You probably don’t get Dionysus or Artemis up here much either.
+Aphrodite: Olympus is too ordered for those two; as for myself, I prefer just to people-watch.
+
+-> I'm sure everyone up here does plenty for the mortal world.
+    Aphrodite: That they do. Don’t misunderstand me dear, my interest in mortals is purely self-indulgent.
+    Aphrodite: Just the other day I heard a love poem a young woman had written for her sweetheart. The best I've heard since Sappho.
+-> You know that's true, the men up here seem pretty absorbed in drama between themselves.
+    Aphrodite: So it has always been; but don’t worry, child, they do all they need for the world.
+    Aphrodite: I simply prefer to roam among the young lovers and passionate affairs of the mortal world.
+    Aphrodite: For example, the other day I heard a love poem a young woman had written for her sweetheart. The best I've heard since Sappho.
+-> Do you see many interesting people?
+    Aphrodite: A great many.
+    Aphrodite: Just the other day I heard a love poem a young woman had written for her sweetheart. The best I've heard since Sappho.
+
+Aphrodite: This poem won't be written down of course, lost to history like so many fleeing passions – such is mortal love.
+Aphrodite: Her sweetheart will remember, of course, for all her mortal life – and so will I.
+Aphrodite: The mortals are capable of such beauty: Pygmalion, Ariadne, and the aforementioned Sappho, of course.
+Aphrodite: We gods have a responsibility to appreciate it, even when the lone and level sands have long since swept them away.
+Aphrodite: It's a passion I share with Apollo, and did with Hephaestus, once…
+Aelius: What happened between you?
+Aphrodite: You are quite forward; I suppose I should appreciate it, it is a rare trait among the Olympians.
+Aphrodite: Why don’t you ask Heaphestus about it? I don’t think we know each other quite well enough.
+Aelius: Fair enough.
+Aelius: So, if you’re the goddess of love then…
+Aphrodite: Ah, I know of your little problem of patriarchal lineage. You were clever to ask; there is little in the realm of love that escapes me.
+Aphrodite: Yes, I know who it is you seek. Telling you though, that would be cheating. Maybe one day, dear, but not now.
+
+Aelius: Worth a shot, I guess.
+Aphrodite: I think I like you, Aelius. You are different from most of the people up here on Olympus.
+Aelius: Would you like anything to eat?
+Aphrodite: You are sweet to ask; yes, I think I would like some <b>Nectar.</b>
+Aelius: Coming right up.
+
+// PUT NECTAR HERE 
+
+-> Spicy
+    Aphrodite: This is wonderfully spicy, thank you, dear.
+-> Fancy
+    Aphrodite: This is such a wonderful dish, thank you, dear.
+-> Playful
+    Aphrodite: This is a delight, thank you, dear.
+
+Aelius: [Positive] I'm glad you like it.
+Aphrodite: I knew I would.
+Aphrodite: I must be off though - thank you for the meal.
+Aelius: [Positive] Thank you.
+Aphrodite: I wish you luck on your search, Aelius.
+<<HideAll>>
+<<jump Day4_Hermes_Intro>>
+===

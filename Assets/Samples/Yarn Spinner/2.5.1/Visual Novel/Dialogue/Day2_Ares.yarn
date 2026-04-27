@@ -5,8 +5,7 @@
 
 <<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
 <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
-tags:
----
+
 Ares: Hestia! Why is there a mortal here?!
 Hestia: Don't worry about it! I managed to find some good help, so don't scare Aelius off!
 Ares: How did someone like <i>you</i> get here? You're not dead, not a god, so how are you on Olympus?
@@ -48,7 +47,20 @@ Ares: I'll have you know, despite my looks, I am quite the connoisseur of fine b
 Ares: I'm holding you to Hestia's standards, and I'll let you know that this is my regular. Don't forget it.
 Aelius: Alright, I'll be back.
 
+
 //COOKING minigame AND back
+//<<StartCooking "AmbrosiaCake">>
+<<jump Ares_Return>>
+
+===
+title: Ares_Return
+---
+<<Fade "#000000" 1 0 0.4>>
+<<wait 0.1>>
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Ares" "Ares" "right" "bottom" #FF8C00>>
+//<<PlayMusic Hephaestus_Theme>>
 
 Aelius: Here's your cake; you were going to tell me something?
 Ares: Was I? I sort of forgot. This cake is actually pretty good.
@@ -79,5 +91,6 @@ Aelius: What?
 Aelius: What's that supposed to mean?!
 Hestia: Ares is usually a handful... I'll just leave it at that. Now back to work, these customers won't feed themselves!
 Aelius: Alright... back to work, I suppose.
+<<jump Day2_Zeus_Intro>>
 
 ===

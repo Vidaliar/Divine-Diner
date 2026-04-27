@@ -1,0 +1,6 @@
+﻿title: Day4_Start
+---
+<<Fade "#000000" 1 0 0.4>>
+<<wait 0.1>>
+<<jump Hestia_Day4_BeforeShift>>
+===
