@@ -27,9 +27,9 @@ public class CastSelector : MonoBehaviour
     void PlaceCasts()
     {
         Vector3 camPos = Camera.main.transform.position;
-        float camSize = Camera.main.orthographicSize;
+        float camSize = Camera.main.orthographicSize * 6;
         Vector3 spicyPos = new Vector3(camPos.x + camSize/3, camPos.y, camPos.z);
-        Vector3 fancyPos = new Vector3(camPos.x + camPos.x*0.75f, camPos.y, camPos.z);
+        Vector3 fancyPos = new Vector3(camPos.x - camSize/3, camPos.y, camPos.z);
 
         GameObject playful = Instantiate(castPlayful, camPos, Quaternion.identity);
         playful.transform.localScale = new Vector3(0.5f,0.5f,0.5f);

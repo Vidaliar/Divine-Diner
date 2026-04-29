@@ -152,7 +152,7 @@ namespace Yarn.Unity.Example {
 
             runner.AddCommandHandler<string>("LoadVNScene", LoadVNScene);
 
-
+			//runner.AddCommandHandler<string,int>("AddRelPoints", AddRelationshipPoint);
         }
 
         public void LoadVNScene(string sceneName)
