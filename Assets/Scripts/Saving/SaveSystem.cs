@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveSystem : MonoBehaviour, ISaveSystem
 {
@@ -14,7 +15,7 @@ public class SaveSystem : MonoBehaviour, ISaveSystem
     public string rootFolder = "Saves";
 
     [Header("PNG settings")]
-    public bool captureViaCamera = false;  // false=screenshot£»true=remove UI
+    public bool captureViaCamera = false;  // false=screenshotï¿½ï¿½true=remove UI
     public Camera captureCamera;           // put the camera that need to shot the PNG
     public int thumbWidth = 512;
     public int thumbHeight = 288;
@@ -45,7 +46,7 @@ public class SaveSystem : MonoBehaviour, ISaveSystem
         }
         catch (Exception e)
         {
-            Debug.LogWarning($"[SaveSystem] ¶ÁÈ¡ Meta Ê§°Ü£º{path}\n{e}");
+            Debug.LogWarning($"[SaveSystem] ï¿½ï¿½È¡ Meta Ê§ï¿½Ü£ï¿½{path}\n{e}");
             return default;
         }
     }
@@ -115,7 +116,7 @@ public class SaveSystem : MonoBehaviour, ISaveSystem
 
         if (captureViaCamera)
         {
-            if (captureCamera == null) Debug.LogWarning("[SaveSystem] captureViaCamera=true µ«Î´Ö¸¶¨ captureCamera");
+            if (captureCamera == null) Debug.LogWarning("[SaveSystem] captureViaCamera=true ï¿½ï¿½Î´Ö¸ï¿½ï¿½ captureCamera");
             var tex = ScreenShooter.CaptureCameraToTexture(
                 captureCamera ? captureCamera : Camera.main,
                 thumbWidth, thumbHeight
@@ -172,16 +173,61 @@ public class SaveSystem : MonoBehaviour, ISaveSystem
             yield break;
         }
 
+        if (file == null || file.data == null)
+        {
+            Debug.LogWarning("[SaveSystem] save file is empty or corrupted.");
+            yield break;
+        }
+
+        if (string.IsNullOrEmpty(file.data.sceneName))
+        {
+            Debug.LogWarning("[SaveSystem] save file has no sceneName.");
+            yield break;
+        }
+
+        string currentScene = SceneManager.GetActiveScene().name;
+        string targetScene = file.data.sceneName;
+
+        // If not in the correct scene, switch scene first.
+        // The actual data restore will happen in the target scene
+        // through AutoLoadOnSceneStart.
+        if (currentScene != targetScene)
+        {
+            Debug.Log($"[SaveSystem] Scene mismatch. Current={currentScene}, Target={targetScene}. Switching scene first.");
+            GlobalLoadContext.Request(profile, slotIndex);
+            SceneManager.LoadScene(targetScene);
+            yield break;
+        }
+
         if (provider == null)
         {
             Debug.LogWarning("[SaveSystem] IStateProvider not set, unable to load");
             yield break;
         }
 
-        // restore day
+        // already in the correct scene, apply data now.
         yield return provider.Apply(file.data);
 
-        // resume the time/audio
+        Debug.Log($"[SaveSystem] Apply finished in scene: {UnityEngine.SceneManagement.SceneManager.GetActiveScene().name}");
+
+        YarnRestoreController yarnRestoreController = FindFirstObjectByType<YarnRestoreController>();
+
+        if (yarnRestoreController == null)
+        {
+            yarnRestoreController = FindObjectOfType<YarnRestoreController>();
+        }
+
+        if (yarnRestoreController != null)
+        {
+            Debug.Log($"[SaveSystem] Found YarnRestoreController on object: {yarnRestoreController.gameObject.name}");
+            yarnRestoreController.RestoreFromSavedState();
+            Debug.Log("[SaveSystem] Called RestoreFromSavedState()");
+        }
+        else
+        {
+            Debug.LogWarning("[SaveSystem] YarnRestoreController not found in current scene.");
+        }
+
         Time.timeScale = 1f;
         AudioListener.pause = false;
     }
