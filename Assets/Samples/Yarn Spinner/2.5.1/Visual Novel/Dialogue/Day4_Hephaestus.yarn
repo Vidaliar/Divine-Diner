@@ -1,0 +1,176 @@
+﻿title: Day4_Hephaestus_Intro
+tags:
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+
+Hephaestus: Hello, Aelius...
+Hephaestus: Urgh- ouch.
+Aelius: You okay, Heaphaestus?
+Hephaestus: I'm alright, just the old wound acting up. It happens.
+Aelius: Oh, I'm sorry.
+Heaphaestus: It's really no big deal.
+Aelius: You sure? Seems like you're in a lot of pain.
+Hephaestus: It just happens sometimes, nothing I can do.
+Hephaestus: I’ve learned to deal with it.
+Hephaestus: I’ve had it since I was a kid.
+
+Aelius: What happened?
+Hephaestus: It’s not a pleasant story, you may not want to hear it.
+Aelius: I’ll be okay, but you don’t have to tell me if you don’t want to.
+Hephaestus: Nah, I got nothing against it.
+Hephaestus: But I can’t tell a story with a dry mouth.
+Hephaestus: Why don't you make me a <b>Lotus Parfait</b> first?
+Aelius: Coming right up!
+
+// Lotus Parfait
+
+Aelius: Here you are.
+-> Spicy
+    Hephaestus: Well spiced - fitting for a tale of pain.
+-> Fancy
+    Hephaestus: A refined taste - ill-fitting for a tale of pain.
+-> Playful
+    Heaphestus: Very sweet - a welcome contrast to this tale of pain.
+
+Hephaestus: I was born during one of Hera and Zeus’s many rough patches.
+Hephaestus: I’ve heard many versions of the story before.
+Hephaestus: Some blame Hera, some Zeus, some insist it was an accident.
+Hephaestus: ...
+Hephaestus: Whatever the reason, when I was still a newborn babe, I was thrown from Olympus during one of their many spats.
+Aelius: [Negative] Oh no-
+Hephaestus: It was a hard landing.
+Hephaestus: But soon I was discovered by a crew of sailors on the island of Lemnos.
+Hephaestus: I lived there for a time. I was no good on a ship, but they soon found I had a talent at the forge.
+Hephaestus: I must have made a hundred swords, and maybe a thousand nails in that year.
+Hephaestus: They were practical people, and had little interest in my tinkering.
+Aelius: [Negative] I know I would get bored making the same thing every day.
+Hephaestus: Exactly, you understand the craftsperson's art.
+Hephaestus: Fortunately, Hera found me after a year of searching.
+Hephaestus: She wanted to turn the sailors into pigs, but I convinced her to stay her hand.
+Aelius: [Negative] That sounds like her.
+Hephaestus: She was very supportive of my newfound passion, though Zeus took more convincing.
+Hephaestus: I’ve been working at the forge ever since.
+Hephaestus: And my leg only hurts sometimes.
+
+Aelius: [Negative] That's horrible...
+Hephaestus: It is what is.
+Hephaestus: I’ve been getting on okay since before you mortals knew how to make bronze.
+Hephaestus: I still live my life, I just have to take it easy some days.
+
+-> Well, let me know if you need any help.
+    Hephaestus: Thank you.
+    Hephaestus: But this food is more than enough.
+    Aelius: You sure?
+    Hephaestus: I’m sure, I’m going to return to my forge and rest after this.
+    Aelius: Alright, but I'll keep the offer open.
+-> I'm glad you have a positive outlook.
+    Hephaestus: It has always been a part of my life.
+    Hephaestus: I do the best I can.
+    Aelius: [Negative] I wish I could be that casual about my own problems.
+    Hephaestus: Yes - your mother, right?
+    Aelius: [Negative] Yeah...
+    Hephaestus: Don’t worry, it hasn’t been nearly enough time for you to have an immortal’s perspective.
+    Aelius: [Negative] I guess that makes sense.
+-> How could they do something like that?
+    Hephaestus: My parents hardly ever see eye to eye, but they’ve come a long way since then.
+    Hephaestus: I’d like to forgive them, but we gods can hold grudges for a long time.
+    Hephaestus: Speaking of, make sure you never bring up the Trojan War to anyone up here. Just take my word for it.
+    Aelius: I'll keep that in mind.
+
+Hephaestus: Regardless, I’ve got bigger problems in my life right now.
+Aelius: Did you end up talking to them?
+Hephaestus: I'm working on it.
+Hephaestus: Speaking of, I'd better get going.
+
+Aelius: Instead of getting into a confrontation, how about you look back and see if you can remember anything of my mother. I still don’t know who my dad is.
+Hephaestus: I can do both.
+Hephaestus: See you, Aelius.
+
+Aelius: Wait-
+
+<<Hide "Hephaestus">>
+
+Aelius: When is he going to take my advice?
+
+// Hermes comedy portion
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+
+Aelius: (<i>Alright, here we are.</i>)
+Aelius: (<i>This is gonna be fun.</i>)
+
+Hermes: Welcome, welcome everyone!
+Hermes: Welcome to the long-awaited comedy show by yours truly.
+Hermes: Lemme tell you all a lil’ tidbit about myself.
+Hermes: Just born – fresh out the womb – I stole Apollo’s cattle.
+Hermes: With my fantastic intellect, I invented all sorts of stuff to get away with it on day ONE.
+Aelius: (<i>Where could he be going with this one...</i>)
+Hermes: And of <i>course</i>, Apollo couldn't just be a good bro and let that slide.
+Hermes: That dude tattled on me to Zeus, who came and stole my hard earned *<i>cough</i>* stolen *<i>cough</i>* cattle.
+Hermes: And can you believe it – he asked if I was trying to be a herder not a god!
+Hermes: So I said "herder, I hardly know her!"
+Aelius: [Smirk] (<i>Oh gods, this is something.</i>)
+// add heph
+Hephaestus: Hrumph.
+// add hestia
+Hestia: *<i>Laughs softly.</i>*
+Hermes: But guess what?
+// add Zeus
+Zeus: What, my boy?
+Hermes: A little while later, after all that scolding, Zeus <i>sent</i> me to steal a cattle!
+Hermes: Because this idiot decided he couldn’t keep it in his robes, and made his side chick –
+Hermes: -or should I say side <i>cattle</i>-
+Hermes: – into a cow to hide her from Hera. Well, Hera isn’t a dummy like Zeus is at times, so she saw right through it.
+Zeus: Hey!
+Hermes: After backing himself into the most cramped corner imaginable, this man let Hera send the side-cattle to pasture.
+Hermes: So, of course, I had to reawaken my long-awaited dormant cattle-stealing prowess, and fix the mistakes Zeus’ sleeping around led him to!
+
+// LOT OF BOOING
+
+Zeus: You little-
+//add hera
+Hera: ...
+Hemres: Wait, wait! I have another joke, folks-
+//Tomatoes thrown at Hermes
+
+Zeus: *Pelting Hermes with a tomato* Boo!
+Hermes: Jeez, jee-ah! Okay, I'm going!
+Aelius: [Smirk] (<i>I suppose his</i> godly <i>humor isn't so godly after all.)
+
+//TRANSITION
+
+Aelius: Heya Hermes.
+Hermes: *<i>Long, exaggerated sigh.</i>*
+Aelius: Oh... you uh, okay?
+Hermes: That was <i>awful</i>, I can't believe it!
+Aelius: The show, I'm guessing?
+Hermes: Yeah! They must be sense-of-humour-ly challenged. I put in a lot of work for that set.
+
+-> Chin up, they just wouldn’t know a good joke even if it hit them right upside the head. (deference)
+    Hermes: You're right with that. Thanks, Aelius.
+    Aelius: No problem, it's weird seeing you down in the dumps anyways.
+-> They just couldn’t handle it. You could say their heads were ‘up in the clouds,’ eh, eh? (humorous)
+    Hermes: That's a good one!
+    Hermes: You’re right, they just couldn’t handle my godly sense of humor.
+    Aelius: That's more like the Hermes I know.
+-> Well... it could've been better... (aggressive)
+    Hermes: You really think so? Damn, I thought <i>you'd</i> like it at least...
+    Aelius: Gotta call it like I see it.
+    Aelius: [Positive] But... I'm sure you'll have better luck next time.
+    Hermes: Tough crowd, but you're right. Next time people will see my masterful craft for what it is.
+
+Aelius: Maybe you can stop by the diner tomorrow, for a pick-me-up or something.
+Aelius: [Smirk] Maybe it can help fill that void of the lack of audience approval.
+Hermes: Oi, watch it! *<i>Laughs</i>.*
+Aelius: Need anything right now?
+Hermes: Might need a better crowd for next time, if you got one.
+Aelius: [Smirk] Can't help ya there.
+Hermes: Well, guess there’s only so much my favorite chef can do.
+Hermes: Maybe I’ll see you around tomorrow, Aelius.
+Aelius: [Positive] Sounds good. Later, Hermes.
+<<HideAll>>
+<<jump Hestia_Day4_AfterShift>>
+
+
+===

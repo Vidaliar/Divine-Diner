@@ -1235,7 +1235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runner: {fileID: 104355506}
-  defaultStartNode: Day4_Start
+  defaultStartNode: Day4_Hermes_Intro
 --- !u!4 &940884904
 Transform:
   m_ObjectHideFlags: 0
