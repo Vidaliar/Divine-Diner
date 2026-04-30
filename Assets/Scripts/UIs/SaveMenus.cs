@@ -72,6 +72,8 @@ public class SaveMenus : MonoBehaviour
         }
 
         RegisterButtonEvents();
+        RegisterDropdownEvents();
+
         RefreshUI();
     }
 
