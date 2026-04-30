@@ -25,9 +25,6 @@ public class ModifiedPause : MonoBehaviour
     public GameObject saveMenu;
     public GameObject settingsMenu;
 
-    [Header("save/load menu")]
-    public Button saveExit;
-
     [Header("background")]
     [SerializeField] GameObject blurOverlay;
 
@@ -56,11 +53,18 @@ public class ModifiedPause : MonoBehaviour
     {
         if (settingsInMainMenuButton != null)
             settingsInMainMenuButton.onClick.AddListener(PauseAndOpenLevel1);
-        resumeButton.onClick.AddListener(OnClick_Resume);
-        saveLoadButton.onClick.AddListener(OnClick_OpenSaveMenu);
-        settingsButton.onClick.AddListener(OnClick_OpenSettings);
-        saveExit.onClick.AddListener(CloseSecondLevelAndReturnLevel1);
-        QuitButton.onClick.AddListener(OnClick_Quit);
+
+        if (resumeButton != null)
+            resumeButton.onClick.AddListener(OnClick_Resume);
+
+        if (saveLoadButton != null)
+            saveLoadButton.onClick.AddListener(OnClick_OpenSaveMenu);
+
+        if (settingsButton != null)
+            settingsButton.onClick.AddListener(OnClick_OpenSettings);
+
+        if (QuitButton != null)
+            QuitButton.onClick.AddListener(OnClick_Quit);
     }
 
     void Update()
@@ -161,14 +165,19 @@ public class ModifiedPause : MonoBehaviour
         }
     }
 
-    private void CloseSecondLevelAndReturnLevel1()
+    public void CloseSecondLevelAndReturnLevel1()
     {
         if (saveMenu) saveMenu.SetActive(false);
         if (settingsMenu) settingsMenu.SetActive(false);
 
-        if (level1Menu) level1Menu.SetActive(true);
+        if (level1Menu)
+        {
+            level1Menu.SetActive(true);
+            level1Menu.transform.SetAsLastSibling();
+        }
 
         if (blurOverlay) blurOverlay.SetActive(true);
+
         if (manageCursor)
         {
             Cursor.visible = true;

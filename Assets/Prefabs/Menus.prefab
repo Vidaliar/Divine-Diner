@@ -844,7 +844,7 @@ GameObject:
   - component: {fileID: 7074664501598201657}
   - component: {fileID: 8251961636085083487}
   m_Layer: 0
-  m_Name: BG Block (1)
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2879,7 +2879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2858661218278575784
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3446,7 +3446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3680729342122980824
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4071,7 +4071,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7506365709166325439}
         m_TargetAssemblyTypeName: ModifiedPause, Assembly-CSharp
-        m_MethodName: OnClick_Resume
+        m_MethodName: CloseSecondLevelAndReturnLevel1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5632,7 +5632,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1662399499044478204
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5757,7 +5757,7 @@ GameObject:
   - component: {fileID: 635330046996656635}
   - component: {fileID: 8187289779050013133}
   m_Layer: 0
-  m_Name: BG Block (1)
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6636,7 +6636,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 196, y: 79}
+  m_AnchoredPosition: {x: 230, y: -110}
   m_SizeDelta: {x: 100, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6399536739022876605
@@ -6844,7 +6844,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7506365709166325439}
         m_TargetAssemblyTypeName: ModifiedPause, Assembly-CSharp
-        m_MethodName: OnClick_Resume
+        m_MethodName: CloseSecondLevelAndReturnLevel1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7582,8 +7582,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -13796,7 +13796,6 @@ MonoBehaviour:
   QuitButton: {fileID: 7147083194851693977}
   saveMenu: {fileID: 3279843223824935416}
   settingsMenu: {fileID: 2306356778934238867}
-  saveExit: {fileID: 1337119927121138585}
   blurOverlay: {fileID: 0}
   manageCursor: 0
   fadeDuration: 0.15
