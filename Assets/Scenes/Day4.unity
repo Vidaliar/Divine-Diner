@@ -551,6 +551,14 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8340940010472684866, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: stateProvider
+      value: 
+      objectReference: {fileID: 768790526}
+    - target: {fileID: 8817378871466578248, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: stateProvider
+      value: 
+      objectReference: {fileID: 768790526}
     - target: {fileID: 9184206409336196516, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -1159,6 +1167,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: 0, y: 0, z: 0, w: 0}
   m_Softness: {x: 0, y: 0}
+--- !u!114 &768790526 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9163156730512553582, guid: eea31a63b8440254ca832e447b3fc54b, type: 3}
+  m_PrefabInstance: {fileID: 734113704}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0743fddb2ea266241bca6c6685c4a435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &827374816
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,7 +1315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runner: {fileID: 104355506}
-  defaultStartNode: Day4_Hermes_Intro
+  defaultStartNode: Day4_Start
 --- !u!4 &940884904
 Transform:
   m_ObjectHideFlags: 0

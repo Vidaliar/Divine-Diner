@@ -1,0 +1,813 @@
+﻿title: Aelius_Day
+tags:
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+
+Hestia: Ah, welcome, Aelius dear. Are you ready to begin the day?
+Aelius: I suppose so. I think I’m starting to get the hang of your routine.
+Hestia: Well… today might throw you off a little bit.
+Aelius: … What’s that supposed to mean?
+Aelius: Is there something different going on today?
+Hestia: You could say that, yes.
+Hestia: Seeing how you’ve had a rather positive impact on the Olympians, I invited a few of the others today.
+Hestia: I asked Hera, Ares, and Aphrodite if they would come in together.
+Hestia: They have some issues with each other and some of the other Olympians, so I thought you might be able to try and talk to them.
+Aelius: I don’t know… I’m not sure how I could help them. I’m just starting to get to know them and their issues.
+Aelius: Besides, I’m just a mortal – why would they listen to me?
+Aelius: Especially Ares, he’s arrogant and rude. I don’t think he would even give me a chance.
+Hestia: I think you'll be able to do more than you think.
+Hestia: You haven’t spent all your life up here like the others and I.
+Hestia: I think you having a fresh perspective will do wonders for change.
+Aelius: You really think so?
+Hestia: My dear, I know you can.
+Hestia: Oh, as for Ares being… difficult, all you need to do is provide an incentive for him.
+Hestia: I hear he really enjoys sweets, so use that as you see fit.
+Aelius: [Positive] Heh, for such an intimiating guy, I hadn't expected that.
+Hestia: Like I said, you have everything you need to help be the change we all need, so got this.
+Aelius: [Positive] Thanks Hestia!
+Hestia: Ah! Here comes Hera now.
+
+// CHANGE BG TO DINER
+<<Hide Hestia>>
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+Hera: Hello again, Aelius.
+
+-> Hey, Hera, thanks for coming. (deference)
+    Aelius: Have a seat.
+    <<Hide Hera>>
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: ... Hello.
+-> Good to see ya, Hera. (humorous)
+    Aelius: Have a seat.
+    <<Hide Hera>>
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: ... Hello.
+-> Hi. (aggressive)
+    Aelius: Have a seat.
+    <<Hide Hera>>
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: ... Hello.
+
+-> Welcome in, m'lord. (deference)
+    Aelius: Feel free to take a seat. Hera is right over there.
+    <<Hide Ares>>
+    <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+    Aphrodite: Hello there, Aelius.
+-> Wassup, Ares? (humorous)
+    Aelius: Feel free to take a seat. Hera is right over there.
+    <<Hide Ares>>
+    <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+    Aphrodite: Hello there, Aelius.
+-> Hi. (aggressive)
+    Aelius: Feel free to take a seat. Hera is right over there.
+    <<Hide Ares>>
+    <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+    Aphrodite: Hello there, Aelius.
+
+
+
+-> Welcome, welcome. (deference)
+-> M'lady. (humorous)
+-> Aelius: Hi. (aggressive)
+
+//Bottleneck
+
+Aelius: Have a seat with the others, please.
+<<Hide Aphrodite>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+Ares: Why are we here, mortal?
+Ares: Hestia said something about "resolving issues."
+<<Hide Ares>>
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+Hera: Yes, I am also quite curious.
+Aelius: Ah, so...
+Aelius: Well, um...
+Aelius: ...
+<<Hide Hera>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+Hestia: Hello everybody!
+Hestia: I thought today would be a good day to have a pleasant gathering with us all.
+<<Hide Hestia>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+Ares: Go on.
+<<Hide Ares>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+Hestia: Well, we all know there have been some long-standing… issues amongst the gods.
+Hestia: I thought that maybe having a get-together would help to ease these tensions.
+<<Hide Hestia>>
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+Hera: You don't say?
+<<Hide Hera>>
+<<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+Aphrodite: Now now, let dear Hestia speak.
+<<Hide Aphrodite>>
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+Hera: <i>Tch</i>
+<<Hide Hera>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+Hestia: And I wanted Aelius here to be able to help.
+
+-> I'd like to help if I can. (deference)
+    <<Hide Hestia>>
+    <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+    Aphrodite: Thank you, dear.
+    <<Hide Aphrodite>>
+-> [Smirk] We're, uh... all friends here... <i>right</i>? (humorous)
+    <<Hide Hestia>>
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: No.
+    <<Hide Ares>>
+-> Yeah... <i>someone'</i>s gotta do it, I guess. (aggressive)
+    <<Hide Hestia>>
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: That's not true.
+    <<Hide Ares>>
+
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+Hestia: Anyway... who's first?
+<<Hide Hestia>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+Ares: Not me.
+<<Hide Ares>>
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+Hera: ...
+<<Hide Hera>>
+<<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+Aphrodite: Hm...
+<<Hide Aphrodite>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+Hestia: Aelius?
+<<Hide Hestia>>
+
+//GOTTA FIGURE OUT HOW TO GO BACK TO UNSELECTED OPTIONS
+//PLACEHOLDER
+-> Ares, you're up.
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: Damn it.
+    <<Hide Ares>>
+    <<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+    Hestia: Ares, behave.
+    <<Hide Hestia>>
+    Aelius: I know you got some problems between you and Hephaestus.
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: More like <i>he</i> has problems with <i>me</i>.
+    Aelius: Okay, well, regardless… issues there.
+    Ares: I don’t want to talk on an empty stomach.
+    Aelius: Alright then.
+    <<Hide Ares>>
+-> Hera, how about you?
+    <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+    Hera: *<i>Sigh</i>* If I must.
+    Aelius:  I noticed you didn’t seem particularly thrilled with Hermes last night.
+    Hera: His joke was crass.
+    Hera: ... Inappropriate.
+    Aelius: Yeah, it uh... wasn't his best.
+    Hera: I’m quite parched now, let us move on.
+    Hera: I was promised a great meal.
+    Aelius: You'll get it, don't worry.
+    Aelius: Give me a minute.
+    <<Hide Hera>>
+-> Aphrodite, let's start with you.
+    <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+    Aphrodite: Alright.
+    Aelius: I’ve heard you haven’t spoken to Hephaestus in quite some time.
+    Aphrodite: Yes, we aren’t really on speaking terms.
+    <<Hide Aphrodite>>
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: *<i>Coughs.</i>*
+    Aelius: Have you tried talking it out?
+    <<Hide Ares>>
+    <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+    Aphrodite: Not truly.
+    Aphrodite: But enough about me.
+    Aelius: Alright.
+    <<Hide Aphrodite>>
+
+Aelius: We''ll start with drinks.
+
+-> How about some <b?Nectar</b>?
+    <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+    Aphrodite: That sounds wonderful.
+    <<Hide Aphrodite>>
+
+-> We'll go with some <b>Hesperides Apple Cider.</b>
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: Okay.
+    <<Hide Ares>>
+-> I'll go make some <b>Hippocampus Lemonade.</b>
+    <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+    Hera: How refreshing.
+    <<Hide Hera>>
+
+// COOKING ADD IT TO THE CHOICE
+
+Aelius: Here's your X everyone.
+<<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+Aphrodite: This is some truly great X.
+<<Hide Aphrodite>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+Ares: ... I agree.
+<<Hide Ares>>
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+Hera: I expected nothing less.
+<<Hide Hera>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+Hestia: Well done, Aelius.
+
+// ROUND OPTIONS
+
+-> So, Ares - you and Hephaestus...
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: What more is there to say about <i>him</i>?
+    Aelius: Well... you <i>did</i> steal his wife.
+    <<Hide Ares>>
+    <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+    Aphrodite: That's not how I would describe it.
+    Aelius: Fair enough.
+    Aelius: But still, there's some tension.
+    <<Hide Aphrodite>>
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: (Sarcastically) Oh really now?
+    <<Hide Ares>>
+    <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+    Aphrodite: Come now, Ares, we know it needs to be resolved after all this time.
+    <<Hide Aphrodite>>
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: *<i>Scoffs.</i>*
+    Aelius: So tell me your side, Ares.
+    Ares: I don’t have to explain myself to a mortal.
+    <<Hide Ares>>
+    <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+    Hera: <i>Ares.</i>
+    <<Hide Hera>>
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: *<i>Sigh.</i>* Fine.
+    Ares: Aphrodite was more interested in me, so…
+    Ares: I took the opportunity.
+    <<Hide Ares>>
+    <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+    Aphrodite: You know perfectly well that that’s not the case.
+    Aphrodite: I am <i>not</i> an opportunity.
+    <<Hide Aphrodite>>
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: How could I not see that as an opportunity after seeing your ruinous relationship?
+    <<Hide Ares>>
+    <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+    Aphrodite: I'm gonna go get some air.
+    <<Hide Aphrodite>>
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: (Muttering) Dramatic...
+    Aelius: [Negative] Ares. What was that?
+    Ares: What was that?
+    -> Was that necessary? (deference)
+        Ares: Was I <i>wrong</i>?
+        Aelius: Yes.
+        Ares: It's not my fault she's so sensitive.
+    -> Seriously man? That wasn't cool. (humorous)
+        Ares: So what?
+        Ares: She's overreacting.
+    -> You're being an ass. (aggressive)
+        Ares: What's an outsider to tell me my place?
+    
+    <<Hide Ares>>
+    <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+    Hera: You child, you are out of line!
+    <<Hide Hera>>
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: Is that what you all <i>really</i> think?
+    Ares: Tch. Whatever.
+    Ares: (Muttering) For someone who is all about relationships, she's the one to talk.
+    <<Hide Ares>>
+    <<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+    Hestia: ... I'll go speak to Aphrodite.
+    <<Hide Hestia>>
+    Aelius: [Negative] Ares, behave yourself, please.
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: *<i>Scoff</i>.* Whatever
+    <<Hide Ares>>
+-> Let's talk some more, Hera.
+    <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+    Hera: Must we?
+    Aelius: ... Yeah.
+    Hera: Why? Hermes is an insolent child!
+    Hera: He has no manners nor decorum, and an egregious lack of respect for his superiors.
+    Hera: I can not stand his "<i>jokes.</i>"
+    -> I can understand where you're coming from. (deference)
+        Hera: I am glad someone else can see how… annoying he is.
+        Aelius: Some of it was out of line.
+        Aelius: Even if he wasn't <i>wrong</i> per say, it was wrong to joke about it.
+        Hera: (Sighs) I suppose.
+    -> Not even some of them? (humorous)
+        Hera: Child.
+        Aelius: Right, yeah… sorry.
+        Hera: He shouldn’t make jokes about such sensitive topics.
+        Aelius: Yeah... Probably not.
+    -> You're overthinking it. (aggressive)
+        Hera: Oh, am I?
+        Hera: Or is he just out of line?
+        Aelius: He wasm't <I>wrong</i> at least.
+        Hera: He shouldn’t have joked about such a matter.
+        Aelius: Yeah... Probably not.
+    
+    Aelius: I can see why you’re bothered. He was definitely a bit out of line at the least.
+    Hera: How about we discuss this further after we eat, hm?
+    <<Hide Hera>>
+-> Tell me about you and Hephaestus, Aphrodite.
+    Aphrodite: It’s… been a long time since we’ve spoken.
+    Aelius: I'd imagine that's uncomfortable.
+    Aphrodite: It is.
+    Aelius: Do you <i>want</i> to talk to him?
+    Aphrodite: ... I do not know.
+    -> You should consider it, maybe. (deference)
+        Aphrodite: I have. Quite often in my time away.
+    -> It's been a few centuries... (humorous)
+        Aphrodite: Trust me, no one is more aware of that fact than I.
+    -> It's about time to, I think. (aggressive)
+        Aphrodite: I've wondered that myself.
+    
+    <<Hide Aphrodite>>
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: *<i>Scoff.</i>*
+    Aelius: What's holding you back?
+    <<Hide Ares>>
+    <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+    Aphrodite: I do not know if he wished to speak to me.
+    Aelius: I see...
+    <<Hide Aphrodite>>
+
+Aelius: I think we could all do with some food, yeah?
+
+-> I'll prepare some nice <b>Erymanthian Boar Sandwiches.</b>
+    <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+    Hera: Lovely.
+    <<Hide Hera>>
+-> Hm... maybe some <b>Helios Steak</b> would be nice.
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: That'll be good.
+    <<Hide Hera>>
+
+//COOKING
+// WHATEVER THE PLAYER CHOOSES
+
+
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+Hera: … has been discussing us so much, when we all know the real reason Hestia brought the mortal here.
+<<Hide Hera>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+Ares: Yeah, something about how the mortal is the child of an Olympian.
+<<Hide Ares>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+Hestia: This really doesn’t need to be discussed-
+<<Hide Hestia>>
+<<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+Aphrodite: I agree with Hestia, I do not think this is necessary.
+<<Hide Aphrodite>>
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+Hera: Really? I think this matter ought to be dealt with.
+<<Hide Hera>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+Ares: Either Zeus, Hermes, or Hephaestus fathered a kid none of us knew about.
+Aelius: *<i>Clears throat.</i>*
+<<Hide Ares>>
+<<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+Aphrodite: ...
+<<Hide Aphrodite>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+Hestia: I'm sorry you had to hear that, Aelius.
+Aelius: It's... fine. I have everyone's food ready.
+<<Hide Hestia>>
+-> Hope you all like it. (deference)
+    <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+    Hera: Thank you.
+    <<Hide Hera>>
+-> Can't gossip on an empty stomach. (humorous)
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: *<i>Rolls eyes.</i>*
+    <<Hide Ares>>
+-> Here. (aggressive)
+    <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+    Aphrodite: ... Thank you.
+    <<Hide Aphrodite>>
+
+<<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+Aphrodite: This looks nice, Aelius.
+<<Hide Aphrodite>>
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+Hera: So, Aelius - how about you tell us about yourself?
+Hera: Why you're here, perhaps?
+Aelius: ... What about it?
+<<Hide Hera>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+Ares: Do you know which one it is yet?
+Aelius: I, uh... no?
+<<Hide Ares>>
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+Hera: (Condescendingly) Poor thing.
+<<Hide Hera>>
+<<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+Aphrodite: I'm sorry, dear.
+<<Hide Aphrodite>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+Ares: Well, it’s definitely one of them.
+<<Hide Ares>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+Hestia: You don’t have to talk about it if you don’t want to, Aelius.
+Aelius: No. I... I should probably talk about it.
+Aelius: It's been rough.
+
+-> I’m not sure what I should be doing with myself. (deference)
+    Aelius: I’m still trying to process my mom’s death.
+    Aelius: And now all of this… I don’t know what to think of it.
+-> I'm just here at this point. (humorous)
+    Aelius: If you guys got any ideas, I'm all ears.
+    Aelius: I’m still not really over my mom dying, and with all of this on top of that…
+->  Do any of you understand the feeling of having a mystery dad? (aggressive)
+    Aelius: Because I sure as shit don’t know how to handle it.
+    Aelius: My mom is dead. I don't even know how to handle <i>that</i> yet.
+
+<<Hide Hestia>>
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+Hera: Oh... I didn’t know it was so fresh.
+<<Hide Hera>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+Ares: ...
+<<Hide Ares>>
+<<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+Aphrodite: … I’m sorry to hear that, Aelius.
+Aelius: I’m okay. That actually felt… kinda good to just get it out there.
+Aelius: I really don’t know which of them could be my father.
+Aelius: I guess I have my suspicions...
+
+-> I feel like it might be Zeus.
+    <<Hide Aphrodite>>
+    <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+    Hera: Oh?
+    <<Hide Hera>>
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: (Muttering) Of course he did it again...
+    Aelius: His, uh... stubbornness is familiar to me.
+    <<Hide Ares>>
+-> I'm leaning towards Hermes.
+    <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+    Aphrodite: Go on.
+    Aelius: We both love a good joke.
+    <<Hide Aphrodite>>
+-> I’m getting the feeling it’s Hephaestus.
+    <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+    Aphrodite: ...
+    <<Hide Aphrodite>>
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: Seriously? <i>Him</i> of all people?
+    <<Hide Ares>>
+
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+Hera: I suppose I can see that.
+Aelius: It's been... weird.
+Aelius: It was always just me and my mom, no sort of dad in the picture.
+<<Hide Hera>>
+<<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+Aphrodite: I do understand that feeling.
+Aelius: Knowing now that my father is so in reach…
+Aelius: *<i>Sigh</i>* I don't know.
+<<Hide Aphrodite>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+Ares: What is there not to be excited about? Your father's a <i>god.</i>
+<<Hide Ares>>
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+Hera: Ares, have some understanding.
+<<Hide Hera>>
+<<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+Aphrodite: Dear, do you <i>want</i> to find your dad?
+
+-> I'm honestly not sure. (deference)
+    <<Hide Aphrodite>>
+    Aelius:  I’m kinda used to having no dad at this point.
+    <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+    Hera: It could be beneficial.
+    <<Hide Hera>>
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: It’s not always easy having a dad, but I’m glad I have one.
+    <<Hide Ares>>
+-> Well y'know, when in Olympus... (humorous)
+    <<Hide Aphrodite>>
+    Aelius: [Smirk] ... Do as the Olympians do
+    <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+    Hera: ...
+    <<Hide Hera>>
+    <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+    Aphrodite: It's always good to remain in high spirits.
+    <<Hide Aphrodite>>
+-> Yeah, he needs to take some responsibility. (aggressive)
+    <<Hide Aphrodite>>
+    Aelius: It was hard on my mom being a single parent.
+    <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+    Hera: Parenting is quite the task, I can’t imagine doing it alone.
+    <<Hide Hera>>
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: But that experience made you both stronger for it.
+
+// OTHER CHARACTER HERE DEPENDS ON THE PREVIOUS NODE
+
+Aelius: Yeah, I guess so.
+Aelius: I feel... a bit better now.
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+Ares: All this touchy-feely stuff has me hungry.
+Ares: What’s for dessert?
+
+// GOTTA FIGURE OUT PLAYERS SELECTING WHAT DISH THEY WANT TO COOK AND HOW TO FOLLOW
+
+-> I think an <i>Ambrosia Cake</i> could be good.
+    Ares: YES!!
+    Ares: Erm, I mean- very good.
+-> I'll whip up some <b>Lotus Parfait.</b>
+    <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+    Hera: A wonderful idea.
+    <<Hide Hera>>
+    <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+    Hermes: Hestia! Got a batch of Dionysus’ new wine you order-
+    Hermes: Why are you all here?
+    Aelius: Oh, uh - hey, Hermes.
+    <<Hide Hermes>>
+    <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+    Hera: *<i>Scoffs</i>*
+    <<Hide Hera>>
+    <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+    Hermes: Wassup my favorite chef.
+    Aelius: Sorry, figured it'd be easier to chat in here.
+    Hermes: Ooo, juicy gossip? There’s gotta be if so many people are here at once.
+    Aelius: Well, kinda...
+    Aelius: [Smirk] Actually, yes. Yes there is.
+    Hermes: Well? Do tell.
+    Aelius: This all was Hestia’s idea. She figured with me here and getting closer to everyone, that maybe I could help fix some of the tension on Olympus.
+    Hermes: Ah, so you’re a goodwill-creating guinea pig.
+    Hermes: Nice.
+    Aelius: *<i>Laughs</i>* Guess I am.
+    Aelius: Anyway, thanks for delivering the wine. Hestia’s been excited about it.
+    Hermes: No problemo, ‘tis my job.
+    Hermes: <i>But</i>...
+    Aelius: Uh oh, what..?
+    Hermes: How about I hang around for a bit. Maybe I can help.
+    Hermes: After all, I see a <i>lot</i> during my deliveries around here. Insider info, if you will.
+    Aelius: Uh huh...
+    Hermes: So… how about it?
+    Aelius: Sure, why not. Not a half bad idea, really.
+    Aelius: But uh... just a warning. Hera <i>might</i> hate you currently.
+    Hermes: Psh, I’ll be fine. She’ll get over it.
+    Hermes: I’ll go find a seat, see ya soon, cook ur lotus parfait.
+    <<Hide Hermes>>
+    <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+    Hera: And you're here why, again?
+    <<Hide Hera>>
+    <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+    Hermes: Can’t a guy just sit in on some chit-chat?
+    <<Hide Hermes>>
+    <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+    Hera: I don't know, <i>can</i> you?
+    <<Hide Hera>>
+    <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+    Aphrodite: Hera, let him stay. He's causing no harm.
+    Aelius: I got everyone's Z here.
+    <<Hide Aphrodite>>
+    <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+    Hermes: Wow, kid, you never disappoint, eh?
+    Aelius: Thanks, Hermes.
+    Hermes: So I was just thinking...
+    Hermes: Aphrodite, I’ve seen ‘ole Heph moping around.
+    <<Hide Hermes>>
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: Haha! It’s what he gets for forging all day.
+    <<Hide Ares>>
+    <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+    Hermes: Well, either way...
+    Hermes: To me, it seems like he could use some company.
+    <<Hide Hermes>>
+    <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+    Aphrodite: Oh… you really think so?
+    <<Hide Aphrodite>>
+    <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+    Hermes: Yep. His tools can’t keep him company forever.
+    Aelius: Aphrodite, you should talk to him.
+
+// FIX THE CHOICES AND HERMES INTRO UP THERE
+
+-> At least smooth things out between you two. (deference)
+    <<Hide Hermes>>
+    <<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+    Hestia: That's a wondderful idea, Aelius.
+    <<Hide Hestia>>
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: Maybe he wouldn't be such a sourpuss anymore.
+    <<Hide Ares>>
+-> Before he makes a statue of you for company. (humorous)
+    <<Hide Hermes>>
+    <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+    Hera: Again.
+    <<Hide Hera>>
+    <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+    Hermes: Hehehe.
+    <<Hide Hermes>>
+-> I feel like this has gone on long enough. (aggressive)
+    <<Hide Hermes>>
+    <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+    Hera: Yes, you two should get over your problems with each other after all this time.
+    <<Hide Hera>>
+    <<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+    Hestia: I do agree. I dislike all the tension here on Olympus.
+    <<Hide Hestia>>
+
+<<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+Aphrodite: Yes, you're right.
+Aphrodite: I’ll try to talk to him soon, if he’s willing.
+<<Hide Aphrodite>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+Ares: That man will never be willing.
+<<Hide Ares>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+Hestia: Ares, please.
+<<Hide Hestia>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+Hermes: You're one to talk, Ares.
+<<Hide Hermes>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+Ares: Hm? Why?
+<<Hide Ares>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+Hermes: You’re all dark and brooding. And you avoid him too.
+<<Hide Hermes>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+Ares: Says who?
+<<Hide Ares>>
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+Hera: As much as I hate to agree with Hermes, he’s not wrong.
+Hera: I've noticed it myself.
+<<Hide Hera>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+Ares: Really, mother?
+<<Hide Ares>>
+
+-> If neither one of you changes, nothing will. (deference)
+    <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+    Aphrodite: It would be best for everyone if this was finally put to rest.
+    <<Hide Aphrodite>>
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: Urgh, I guess.
+    <<Hide Ares>>
+-> Everyone’s tired of your guys’ exhausting-ass arguing. (humorous)
+    <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+    Hera: It's quite tiring to watch, really-
+    <<Hide Hera>>
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: Well, if he wasn’t such a-
+    Ares: Alright, fine.
+-> <i>Someone</i> has to be the bigger person. (aggressive)
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: Who says it has to be me?
+    Ares: Hmph.
+
+Ares: If he wants to talk, he can come to me.
+<<Hide Ares>>
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+Hera: And you'll listen?
+<<Hide Hera>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+Ares: I'll consider it.
+<<Hide Ares>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+Hermes: I think I deserve the title of ‘Olympus’ relationship counselor’ now.
+<<Hide Hermes>>
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+Hera: You have some nerve, saying that after last night.
+<<Hide Hera>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+Hermes: Wait, what'd I do again?
+<<Hide Hermes>>
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+Hera: You made a spectacle of my marriage.
+<<Hide Hera>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+Hermes: Ohhhhh, right. That.
+Aelius: I don’t think he meant it like that, Hera.
+<<Hide Hermes>>
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+Hera: I don’t care what he meant, he shouldn’t have said it.
+<<Hide Hera>>
+
+-> It was a bit uncalled for, you’re right. (deference)
+    <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+    Hera: Yes, it was. I don’t appreciate humor at my expense.
+    <<Hide Hera>>
+    <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+    Aphrodite: I don't think many people do.
+    <<Hide Aphrodite>>
+-> I thought it was a bit funny myself. (humorous)
+    <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+    Hera: What’s so funny about joking about my personal issues?
+    <<Hide Hera>>
+    <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+    Ares: I wouldn’t appreciate it either.
+    <<Hide Ares>>
+-> If Zeus didn’t do that, it wouldn’t be an issue. (aggressive)
+    <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+    Hera: What he did and didn’t do is none of your business.
+    <<Hide Hera>>
+    <<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+    Hestia: Hera, they're just trying to help.
+    <<Hide Hestia>>
+
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+Hermes: I’m sorry, I didn’t know you would’ve cared so much.
+<<Hide Hermes>>
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+Hera: Of course you didn’t know, you don’t care about matters like this.
+<<Hide Hera>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+Hermes: ...
+Hermes: I’ll… try and work on it.
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+Hera: See that you do.
+<<Hide Hera>>
+<<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+Aphrodite: Thank you, Aelius dear, for this.
+Aphrodite: It is nice to have an outside perspective.
+<<Act Aphrodite>>
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+Hera: It has been eye-opening.
+<<Hide Hera>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+Ares: I guess it helped.
+<<Hide Ares>>
+
+-> Of course, happy to help. (deference)
+-> I'm glad I could be of service. (humorous)
+-> It's what I do. (aggressive)
+
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+Hera: You fit in nicely here.
+<<Hide Hera>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+Ares: You’re starting to make a place for yourself.
+Aelius: Thanks. I think I'm starting to like it here.
+<<Hide Ares>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+Hestia: I'm glad, dear.
+<<Hide Hestia>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+Hermes: Welcome to our big not-so-happy family.
+Aelius: *<i>Laughs.</i>*
+<<Hide Hermes>>
+<<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+Aphrodite: Thank you for the food, Aelius.
+Aphrodite: But I think it’s best I get going.
+<<Hide Aphrodite>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+Ares: See ya next time. mortal.
+<<Hide Ares>>
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+Hera: Goodbye, everyone.
+<<Hide Hera>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+Hermes: That's my cue too - duty calls!
+<<Hide Hermes>>
+
+//KITCHEN BG
+
+Aelius: That was... a lot.
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+Hestia: I’m sorry about all that.
+Hestia: I should’ve let you know what I was planning sooner. Everyone ended up a bit uncomfortable.
+Aelius: Hestia, you did nothing wrong. If anything, I think we did some good today.
+Hestia: Thank you, Aelius. Truly.
+Hestia: I had brought them in today so you could help them, but I had asked them to come in to help you.
+Hestia: I wanted to help everyone warm up to you and you to feel like you could open up to them too.
+
+-> It’s alright, but I would’ve liked a bigger heads up. (deference)
+    Hestia: Of course, I’m sorry.
+    Aelius: Thanks Hestia, but you need to stop apologizing – it’s why the other Olympians step all over you.
+    Hestia: Oh, I- I will try to work on that.
+    Aelius: Maybe there’s some change to be had here too.
+-> Ah, pick up your head Hestia, you haven’t done anything wrong. (humorous)
+    Hestia: Oh- Of course. Sorry for everything.
+    Aelius: Hestia, you need to stop apologizing.
+    Aelius: It’s likely one of the main reasons why the other Olympians step all over you.
+    Hestia: You think so? I… hadn’t noticed.
+    Hestia: I’ll work on that.
+    Aelius: Maybe there’s some changes to be had here in the diner too.
+-> I would appreciate it if you didn’t do that without talking to me again. (aggressive)
+    Hestia: I'm sorry, truly.
+    Hestia: I didn’t mean to make today as terrible as it was.
+    Hestia: I’m so sorry.
+    Aelius: Hestia, I appreciate your apology, but you need to knock it off with all the apologizing.
+    Aelius: It might not be my place to say this, but I think that’s probably why the other Olympians walk all over you.
+    Hestia: Oh… um… I suppose so. Sorry.
+    Aelius: Hestia!!
+    Hestia: Ah, sor- I mean, I understand.
+    Aelius: Well, perhaps there are some changes to be had here in the diner too.
+
+Hestia: Anyways, I’ve taken up a lot of your day, so I’ll let you go for today.
+Hestia: I see you tomorrow morning right?
+Aelius: Of course, I'll see you then.
+<<HideAll>>
+<<LoadVNScene "Day6">>
+===

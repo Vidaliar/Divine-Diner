@@ -3,7 +3,7 @@ title: Day2_Hermes
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 Aelius: Welcome in, Hermes!
-<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
 Hermes: Hey, Aelius.
 Aelius: How's it going for you today?
 Hermes: I should be askin' you that, kid!
