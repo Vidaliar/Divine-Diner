@@ -1,0 +1,67 @@
+﻿title: Hestia_Day4_AfterShift
+tags:
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+
+Hestia: Looks like everyone's gone, let's close up for today.
+Hestia: How did everything turn out today?
+Aelius: [Positive] Everything went rather well, though I did have a question.
+Hestia: Oh, what were you curious about?
+Aelius: Do you think Hermes will be alright after his performance earlier?
+Hestia: Err- personally I think he will be alright. Hermes is always able to bounce back from things like this… usually.
+Hestia: On the other hand, I’m not sure if the others will be able to recover from it as quickly.
+Hestia: As I’m sure you’ve noticed, the Olympians tend to hold on to things for a verrrrrryyyy long time.
+Aelius: Yeah, I've noticed that.
+Hestia: I’m sorry you have to see that side of our family.
+Aelius: [Negative] Hestia, why are you apologizing? It’s not you doing any of that.
+Hestia: Sorry. You're right.
+Aelius: [Negative] Hestia!!
+Hestia: I know, it's something I've tried to fix, but I haven't had any luck breaking that habit.
+Hestia: Now, tell me more about your day.
+
+-> Talk about Aphrodite.
+    Aelius: Like you mentioned at the start of the day, Aphrodite came in.
+    Hestia: What did you think about her? I know this is your first time meeting her.
+    Aelius: She seemed like she wanted to keep everything superficial; she didn’t want to talk about anything important.
+    Aelius: I had done what you recommended and just asked her directly about her issues with Hephaestus, but she didn’t want to delve into that.
+    Aelius: She also left rather abruptly.
+    Hestia: That does sound like her.
+    Hestia: I don’t think she really feels at home on Olympus. She’d rather be elsewhere and doing something there instead. She technically doesn’t even have the same lineage as the rest of us.
+    Aelius: You have lineages? I thought the gods simply just existed since the beginning of time.
+    Hestia: We do – my brothers and sisters all were children of the Titan king, Chronos, so therefore all of Zeus’ children are also part of that lineage.
+    Hestia: But Aphrodite is different, she truly did just come to be. Born from the remains of Uranus, she has actually been around a lot longer than the rest of us.
+    Hestia: Though uh… I wouldn’t directly say that to her. Women are usually very conscious of their age.
+    Aelius: [Smirk] I will keep that in mind then, but that's all I really had about Aphrodite.
+-> Talk about Hermes.
+    Aelius: I know that I just mentioned it, but I do worry for Hermes, especially after his comedy routine.
+    Aelius: The only good thing about all of it was that Hera didn’t explode. I think she was trying not to have an aneurism trying to process his jokes.
+    Hestia: *<i>Heavily laughs</i>*
+    Hestia: You’re definitely right on that. The look on her face tonight was too funny, *<i>laughs.</i>*
+    Aelius: Yeah, but I think Hera will treat Hermes even worse than before because of it.
+    Hestia: Well, don’t think too much into it. I’ve been trying to coordinate with some of the other Olympians, and I think I’ve got a plan to tackle a lot of the issues here.
+    Aelius: [Negative] Do tell.
+    Hestia: All in good time my dear, just wait a little longer.
+-> Talk about Hephaestus.
+    Aelius: [Negative] Hephaestus told me about his early life. I didn’t realize how rough he had it.
+    Hestia: He talked about his childhood? I’m surprised that he even opened up about it. He hates discussing it.
+    Hestia: It’s understandable why he doesn’t exactly like Zeus much…
+    Aelius: [Negative] Yeah, I don’t have much to say about it. It was a rather sombering experience.
+    Hestia: Agreed, let's move on from such a depressing topic.
+
+Hestia: Now, I think I have a question of my own for you, Aelius.
+Hestia: Are you enjoying yourself here? I know it’s only been a few days, but I’ve been worrying about it.
+
+-> It's been alright. I like it here. (deference)
+    Hestia: I'm glad to hear that, it puts my heart at ease.
+-> Well this ain't good ole' Greece, but I don't hate it. (humorous)
+    Hestia: I know that nothing will ever be the same as home, but thank you for giving Olympus a chance.
+-> It's fine. (aggressive)
+    Hestia: Oh, ok.
+
+Hestia: Well, I won’t keep you here any longer! I will see you tomorrow! I have something big planned, so make sure to come in a little early!
+Aelius: [Positive] A surprise from you? I definitely will be here earlier than usual.
+Aelius: [Positive] See you tomorrow!
+
+===

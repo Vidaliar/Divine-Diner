@@ -31,6 +31,10 @@ public class CastManager : MonoBehaviour
     bool inPause = false;
     public CookingManager cManager;
 
+    bool hasCast = false;
+    bool waitForMouseRelease = false;
+    GameObject currentCastObject;
+
     [Header("FMOD SFX")]
     [SerializeField] private EventReference castTraceLoopEvent;
     [SerializeField] private EventReference castSuccessOneShotEvent;
@@ -55,13 +59,52 @@ public class CastManager : MonoBehaviour
 
         cam = Camera.main;
 
-        GameObject newCast = Instantiate(castGO, Camera.main.transform.position, Quaternion.identity);
+        if (!castTraceLoopEvent.IsNull)
+        {
+            castTraceInstance = RuntimeManager.CreateInstance(castTraceLoopEvent);
+        }
 
-        cast = newCast.GetComponent<CastSO>();
+        // If castGO is already assigned, old behavior still works.
+        // If castGO is empty, CastSelector will call SetCast later.
+        if (castGO != null)
+        {
+            SetCast(castGO);
+        }
+    }
+
+    public void SetCast(GameObject selectedCast)
+    {
+        castGO = selectedCast;
+
+        if (currentCastObject != null)
+        {
+            Destroy(currentCastObject);
+        }
+
+        Vector3 castPos = Camera.main.transform.position;
+        castPos.z = 0f;
+
+        currentCastObject = Instantiate(castGO, castPos, Quaternion.identity);
+
+        cast = currentCastObject.GetComponent<CastSO>();
 
         maxLines = cast.numLines;
 
-        if (!castTraceLoopEvent.IsNull)
+        line.positionCount = 0;
+        lastLinePos = new Vector2(-100, -100);
+        score = 0;
+        pointScore = 100f;
+        numOutBounds = 0;
+        pointsInBounds = true;
+        numTries = 0;
+        numLines = 0;
+
+        hasCast = true;
+
+        // Prevent the same click used to select the cast from also drawing a line.
+        waitForMouseRelease = true;
+
+        if (!castTraceLoopEvent.IsNull && !castTraceInstance.isValid())
         {
             castTraceInstance = RuntimeManager.CreateInstance(castTraceLoopEvent);
         }
@@ -69,10 +112,19 @@ public class CastManager : MonoBehaviour
 
     void Update()
     {
+        if (hasCast == false)
+        {
+            return;
+        }
+
         Vector2 pos = cam.ScreenToWorldPoint(Input.mousePosition);
         transform.position = pos;
 
-        inPause = cManager.inPause;
+        if (cManager != null)
+        {
+            inPause = cManager.inPause;
+        }
+
         if (inPause)
         {
             PauseTraceSfx(true);
@@ -81,6 +133,16 @@ public class CastManager : MonoBehaviour
         else
         {
             PauseTraceSfx(false);
+        }
+
+        if (waitForMouseRelease)
+        {
+            if (Input.GetMouseButton(0) == false)
+            {
+                waitForMouseRelease = false;
+            }
+
+            return;
         }
 
         // Draws the line while the mouse button is held down
@@ -171,6 +233,7 @@ public class CastManager : MonoBehaviour
 
         line.positionCount = 0;
         score = 0;
+        numLines = 0;
         numTries++;
         Debug.Log("Cast is reset. Num tries is " + numTries);
 
@@ -193,6 +256,12 @@ public class CastManager : MonoBehaviour
     private void StartTraceSfx()
     {
         if (castTraceStarted) return;
+
+        if (!castTraceInstance.isValid() && !castTraceLoopEvent.IsNull)
+        {
+            castTraceInstance = RuntimeManager.CreateInstance(castTraceLoopEvent);
+        }
+
         if (!castTraceInstance.isValid()) return;
 
         castTraceInstance.start();

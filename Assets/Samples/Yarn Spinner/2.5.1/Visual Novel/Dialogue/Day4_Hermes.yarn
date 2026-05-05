@@ -4,4 +4,58 @@ tags:
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+
+Aelius: Hey, Hermes - good seeing you.
+Hermes: Hey there, kid.
+Aelius: What can I do for you today? In a hurry?
+Hermes: Nope, not today. Got alllll my time to myself.
+Aelius: [Positive] Dang, sounds nice, I'm a little jealous <i>*chuckles.*</i>
+Hermes: Heh, yeah - wait a second, that reminds me!
+Aelius: Oh?
+Hermes: I actually got a comedy set coming up tonight. If you got time, you should swing by. I'm <i>sure</i> you'll be entertained by my wit and genius.
+Aelius: [Positive] Eh, sure. I’ll see what I can do; Hestia would probably let me get off early tonight if I asked.
+Hermes: Good! I need my new buddy there, after all.
+Aelius: Well, what can I get for you today?
+Hermes: I think I'll have the <b>Hesperides apple cider</b>. Zeus was raving about how spectacular it was.
+Aelius: Woah, wait.
+Aelius: [Smirk] Zeus... <i>raving</i> about my cooking?
+Hermes: Well, as much as you could imagine Zeus 'raving.'
+Hermes: It was more like “that mortal is… decent at cooking, I suppose. That apple juice was refreshing.”
+Aelius: [Positive] That's... better than I expected from him, honestly.
+Hermes: Ha! Same here, Aeliuss.
+Hermes: Anywho, I'm feeling parched from this chit-chat.
+Aelius: Apple cider, coming right up.
+Aelius: [Smirk] Hold tight- if you can.
+
+// Apple cider
+
+Aelius: Fresh Hesperides apple cider, ready for ya'.
+Hermes: Damn, maybe Zeus was right - this looks <i>divine.</i>
+Aelius: Glad you like it. I'll just get going so you can eat-
+Hermes: No, no, come back!
+Aelius: Hm? Need something?
+Hermes: You got a moment? I wanna do a test-run of my set – you in?
+
+-> Yeah, why not. (deference)
+    Hermes: Nice! Trust me, you <i>won't<i> be disappointed.
+-> Alright, alright, shoot. (humorous)
+    Hermes: Hell yeah, thanks. You aren't <i>ready</i> for my comedic prowresss.
+-> I guess.
+    Hermes: At least <i>pretend</i> to be a little interested...
+    Aelius: You're right, my bad.
+    Hermes: It'll be worth your while, trust me.
+
+Hermes: So, day one – brand spanking new from my mom – I focused up and became the best inventor you could imagine, and I stole Apollo’s cattle. Apollo ignored bro code, and-
+//offscreen Hestia
+
+Hestia: Aelius, where are you? I have some work for you.
+Aelius: (<i>Spared, thanks Hestia.</i>)
+Aelius: Welp, guess I gotta go. But I'll be sure to stop by your set, sounds, uh... <i>great</i> so far.
+Hermes: Aww, Hestia ruining my fun.
+Hermes: Oh well, I'll see you later then, kid!
+Aelius: [Positive] See ya, Hermes!
+<<HideAll>>
+<<jump Day4_Hephaestus_Intro>>
+
+
 ===
