@@ -8,7 +8,7 @@
 <<PlayMusic Hestia_MainBody>>
 
 
-Hestia: Good morning Aelius, how was your first night here in Olympus?
+Hestia: Good morning, Aelius. How was your first night here on Olympus?
 Hestia: Hopefully no one has bothered you yet. I know they… have no sense of personal boundaries for newcomers.
 Aelius: Thankfully not, though everything is still just unfamiliar.
 Hestia: I figured it might be like that, I hope that you’ll adjust and maybe call this home soon.
@@ -17,7 +17,7 @@ Hestia: Now with that being said, are you ready to help me out today?
 ->Yes
 	Hestia: Excellent! Since it’s just you and I working, I think I’ll work on inventory and you can work front. It’ll give you a good opportunity to familiarize yourself with the regulars.
 	Aelius: I can do that, thank you!
-	Hestia: Of course dear, just make sure you try to get the orders as perfect as you can, some of the Olympians are a little picky about how their food is served. *Cough* Zeus *Cough*
+	Hestia: Of course dear, just make sure you try to get the orders as perfect as you can, some of the Olympians are a little picky about how their food is served. *<i>Cough</i>* Zeus, *<i>Cough.</i>*
 	-> I’m sure it will be fine!
     	Hestia: Excellent!
     	<<StopMuzic 0.35>>
@@ -26,9 +26,9 @@ Hestia: Now with that being said, are you ready to help me out today?
 		<<wait 0.4>>
 		<<jump Zeus_Intro>>
 	-> Wait, Zeus comes in?!
-    	Hestia: Yes, the King of Olympus does frequent here, but it’s nothing to worry about. You just need to stroke his ego and everything will be alright.
+    	Hestia: Yes, the King of Olympus does frequent here, but it’s nothing to worry about. You just need to cater to his ego and everything will be alright.
     	Hestia: Oh, one other thing. Zeus might be a bit surprised to see a mortal in here, so don’t let anything he says get to you.
-    	Aelius: Oh. Well, hopefully he doesn’t come in today then. I think I’m ready to start now!
+    	Aelius: [Negative] Oh. Well, hopefully he doesn’t come in today then. I think I’m ready to start now!
     	Hestia: Excellent!
     	<<StopMuzic 0.35>>
 		<<HideAll>>
