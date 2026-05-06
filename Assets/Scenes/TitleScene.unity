@@ -1084,7 +1084,7 @@ MonoBehaviour:
   mainMenuPanel: {fileID: 0}
   saveLoadMenuPanel: {fileID: 4511325}
   settingsMenuPanel: {fileID: 449564368}
-  newGameScene: ZeusBeat1
+  newGameScene: Day0
 --- !u!4 &1325998724
 Transform:
   m_ObjectHideFlags: 0

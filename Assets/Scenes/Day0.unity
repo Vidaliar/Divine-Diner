@@ -1250,7 +1250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runner: {fileID: 104355506}
-  defaultStartNode: Hestia_Day1_BeforeShift
+  defaultStartNode: DAY0
 --- !u!4 &940884904
 Transform:
   m_ObjectHideFlags: 0

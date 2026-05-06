@@ -1,5 +1,41 @@
 ﻿title: ENDING_Start
 tags:
 ---
+//KITCHEN bg
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+Hestia: Good morning, Aelius! Glad to see that you could make it.
+Hestia: I know it’s probably not exactly how you wanted to be reunited with your mother, but the other Olympians and I wanted to be here to support you.
+Hestia: Hades said you are only allotted <b>one person</b> with you, as well.
+// hades can take you line
+Aelius: [Positive] Really? I’m… touched, honestly.
+Aelius: [Positive] Everyone here is part of my family now, even if some of them would scoff at the idea.
+Hestia: *<i>Laughs softly.</i>*
+Hestia: Well, I best not delay you any longer. I’m sure you’ve been waiting far too long for this moment.
+Aelius: [Positive] Thanks, Hestia. I know that none of this would’ve been possible if you hadn’t brought me here, so thank you. Thank you so much.
+Hestia: Of course, now go see the others!
 
+// KITCHEN bg
+// ONLY DADS WITH HIGH RELATIONSHIP point
+
+Aelius: [Positive] Who to talk to with first...
+-> Zeus
+    <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+    Zeus: Good to see you, Aelius.
+    Aelius: Likewise.
+    Zeus: It’s a big day. Do you think you’re ready?
+    Aelius: I guess I have to be, right?
+    Zeus: Yes… It would be quite uncouth of Hestia to gather us all here only for you to lose your nerve.
+    Aelius: ... Yeah, that would really suck for <i>you.</i>
+    Zeus: Quite.
+    -> I’d like for you to come, if you’re up for it.
+        Zeus: Oh, I would be more than happy to accompany you, Aelius.
+        Aelius: Thanks Big Z.
+        Zeus: Hm… Big Z… I like that.
+        Zeus: I may have the other gods refer to me as such…
+        Zeus: Well! We should be on our way, yes?
+        Aelius: Yes. Let us be off, Big Z.
+    -> I'm gonna go see what Hermes is up to.
+        Zeus: Of course.
 ===
