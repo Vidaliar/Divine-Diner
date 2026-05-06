@@ -38,4 +38,9 @@ Aelius: [Positive] Who to talk to with first...
         Aelius: Yes. Let us be off, Big Z.
     -> I'm gonna go see what Hermes is up to.
         Zeus: Of course.
+        
+//END OF DAY
+<<HideAll>>
+<<LoadVNScene "Credits">>
+
 ===
