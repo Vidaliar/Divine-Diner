@@ -60,6 +60,31 @@ public class StateProvider : MonoBehaviour, IStateProvider
 
         yield return null;
     }
+    
+    public void AddZeus(int amount)
+    {
+        zeus = Mathf.Clamp(zeus + amount, 0, 61);
+        Debug.Log($"[StateProvider] Zeus affection changed by {amount}. Current = {zeus}");
+    }
+
+    public void AddHermes(int amount)
+    {
+        hermes = Mathf.Clamp(hermes + amount, 0, 44);
+        Debug.Log($"[StateProvider] Hermes affection changed by {amount}. Current = {hermes}");
+    }
+
+    public void AddHephaestus(int amount)
+    {
+        hephaestus = Mathf.Clamp(hephaestus + amount, 0, 39);
+        Debug.Log($"[StateProvider] Hephaestus affection changed by {amount}. Current = {hephaestus}");
+    }
+
+    public void SetAffectionValues(int zeusValue, int hermesValue, int hephaestusValue)
+    {
+        zeus = Mathf.Clamp(zeusValue, 0, 61);
+        hermes = Mathf.Clamp(hermesValue, 0, 44);
+        hephaestus = Mathf.Clamp(hephaestusValue, 0, 39);
+    }
 
 #if UNITY_EDITOR
     private void OnValidate()
