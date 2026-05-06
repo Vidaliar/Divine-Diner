@@ -1,0 +1,61 @@
+﻿title: Hestia_Day8_AfterShift
+tags:
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+
+Hestia: So, how did everything go today?
+-> Everything went rather well. (deference)
+    Hestia: That’s good, I know it’s been a while since all three of them came in on the same day. I didn't know if it would be awkward for you or not.
+    Aelius: Well, it wasn't entirely <i>not</i> awkward...
+-> I’m impressed that it went so well all things considered! (humorous)
+    Hestia: That’s good I suppose. What do you mean by all things considered?
+    Aelius: About that...
+-> Hermes and Heph said some unexpected – yet kind – things. (aggressive)
+
+Hestia: I see...
+Hestia: What happened?
+Aelius: Both Hermes and Hephaestus mentioned in passing that they wouldn’t mind having me be their child.
+Aelius: I just don’t really know how to feel about it. It was… nice, in a way.
+Aelius: It might’ve just been awkward for me because they both said something like that on the same day.
+Hestia: I understand, but perhaps focus on the endearing side. They mean well, I’m sure of it.
+Aelius: You're right - thanks, Hestia. Just a lot at once.
+Hestia: Life is often like that, but what else went on today?
+-> Talk about Zeus
+    Aelius: It felt like Zeus finally told me how he felt about me being here today. It honestly was nice to hear.
+    Hestia: The times are definitely changing. Zeus complimenting a mortal is not Zeus.
+    Aelius: I was especially surprised he said what he did with Hera present. In the mortal world she was known to despise any mortal Zeus showed any interest in.
+    Aelius: I think Hera was pretty pleased too, even if she did chastise him, it was rather playful.
+    Hestia: [Positive] This shows incredible growth on both their parts. As their sibling, it brings me a lot of joy to see them even tolerate each others’ presence.
+    Hestia: The Aelius Effect has done wonders for them.
+-> Talk about Hephaestus
+    Aelius: It seems like Aphrodite acted on her plan to try and reconnect with Hephaestus today.
+    Hestia: Oh? How did that go?
+    Aelius: They’re back on talking terms, and it’s good to finally see Hephaestus not back down from his emotions.
+    Aelius: I was a little worried when Aphrodite said she had planned a meeting with Hephaestus yesterday.
+    Hestia: I’m glad it all worked out then – Aphrodite taking initiative on her own and Hephaestus rising to the occasion.
+    Aelius: [Positive] Agreed, I hope Ares will be understanding once he finds out.
+    Hestia: With the progress that he and Hephaestus have made, I hope for the best.
+    Aelius: [Positive] I have faith in them, and I’m glad to see that you do too.
+    Hestia: If I’ve learned anything from you, it’s knowing that anyone can change.
+->  Talk about Hermes
+    Aelius: Today with Hermes made me feel like I’ve been pretty influenced by him.
+    Hestia: [Positive] Well, out of all the Olympians, Hermes is the most modern of us per say. He does get out more than anyone else.
+    Hestia: I’d say that definitely helps make him more relatable, especially to you.
+    Aelius: Yeah, since the beginning Hermes has definitely been the most welcoming god, aside from you.
+    Hestia: I think he was also more welcoming because you were someone from a newer time than the rest of the gods. In my opinion, I think we bore him.
+    Aelius: I think he just needed someone who could understand his humor. A partner in crime to help land him in the funny jail.
+    Hestia: I’m thankful you could be that person for him, he needed a friend.
+
+Hestia: I think you should head out for now, let me handle the cleanup today.
+Aelius: I can help, though!
+Hestia: Don’t forget, you have a big day tomorrow. You’ll want to be properly rested – you don’t want your mother to nag you about not getting enough rest, do you?
+Aelius: [Positive] Ah.
+Aelius: [Positive] You make a good argument there.
+Aelius: I'll see you tomorrow then!
+Hestia: Make sure you come into the diner early! We all want to make sure everything is perfect for you!
+Aelius: [Positive] Of course, thanks Hestia!
+<<HideAll>>
+<<LoadVNScene "ENDING">>
+===

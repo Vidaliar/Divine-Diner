@@ -1,0 +1,73 @@
+﻿title: Hestia_Day7_AfterShift
+tags:
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+
+
+Aelius: Closing up!
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+Hestia: Alright, I’ll meet you up there in just a moment.
+Hestia: I heard a bit of commotion earlier in the day, was everything alright?
+Aelius: Yeah, everything ended up being alright. Ares did a few questionable things, and Zeus tried to connect with Hephaestus.
+Hestia: I do recall a notable boom earlier – I’m guessing that was Ares then.
+Aelius: [Smirk] Yeah, that would’ve been him, but I think things are going even better now.
+Hestia: Oh? Do tell me more.
+
+-> Talk about Ares.
+    Aelius: I think I’ll preface this by saying that Ares is insane sometimes.
+    Hestia: I won’t deny that all of us think that of him at one point or another.
+    Aelius: Apparently he had woken up to find a lot of Hephaestus’ contraptions boobytrapping his palace.
+    Aelius: Not sure how he didn’t notice them when he had entered, but that’s why he was cursing this morning.
+    Hestia: Ares and Hephaestus have had this very long ‘prank’ war, but I know Ares doesn’t usually go to his palace to rest, so lots of things get piled up there.
+    Hestia: Being as oblivious as he is, he doesn’t even notice that something's off until a giant metal clamp is around his head.
+    Aelius: Sounds about right. Well, as you heard, he went and blew up Hephaestus’ workshop and was almost dismembered by him.
+    Aelius: [Smirk] He was rather dramatic about it, it was kind of funny.
+    Hestia: Please tell me they aren’t still at each other’s throats. I don’t want the diner to be demolished again…
+    Aelius: Wait, what?
+    Hestia: Nevermind that – continue.
+    Aelius: Okay, well, that’s what surprised me – they actually were able to have a proper conversation with each other, and actually listened.
+    Aelius: Apparently after they were both exhausted and lying in the rubble, they were able to talk to each other about their feelings, Aphrodite, and Zeus – but more importantly, they apologized to one another.
+    Hestia: I’m genuinely surprised, I didn’t think this day would ever come.
+    Hestia: That is amazing news!
+-> Talk about Zeus.
+    Aelius: It seems that Zeus really does want to change, and tried earlier to comfort Hephaestus in his own ‘way.’
+    Aelius: It still doesn’t seem like Heph is ready yet to accept Zeus though.
+    Hestia: Did Hephaestus listen to Zeus at all? Anything in the realm of acceptance is progress, after all.
+    Aelius:  I think he did, but he needs some more time to process it, just like how it went with Ares.
+    Aelius: Ares hasn’t really talked about it either. None of Zeus’ children express themselves too much.
+    Hestia: I still think the key here is that Zeus is actually trying to be a father. I’ve said it before, but the old Zeus did not care whatsoever about them emotionally, just how they reflected on his name.
+    Hestia: This is the most I’ve ever seen Zeus make an effort for anyone else, so I’m really proud of him.
+    Aelius: I hope that Ares and Heph are able to reciprocate soon, though. I fear that Zeus might regress if he still isn’t able to form a bond with them.
+    Aelius: I want the best for everyone, but not everything can be one-sided, as it seems to have been here all this time.
+    Hestia: I agree, and it’s admirable that you think that way in the face of gods.
+    Hestia: I do hope they can show something towards Zeus aside from resentment soon.
+-> Talk about Aphrodite.
+    Aelius: Aphrodite came in today. I think she is confused and nervous about what her role in everything truly is.
+    Aelius: One moment, she’s anxious about her own relationships. Next, she’s trying to rationalize her decisions.
+    Hestia: As much as I hate to say it, Aphrodite for so long was essentially objectified as something that Ares and Hephaestus fought over and desired.
+    Hestia: It’s only natural that with newfound autonomy, she’s anxious about reflecting on what she’s done up till now.
+    Aelius: I know that she has a plan to meet with Hephaestus soon, so she has every right to be nervous.
+    Aelius: At least as intimidating as Hephaestus looks, he is much softer than what we see.
+    Hestia: I think it’s good that Aphrodite sees you as someone reliable that she can come to.
+    Aelius: Agreed, I want to be able to help her. All the Olympians sometimes just need someone that they can rely on and talk to.
+    Aelius: That's you too, Hestia.
+    Hestia: Thank you dear, you’ve already helped me more than you know.
+    Hestia:  Let’s hope that Aphrodite can have some more faith in herself.
+
+Hestia: Well, it seems Hephaestus had a rather eventful day. Ares blew up his workshop, Zeus tried to connect with him, and Aphrodite is planning to talk to him.
+Hestia: I hope he doesn’t get overwhelmed by everything.
+Aelius: [Positive] Maybe if it was a week ago he might’ve been overwhelmed, but I think that he can go into this and handle himself now.
+Aelius: He’s already sort of resolved things with Ares, so that’s not as bad anymore.
+Hestia: That’s right, I’m sure he will be fine. If he stumbles, we will be there to help him back onto the right path.
+Aelius" [Positive] Exactly.
+Aelius: Well, I think I’m going to go get some rest. Today was interesting and fun, but it took a lot out of me.
+Hestia: Of course, I'll see ya tomorrow?
+Aelius: Bye
+//END OF DAY
+<<HideAll>>
+<<LoadVNScene "Day8">>
+
+
+
+===

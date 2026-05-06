@@ -1,0 +1,26 @@
+﻿title: Hestia_Day7_BeforeShift
+tags:
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+
+Hestia: Good Morning, Aelius, how was your rest?
+Aelius: [Positive] It wasn’t bad, but there was lots of noise during the night, I’m guessing Hephaestus and Ares got into it again?
+Hestia: *<i>Sigh</i> Yes, it would seem so. Ares was quite vocal on my way here this morning. I'm sure the entire mountain could hear his cursing.
+Aelius: That sounds about right, I just hope he doesn't do anything stupid. Hephaestus has come quite a long way in the time I’ve been here.
+Aelius: I’d hate to go several steps back and deal with their fighting.
+Hestia: Likewise. I’m sure we will end up hearing about it soon.
+Hestia: Oh, one other thing: our esteemed king is gracing us with his presence today. I guess he has been lost in thought these last few days, and Hera is making him leave their palace.
+Aelius: Oh. Great.
+Aelius: I know he was trying to be more understanding of his children last time I saw him, but I don’t think Ares was ready for that sudden change.
+Hestia: If Zeus keeps up his effort, I’m sure he’ll come around and appreciate that he is trying to put in a little effort.
+Hestia: I’ve even heard that Hera hasn’t been as frustrated with him, just a little concerned.
+
+Aelius: [Positive] Wow, that is a big step in the right direction for him!
+Aelius: I better get everything ready then, if his highness will be stopping by.
+Hestia: Alright, I know you'll do your best.
+<<HideAll>>
+<<jump Day7_Ares_Intro>>
+
+===

@@ -1,0 +1,200 @@
+﻿title: Day8_Zeus_Intro
+tags:
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+
+//JINGLE
+Zeus: Aelius!
+Aelius: [Positive] King Zeus, hello!
+Zeus: Just Zeus.
+
+-> Of course. Zeus. (deference)
+-> Does that mean we're friends? (humor)
+    Zeus: ...
+    Zeus: Silence.
+-> Why. (aggressive)
+    Zeus: Because!
+    Zeus: That is my name!
+    Aelius: Okay, dude.
+
+Zeus: Ahem! As I was saying.
+Zeus: I’ve invited my wife to have breakfast with me.
+Aelius: [Positive] Oh, Hera?
+Zeus: Yes! Have you met?
+
+-> Yes, she's lovely. (deference)
+    Zeus: She is, isn’t she? The light of my life, that woman.
+-> Yeah, we hung out for a bit. (humor)
+    Zeus: What does that mean?
+    Aelius: She ordered some food. We talked. It was chill.
+    Zeus: I don’t appreciate how you say these things so lightly.
+    Aelius: My bad.
+-> Didn’t she throw Hephaestus off a mountain? (aggressive)
+    Zeus: ...
+    Zeus: Well, yes.
+    Zeus: But she went back for him!
+    Zeus: And, regardless, that was a <i>very</i> long time ago.
+    Aelius: Everything is “a long time ago” with ancient gods.
+    Zeus: I don’t appreciate your tone, Aelius.
+    Aelius: Suck it up, buttercup.
+    Zeus: ...
+    Zeus: I am trying very hard not to smite you right now.
+
+Zeus: Ahem. Regardless.
+Zeus: Would you be able to bring us some <b>Nectar</b>?
+Aelius: Of course.
+
+// Nectar
+<<Hide Aelius>>
+<<Hide Hera>>
+<<Hide Zeus>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+<<Act "Hera" "Hera" "left" "bottom" #008B8B>>
+Hera: It's good to hear Ares is doing well.
+Zeus: Yes. A shame about him and Hephaestus, though.
+Hera: Oh, haven’t you heard? They’re working things out, dear.
+Zeus: Really? That's fantastic news!
+<<Hide Hera>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+Aelius: Your Nectar.
+<<Hide Aelius>>
+<<Act "Hera" "Hera" "left" "bottom" #008B8B>>
+Hera: Ah, thank you.
+Zeus: It looks wonderful...
+Zeus: Thank you.
+Hera: Zeus!
+Zeus: What is it, my beloved?
+Hera: Are you thanking people, now?
+
+-> HIGH relationship
+    Zeus: Oh, yes. Yes! Aelius has been quite the positive influence.
+    Hera: I'll say.
+-> MEDIUM relationship
+    Zeus: Ah… I suppose the mortal has had a positive effect on me.
+    Hera: I'll say.
+-> LOW relationship
+    Zeus: What are you talking about?
+    Hera: Aelius must be rubbing off on you.
+    Zeus: I don’t know about that…
+
+-> He did most of the work. (deference)
+    <<Hide Hera>>
+    <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+    Aelius: He’s really been trying lately.
+    <<Hide Aelius>>
+    <<Act "Hera" "Hera" "left" "bottom" #008B8B>>
+    Hera: Well, I appreciate you helping him along, regaardless.
+    <<Hide Hera>>
+-> Yeah, I'm pretty great. (humor)
+    Hera: You… certainly are something.
+    Zeus: Annoying, but effective.
+    <<Hide Hera>>
+    <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+    Aelius: Rude...
+    <<Hide Aelius>>
+-> He's still got a LONG way to go. (aggressive)
+    Hera: Oh, are you putting him on a regimen?
+    Zeus: I don't like where this is going.
+    Hera: I've always thought he might benefit from more long-term <i>help.</i>
+    Hera: He never would go to couples therapy with me-
+    Zeus: <i>AHEM.</i>
+    Zeus: Were you saying something, Aelius?
+    <<Hide Hera>>
+    <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+    Aelius: Not a thing.
+    <<Hide Aelius>>
+
+<<Act "Hera" "Hera" "left" "bottom" #008B8B>>
+Zeus: WELL!
+Zeus: This has been WONFERFUL!
+Zeus: Hera, would you mind giving me a moment with Aelius? I have something to speak at them about.
+<<Hide Hera>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+Aelius: You do?
+<<Hide Aelius>>
+<<Act "Hera" "Hera" "left" "bottom" #008B8B>>
+Hera: I haven’t even had a sip, darling-
+Zeus: Here! Take some to go! Thank you, my dearest!
+Hera: ...Alright.
+Hera: Thank you for the Nectar, Aelius.
+<<Hide Hera>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+-> Are you alright? (deference)
+-> What's up? (humor)
+-> That wasn't very nice. (aggressive)
+    Zeus: What?
+    Aelius: You just kicked Hera out before she could eat.
+    Zeus: Oh. That. She's fine.
+    Aelius: ...
+
+Zeus: Aelius, I wanted to say…
+Zeus: Oh… Oh, this Nectar is…
+
+-> Playful
+    Zeus: I’m not quite sure how to describe it.
+    Zeus: Jovial?
+    Aelius: Yeah, I had a lil fun making it.
+    Zeus: Hm. You can taste the fun...
+    Zeus: Curious...
+    Zeus: Well! What I mean to say is, I appreciate all your help as of late.
+    Zeus: My family can be difficult, but I’ve found your advice to be indispensable.
+    Zeus: Even if you can be bothersome at times.
+    Aelius: And I'm a pretty good cook, too.
+    Zeus: Yes, you are. That.
+    Zeus: Thank you, Aelius.
+-> Fancy
+    Zeus: Calming. Atmospheric, even.
+    Aelius: Good to hear.
+    Zeus: Yes...
+    Zeus: What I meant to say is, you’re a good listener and confidant.
+    Zeus: I appreciate all you’ve done for me. And my family.
+    Zeus: Thank you.
+-> Spicy
+    Zeus: Ooh...
+    Zeus: Mm...
+    Zeus: Hot mama...
+    Zeus: What was I saying?
+    Aelius: I have no idea.
+    Zeus: Right! Yes!
+    Zeus: Your bravado! Your clarity!
+    Zeus: You’ve been an immense help! With everything!
+    Zeus: So. Thank you!
+
+-> No, thank you. (deference)
+    Aelius: My time here has been defined by the people I met.
+    Aelius: And that includes you.
+    Zeus: Ah... that is...
+    Aelius: Don't cry.
+    Zeus: What!
+    Zeus: I wasn't!
+    Zeus: ...
+-> You're too sweet. (humor)
+    Zeus: Sometimes you remind me far too much of Hermes.
+    Aelius: That guy rules.
+    Zeus: Okay.
+-> Whatever. (aggressive)
+    Zeus: ...
+    Zeus: Okay. Well.
+
+Zeus: I should be off.
+
+-> HIGH relationship
+    Zeus: But I mean it, Aelius. All of it.
+    Zeus: It means a lot.
+    Zeus:  You know… I struggle to imagine how we would be getting on without you.
+    Aelius: Thank you, Zeus.
+    Aelius: I’m glad Hestia brought me here.
+    Zeus: Farewell.
+    Aelius: Bye!
+-> MEDIUM
+    Zeus: Thank you for the food. And... the other stuff.
+-> LOW
+    Zeus: Thank you for the food.
+
+Aelius: Tell Hera I said thanks for coming by!
+Zeus: Yes, I will.
+<<HideAll>>
+<<jump Day8_Hephaestus_Intro>>
+===

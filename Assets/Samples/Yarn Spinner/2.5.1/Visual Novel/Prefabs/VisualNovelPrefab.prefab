@@ -919,6 +919,8 @@ GameObject:
   - component: {fileID: 2678071618908635071}
   - component: {fileID: 7112041585887571140}
   - component: {fileID: 4034489572841062405}
+  - component: {fileID: 8817378871466578248}
+  - component: {fileID: 8340940010472684866}
   m_Layer: 0
   m_Name: Dialogue Runner
   m_TagString: Untagged
@@ -960,6 +962,7 @@ MonoBehaviour:
   - {fileID: 6167349947878513351}
   - {fileID: 6798407037274427283}
   - {fileID: 4115915426429293206}
+  - {fileID: 8817378871466578248}
   startNode: Start
   startAutomatically: 0
   runSelectedOptionAsLine: 0
@@ -1051,6 +1054,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8817378871466578248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515087920938002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17700c7703e65f4abeb816acf49b270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 2678071618908635071}
+  stateProvider: {fileID: 0}
+  yarnProjectNameOverride: 
+--- !u!114 &8340940010472684866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515087920938002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8000b127818374581001c0f168e5f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 2678071618908635071}
+  stateProvider: {fileID: 0}
+  disableStartAutomaticallyWhenPendingLoad: 1
+  safetyFrameLimit: 2000
 --- !u!1 &1624147448914006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1679,6 +1713,7 @@ GameObject:
   - component: {fileID: 6167349947878513351}
   - component: {fileID: 4990589770215028340}
   - component: {fileID: 9206208487772063366}
+  - component: {fileID: 1503655234919715382}
   m_Layer: 0
   m_Name: Visual Novel Manager
   m_TagString: Untagged
@@ -1715,6 +1750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runner: {fileID: 2678071618908635071}
   bgm: {fileID: 9206208487772063366}
+  affinityYarnBridge: {fileID: 1503655234919715382}
   loadSprites:
   - {fileID: 21300000, guid: b196625a074ca2b44b6c2d21028a8dfb, type: 3}
   - {fileID: 21300000, guid: 0e69b0eedb9241b43923fff56185223e, type: 3}
@@ -1856,6 +1892,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1503655234919715382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979875447975149966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4526f8e918f9bc54e872b14e3fb4344b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variableStorage: {fileID: 7112041585887571140}
+  stateProvider: {fileID: 0}
+  syncOnStart: 1
 --- !u!1 &5593515298463069415
 GameObject:
   m_ObjectHideFlags: 0

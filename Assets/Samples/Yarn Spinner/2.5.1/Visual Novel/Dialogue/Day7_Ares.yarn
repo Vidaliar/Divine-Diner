@@ -1,0 +1,78 @@
+﻿title: Day7_Ares_Intro
+tags:
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+
+Aelius: Good morning, Ares; how was your talk with Hephaestus yesterday?
+Ares: I think that I'm going to kill him.
+Aelius: Welp, I guess it didn't go well.
+Aelius: Why do you want to kill him, though? I didn't think it went <i>that</i> poorly.
+Ares: Well firstly, that moronic dwarf – as oblivious as he is outside his workshop – had no idea that Aphrodite and my relationship has “deteriorated” into what it is now.
+Ares: Secondly, he left his damn traps around my palace this morning. He always has to be a thorn in my side.
+Ares: Do you know how annoying those are to get rid of! He always puts them in the worst places and if they get you, it’s a world of hurt!
+Aelius: Oh? I thought at least from Hephestaeus’ and my conversations, he was trying to improve his standing with you.
+Aelius: It seems pretty strange that he would leave those arounf for you.
+Ares: Err, well… I haven’t been home for quite some time…
+Ares: I hadn’t really noticed that he was trying to extend an olive branch… and I may have placed a bunch of explosives in his workshop before coming here.
+Aelius: [Negative] You. Did. What?
+Ares: Well, it was some of my finer work installing them; but in hindsight… I might have just caused a huge misunderstanding.
+Aelius: You should go and uninstall them before he noti-
+
+//BOOM sounds
+
+Aelius: [Negative] <b>Ares.</b>
+Ares: I… will be right back. I should probably go um… apologize.
+
+// 20 mins later
+
+Aelius: I’m surprised that you made it back in one piece… Really just surprised you managed to return at all.
+Ares: Well, I almost didn’t. Hephaestus was waiting for me with some contraption I had never seen before.
+Ares: It was terrifying – it was like a sword, but it had little tiny knives rotating around the blade.
+Ares: That thing is going to give me nightmares.
+Aelius: Ares? Did you apologize?
+Ares: I was just getting to that – but yes, I did.
+Ares: After we were both out of breath, I finally got a chance to talk some reason to him.
+Ares: It was kind of funny; we’ve hated each other for so long, but lying in the rubble, it felt like we had a real conversation for the first time in centuries.
+Aelius: Thank goodness. I thought all the effort Hestia and I put into getting Hephaestus out of his shell was going to be for nothing.
+Ares: I suppose that the little bastard isn’t completely rotten; he wasn’t so bad when he finally said how he really felt.
+Aelius: [Smirk] I'm sure it was the same way for him.
+Aelius: Now, what can I get you to celebrate this new milestone that you’ve accomplished?
+Ares: Well, normally I'd go with anything sweet, but I think I'd like to have something savory today. Could I get the <b>Helios steak</b>?
+Aelius: [Positive] Sure, I'll be right back with that.
+
+// HELIOS steak
+
+Aelius: Here's your steak, Ares - enjoy!
+-> Fancy
+    Ares: Ah, this is quite a delicacy – most excellent!
+-> Playful
+    Ares: It feels like I’m missing some content on this, but it tastes great. Thanks, Aelius.
+-> Spicy
+    Ares: Well, I’m going to be tasting that all day, but it’s not an unpleasant taste.
+
+Aelius: [Positive] Glad to see that it satisfied your taste!
+Aelius: [Positive] On another note, it’s really great to see Hephaestus and you take a step forward to having a better relationship.
+Aelius: Honestly, I was a little worried a war might’ve started here.
+Ares: A war? You don’t have to worry about that, you’d be safe here.
+Aelius: … What’s that supposed to mean?
+Ares: Zeus outlawed direct fighting on Olympus, so we either have to do indirect fights like with the explosives or the traps, or we have to relay our will to our followers in the mortal world.
+Aelius: *<i>Empty stare.</i>*
+Aelius: … A lot of things make a lot more sense in the mortal world now.
+Ares: Oh- I probably shouldn’t have said anything about that.
+Ares: Anyways, I will try to follow your advice and keep trying to work more issues out with the dwarf.
+Aelius: [Smirk] For starters, you could not call him "<i>the dwarf.</i>"
+Ares: Perchance.
+Aelius: You can’t just say perchance, Ares!
+Aelius: I need you to agree that you’ll not call him demeaning things.
+Ares: Ok fine – I won’t call Hephaestus by little, dwarf, tree stump, shorty, brat-
+Aelius: [Negative] Ares, I get it.
+Aelius: Relationships go both ways. I’m sure if you start respecting him, you’ll get the same from him.
+Ares: I understand.
+Ares: Well, I may have signed myself up to help him rebuild his workshop as my olive branch, so I need to head over there now.
+Ares: See you around, Aelius.
+Aelius: [Positive] Bye, Ares, keep up the good work!
+<<HideAll>>
+<<jump Day7_Zeus_Intro>>
+===

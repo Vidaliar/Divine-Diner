@@ -1,0 +1,218 @@
+﻿title: Day7_Zeus_Intro
+tags:
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+
+//DOOR JINGLE
+
+Hephaestus: Aelius.
+
+-> Hephaestus. (deference)
+-> H-dog! Good to see you! (humor)
+    Hephaestus: ...
+    Hephaestus: Do not call me that.
+    Aelius: [Positive] Understood!
+-> There you are! (aggressive)
+
+Aelius: [Positive] What would you like?
+// door JINGLE
+<<Hide Hephaestus>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+Zeus: HEPHAESTUS! <i>HEPHAESTUS!!!!!</i>
+<<Hide Zeus>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+Hephaestus: Oh no.
+<<Hide Hephaestus>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+Zeus: HEPHAESTUS, MY BOY!
+Aelius: Hello, King Zeus.
+
+-> High relationship
+    Zeus: AELIUS! HAHA! LOOK, IT'S MY BOY!
+-> Medium relationship
+    Zeus: CHILD! HAHA! LOOK, IT’S MY BOY!
+-> Low relationship
+    Zeus: CHILD! THIS IS MY BOY!
+
+-> Is that so? (deference)
+    <<Hide Zeus>>
+    <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+    Hephaestus: I-
+    <<Hide Hephaestus>>
+    <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+    Zeus: YES! DON’T YOU KNOW? HEPHAESTUS IS MY CHILD!
+    <<Hide Zeus>>
+-> Who? (humor)
+    Zeus: HEPHAESTUS! MY SON! HE’S RIGHT HERE!
+-> Yeah, we've met. (aggressive)
+    Zeus: Oh? GOOD! YES!
+
+<<Hide Zeus>>
+<<Hide Aelius>>
+<<Act "Hephaestus" "Hephaestus" "left" "bottom" #FF8C00>>
+Hephaestus: Father, I-
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+Zeus: YES! HEPHAESTUS!
+Hephaestus: I just-
+Zeus: MY BOY! WHAT IS IT?
+Hephaestus: I-
+Zeus: AELIUS! HAVE YOU TAKEN MY SON’S ORDER YET?
+<<Hide Hephaestus>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+Aelius: Uh, no-
+Zeus: WELL? WHAT ARE YOU WAITING FOR?
+Aelius: What can I get you, Hephaestus?
+<<Hide Zeus>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+Hephaestus: ...
+Hephaestus: The <b>Helios Steak,</b> if you would.
+Aelius: Right away.
+
+// HELIOS STEAK
+
+Aelius: Your food.
+<<Hide Hephaestus>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+Zeus: ...
+<<Hide Zeus>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+Hephaestus: Thank you, Aelius.
+
+-> Is everything okay? (deference)
+    <<Hide Hephaestus>>
+    <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+    Zeus: ...
+    <<Hide Zeus>>
+    <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+    Hephaestus: It's alright, Aelius.
+    <<Hide Hephaestus>>
+-> Geez, who killed the mood? (humor)
+    <<Hide Hephaestus>>
+    <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+    Zeus: After all this time, you still treat our affairs with such frivolity, <i>child.</i>
+    <<Hide Zeus>>
+    <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+    Hephaestus: Father, it's not their fault-
+    <<Hide Hephaestus>>
+-> I'm gonna go. (aggressive)
+
+<<Hide Aelius>>
+<<Act "Hephaestus" "Hephaestus" "left" "bottom" #FF8C00>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+Zeus: UNATTENTIVE?
+Zeus: I WAS <i>UNATTENTIVE?</i>
+Hephaestus: Father-
+Zeus: I AM THE KING OF THE GODS, HEPHAESTUS.
+Zeus: I <i>APOLOGIZE</i> IF I COULD NOT MAKE TIME FOR ARTS AND CRAFTS.
+Zeus: I HAD <i>MORE IMPORTANT</i> THINGS TO DO!
+Hephaestus: Yes. You did.
+Zeus: ...
+Hephaestus: Hrmph.
+<<Hide Zeus>>
+<<Act "Aelius" "Aelius 3_4s" "right" "bottom" #674ea7>>
+Aelius: Um...
+Aelius: How's... the food?
+Hephaestus: ...
+
+-> Playful
+    Hephaestus: It's exuberant.
+    Hephaestus: Hm.
+    <<Hide Aelius>>
+    <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+    Zeus: I'm... sorry. Hephaestus.
+    Hephaestus: ... What?
+    Zeus: Please don't make me say it again.
+    -> *Stay silent* (deference)
+    -> Say it again. (humor)
+    -> Make him say it again. (aggressive)
+
+    Hephaestus: No.
+    Hephaestus: No, that's quite alright.
+    Hephaestus: ...
+    Hephaestus: Hrmph.
+-> Fancy
+    Hephaestus: It's... subtle.
+    <<Hide Aelius>>
+    <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+    Zeus: You know… I remember when you were but an infant.
+    Hephaestus: …What?
+    Zeus: After your mother failed to hide you away-
+    Hephaestus: You both got into a fight and threw me from the top of Olympus.
+    Zeus: Yes, well. She can be difficult, your mother.
+    Zeus: What I mean to say is, even though she didn’t want me to find out about you, I did.
+    Zeus: I only regret not realizing your brilliance back then.
+    -> *Stay silent* (deference)
+        Hephaestus: Is it her fault you never visited my forge?
+        Zeus: ...
+        Zeus: No.
+        Zeus: No, she is not to blame.
+    -> Now hug each other. (humor)
+        Zeus: <i>Child.</i>
+        Hephaestus: <i>Aelius.</i>
+        <<Hide Hephaestus>>
+        <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+        Aelius: Sorry.
+        <<Hide Aelius>>
+    -> She didn’t make you ignore him for most of his life.
+        Zeus: ...
+        Zeus: No, she didn't.
+        Zeus: That fault falls with me.
+    
+    <<HideAll>>
+    <<Act "Hephaestus" "Hephaestus" "left" "bottom" #FF8C00>>
+    Hephaestus: Father, I appreciate your words.
+    Hephaestus: Maybe, with time, I could see you being a part of my life.
+    Hephaestus: But for now...
+    Hephaestus: Hrm.
+-> Spicy
+    Hephaestus: It's harsh.
+    <<Hide Aelius>>
+    <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+    Zeus: What do you want from me, Hephaestus?
+    Hephaestus: ...
+    Zeus: I ignored you for centuries, and you hated me.
+    Zeus: Then, when I finally made the effort to be there for you today, you still couldn’t find any grace in your heart!
+    Zeus: So, what is it? What do you want?
+    Hephaestus: ...
+    -> King Zeus, please... (deference)
+        Zeus: ...
+        Hephaestus: I would like to be left to myself.
+    -> Play catch with him or something. (humor)
+        Zeus: … Would you like that, Hephaestus?
+        Hephaestus: I don’t play games, father.
+        Hephaestus: When one grows up with no parents, one has little time for frivolities.
+        Zeus: Yes, I can imagine.
+        Hephaestus: I should be on my way.
+    -> You can't act like nothing happened. (aggressive)
+        Zeus: ...No. I suppose I can't.
+        Zeus: I spent a lot of my life ignoring you, didn't I, son?
+        Hephaestus: Hrumph
+        Zeus: Could you ever find it in your heart to forgive me?
+        Hephaestus: ...
+        Hephaestus: Maybe another day.
+
+<<HideAll>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+Zeus: … Did I do something wrong, Aelius?
+-> He needs time. (deference)
+    Zeus: You think so?
+    Aelius: I do.
+    Zeus: Thank you, Aelius. I’m sure the food was impeccable.
+-> No such thing as wrong. (humor)
+    Zeus: ... What?
+    Aelius: Y’know. In the grand scheme of things.
+    Zeus: What are you talking about?
+    Aelius: We're all just stardust.
+    Zeus: Stop spouting nonsense.
+-> Yes. (aggressive)
+    Zeus: ...
+    Zeus: I see.
+
+<<HideAll>>
+<<jump Day7_Aphrodite>>
+    
+
+===

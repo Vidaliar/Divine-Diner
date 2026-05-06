@@ -22,7 +22,10 @@ namespace Yarn.Unity.Example {
     {
 		[SerializeField] DialogueRunner runner;
         [SerializeField] AudioSource bgm;
-
+        
+        [Header("Affinity")]
+        [SerializeField] private AffinityYarnBridge affinityYarnBridge;
+        
         [Header("Assets"), Tooltip("you can manually assign various assets here if you don't want to use /Resources/ folder")]
 		public List<Sprite> loadSprites = new List<Sprite>();
 		public List<AudioClip> loadAudio = new List<AudioClip>();
@@ -105,6 +108,11 @@ namespace Yarn.Unity.Example {
 
             runner.AddCommandHandler<string>("StartCooking", StartCooking);
             runner.AddCommandHandler("ReturnToTitle", ReturnToTitle);
+            
+            runner.AddCommandHandler<int>("AddZeusAffinity", AddZeusAffinity);
+            runner.AddCommandHandler<int>("AddHermesAffinity", AddHermesAffinity);
+            runner.AddCommandHandler<int>("AddHephaestusAffinity", AddHephaestusAffinity);
+            runner.AddCommandHandler("SyncAffinity", SyncAffinityToYarn);
 
 
             // adds all Resources to internal lists / one big pile... it
@@ -421,9 +429,54 @@ namespace Yarn.Unity.Example {
 			// 	StopAudio( stopThis.name );
 			// }
 		}
+		
 		public void Testing(string test) {
 			Debug.Log("Testing called");
 			Debug.Log($"Test: {test}");
+		}
+		
+		public void AddZeusAffinity(int amount)
+		{
+			if (affinityYarnBridge == null)
+			{
+				Debug.LogWarning("[VNManager] AffinityYarnBridge is missing.");
+				return;
+			}
+
+			affinityYarnBridge.AddZeus(amount);
+		}
+
+		public void AddHermesAffinity(int amount)
+		{
+			if (affinityYarnBridge == null)
+			{
+				Debug.LogWarning("[VNManager] AffinityYarnBridge is missing.");
+				return;
+			}
+
+			affinityYarnBridge.AddHermes(amount);
+		}
+
+		public void AddHephaestusAffinity(int amount)
+		{
+			if (affinityYarnBridge == null)
+			{
+				Debug.LogWarning("[VNManager] AffinityYarnBridge is missing.");
+				return;
+			}
+
+			affinityYarnBridge.AddHephaestus(amount);
+		}
+
+		public void SyncAffinityToYarn()
+		{
+			if (affinityYarnBridge == null)
+			{
+				Debug.LogWarning("[VNManager] AffinityYarnBridge is missing.");
+				return;
+			}
+
+			affinityYarnBridge.SyncAllToYarn();
 		}
 
 		/// <summary>typical screen fade effect, good for transitions?

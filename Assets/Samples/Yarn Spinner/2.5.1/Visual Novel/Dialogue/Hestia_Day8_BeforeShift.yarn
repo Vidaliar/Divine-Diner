@@ -1,0 +1,40 @@
+﻿title: Hestia_Day8_BeforeShift
+tags:
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+Hestia: Hey Aelius, welcome in!
+Hestia: It’s been over a week, how are you feeling about being here still?
+
+-> I've enjoyed it so far. (deference)
+    Hestia: That’s good to hear, I’m glad you’ve come to enjoy somewhere that isn’t home.
+-> I’ve had a whimsical time here. I like it! (humorous)
+    Hestia: Whimsy? I wouldn’t describe Olympus as whimsical, but if that’s a good thing, I’m glad to hear it.
+-> It’s been the absolute best! (aggressive)
+    Hestia: Quite the enthusiasm! Glad to see that you’re having a great time so far!
+
+Aelius: [Positive] Of course, it’s been a wonderful time helping you out Hestia.
+Aelius: [Positive] I wouldn’t trade the experience for anything. I just wish I could maybe talk to my mom…
+Hestia: I appreciate that, Aelius. Also, you’ll be pleased to hear: Hades sent a messenger last night to me. He mentioned that a meeting with your mother has been set up for tomorrow.
+Aelius: [Positive] Wait, what- I’ll finally get to see her?!
+Hestia: Yes dear, you’ll get to see your mother shortly.
+Aelius: [Positive] Thank you, Hestia, thank you so much!
+Hestia: Don’t thank just me. It seems that a lot of the Olympians also sent word to Hades asking for the same thing.
+Aelius: [Positive] I- I have no words. I’m so thankful to everyone for how kind they’ve been to me while I’ve been here.
+Hestia: It was only fair, in just the short time you’ve been helping me, you’ve been able to solve a great many of the issues that we’ve had here.
+Hestia: Ares and Hephaestus can tolerate each other at the moment. Zeus is making an effort to be part of the family. Hermes is opening up.
+Hestia: Despite these issues persisting as long as I can remember, you’ve come in and changed us for the better.
+Aelius: [Positive] Well, I think just having a different perspective can be all the difference.
+Aelius: It’s only been the same people here forever, so of course nothing really changes, even if you try.
+Hestia: Either way, thank you. From all of us.
+Aelius: No, thank you. You’ve taken me to my family and shown me the rest of the family I never knew.
+
+// DING MF
+
+Hestia: As grateful for having you here as I am, it seems we have a guest.
+Hestia: If you could go get their order, that would be most appreciated.
+Aelius: [Positive] Of course! I’ll talk to you in a bit, then!
+<<HideAll>>
+<<jump Day8_Zeus_Intro>>
+===

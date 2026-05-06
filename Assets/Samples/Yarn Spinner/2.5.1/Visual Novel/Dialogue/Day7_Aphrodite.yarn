@@ -1,0 +1,73 @@
+﻿title: Day7_Aphrodite
+tags:
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+
+Aphrodite: Good evening, Aelius. It's wonderful to see you.
+Aelius: Hi, Aphrodite, it's good to see you too.
+Aphrodite: I hope you have had a pleasant day.
+Aelius: You seem like you’re in a good mood today, has Hephaestus talked to you yet?
+Aphrodite: Practical as always, Aelius.
+Aphrodite: Yes, and it has certainly improved my demeanor.
+Aphrodite: Although it’s more of just an arrangement to meet and talk more later.
+
+Aelius: [Positive] That's something at least; I am glad.
+Aphrodite: I just wanted to stop by and thank you for helping Hephy.
+
+// WEIRD OPTION SELECTION LOGIC HERE NEEDS TO BE IMPLEMENTED
+
+-> Do you think you would take him bac?
+    Aphrodite: It is not solely my decision, it must be decided together.
+    Aphrodite: If I could… I believe I would like to start over with him.
+-> Hephy?
+    Aphrodite: Love is a kind of madness, dear. One can’t be held responsible for the way it makes them act.
+    Aelius: If you say so.
+-> Why did you decide to leave him anyway?
+    Aphrodite: As I said, it was when I was much younger, less wise.
+    Aphrodite: Hephaestus has always been… withdrawn.
+    Aphrodite: And so I sought more – more love, more attention – what I thought was more befitting of the goddess of love.
+    Aelius: And so, Ares.
+    Aphrodite: Yes...
+    Aphrodite: He had the excitement, the melodrama, that I was looking for.
+    Aphrodite: But Ares treats everything like war; he lacks the subtlety required for romance.
+    Aelius: I've noticed.
+
+Aelius: Would you like anything to eat?
+Aphrodite: Yes, I would thank you. You still have <b>Ambrosia Cake,</b> yes?
+Aelius: Coming right up.
+
+// AMBROSIA CAKE game
+
+-> Spicy
+    Aphrodite: You take a different approach than Hestia did. The spice is a worthy addition.
+-> Fancy
+    Aphrodite: Just as Hestia makes it, this is wonderful work, dear.
+-> Playful
+    Aphrodite: Just as I remember it, but maybe sweeter. Good work, dear.
+
+Aelius: [Positive] I'm glad you like it.
+Aphrodite: Thank you for listening, Aelius. I have not been able to talk about this in so long.
+Aelius: [Positive] Of course.
+Aphrodite: I must confess I feel a degree of nervousness about tomorrow.
+Aelius: [Positive] I'm sure you'll be fine.
+Aphrodite: You’ve talked to him more than I, what do you think?
+
+-> I think you both should give it another chance.
+    Aphrodite: I am happy you think so.
+    Aphrodite: Thank you for your confidence, Aelius.
+-> It's not my place to say.
+    Aphrodite: Yes, you are correct.
+    Aelius: I'm sorry I can't offer more.
+    Aphrodite: Do not worry, dear. I must take responsibility for myself.
+-> I think you should take it slow.
+    Aphrodite: Yes, it would be best to avoid another mistake.
+    Aphrodite: Thank you for your wisdom, Aelius.
+
+Aelius: Thank you for stopping by.
+Aphrodite: Thank you, Aelius, for your help and for the meal.
+Aphrodite: I will be in your debt, no matter how tomorrow goes.
+Aelius: Good luck, Aphrodite.
+<<HideAll>>
+===
