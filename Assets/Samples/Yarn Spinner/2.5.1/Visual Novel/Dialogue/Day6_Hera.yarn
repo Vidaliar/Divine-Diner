@@ -1,0 +1,78 @@
+﻿title: Day6_Hera_Intro
+tags:
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+Hera: Aelius, good to see you again.
+
+-> You as well, my Lady. (deference)
+    Hera: You’ve been well, I hope?
+    Aelius: Better every day. And you?
+    Hera: Oh, fine.
+    Hera: You know...
+-> Heya, Hera. (humor)
+    Hera: I'm not sure we're <i>quite</i> close enough for you to greet me like that.
+    Aelius: My bad.
+    Aelius: Was there something you wanted to say?
+    Hera: Yes, actually...
+-> Can I get your order? (aggressive)
+    Hera: No small talk for you, I see. Swift and to the point!
+    Aelius: Is that a bad thing?
+    Hera: Oh, no. It makes sense...
+
+Hera: Things have moved rather quickly since you showed up.
+Aelius: I can slow my roll if that's a problem.
+Hera: Oh, no! I would never ask such a thing. It has, by and large, been good.
+Aelius: I'm gladd to hear it.
+Aelius: So, are you hungry, or what?
+Hera: Hm, yes.
+Hera: I'll have the <i>Lotus Parfait</i>, if that's alright with you.
+Aelius: Excellent choice.
+
+// LOTUS PARFAIT
+
+Aelius: Your parfait.
+Hera: Delightful. Thank you, as always.
+Aelius: [Positive] Of course. Have a nice meal.
+Hera: Oh! Before you go…
+Hera: You used to cook for your mother, yes?
+Aelius: I... did, yeah.
+Hera: Would you tell me about her?
+Aelius: [Negative] ... Sure.
+
+-> She cared about people.
+    Aelius: She gave so much of herself for others.
+    Aelius: And never asked for anything in return.
+->  She always brightened the room.
+    Aelius: Like...
+    Aelius: She made things light without making light <i>of</i> things.
+    Aelius: If that makes sense?
+-> She was the strongest person I know.
+    Aelius: Even up until the end...
+    Aelius: She was the one comforting me.
+
+Hera: ... Hm.
+Hera: You take after her, then?
+Aelius: [Negative] I... What?
+Hera: You carry on in her honor.
+Hera: Do you do it to make her proud?
+Aelius: [Negative] I... didn’t even realize I was doing it.
+Hera: Then you do it because she set a good example, and you knew in your heart to follow.
+Aelius: [Negative] ...
+Aelius: [Negative] Oh.
+Hera: You were not doing it to make her proud. But I’m sure she would be.
+Hera: I'm sure she <i>will</i> be. When you see her.
+Aelius: Hah! Word travels fast.
+Hera: I make it my business to keep up with the goings on of Mount Olympus.
+Hera: It’s quite an exception being made for you, Aelius.
+Hera: I hope you do not take it lightly.
+Hera: And I hope your meeting with your mother is everything you’re hoping for.
+Aelius: I appreciate that, Hera.
+Hera: We appreciate you. Now, go help someone else.
+Hera: The work is never done, love.
+Aelius: Right, of course.
+Aelius: Enjoy your meal.
+<<HideAll>>
+<<jump Day6_Hephaestus_Intro>>
+===

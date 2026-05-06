@@ -1,0 +1,52 @@
+﻿title: Hestia_Day6_AfterShift
+tags:
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+Aelius: [Positive] Hestia! I'm closing up the front!
+Hestia: Thank you!
+Hestia: So, how did today go for you?
+
+-> Talk about Hermes.
+    Aelius: You were right this morning about it being Hermes coming in first.
+    Hestia: Well, when you’ve lived with the same people for who even knows how long, you pick up on those kinds of things.
+    Hestia: But how did your exchange with him go today?
+    Aelius: He seemed rather out of it today. He was having trouble maintaining his usual smile and humor.
+    Hestia: I’m sure he has a lot on his mind – he’s a thoughtful one.
+    Aelius: [Negative] I understand where he comes from though, being by yourself all the time leaves only yourself to talk to.
+    Aelius: [Negative] I tried to talk to him and get him to open up by talking about myself, which seemed to get his mind off of it, but I still worry he isn’t taking any time to slow down.
+    Hestia: Everyone is different and handles their struggles differently, and for Hermes, that is just staying busy.
+    Hestia: Though I do agree with you that he needs to slow down sometimes.
+    Hestia:  Did you give him the meal for your mother today?
+    Aelius: [Positive] Yeah, I gave it to him. He also had asked about it, which helped me remember.
+    Hestia: That's good, hopefully he rests soon though.
+-> Talk about Hera.
+    Aelius: The Queen showed up as well today. I was a little worried she would talk about being frustrated with Hermes, but she didn’t even mention him or his routine.
+    Hestia: Well, nothing is sometimes good in situations like theirs.
+    Aelius: She was more interested in the relationship between my mother and myself, though.
+    Hestia: That sounds like Hera, she is the god of family after all.
+    Hestia: I hope she didn't make you uncomfortable.
+    Aelius: She didn’t, but she made me realize some things about myself that I hadn’t really thought about.
+    Hestia: Mothers have a different way of viewing the world, so hopefully it was helpful.
+    Aelius: It was – I’m thankful she said what she did earlier. I did leave her to her meal rather unceremoniously, so I don’t know if she knew I was thankful.
+    Hestia: I'm sure she knows, don't worry about it too much.
+-> Talk about Hephaestus
+    Aelius: I talked to Hephaestus today. He is still rather anxious when it comes to Ares and Aphrodite.
+    Aelius:  He tried to confront Ares earlier, which didn’t go too well for either party.
+    Hestia: Those boys need to find some sort of middle ground. They’re never going to get any better if they resort to fear and anger...
+    Aelius: [Positive] It feels like they're doing better, though. I think they’re close to finding some sort of resolution.
+    Aelius: [Positive] Even if it doesn’t involve Aphrodite, I think they can do it.
+    Aelius: I just hope that Ares doesn't do anything stupid. He can be as dense as a block of cheese sometimes.
+    Hestia: Ares is more prone to reacting, so I’m more worried about him doing something rash as opposed to Hephaestus.
+    Hestia: I’m sure we will find out soon if something actually does happen. I hope nothing does though.
+
+Hestia: It seems like everything went well for the most part today at least!
+Hestia: As per usual, I’m very thankful for everything you do around here, and hope to see you tomorrow.
+Aelius: [Positive] Of course, I’m always glad to help you with anything you need!
+Aelius: [Positive] I'll see you tomorrow!
+Hestia: Bye, Aelius!
+<<HideAll>>
+<<LoadVNScene "Day7">>
+
+===

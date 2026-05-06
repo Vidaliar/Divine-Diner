@@ -1,0 +1,139 @@
+﻿title: Day8_Hermes_Intro
+tags:
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+
+Hermes: Heya, Aelius!
+Aelius: [Positive] Good to see you, Hermes.
+Hermes: I come with an extra purpose today!
+Aelius: Oh really? And what might that be?
+Aelius: (<i>I hope this isn't another comedy set...</i>)
+Hermes: Being a messenger, of course.
+Hermes: …Your mom wanted me to pass along a message.
+Aelius: ... What?
+Aelius: ... Are you joking right now?
+Hermes: I’m not. It’s the real deal.
+Hermes: She wanted me to tell ya that she’s proud of you.
+Hermes: And that your ‘cooking has gotten even better, if you can believe it.’
+Aelius: [Negative] ...
+Aelius: ...
+Aelius: [Positive] Thank you, Hermes.
+Hermes: Of course. I’m glad I could deliver the message.
+Hermes: And for what it’s worth… I’m proud of you too. You deserve some well-earned praise for all your hard work.
+Aelius: [Positive] I try my best. Thank you.
+Aelius: [Smirk] But don’t go getting all soft on me now. What will I do without my favorite comedian?
+Hermes: Ah, you caught me. Guess I’m just taking your advice from the other day to heart.
+Hermes: But anywho, I actually took a day off.
+Aelius: [Positive] Really> <i>You</i> took a break?
+Hermes: Crazy, I know. Ole’ Hermes still knows how to kick back and relax sometimes.
+
+-> Good for you, honestly. You deserve a break after running around for others for centuries. (deference)
+    Hermes: Good thing I’m a divine being – my legs might be jelly by now if not.
+    Aelius: [Smirk] I think they'd be rotted.
+    Hermes: Eh, semantics.
+-> Glad you’re taking some time off. But don’t think that means you can bow outta helping me later. (humorous)
+    Hermes: You run a tight ship, but I <i>suppose</i> I can findd the time in between my beauty rests to help my favorite chef out.
+-> You should’ve done this centuries ago, but better late than never. (aggressive)
+    Hermes: Guess I'm <i>delivering</i> myself a break.
+
+Aelius: [Smirk] Well, what do you want to have on this <i>momentous</i> day?
+Hermes: Ah, what dish would be most worthy of this time off…
+Hermes: How about an <b>Ambrosia cake</b>?
+Aelius: [Positive] You got it. I'll be back soon.
+
+// CAKE minigame
+
+Aelius: [Positive] Here's your cake, <i>delivered</i> just for you.
+Aelius: [Smirk] Guess I'm following in your footsteps.
+Hermes: Ha! Didn’t realize I got that kind-of influence on ya!
+Hermes: But wow, this cake is delicious!
+Hermes: No following in my footsteps – I forbid it. It would be cruel to rob Olympus of your cooking.
+Aelius: [Positive] Hehe.
+Hermes: [Positive] ... Your mom was right, you <i>have</i> gotten better.
+
+-> Fancy
+    Hermes: I mean, just look at it, even! Tastes even better than it looks.
+-> Playful
+    Hermes: It’s so cute too – amazing visual design there.
+-> Spicy
+    Hermes: And it’s got just the amount of spice to leave me tingling and not sobbing.
+
+Aelius: [Positive] I'm glad you like it, Hermes.
+
+-> I'm doing my best. (deference)
+    Hermes: Well, your best is plenty damn good in everyone’s books, I’d say.
+-> Have my skills reached <i>godly</i> status? (humorous)
+    Hermes: Oho! Feeling coy, are we?
+    Hermes: I'd say more... <i>demigodly</i> status.
+-> I would hope it would be good after all the hard work I’ve done. (aggressive)
+    Hermes: You’re starting to sound like the Olympians.
+    Hermes: Good to have confidence, though.
+
+Hermes: Actually, Aelius... *<i>clears throat</i>*
+Hermes: I need to thank <i>you.</i>
+Aelius: Wait... what?
+Hermes: Well, you’ve helped me out.
+Hermes: Helped me realize I’ve got some stuff buried deeper than Zeus is in-
+Hermes: Oops, wait – told Hera I wouldn’t joke like that anymore.
+Aelius: [Smirk] Oh my <i>god.</i>
+Hermes: Anyway, you made me open up more than I probably have in centuries.
+Hermes: To try and face things with thought rather than humor all the time-
+Hermes: Still working on that one.
+Aelius: [Positive] I’m… really glad, Hermes. I’m glad I could actually help out on Olympus.
+Aelius: You’ve been the most welcoming by far – besides Hestia – and that really helped me settle in.
+
+-> HIGH
+    Aelius: [Positive] I'm glad we've gotten close.
+    Hermes: Me too, kid.
+-> MEDIUM
+    Aelius: I feel like we're starting to get closer.
+    Hermes: I'm inclined to agree.
+-> LOW
+    Aelius: Your humor has really helped me out.
+    Hermes: I'm glad.
+    Hermes: (Mumbling) Finally, <i>someone</i> appreciates my sense of humor.
+
+Hermes: I see a bit of myself in you, y’know?
+Hermes: We’ve both got daddy issu- I mean, both have some trouble with our fathers.
+Aelius: [Smirk] Good save there, buddy.
+Hermes: Ha! Same coping mechanisms too, clearly.
+Aelius: I’m seeing that – we are pretty similar.
+Hermes: Maybe you might be my kid after all.
+
+-> HIGH
+    Hermes: And honestly, I think I wouldn’t mind if you were.
+    Aelius: [Positive] ... Hermes. I'm- I'm touched.
+    Hermes: Alright, alright. Don’t get emotional on me now. C’mere.
+    Aelius: placeholder, they hug here
+-> MEDIUM
+    Hermes: That, or you’ve just spent too much time with me lately.
+    Aelius: [Smirk] Ya think?
+    Hermes: Alright, alright. C'mere.
+    Aelius: placeholder, they fist-bump.
+-> LOW
+    Hermes: Who's to say, really?
+    Hermes: C'mere, high-five me.
+    Aelius: placeholder, they high-five.
+
+Hermes: I’m glad you came to Olympus.
+Aelius: [Positive] Yeah... I am too.
+Aelius; [Positive] I think I'm here to stay.
+Aelius: [Smirk] ...Unless Hestia fires me.
+Hermes: She’d have a handful of angry Olympians at the diner door if she did that, I promise you.
+Hermes: Want me to deliver something for your mom?
+Aelius: [Positive] Yeah, thank you. Especially since it’s your day off.
+Hermes: Don’t sweat it; least I can do for you after all your hard work.
+
+-> HIGH/MEDIUM
+    Hermes: I'll see ya around, kid.
+    Aelius: [Positive] Bye, Hermes!
+-> LOW
+    Hermes: I'll see ya around, Aelius.
+    Aelius: [Positive] Bye, Hermes.
+
+<<HideAll>>
+<<jump Hestia_Day8_AfterShift>>
+
+===

@@ -1,5 +1,58 @@
 ﻿title: Hestia_Day6_BeforeShift
 tags:
 ---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+Aelius: [Positive] Hestia, I'm here!
+Hestia: Oh, Aelius. You made it in.
+Hestia: I was worried you were going to have some doubts about being here after your last shift.
+Aelius: What? Why would I not want to show up? This place is growing on me!
+Hestia: I don’t know, I suppose I just overthought everything and was worried you’d… hate me.
+Aelius: [Negative] Hestia... no...
+Aelius: [Negative] How could I hate you?
+Hestia: If I tried to do something like that with the others, I’d be getting the silent treatment for a century or two.
+Hestia: I also ended up thinking a lot about what you said about apologizing.
+Aelius: Hestia, it's ok. I'm alright.
+Hestia: I knew it was the reason for a lot of my issues, but I just wanted for my family to feel like a family.
+Hestia: I guess in my mind, letting them have their way would help bring us all as a family together…
+Aelius: [Positive] Well, if it makes any difference, I consider you family.
+Hestia: I just wish that- what?
+Aelius: [Positive] I consider you family.
+Hestia: I appreciate you saying that, but we don’t have the same family ties such as your mother or father. The Olympians have a diff-
+Aelius: [Positive] We don’t have to have those kinds of ties to be family.
+Aelius: [Positive] Family is what you want it to be, Hestia. That’s what being here in Olympus is starting to teach me.
+Aelius: [Positive] You’re like another mother to me, and you care so much about everyone around you. You need to see the good about yourself, too.
+Hestia:  I suppose that makes sense… but I still don’t fully understand this family concept you’re talking about. I’ll need some time to process it…
+Aelius: [Positive] To put it short, family is the people you care about, not just your immediate relatives. That’s all there is to it.
+Hestia: Hmmmmm... oh!
+Hestia: Speaking of family, do you remember me mentioning asking Iris for a favor the other day?
+
+-> I remember. (deference)
+    Hestia: Excellent! All this talk just reminded me of what it was about!
+-> Err- It may have slipped my mind. (humorous)
+    Hestia: Oh, that’s alright, but our conversation just now reminded me of what it was about!
+-> Not at all. (aggressive)
+    Hestia: Well, that’s okay. Our conversation just now reminded me of what it was about.
+
+Hestia: I had asked Iris to connect me to Hades so I could ask him for a favor!
+Aelius: Hades? I haven’t met – or even really heard about – him before now.
+Hestia: He’s in the Underworld and doesn’t really get to come up here too often, but as I’m sure you know, he is the god of the Underworld and the dead.
+Aelius: What does he have to do with anything?
+Hestia: I thought I’d ask him for a favor – a favor for you, really.
+Hestia: I asked him if you could see your mother soon, and he agreed.
+Aelius: [Positive] I can see my mom again!?
+Hestia: Yes, dear. You will get to see your mother again soon.
+Hestia: Hades and his wife, Persephone, weren’t too keen on the idea at  first, but after I had told them everything you’ve done so far to help everyone up here, they agreed to allow an exception.
+Hestia: Hades is a <i>reeeaaaalllll</i> sticker for the rules.
+Aelius: [Positive] Thank you so much, Hestia, you don’t know how much this means to me!
+Hestia: Well, Hades didn’t give me a specific time, so don’t get too excited yet.
+//DING sound
+
+Hestia: As much as I’d love to have you back here all day, I think someone just came in. Judging by their footsteps, I think it’s Hermes, but don’t quote me on that.
+Hestia: I’m sure you know the drill already, so I’ll let you head up front now!
+Aelius: [Positive] Will do, I’ll see you in a bit! Thanks again, Hestia!
+<<HideAll>>
+<<jump Day6_Hermes_Intro>>
 
 ===

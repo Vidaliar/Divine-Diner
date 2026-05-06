@@ -1,0 +1,107 @@
+﻿title: Day6_Hermes_Intro
+tags:
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+
+Aelius: Hermes, welcome in!
+Hermes: Hey, Aelius; how’re you doing today?
+Aelius: Pretty good, actually. I’m settling in well, I think.
+Hermes: Glad to hear it.
+Aelius: I forgot to ask yesterday, did you… manage to deliver the food to my mom the other day?
+Hermes: Of course I did. I wouldn’t be the messenger of the gods if I flaked on my duties, after all.
+Hermes: She appreciated having a nice warm meal, said it tasted like home again.
+Aelius: [Positive] Good, I'm glad.
+Hermes: She also asked me to tell you she misses ya.
+Hermes: Don’t sweat it, it was no trouble.
+Aelius: Well, how’re you, Hermes?
+Hermes: Doing just fine. It’s a lovely day out today, so it’s been a breeze doing my deliveries.
+Hermes: (Mumbling) Too damn many, though...
+Aelius: Listen, Hermes, I wanted to talk to you about something…
+Hermes: Oh? Do tell.
+Aelius: It might not be my place, but I can tell something’s up.
+Aelius: You’re acting happy-go-lucky, but I can see through you somewhat well at this point. But also… I get it.
+
+-> There’s been times where I’m pretty swamped with expectations as well. (deference)
+    Aelius: [Negative] When my mom got ill, I was the only one there who could take care of her.
+    Aelius: [Negative] It’s really hard sometimes, having something so important solely rely on you.
+    Hermes: Yeah, I get that all too well, kid.
+    Hermes:  It’s not always easy, but we just gotta keep moving forward, I suppose.
+    Aelius: Yeah. But there’s also no harm in letting others help out a bit.
+-> I can get how humor is pretty important for staying positive. (humorous)
+    Aelius: [Negative] Sometimes it’s easier to joke about the heavy stuff than to be honest with myself about how much it hurts sometimes.
+    Hermes: I tend to be the same. Being gloomy doesn’t help me out, so I might as well laugh about it.
+    Hermes: That isn’t always easy, though, I suppose.
+    Aelius: (Dryly) For real, tell me about it.
+    Aelius: It’s all I felt for a bit, after my mom…
+    Hermes: Yeah, I can imagine, kid.
+-> It can be so frustrating dealing with someone who doesn’t care as much. (aggressive)
+    Aelius: [Negative] With my absent father, everything fell on my shoulders – while still trying to stay afloat myself. Happened to me a lot after my mom got sick…
+    Aelius: [Negative] I’d imagine you’ve… experienced similar.
+    Hermes: ...
+    Hermes: … Yeah, I have – where the only way to get through is keeping a smile on my face.
+    Hermes: I rarely get to see my mother. You and I are kindred spirits in that regard.
+    Aelius: Seems so.
+
+Hermes: Well...
+Hermes: Thanks for opening up Aelius.
+Hermes: It’s actually… kinda nice talking about it with someone who gets it.
+Aelius: [Positive] Yeah, same here, honestly.
+Hermes: Yeah, but… anywho! I’m starving after all of that chit chat.
+Aelius: [Smirk] Of course you are. What can I get for you today?
+Hermes: Hmm, how about an <b>Erymanthian Boar Sandwich</b>? That sounds like just the thing I need right now.
+Aelius: Fresh boar sammy, coming right up.
+
+// COOKING GAME HERE
+
+Aelius: [Smirk] Made your sandwich, hope it satiates your endless hunger.
+
+-> Fancy
+    Hermes: You went all out on this sandwich, huh? Looks great!
+-> Playful
+    Hermes: Well isn’t that the cutest sandwich I’ve ever seen.
+-> Spicy
+    Hermes: Wow, that smells burning hot. My tastebuds need a good shock every once in a while.
+
+Hermes: You’ve outdone yourself as always, Aelius.
+Aelius: Glad to hear it's good.
+Hermes: Y’know, while you were chef-ing it up, I did some thinking.
+Aelius: About what?
+Hermes: You had a good point earlier. Really made me take some steps back instead of running forward for once.
+Hermes: I never really have taken the time to think through my problems.
+Hermes: Dashing away from things is one of my specialties, after all.
+Aelius: [Smirk]  (Laughing) Okay funn guy, keep going.
+Hermes: Well… I guess I’m just too busy with important messages to really take some me-time.
+Hermes: I know I tend to just joke about it, and never really tackle the problems.
+Hermes: I’m supposed to be an all-knowing god, but I don’t feel all-knowing right now.
+
+-> You're doing it again, Hermes. (deference)
+    Hermes: Whoopsies! Old habits die hard.
+-> For someone who is admitting their problem, you sure are doing said problem right now. (humorous)
+    Hermes: Wait- oh, *<i>laughs</i> I am, aren't I?
+-> You gotta quit doing it, Hermes. (aggressive)
+    Hermes: Oh, heh... right.
+
+Hermes: I’ll keep working on it. Next thing you know, I’ll be the most honest god on Olympus.
+Aelius: [Positive] Will you now? We’ll have to wait and see.
+Hermes: Thanks, Aelius, by the way. I appreciate you listening to my chit-chat.
+Hermes: Felt good, actually.
+Hermes: Got another dish for your mom?
+Aelius: [Positive] I do! Thanks, Hermes; let me go grab it.
+
+// SPRITE TRANSITION
+
+Aelius: [Positive] Here. I really do appreciate you doing it with how busy you are. You’re the best.
+Hermes: No skin off my back. I’m happy to help.
+Hermes: You remind me of myself, actually.
+Aelius: [Smirk] I'll take that as a good thing.
+Aelius: [Positive] Safe travels, and thanks for being open with me.
+Hermes: Of course. See ya, Aelius!
+<<HideAll>>
+<<jump Day6_Hera_Intro>>
+
+
+
+
+===
