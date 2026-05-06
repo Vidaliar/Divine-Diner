@@ -52,6 +52,8 @@ public class CookingManager : MonoBehaviour
 
     private int waypointInd = 0;    //Maybe just set to 1 and not have the waypointInd = 1; in start
 
+    string attribute;
+
     void Start()
     {
         if (instance == null && instance != this)
@@ -195,6 +197,7 @@ public class CookingManager : MonoBehaviour
                 if (numPrep == numTotalPrep)
                 {
                     step = CookStep.Cast;
+                    Debug.Log("step is Cast");
                     // Camera.main.transform.position = new Vector3(worldCamLength * numPrep++, 0, -10);
                     canActivateCast = true;
                     //castManager.SetActive(true);
@@ -237,9 +240,15 @@ public class CookingManager : MonoBehaviour
         }
     }
 
+    public void SetAttribute(string attribute)
+    {
+        this.attribute = attribute;
+    }
+
     //Transitions back to the visual novel
     void FinishCooking()
     {
+        returnSuccessNode += attribute;
         Debug.Log("FinishCooking called, success = " + cookingSuccess +
                   ", going to node " + (cookingSuccess ? returnSuccessNode : returnFailNode));
         VNReturn.NextNode = cookingSuccess ? returnSuccessNode : returnFailNode;

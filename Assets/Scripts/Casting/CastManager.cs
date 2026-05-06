@@ -75,6 +75,7 @@ public class CastManager : MonoBehaviour
     public void SetCast(GameObject selectedCast)
     {
         castGO = selectedCast;
+        gameObject.SetActive(true);
 
         if (currentCastObject != null)
         {
@@ -88,16 +89,18 @@ public class CastManager : MonoBehaviour
 
         cast = currentCastObject.GetComponent<CastSO>();
 
+        cast.canDraw = true;
+
         maxLines = cast.numLines;
 
-        line.positionCount = 0;
-        lastLinePos = new Vector2(-100, -100);
-        score = 0;
-        pointScore = 100f;
-        numOutBounds = 0;
-        pointsInBounds = true;
-        numTries = 0;
-        numLines = 0;
+        // line.positionCount = 0;
+        // lastLinePos = new Vector2(-100, -100);
+        // score = 0;
+        // pointScore = 100f;
+        // numOutBounds = 0;
+        // pointsInBounds = true;
+        // numTries = 0;
+        // numLines = 0;
 
         hasCast = true;
 
@@ -195,6 +198,7 @@ public class CastManager : MonoBehaviour
                     PlayOneShotIfAssigned(castSuccessOneShotEvent);
 
                     StopTraceSfx();
+                    CookingManager.instance.SetAttribute(castGO.GetComponent<CastSO>().GetAttribute());
                     CookingManager.instance.Transition();
                     gameObject.SetActive(false);
                     CookingManager.instance.cookingSuccess = true;

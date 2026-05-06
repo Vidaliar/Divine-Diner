@@ -28,12 +28,16 @@ public class CastSelector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Mouse clicked");
+        }   
     }
 
     void PlaceCasts()
     {
         Vector3 camPos = Camera.main.transform.position;
+        Debug.Log(camPos);
         float camSize = Camera.main.orthographicSize;
         float camWidth = camSize * Camera.main.aspect;
 
@@ -41,9 +45,9 @@ public class CastSelector : MonoBehaviour
         // Camera is usually at z = -10, while gameplay objects are usually at z = 0.
         float castZ = 0f;
 
-        Vector3 spicyPos = new Vector3(camPos.x - camWidth * 0.5f, camPos.y, castZ);
+        Vector3 spicyPos = new Vector3(camPos.x - camWidth * 0.6f, camPos.y, castZ);
         Vector3 playfulPos = new Vector3(camPos.x, camPos.y, castZ);
-        Vector3 fancyPos = new Vector3(camPos.x + camWidth * 0.5f, camPos.y, castZ);
+        Vector3 fancyPos = new Vector3(camPos.x + camWidth * 0.6f, camPos.y, castZ);
 
         GameObject playful = Instantiate(castPlayful, playfulPos, Quaternion.identity);
         playful.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
@@ -74,6 +78,14 @@ public class CastSelector : MonoBehaviour
 
         boxCollider.isTrigger = true;
         boxCollider.size = selectionBoxSize;
+        boxCollider.offset = new Vector2(0, 0);
+
+        EdgeCollider2D edgeCollider = castObject.GetComponent<EdgeCollider2D>();
+
+        if(edgeCollider != null)
+        {
+            edgeCollider.enabled = false;
+        }
 
         CastSelectable selectable = castObject.GetComponent<CastSelectable>();
 
@@ -96,6 +108,7 @@ public class CastSelector : MonoBehaviour
 
         foreach (GameObject castObject in spawnedCasts)
         {
+            Debug.Log("Destroying " + castObject.name);
             Destroy(castObject);
         }
 
@@ -133,6 +146,12 @@ public class CastSelectable : MonoBehaviour
 
     void OnMouseDown()
     {
+        Debug.Log("Clicked on " + gameObject.name);
         selector.SelectCast(castPrefab);
+    }
+
+    void OnMouseOver()
+    {
+        Debug.Log("Hover right");
     }
 }

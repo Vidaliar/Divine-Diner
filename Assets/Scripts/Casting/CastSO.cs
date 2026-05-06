@@ -10,6 +10,7 @@ public class CastSO : MonoBehaviour
     public List<Vector2> points = new List<Vector2>();
     public List<GameObject> pointObjects; //{ get; private set; }
     public int numLines = 1;
+    public bool canDraw = false;
     LineRenderer line;
     // Vector2 center;
     EdgeCollider2D edgeColl;
@@ -36,18 +37,24 @@ public class CastSO : MonoBehaviour
         }
         else
         {
+            Debug.Log("Center " + center);
             for (int i = 0; i<line.positionCount; i++)
             {
-                Vector3 point = line.GetPosition(i) * (worldCamHeight/2) + new Vector3 (center.x, center.y, 0);
-                point = new Vector3(point.x * transform.localScale.x, point.y * transform.localScale.y, 0);
+                Vector3 point = line.GetPosition(i) * (worldCamHeight/2);
+                Debug.Log(point);
+                point = new Vector3(point.x * transform.localScale.x, point.y * transform.localScale.y, 0)+ new Vector3 (center.x, center.y, 0);
+                Debug.Log("After scale "+point);
                 // point.z = 0;
                 line.SetPosition(i, point);
+                points.Add(point);
             }
         }
 
         // DrawCast();
+        if(canDraw){
         PlacePointMarkers();
         UpdateEdgeCollider();
+        }
     }
 
     //For efficienty, consider combining DrawCast and UpdateEdgeCollider since they loop the same
@@ -79,19 +86,24 @@ public class CastSO : MonoBehaviour
         for(int i=0; i<points.Count; i++)
         {
             edgeColl.points[i] = points[i];
-            Debug.Log(edgeColl.points[i]);
+            // Debug.Log(edgeColl.points[i]);
         }
+    }
+
+    public string GetAttribute()
+    {
+        return attribute;
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name + " exited cast");
+        // Debug.Log(collision.gameObject.name + " exited cast");
         if(collision.gameObject.CompareTag("Player")) CastManager.instance.SetBoundsBool(false);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name + " entered cast");
+        // Debug.Log(collision.gameObject.name + " entered cast");
         if(collision.gameObject.CompareTag("Player")) CastManager.instance.SetBoundsBool(true);
     }
 }

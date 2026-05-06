@@ -16,7 +16,7 @@ public class PathPoint : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0))
         {
-            hit = true;
+            if(coll.gameObject.GetComponent<PathPoint>() == null) hit = true;
         }
     }
 }

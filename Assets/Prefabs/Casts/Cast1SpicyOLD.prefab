@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6472284738552981460
+--- !u!1 &630913486446552334
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4217470463468654858}
-  - component: {fileID: 5890622395147445119}
-  - component: {fileID: 5262282741635097198}
-  - component: {fileID: 9099910652833060523}
+  - component: {fileID: 7018320145219103427}
+  - component: {fileID: 4909324908409913185}
+  - component: {fileID: 373729494596052010}
+  - component: {fileID: 608591398947357759}
   m_Layer: 0
-  m_Name: Cast1Playful
+  m_Name: Cast1SpicyOLD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4217470463468654858
+--- !u!4 &7018320145219103427
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6472284738552981460}
+  m_GameObject: {fileID: 630913486446552334}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -34,32 +34,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5890622395147445119
+--- !u!114 &4909324908409913185
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6472284738552981460}
+  m_GameObject: {fileID: 630913486446552334}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95e679ff663c6a647ac46a167904adee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attribute: Playful
+  attribute: Spicy
   pathPointPref: {fileID: 990189662040701396, guid: f05a256393bf6a446ae96f5d7d49a28a, type: 3}
   useLinePoints: 1
   points: []
   pointObjects: []
   numLines: 1
---- !u!120 &5262282741635097198
+--- !u!120 &373729494596052010
 LineRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6472284738552981460}
+  m_GameObject: {fileID: 630913486446552334}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -93,47 +93,38 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 9
+  m_SortingOrder: 11
   m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: -0.0662986, y: 0.07734838, z: 0}
-  - {x: -0.11514754, y: 0.11717144, z: 0}
-  - {x: -0.18171996, y: 0.16405086, z: 0}
-  - {x: -0.2546362, y: 0.18762662, z: 0}
-  - {x: -0.3216456, y: 0.19030698, z: 0}
-  - {x: -0.3779336, y: 0.17422466, z: 0}
-  - {x: -0.4395824, y: 0.134019, z: 0}
-  - {x: -0.4663862, y: 0.06432912, z: 0}
-  - {x: -0.4771076, y: 0, z: 0}
-  - {x: -0.4663862, y: -0.06432912, z: 0}
-  - {x: -0.4395824, y: -0.134019, z: 0}
-  - {x: -0.3779336, y: -0.17422466, z: 0}
-  - {x: -0.3216456, y: -0.19030698, z: 0}
-  - {x: -0.2546362, y: -0.18762662, z: 0}
-  - {x: -0.18171996, y: -0.16405086, z: 0}
-  - {x: -0.11514754, y: -0.11717144, z: 0}
-  - {x: -0.0662986, y: -0.07734838, z: 0}
-  - {x: 0.0662986, y: 0.07734838, z: 0}
-  - {x: 0.11514754, y: 0.11717144, z: 0}
-  - {x: 0.18171996, y: 0.16405086, z: 0}
-  - {x: 0.2546362, y: 0.18762662, z: 0}
-  - {x: 0.3216456, y: 0.19030698, z: 0}
-  - {x: 0.3779336, y: 0.17422466, z: 0}
-  - {x: 0.4395824, y: 0.134019, z: 0}
-  - {x: 0.4663862, y: 0.06432912, z: 0}
-  - {x: 0.4771076, y: 0, z: 0}
-  - {x: 0.4663862, y: -0.06432912, z: 0}
-  - {x: 0.4395824, y: -0.134019, z: 0}
-  - {x: 0.3779336, y: -0.17422466, z: 0}
-  - {x: 0.3216456, y: -0.19030698, z: 0}
-  - {x: 0.2546362, y: -0.18762662, z: 0}
-  - {x: 0.18171996, y: -0.16405086, z: 0}
-  - {x: 0.11514754, y: -0.11717144, z: 0}
-  - {x: 0.0662986, y: -0.07734838, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: -0.78, y: 0.089, z: 0}
+  - {x: -0.76, y: 0.24, z: 0}
+  - {x: -0.7, y: 0.36, z: 0}
+  - {x: -0.6, y: 0.47, z: 0}
+  - {x: -0.45, y: 0.55, z: 0}
+  - {x: -0.3, y: 0.55, z: 0}
+  - {x: -0.15, y: 0.5, z: 0}
+  - {x: -0.068, y: 0.4, z: 0}
+  - {x: 0.04, y: 0.24, z: 0}
+  - {x: 0.117, y: 0.077, z: 0}
+  - {x: 0.216, y: -0.206, z: 0}
+  - {x: 0.242, y: -0.457, z: 0}
+  - {x: 0.17, y: -0.636, z: 0}
+  - {x: 0, y: -0.8, z: 0}
+  - {x: -0.17, y: -0.636, z: 0}
+  - {x: -0.242, y: -0.457, z: 0}
+  - {x: -0.216, y: -0.206, z: 0}
+  - {x: -0.117, y: 0.077, z: 0}
+  - {x: -0.04, y: 0.24, z: 0}
+  - {x: 0.068, y: 0.4, z: 0}
+  - {x: 0.15, y: 0.5, z: 0}
+  - {x: 0.3, y: 0.55, z: 0}
+  - {x: 0.45, y: 0.55, z: 0}
+  - {x: 0.6, y: 0.47, z: 0}
+  - {x: 0.7, y: 0.36, z: 0}
+  - {x: 0.76, y: 0.24, z: 0}
+  - {x: 0.78, y: 0.089, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.58276814
+    widthMultiplier: 0.62404495
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -151,7 +142,7 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.87058824, g: 0.92156863, b: 0.93333334, a: 1}
+      key0: {r: 0.8687611, g: 0.9215823, b: 0.9339623, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -175,11 +166,11 @@ LineRenderer:
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 1
+      m_Mode: 0
       m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    numCornerVertices: 4
+    numCornerVertices: 10
     numCapVertices: 4
     alignment: 0
     textureMode: 0
@@ -190,13 +181,13 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
---- !u!68 &9099910652833060523
+--- !u!68 &608591398947357759
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6472284738552981460}
+  m_GameObject: {fileID: 630913486446552334}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -224,10 +215,8 @@ EdgeCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0.3
-  m_Points:
-  - {x: -0.5, y: 0}
-  - {x: 0.5, y: 0}
+  m_Points: []
   m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 3.81, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
