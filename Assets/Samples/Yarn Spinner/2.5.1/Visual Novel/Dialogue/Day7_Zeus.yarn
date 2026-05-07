@@ -1,7 +1,7 @@
 ﻿title: Day7_Zeus_Intro
 tags:
 ---
-<<Scene "lounge bg draft 3">>
+<<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 
@@ -71,6 +71,15 @@ Hephaestus: The <b>Helios Steak,</b> if you would.
 Aelius: Right away.
 
 // HELIOS STEAK
+<<StartCooking MakenaTestScene4>>
+<<HideAll>>
+===
+title: Day7_Zeus_ReturnFancy
+tags:
+---
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 
 Aelius: Your food.
 <<Hide Hephaestus>>
@@ -116,23 +125,7 @@ Aelius: Um...
 Aelius: How's... the food?
 Hephaestus: ...
 
--> Playful
-    Hephaestus: It's exuberant.
-    Hephaestus: Hm.
-    <<Hide Aelius>>
-    <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
-    Zeus: I'm... sorry. Hephaestus.
-    Hephaestus: ... What?
-    Zeus: Please don't make me say it again.
-    -> *Stay silent* (deference)
-    -> Say it again. (humor)
-    -> Make him say it again. (aggressive)
 
-    Hephaestus: No.
-    Hephaestus: No, that's quite alright.
-    Hephaestus: ...
-    Hephaestus: Hrmph.
--> Fancy
     Hephaestus: It's... subtle.
     <<Hide Aelius>>
     <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
@@ -166,7 +159,171 @@ Hephaestus: ...
     Hephaestus: Maybe, with time, I could see you being a part of my life.
     Hephaestus: But for now...
     Hephaestus: Hrm.
--> Spicy
+
+<<HideAll>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+Zeus: … Did I do something wrong, Aelius?
+-> He needs time. (deference)
+    Zeus: You think so?
+    Aelius: I do.
+    Zeus: Thank you, Aelius. I’m sure the food was impeccable.
+-> No such thing as wrong. (humor)
+    Zeus: ... What?
+    Aelius: Y’know. In the grand scheme of things.
+    Zeus: What are you talking about?
+    Aelius: We're all just stardust.
+    Zeus: Stop spouting nonsense.
+-> Yes. (aggressive)
+    Zeus: ...
+    Zeus: I see.
+
+<<HideAll>>
+<<jump Day7_Aphrodite_Intro>>
+    
+
+===
+title: Day7_Zeus_ReturnPlayful
+tags:
+---
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+
+Aelius: Your food.
+<<Hide Hephaestus>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+Zeus: ...
+<<Hide Zeus>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+Hephaestus: Thank you, Aelius.
+
+-> Is everything okay? (deference)
+    <<Hide Hephaestus>>
+    <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+    Zeus: ...
+    <<Hide Zeus>>
+    <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+    Hephaestus: It's alright, Aelius.
+    <<Hide Hephaestus>>
+-> Geez, who killed the mood? (humor)
+    <<Hide Hephaestus>>
+    <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+    Zeus: After all this time, you still treat our affairs with such frivolity, <i>child.</i>
+    <<Hide Zeus>>
+    <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+    Hephaestus: Father, it's not their fault-
+    <<Hide Hephaestus>>
+-> I'm gonna go. (aggressive)
+
+<<Hide Aelius>>
+<<Act "Hephaestus" "Hephaestus" "left" "bottom" #FF8C00>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+Zeus: UNATTENTIVE?
+Zeus: I WAS <i>UNATTENTIVE?</i>
+Hephaestus: Father-
+Zeus: I AM THE KING OF THE GODS, HEPHAESTUS.
+Zeus: I <i>APOLOGIZE</i> IF I COULD NOT MAKE TIME FOR ARTS AND CRAFTS.
+Zeus: I HAD <i>MORE IMPORTANT</i> THINGS TO DO!
+Hephaestus: Yes. You did.
+Zeus: ...
+Hephaestus: Hrmph.
+<<Hide Zeus>>
+<<Act "Aelius" "Aelius 3_4s" "right" "bottom" #674ea7>>
+Aelius: Um...
+Aelius: How's... the food?
+Hephaestus: ...
+
+    Hephaestus: It's exuberant.
+    Hephaestus: Hm.
+    <<Hide Aelius>>
+    <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+    Zeus: I'm... sorry. Hephaestus.
+    Hephaestus: ... What?
+    Zeus: Please don't make me say it again.
+    -> *Stay silent* (deference)
+    -> Say it again. (humor)
+    -> Make him say it again. (aggressive)
+
+    Hephaestus: No.
+    Hephaestus: No, that's quite alright.
+    Hephaestus: ...
+    Hephaestus: Hrmph.
+
+<<HideAll>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+Zeus: … Did I do something wrong, Aelius?
+-> He needs time. (deference)
+    Zeus: You think so?
+    Aelius: I do.
+    Zeus: Thank you, Aelius. I’m sure the food was impeccable.
+-> No such thing as wrong. (humor)
+    Zeus: ... What?
+    Aelius: Y’know. In the grand scheme of things.
+    Zeus: What are you talking about?
+    Aelius: We're all just stardust.
+    Zeus: Stop spouting nonsense.
+-> Yes. (aggressive)
+    Zeus: ...
+    Zeus: I see.
+
+<<HideAll>>
+<<jump Day7_Aphrodite_Intro>>
+    
+
+===
+title: Day7_Zeus_ReturnSpicy
+tags:
+---
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+
+Aelius: Your food.
+<<Hide Hephaestus>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+Zeus: ...
+<<Hide Zeus>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+Hephaestus: Thank you, Aelius.
+
+-> Is everything okay? (deference)
+    <<Hide Hephaestus>>
+    <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+    Zeus: ...
+    <<Hide Zeus>>
+    <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+    Hephaestus: It's alright, Aelius.
+    <<Hide Hephaestus>>
+-> Geez, who killed the mood? (humor)
+    <<Hide Hephaestus>>
+    <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+    Zeus: After all this time, you still treat our affairs with such frivolity, <i>child.</i>
+    <<Hide Zeus>>
+    <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+    Hephaestus: Father, it's not their fault-
+    <<Hide Hephaestus>>
+-> I'm gonna go. (aggressive)
+
+<<Hide Aelius>>
+<<Act "Hephaestus" "Hephaestus" "left" "bottom" #FF8C00>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+Zeus: UNATTENTIVE?
+Zeus: I WAS <i>UNATTENTIVE?</i>
+Hephaestus: Father-
+Zeus: I AM THE KING OF THE GODS, HEPHAESTUS.
+Zeus: I <i>APOLOGIZE</i> IF I COULD NOT MAKE TIME FOR ARTS AND CRAFTS.
+Zeus: I HAD <i>MORE IMPORTANT</i> THINGS TO DO!
+Hephaestus: Yes. You did.
+Zeus: ...
+Hephaestus: Hrmph.
+<<Hide Zeus>>
+<<Act "Aelius" "Aelius 3_4s" "right" "bottom" #674ea7>>
+Aelius: Um...
+Aelius: How's... the food?
+Hephaestus: ...
+
     Hephaestus: It's harsh.
     <<Hide Aelius>>
     <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
@@ -212,7 +369,7 @@ Zeus: … Did I do something wrong, Aelius?
     Zeus: I see.
 
 <<HideAll>>
-<<jump Day7_Aphrodite>>
+<<jump Day7_Aphrodite_Intro>>
     
 
 ===

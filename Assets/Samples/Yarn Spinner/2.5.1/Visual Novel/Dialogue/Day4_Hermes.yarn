@@ -1,7 +1,7 @@
 ﻿title: Day4_Hermes_Intro
 tags:
 ---
-<<Scene "lounge bg draft 3">>
+<<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
 
@@ -28,6 +28,15 @@ Aelius: Apple cider, coming right up.
 Aelius: [Smirk] Hold tight- if you can.
 
 // Apple cider
+<<StartCooking "AppleCider2">>
+<<HideAll>>
+===
+title: Day4_Hermes_ReturnSpicy
+tags:
+---
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
 
 Aelius: Fresh Hesperides apple cider, ready for ya'.
 Hermes: Damn, maybe Zeus was right - this looks <i>divine.</i>
@@ -56,6 +65,76 @@ Hermes: Oh well, I'll see you later then, kid!
 Aelius: [Positive] See ya, Hermes!
 <<HideAll>>
 <<jump Day4_Hephaestus_Intro>>
-
-
 ===
+title: Day4_Hermes_ReturnFancy
+tags:
+---
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+
+Aelius: Fresh Hesperides apple cider, ready for ya'.
+Hermes: Damn, maybe Zeus was right - this looks <i>divine.</i>
+Aelius: Glad you like it. I'll just get going so you can eat-
+Hermes: No, no, come back!
+Aelius: Hm? Need something?
+Hermes: You got a moment? I wanna do a test-run of my set – you in?
+
+-> Yeah, why not. (deference)
+    Hermes: Nice! Trust me, you <i>won't<i> be disappointed.
+-> Alright, alright, shoot. (humorous)
+    Hermes: Hell yeah, thanks. You aren't <i>ready</i> for my comedic prowresss.
+-> I guess.
+    Hermes: At least <i>pretend</i> to be a little interested...
+    Aelius: You're right, my bad.
+    Hermes: It'll be worth your while, trust me.
+
+Hermes: So, day one – brand spanking new from my mom – I focused up and became the best inventor you could imagine, and I stole Apollo’s cattle. Apollo ignored bro code, and-
+//offscreen Hestia
+
+Hestia: Aelius, where are you? I have some work for you.
+Aelius: (<i>Spared, thanks Hestia.</i>)
+Aelius: Welp, guess I gotta go. But I'll be sure to stop by your set, sounds, uh... <i>great</i> so far.
+Hermes: Aww, Hestia ruining my fun.
+Hermes: Oh well, I'll see you later then, kid!
+Aelius: [Positive] See ya, Hermes!
+<<HideAll>>
+<<jump Day4_Hephaestus_Intro>>
+===
+title: Day4_Hermes_ReturnPlayful
+tags:
+---
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+
+Aelius: Fresh Hesperides apple cider, ready for ya'.
+Hermes: Damn, maybe Zeus was right - this looks <i>divine.</i>
+Aelius: Glad you like it. I'll just get going so you can eat-
+Hermes: No, no, come back!
+Aelius: Hm? Need something?
+Hermes: You got a moment? I wanna do a test-run of my set – you in?
+
+-> Yeah, why not. (deference)
+    Hermes: Nice! Trust me, you <i>won't<i> be disappointed.
+-> Alright, alright, shoot. (humorous)
+    Hermes: Hell yeah, thanks. You aren't <i>ready</i> for my comedic prowresss.
+-> I guess.
+    Hermes: At least <i>pretend</i> to be a little interested...
+    Aelius: You're right, my bad.
+    Hermes: It'll be worth your while, trust me.
+
+Hermes: So, day one – brand spanking new from my mom – I focused up and became the best inventor you could imagine, and I stole Apollo’s cattle. Apollo ignored bro code, and-
+//offscreen Hestia
+
+Hestia: Aelius, where are you? I have some work for you.
+Aelius: (<i>Spared, thanks Hestia.</i>)
+Aelius: Welp, guess I gotta go. But I'll be sure to stop by your set, sounds, uh... <i>great</i> so far.
+Hermes: Aww, Hestia ruining my fun.
+Hermes: Oh well, I'll see you later then, kid!
+Aelius: [Positive] See ya, Hermes!
+<<HideAll>>
+<<jump Day4_Hephaestus_Intro>>
+===
+
+

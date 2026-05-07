@@ -1,7 +1,7 @@
 ﻿title: Hestia_Day6_BeforeShift
 tags:
 ---
-<<Scene "lounge bg draft 3">>
+<<Scene "main_kitchen_bg_2">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
 Aelius: [Positive] Hestia, I'm here!

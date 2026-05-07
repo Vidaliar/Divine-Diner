@@ -1,11 +1,11 @@
 ﻿title: Day2_Zeus_Intro
 tags:
 ---
-<<Scene "lounge bg draft 3">>
+<<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "right" "bottom" #e06666>>
 <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
-<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
-<<Act "Zeus" "Zeus 3_4s" "center" "bottom" #c0392b>>
+//<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+//<<Act "Zeus" "Zeus 3_4s" "center" "bottom" #c0392b>>
 
 <b><i> Door jingles, Ares enters the diner.</b></i>
 Aelius: Welcome back, Ares.
@@ -20,6 +20,7 @@ Ares: Ah, mortal.
         Aelius: Who's to say?
 
 <b><i> Door jingle, Zeus enters the diner. </b></i>
+<<Act "Zeus" "Zeus 3_4s" "center" "bottom" #c0392b>>
 Zeus: ARES! MY BOY! COME HERE!
 Ares: Father!
 Zeus: Yes! Tis I! Your father! Tell me, how have you been?
@@ -40,77 +41,109 @@ Zeus: You, child, bring my boy his food.
         Ares: I'll have the <b>Hesperides apple cider.</b>
 
 // COOKING
-
+<<StartCooking "AppleCider">>
+===
+title: Day2_Zeus_ReturnFancy
+---
+<<Act "Zeus" "Zeus 3_4s" "center" "bottom" #c0392b>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
 Zeus: His head?
 Ares: Yes, clean off!
 Zeus: THAT'S MY BOY! HAHAHA!
+<<Hide Zeus>>
+<<Act "Aelius" "Aelius 3_4s" "right" "bottom" #e06666>>
 Aelius: Your cider, Ares.
 
--> Fancy cooking
-        Ares: Oh, my! This looks rather nice!
-        Zeus: Yes. Not unpleasant to look at, I suppose.
-        -> Would you like anything for yourself? (deference)
-            Zeus: No, no. That is quite alright, child.
-            Zeus: Your name is Aelius, yes?
-            Aelius: Yes, King Zeus.
-            Zeus: You've made a beautiful drink for my son here.
-        -> Thank you! (humor)
-            Zeus: Yes, mortal...
-            Zeus: A drink as beautiful as this deserves recognition.
-        -> Yeah, because I'm good at my job. (aggressive)
-            Zeus: ...
-            Zeus: As much as I may want to, I will not turn you into an ant for saying that.
-            Zeus: If only because you've made my son such a beautiful drink.
-        Ares: Nearly as beautiful as my dear Aphrodite.
-        Zeus: Aphrodite? Was she not... married to Hephaestus?
-        Ares: Oh, no no no. They've been separated for a <i>long</i> time.
-        Zeus: I see... So you two are...?
-        Ares: Ah! Haha! Well, not exactly. We had a <i>brief</i> stint that resulted in her and Hephaestus's separation.
-        Ares: But she found my aggression to be... unattractive.
-        Ares: I am sure, though, that I will win her over eventually! No one can resist the appeal of violence for very long.
-        Zeus: I must say... it worries me to see you all fighting.
-        Ares: Well, father. You <i>haven't</i> seen it.
-        Ares: Frankly, me and Hephaestus have been quarreling for <i>centuries</i> and you haven't noticed a thing.
--> Spicy cooking
-        Ares: There it is! It looks great. Almost as great as that guy's head!
-        Ares: And let me tell you, the people loved it just as much as I did.
-        Zeus: But of course! A well staged execution will calm any temper. Be it the public's or your own.
-        Zeus: Say, Ares... have you seen Hephaestus lately?
-        Ares: Oh, <i>please</i>. DO not get me started on him.
-        Zeus: Oh? Is something the matter between you two?
-        Ares: ...
-        -> <*>Stay silent.</*> (deference)
-        -> You hungry, Zeus? (humor)
-            Zeus: Child, do you mind? My son and I are speaking.
-        -> Even I knew that. (aggressive)
-            Zeus: Oh, did you? DID YOU, CHILD?
-            Aelius: ...
-            Aelius: Yeah.
-        Ares: Father... Hephaestus and I are in deep personal conflict.
-        Zeus: What? Why?
-        Ares: He trapped me! In a net! And he refuses to admit that Aphrodite is happier with ME!
-        Zeus: Aphrodite? Oh my, how long gas this been going on?
-        Ares: CENTURIES!
--> Playful cooking
-        Ares: Mmh... Oh my! This is delicious!
-        Zeus: Oh, wonderful!
-        Zeus: I must admit, the last time I ate here, I too had a rather pleasant experience.
-        -> Would you like something yourself? (deference)
-            Zeus: Hm...
-            Zeus: Ahem! No, that's quite alright.
-            Zeus: Child... your name is Areolas. yes?
-            Aelius: Um-
-            Ares: Aelius, father. Their name is Aelius.
-            Zeus: Right! Yes! Aelius! Well done! You are quite the cook.
-        -> Damn right you did! (humor)
-            Zeus: ...
-            Ares: I'm, uh, happy to hear it, father!
-            Zeus: Yes, alright.
-        -> You said it was an insult to your eyes. (aggressive)
-            Zeus: Oh! Well.
-            Zeus: Yes, I did, didn't I?
-            Zeus: ...
-            Zeus: Ahem! No matter.
+
+Ares: Oh, my! This looks rather nice!
+Zeus: Yes. Not unpleasant to look at, I suppose.
+-> Would you like anything for yourself? (deference)
+    Zeus: No, no. That is quite alright, child.
+    Zeus: Your name is Aelius, yes?
+    Aelius: Yes, King Zeus.
+    Zeus: You've made a beautiful drink for my son here.
+-> Thank you! (humor)
+    Zeus: Yes, mortal...
+    Zeus: A drink as beautiful as this deserves recognition.
+-> Yeah, because I'm good at my job. (aggressive)
+    Zeus: ...
+    Zeus: As much as I may want to, I will not turn you into an ant for saying that.
+    Zeus: If only because you've made my son such a beautiful drink.
+    Ares: Nearly as beautiful as my dear Aphrodite.
+    Zeus: Aphrodite? Was she not... married to Hephaestus?
+    Ares: Oh, no no no. They've been separated for a <i>long</i> time.
+    Zeus: I see... So you two are...?
+    Ares: Ah! Haha! Well, not exactly. We had a <i>brief</i> stint that resulted in her and Hephaestus's separation.
+    Ares: But she found my aggression to be... unattractive.
+    Ares: I am sure, though, that I will win her over eventually! No one can resist the appeal of violence for very long.
+    Zeus: I must say... it worries me to see you all fighting.
+    Ares: Well, father. You <i>haven't</i> seen it.
+    Ares: Frankly, me and Hephaestus have been quarreling for <i>centuries</i> and you haven't noticed a thing.
+
+<<jump Zeus_Day2_after_cooking>>
+===
+title: Day2_Zeus_ReturnSpicy
+---
+<<Act "Zeus" "Zeus 3_4s" "center" "bottom" #c0392b>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+Zeus: His head?
+Ares: Yes, clean off!
+Zeus: THAT'S MY BOY! HAHAHA!
+<<Hide Zeus>>
+<<Act "Aelius" "Aelius 3_4s" "right" "bottom" #e06666>>
+Aelius: Your cider, Ares.
+Ares: There it is! It looks great. Almost as great as that guy's head!
+Ares: And let me tell you, the people loved it just as much as I did.
+Zeus: But of course! A well staged execution will calm any temper. Be it the public's or your own.
+Zeus: Say, Ares... have you seen Hephaestus lately?
+Ares: Oh, <i>please</i>. DO not get me started on him.
+Zeus: Oh? Is something the matter between you two?
+Ares: ...
+-> <*>Stay silent.</*> (deference)
+-> You hungry, Zeus? (humor)
+    Zeus: Child, do you mind? My son and I are speaking.
+-> Even I knew that. (aggressive)
+    Zeus: Oh, did you? DID YOU, CHILD?
+    Aelius: ...
+    Aelius: Yeah.
+    Ares: Father... Hephaestus and I are in deep personal conflict.
+    Zeus: What? Why?
+    Ares: He trapped me! In a net! And he refuses to admit that Aphrodite is happier with ME!
+    Zeus: Aphrodite? Oh my, how long gas this been going on?
+    Ares: CENTURIES!
+
+<<jump Zeus_Day2_after_cooking>>
+===
+title: Day2_Zeus_ReturnPlayful
+---
+<<Act "Zeus" "Zeus 3_4s" "center" "bottom" #c0392b>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+Zeus: His head?
+Ares: Yes, clean off!
+Zeus: THAT'S MY BOY! HAHAHA!
+<<Hide Zeus>>
+<<Act "Aelius" "Aelius 3_4s" "right" "bottom" #e06666>>
+Aelius: Your cider, Ares.
+
+Ares: Mmh... Oh my! This is delicious!
+Zeus: Oh, wonderful!
+Zeus: I must admit, the last time I ate here, I too had a rather pleasant experience.
+-> Would you like something yourself? (deference)
+        Zeus: Hm...
+        Zeus: Ahem! No, that's quite alright.
+        Zeus: Child... your name is Areolas. yes?
+        Aelius: Um-
+        Ares: Aelius, father. Their name is Aelius.
+        Zeus: Right! Yes! Aelius! Well done! You are quite the cook.
+-> Damn right you did! (humor)
+        Zeus: ...
+        Ares: I'm, uh, happy to hear it, father!
+        Zeus: Yes, alright.
+-> You said it was an insult to your eyes. (aggressive)
+        Zeus: Oh! Well.
+        Zeus: Yes, I did, didn't I?
+        Zeus: ...
+        Zeus: Ahem! No matter.
         Ares: Say, father?
         Ares: Is it just me, or have you noticed that oaf Hephaestus showing his face more as of late?
         Zeus: Hephaestus? No, no...
@@ -124,8 +157,11 @@ Aelius: Your cider, Ares.
         Zeus: I won't have my sons running around fighting one another.
         Ares: We've been fighting for <i>CENTURIES</i>!
         Zeus: Really?
-
+<<jump Zeus_Day2_after_cooking>>
+===
 //Bottleneck
+title: Zeus_Day2_after_cooking
+---
 Zeus: How peculiar...
 Ares: ...
 Ares: Father. I appreciate you coming by.
@@ -167,6 +203,7 @@ Zeus: Ah! It would appear Ares left before finishing his cider.
 Zeus: Leave me, child. It is unbecoming to watch a drink his son's leftovers.
 
 // END
+<<HideAll>>
 <<jump Day2_Hermes>>
 
 ===

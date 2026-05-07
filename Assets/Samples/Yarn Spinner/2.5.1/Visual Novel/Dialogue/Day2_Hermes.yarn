@@ -1,6 +1,6 @@
 title: Day2_Hermes
 ---
-<<Scene "lounge bg draft 3">>
+<<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 Aelius: Welcome in, Hermes!
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
@@ -39,24 +39,47 @@ Hermes: Thanks, Aelius.
 <<StartCooking "LotusParfait">>
 ===
 
-title: Day2_Hermes_Return
+title: Day2_Hermes_ReturnFancy
 ---
 <<Fade "#000000" 1 0 0.4>>
 <<wait 0.1>>
-<<Scene "lounge bg draft 3">>
+<<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 Aelius: Whipped up your Lotus Parfait for you!
--> Fancy
-    <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
-    Hermes: This Lotus Parfait looks great! Hope it tastes as good as it looks.
--> Playful
-    <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
-    Hermes: I didn't know food could be cute, but here we are. Can't wait to try it.
--> Spicy
-    <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
-    Hermes: I can smell the spice from here! Tryna get me to rurn faster after this?
-    Hermes: Ares pay you off to get me to deliver his gift to Aphrodite ASAP?
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+Hermes: This Lotus Parfait looks great! Hope it tastes as good as it looks.
 
+<<jump Hermes_Day2_after_cooking>>
+===
+title: Day2_Hermes_ReturnPlayful
+---
+<<Fade "#000000" 1 0 0.4>>
+<<wait 0.1>>
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+Aelius: Whipped up your Lotus Parfait for you!
+
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+Hermes: I didn't know food could be cute, but here we are. Can't wait to try it.
+<<jump Hermes_Day2_after_cooking>>
+===
+title: Day2_Hermes_ReturnSpicy
+---
+<<Fade "#000000" 1 0 0.4>>
+<<wait 0.1>>
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+Aelius: Whipped up your Lotus Parfait for you!
+
+
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+Hermes: I can smell the spice from here! Tryna get me to rurn faster after this?
+Hermes: Ares pay you off to get me to deliver his gift to Aphrodite ASAP?
+
+<<jump Hermes_Day2_after_cooking>>
+===
+title: Hermes_Day2_after_cooking
+---
 Hermes: That might be the best Lotus Parfait I've ever had, honestly.
 
 -> Medium

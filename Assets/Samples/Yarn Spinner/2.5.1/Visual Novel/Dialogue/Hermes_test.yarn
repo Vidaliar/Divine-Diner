@@ -3,7 +3,7 @@
 <<Fade "#000000" 1 0 0.4>>
 <<wait 0.1>>
 <<PlayMusic Hermes_Theme>>
-<<Scene "lounge bg draft 3">>
+<<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
@@ -36,7 +36,7 @@ Aelius: [Neutral] You got it, I'll do my best.
 <<StartCooking "Nectar">>
 ===
 
-title: Hermes_test_Success
+title: Hermes_test_SuccessPlayful
 ---
 <<Fade "#000000" 1 0 0.4>>
 <<wait 0.1>>
@@ -49,15 +49,55 @@ Aelius: <i>*(Or at least better than Zeus *sigh*)*</i>
 Aelius: Hope you like it.
 
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
-->Fancy
-    Hermes: This is the nicest Nectar I've ever seen. You got talent, that's for sure.
-->Playful
-    Hermes: Now isn't that cute! I almost feel bad drinking it.
-    Hermes: Almost.
-->Spicy
-    Hermes: Wow! That looks burning hot.
-    Hermes: That'll keep my energy up for sure.
 
+Hermes: Now isn't that cute! I almost feel bad drinking it.
+Hermes: Almost.
+<<jump Hermes_Day1_after_cooking>>
+
+===
+
+title: Hermes_test_SuccessFancy
+---
+<<Fade "#000000" 1 0 0.4>>
+<<wait 0.1>>
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<PlayMusic Hermes_Theme>>
+Aelius: Got your Nectar ready as fast as I could.
+Aelius: <i>(Hopefully this goes better than the other two…)</i>
+Aelius: <i>*(Or at least better than Zeus *sigh*)*</i>
+Aelius: Hope you like it.
+
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+Hermes: This is the nicest Nectar I've ever seen. You got talent, that's for sure.
+
+<<jump Hermes_Day1_after_cooking>>
+
+===
+
+title: Hermes_test_SuccessSpicy
+---
+<<Fade "#000000" 1 0 0.4>>
+<<wait 0.1>>
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<PlayMusic Hermes_Theme>>
+Aelius: Got your Nectar ready as fast as I could.
+Aelius: <i>(Hopefully this goes better than the other two…)</i>
+Aelius: <i>*(Or at least better than Zeus *sigh*)*</i>
+Aelius: Hope you like it.
+
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+
+Hermes: Wow! That looks burning hot.
+Hermes: That'll keep my energy up for sure.
+
+<<jump Hermes_Day1_after_cooking>>
+
+===
+
+title: Hermes_Day1_after_cooking
+---
 Hermes: Thanks, Aelius. Looks great!
 Hermes: Only wish I had time to sit and enjoy it.
 Hermes: But, y'know duty calls. Messages to deliver, cattle to steal. You get the jist.
@@ -98,16 +138,3 @@ Aelius: Well, that was... better, I guess.
 <<wait 0.4>>
 <<jump Hephaestus_Intro>>
 ===
-
-
-//title: Hermes_test_Fail
-//---
-//Aelius: Sorry — that took longer than I hoped—
-//Hermes: No time. I have to run.
-//<<Hide "Hermes">>
-//Aelius: Well, that was… something.
-//<<set $hermes_day1_done = true>>
-//===
-
-
-

@@ -1,7 +1,7 @@
-﻿title: Day7_Aphrodite
+﻿title: Day7_Aphrodite_Intro
 tags:
 ---
-<<Scene "lounge bg draft 3">>
+<<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
 
@@ -18,7 +18,7 @@ Aphrodite: I just wanted to stop by and thank you for helping Hephy.
 
 // WEIRD OPTION SELECTION LOGIC HERE NEEDS TO BE IMPLEMENTED
 
--> Do you think you would take him bac?
+-> Do you think you would take him back?
     Aphrodite: It is not solely my decision, it must be decided together.
     Aphrodite: If I could… I believe I would like to start over with him.
 -> Hephy?
@@ -39,13 +39,18 @@ Aphrodite: Yes, I would thank you. You still have <b>Ambrosia Cake,</b> yes?
 Aelius: Coming right up.
 
 // AMBROSIA CAKE game
+<<StartCooking "AmbrosiaCake3">>
+<<HideAll>>
+===
+title: Day7_Aphrodite_ReturnSpicy
+tags:
+---
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
 
--> Spicy
-    Aphrodite: You take a different approach than Hestia did. The spice is a worthy addition.
--> Fancy
-    Aphrodite: Just as Hestia makes it, this is wonderful work, dear.
--> Playful
-    Aphrodite: Just as I remember it, but maybe sweeter. Good work, dear.
+
+Aphrodite: You take a different approach than Hestia did. The spice is a worthy addition.
 
 Aelius: [Positive] I'm glad you like it.
 Aphrodite: Thank you for listening, Aelius. I have not been able to talk about this in so long.
@@ -70,4 +75,73 @@ Aphrodite: Thank you, Aelius, for your help and for the meal.
 Aphrodite: I will be in your debt, no matter how tomorrow goes.
 Aelius: Good luck, Aphrodite.
 <<HideAll>>
+<<jump Hestia_Day7_AfterShift>>
+===
+title: Day7_Aphrodite_ReturnFancy
+tags:
+---
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+
+Aphrodite: Just as Hestia makes it, this is wonderful work, dear.
+
+
+Aelius: [Positive] I'm glad you like it.
+Aphrodite: Thank you for listening, Aelius. I have not been able to talk about this in so long.
+Aelius: [Positive] Of course.
+Aphrodite: I must confess I feel a degree of nervousness about tomorrow.
+Aelius: [Positive] I'm sure you'll be fine.
+Aphrodite: You’ve talked to him more than I, what do you think?
+
+-> I think you both should give it another chance.
+    Aphrodite: I am happy you think so.
+    Aphrodite: Thank you for your confidence, Aelius.
+-> It's not my place to say.
+    Aphrodite: Yes, you are correct.
+    Aelius: I'm sorry I can't offer more.
+    Aphrodite: Do not worry, dear. I must take responsibility for myself.
+-> I think you should take it slow.
+    Aphrodite: Yes, it would be best to avoid another mistake.
+    Aphrodite: Thank you for your wisdom, Aelius.
+
+Aelius: Thank you for stopping by.
+Aphrodite: Thank you, Aelius, for your help and for the meal.
+Aphrodite: I will be in your debt, no matter how tomorrow goes.
+Aelius: Good luck, Aphrodite.
+<<HideAll>>
+<<jump Hestia_Day7_AfterShift>>
+===
+title: Day7_Aphrodite_ReturnPlayful
+tags:
+---
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+Aphrodite: Just as I remember it, but maybe sweeter. Good work, dear.
+
+Aelius: [Positive] I'm glad you like it.
+Aphrodite: Thank you for listening, Aelius. I have not been able to talk about this in so long.
+Aelius: [Positive] Of course.
+Aphrodite: I must confess I feel a degree of nervousness about tomorrow.
+Aelius: [Positive] I'm sure you'll be fine.
+Aphrodite: You’ve talked to him more than I, what do you think?
+
+-> I think you both should give it another chance.
+    Aphrodite: I am happy you think so.
+    Aphrodite: Thank you for your confidence, Aelius.
+-> It's not my place to say.
+    Aphrodite: Yes, you are correct.
+    Aelius: I'm sorry I can't offer more.
+    Aphrodite: Do not worry, dear. I must take responsibility for myself.
+-> I think you should take it slow.
+    Aphrodite: Yes, it would be best to avoid another mistake.
+    Aphrodite: Thank you for your wisdom, Aelius.
+
+Aelius: Thank you for stopping by.
+Aphrodite: Thank you, Aelius, for your help and for the meal.
+Aphrodite: I will be in your debt, no matter how tomorrow goes.
+Aelius: Good luck, Aphrodite.
+<<HideAll>>
+<<jump Hestia_Day7_AfterShift>>
 ===

@@ -1,6 +1,6 @@
 ﻿title: Day2_Ares_Intro
 ---
-<<Scene "lounge bg draft 3">>
+<<Scene new_dining_area>>
 <<PlayMusic Hestia_MainBody>>
 
 <<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
@@ -49,11 +49,93 @@ Aelius: Alright, I'll be back.
 
 
 //COOKING minigame AND back
-//<<StartCooking "AmbrosiaCake">>
+<<StartCooking "AmbrosiaCake">>
 <<jump Ares_Return>>
 
 ===
-title: Ares_Return
+title: Ares_ReturnSpicy
+---
+<<Fade "#000000" 1 0 0.4>>
+<<wait 0.1>>
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Ares" "Ares" "right" "bottom" #FF8C00>>
+//<<PlayMusic Hephaestus_Theme>>
+
+Aelius: Here's your cake; you were going to tell me something?
+Ares: Was I? I sort of forgot. This cake is actually pretty good.
+Ares: Aelius, was it?
+Ares: At least I think that's what Hestia called you.
+Aelius: Yes, that's me.
+Ares: I, Ares, will expect food of this quality next time I return.
+Aelius: Um, alright. You got it.
+Ares: Err, I actually have a slight... request. I just remembered something.
+Aelius: Oh? Do tell. What can I do for the mighty Lord Ares?
+Ares: My father, Zeus, may have asked me to join him here for lunch later today.
+Ares: He mentioned something about trying to "connect" with his son. I- I don't actually see him truly trying though... not after all this time.
+Ares: Anyways, if you could pretend like I wasn't already here today, I would be appreciative.
+Aelius: I know we might've not had the best introduction, but I understand where you're coming from.
+Aelius: You could say that I also have a difficult relationship with my father.
+Aelius: Never knew him down in the mortal world, but apparently he is here.
+Aelius: I have my guesses narrowed down, but it feels a little awkward knowing that.
+Aelius: So, I understand your nervousness, even if it's just a little bit. I can forget you were here, at least for Zeus.
+Ares: I'm not nervous! Just a little... confused.
+Ares: Thank you though. I really need to leave though. See you in a little bit.
+
+// Ares exits here
+
+Aelius: I'm glad that's over.
+Hestia: <*>Peaks around the corner and chuckles.</*>
+Hestia: I'm surprised that it didn't go so much worse than it did/
+Aelius: What?
+Aelius: What's that supposed to mean?!
+Hestia: Ares is usually a handful... I'll just leave it at that. Now back to work, these customers won't feed themselves!
+Aelius: Alright... back to work, I suppose.
+<<jump Day2_Zeus_Intro>>
+
+===
+title: Ares_ReturnPlayful
+---
+<<Fade "#000000" 1 0 0.4>>
+<<wait 0.1>>
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Ares" "Ares" "right" "bottom" #FF8C00>>
+//<<PlayMusic Hephaestus_Theme>>
+
+Aelius: Here's your cake; you were going to tell me something?
+Ares: Was I? I sort of forgot. This cake is actually pretty good.
+Ares: Aelius, was it?
+Ares: At least I think that's what Hestia called you.
+Aelius: Yes, that's me.
+Ares: I, Ares, will expect food of this quality next time I return.
+Aelius: Um, alright. You got it.
+Ares: Err, I actually have a slight... request. I just remembered something.
+Aelius: Oh? Do tell. What can I do for the mighty Lord Ares?
+Ares: My father, Zeus, may have asked me to join him here for lunch later today.
+Ares: He mentioned something about trying to "connect" with his son. I- I don't actually see him truly trying though... not after all this time.
+Ares: Anyways, if you could pretend like I wasn't already here today, I would be appreciative.
+Aelius: I know we might've not had the best introduction, but I understand where you're coming from.
+Aelius: You could say that I also have a difficult relationship with my father.
+Aelius: Never knew him down in the mortal world, but apparently he is here.
+Aelius: I have my guesses narrowed down, but it feels a little awkward knowing that.
+Aelius: So, I understand your nervousness, even if it's just a little bit. I can forget you were here, at least for Zeus.
+Ares: I'm not nervous! Just a little... confused.
+Ares: Thank you though. I really need to leave though. See you in a little bit.
+
+// Ares exits here
+
+Aelius: I'm glad that's over.
+Hestia: <*>Peaks around the corner and chuckles.</*>
+Hestia: I'm surprised that it didn't go so much worse than it did/
+Aelius: What?
+Aelius: What's that supposed to mean?!
+Hestia: Ares is usually a handful... I'll just leave it at that. Now back to work, these customers won't feed themselves!
+Aelius: Alright... back to work, I suppose.
+<<jump Day2_Zeus_Intro>>
+
+===
+title: Ares_ReturnFancy
 ---
 <<Fade "#000000" 1 0 0.4>>
 <<wait 0.1>>

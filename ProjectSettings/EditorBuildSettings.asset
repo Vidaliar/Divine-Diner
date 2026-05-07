@@ -68,5 +68,53 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 542e23bf32936be4a905c507f1b5108a
+  - enabled: 1
+    path: Assets/Scenes/Cooking/AppleCider.unity
+    guid: 564a624bfaa366f45bc12e7c25717f82
+  - enabled: 1
+    path: Assets/Scenes/Cooking/MakenaTestScene2.unity
+    guid: 39316b693c3d86d4685c98a83188affc
+  - enabled: 1
+    path: Assets/Scenes/Cooking/AmbrosiaCake2.unity
+    guid: ff9ddb6815dda8547b040959bda81289
+  - enabled: 1
+    path: Assets/Scenes/Cooking/HeliosSteak2.unity
+    guid: 9f8a7719243d5474dbef778f85e3c1b8
+  - enabled: 1
+    path: Assets/Scenes/Cooking/Nectar2.unity
+    guid: d7cda2beabe1e334b82653d1d7ad83e6
+  - enabled: 1
+    path: Assets/Scenes/Cooking/AppleCider2.unity
+    guid: 7555959f9de140249b18dad068fbd31d
+  - enabled: 1
+    path: Assets/Scenes/Cooking/LotusParfait2.unity
+    guid: 1e92f80c14fc3904bbbf3a13ea8c3a00
+  - enabled: 1
+    path: Assets/Scenes/Cooking/MakenaTestScene3.unity
+    guid: 08cf4bdeb7a30e141a59ff13bff0123b
+  - enabled: 1
+    path: Assets/Scenes/Cooking/LotusParfait3.unity
+    guid: ae3e22717c1b53f4c85039225ca86880
+  - enabled: 1
+    path: Assets/Scenes/Cooking/AppleCider3.unity
+    guid: f8b117282da18f743a2c37579190c65b
+  - enabled: 1
+    path: Assets/Scenes/Cooking/HeliosSteak3.unity
+    guid: 36fc6bf252bf624439e1f78aa1186961
+  - enabled: 1
+    path: Assets/Scenes/Cooking/MakenaTestScene4.unity
+    guid: bfb3bf40884f75849922c634cd9341f5
+  - enabled: 1
+    path: Assets/Scenes/Cooking/AmbrosiaCake3.unity
+    guid: 85744bde16463724b924e95cad4f1920
+  - enabled: 1
+    path: Assets/Scenes/Cooking/Nectar3.unity
+    guid: 3ff4bdcfb6091094e8edb51c22b20454
+  - enabled: 1
+    path: Assets/Scenes/Cooking/HeliosSteak4.unity
+    guid: f1dfc86fab9bc7c4d943e0005eff8038
+  - enabled: 1
+    path: Assets/Scenes/Cooking/AmbrosiaCake4.unity
+    guid: a990089b53f1d8a408bdec2a6017e68b
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e4832c56fbe1f64f8e9d21d1f4aeb53, type: 2}

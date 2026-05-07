@@ -69,7 +69,7 @@ Aelius: Coming right up!
 <<wait 0.4>>
 <<StartCooking "HeliosSteak">>
 ===
-title: Hephaestus_Return
+title: Hephaestus_ReturnFancy
 ---
 <<Fade "#000000" 1 0 0.4>>
 <<wait 0.1>>
@@ -78,13 +78,38 @@ title: Hephaestus_Return
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 <<PlayMusic Hephaestus_Theme>>
 
+Hephaestus: Oh, yes I can taste the care you took. You have done well, Aelius.
+<<jump Hephaestus_Day1_after_cooking>>
 
-->Spicy
-	Hephaestus: Oh, this has some bite to it, just the way I like it. You have done well, Aelius.
-->Sweet
-	Hephaestus: Oh, this is sweeter than I expected, but it's quite good. You have done well, Aelius.
-->Fancy
-	Hephaestus: Oh, yes I can taste the care you took. You have done well, Aelius.
+===
+title: Hephaestus_ReturnSpicy
+---
+<<Fade "#000000" 1 0 0.4>>
+<<wait 0.1>>
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+<<PlayMusic Hephaestus_Theme>>
+
+Hephaestus: Oh, this has some bite to it, just the way I like it. You have done well, Aelius.
+<<jump Hephaestus_Day1_after_cooking>>
+
+===
+title: Hephaestus_ReturnPlayful
+---
+<<Fade "#000000" 1 0 0.4>>
+<<wait 0.1>>
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+<<PlayMusic Hephaestus_Theme>>
+Hephaestus: Oh, this is sweeter than I expected, but it's quite good. You have done well, Aelius.
+<<jump Hephaestus_Day1_after_cooking>>
+
+
+===
+title: Hephaestus_Day1_after_cooking
+---
 
 -> Oh, it was nothing.
 	//Aelius: Oh, it was nothing.

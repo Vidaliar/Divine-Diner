@@ -1,7 +1,7 @@
 ﻿title: Day8_Hephaestus_Intro
 tags:
 ---
-<<Scene "lounge bg draft 3">>
+<<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
 Aphrodite: Aelius, it is good to see you again.
@@ -26,8 +26,14 @@ Aphrodite: No thank you, dear. That said, why don't you make something for Hepha
 Aelius: Yeah, I'll get on it.
 
 // HELIOS STEAK
+<<StartCooking "HeliosSteak4">>
 
 <<HideAll>>
+===
+title: Day8_Hephaestus_ReturnFancy
+tags:
+---
+<<Scene new_dining_area>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 <<Act "Aphrodite" "Aphrodite" "left" "bottom" #e06666>>
 Hephaestus: Oh, Aelius, there you are.
@@ -37,12 +43,125 @@ Aphrodite: Welcome back, dear. That looks wonderful.
 Aelius: Uh- everything going okay out here?
 Hephaestus: Don’t worry about me. Let's see what you’ve cooked up.
 
--> Fancy
-    Hephaestus: Oh… I remember having one of these when we first met – of course it wasn't this fancy at the time.
--> Playful
-    Hephaestus: Oh… I remember having one of these when we first met – of course it wasn’t sweet like this back then.
--> Spicy
-    Hephaestus: Oh… I remember having one of these when we first met – of course it wasn’t quite so spicy then.
+Hephaestus: Oh… I remember having one of these when we first met – of course it wasn't this fancy at the time.
+
+Hephaestus: Thank you, Aphrodite.
+<<Hide Aelius>>
+<<Act "Aphrodite" "Aphrodite" "left" "bottom" #e06666>>
+Aphrodite: Of course.
+Hephaestus: And I'm sorry it took so long to talk to you again.
+Aphrodite: Thank you. I should have made an effort myself, instead of running away.
+Hephaestus: I knew you had been unhappy for a while before it happened; I just couldn’t keep up with you all the time.
+Aphrodite: It’s alright. I've gotten older since then, I've learned contentment, more than just passion.
+Aphrodite: I’ve learned from the mortals – they don’t have eternity to make up for their mistakes.
+Hephaestus: I’m glad I have eternity, personally.
+Hephaestus: But I understand. I think I need to allow myself to feel more passion.
+Aphrodite: You have fear, which makes it more difficult – an uncommon emotion on Olympus.
+Aphrodite: Omnipresent among the mortals however, I have seen how they navigate it. How they fail to escape it.
+Aphrodite: I want to help you.
+Hephaestus: I've missed you.
+Aphrodite: And I, you.
+Aphrodite: Do you still make those roses from the bronze?
+Hephaestus: I haven't forgotten how.
+<<Hide Aphrodite>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+Aelius: Ahem...
+Hephaestus: Oh- yes. Sorry, Aelius.
+Aelius: So… did you find out anything about, like, you being my dad, maybe?
+Hephaestus: I’m sorry, I have no idea. There were, um, a few times it could have been, but it was a difficult period for me and my recollection is imperfect.
+
+-> That's alright, thank you all the same.
+    Hephaestus: Thank you, Aelius, you have helped me a great deal. Let me know if you need anything in the future.
+-> Let me know if you remember anything later.
+    Hephaestus: Of course, Aelius, you have helped me a great deal. Let me know if you need anything in the future.
+-> I still don’t get why Aphrodite can’t just tell me.
+    Hephaestus: Love – she works in mysterious ways, as they say.
+    Hephaestus: You have helped me a great deal, just let me know if you need anything in the future.
+
+Aelius: Feel free to come by the diner any time.
+<<Hide Hephaestus>>
+<<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+Aphrodite: Goodbye, Aelius.
+<<Hide Aphrodite>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+Hephaestus: Farewell, Aelius.
+<<HideAll>>
+<<jump Day8_Hermes_Intro>>
+===
+title: Day8_Hephaestus_ReturnPlayful
+tags:
+---
+<<Scene new_dining_area>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+<<Act "Aphrodite" "Aphrodite" "left" "bottom" #e06666>>
+Hephaestus: Oh, Aelius, there you are.
+Aphrodite: Welcome back, dear. That looks wonderful.
+<<Hide Aphrodite>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+Aelius: Uh- everything going okay out here?
+Hephaestus: Don’t worry about me. Let's see what you’ve cooked up.
+
+Hephaestus: Oh… I remember having one of these when we first met – of course it wasn’t sweet like this back then.
+
+
+Hephaestus: Thank you, Aphrodite.
+<<Hide Aelius>>
+<<Act "Aphrodite" "Aphrodite" "left" "bottom" #e06666>>
+Aphrodite: Of course.
+Hephaestus: And I'm sorry it took so long to talk to you again.
+Aphrodite: Thank you. I should have made an effort myself, instead of running away.
+Hephaestus: I knew you had been unhappy for a while before it happened; I just couldn’t keep up with you all the time.
+Aphrodite: It’s alright. I've gotten older since then, I've learned contentment, more than just passion.
+Aphrodite: I’ve learned from the mortals – they don’t have eternity to make up for their mistakes.
+Hephaestus: I’m glad I have eternity, personally.
+Hephaestus: But I understand. I think I need to allow myself to feel more passion.
+Aphrodite: You have fear, which makes it more difficult – an uncommon emotion on Olympus.
+Aphrodite: Omnipresent among the mortals however, I have seen how they navigate it. How they fail to escape it.
+Aphrodite: I want to help you.
+Hephaestus: I've missed you.
+Aphrodite: And I, you.
+Aphrodite: Do you still make those roses from the bronze?
+Hephaestus: I haven't forgotten how.
+<<Hide Aphrodite>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+Aelius: Ahem...
+Hephaestus: Oh- yes. Sorry, Aelius.
+Aelius: So… did you find out anything about, like, you being my dad, maybe?
+Hephaestus: I’m sorry, I have no idea. There were, um, a few times it could have been, but it was a difficult period for me and my recollection is imperfect.
+
+-> That's alright, thank you all the same.
+    Hephaestus: Thank you, Aelius, you have helped me a great deal. Let me know if you need anything in the future.
+-> Let me know if you remember anything later.
+    Hephaestus: Of course, Aelius, you have helped me a great deal. Let me know if you need anything in the future.
+-> I still don’t get why Aphrodite can’t just tell me.
+    Hephaestus: Love – she works in mysterious ways, as they say.
+    Hephaestus: You have helped me a great deal, just let me know if you need anything in the future.
+
+Aelius: Feel free to come by the diner any time.
+<<Hide Hephaestus>>
+<<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+Aphrodite: Goodbye, Aelius.
+<<Hide Aphrodite>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+Hephaestus: Farewell, Aelius.
+<<HideAll>>
+<<jump Day8_Hermes_Intro>>
+===
+title: Day8_Hephaestus_ReturnSpicy
+tags:
+---
+<<Scene new_dining_area>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+<<Act "Aphrodite" "Aphrodite" "left" "bottom" #e06666>>
+Hephaestus: Oh, Aelius, there you are.
+Aphrodite: Welcome back, dear. That looks wonderful.
+<<Hide Aphrodite>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+Aelius: Uh- everything going okay out here?
+Hephaestus: Don’t worry about me. Let's see what you’ve cooked up.
+
+
+Hephaestus: Oh… I remember having one of these when we first met – of course it wasn’t quite so spicy then.
 
 Hephaestus: Thank you, Aphrodite.
 <<Hide Aelius>>

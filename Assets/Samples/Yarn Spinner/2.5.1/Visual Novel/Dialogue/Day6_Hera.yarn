@@ -1,7 +1,7 @@
 ﻿title: Day6_Hera_Intro
 tags:
 ---
-<<Scene "lounge bg draft 3">>
+<<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
 Hera: Aelius, good to see you again.
@@ -31,6 +31,117 @@ Hera: I'll have the <i>Lotus Parfait</i>, if that's alright with you.
 Aelius: Excellent choice.
 
 // LOTUS PARFAIT
+<<StartCooking "LotusParfait3">>
+<<HideAll>>
+===
+title: Day6_Hera_ReturnPlayful
+tags:
+---
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+
+Aelius: Your parfait.
+Hera: Delightful. Thank you, as always.
+Aelius: [Positive] Of course. Have a nice meal.
+Hera: Oh! Before you go…
+Hera: You used to cook for your mother, yes?
+Aelius: I... did, yeah.
+Hera: Would you tell me about her?
+Aelius: [Negative] ... Sure.
+
+-> She cared about people.
+    Aelius: She gave so much of herself for others.
+    Aelius: And never asked for anything in return.
+->  She always brightened the room.
+    Aelius: Like...
+    Aelius: She made things light without making light <i>of</i> things.
+    Aelius: If that makes sense?
+-> She was the strongest person I know.
+    Aelius: Even up until the end...
+    Aelius: She was the one comforting me.
+
+Hera: ... Hm.
+Hera: You take after her, then?
+Aelius: [Negative] I... What?
+Hera: You carry on in her honor.
+Hera: Do you do it to make her proud?
+Aelius: [Negative] I... didn’t even realize I was doing it.
+Hera: Then you do it because she set a good example, and you knew in your heart to follow.
+Aelius: [Negative] ...
+Aelius: [Negative] Oh.
+Hera: You were not doing it to make her proud. But I’m sure she would be.
+Hera: I'm sure she <i>will</i> be. When you see her.
+Aelius: Hah! Word travels fast.
+Hera: I make it my business to keep up with the goings on of Mount Olympus.
+Hera: It’s quite an exception being made for you, Aelius.
+Hera: I hope you do not take it lightly.
+Hera: And I hope your meeting with your mother is everything you’re hoping for.
+Aelius: I appreciate that, Hera.
+Hera: We appreciate you. Now, go help someone else.
+Hera: The work is never done, love.
+Aelius: Right, of course.
+Aelius: Enjoy your meal.
+<<HideAll>>
+<<jump Day6_Hephaestus_Intro>>
+===
+title: Day6_Hera_ReturnSpicy
+tags:
+---
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+
+Aelius: Your parfait.
+Hera: Delightful. Thank you, as always.
+Aelius: [Positive] Of course. Have a nice meal.
+Hera: Oh! Before you go…
+Hera: You used to cook for your mother, yes?
+Aelius: I... did, yeah.
+Hera: Would you tell me about her?
+Aelius: [Negative] ... Sure.
+
+-> She cared about people.
+    Aelius: She gave so much of herself for others.
+    Aelius: And never asked for anything in return.
+->  She always brightened the room.
+    Aelius: Like...
+    Aelius: She made things light without making light <i>of</i> things.
+    Aelius: If that makes sense?
+-> She was the strongest person I know.
+    Aelius: Even up until the end...
+    Aelius: She was the one comforting me.
+
+Hera: ... Hm.
+Hera: You take after her, then?
+Aelius: [Negative] I... What?
+Hera: You carry on in her honor.
+Hera: Do you do it to make her proud?
+Aelius: [Negative] I... didn’t even realize I was doing it.
+Hera: Then you do it because she set a good example, and you knew in your heart to follow.
+Aelius: [Negative] ...
+Aelius: [Negative] Oh.
+Hera: You were not doing it to make her proud. But I’m sure she would be.
+Hera: I'm sure she <i>will</i> be. When you see her.
+Aelius: Hah! Word travels fast.
+Hera: I make it my business to keep up with the goings on of Mount Olympus.
+Hera: It’s quite an exception being made for you, Aelius.
+Hera: I hope you do not take it lightly.
+Hera: And I hope your meeting with your mother is everything you’re hoping for.
+Aelius: I appreciate that, Hera.
+Hera: We appreciate you. Now, go help someone else.
+Hera: The work is never done, love.
+Aelius: Right, of course.
+Aelius: Enjoy your meal.
+<<HideAll>>
+<<jump Day6_Hephaestus_Intro>>
+===
+title: Day6_Hera_ReturnFancy
+tags:
+---
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
 
 Aelius: Your parfait.
 Hera: Delightful. Thank you, as always.

@@ -1,7 +1,7 @@
 ﻿title: Day6_Hermes_Intro
 tags:
 ---
-<<Scene "lounge bg draft 3">>
+<<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
 
@@ -54,15 +54,19 @@ Hermes: Hmm, how about an <b>Erymanthian Boar Sandwich</b>? That sounds like jus
 Aelius: Fresh boar sammy, coming right up.
 
 // COOKING GAME HERE
+<<StartCooking "MakenaTestScene3">>
+<<HideAll>>
+===
+title: Day6_Hermes_ReturnFancy
+tags:
+---
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
 
 Aelius: [Smirk] Made your sandwich, hope it satiates your endless hunger.
 
--> Fancy
-    Hermes: You went all out on this sandwich, huh? Looks great!
--> Playful
-    Hermes: Well isn’t that the cutest sandwich I’ve ever seen.
--> Spicy
-    Hermes: Wow, that smells burning hot. My tastebuds need a good shock every once in a while.
+Hermes: You went all out on this sandwich, huh? Looks great!
 
 Hermes: You’ve outdone yourself as always, Aelius.
 Aelius: Glad to hear it's good.
@@ -100,8 +104,99 @@ Aelius: [Positive] Safe travels, and thanks for being open with me.
 Hermes: Of course. See ya, Aelius!
 <<HideAll>>
 <<jump Day6_Hera_Intro>>
+===
+title: Day6_Hermes_ReturnPlayful
+tags:
+---
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+
+Aelius: [Smirk] Made your sandwich, hope it satiates your endless hunger.
 
 
+Hermes: Well isn’t that the cutest sandwich I’ve ever seen.
+Hermes: You’ve outdone yourself as always, Aelius.
+Aelius: Glad to hear it's good.
+Hermes: Y’know, while you were chef-ing it up, I did some thinking.
+Aelius: About what?
+Hermes: You had a good point earlier. Really made me take some steps back instead of running forward for once.
+Hermes: I never really have taken the time to think through my problems.
+Hermes: Dashing away from things is one of my specialties, after all.
+Aelius: [Smirk]  (Laughing) Okay funn guy, keep going.
+Hermes: Well… I guess I’m just too busy with important messages to really take some me-time.
+Hermes: I know I tend to just joke about it, and never really tackle the problems.
+Hermes: I’m supposed to be an all-knowing god, but I don’t feel all-knowing right now.
 
+-> You're doing it again, Hermes. (deference)
+    Hermes: Whoopsies! Old habits die hard.
+-> For someone who is admitting their problem, you sure are doing said problem right now. (humorous)
+    Hermes: Wait- oh, *<i>laughs</i> I am, aren't I?
+-> You gotta quit doing it, Hermes. (aggressive)
+    Hermes: Oh, heh... right.
 
+Hermes: I’ll keep working on it. Next thing you know, I’ll be the most honest god on Olympus.
+Aelius: [Positive] Will you now? We’ll have to wait and see.
+Hermes: Thanks, Aelius, by the way. I appreciate you listening to my chit-chat.
+Hermes: Felt good, actually.
+Hermes: Got another dish for your mom?
+Aelius: [Positive] I do! Thanks, Hermes; let me go grab it.
+
+// SPRITE TRANSITION
+
+Aelius: [Positive] Here. I really do appreciate you doing it with how busy you are. You’re the best.
+Hermes: No skin off my back. I’m happy to help.
+Hermes: You remind me of myself, actually.
+Aelius: [Smirk] I'll take that as a good thing.
+Aelius: [Positive] Safe travels, and thanks for being open with me.
+Hermes: Of course. See ya, Aelius!
+<<HideAll>>
+<<jump Day6_Hera_Intro>>
+===
+title: Day6_Hermes_ReturnSpicy
+tags:
+---
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+
+Aelius: [Smirk] Made your sandwich, hope it satiates your endless hunger
+Hermes: Wow, that smells burning hot. My tastebuds need a good shock every once in a while.
+
+Hermes: You’ve outdone yourself as always, Aelius.
+Aelius: Glad to hear it's good.
+Hermes: Y’know, while you were chef-ing it up, I did some thinking.
+Aelius: About what?
+Hermes: You had a good point earlier. Really made me take some steps back instead of running forward for once.
+Hermes: I never really have taken the time to think through my problems.
+Hermes: Dashing away from things is one of my specialties, after all.
+Aelius: [Smirk]  (Laughing) Okay funn guy, keep going.
+Hermes: Well… I guess I’m just too busy with important messages to really take some me-time.
+Hermes: I know I tend to just joke about it, and never really tackle the problems.
+Hermes: I’m supposed to be an all-knowing god, but I don’t feel all-knowing right now.
+
+-> You're doing it again, Hermes. (deference)
+    Hermes: Whoopsies! Old habits die hard.
+-> For someone who is admitting their problem, you sure are doing said problem right now. (humorous)
+    Hermes: Wait- oh, *<i>laughs</i> I am, aren't I?
+-> You gotta quit doing it, Hermes. (aggressive)
+    Hermes: Oh, heh... right.
+
+Hermes: I’ll keep working on it. Next thing you know, I’ll be the most honest god on Olympus.
+Aelius: [Positive] Will you now? We’ll have to wait and see.
+Hermes: Thanks, Aelius, by the way. I appreciate you listening to my chit-chat.
+Hermes: Felt good, actually.
+Hermes: Got another dish for your mom?
+Aelius: [Positive] I do! Thanks, Hermes; let me go grab it.
+
+// SPRITE TRANSITION
+
+Aelius: [Positive] Here. I really do appreciate you doing it with how busy you are. You’re the best.
+Hermes: No skin off my back. I’m happy to help.
+Hermes: You remind me of myself, actually.
+Aelius: [Smirk] I'll take that as a good thing.
+Aelius: [Positive] Safe travels, and thanks for being open with me.
+Hermes: Of course. See ya, Aelius!
+<<HideAll>>
+<<jump Day6_Hera_Intro>>
 ===

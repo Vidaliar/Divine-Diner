@@ -1,7 +1,7 @@
 ﻿title: Day4_Aphrodite_Intro
 tags:
 ---
-<<Scene "lounge bg draft 3">>
+<<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
 Aphrodite: Ah, hello! You are Aelius, correct?
@@ -43,13 +43,47 @@ Aphrodite: You are sweet to ask; yes, I think I would like some <b>Nectar.</b>
 Aelius: Coming right up.
 
 // PUT NECTAR HERE 
+<<StartCooking Nectar2>>
+<<HideAll>>
+===
+title: Day4_Aphrodite_ReturnFancy
+---
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+Aphrodite: This is such a wonderful dish, thank you, dear.
 
--> Spicy
-    Aphrodite: This is wonderfully spicy, thank you, dear.
--> Fancy
-    Aphrodite: This is such a wonderful dish, thank you, dear.
--> Playful
-    Aphrodite: This is a delight, thank you, dear.
+
+Aelius: [Positive] I'm glad you like it.
+Aphrodite: I knew I would.
+Aphrodite: I must be off though - thank you for the meal.
+Aelius: [Positive] Thank you.
+Aphrodite: I wish you luck on your search, Aelius.
+<<HideAll>>
+<<jump Day4_Hermes_Intro>>
+===
+title: Day4_Aphrodite_ReturnSpicy
+---
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+Aphrodite: This is wonderfully spicy, thank you, dear.
+
+
+Aelius: [Positive] I'm glad you like it.
+Aphrodite: I knew I would.
+Aphrodite: I must be off though - thank you for the meal.
+Aelius: [Positive] Thank you.
+Aphrodite: I wish you luck on your search, Aelius.
+<<HideAll>>
+<<jump Day4_Hermes_Intro>>
+===
+title: Day4_Aphrodite_ReturnPlayful
+---
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+Aphrodite: This is a delight, thank you, dear.
 
 Aelius: [Positive] I'm glad you like it.
 Aphrodite: I knew I would.

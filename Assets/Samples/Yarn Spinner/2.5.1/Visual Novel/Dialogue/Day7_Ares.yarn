@@ -1,7 +1,7 @@
 ﻿title: Day7_Ares_Intro
 tags:
 ---
-<<Scene "lounge bg draft 3">>
+<<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
 
@@ -43,14 +43,85 @@ Ares: Well, normally I'd go with anything sweet, but I think I'd like to have so
 Aelius: [Positive] Sure, I'll be right back with that.
 
 // HELIOS steak
+<<StartCooking "HeliosSteak3">>
+<<HideAll>>
+===
+title: Day7_Ares_ReturnFancy
+tags:
+---
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
 
 Aelius: Here's your steak, Ares - enjoy!
--> Fancy
-    Ares: Ah, this is quite a delicacy – most excellent!
--> Playful
-    Ares: It feels like I’m missing some content on this, but it tastes great. Thanks, Aelius.
--> Spicy
-    Ares: Well, I’m going to be tasting that all day, but it’s not an unpleasant taste.
+Ares: Ah, this is quite a delicacy – most excellent!
+
+Aelius: [Positive] Glad to see that it satisfied your taste!
+Aelius: [Positive] On another note, it’s really great to see Hephaestus and you take a step forward to having a better relationship.
+Aelius: Honestly, I was a little worried a war might’ve started here.
+Ares: A war? You don’t have to worry about that, you’d be safe here.
+Aelius: … What’s that supposed to mean?
+Ares: Zeus outlawed direct fighting on Olympus, so we either have to do indirect fights like with the explosives or the traps, or we have to relay our will to our followers in the mortal world.
+Aelius: *<i>Empty stare.</i>*
+Aelius: … A lot of things make a lot more sense in the mortal world now.
+Ares: Oh- I probably shouldn’t have said anything about that.
+Ares: Anyways, I will try to follow your advice and keep trying to work more issues out with the dwarf.
+Aelius: [Smirk] For starters, you could not call him "<i>the dwarf.</i>"
+Ares: Perchance.
+Aelius: You can’t just say perchance, Ares!
+Aelius: I need you to agree that you’ll not call him demeaning things.
+Ares: Ok fine – I won’t call Hephaestus by little, dwarf, tree stump, shorty, brat-
+Aelius: [Negative] Ares, I get it.
+Aelius: Relationships go both ways. I’m sure if you start respecting him, you’ll get the same from him.
+Ares: I understand.
+Ares: Well, I may have signed myself up to help him rebuild his workshop as my olive branch, so I need to head over there now.
+Ares: See you around, Aelius.
+Aelius: [Positive] Bye, Ares, keep up the good work!
+<<HideAll>>
+<<jump Day7_Zeus_Intro>>
+===
+title: Day7_Ares_ReturnPlayful
+tags:
+---
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+Ares: It feels like I’m missing some content on this, but it tastes great. Thanks, Aelius.
+
+
+Aelius: [Positive] Glad to see that it satisfied your taste!
+Aelius: [Positive] On another note, it’s really great to see Hephaestus and you take a step forward to having a better relationship.
+Aelius: Honestly, I was a little worried a war might’ve started here.
+Ares: A war? You don’t have to worry about that, you’d be safe here.
+Aelius: … What’s that supposed to mean?
+Ares: Zeus outlawed direct fighting on Olympus, so we either have to do indirect fights like with the explosives or the traps, or we have to relay our will to our followers in the mortal world.
+Aelius: *<i>Empty stare.</i>*
+Aelius: … A lot of things make a lot more sense in the mortal world now.
+Ares: Oh- I probably shouldn’t have said anything about that.
+Ares: Anyways, I will try to follow your advice and keep trying to work more issues out with the dwarf.
+Aelius: [Smirk] For starters, you could not call him "<i>the dwarf.</i>"
+Ares: Perchance.
+Aelius: You can’t just say perchance, Ares!
+Aelius: I need you to agree that you’ll not call him demeaning things.
+Ares: Ok fine – I won’t call Hephaestus by little, dwarf, tree stump, shorty, brat-
+Aelius: [Negative] Ares, I get it.
+Aelius: Relationships go both ways. I’m sure if you start respecting him, you’ll get the same from him.
+Ares: I understand.
+Ares: Well, I may have signed myself up to help him rebuild his workshop as my olive branch, so I need to head over there now.
+Ares: See you around, Aelius.
+Aelius: [Positive] Bye, Ares, keep up the good work!
+<<HideAll>>
+<<jump Day7_Zeus_Intro>>
+===
+title: Day7_Ares_ReturnSpicy
+tags:
+---
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+
+Aelius: Here's your steak, Ares - enjoy!
+Ares: Well, I’m going to be tasting that all day, but it’s not an unpleasant taste.
 
 Aelius: [Positive] Glad to see that it satisfied your taste!
 Aelius: [Positive] On another note, it’s really great to see Hephaestus and you take a step forward to having a better relationship.

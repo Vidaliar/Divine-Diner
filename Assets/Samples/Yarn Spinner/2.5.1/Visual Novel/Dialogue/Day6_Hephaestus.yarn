@@ -2,7 +2,7 @@
 
 tags:
 ---
-<<Scene "lounge bg draft 3">>
+<<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 Hephaestus: Aelius...
@@ -44,16 +44,20 @@ Aelius: Yes, of course.
 Hephaestus: Thank you. I would like <b>Hesperides apple cider.</b>
 
 //COOKING
+<<StartCooking "AppleCider3>>
+<<HideAll>>
+===
+title: Day6_Hephaestus_ReturnPlayful
 
--> Playful
-    Hephaestus: Oh... it's very sweet.
-    Hephaestus: I almost want to stay here and savor this.
--> Fancy
-    Hephaestus: Oh… this is very rich. Wow.
-    Hephaestus: I almost want to stay here and savor this.
--> Spicy
-    Hephaestus: Oo- hot hot hot!
-    Hephaestus: Ouch... I see, you are trying to get me to moving.
+tags:
+---
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+
+Hephaestus: Oh... it's very sweet.
+Hephaestus: I almost want to stay here and savor this.
+
 
 Aelius: Hephaestus.
 Hephaestus: I know, sorry. I'm going.
@@ -71,5 +75,61 @@ Aelius: Don’t you think you should just talk to her?
 Hephaestus: Maybe. Yes... *<i>sigh</i>* you're right. Just give me some time.
 <<HideAll>>
 <<jump Hestia_Day6_AfterShift>>
+===
+title: Day6_Hephaestus_ReturnFancy
 
+tags:
+---
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+
+Hephaestus: Oh… this is very rich. Wow.
+Hephaestus: I almost want to stay here and savor this.
+
+
+Aelius: Hephaestus.
+Hephaestus: I know, sorry. I'm going.
+//FIGUREE OUT HEPH AND ARES TALKING  
+
+Hephaestus: Oh dear, Aelius, were you aware?
+Aelius: Aware of what?
+Hephaestus: Aphrodite isn’t in a relationship with Ares anymore, apparently not for a long time.
+
+Aelius: [Negative] Oh, I-
+Hephaestus: I should go, I need time to think.
+Aelius: Hephaestus.
+Hephaestus: What?
+Aelius: Don’t you think you should just talk to her?
+Hephaestus: Maybe. Yes... *<i>sigh</i>* you're right. Just give me some time.
+<<HideAll>>
+<<jump Hestia_Day6_AfterShift>>
+===
+title: Day6_Hephaestus_ReturnSpicy
+
+tags:
+---
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+
+Hephaestus: Oo- hot hot hot!
+Hephaestus: Ouch... I see, you are trying to get me to moving.
+
+Aelius: Hephaestus.
+Hephaestus: I know, sorry. I'm going.
+//FIGUREE OUT HEPH AND ARES TALKING  
+
+Hephaestus: Oh dear, Aelius, were you aware?
+Aelius: Aware of what?
+Hephaestus: Aphrodite isn’t in a relationship with Ares anymore, apparently not for a long time.
+
+Aelius: [Negative] Oh, I-
+Hephaestus: I should go, I need time to think.
+Aelius: Hephaestus.
+Hephaestus: What?
+Aelius: Don’t you think you should just talk to her?
+Hephaestus: Maybe. Yes... *<i>sigh</i>* you're right. Just give me some time.
+<<HideAll>>
+<<jump Hestia_Day6_AfterShift>>
 ===

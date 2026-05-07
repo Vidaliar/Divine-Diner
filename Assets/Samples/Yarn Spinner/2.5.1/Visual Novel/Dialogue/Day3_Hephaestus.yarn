@@ -39,7 +39,7 @@ Hephaestus: ...
     Aelius: Of course, Hephaestus.
 -> So you should probably let me know.
     Hephaestus: I don't know if that's reasssuring or not, but thank you, Aelius.
-    Aelius: Of course, Hephaestus/
+    Aelius: Of course, Hephaestus.
 
 Hephaestus: Well, I guess I should start with how it is that I could have been your father.
 Hephaestus: You see, for many years I had been married to Aphrodite.
@@ -72,24 +72,15 @@ Hephaestus: In fact, I've got half a mind to go and wipe that smile off his big 
 Aelius: You sure that's the best way to deal with this?
 Hephaestus: Just get me some food.
 <<HideAll>>
-// <<StartCooking "MakenaTestScene">>
+<<StartCooking "MakenaTestScene2">>
 // we will come back to this
-
+===
+title: Day3_Hephaestus_ReturnPlayful
+---
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 
--> Fancy
-    Hephaestus: Mmm, this meal is delightful; the flavors are wonderfully subtle.
-    Hephaestus: I think you are right Aelius; I shouldn't fight Ares, I think I should talk to him.
-    Aelius: Huh, that’s actually really mature-
-    Hephaestus: And when I show him the depths of my passion, I can surely convince him to cede the field, leaving me free to pursue Aphrodite once more.
-    Aelius: Hephaestus, I'm not sure you should-
-    Hephaestus: Hush! These matters of the heart can wait no longer!
-    Hephaestus: I must show that braggart that I am not afraid!
-    Aelius: Hephaestus...
-    Hephaestus: I must be off, Aelius.
--> Playful
     Hephaestus: Mmm, this is delightful!
     Hephaestus: Okay, I'll tell you what – you may be right about confronting Ares.
     Hephaestus: However, I think I know how to knock that smile off his face regardless.
@@ -101,22 +92,42 @@ Hephaestus: Just get me some food.
     Aelius: I suppose it's better than nothing.
     Hephaestus: Hush! The romance swelling in my chest cannot be quenched.
     Hephaestus: I must be off to begin my work!
--> Spicy
-    Hephaestus: Mmm, this dish has a bite to it. It's very hot.
-    Hephaestus: Well, thank you for the meal, Aelius.
-    Hephaestus: I shall be well fortified for my confrontation with Ares.
-
-    Aelius: I really don’t think-
-
-    Hephaestus: Hush! These matterss of the heart can wait no longer!
-    Hephaestus: I must show that braggart that I am not afraid, that I am willing to fight for Aphrodite.
-
-    Aelius: Hephaestus...
-    Hephaestus: I must be off, Aelius.
-
     <<HideAll>>
     <<jump Day3_Hera_Start>>
 
+===
+title: Day3_Hephaestus_ReturnSpicy
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 
+    Hephaestus: Mmm, this dish has a bite to it. It's very hot.
+    Hephaestus: Well, thank you for the meal, Aelius.
+    Hephaestus: I shall be well fortified for my confrontation with Ares.
+    Aelius: I really don’t think-
+    Hephaestus: Hush! These matterss of the heart can wait no longer!
+    Hephaestus: I must show that braggart that I am not afraid, that I am willing to fight for Aphrodite.
+    Aelius: Hephaestus...
+    Hephaestus: I must be off, Aelius.
+    <<HideAll>>
+    <<jump Day3_Hera_Start>>
+===
+title: Day3_Hephaestus_ReturnFancy
+---
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 
+    Hephaestus: Mmm, this meal is delightful; the flavors are wonderfully subtle.
+    Hephaestus: I think you are right Aelius; I shouldn't fight Ares, I think I should talk to him.
+    Aelius: Huh, that’s actually really mature-
+    Hephaestus: And when I show him the depths of my passion, I can surely convince him to cede the field, leaving me free to pursue Aphrodite once more.
+    Aelius: Hephaestus, I'm not sure you should-
+    Hephaestus: Hush! These matters of the heart can wait no longer!
+    Hephaestus: I must show that braggart that I am not afraid!
+    Aelius: Hephaestus...
+    Hephaestus: I must be off, Aelius.
+    <<HideAll>>
+    <<jump Day3_Hera_Start>>
 ===

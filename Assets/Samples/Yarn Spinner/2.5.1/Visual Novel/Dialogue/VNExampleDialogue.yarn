@@ -8,7 +8,7 @@ title: Zeus_Intro
 <<declare $cooking = true>>
 <<Fade "#000000" 1 0 0.4>>
 <<wait 0.1>>
-<<Scene lounge>>
+<<Scene new_dining_area>>
 <<Testing testing>>
 <<PlayMusic Zeus_Theme>>
 <<Act Aelius "Aelius 3_4s" left bottom #674ea7>>
@@ -25,32 +25,26 @@ Aelius: [Neutral] Um, sorry-
 
 Zeus: [Neutral] Hold on... are you the mortal?
 
--> Yes, sir. I am.
+-> Yes, sir. I am. (deference)
 	//Aelius: [Positive] Yes! Uh, it's my first-
 	Zeus: [Annoyed] Oh, please, child. Don't try to make small talk. Do I look small to you?
 	Aelius: [Neutral] No...
 	Zeus: [Neutral] Small talk is for small people! I hope you’re better at cooking than you are at talking, child.
--> Yeah, I am. And who are you?
+-> No, I'm a new god. (humor)
 	//Aelius: [Neutral] Yeah, I am. And who-
 	Zeus: [Annoyed] Oh, please, child. Don't try to make small talk. Do I look small to you?
 	Aelius: [Neutral] No...
 	Zeus: [Neutral] Small talk is for small people! I hope you’re better at cooking than you are at talking, child.
--> No, I'm a new god.
+-> Yeah, I am. And who are you? (aggressive)
 	//Aelius: No, I'm a new-
 	Zeus: [Annoyed] Oh, please, child. Don't try to make small talk. Do I look small to you?
 	Aelius: [Neutral] No...
 	Zeus: [Neutral] Small talk is for small people! I hope you’re better at cooking than you are at talking, child.
 
--> [Neutral] The name is Aelius.
-	//Aelius: [Neutral] My name is Aelius.
-	Zeus: [Angry] What did you just say to me?
-	Aelius: [Neutral] My name. So you don't have to keep calling me a child.
-	Zeus: [Angry] Listen here, <i>child</i>. Don’t think for a moment that just because Hestia hired you, you can say what you please.
-	Zeus: [Angry] I do not <i>care</i> who hired you, or why.
-	Zeus: [Annoyed] If you speak to me like that again I’ll turn you into an ant and crush you under my heel.
-	Aelius: [Neutral]  …
-	Zeus: [Neutral] Good, then. My usual.
-	Aelius: [Neutral] Your what?
+-> [Neutral] What can I get you?
+	//Aelius: [Neutral] What can I get you?
+	Zeus: [Neutral] My usual.
+	Aelius: [Neutral] Yes, uh, what would that be?
 -> [Positive] Same, dude.
 	//Aelius: Same, dude.
 	Zeus: Excuse you?
@@ -61,15 +55,21 @@ Zeus: [Neutral] Hold on... are you the mortal?
 	Aelius: [Neutral]  …
 	Zeus: [Neutral] Good, then. My usual.
 	Aelius: Your huh?
--> [Neutral] What can I get you?
-	//Aelius: [Neutral] What can I get you?
-	Zeus: [Neutral] My usual.
-	Aelius: [Neutral] Yes, uh, what would that be?
+-> [Neutral] The name is Aelius.
+	//Aelius: [Neutral] My name is Aelius.
+	Zeus: [Angry] What did you just say to me?
+	Aelius: [Neutral] My name. So you don't have to keep calling me a child.
+	Zeus: [Angry] Listen here, <i>child</i>. Don’t think for a moment that just because Hestia hired you, you can say what you please.
+	Zeus: [Angry] I do not <i>care</i> who hired you, or why.
+	Zeus: [Annoyed] If you speak to me like that again I’ll turn you into an ant and crush you under my heel.
+	Aelius: [Neutral]  …
+	Zeus: [Neutral] Good, then. My usual.
+	Aelius: [Neutral] Your what?
 	
 Zeus: [Annoyed] <i>Zeus’s usual.</i>
-	Aelius: [Neutral] I'm sorry, sir-
-	Zeus: [Angry] <i>I AM THE KING OF THE GODS AND I DEMAND A HAM AND CHEESE SANDWICH!</i>
-	Aelius: [Neutral] Of course, sir.
+Aelius: [Neutral] I'm sorry, sir-
+Zeus: [Angry] <i>I AM THE KING OF THE GODS AND I DEMAND A HAM AND CHEESE SANDWICH!</i>
+Aelius: [Neutral] Of course, sir.
 
 
 <<Move Aelius -0.25 bottom 0.5>>
@@ -83,7 +83,7 @@ Zeus: [Annoyed] <i>Zeus’s usual.</i>
 	//<<jump after_cooking>>
 
 ===
-title: after_cooking
+title: after_cookingPlayful
 
 ---
 
@@ -103,18 +103,20 @@ Aelius: [Neutral] Here’s your, <b>Erymanthian Boar Sandwich</b>, King Zeus.
 Zeus: [Annoyed] What is this?
 
 
--> It's food.
+
+-> I'm so sorry. (deference)
+	//Aelius: I'm so sorry.
+	Zeus: [Negative]I hope you are! Go, try again! This is <i>unacceptable<i>! It is an insult to even look at it!
+-> It's food. (humor)
 	//Aelius: [Neutral] It’s food.
 	Zeus: [Angry] This is not food, it is an <i>insult<i>!
 	Zeus: [Angry] I absolutely refuse to eat this! Go, try again!
--> I'm so sorry.
-	//Aelius: I'm so sorry.
-	Zeus: [Negative]I hope you are! Go, try again! This is <i>unacceptable<i>! It is an insult to even look at it!
--> Just eat the damn food
+-> Just eat the damn food (aggressive)
 	//Aelius: Just eat the damn food.
 	Zeus: [Negative]WHO IN MY NAME DO YOU THINK YOU ARE?
 	Zeus: [Negative]I WILL SEE YOU CAST FROM THE HEIGHTS OF OLYMPUS TO THE DEPTHS OF TARTARUS!
 	Zeus: [Negative]GO! MAKE IT AGAIN! REMOVE YOURSELF AND YOUR INSULTING DISH FROM MY PRESENCE!
+
 	
 Aelius: [Neutral] Hmph.
 
@@ -123,6 +125,8 @@ Aelius: [Neutral] Hmph.
 <<Move Zeus 5 center 0>>
 -> Back to the kitchen
 
+<<HideAll>>
+<<Scene "main_kitchen_bg_2">>
 <<Act Hestia "Hestia 3_4s" right bottom #3d85c6>>
 <<Move Aelius -0.25 bottom 0>>
 <<Move Aelius left bottom 0.5>>
