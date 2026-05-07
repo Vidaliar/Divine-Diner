@@ -4,7 +4,7 @@
 <<PlayMusic Hestia_MainBody>>
 
 <<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
-<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+<<Act "Ares" "Ares" "right" "bottom" #c0392b>>
 
 Ares: Hestia! Why is there a mortal here?!
 Hestia: Don't worry about it! I managed to find some good help, so don't scare Aelius off!

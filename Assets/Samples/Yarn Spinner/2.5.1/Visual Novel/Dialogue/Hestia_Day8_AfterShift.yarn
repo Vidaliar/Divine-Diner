@@ -57,5 +57,5 @@ Aelius: I'll see you tomorrow then!
 Hestia: Make sure you come into the diner early! We all want to make sure everything is perfect for you!
 Aelius: [Positive] Of course, thanks Hestia!
 <<HideAll>>
-<<LoadVNScene "ENDING">>
+<<LoadVNScene "Credits">>
 ===
