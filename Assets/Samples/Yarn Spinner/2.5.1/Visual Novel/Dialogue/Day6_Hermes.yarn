@@ -4,6 +4,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+<<PlayMusic Hermes_Theme>>
 
 Aelius: Hermes, welcome in!
 Hermes: Hey, Aelius; how’re you doing today?
@@ -68,6 +69,7 @@ tags:
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
 <<AddHermesAffinity 1>>
+<<PlayMusic Hermes_Theme>>
 
 Aelius: [Smirk] Made your sandwich, hope it satiates your endless hunger.
 
@@ -111,7 +113,9 @@ Aelius: [Smirk] I'll take that as a good thing.
 Aelius: [Positive] Safe travels, and thanks for being open with me.
 Hermes: Of course. See ya, Aelius!
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Day6_Hera_Intro>>
+
 ===
 title: Day6_Hermes_ReturnPlayful
 tags:
@@ -120,6 +124,7 @@ tags:
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
 <<AddHermesAffinity 2>>
+<<PlayMusic Hermes_Theme>>
 
 Aelius: [Smirk] Made your sandwich, hope it satiates your endless hunger.
 
@@ -163,6 +168,7 @@ Aelius: [Smirk] I'll take that as a good thing.
 Aelius: [Positive] Safe travels, and thanks for being open with me.
 Hermes: Of course. See ya, Aelius!
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Day6_Hera_Intro>>
 ===
 title: Day6_Hermes_ReturnSpicy
@@ -171,6 +177,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+<<PlayMusic Hermes_Theme>>
 <<AddHermesAffinity 1>>
 
 Aelius: [Smirk] Made your sandwich, hope it satiates your endless hunger
@@ -214,5 +221,6 @@ Aelius: [Smirk] I'll take that as a good thing.
 Aelius: [Positive] Safe travels, and thanks for being open with me.
 Hermes: Of course. See ya, Aelius!
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Day6_Hera_Intro>>
 ===

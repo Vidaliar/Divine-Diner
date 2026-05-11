@@ -3,6 +3,7 @@ tags:
 ---
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<PlayMusic Hera_Theme>>
 Aelius: Hey, welcome in!
 <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
 Hera: Ah, hello. You must be the mortal.
@@ -32,6 +33,7 @@ title: Day3_Hera_ReturnPlayful
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+<<PlayMusic Hera_Theme>>
 
 Aelius: Your food, my Lady.
 Hera: Ah, thank you! This looks quite nice.
@@ -68,6 +70,7 @@ title: Day3_Hera_ReturnFancy
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+<<PlayMusic Hera_Theme>>
 
 Aelius: Your food, my Lady.
 Hera: Ah, thank you! This looks quite nice.
@@ -104,6 +107,7 @@ title: Day3_Hera_ReturnSpicy
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+<<PlayMusic Hera_Theme>>
 
 Aelius: Your food, my Lady.
 Hera: Ah, thank you! This looks quite nice.
@@ -134,4 +138,5 @@ Hera: Yes, I will.
 
 <<HideAll>>
 <<jump Day3_Zeus_Start>>
+<<StopMuzic 0.35>>
 ===

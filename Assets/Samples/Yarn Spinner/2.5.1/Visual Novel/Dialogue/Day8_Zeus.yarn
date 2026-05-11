@@ -4,6 +4,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+<<PlayMusic Zeus_Theme>>
 
 //JINGLE
 Zeus: Aelius!
@@ -63,6 +64,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 <<Act "Hera" "Hera" "left" "bottom" #008B8B>>
+<<PlayMusic Zeus_Theme>>
 <<AddZeusAffinity 2>>
 Hera: It's good to hear Ares is doing well.
 Zeus: Yes. A shame about him and Hephaestus, though.
@@ -195,6 +197,7 @@ Zeus: I should be off.
 Aelius: Tell Hera I said thanks for coming by!
 Zeus: Yes, I will.
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Day8_Hephaestus_Intro>>
 ===
 title: Day8_Zeus_ReturnPlayful
@@ -203,6 +206,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 <<Act "Hera" "Hera" "left" "bottom" #008B8B>>
+<<PlayMusic Zeus_Theme>>
 <<AddZeusAffinity 1>>
 Hera: It's good to hear Ares is doing well.
 Zeus: Yes. A shame about him and Hephaestus, though.
@@ -341,6 +345,7 @@ Zeus: I should be off.
 Aelius: Tell Hera I said thanks for coming by!
 Zeus: Yes, I will.
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Day8_Hephaestus_Intro>>
 ===
 title: Day8_Zeus_ReturnSpicy
@@ -349,6 +354,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 <<Act "Hera" "Hera" "left" "bottom" #008B8B>>
+<<PlayMusic Zeus_Theme>>
 <<AddZeusAffinity 3>>
 Hera: It's good to hear Ares is doing well.
 Zeus: Yes. A shame about him and Hephaestus, though.
@@ -482,5 +488,6 @@ Zeus: I should be off.
 Aelius: Tell Hera I said thanks for coming by!
 Zeus: Yes, I will.
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Day8_Hephaestus_Intro>>
 ===

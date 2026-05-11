@@ -4,7 +4,7 @@ tags:
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
-
+<<PlayMusic Hephaestus_Theme>>
 Hephaestus: Aelius, hello.
 Aelius: Hello, Hephaestus! Would you like something to eat?
 Hephaestus: Um, yes, well- no or- I guess I wanted to apologize for how I introduced myself the other day.
@@ -88,6 +88,7 @@ title: Day3_Hephaestus_ReturnPlayful
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 <<AddHephaestusAffinity 1>>
+<<PlayMusic Hephaestus_Theme>>
 
     Hephaestus: Mmm, this is delightful!
     Hephaestus: Okay, I'll tell you what – you may be right about confronting Ares.
@@ -102,6 +103,7 @@ title: Day3_Hephaestus_ReturnPlayful
     Hephaestus: I must be off to begin my work!
     <<HideAll>>
     <<jump Day3_Hera_Start>>
+    <<StopMuzic 0.35>>
 
 ===
 title: Day3_Hephaestus_ReturnSpicy
@@ -109,6 +111,7 @@ title: Day3_Hephaestus_ReturnSpicy
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+<<PlayMusic Hephaestus_Theme>>
 
     Hephaestus: Mmm, this dish has a bite to it. It's very hot.
     Hephaestus: Well, thank you for the meal, Aelius.
@@ -120,12 +123,14 @@ title: Day3_Hephaestus_ReturnSpicy
     Hephaestus: I must be off, Aelius.
     <<HideAll>>
     <<jump Day3_Hera_Start>>
+    <<StopMuzic 0.35>>
 ===
 title: Day3_Hephaestus_ReturnFancy
 ---
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+<<PlayMusic Hephaestus_Theme>>
 
     Hephaestus: Mmm, this meal is delightful; the flavors are wonderfully subtle.
     Hephaestus: I think you are right Aelius; I shouldn't fight Ares, I think I should talk to him.
@@ -138,4 +143,5 @@ title: Day3_Hephaestus_ReturnFancy
     Hephaestus: I must be off, Aelius.
     <<HideAll>>
     <<jump Day3_Hera_Start>>
+    <<StopMuzic 0.35>>
 ===

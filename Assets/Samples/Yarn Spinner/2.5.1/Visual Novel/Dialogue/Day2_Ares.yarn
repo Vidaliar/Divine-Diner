@@ -1,16 +1,18 @@
 ﻿title: Day2_Ares_Intro
 ---
 <<Scene new_dining_area>>
-<<PlayMusic Hestia_MainBody>>
+<<PlayMusic Ares_Theme>>
 
-<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
-<<Act "Ares" "Ares" "right" "bottom" #c0392b>>
+<<Act "Hestia" "Hestia 3_4s" "left" "bottom" #e06666>>
+<<Act "Ares" "Ares" "right" "center" #c0392b>>
+
 
 Ares: Hestia! Why is there a mortal here?!
 Hestia: Don't worry about it! I managed to find some good help, so don't scare Aelius off!
 Ares: How did someone like <i>you</i> get here? You're not dead, not a god, so how are you on Olympus?
 
 // introduce Aelius here
+<<Hide Hestia>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 
 -> [Positive] Welcome to Divine Diner, what can I get for you?
@@ -25,14 +27,14 @@ Ares: How did someone like <i>you</i> get here? You're not dead, not a god, so h
         Ares: ... Yes, but make it quick, I need to explain to you my greatness.
 -> [Neutral] Well, I simply just am here now, that's all there is to it.
         Aelius: I'm Aelius. Hestia found me and offered me a place here and...
-        Ares: <*>Glares.</*>
+        Ares: <i>Glares.</i>
         Aelius: ...If I had known someone great like you came to this establishment, I'd have prepared more.
         Ares: Well, as long as you know what you've done wrong, I suppose I will let it go.
         Ares: I'm so generous, don't you think so?
         Ares: Now let me tell you about my great deeds, so that you understand how great I am.
         Aelius: <*>Sighs</*> Ok.
         Aelius: Thank you Lord Ares, what can I get for you? I can listen to you after I serve your food.
--> [Neutral] Hestia! Why is there a douche with a spear here?
+-> [Neutral] Hestia! Why is there a douche with a spear here>
         Aelius: Can I kick him out?
         Hestia: <*>Loudly groans.</*>
         Hestia: Aelius. Ares. Can you both just not do this first thing in the morning? I have things to do, too.
@@ -59,7 +61,8 @@ title: Ares_ReturnSpicy
 <<wait 0.1>>
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
-<<Act "Ares" "Ares" "right" "bottom" #FF8C00>>
+<<Act "Ares" "Ares" "right" "center" #FF8C00>>
+<<PlayMusic Ares_Theme>>
 //<<PlayMusic Hephaestus_Theme>>
 
 Aelius: Here's your cake; you were going to tell me something?
@@ -91,6 +94,7 @@ Aelius: What?
 Aelius: What's that supposed to mean?!
 Hestia: Ares is usually a handful... I'll just leave it at that. Now back to work, these customers won't feed themselves!
 Aelius: Alright... back to work, I suppose.
+<<StopMuzic 0.35>>
 <<jump Day2_Zeus_Intro>>
 
 ===
@@ -100,7 +104,8 @@ title: Ares_ReturnPlayful
 <<wait 0.1>>
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
-<<Act "Ares" "Ares" "right" "bottom" #FF8C00>>
+<<Act "Ares" "Ares" "right" "center" #FF8C00>>
+<<PlayMusic Ares_Theme>>
 //<<PlayMusic Hephaestus_Theme>>
 
 Aelius: Here's your cake; you were going to tell me something?
@@ -132,6 +137,7 @@ Aelius: What?
 Aelius: What's that supposed to mean?!
 Hestia: Ares is usually a handful... I'll just leave it at that. Now back to work, these customers won't feed themselves!
 Aelius: Alright... back to work, I suppose.
+<<StopMuzic 0.35>>
 <<jump Day2_Zeus_Intro>>
 
 ===
@@ -141,7 +147,8 @@ title: Ares_ReturnFancy
 <<wait 0.1>>
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
-<<Act "Ares" "Ares" "right" "bottom" #FF8C00>>
+<<Act "Ares" "Ares" "right" "center" #FF8C00>>
+<<PlayMusic Ares_Theme>>
 //<<PlayMusic Hephaestus_Theme>>
 
 Aelius: Here's your cake; you were going to tell me something?
@@ -173,6 +180,7 @@ Aelius: What?
 Aelius: What's that supposed to mean?!
 Hestia: Ares is usually a handful... I'll just leave it at that. Now back to work, these customers won't feed themselves!
 Aelius: Alright... back to work, I suppose.
+<<StopMuzic 0.35>>
 <<jump Day2_Zeus_Intro>>
 
 ===

@@ -4,6 +4,7 @@ tags:
 <<Scene "main_kitchen_bg_2">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+<<PlayMusic Hestia_MainBody>>
 
 Hestia: Good Morning, Aelius, how was your rest?
 Aelius: [Positive] It wasn’t bad, but there was lots of noise during the night, I’m guessing Hephaestus and Ares got into it again?

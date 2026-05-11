@@ -4,6 +4,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+<<PlayMusic Hephaestus_Theme>>
 
 Hephaestus: Hello, Aelius...
 Hephaestus: Urgh- ouch.
@@ -35,6 +36,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+<<PlayMusic Hephaestus_Theme>>
 Aelius: Here you are.
 Hephaestus: A refined taste - ill-fitting for a tale of pain.
 
@@ -98,11 +100,15 @@ Hephaestus: See you, Aelius.
 Aelius: Wait-
 
 <<Hide "Hephaestus">>
+<<StopMuzic 0.35>>
+
 
 Aelius: When is he going to take my advice?
 
 // Hermes comedy portion
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+<<Scene new_dining_area>>
+<<PlayMusic Hermes_Theme>>
 
 Aelius: (<i>Alright, here we are.</i>)
 Aelius: (<i>This is gonna be fun.</i>)
@@ -119,29 +125,52 @@ Hermes: And can you believe it – he asked if I was trying to be a herder not a
 Hermes: So I said "herder, I hardly know her!"
 Aelius: [Smirk] (<i>Oh gods, this is something.</i>)
 // add heph
+<<Hide Hermes>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 Hephaestus: Hrumph.
 // add hestia
+<<Hide Hephaestus>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
 Hestia: *<i>Laughs softly.</i>*
+<<Hide Hestia>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
 Hermes: But guess what?
 // add Zeus
+<<Hide Hermes>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 Zeus: What, my boy?
+<<Hide Zeus>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
 Hermes: A little while later, after all that scolding, Zeus <i>sent</i> me to steal a cattle!
 Hermes: Because this idiot decided he couldn’t keep it in his robes, and made his side chick –
 Hermes: -or should I say side <i>cattle</i>-
 Hermes: – into a cow to hide her from Hera. Well, Hera isn’t a dummy like Zeus is at times, so she saw right through it.
+<<Hide Hermes>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 Zeus: Hey!
+<<Hide Zeus>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
 Hermes: After backing himself into the most cramped corner imaginable, this man let Hera send the side-cattle to pasture.
 Hermes: So, of course, I had to reawaken my long-awaited dormant cattle-stealing prowess, and fix the mistakes Zeus’ sleeping around led him to!
 
-// LOT OF BOOING
-
+A LOT OF BOOING...
+<<Hide Hermes>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 Zeus: You little-
+<<Hide Zeus>>
 //add hera
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
 Hera: ...
-Hemres: Wait, wait! I have another joke, folks-
-//Tomatoes thrown at Hermes
+<<Hide Hera>>
 
+Hemres: Wait, wait! I have another joke, folks-
+Tomatoes thrown at Hermes...
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+<<Hide Hermes>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 Zeus: *Pelting Hermes with a tomato* Boo!
+<<Hide Zeus>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
 Hermes: Jeez, jee-ah! Okay, I'm going!
 Aelius: [Smirk] (<i>I suppose his</i> godly <i>humor isn't so godly after all.)
 
@@ -179,6 +208,7 @@ Hermes: Well, guess there’s only so much my favorite chef can do.
 Hermes: Maybe I’ll see you around tomorrow, Aelius.
 Aelius: [Positive] Sounds good. Later, Hermes.
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Hestia_Day4_AfterShift>>
 
 
@@ -190,6 +220,7 @@ tags:
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 <<AddHephaestusAffinity 2>>
+<<PlayMusic Hephaestus_Theme>>
 Aelius: Here you are.
 Hephaestus: Well spiced - fitting for a tale of pain.
 
@@ -252,11 +283,15 @@ Hephaestus: See you, Aelius.
 Aelius: Wait-
 
 <<Hide "Hephaestus">>
+<<StopMuzic 0.35>>
+
 
 Aelius: When is he going to take my advice?
 
 // Hermes comedy portion
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+<<Scene new_dining_area>>
+<<PlayMusic Hermes_Theme>>
 
 Aelius: (<i>Alright, here we are.</i>)
 Aelius: (<i>This is gonna be fun.</i>)
@@ -273,29 +308,52 @@ Hermes: And can you believe it – he asked if I was trying to be a herder not a
 Hermes: So I said "herder, I hardly know her!"
 Aelius: [Smirk] (<i>Oh gods, this is something.</i>)
 // add heph
+<<Hide Hermes>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 Hephaestus: Hrumph.
 // add hestia
+<<Hide Hephaestus>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
 Hestia: *<i>Laughs softly.</i>*
+<<Hide Hestia>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
 Hermes: But guess what?
 // add Zeus
+<<Hide Hermes>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 Zeus: What, my boy?
+<<Hide Zeus>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
 Hermes: A little while later, after all that scolding, Zeus <i>sent</i> me to steal a cattle!
 Hermes: Because this idiot decided he couldn’t keep it in his robes, and made his side chick –
 Hermes: -or should I say side <i>cattle</i>-
 Hermes: – into a cow to hide her from Hera. Well, Hera isn’t a dummy like Zeus is at times, so she saw right through it.
+<<Hide Hermes>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 Zeus: Hey!
+<<Hide Zeus>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
 Hermes: After backing himself into the most cramped corner imaginable, this man let Hera send the side-cattle to pasture.
 Hermes: So, of course, I had to reawaken my long-awaited dormant cattle-stealing prowess, and fix the mistakes Zeus’ sleeping around led him to!
 
-// LOT OF BOOING
-
+A LOT OF BOOING...
+<<Hide Hermes>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 Zeus: You little-
+<<Hide Zeus>>
 //add hera
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
 Hera: ...
-Hemres: Wait, wait! I have another joke, folks-
-//Tomatoes thrown at Hermes
+<<Hide Hera>>
 
+Hemres: Wait, wait! I have another joke, folks-
+Tomatoes thrown at Hermes...
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+<<Hide Hermes>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 Zeus: *Pelting Hermes with a tomato* Boo!
+<<Hide Zeus>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
 Hermes: Jeez, jee-ah! Okay, I'm going!
 Aelius: [Smirk] (<i>I suppose his</i> godly <i>humor isn't so godly after all.)
 
@@ -333,6 +391,7 @@ Hermes: Well, guess there’s only so much my favorite chef can do.
 Hermes: Maybe I’ll see you around tomorrow, Aelius.
 Aelius: [Positive] Sounds good. Later, Hermes.
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Hestia_Day4_AfterShift>>
 
 
@@ -344,6 +403,7 @@ tags:
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 <<AddHephaestusAffinity 1>>
+<<PlayMusic Hephaestus_Theme>>
 Aelius: Here you are.
 Hephaestus: Very sweet - a welcome contrast to this tale of pain.
 
@@ -406,11 +466,15 @@ Hephaestus: See you, Aelius.
 Aelius: Wait-
 
 <<Hide "Hephaestus">>
+<<StopMuzic 0.35>>
+
 
 Aelius: When is he going to take my advice?
 
 // Hermes comedy portion
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+<<Scene new_dining_area>>
+<<PlayMusic Hermes_Theme>>
 
 Aelius: (<i>Alright, here we are.</i>)
 Aelius: (<i>This is gonna be fun.</i>)
@@ -427,29 +491,52 @@ Hermes: And can you believe it – he asked if I was trying to be a herder not a
 Hermes: So I said "herder, I hardly know her!"
 Aelius: [Smirk] (<i>Oh gods, this is something.</i>)
 // add heph
+<<Hide Hermes>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 Hephaestus: Hrumph.
 // add hestia
+<<Hide Hephaestus>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
 Hestia: *<i>Laughs softly.</i>*
+<<Hide Hestia>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
 Hermes: But guess what?
 // add Zeus
+<<Hide Hermes>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 Zeus: What, my boy?
+<<Hide Zeus>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
 Hermes: A little while later, after all that scolding, Zeus <i>sent</i> me to steal a cattle!
 Hermes: Because this idiot decided he couldn’t keep it in his robes, and made his side chick –
 Hermes: -or should I say side <i>cattle</i>-
 Hermes: – into a cow to hide her from Hera. Well, Hera isn’t a dummy like Zeus is at times, so she saw right through it.
+<<Hide Hermes>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 Zeus: Hey!
+<<Hide Zeus>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
 Hermes: After backing himself into the most cramped corner imaginable, this man let Hera send the side-cattle to pasture.
 Hermes: So, of course, I had to reawaken my long-awaited dormant cattle-stealing prowess, and fix the mistakes Zeus’ sleeping around led him to!
 
-// LOT OF BOOING
-
+A LOT OF BOOING...
+<<Hide Hermes>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 Zeus: You little-
+<<Hide Zeus>>
 //add hera
+<<Act "Hera" "Hera" "right" "bottom" #008B8B>>
 Hera: ...
-Hemres: Wait, wait! I have another joke, folks-
-//Tomatoes thrown at Hermes
+<<Hide Hera>>
 
+Hemres: Wait, wait! I have another joke, folks-
+Tomatoes thrown at Hermes...
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+<<Hide Hermes>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 Zeus: *Pelting Hermes with a tomato* Boo!
+<<Hide Zeus>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
 Hermes: Jeez, jee-ah! Okay, I'm going!
 Aelius: [Smirk] (<i>I suppose his</i> godly <i>humor isn't so godly after all.)
 
@@ -467,7 +554,7 @@ Hermes: Yeah! They must be sense-of-humour-ly challenged. I put in a lot of work
     Hermes: You're right with that. Thanks, Aelius.
     Aelius: No problem, it's weird seeing you down in the dumps anyways.
 -> They just couldn’t handle it. You could say their heads were ‘up in the clouds,’ eh, eh? (humorous)
-    <<AddHermesAffinity 1>>
+    <<AddHermesAffinity 2>>
     Hermes: That's a good one!
     Hermes: You’re right, they just couldn’t handle my godly sense of humor.
     Aelius: That's more like the Hermes I know.
@@ -487,7 +574,6 @@ Hermes: Well, guess there’s only so much my favorite chef can do.
 Hermes: Maybe I’ll see you around tomorrow, Aelius.
 Aelius: [Positive] Sounds good. Later, Hermes.
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Hestia_Day4_AfterShift>>
-
-
 ===

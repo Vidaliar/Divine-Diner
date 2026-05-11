@@ -4,6 +4,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+<<PlayMusic Hera_Theme>>
 Hera: Aelius, good to see you again.
 
 -> You as well, my Lady. (deference)
@@ -38,6 +39,7 @@ title: Day6_Hera_ReturnPlayful
 tags:
 ---
 <<Scene new_dining_area>>
+<<PlayMusic Hera_Theme>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
 
@@ -83,6 +85,7 @@ Hera: The work is never done, love.
 Aelius: Right, of course.
 Aelius: Enjoy your meal.
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Day6_Hephaestus_Intro>>
 ===
 title: Day6_Hera_ReturnSpicy
@@ -91,6 +94,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+<<PlayMusic Hera_Theme>>
 
 Aelius: Your parfait.
 Hera: Delightful. Thank you, as always.
@@ -133,6 +137,7 @@ Hera: We appreciate you. Now, go help someone else.
 Hera: The work is never done, love.
 Aelius: Right, of course.
 Aelius: Enjoy your meal.
+<<StopMuzic 0.35>>
 <<HideAll>>
 <<jump Day6_Hephaestus_Intro>>
 ===
@@ -142,6 +147,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hera" "Hera" "right" "bottom" #008B8B>>
+<<PlayMusic Hera_Theme>>
 
 Aelius: Your parfait.
 Hera: Delightful. Thank you, as always.
@@ -185,5 +191,7 @@ Hera: The work is never done, love.
 Aelius: Right, of course.
 Aelius: Enjoy your meal.
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Day6_Hephaestus_Intro>>
+
 ===

@@ -35,6 +35,7 @@ title: Aelius_Day_Start
 <<Scene "main_kitchen_bg_2">>
 <<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
 <<Act "Hestia" "Hestia 3_4s" right bottom #3d85c6>>
+<<PlayMusic Hestia_MainBody>>
 
 Hestia: [Positive] Ah, welcome, Aelius dear. Are you ready to begin the day?
 Aelius: [Positive] I suppose so. I think I’m starting to get the hang of your routine.
@@ -90,7 +91,7 @@ title: Aelius_Day_HeraArrivalBottle
 Aelius: [Neutral] Have a seat.
 
 <<Hide "Hera">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Neutral] ... Hello.
 
@@ -126,7 +127,7 @@ title: Aelius_Day_AphroditeArrivalBottle
 Aelius: [Neutral] Have a seat with the others, please.
 
 <<Hide "Aphrodite">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Neutral] Why are we here, mortal?
 Ares: [Negative] Hestia said something about “resolving issues.”
@@ -147,7 +148,7 @@ Hestia: [Positive] Hello everybody!
 Hestia: [Neutral] I thought today would be a good day to have a pleasant gathering with us all.
 
 <<Hide "Hestia">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Neutral] Go on.
 
@@ -184,12 +185,12 @@ Hestia: [Positive] And I wanted Aelius here to be able to help.
     <<jump Aelius_Day_FirstRoundStart>>
 -> Aelius: [Smirk] We’re, uh... all friends here... right?
     <<Hide "Hestia">>
-    <<Act "Ares" "Ares" right bottom #cc0000>>
+    <<Act "Ares" "Ares" right center #cc0000>>
     Ares: [Neutral] No.
     <<jump Aelius_Day_FirstRoundStart>>
 -> Aelius: [Neutral] Yeah... someone’s gotta do it, I guess.
     <<Hide "Hestia">>
-    <<Act "Ares" "Ares" right bottom #cc0000>>
+    <<Act "Ares" "Ares" right center #cc0000>>
     Ares: [Negative] That’s not true.
     <<jump Aelius_Day_FirstRoundStart>>
 ===
@@ -205,7 +206,7 @@ title: Aelius_Day_FirstRoundStart
 Hestia: [Positive] Anyway... who’s first?
 
 <<Hide "Hestia">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Neutral] Not me.
 
@@ -253,7 +254,7 @@ title: Aelius_Day_FirstRound_Ares
 <<HideAll>>
 <<Scene "new_dining_area">>
 <<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Negative] Damn it.
 
@@ -263,7 +264,7 @@ Ares: [Negative] Damn it.
 Hestia: [Neutral] Ares, behave.
 
 <<Hide "Hestia">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Aelius: [Neutral] I know you got some problems between you and Hephaestus.
 Ares: [Neutral] More like he has problems with me.
@@ -308,7 +309,7 @@ Aelius: [Neutral] I’ve heard you haven’t spoken to Hephaestus in quite some 
 Aphrodite: [Negative] Yes, we aren’t really on speaking terms.
 
 <<Hide "Aphrodite">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Neutral] *Coughs.*
 
@@ -342,7 +343,7 @@ Aelius: [Neutral] We’ll start with drinks.
     <<StartCooking "Nectar4">>
 -> Aelius: [Neutral] We’ll go with some Hesperides Apple Cider.
     <<set $aeliusDrink = "AppleCider4">>
-    <<Act "Ares" "Ares" right bottom #cc0000>>
+    <<Act "Ares" "Ares" right center #cc0000>>
     Ares: [Neutral] Okay.
     <<Fade "#000000" 0 1 0.35>>
     <<wait 0.4>>
@@ -390,6 +391,7 @@ title: Aelius_Day_AfterDrinkCooking
 <<HideAll>>
 <<Scene "new_dining_area">>
 <<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<PlayMusic Hestia_MainBody>>
 
 <<if $aeliusDrink == "Nectar4">>
     Aelius: [Neutral] Here’s your Nectar, everyone.
@@ -406,7 +408,7 @@ title: Aelius_Day_AfterDrinkCooking
 <<endif>>
 
 <<Hide "Aphrodite">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Neutral] ... I agree.
 
@@ -449,7 +451,7 @@ title: Aelius_Day_SecondRound_Ares
 <<HideAll>>
 <<Scene "new_dining_area">>
 <<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Negative] What more is there to say about him?
 Aelius: [Neutral] Well... you did steal his wife.
@@ -463,7 +465,7 @@ Aelius: [Neutral] Fair enough.
 Aelius: [Neutral] But still, there’s some tension.
 
 <<Hide "Aphrodite">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Negative] Oh really now?
 
@@ -473,7 +475,7 @@ Ares: [Negative] Oh really now?
 Aphrodite: [Neutral] Come now, Ares, we know it needs to be resolved after all this time.
 
 <<Hide "Aphrodite">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Neutral] *Scoffs.*
 Aelius: [Neutral] So tell me your side, Ares.
@@ -485,7 +487,7 @@ Ares: [Negative] I don’t have to explain myself to a mortal.
 Hera: [Negative] Ares.
 
 <<Hide "Hera">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Neutral] *Sigh.* Fine.
 Ares: [Neutral] Aphrodite was more interested in me, so...
@@ -498,7 +500,7 @@ Aphrodite: [Negative] You know perfectly well that that’s not the case.
 Aphrodite: [Negative] I am not an opportunity.
 
 <<Hide "Aphrodite">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Negative] How could I not see that as an opportunity after seeing your ruinous relationship?
 
@@ -508,7 +510,7 @@ Ares: [Negative] How could I not see that as an opportunity after seeing your ru
 Aphrodite: [Negative] I’m gonna go get some air.
 
 <<Hide "Aphrodite">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Negative] Dramatic...
 
@@ -538,7 +540,7 @@ title: Aelius_Day_AresConflictBottle
 Hera: [Negative] You child, you are out of line!
 
 <<Hide "Hera">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Negative] Is that what you all really think?
 Ares: [Negative] Tch. Whatever.
@@ -552,7 +554,7 @@ Hestia: [Neutral] ... I’ll go speak to Aphrodite.
 Aelius: [Negative] Ares, behave yourself, please.
 
 <<Hide "Hestia">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Negative] *Scoff.* Whatever.
 
@@ -634,7 +636,7 @@ Aphrodite: [Neutral] ... I do not know.
 title: Aelius_Day_AphroditeConflictBottle
 ---
 <<Hide "Aphrodite">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Negative] *Scoff.*
 
@@ -668,7 +670,7 @@ Aelius: [Neutral] I think we could all do with some food, yeah?
     <<StartCooking "MakenaTestScene5">>
 -> Aelius: [Neutral] Hm... maybe some Helios Steak would be nice.
     <<set $aeliusMainFood = "HeliosSteak5">>
-    <<Act "Ares" "Ares" right bottom #cc0000>>
+    <<Act "Ares" "Ares" right center #cc0000>>
     Ares: [Positive] That’ll be good.
     <<Fade "#000000" 0 1 0.35>>
     <<wait 0.4>>
@@ -708,11 +710,12 @@ title: Aelius_Day_AfterMainCooking
 <<HideAll>>
 <<Scene "new_dining_area">>
 <<Act "Hera" "Hera" right bottom #674ea7>>
+<<PlayMusic Hestia_MainBody>>
 
 Hera: [Neutral] ... has been discussing us so much, when we all know the real reason Hestia brought the mortal here.
 
 <<Hide "Hera">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Neutral] Yeah, something about how the mortal is the child of an Olympian.
 
@@ -732,7 +735,7 @@ Aphrodite: [Neutral] I agree with Hestia, I do not think this is necessary.
 Hera: [Neutral] Really? I think this matter ought to be dealt with.
 
 <<Hide "Hera">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Neutral] Either Zeus, Hermes, or Hephaestus fathered a kid none of us knew about.
 
@@ -765,7 +768,7 @@ Aelius: [Neutral] It’s... fine.
     <<jump Aelius_Day_MainFoodBottle>>
 -> Aelius: [Neutral] Can’t gossip on an empty stomach.
     <<Hide "Hestia">>
-    <<Act "Ares" "Ares" right bottom #cc0000>>
+    <<Act "Ares" "Ares" right center #cc0000>>
     Ares: [Neutral] *Rolls eyes.*
     <<jump Aelius_Day_MainFoodBottle>>
 -> Aelius: [Neutral] Here.
@@ -794,7 +797,7 @@ Hera: [Neutral] Why you’re here, perhaps?
 Aelius: [Neutral] ... What about it?
 
 <<Hide "Hera">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Neutral] Do you know which one it is yet?
 
@@ -811,7 +814,7 @@ Hera: [Neutral] Poor thing.
 Aphrodite: [Neutral] I’m sorry, dear.
 
 <<Hide "Aphrodite">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Neutral] Well, it’s definitely one of them.
 
@@ -846,7 +849,7 @@ title: Aelius_Day_FatherTalkBottle
 Hera: [Neutral] Oh... I didn’t know it was so fresh.
 
 <<Hide "Hera">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Neutral] ...
 
@@ -864,7 +867,7 @@ Aelius: [Neutral] I guess I have my suspicions...
     <<Act "Hera" "Hera" right bottom #674ea7>>
     Hera: [Neutral] Oh?
     <<Hide "Hera">>
-    <<Act "Ares" "Ares" right bottom #cc0000>>
+    <<Act "Ares" "Ares" right center #cc0000>>
     Ares: [Neutral] Of course he did it again...
     Aelius: [Neutral] His, uh... stubbornness is familiar to me.
     <<jump Aelius_Day_FatherSuspicionBottle>>
@@ -879,7 +882,7 @@ Aelius: [Neutral] I guess I have my suspicions...
     <<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
     Aphrodite: [Negative] ...
     <<Hide "Aphrodite">>
-    <<Act "Ares" "Ares" right bottom #cc0000>>
+    <<Act "Ares" "Ares" right center #cc0000>>
     Ares: [Neutral] Seriously? Him of all people?
     <<jump Aelius_Day_FatherSuspicionBottle>>
 ===
@@ -904,7 +907,7 @@ Aelius: [Neutral] Knowing now that my father is so in reach...
 Aelius: [Neutral] *Sigh* I don’t know.
 
 <<Hide "Aphrodite">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Neutral] What is there not to be excited about? Your father’s a god.
 
@@ -924,7 +927,7 @@ Aphrodite: [Neutral] Dear, do you want to find your dad?
     <<Act "Hera" "Hera" right bottom #674ea7>>
     Hera: [Neutral] It could be beneficial.
     <<Hide "Hera">>
-    <<Act "Ares" "Ares" right bottom #cc0000>>
+    <<Act "Ares" "Ares" right center #cc0000>>
     Ares: [Neutral] It’s not always easy having a dad, but I’m glad I have one.
     <<jump Aelius_Day_DessertChoice>>
 -> Aelius: [Smirk] Well y’know, when in Olympus...
@@ -942,7 +945,7 @@ Aphrodite: [Neutral] Dear, do you want to find your dad?
     <<Act "Hera" "Hera" right bottom #674ea7>>
     Hera: [Neutral] Parenting is quite the task, I can’t imagine doing it alone.
     <<Hide "Hera">>
-    <<Act "Ares" "Ares" right bottom #cc0000>>
+    <<Act "Ares" "Ares" right center #cc0000>>
     Ares: [Neutral] But that experience made you both stronger for it.
     <<jump Aelius_Day_DessertChoice>>
 ===
@@ -953,7 +956,7 @@ title: Aelius_Day_DessertChoice
 <<HideAll>>
 <<Scene "new_dining_area">>
 <<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Aelius: [Neutral] Yeah, I guess so.
 Aelius: [Neutral] I feel... a bit better now.
@@ -1078,6 +1081,7 @@ title: Aelius_Day_AfterDessertCooking
 <<Scene "new_dining_area">>
 <<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
 <<Act "Hera" "Hera" right bottom #674ea7>>
+<<PlayMusic Hestia_MainBody>>
 
 Hera: [Negative] And you’re here why, again?
 
@@ -1111,7 +1115,7 @@ Hermes: [Neutral] So I was just thinking...
 Hermes: [Neutral] Aphrodite, I’ve seen ole Heph moping around.
 
 <<Hide "Hermes">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Neutral] Haha! It’s what he gets for forging all day.
 
@@ -1138,7 +1142,7 @@ Aelius: [Neutral] Aphrodite, you should talk to him.
     <<Act "Hestia" "Hestia 3_4s" right bottom #3d85c6>>
     Hestia: [Positive] That’s a wonderful idea, Aelius.
     <<Hide "Hestia">>
-    <<Act "Ares" "Ares" right bottom #cc0000>>
+    <<Act "Ares" "Ares" right center #cc0000>>
     Ares: [Neutral] Maybe he wouldn’t be such a sourpuss anymore.
     <<jump Aelius_Day_AphroditeResolutionBottle>>
 -> Aelius: [Smirk] Before he makes a statue of you for company.
@@ -1171,7 +1175,7 @@ Aphrodite: [Neutral] Yes, you’re right.
 Aphrodite: [Positive] I’ll try to talk to him soon, if he’s willing.
 
 <<Hide "Aphrodite">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Negative] That man will never be willing.
 
@@ -1186,7 +1190,7 @@ Hestia: [Negative] Ares, please.
 Hermes: [Neutral] You’re one to talk, Ares.
 
 <<Hide "Hermes">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Neutral] Hm? Why?
 
@@ -1196,7 +1200,7 @@ Ares: [Neutral] Hm? Why?
 Hermes: [Neutral] You’re all dark and brooding. And you avoid him too.
 
 <<Hide "Hermes">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Negative] Says who?
 
@@ -1207,7 +1211,7 @@ Hera: [Neutral] As much as I hate to agree with Hermes, he’s not wrong.
 Hera: [Neutral] I’ve noticed it myself.
 
 <<Hide "Hera">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Negative] Really, mother?
 
@@ -1216,7 +1220,7 @@ Ares: [Negative] Really, mother?
     <<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
     Aphrodite: [Neutral] It would be best for everyone if this was finally put to rest.
     <<Hide "Aphrodite">>
-    <<Act "Ares" "Ares" right bottom #cc0000>>
+    <<Act "Ares" "Ares" right center #cc0000>>
     Ares: [Neutral] Urgh, I guess.
     <<jump Aelius_Day_AresResolutionBottle>>
 -> Aelius: [Neutral] Everyone’s tired of your guys’ exhausting-ass arguing.
@@ -1224,7 +1228,7 @@ Ares: [Negative] Really, mother?
     <<Act "Hera" "Hera" right bottom #674ea7>>
     Hera: [Neutral] It’s quite tiring to watch, really.
     <<Hide "Hera">>
-    <<Act "Ares" "Ares" right bottom #cc0000>>
+    <<Act "Ares" "Ares" right center #cc0000>>
     Ares: [Negative] Well, if he wasn’t such a-
     Ares: [Neutral] Alright, fine.
     <<jump Aelius_Day_AresResolutionBottle>>
@@ -1240,7 +1244,7 @@ title: Aelius_Day_AresResolutionBottle
 <<HideAll>>
 <<Scene "new_dining_area">>
 <<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Neutral] If he wants to talk, he can come to me.
 
@@ -1250,7 +1254,7 @@ Ares: [Neutral] If he wants to talk, he can come to me.
 Hera: [Neutral] And you’ll listen?
 
 <<Hide "Hera">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Neutral] I’ll consider it.
 
@@ -1295,7 +1299,7 @@ Hera: [Negative] I don’t care what he meant, he shouldn’t have said it.
 -> Aelius: [Neutral] I thought it was a bit funny myself.
     Hera: [Negative] What’s so funny about joking about my personal issues?
     <<Hide "Hera">>
-    <<Act "Ares" "Ares" right bottom #cc0000>>
+    <<Act "Ares" "Ares" right center #cc0000>>
     Ares: [Neutral] I wouldn’t appreciate it either.
     <<jump Aelius_Day_HermesHeraBottle>>
 -> Aelius: [Neutral] If Zeus didn’t do that, it wouldn’t be an issue.
@@ -1344,7 +1348,7 @@ Aphrodite: [Positive] It is nice to have an outside perspective.
 Hera: [Neutral] It has been eye-opening.
 
 <<Hide "Hera">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Neutral] I guess it helped.
 
@@ -1367,7 +1371,7 @@ title: Aelius_Day_GroupThanksBottle
 Hera: [Positive] You fit in nicely here.
 
 <<Hide "Hera">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Positive] You’re starting to make a place for yourself.
 
@@ -1392,7 +1396,7 @@ Aphrodite: [Positive] Thank you for the food, Aelius.
 Aphrodite: [Positive] But I think it’s best I get going.
 
 <<Hide "Aphrodite">>
-<<Act "Ares" "Ares" right bottom #cc0000>>
+<<Act "Ares" "Ares" right center #cc0000>>
 
 Ares: [Positive] See ya next time, mortal.
 
@@ -1464,5 +1468,6 @@ Aelius: [Neutral] Of course, I'll see you then.
 
 <<Fade "#000000" 0 1 0.6>>
 <<wait 0.7>>
+<<StopMuzic 0.35>>
 <<LoadVNScene "Day6">>
 ===

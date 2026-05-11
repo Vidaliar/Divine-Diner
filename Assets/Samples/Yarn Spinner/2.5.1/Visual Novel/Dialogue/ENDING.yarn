@@ -15,6 +15,7 @@ tags:
 <<Scene main_kitchen_bg_2>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+<<PlayMusic Hestia_MainBody>>
 Hestia: Good morning, Aelius! Glad to see that you could make it.
 Hestia: I know it’s probably not exactly how you wanted to be reunited with your mother, but the other Olympians and I wanted to be here to support you.
 <<if $zeusAffinity < 28 and $hermesAffinity < 29 and $hephaestusAffinity < 29>>
@@ -252,7 +253,13 @@ Hephaestus: [Positive] Enjoy yourself, Aelius. I know this means a lot to you.
 title: Ending_ZeusRoute
 ---
 <<HideAll>>
+<<StopMuzic 0.35>>
 //CLOUD BG
+<<Scene "Cloud 1">>
+<<Scene "Cloud 4">>
+<<Scene "Cloud 3">>
+<<Scene "Cloud 2">>
+<<PlayMusic Zeus_Theme>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 Zeus: Your mother… she must be something special.
@@ -311,9 +318,16 @@ Aelius: Hey, mom.
 title: Ending_HermesRoute
 ---
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+
 //CLOUDS BG
+<<Scene "Cloud 1">>
+<<Scene "Cloud 4">>
+<<Scene "Cloud 3">>
+<<Scene "Cloud 2">>
+<<PlayMusic Hermes_Theme>>
 Hermes: It’ll be your first time down there, eh?
 Aelius: Oh, yeah. Anything I should know?
 Hermes: Meh, not really. Pretty gloomy, but I’m sure you guessed that.
@@ -391,6 +405,12 @@ title: Ending_HephaestusRoute
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 //CLOUDS BG
+<<Scene "Cloud 1">>
+<<Scene "Cloud 4">>
+<<Scene "Cloud 3">>
+<<Scene "Cloud 2">>
+<<StopMuzic 0.35>>
+<<PlayMusic Hephaestus_Theme>>
 Hephaestus: I'm not the best at expressing myself.
 Hephaestus: Although I’m sure that’s obvious.
 Aelius: [Positive] I think you do okay.

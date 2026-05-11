@@ -4,6 +4,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+<<PlayMusic Zeus_Theme>>
 
 //DOOR JINGLE
 
@@ -87,6 +88,7 @@ tags:
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 <<AddZeusAffinity 3>>
+<<PlayMusic Zeus_Theme>>
 
 Aelius: Your food.
 <<Hide Hephaestus>>
@@ -190,6 +192,7 @@ Zeus: … Did I do something wrong, Aelius?
     Zeus: I see.
 
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Day7_Aphrodite_Intro>>
     
 
@@ -200,6 +203,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+<<PlayMusic Zeus_Theme>>
 <<AddZeusAffinity 2>>
 
 Aelius: Your food.
@@ -283,6 +287,7 @@ Zeus: … Did I do something wrong, Aelius?
     Zeus: I see.
 
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Day7_Aphrodite_Intro>>
     
 
@@ -293,6 +298,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+<<PlayMusic Zeus_Theme>>
 <<AddZeusAffinity 1>>
 
 Aelius: Your food.
@@ -388,6 +394,7 @@ Zeus: … Did I do something wrong, Aelius?
     Zeus: I see.
 
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Day7_Aphrodite_Intro>>
     
 

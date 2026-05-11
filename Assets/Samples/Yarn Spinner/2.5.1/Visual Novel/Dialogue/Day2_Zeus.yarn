@@ -3,7 +3,8 @@ tags:
 ---
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "right" "bottom" #e06666>>
-<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+<<Act "Ares" "Ares" "right" "center" #c0392b>>
+<<PlayMusic Zeus_Theme>>
 //<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
 //<<Act "Zeus" "Zeus 3_4s" "center" "bottom" #c0392b>>
 
@@ -50,8 +51,9 @@ Zeus: You, child, bring my boy his food.
 title: Day2_Zeus_ReturnFancy
 ---
 <<Act "Zeus" "Zeus 3_4s" "center" "bottom" #c0392b>>
-<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+<<Act "Ares" "Ares" "right" "center" #c0392b>>
 <<AddZeusAffinity 3>>
+<<PlayMusic Zeus_Theme>>
 Zeus: His head?
 Ares: Yes, clean off!
 Zeus: THAT'S MY BOY! HAHAHA!
@@ -93,8 +95,9 @@ Zeus: Yes. Not unpleasant to look at, I suppose.
 title: Day2_Zeus_ReturnSpicy
 ---
 <<Act "Zeus" "Zeus 3_4s" "center" "bottom" #c0392b>>
-<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+<<Act "Ares" "Ares" "right" "center" #c0392b>>
 <<AddZeusAffinity 2>>
+<<PlayMusic Zeus_Theme>>
 Zeus: His head?
 Ares: Yes, clean off!
 Zeus: THAT'S MY BOY! HAHAHA!
@@ -129,8 +132,9 @@ Ares: ...
 title: Day2_Zeus_ReturnPlayful
 ---
 <<Act "Zeus" "Zeus 3_4s" "center" "bottom" #c0392b>>
-<<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+<<Act "Ares" "Ares" "right" "center" #c0392b>>
 <<AddZeusAffinity 1>>
+<<PlayMusic Zeus_Theme>>
 Zeus: His head?
 Ares: Yes, clean off!
 Zeus: THAT'S MY BOY! HAHAHA!
@@ -219,6 +223,7 @@ Zeus: Leave me, child. It is unbecoming to watch a drink his son's leftovers.
 
 // END
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Day2_Hermes>>
 
 ===

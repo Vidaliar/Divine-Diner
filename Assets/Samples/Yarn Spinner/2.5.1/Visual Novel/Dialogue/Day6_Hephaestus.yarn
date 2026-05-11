@@ -5,6 +5,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+<<PlayMusic Hephaestus_Theme>>
 Hephaestus: Aelius...
 Aelius: [Positive] Hello! Oh, uh... what's going on?
 Hephaestus: Well, Ares is just over there at a booth.
@@ -60,6 +61,7 @@ tags:
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 <<AddHephaestusAffinity 2>>
+<<PlayMusic Hephaestus_Theme>>
 
 Hephaestus: Oh... it's very sweet.
 Hephaestus: I almost want to stay here and savor this.
@@ -83,6 +85,7 @@ Hephaestus: What?
 Aelius: Don’t you think you should just talk to her?
 Hephaestus: Maybe. Yes... *<i>sigh</i>* you're right. Just give me some time.
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Hestia_Day6_AfterShift>>
 ===
 title: Day6_Hephaestus_ReturnFancy
@@ -93,6 +96,7 @@ tags:
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 <<AddHephaestusAffinity 1>>
+<<PlayMusic Hephaestus_Theme>>
 
 Hephaestus: Oh… this is very rich. Wow.
 Hephaestus: I almost want to stay here and savor this.
@@ -117,6 +121,7 @@ Hephaestus: What?
 Aelius: Don’t you think you should just talk to her?
 Hephaestus: Maybe. Yes... *<i>sigh</i>* you're right. Just give me some time.
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Hestia_Day6_AfterShift>>
 ===
 title: Day6_Hephaestus_ReturnSpicy
@@ -126,6 +131,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+<<PlayMusic Hephaestus_Theme>>
 
 Hephaestus: Oo- hot hot hot!
 Hephaestus: Ouch... I see, you are trying to get me to moving.
@@ -148,5 +154,6 @@ Hephaestus: What?
 Aelius: Don’t you think you should just talk to her?
 Hephaestus: Maybe. Yes... *<i>sigh</i>* you're right. Just give me some time.
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Hestia_Day6_AfterShift>>
 ===

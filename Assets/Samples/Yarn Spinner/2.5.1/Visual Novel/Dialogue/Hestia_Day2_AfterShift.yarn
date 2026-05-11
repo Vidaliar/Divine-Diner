@@ -4,6 +4,7 @@ tags:
 <<Scene "main_kitchen_bg_2">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+<<PlayMusic Hestia_MainBody>>
 
 Hestia: So, how are you feeling today?
 Hestia: Hopefully you had a better experience than yesterday, even if Zeus did come in again.
@@ -75,5 +76,6 @@ Hestia: Anyways, I've kept you for long after your shift today, I'll let you get
 Aelius: Alright! Thanks, Hestia!
 Aelius: I'll see you tomorrow morning.
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<LoadVNScene "Day3">>
 ===

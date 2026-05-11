@@ -4,7 +4,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
-
+<<PlayMusic Hermes_Theme>>
 Hermes: Heya, Aelius!
 Aelius: [Positive] Good to see you, Hermes.
 Hermes: I come with an extra purpose today!
@@ -58,6 +58,7 @@ tags:
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
 <<AddHermesAffinity 1>>
+<<PlayMusic Hermes_Theme>>
 
 
 Aelius: [Positive] Here's your cake, <i>delivered</i> just for you.
@@ -156,6 +157,7 @@ Hermes: Don’t sweat it; least I can do for you after all your hard work.
 <<endif>>
 
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Hestia_Day8_AfterShift>>
 
 ===
@@ -166,6 +168,7 @@ tags:
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
 <<AddHermesAffinity 2>>
+<<PlayMusic Hermes_Theme>>
 
 
 Aelius: [Positive] Here's your cake, <i>delivered</i> just for you.
@@ -264,6 +267,7 @@ Hermes: Don’t sweat it; least I can do for you after all your hard work.
 <<endif>>
 
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Hestia_Day8_AfterShift>>
 
 ===
@@ -274,6 +278,7 @@ tags:
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
 <<AddHermesAffinity 1>>
+<<PlayMusic Hermes_Theme>>
 
 
 Aelius: [Positive] Here's your cake, <i>delivered</i> just for you.
@@ -372,6 +377,7 @@ Hermes: Don’t sweat it; least I can do for you after all your hard work.
 <<endif>>
 
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Hestia_Day8_AfterShift>>
 
 ===

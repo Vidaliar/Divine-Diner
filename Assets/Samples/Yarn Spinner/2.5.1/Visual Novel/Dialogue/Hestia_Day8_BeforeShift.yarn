@@ -4,6 +4,7 @@ tags:
 <<Scene "main_kitchen_bg_2">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+<<PlayMusic Hestia_MainBody>>
 Hestia: Hey Aelius, welcome in!
 Hestia: It’s been over a week, how are you feeling about being here still?
 

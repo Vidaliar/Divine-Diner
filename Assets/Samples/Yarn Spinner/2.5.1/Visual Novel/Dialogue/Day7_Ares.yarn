@@ -4,6 +4,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+<<PlayMusic Ares_Theme>>
 
 Aelius: Good morning, Ares; how was your talk with Hephaestus yesterday?
 Ares: I think that I'm going to kill him.
@@ -20,12 +21,11 @@ Aelius: [Negative] You. Did. What?
 Ares: Well, it was some of my finer work installing them; but in hindsight… I might have just caused a huge misunderstanding.
 Aelius: You should go and uninstall them before he noti-
 
-//BOOM sounds
+BOOM...
 
 Aelius: [Negative] <b>Ares.</b>
 Ares: I… will be right back. I should probably go um… apologize.
-
-// 20 mins later
+20 minutes later...
 
 Aelius: I’m surprised that you made it back in one piece… Really just surprised you managed to return at all.
 Ares: Well, I almost didn’t. Hephaestus was waiting for me with some contraption I had never seen before.
@@ -52,6 +52,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+<<PlayMusic Ares_Theme>>
 
 Aelius: Here's your steak, Ares - enjoy!
 Ares: Ah, this is quite a delicacy – most excellent!
@@ -77,6 +78,7 @@ Ares: I understand.
 Ares: Well, I may have signed myself up to help him rebuild his workshop as my olive branch, so I need to head over there now.
 Ares: See you around, Aelius.
 Aelius: [Positive] Bye, Ares, keep up the good work!
+<<StopMuzic 0.35>>
 <<HideAll>>
 <<jump Day7_Zeus_Intro>>
 ===
@@ -86,6 +88,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+<<PlayMusic Ares_Theme>>
 Ares: It feels like I’m missing some content on this, but it tastes great. Thanks, Aelius.
 
 
@@ -111,12 +114,14 @@ Ares: Well, I may have signed myself up to help him rebuild his workshop as my o
 Ares: See you around, Aelius.
 Aelius: [Positive] Bye, Ares, keep up the good work!
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Day7_Zeus_Intro>>
 ===
 title: Day7_Ares_ReturnSpicy
 tags:
 ---
 <<Scene new_dining_area>>
+<<PlayMusic Ares_Theme>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
 
@@ -145,5 +150,6 @@ Ares: Well, I may have signed myself up to help him rebuild his workshop as my o
 Ares: See you around, Aelius.
 Aelius: [Positive] Bye, Ares, keep up the good work!
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Day7_Zeus_Intro>>
 ===

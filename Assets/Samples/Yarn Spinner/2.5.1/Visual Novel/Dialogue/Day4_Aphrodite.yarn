@@ -4,6 +4,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+<<PlayMusic Aphrodite_Theme>>
 Aphrodite: Ah, hello! You are Aelius, correct?
 Aelius: Yes, and you are...?
 Aphrodite: Aphrodite, my dear.
@@ -51,6 +52,7 @@ title: Day4_Aphrodite_ReturnFancy
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+<<PlayMusic Aphrodite_Theme>>
 Aphrodite: This is such a wonderful dish, thank you, dear.
 
 
@@ -60,6 +62,7 @@ Aphrodite: I must be off though - thank you for the meal.
 Aelius: [Positive] Thank you.
 Aphrodite: I wish you luck on your search, Aelius.
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Day4_Hermes_Intro>>
 ===
 title: Day4_Aphrodite_ReturnSpicy
@@ -67,6 +70,7 @@ title: Day4_Aphrodite_ReturnSpicy
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+<<PlayMusic Aphrodite_Theme>>s
 Aphrodite: This is wonderfully spicy, thank you, dear.
 
 
@@ -76,6 +80,7 @@ Aphrodite: I must be off though - thank you for the meal.
 Aelius: [Positive] Thank you.
 Aphrodite: I wish you luck on your search, Aelius.
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Day4_Hermes_Intro>>
 ===
 title: Day4_Aphrodite_ReturnPlayful
@@ -83,6 +88,7 @@ title: Day4_Aphrodite_ReturnPlayful
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+<<PlayMusic Aphrodite_Theme>>
 Aphrodite: This is a delight, thank you, dear.
 
 Aelius: [Positive] I'm glad you like it.
@@ -91,5 +97,6 @@ Aphrodite: I must be off though - thank you for the meal.
 Aelius: [Positive] Thank you.
 Aphrodite: I wish you luck on your search, Aelius.
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Day4_Hermes_Intro>>
 ===

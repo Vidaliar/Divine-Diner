@@ -1,6 +1,7 @@
 title: Day2_Hermes
 ---
 <<Scene new_dining_area>>
+<<PlayMusic Hermes_Theme>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 Aelius: Welcome in, Hermes!
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
@@ -51,6 +52,7 @@ title: Day2_Hermes_ReturnFancy
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 Aelius: Whipped up your Lotus Parfait for you!
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+<<PlayMusic Hermes_Theme>>
 <<AddHermesAffinity 1>>
 Hermes: This Lotus Parfait looks great! Hope it tastes as good as it looks.
 
@@ -62,6 +64,7 @@ title: Day2_Hermes_ReturnPlayful
 <<wait 0.1>>
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<PlayMusic Hermes_Theme>>
 <<AddHermesAffinity 2>>
 Aelius: Whipped up your Lotus Parfait for you!
 
@@ -74,6 +77,7 @@ title: Day2_Hermes_ReturnSpicy
 <<Fade "#000000" 1 0 0.4>>
 <<wait 0.1>>
 <<Scene new_dining_area>>
+<<PlayMusic Hermes_Theme>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<AddHermesAffinity 2>>
 Aelius: Whipped up your Lotus Parfait for you!
@@ -138,6 +142,7 @@ Aelius: Here it is. Thanks again, it really means a lot to me.
 Hermes: Don't sweat it. I'll hurry to make sure it's nice and hot for her.
 Hermes: See ya, Aelius.
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Hestia_Day2_AfterShift>>
 
 

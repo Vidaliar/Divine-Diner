@@ -4,6 +4,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+<<PlayMusic Hephaestus_Theme>>
 Aphrodite: Aelius, it is good to see you again.
 Aelius: Hello, Aphrodite! What brings you here today?
 Aphrodite: Practical as always my dear – Hephaestus and I have agreed to talk over lunch. I see I am early.
@@ -39,6 +40,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 <<Act "Aphrodite" "Aphrodite" "left" "bottom" #e06666>>
+<<PlayMusic Hephaestus_Theme>>
 Hephaestus: Oh, Aelius, there you are.
 Aphrodite: Welcome back, dear. That looks wonderful.
 <<Hide Aphrodite>>
@@ -91,6 +93,7 @@ Aphrodite: Goodbye, Aelius.
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 Hephaestus: Farewell, Aelius.
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Day8_Hermes_Intro>>
 ===
 title: Day8_Hephaestus_ReturnPlayful
@@ -98,6 +101,7 @@ tags:
 ---
 <<Scene new_dining_area>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+<<PlayMusic Hephaestus_Theme>>
 <<Act "Aphrodite" "Aphrodite" "left" "bottom" #e06666>>
 Hephaestus: Oh, Aelius, there you are.
 Aphrodite: Welcome back, dear. That looks wonderful.
@@ -152,12 +156,14 @@ Aphrodite: Goodbye, Aelius.
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 Hephaestus: Farewell, Aelius.
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Day8_Hermes_Intro>>
 ===
 title: Day8_Hephaestus_ReturnSpicy
 tags:
 ---
 <<Scene new_dining_area>>
+<<PlayMusic Hephaestus_Theme>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 <<Act "Aphrodite" "Aphrodite" "left" "bottom" #e06666>>
 <<AddHephaestusAffinity 1>>
@@ -214,5 +220,6 @@ Aphrodite: Goodbye, Aelius.
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 Hephaestus: Farewell, Aelius.
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Day8_Hermes_Intro>>
 ===

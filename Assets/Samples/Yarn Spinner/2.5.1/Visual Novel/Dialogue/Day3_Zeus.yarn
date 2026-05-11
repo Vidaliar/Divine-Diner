@@ -3,6 +3,7 @@ tags:
 ---
 <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 <<Scene new_dining_area>>
+<<PlayMusic Zeus_Theme>>
 
 Zeus: HEPHAESTUS!
 <<Act Aelius "Aelius 3_4s" left bottom #674ea7>>
@@ -39,6 +40,7 @@ title: Day3_Zeus_ReturnFancy
 <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 <<Act Aelius "Aelius 3_4s" left bottom #674ea7>>
 <<AddZeusAffinity 3>>
+<<PlayMusic Zeus_Theme>>
 
 Aelius: Your food, King Zeus.
 Zeus: I almost feel bad eating something that looks this delicious.
@@ -105,7 +107,7 @@ title: Day3_Zeus_ReturnSpicy
 <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 <<Act Aelius "Aelius 3_4s" left bottom #674ea7>>
 <<AddZeusAffinity 2>>
-
+<<PlayMusic Zeus_Theme>>
 Aelius: Your food, King Zeus.
 Zeus: I almost feel bad eating something that looks this delicious.
 Aelius: [Positive] Oh, thank you!
@@ -171,6 +173,7 @@ title: Day3_Zeus_ReturnPlayful
 <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 <<Act Aelius "Aelius 3_4s" left bottom #674ea7>>
 <<AddZeusAffinity 1>>
+<<PlayMusic Zeus_Theme>>
 
 Aelius: Your food, King Zeus.
 Zeus: I almost feel bad eating something that looks this delicious.
@@ -228,6 +231,7 @@ Zeus: Yes, well. I suppose my question is… why?
     Zeus: Thank you for the meal, child.
 
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Hestia_Day3_AfterShift>>
 
 ===

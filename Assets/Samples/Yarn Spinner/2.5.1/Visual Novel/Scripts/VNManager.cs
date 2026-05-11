@@ -131,11 +131,42 @@ namespace Yarn.Unity.Example
 
             // VNManager.Awake()
             runner.AddCommandHandler<string>("PlayMusic", name => {
-                var clip = Resources.Load<AudioClip>($"Audio/BGM/{name}");
-                if (clip == null) { Debug.LogError($"BGM not found: {name}"); return; }
-                var src = GetComponent<AudioSource>();          // or a serialized AudioSource field
-                src.loop = true; src.spatialBlend = 0f;
-                src.clip = clip; src.Play();
+                Debug.Log("[VN] PlayMusic requested: " + name);
+
+                string path = $"Audio/BGM/{name}";
+                var clip = Resources.Load<AudioClip>(path);
+
+                if (clip == null)
+                {
+                    Debug.LogError($"[VN] BGM not found at Resources/{path}");
+                    return;
+                }
+
+                Debug.Log($"[VN] BGM loaded: {clip.name}, length={clip.length}, loadState={clip.loadState}");
+
+                var src = GetComponent<AudioSource>();
+
+                if (src == null)
+                {
+                    Debug.LogError("[VN] No AudioSource found on Visual Novel Manager.");
+                    return;
+                }
+
+                if (clip.loadState != AudioDataLoadState.Loaded)
+                {
+                    clip.LoadAudioData();
+                    Debug.Log("[VN] Requested audio data load for: " + clip.name);
+                }
+
+                src.Stop();
+                src.mute = false;
+                src.volume = 1f;
+                src.loop = true;
+                src.spatialBlend = 0f;
+                src.clip = clip;
+                src.Play();
+
+                Debug.Log($"[VN] AudioSource now playing: {src.clip.name}, isPlaying={src.isPlaying}, volume={src.volume}, mute={src.mute}");
             });
             // Register commands (e.g., in Awake, after you have runner)
             runner.AddCommandHandler("StopMuzic", () => StartCoroutine(FadeOutAndStop(0.5f)));     // default 0.5s fade

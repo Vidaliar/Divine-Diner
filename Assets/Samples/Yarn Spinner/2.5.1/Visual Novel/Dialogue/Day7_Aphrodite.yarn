@@ -4,6 +4,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+<<PlayMusic Aphrodite_Theme>>
 
 Aphrodite: Good evening, Aelius. It's wonderful to see you.
 Aelius: Hi, Aphrodite, it's good to see you too.
@@ -48,6 +49,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+<<PlayMusic Aphrodite_Theme>>
 
 
 Aphrodite: You take a different approach than Hestia did. The spice is a worthy addition.
@@ -75,6 +77,7 @@ Aphrodite: Thank you, Aelius, for your help and for the meal.
 Aphrodite: I will be in your debt, no matter how tomorrow goes.
 Aelius: Good luck, Aphrodite.
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Hestia_Day7_AfterShift>>
 ===
 title: Day7_Aphrodite_ReturnFancy
@@ -83,6 +86,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+<<PlayMusic Aphrodite_Theme>>
 
 Aphrodite: Just as Hestia makes it, this is wonderful work, dear.
 
@@ -110,6 +114,7 @@ Aphrodite: Thank you, Aelius, for your help and for the meal.
 Aphrodite: I will be in your debt, no matter how tomorrow goes.
 Aelius: Good luck, Aphrodite.
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Hestia_Day7_AfterShift>>
 ===
 title: Day7_Aphrodite_ReturnPlayful
@@ -118,6 +123,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Aphrodite" "Aphrodite" "right" "bottom" #e06666>>
+<<PlayMusic Aphrodite_Theme>>
 Aphrodite: Just as I remember it, but maybe sweeter. Good work, dear.
 
 Aelius: [Positive] I'm glad you like it.
@@ -143,5 +149,6 @@ Aphrodite: Thank you, Aelius, for your help and for the meal.
 Aphrodite: I will be in your debt, no matter how tomorrow goes.
 Aelius: Good luck, Aphrodite.
 <<HideAll>>
+<<StopMuzic 0.35>>
 <<jump Hestia_Day7_AfterShift>>
 ===
