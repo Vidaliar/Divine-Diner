@@ -64,6 +64,6 @@ Hestia: Well, I won’t keep you here any longer! I will see you tomorrow! I hav
 Aelius: [Positive] A surprise from you? I definitely will be here earlier than usual.
 Aelius: [Positive] See you tomorrow!
 <<HideAll>>
-<<LoadVNScene "Day6">>
+<<LoadVNScene "AeliusDay">>
 
 ===

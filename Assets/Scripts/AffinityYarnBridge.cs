@@ -5,7 +5,7 @@ using Yarn.Unity;
 Usage Guide:
 1. Attach this script to your persistent Manager object.
 2. Assign Variable Storage with the same VariableStorageBehaviour used by your DialogueRunner.
-3. Assign your existing StateProvider.
+3. StateProvider can be assigned manually, or this script will find it automatically at runtime.
 4. Call SyncAllToYarn() after loading save data, after changing affection, and before starting dialogue.
 5. Yarn variables created by this script:
    $zeusAffinity
@@ -22,16 +22,57 @@ public class AffinityYarnBridge : MonoBehaviour
     [Header("Startup")]
     [SerializeField] private bool syncOnStart = true;
 
+    private void Awake()
+    {
+        ResolveReferences();
+    }
+
     private void Start()
     {
+        ResolveReferences();
+
         if (syncOnStart)
         {
             SyncAllToYarn();
         }
     }
 
+    private void ResolveReferences()
+    {
+        if (stateProvider == null)
+        {
+            stateProvider = FindObjectOfType<StateProvider>();
+
+            if (stateProvider != null)
+            {
+                Debug.Log("[AffinityYarnBridge] Found StateProvider automatically: " + stateProvider.name);
+            }
+            else
+            {
+                Debug.LogWarning("[AffinityYarnBridge] Could not find StateProvider automatically.");
+            }
+        }
+
+        if (variableStorage == null)
+        {
+            DialogueRunner runner = FindObjectOfType<DialogueRunner>();
+
+            if (runner != null)
+            {
+                variableStorage = runner.VariableStorage;
+                Debug.Log("[AffinityYarnBridge] Found VariableStorage automatically from DialogueRunner.");
+            }
+            else
+            {
+                Debug.LogWarning("[AffinityYarnBridge] Could not find DialogueRunner for VariableStorage.");
+            }
+        }
+    }
+
     public void AddZeus(int amount)
     {
+        ResolveReferences();
+
         if (stateProvider == null)
         {
             Debug.LogWarning("[AffinityYarnBridge] StateProvider is missing.");
@@ -44,6 +85,8 @@ public class AffinityYarnBridge : MonoBehaviour
 
     public void AddHermes(int amount)
     {
+        ResolveReferences();
+
         if (stateProvider == null)
         {
             Debug.LogWarning("[AffinityYarnBridge] StateProvider is missing.");
@@ -56,6 +99,8 @@ public class AffinityYarnBridge : MonoBehaviour
 
     public void AddHephaestus(int amount)
     {
+        ResolveReferences();
+
         if (stateProvider == null)
         {
             Debug.LogWarning("[AffinityYarnBridge] StateProvider is missing.");
@@ -68,6 +113,8 @@ public class AffinityYarnBridge : MonoBehaviour
 
     public void SyncAllToYarn()
     {
+        ResolveReferences();
+
         if (variableStorage == null)
         {
             Debug.LogWarning("[AffinityYarnBridge] VariableStorage is missing.");

@@ -24,12 +24,14 @@ Aelius: It might not be my place, but I can tell something’s up.
 Aelius: You’re acting happy-go-lucky, but I can see through you somewhat well at this point. But also… I get it.
 
 -> There’s been times where I’m pretty swamped with expectations as well. (deference)
+    <<AddHermesAffinity 2>>
     Aelius: [Negative] When my mom got ill, I was the only one there who could take care of her.
     Aelius: [Negative] It’s really hard sometimes, having something so important solely rely on you.
     Hermes: Yeah, I get that all too well, kid.
     Hermes:  It’s not always easy, but we just gotta keep moving forward, I suppose.
     Aelius: Yeah. But there’s also no harm in letting others help out a bit.
 -> I can get how humor is pretty important for staying positive. (humorous)
+    <<AddHermesAffinity 3>>
     Aelius: [Negative] Sometimes it’s easier to joke about the heavy stuff than to be honest with myself about how much it hurts sometimes.
     Hermes: I tend to be the same. Being gloomy doesn’t help me out, so I might as well laugh about it.
     Hermes: That isn’t always easy, though, I suppose.
@@ -37,6 +39,7 @@ Aelius: You’re acting happy-go-lucky, but I can see through you somewhat well 
     Aelius: It’s all I felt for a bit, after my mom…
     Hermes: Yeah, I can imagine, kid.
 -> It can be so frustrating dealing with someone who doesn’t care as much. (aggressive)
+    <<AddHermesAffinity 2>>
     Aelius: [Negative] With my absent father, everything fell on my shoulders – while still trying to stay afloat myself. Happened to me a lot after my mom got sick…
     Aelius: [Negative] I’d imagine you’ve… experienced similar.
     Hermes: ...
@@ -54,6 +57,7 @@ Hermes: Hmm, how about an <b>Erymanthian Boar Sandwich</b>? That sounds like jus
 Aelius: Fresh boar sammy, coming right up.
 
 // COOKING GAME HERE
+<<AddHermesAffinity 2>>
 <<StartCooking "MakenaTestScene3">>
 <<HideAll>>
 ===
@@ -63,6 +67,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+<<AddHermesAffinity 1>>
 
 Aelius: [Smirk] Made your sandwich, hope it satiates your endless hunger.
 
@@ -81,10 +86,13 @@ Hermes: I know I tend to just joke about it, and never really tackle the problem
 Hermes: I’m supposed to be an all-knowing god, but I don’t feel all-knowing right now.
 
 -> You're doing it again, Hermes. (deference)
+    <<AddHermesAffinity 2>>
     Hermes: Whoopsies! Old habits die hard.
 -> For someone who is admitting their problem, you sure are doing said problem right now. (humorous)
+    <<AddHermesAffinity 3>>
     Hermes: Wait- oh, *<i>laughs</i> I am, aren't I?
 -> You gotta quit doing it, Hermes. (aggressive)
+    <<AddHermesAffinity 1>>
     Hermes: Oh, heh... right.
 
 Hermes: I’ll keep working on it. Next thing you know, I’ll be the most honest god on Olympus.
@@ -111,6 +119,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+<<AddHermesAffinity 2>>
 
 Aelius: [Smirk] Made your sandwich, hope it satiates your endless hunger.
 
@@ -129,10 +138,13 @@ Hermes: I know I tend to just joke about it, and never really tackle the problem
 Hermes: I’m supposed to be an all-knowing god, but I don’t feel all-knowing right now.
 
 -> You're doing it again, Hermes. (deference)
+    <<AddHermesAffinity 2>>
     Hermes: Whoopsies! Old habits die hard.
 -> For someone who is admitting their problem, you sure are doing said problem right now. (humorous)
+    <<AddHermesAffinity 3>>
     Hermes: Wait- oh, *<i>laughs</i> I am, aren't I?
 -> You gotta quit doing it, Hermes. (aggressive)
+    <<AddHermesAffinity 1>>
     Hermes: Oh, heh... right.
 
 Hermes: I’ll keep working on it. Next thing you know, I’ll be the most honest god on Olympus.
@@ -159,6 +171,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+<<AddHermesAffinity 1>>
 
 Aelius: [Smirk] Made your sandwich, hope it satiates your endless hunger
 Hermes: Wow, that smells burning hot. My tastebuds need a good shock every once in a while.
@@ -176,10 +189,13 @@ Hermes: I know I tend to just joke about it, and never really tackle the problem
 Hermes: I’m supposed to be an all-knowing god, but I don’t feel all-knowing right now.
 
 -> You're doing it again, Hermes. (deference)
+    <<AddHermesAffinity 2>>
     Hermes: Whoopsies! Old habits die hard.
 -> For someone who is admitting their problem, you sure are doing said problem right now. (humorous)
+    <<AddHermesAffinity 3>>
     Hermes: Wait- oh, *<i>laughs</i> I am, aren't I?
 -> You gotta quit doing it, Hermes. (aggressive)
+    <<AddHermesAffinity 1>>
     Hermes: Oh, heh... right.
 
 Hermes: I’ll keep working on it. Next thing you know, I’ll be the most honest god on Olympus.

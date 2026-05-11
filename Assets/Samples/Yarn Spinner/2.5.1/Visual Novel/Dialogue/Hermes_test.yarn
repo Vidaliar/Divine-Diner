@@ -7,22 +7,26 @@
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+Aelius: Hey, welcome in.
 Hermes: Hi there, can I get a—
 
 Hermes: Wait, you're new here.
 Aelius: Yes, my name's Aelius, I'm the new cook. Hestia hired me- first day, and all that.
 Hermes: Well hello then, Aelius. I'm Hermes.
 Hermes: But I assume you already guessed that.
--> It's nice to meet you, sir.
+-> It's nice to meet you. (deference)
     //Aelius: It's nice to meet you.
+    <<AddHermesAffinity 1>>
     Hermes: It's nice to meet ya too! Good seeing a new face around here- it's been <i>so</i> long.
--> I had my suspicions.
+-> I had my suspicions. (humorous)
     //Aelius: I had my suspicions.
+    <<AddHermesAffinity 2>>
     Hermes: (Sarcastic) <i>Very</i> clever of you.
     Hermes: I'm in a hurry, kid — not much time to chat. Could you whip me up a Lotus Parfait? Quickly, please.
     Aelius: You got it. I'll do my best.
--> Obviously
+-> Obviously. (aggressive)
     //Aelius: Obviously.
+    <<AddHermesAffinity 1>>
     Hermes: Ha! I <i>do</i> look the part, don't I?
 
 Hermes: [Neutral] Well, hate to say it, but I'm in a hurry kid. Not much time to stay and chat. Could you whip me up some <b>Nectar</b>? Quickly, please.
@@ -33,6 +37,7 @@ Aelius: [Neutral] You got it, I'll do my best.
 <<HideAll>>
 <<Fade "#000000" 0 1 0.35>>
 <<wait 0.4>>
+<<AddHermesAffinity 2>>
 <<StartCooking "Nectar">>
 ===
 
@@ -49,6 +54,7 @@ Aelius: <i>*(Or at least better than Zeus *sigh*)*</i>
 Aelius: Hope you like it.
 
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+<<AddHermesAffinity 2>>
 
 Hermes: Now isn't that cute! I almost feel bad drinking it.
 Hermes: Almost.
@@ -69,6 +75,7 @@ Aelius: <i>*(Or at least better than Zeus *sigh*)*</i>
 Aelius: Hope you like it.
 
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+<<AddHermesAffinity 1>>
 Hermes: This is the nicest Nectar I've ever seen. You got talent, that's for sure.
 
 <<jump Hermes_Day1_after_cooking>>
@@ -88,6 +95,7 @@ Aelius: <i>*(Or at least better than Zeus *sigh*)*</i>
 Aelius: Hope you like it.
 
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+<<AddHermesAffinity 2>>
 
 Hermes: Wow! That looks burning hot.
 Hermes: That'll keep my energy up for sure.
@@ -105,11 +113,13 @@ Hermes: But, y'know duty calls. Messages to deliver, cattle to steal. You get th
 Aelius: … Yeah
 Hermes: You're lookin' a litte down in the dumps. Rough first day?
 
--> Yeah, but you don't have to worry about it...
+-> Yeah, but you don't have to worry about it... (deference)
     //Aelius: It is, but you don't have to worry about it..
+    <<AddHermesAffinity 1>>
     Hermes: Don't sweat it.
--> You could say that.
+-> You could say that. (humorous)
     Hermes: Aha, I knew I'd be spot on.
+    <<AddHermesAffinity 2>>
 -> It's none of your business.
     //Aelius: It's none of your business.
     Hermes: Meh, figured I might as well ask.
@@ -120,7 +130,7 @@ Aelius: How'd you know?
 Hermes: Call it <i>godly</i> intuition. 
 Hermes: But honestly, it's easy to tell. He's very good at ruffling newcomers' feathers.
 Aelius: I just... he didn't seem to want me here. I cooked his food to perfection.
-Hermes: Aelius, right? Listen up. People like Zeus are just some honor and glory loving dudes.
+Hermes: Aelius, listen up. People like Zeus are just some honor and glory loving dudes.
 Hermes: Just ignore him. Do your best. Show him you're up to snuff.
 Aelius: It's not that easy-
 Hermes: I really gotta be going. Can't be late on these messages.

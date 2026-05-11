@@ -1,0 +1,1468 @@
+﻿title: aelius_day_declarations
+---
+<<declare $aeliusDayRound1AresDone = false>>
+<<declare $aeliusDayRound1HeraDone = false>>
+<<declare $aeliusDayRound1AphroditeDone = false>>
+
+<<declare $aeliusDayRound2AresDone = false>>
+<<declare $aeliusDayRound2HeraDone = false>>
+<<declare $aeliusDayRound2AphroditeDone = false>>
+
+<<declare $aeliusDrink = "none">>
+<<declare $aeliusMainFood = "none">>
+<<declare $aeliusDessert = "none">>
+<<declare $aeliusLastCookingStyle = "none">>
+<<jump Aelius_Day_Start>>
+===
+
+
+title: Aelius_Day_Start
+---
+<<set $aeliusDayRound1AresDone = false>>
+<<set $aeliusDayRound1HeraDone = false>>
+<<set $aeliusDayRound1AphroditeDone = false>>
+
+<<set $aeliusDayRound2AresDone = false>>
+<<set $aeliusDayRound2HeraDone = false>>
+<<set $aeliusDayRound2AphroditeDone = false>>
+
+<<set $aeliusDrink = "none">>
+<<set $aeliusMainFood = "none">>
+<<set $aeliusDessert = "none">>
+<<set $aeliusLastCookingStyle = "none">>
+
+<<HideAll>>
+<<Scene "main_kitchen_bg_2">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Hestia" "Hestia 3_4s" right bottom #3d85c6>>
+
+Hestia: [Positive] Ah, welcome, Aelius dear. Are you ready to begin the day?
+Aelius: [Positive] I suppose so. I think I’m starting to get the hang of your routine.
+Hestia: [Neutral] Well... today might throw you off a little bit.
+Aelius: [Neutral] ... What’s that supposed to mean?
+Aelius: [Neutral] Is there something different going on today?
+Hestia: [Positive] You could say that, yes.
+Hestia: [Positive] Seeing how you’ve had a rather positive impact on the Olympians, I invited a few of the others today.
+Hestia: [Positive] I asked Hera, Ares, and Aphrodite if they would come in together.
+Hestia: [Positive] They have some issues with each other and some of the other Olympians, so I thought you might be able to try and talk to them.
+Aelius: [Neutral] I don’t know... I’m not sure how I could help them. I’m just starting to get to know them and their issues.
+Aelius: [Neutral] Besides, I’m just a mortal. Why would they listen to me?
+Aelius: [Neutral] Especially Ares, he’s arrogant and rude. I don’t think he would even give me a chance.
+Hestia: [Positive] I think you’ll be able to do more than you think.
+Hestia: [Positive] You haven’t spent all your life up here like the others and I.
+Hestia: [Positive] I think you having a fresh perspective will do wonders for change.
+Aelius: [Neutral] You really think so?
+Hestia: [Positive] My dear, I know you can.
+Hestia: [Positive] Oh, as for Ares being... difficult, all you need to do is provide an incentive for him.
+Hestia: [Positive] I hear he really enjoys sweets, so use that as you see fit.
+Aelius: [Positive] Heh, for such an intimidating guy, I hadn’t expected that.
+Hestia: [Positive] Like I said, you have everything you need to help be the change we all need, so you got this.
+Aelius: [Positive] Thanks Hestia!
+Hestia: [Neutral] Ah! Here comes Hera now.
+
+<<Fade "#000000" 0 1 0.35>>
+<<wait 0.4>>
+<<jump Aelius_Day_GuestArrival>>
+===
+
+
+title: Aelius_Day_GuestArrival
+---
+<<HideAll>>
+<<Fade "#000000" 1 0 0.4>>
+<<Scene "new_dining_area">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Positive] Hello again, Aelius.
+
+-> Aelius: [Neutral] Hey, Hera, thanks for coming.
+    <<jump Aelius_Day_HeraArrivalBottle>>
+-> Aelius: [Positive] Good to see ya, Hera.
+    <<jump Aelius_Day_HeraArrivalBottle>>
+-> Aelius: [Neutral] Hi.
+    <<jump Aelius_Day_HeraArrivalBottle>>
+===
+
+
+title: Aelius_Day_HeraArrivalBottle
+---
+Aelius: [Neutral] Have a seat.
+
+<<Hide "Hera">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Neutral] ... Hello.
+
+-> Aelius: [Neutral] Welcome in, m’lord.
+    <<jump Aelius_Day_AresArrivalBottle>>
+-> Aelius: [Smirk] Wassup, Ares?
+    <<jump Aelius_Day_AresArrivalBottle>>
+-> Aelius: [Neutral] Hi.
+    <<jump Aelius_Day_AresArrivalBottle>>
+===
+
+
+title: Aelius_Day_AresArrivalBottle
+---
+Aelius: [Neutral] Feel free to take a seat. Hera is right over there.
+
+<<Hide "Ares">>
+<<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+
+Aphrodite: [Positive] Hello there, Aelius.
+
+-> Aelius: [Neutral] Welcome, welcome.
+    <<jump Aelius_Day_AphroditeArrivalBottle>>
+-> Aelius: [Smirk] M’lady.
+    <<jump Aelius_Day_AphroditeArrivalBottle>>
+-> Aelius: [Neutral] Hi.
+    <<jump Aelius_Day_AphroditeArrivalBottle>>
+===
+
+
+title: Aelius_Day_AphroditeArrivalBottle
+---
+Aelius: [Neutral] Have a seat with the others, please.
+
+<<Hide "Aphrodite">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Neutral] Why are we here, mortal?
+Ares: [Negative] Hestia said something about “resolving issues.”
+
+<<Hide "Ares">>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Neutral] Yes, I am also quite curious.
+
+Aelius: [Neutral] Ah, so...
+Aelius: [Neutral] Well, um...
+Aelius: [Neutral] ...
+
+<<Hide "Hera">>
+<<Act "Hestia" "Hestia 3_4s" right bottom #3d85c6>>
+
+Hestia: [Positive] Hello everybody!
+Hestia: [Neutral] I thought today would be a good day to have a pleasant gathering with us all.
+
+<<Hide "Hestia">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Neutral] Go on.
+
+<<Hide "Ares">>
+<<Act "Hestia" "Hestia 3_4s" right bottom #3d85c6>>
+
+Hestia: [Neutral] Well, we all know there have been some long-standing... issues amongst the gods.
+Hestia: [Positive] I thought that maybe having a get-together would help to ease these tensions.
+
+<<Hide "Hestia">>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Neutral] You don’t say?
+
+<<Hide "Hera">>
+<<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+
+Aphrodite: [Neutral] Now now, let dear Hestia speak.
+
+<<Hide "Aphrodite">>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Neutral] Tch.
+
+<<Hide "Hera">>
+<<Act "Hestia" "Hestia 3_4s" right bottom #3d85c6>>
+
+Hestia: [Positive] And I wanted Aelius here to be able to help.
+
+-> Aelius: [Neutral] I’d like to help if I can.
+    <<Hide "Hestia">>
+    <<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+    Aphrodite: [Positive] Thank you, dear.
+    <<jump Aelius_Day_FirstRoundStart>>
+-> Aelius: [Smirk] We’re, uh... all friends here... right?
+    <<Hide "Hestia">>
+    <<Act "Ares" "Ares" right bottom #cc0000>>
+    Ares: [Neutral] No.
+    <<jump Aelius_Day_FirstRoundStart>>
+-> Aelius: [Neutral] Yeah... someone’s gotta do it, I guess.
+    <<Hide "Hestia">>
+    <<Act "Ares" "Ares" right bottom #cc0000>>
+    Ares: [Negative] That’s not true.
+    <<jump Aelius_Day_FirstRoundStart>>
+===
+
+
+title: Aelius_Day_FirstRoundStart
+---
+<<HideAll>>
+<<Scene "new_dining_area">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Hestia" "Hestia 3_4s" right bottom #3d85c6>>
+
+Hestia: [Positive] Anyway... who’s first?
+
+<<Hide "Hestia">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Neutral] Not me.
+
+<<Hide "Ares">>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Neutral] ...
+
+<<Hide "Hera">>
+<<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+
+Aphrodite: [Neutral] Hm...
+
+<<Hide "Aphrodite">>
+<<Act "Hestia" "Hestia 3_4s" right bottom #3d85c6>>
+
+Hestia: [Neutral] Aelius?
+
+<<jump Aelius_Day_FirstRoundHub>>
+===
+
+
+title: Aelius_Day_FirstRoundHub
+---
+<<if $aeliusDayRound1AresDone is true and $aeliusDayRound1HeraDone is true and $aeliusDayRound1AphroditeDone is true>>
+    <<jump Aelius_Day_DrinkChoice>>
+<<endif>>
+
+Aelius: [Neutral] Who should start?
+
+-> Aelius: [Smirk] Ares, you’re up. <<if $aeliusDayRound1AresDone is false>>
+    <<set $aeliusDayRound1AresDone = true>>
+    <<jump Aelius_Day_FirstRound_Ares>>
+-> Aelius: [Neutral] Hera, how about you? <<if $aeliusDayRound1HeraDone is false>>
+    <<set $aeliusDayRound1HeraDone = true>>
+    <<jump Aelius_Day_FirstRound_Hera>>
+-> Aelius: [Neutral] Aphrodite, let’s start with you. <<if $aeliusDayRound1AphroditeDone is false>>
+    <<set $aeliusDayRound1AphroditeDone = true>>
+    <<jump Aelius_Day_FirstRound_Aphrodite>>
+===
+
+
+title: Aelius_Day_FirstRound_Ares
+---
+<<HideAll>>
+<<Scene "new_dining_area">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Negative] Damn it.
+
+<<Hide "Ares">>
+<<Act "Hestia" "Hestia 3_4s" right bottom #3d85c6>>
+
+Hestia: [Neutral] Ares, behave.
+
+<<Hide "Hestia">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Aelius: [Neutral] I know you got some problems between you and Hephaestus.
+Ares: [Neutral] More like he has problems with me.
+Aelius: [Neutral] Okay, well, regardless... issues there.
+Ares: [Neutral] I don’t want to talk on an empty stomach.
+Aelius: [Neutral] Alright then.
+
+<<jump Aelius_Day_FirstRoundHub>>
+===
+
+
+title: Aelius_Day_FirstRound_Hera
+---
+<<HideAll>>
+<<Scene "new_dining_area">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Neutral] *Sigh* If I must.
+Aelius: [Neutral] I noticed you didn’t seem particularly thrilled with Hermes last night.
+Hera: [Negative] His joke was crass.
+Hera: [Negative] ... Inappropriate.
+Aelius: [Neutral] Yeah, it uh... wasn’t his best.
+Hera: [Neutral] I’m quite parched now, let us move on.
+Hera: [Neutral] I was promised a great meal.
+Aelius: [Neutral] You’ll get it, don’t worry.
+Aelius: [Neutral] Give me a minute.
+
+<<jump Aelius_Day_FirstRoundHub>>
+===
+
+
+title: Aelius_Day_FirstRound_Aphrodite
+---
+<<HideAll>>
+<<Scene "new_dining_area">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+
+Aphrodite: [Neutral] Alright.
+Aelius: [Neutral] I’ve heard you haven’t spoken to Hephaestus in quite some time.
+Aphrodite: [Negative] Yes, we aren’t really on speaking terms.
+
+<<Hide "Aphrodite">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Neutral] *Coughs.*
+
+<<Hide "Ares">>
+<<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+
+Aelius: [Neutral] Have you tried talking it out?
+Aphrodite: [Neutral] Not truly.
+Aphrodite: [Neutral] But enough about me.
+Aelius: [Neutral] Alright.
+
+<<jump Aelius_Day_FirstRoundHub>>
+===
+
+
+title: Aelius_Day_DrinkChoice
+---
+<<HideAll>>
+<<Scene "new_dining_area">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+
+Aelius: [Neutral] We’ll start with drinks.
+
+-> Aelius: [Neutral] How about some Nectar?
+    <<set $aeliusDrink = "Nectar4">>
+    <<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+    Aphrodite: [Positive] That sounds wonderful.
+    <<Fade "#000000" 0 1 0.35>>
+    <<wait 0.4>>
+    <<HideAll>>
+    <<StartCooking "Nectar4">>
+-> Aelius: [Neutral] We’ll go with some Hesperides Apple Cider.
+    <<set $aeliusDrink = "AppleCider4">>
+    <<Act "Ares" "Ares" right bottom #cc0000>>
+    Ares: [Neutral] Okay.
+    <<Fade "#000000" 0 1 0.35>>
+    <<wait 0.4>>
+    <<HideAll>>
+    <<StartCooking "AppleCider4">>
+-> Aelius: [Neutral] I’ll go make some Hippocampus Lemonade.
+    <<set $aeliusDrink = "Lemonade2">>
+    <<Act "Hera" "Hera" right bottom #674ea7>>
+    Hera: [Neutral] How refreshing.
+    <<Fade "#000000" 0 1 0.35>>
+    <<wait 0.4>>
+    <<HideAll>>
+    <<StartCooking "Lemonade2">>
+===
+
+
+title: Aelius_Drink_Return_Playful
+---
+<<set $aeliusLastCookingStyle = "Playful">>
+<<jump Aelius_Day_AfterDrinkCooking>>
+===
+
+title: Aelius_Drink_Return_Spicy
+---
+<<set $aeliusLastCookingStyle = "Spicy">>
+<<jump Aelius_Day_AfterDrinkCooking>>
+===
+
+title: Aelius_Drink_Return_Fancy
+---
+<<set $aeliusLastCookingStyle = "Fancy">>
+<<jump Aelius_Day_AfterDrinkCooking>>
+===
+
+title: Aelius_Drink_Return_Fail
+---
+<<set $aeliusLastCookingStyle = "Fail">>
+<<jump Aelius_Day_AfterDrinkCooking>>
+===
+
+
+title: Aelius_Day_AfterDrinkCooking
+---
+<<Fade "#000000" 1 0 0.4>>
+<<HideAll>>
+<<Scene "new_dining_area">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+
+<<if $aeliusDrink == "Nectar4">>
+    Aelius: [Neutral] Here’s your Nectar, everyone.
+    <<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+    Aphrodite: [Positive] This is some truly great Nectar.
+<<elseif $aeliusDrink == "AppleCider4">>
+    Aelius: [Neutral] Here’s your Hesperides Apple Cider, everyone.
+    <<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+    Aphrodite: [Positive] This is some truly great Hesperides Apple Cider.
+<<else>>
+    Aelius: [Neutral] Here’s your Hippocampus Lemonade, everyone.
+    <<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+    Aphrodite: [Positive] This is some truly great Hippocampus Lemonade.
+<<endif>>
+
+<<Hide "Aphrodite">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Neutral] ... I agree.
+
+<<Hide "Ares">>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Positive] I expected nothing less.
+
+<<Hide "Hera">>
+<<Act "Hestia" "Hestia 3_4s" right bottom #3d85c6>>
+
+Hestia: [Positive] Well done, Aelius.
+
+<<jump Aelius_Day_SecondRoundHub>>
+===
+
+
+title: Aelius_Day_SecondRoundHub
+---
+<<if $aeliusDayRound2AresDone is true and $aeliusDayRound2HeraDone is true and $aeliusDayRound2AphroditeDone is true>>
+    <<jump Aelius_Day_MainFoodChoice>>
+<<endif>>
+
+Aelius: [Neutral] Who should we talk to next?
+
+-> Aelius: [Neutral] So, Ares, you and Hephaestus... <<if $aeliusDayRound2AresDone is false>>
+    <<set $aeliusDayRound2AresDone = true>>
+    <<jump Aelius_Day_SecondRound_Ares>>
+-> Aelius: [Neutral] Let’s talk some more, Hera. <<if $aeliusDayRound2HeraDone is false>>
+    <<set $aeliusDayRound2HeraDone = true>>
+    <<jump Aelius_Day_SecondRound_Hera>>
+-> Aelius: [Neutral] Tell me more about you and Hephaestus, Aphrodite. <<if $aeliusDayRound2AphroditeDone is false>>
+    <<set $aeliusDayRound2AphroditeDone = true>>
+    <<jump Aelius_Day_SecondRound_Aphrodite>>
+===
+
+
+title: Aelius_Day_SecondRound_Ares
+---
+<<HideAll>>
+<<Scene "new_dining_area">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Negative] What more is there to say about him?
+Aelius: [Neutral] Well... you did steal his wife.
+
+<<Hide "Ares">>
+<<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+
+Aphrodite: [Neutral] That’s not how I would describe it.
+
+Aelius: [Neutral] Fair enough.
+Aelius: [Neutral] But still, there’s some tension.
+
+<<Hide "Aphrodite">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Negative] Oh really now?
+
+<<Hide "Ares">>
+<<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+
+Aphrodite: [Neutral] Come now, Ares, we know it needs to be resolved after all this time.
+
+<<Hide "Aphrodite">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Neutral] *Scoffs.*
+Aelius: [Neutral] So tell me your side, Ares.
+Ares: [Negative] I don’t have to explain myself to a mortal.
+
+<<Hide "Ares">>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Negative] Ares.
+
+<<Hide "Hera">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Neutral] *Sigh.* Fine.
+Ares: [Neutral] Aphrodite was more interested in me, so...
+Ares: [Neutral] I took the opportunity.
+
+<<Hide "Ares">>
+<<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+
+Aphrodite: [Negative] You know perfectly well that that’s not the case.
+Aphrodite: [Negative] I am not an opportunity.
+
+<<Hide "Aphrodite">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Negative] How could I not see that as an opportunity after seeing your ruinous relationship?
+
+<<Hide "Ares">>
+<<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+
+Aphrodite: [Negative] I’m gonna go get some air.
+
+<<Hide "Aphrodite">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Negative] Dramatic...
+
+Aelius: [Negative] Ares. What was that?
+Ares: [Negative] What was what?
+
+-> Aelius: [Negative] Was that necessary?
+    Ares: [Negative] Was I wrong?
+    Aelius: [Negative] Yes.
+    Ares: [Negative] It’s not my fault she’s so sensitive.
+    <<jump Aelius_Day_AresConflictBottle>>
+-> Aelius: [Negative] Seriously man? That wasn’t cool.
+    Ares: [Negative] So what?
+    Ares: [Negative] She’s overreacting.
+    <<jump Aelius_Day_AresConflictBottle>>
+-> Aelius: [Negative] You’re being an ass.
+    Ares: [Negative] What’s an outsider to tell me my place?
+    <<jump Aelius_Day_AresConflictBottle>>
+===
+
+
+title: Aelius_Day_AresConflictBottle
+---
+<<Hide "Ares">>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Negative] You child, you are out of line!
+
+<<Hide "Hera">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Negative] Is that what you all really think?
+Ares: [Negative] Tch. Whatever.
+Ares: [Negative] For someone who is all about relationships, she’s one to talk.
+
+<<Hide "Ares">>
+<<Act "Hestia" "Hestia 3_4s" right bottom #3d85c6>>
+
+Hestia: [Neutral] ... I’ll go speak to Aphrodite.
+
+Aelius: [Negative] Ares, behave yourself, please.
+
+<<Hide "Hestia">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Negative] *Scoff.* Whatever.
+
+Aphrodite and Hera return, looking calmer than when they had left.
+
+<<jump Aelius_Day_SecondRoundHub>>
+===
+
+
+title: Aelius_Day_SecondRound_Hera
+---
+<<HideAll>>
+<<Scene "new_dining_area">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Neutral] Must we?
+Aelius: [Neutral] ... Yeah.
+Hera: [Negative] Why? Hermes is an insolent child!
+Hera: [Negative] He has no manners nor decorum, and an egregious lack of respect for his superiors.
+Hera: [Negative] I can not stand his “jokes.”
+
+-> Aelius: [Neutral] I can understand where you’re coming from.
+    Hera: [Neutral] I am glad someone else can see how... annoying he is.
+    Aelius: [Neutral] Some of it was out of line.
+    Aelius: [Neutral] Even if he wasn’t wrong per say, it was wrong to joke about it.
+    Hera: [Neutral] *Sighs* I suppose.
+    <<jump Aelius_Day_HeraConflictBottle>>
+-> Aelius: [Smirk] Not even some of them?
+    Hera: [Negative] Child.
+    Aelius: [Negative] Right, yeah... sorry.
+    Hera: [Negative] He shouldn’t make jokes about such sensitive topics.
+    Aelius: [Neutral] Yeah... Probably not.
+    <<jump Aelius_Day_HeraConflictBottle>>
+-> Aelius: [Neutral] You’re overthinking it.
+    Hera: [Negative] Oh, am I?
+    Hera: [Negative] Or is he just out of line?
+    Aelius: [Neutral] He wasn’t wrong at least.
+    Hera: [Negative] He shouldn’t have joked about such a matter.
+    Aelius: [Neutral] Yeah... Probably not.
+    <<jump Aelius_Day_HeraConflictBottle>>
+===
+
+
+title: Aelius_Day_HeraConflictBottle
+---
+Aelius: [Neutral] I can see why you’re bothered. He was definitely a bit out of line at the least.
+Hera: [Neutral] How about we discuss this further after we eat, hm?
+
+<<jump Aelius_Day_SecondRoundHub>>
+===
+
+
+title: Aelius_Day_SecondRound_Aphrodite
+---
+<<HideAll>>
+<<Scene "new_dining_area">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+
+Aphrodite: [Neutral] It’s... been a long time since we’ve spoken.
+Aelius: [Neutral] I’d imagine that’s uncomfortable.
+Aphrodite: [Neutral] It is.
+Aelius: [Neutral] Do you want to talk to him?
+Aphrodite: [Neutral] ... I do not know.
+
+-> Aelius: [Neutral] You should consider it, maybe.
+    Aphrodite: [Neutral] I have. Quite often in my time away.
+    <<jump Aelius_Day_AphroditeConflictBottle>>
+-> Aelius: [Neutral] It’s been a few centuries...
+    Aphrodite: [Negative] Trust me, no one is more aware of that fact than I.
+    <<jump Aelius_Day_AphroditeConflictBottle>>
+-> Aelius: [Neutral] It’s about time to, I think.
+    Aphrodite: [Neutral] I’ve wondered that myself.
+    <<jump Aelius_Day_AphroditeConflictBottle>>
+===
+
+
+title: Aelius_Day_AphroditeConflictBottle
+---
+<<Hide "Aphrodite">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Negative] *Scoff.*
+
+Aelius: [Neutral] What’s holding you back?
+
+<<Hide "Ares">>
+<<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+
+Aphrodite: [Negative] I do not know if he wishes to speak to me.
+Aelius: [Neutral] I see...
+
+<<jump Aelius_Day_SecondRoundHub>>
+===
+
+
+title: Aelius_Day_MainFoodChoice
+---
+<<HideAll>>
+<<Scene "new_dining_area">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+
+Aelius: [Neutral] I think we could all do with some food, yeah?
+
+-> Aelius: [Neutral] I’ll prepare some nice Erymanthian Boar Sandwiches.
+    <<set $aeliusMainFood = "MakenaTestScene5">>
+    <<Act "Hera" "Hera" right bottom #674ea7>>
+    Hera: [Positive] Lovely.
+    <<Fade "#000000" 0 1 0.35>>
+    <<wait 0.4>>
+    <<HideAll>>
+    <<StartCooking "MakenaTestScene5">>
+-> Aelius: [Neutral] Hm... maybe some Helios Steak would be nice.
+    <<set $aeliusMainFood = "HeliosSteak5">>
+    <<Act "Ares" "Ares" right bottom #cc0000>>
+    Ares: [Positive] That’ll be good.
+    <<Fade "#000000" 0 1 0.35>>
+    <<wait 0.4>>
+    <<HideAll>>
+    <<StartCooking "HeliosSteak5">>
+===
+
+
+title: Aelius_Main_Return_Playful
+---
+<<set $aeliusLastCookingStyle = "Playful">>
+<<jump Aelius_Day_AfterMainCooking>>
+===
+
+title: Aelius_Main_Return_Spicy
+---
+<<set $aeliusLastCookingStyle = "Spicy">>
+<<jump Aelius_Day_AfterMainCooking>>
+===
+
+title: Aelius_Main_Return_Fancy
+---
+<<set $aeliusLastCookingStyle = "Fancy">>
+<<jump Aelius_Day_AfterMainCooking>>
+===
+
+title: Aelius_Main_Return_Fail
+---
+<<set $aeliusLastCookingStyle = "Fail">>
+<<jump Aelius_Day_AfterMainCooking>>
+===
+
+
+title: Aelius_Day_AfterMainCooking
+---
+<<Fade "#000000" 1 0 0.4>>
+<<HideAll>>
+<<Scene "new_dining_area">>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Neutral] ... has been discussing us so much, when we all know the real reason Hestia brought the mortal here.
+
+<<Hide "Hera">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Neutral] Yeah, something about how the mortal is the child of an Olympian.
+
+<<Hide "Ares">>
+<<Act "Hestia" "Hestia 3_4s" right bottom #3d85c6>>
+
+Hestia: [Negative] This really doesn’t need to be discussed-
+
+<<Hide "Hestia">>
+<<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+
+Aphrodite: [Neutral] I agree with Hestia, I do not think this is necessary.
+
+<<Hide "Aphrodite">>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Neutral] Really? I think this matter ought to be dealt with.
+
+<<Hide "Hera">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Neutral] Either Zeus, Hermes, or Hephaestus fathered a kid none of us knew about.
+
+<<Hide "Ares">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+
+Aelius: [Neutral] *Clears throat.*
+
+<<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+
+Aphrodite: [Neutral] ...
+
+<<Hide "Aphrodite">>
+<<Act "Hestia" "Hestia 3_4s" right bottom #3d85c6>>
+
+Hestia: [Neutral] I’m sorry you had to hear that, Aelius.
+
+Aelius: [Neutral] It’s... fine.
+
+<<if $aeliusMainFood == "MakenaTestScene5">>
+    Aelius: [Neutral] I have everyone’s Erymanthian Boar Sandwiches ready.
+<<else>>
+    Aelius: [Neutral] I have everyone’s Helios Steak ready.
+<<endif>>
+
+-> Aelius: [Neutral] Hope you all like it.
+    <<Hide "Hestia">>
+    <<Act "Hera" "Hera" right bottom #674ea7>>
+    Hera: [Neutral] Thank you.
+    <<jump Aelius_Day_MainFoodBottle>>
+-> Aelius: [Neutral] Can’t gossip on an empty stomach.
+    <<Hide "Hestia">>
+    <<Act "Ares" "Ares" right bottom #cc0000>>
+    Ares: [Neutral] *Rolls eyes.*
+    <<jump Aelius_Day_MainFoodBottle>>
+-> Aelius: [Neutral] Here.
+    <<Hide "Hestia">>
+    <<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+    Aphrodite: [Neutral] ... Thank you.
+    <<jump Aelius_Day_MainFoodBottle>>
+===
+
+
+title: Aelius_Day_MainFoodBottle
+---
+<<HideAll>>
+<<Scene "new_dining_area">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+
+Aphrodite: [Neutral] This looks nice, Aelius.
+
+<<Hide "Aphrodite">>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Neutral] So, Aelius, how about you tell us about yourself?
+Hera: [Neutral] Why you’re here, perhaps?
+
+Aelius: [Neutral] ... What about it?
+
+<<Hide "Hera">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Neutral] Do you know which one it is yet?
+
+Aelius: [Neutral] I, uh... no?
+
+<<Hide "Ares">>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Neutral] Poor thing.
+
+<<Hide "Hera">>
+<<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+
+Aphrodite: [Neutral] I’m sorry, dear.
+
+<<Hide "Aphrodite">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Neutral] Well, it’s definitely one of them.
+
+<<Hide "Ares">>
+<<Act "Hestia" "Hestia 3_4s" right bottom #3d85c6>>
+
+Hestia: [Neutral] You don’t have to talk about it if you don’t want to, Aelius.
+
+Aelius: [Negative] No. I... I should probably talk about it.
+Aelius: [Negative] It’s been rough.
+
+-> Aelius: [Negative] I’m not sure what I should be doing with myself.
+    Aelius: [Negative] I’m still trying to process my mom’s death.
+    Aelius: [Negative] And now all of this... I don’t know what to think of it.
+    <<jump Aelius_Day_FatherTalkBottle>>
+-> Aelius: [Neutral] I’m just here at this point.
+    Aelius: [Neutral] If you guys got any ideas, I’m all ears.
+    Aelius: [Negative] I’m still not really over my mom dying, and with all of this on top of that...
+    <<jump Aelius_Day_FatherTalkBottle>>
+-> Aelius: [Neutral] Do any of you understand the feeling of having a mystery dad?
+    Aelius: [Neutral] Because I sure as shit don’t know how to handle it.
+    Aelius: [Neutral] My mom is dead. I don’t even know how to handle that yet.
+    <<jump Aelius_Day_FatherTalkBottle>>
+===
+
+
+title: Aelius_Day_FatherTalkBottle
+---
+<<Hide "Hestia">>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Neutral] Oh... I didn’t know it was so fresh.
+
+<<Hide "Hera">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Neutral] ...
+
+<<Hide "Ares">>
+<<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+
+Aphrodite: [Negative] ... I’m sorry to hear that, Aelius.
+
+Aelius: [Neutral] I’m okay. That actually felt... kinda good to just get it out there.
+Aelius: [Neutral] I really don’t know which of them could be my father.
+Aelius: [Neutral] I guess I have my suspicions...
+
+-> Aelius: [Neutral] I feel like it might be Zeus.
+    <<Hide "Aphrodite">>
+    <<Act "Hera" "Hera" right bottom #674ea7>>
+    Hera: [Neutral] Oh?
+    <<Hide "Hera">>
+    <<Act "Ares" "Ares" right bottom #cc0000>>
+    Ares: [Neutral] Of course he did it again...
+    Aelius: [Neutral] His, uh... stubbornness is familiar to me.
+    <<jump Aelius_Day_FatherSuspicionBottle>>
+-> Aelius: [Neutral] I’m leaning towards Hermes.
+    <<Hide "Aphrodite">>
+    <<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+    Aphrodite: [Neutral] Go on.
+    Aelius: [Neutral] We both love a good joke.
+    <<jump Aelius_Day_FatherSuspicionBottle>>
+-> Aelius: [Neutral] I’m getting the feeling it’s Hephaestus.
+    <<Hide "Aphrodite">>
+    <<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+    Aphrodite: [Negative] ...
+    <<Hide "Aphrodite">>
+    <<Act "Ares" "Ares" right bottom #cc0000>>
+    Ares: [Neutral] Seriously? Him of all people?
+    <<jump Aelius_Day_FatherSuspicionBottle>>
+===
+
+
+title: Aelius_Day_FatherSuspicionBottle
+---
+<<Hide "Ares">>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Neutral] I suppose I can see that.
+
+Aelius: [Negative] It’s been... weird.
+Aelius: [Neutral] It was always just me and my mom, no sort of dad in the picture.
+
+<<Hide "Hera">>
+<<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+
+Aphrodite: [Neutral] I do understand that feeling.
+
+Aelius: [Neutral] Knowing now that my father is so in reach...
+Aelius: [Neutral] *Sigh* I don’t know.
+
+<<Hide "Aphrodite">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Neutral] What is there not to be excited about? Your father’s a god.
+
+<<Hide "Ares">>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Neutral] Ares, have some understanding.
+
+<<Hide "Hera">>
+<<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+
+Aphrodite: [Neutral] Dear, do you want to find your dad?
+
+-> Aelius: [Neutral] I’m honestly not sure.
+    Aelius: [Neutral] I’m kinda used to having no dad at this point.
+    <<Hide "Aphrodite">>
+    <<Act "Hera" "Hera" right bottom #674ea7>>
+    Hera: [Neutral] It could be beneficial.
+    <<Hide "Hera">>
+    <<Act "Ares" "Ares" right bottom #cc0000>>
+    Ares: [Neutral] It’s not always easy having a dad, but I’m glad I have one.
+    <<jump Aelius_Day_DessertChoice>>
+-> Aelius: [Smirk] Well y’know, when in Olympus...
+    Aelius: [Smirk] ... Do as the Olympians do.
+    <<Hide "Aphrodite">>
+    <<Act "Hera" "Hera" right bottom #674ea7>>
+    Hera: [Negative] ...
+    <<Hide "Hera">>
+    <<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+    Aphrodite: [Neutral] It’s always good to remain in high spirits.
+    <<jump Aelius_Day_DessertChoice>>
+-> Aelius: [Neutral] Yeah, he needs to take some responsibility.
+    Aelius: [Negative] It was hard on my mom being a single parent.
+    <<Hide "Aphrodite">>
+    <<Act "Hera" "Hera" right bottom #674ea7>>
+    Hera: [Neutral] Parenting is quite the task, I can’t imagine doing it alone.
+    <<Hide "Hera">>
+    <<Act "Ares" "Ares" right bottom #cc0000>>
+    Ares: [Neutral] But that experience made you both stronger for it.
+    <<jump Aelius_Day_DessertChoice>>
+===
+
+
+title: Aelius_Day_DessertChoice
+---
+<<HideAll>>
+<<Scene "new_dining_area">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Aelius: [Neutral] Yeah, I guess so.
+Aelius: [Neutral] I feel... a bit better now.
+Ares: [Neutral] All this touchy-feely stuff has me hungry.
+Ares: [Neutral] What’s for dessert?
+
+-> Aelius: [Neutral] I think an Ambrosia Cake could be good.
+    <<set $aeliusDessert = "AmbrosiaCake5">>
+    Ares: [Positive] YES!!
+    Ares: [Neutral] Erm, I mean, very good.
+    <<jump Aelius_Day_HermesArrival>>
+-> Aelius: [Neutral] I’ll whip up some Lotus Parfait.
+    <<set $aeliusDessert = "LotusParfait4">>
+    <<Hide "Ares">>
+    <<Act "Hera" "Hera" right bottom #674ea7>>
+    Hera: [Positive] A wonderful idea.
+    <<jump Aelius_Day_HermesArrival>>
+===
+
+
+title: Aelius_Day_HermesArrival
+---
+<<HideAll>>
+<<Scene "new_dining_area">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Hermes" "Hermes 3_4" right bottom #00ffff>>
+
+Hermes: [Neutral] Hestia! Got a batch of Dionysus’ new wine you order-
+Hermes: [Neutral] Why are you all here?
+
+Aelius: [Neutral] Oh, uh, hey, Hermes.
+
+<<Hide "Hermes">>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Negative] *Scoffs*
+
+<<Hide "Hera">>
+<<Act "Hermes" "Hermes 3_4" right bottom #00ffff>>
+
+Hermes: [Positive] Wassup my favorite chef.
+
+Aelius: [Neutral] Come with me to the kitchen, you can drop off the delivery. I gotta get cooking, anyway.
+
+<<Fade "#000000" 0 1 0.35>>
+<<wait 0.4>>
+<<jump Aelius_Day_HermesKitchenTalk>>
+===
+
+
+title: Aelius_Day_HermesKitchenTalk
+---
+<<Fade "#000000" 1 0 0.4>>
+<<HideAll>>
+<<Scene "main_kitchen_bg_2">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Hermes" "Hermes 3_4" right bottom #00ffff>>
+
+Aelius: [Neutral] Sorry, figured it’d be easier to chat in here.
+Hermes: [Wink] Ooo, juicy gossip? There’s gotta be if so many people are here at once.
+Aelius: [Neutral] Well, kinda...
+Aelius: [Smirk] Actually, yes. Yes there is.
+Hermes: [Neutral] Well? Do tell.
+Aelius: [Neutral] This all was Hestia’s idea. She figured with me here and getting closer to everyone, that maybe I could help fix some of the tension on Olympus.
+Hermes: [Wink] Ah, so you’re a goodwill-creating guinea pig.
+Hermes: [Wink] Nice.
+Aelius: [Positive] *Laughs* Guess I am.
+Aelius: [Neutral] Anyway, thanks for delivering the wine. Hestia’s been excited about it.
+Hermes: [Positive] No problemo, ‘tis my job.
+Hermes: [Neutral] But...
+Aelius: [Neutral] Uh oh, what..?
+Hermes: [Positive] How about I hang around for a bit. Maybe I can help.
+Hermes: [Wink] After all, I see a lot during my deliveries around here. Insider info, if you will.
+Aelius: [Neutral] Uh huh...
+Hermes: [Neutral] So... how about it?
+Aelius: [Neutral] Sure, why not. Not a half bad idea, really.
+Aelius: [Neutral] But uh... just a warning. Hera might hate you currently.
+Hermes: [Wink] Psh, I’ll be fine. She’ll get over it.
+Hermes: [Positive] I’ll go find a seat, see ya soon.
+
+<<Fade "#000000" 0 1 0.35>>
+<<wait 0.4>>
+<<HideAll>>
+
+<<if $aeliusDessert == "AmbrosiaCake5">>
+    <<StartCooking "AmbrosiaCake5">>
+<<else>>
+    <<StartCooking "LotusParfait4">>
+<<endif>>
+===
+
+
+title: Aelius_Dessert_Return_Playful
+---
+<<set $aeliusLastCookingStyle = "Playful">>
+<<jump Aelius_Day_AfterDessertCooking>>
+===
+
+title: Aelius_Dessert_Return_Spicy
+---
+<<set $aeliusLastCookingStyle = "Spicy">>
+<<jump Aelius_Day_AfterDessertCooking>>
+===
+
+title: Aelius_Dessert_Return_Fancy
+---
+<<set $aeliusLastCookingStyle = "Fancy">>
+<<jump Aelius_Day_AfterDessertCooking>>
+===
+
+title: Aelius_Dessert_Return_Fail
+---
+<<set $aeliusLastCookingStyle = "Fail">>
+<<jump Aelius_Day_AfterDessertCooking>>
+===
+
+
+title: Aelius_Day_AfterDessertCooking
+---
+<<Fade "#000000" 1 0 0.4>>
+<<HideAll>>
+<<Scene "new_dining_area">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Negative] And you’re here why, again?
+
+<<Hide "Hera">>
+<<Act "Hermes" "Hermes 3_4" right bottom #00ffff>>
+
+Hermes: [Wink] Can’t a guy just sit in on some chit-chat?
+
+<<Hide "Hermes">>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Negative] I don’t know, can you?
+
+<<Hide "Hera">>
+<<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+
+Aphrodite: [Neutral] Hera, let him stay. He’s causing no harm.
+
+<<if $aeliusDessert == "AmbrosiaCake5">>
+    Aelius: [Neutral] I got everyone’s Ambrosia Cake here.
+<<else>>
+    Aelius: [Neutral] I got everyone’s Lotus Parfait here.
+<<endif>>
+
+<<Hide "Aphrodite">>
+<<Act "Hermes" "Hermes 3_4" right bottom #00ffff>>
+
+Hermes: [Positive] Wow, kid, you never disappoint, eh?
+Aelius: [Positive] Thanks, Hermes.
+Hermes: [Neutral] So I was just thinking...
+Hermes: [Neutral] Aphrodite, I’ve seen ole Heph moping around.
+
+<<Hide "Hermes">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Neutral] Haha! It’s what he gets for forging all day.
+
+<<Hide "Ares">>
+<<Act "Hermes" "Hermes 3_4" right bottom #00ffff>>
+
+Hermes: [Neutral] Well, either way...
+Hermes: [Wink] To me, it seems like he could use some company.
+
+<<Hide "Hermes">>
+<<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+
+Aphrodite: [Neutral] Oh... you really think so?
+
+<<Hide "Aphrodite">>
+<<Act "Hermes" "Hermes 3_4" right bottom #00ffff>>
+
+Hermes: [Wink] Yep. His tools can’t keep him company forever.
+
+Aelius: [Neutral] Aphrodite, you should talk to him.
+
+-> Aelius: [Neutral] At least smooth things out between you two.
+    <<Hide "Hermes">>
+    <<Act "Hestia" "Hestia 3_4s" right bottom #3d85c6>>
+    Hestia: [Positive] That’s a wonderful idea, Aelius.
+    <<Hide "Hestia">>
+    <<Act "Ares" "Ares" right bottom #cc0000>>
+    Ares: [Neutral] Maybe he wouldn’t be such a sourpuss anymore.
+    <<jump Aelius_Day_AphroditeResolutionBottle>>
+-> Aelius: [Smirk] Before he makes a statue of you for company.
+    <<Hide "Hermes">>
+    <<Act "Hera" "Hera" right bottom #674ea7>>
+    Hera: [Negative] Again.
+    <<Hide "Hera">>
+    <<Act "Hermes" "Hermes 3_4" right bottom #00ffff>>
+    Hermes: [Positive] Hehehe.
+    <<jump Aelius_Day_AphroditeResolutionBottle>>
+-> Aelius: [Neutral] I feel like this has gone on long enough.
+    <<Hide "Hermes">>
+    <<Act "Hera" "Hera" right bottom #674ea7>>
+    Hera: [Neutral] Yes, you two should get over your problems with each other after all this time.
+    <<Hide "Hera">>
+    <<Act "Hestia" "Hestia 3_4s" right bottom #3d85c6>>
+    Hestia: [Negative] I do agree. I dislike all the tension here on Olympus.
+    <<jump Aelius_Day_AphroditeResolutionBottle>>
+===
+
+
+title: Aelius_Day_AphroditeResolutionBottle
+---
+<<HideAll>>
+<<Scene "new_dining_area">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+
+Aphrodite: [Neutral] Yes, you’re right.
+Aphrodite: [Positive] I’ll try to talk to him soon, if he’s willing.
+
+<<Hide "Aphrodite">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Negative] That man will never be willing.
+
+<<Hide "Ares">>
+<<Act "Hestia" "Hestia 3_4s" right bottom #3d85c6>>
+
+Hestia: [Negative] Ares, please.
+
+<<Hide "Hestia">>
+<<Act "Hermes" "Hermes 3_4" right bottom #00ffff>>
+
+Hermes: [Neutral] You’re one to talk, Ares.
+
+<<Hide "Hermes">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Neutral] Hm? Why?
+
+<<Hide "Ares">>
+<<Act "Hermes" "Hermes 3_4" right bottom #00ffff>>
+
+Hermes: [Neutral] You’re all dark and brooding. And you avoid him too.
+
+<<Hide "Hermes">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Negative] Says who?
+
+<<Hide "Ares">>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Neutral] As much as I hate to agree with Hermes, he’s not wrong.
+Hera: [Neutral] I’ve noticed it myself.
+
+<<Hide "Hera">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Negative] Really, mother?
+
+-> Aelius: [Neutral] If neither one of you changes, nothing will.
+    <<Hide "Ares">>
+    <<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+    Aphrodite: [Neutral] It would be best for everyone if this was finally put to rest.
+    <<Hide "Aphrodite">>
+    <<Act "Ares" "Ares" right bottom #cc0000>>
+    Ares: [Neutral] Urgh, I guess.
+    <<jump Aelius_Day_AresResolutionBottle>>
+-> Aelius: [Neutral] Everyone’s tired of your guys’ exhausting-ass arguing.
+    <<Hide "Ares">>
+    <<Act "Hera" "Hera" right bottom #674ea7>>
+    Hera: [Neutral] It’s quite tiring to watch, really.
+    <<Hide "Hera">>
+    <<Act "Ares" "Ares" right bottom #cc0000>>
+    Ares: [Negative] Well, if he wasn’t such a-
+    Ares: [Neutral] Alright, fine.
+    <<jump Aelius_Day_AresResolutionBottle>>
+-> Aelius: [Neutral] Someone has to be the bigger person.
+    Ares: [Negative] Who says it has to be me?
+    Ares: [Neutral] Hmph.
+    <<jump Aelius_Day_AresResolutionBottle>>
+===
+
+
+title: Aelius_Day_AresResolutionBottle
+---
+<<HideAll>>
+<<Scene "new_dining_area">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Neutral] If he wants to talk, he can come to me.
+
+<<Hide "Ares">>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Neutral] And you’ll listen?
+
+<<Hide "Hera">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Neutral] I’ll consider it.
+
+<<Hide "Ares">>
+<<Act "Hermes" "Hermes 3_4" right bottom #00ffff>>
+
+Hermes: [Wink] I think I deserve the title of Olympus relationship counselor now.
+
+<<Hide "Hermes">>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Negative] You have some nerve, saying that after last night.
+
+<<Hide "Hera">>
+<<Act "Hermes" "Hermes 3_4" right bottom #00ffff>>
+
+Hermes: [Neutral] Wait, what’d I do again?
+
+<<Hide "Hermes">>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Negative] You made a spectacle of my marriage.
+
+<<Hide "Hera">>
+<<Act "Hermes" "Hermes 3_4" right bottom #00ffff>>
+
+Hermes: [Neutral] Ohhhhh, right. That.
+
+Aelius: [Neutral] I don’t think he meant it like that, Hera.
+
+<<Hide "Hermes">>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Negative] I don’t care what he meant, he shouldn’t have said it.
+
+-> Aelius: [Neutral] It was a bit uncalled for, you’re right.
+    Hera: [Neutral] Yes, it was. I don’t appreciate humor at my expense.
+    <<Hide "Hera">>
+    <<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+    Aphrodite: [Neutral] I don’t think many people do.
+    <<jump Aelius_Day_HermesHeraBottle>>
+-> Aelius: [Neutral] I thought it was a bit funny myself.
+    Hera: [Negative] What’s so funny about joking about my personal issues?
+    <<Hide "Hera">>
+    <<Act "Ares" "Ares" right bottom #cc0000>>
+    Ares: [Neutral] I wouldn’t appreciate it either.
+    <<jump Aelius_Day_HermesHeraBottle>>
+-> Aelius: [Neutral] If Zeus didn’t do that, it wouldn’t be an issue.
+    Hera: [Neutral] What he did and didn’t do is none of your business.
+    <<Hide "Hera">>
+    <<Act "Hestia" "Hestia 3_4s" right bottom #3d85c6>>
+    Hestia: [Neutral] Hera, they’re just trying to help.
+    <<jump Aelius_Day_HermesHeraBottle>>
+===
+
+
+title: Aelius_Day_HermesHeraBottle
+---
+<<HideAll>>
+<<Scene "new_dining_area">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Hermes" "Hermes 3_4" right bottom #00ffff>>
+
+Hermes: [Negative] I’m sorry, I didn’t know you would’ve cared so much.
+
+<<Hide "Hermes">>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Neutral] Of course you didn’t know, you don’t care about matters like this.
+
+<<Hide "Hera">>
+<<Act "Hermes" "Hermes 3_4" right bottom #00ffff>>
+
+Hermes: [Negative] ...
+Hermes: [Neutral] I’ll... try and work on it.
+
+<<Hide "Hermes">>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Neutral] See that you do.
+
+<<Hide "Hera">>
+<<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+
+Aphrodite: [Positive] Thank you, Aelius dear, for this.
+Aphrodite: [Positive] It is nice to have an outside perspective.
+
+<<Hide "Aphrodite">>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Neutral] It has been eye-opening.
+
+<<Hide "Hera">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Neutral] I guess it helped.
+
+-> Aelius: [Neutral] Of course, happy to help.
+    <<jump Aelius_Day_GroupThanksBottle>>
+-> Aelius: [Smirk] I’m glad I could be of service.
+    <<jump Aelius_Day_GroupThanksBottle>>
+-> Aelius: [Neutral] It’s what I do.
+    <<jump Aelius_Day_GroupThanksBottle>>
+===
+
+
+title: Aelius_Day_GroupThanksBottle
+---
+<<HideAll>>
+<<Scene "new_dining_area">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Positive] You fit in nicely here.
+
+<<Hide "Hera">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Positive] You’re starting to make a place for yourself.
+
+Aelius: [Neutral] Thanks. I think I’m starting to like it here.
+
+<<Hide "Ares">>
+<<Act "Hestia" "Hestia 3_4s" right bottom #3d85c6>>
+
+Hestia: [Positive] I’m glad, dear.
+
+<<Hide "Hestia">>
+<<Act "Hermes" "Hermes 3_4" right bottom #00ffff>>
+
+Hermes: [Wink] Welcome to our big not-so-happy family.
+
+Aelius: [Positive] *Laughs.*
+
+<<Hide "Hermes">>
+<<Act "Aphrodite" "Aphrodite" right bottom #ff99cc>>
+
+Aphrodite: [Positive] Thank you for the food, Aelius.
+Aphrodite: [Positive] But I think it’s best I get going.
+
+<<Hide "Aphrodite">>
+<<Act "Ares" "Ares" right bottom #cc0000>>
+
+Ares: [Positive] See ya next time, mortal.
+
+<<Hide "Ares">>
+<<Act "Hera" "Hera" right bottom #674ea7>>
+
+Hera: [Positive] Goodbye, everyone.
+
+<<Hide "Hera">>
+<<Act "Hermes" "Hermes 3_4" right bottom #00ffff>>
+
+Hermes: [Positive] That’s my cue too, duty calls!
+
+<<Fade "#000000" 0 1 0.35>>
+<<wait 0.4>>
+<<jump Aelius_Day_EndingKitchen>>
+===
+
+
+title: Aelius_Day_EndingKitchen
+---
+<<Fade "#000000" 1 0 0.4>>
+<<HideAll>>
+<<Scene "main_kitchen_bg_2">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Hestia" "Hestia 3_4s" right bottom #3d85c6>>
+
+Aelius: [Neutral] That was... a lot.
+Hestia: [Negative] I’m sorry about all that.
+Hestia: [Negative] I should’ve let you know what I was planning sooner. Everyone ended up a bit uncomfortable.
+Aelius: [Neutral] Hestia, you did nothing wrong. If anything, I think we did some good today.
+Hestia: [Neutral] Thank you, Aelius. Truly.
+Hestia: [Neutral] I had brought them in today so you could help them, but I had asked them to come in to help you.
+Hestia: [Neutral] I wanted to help everyone warm up to you and you to feel like you could open up to them too.
+
+-> Aelius: [Neutral] It’s alright, but I would’ve liked a bigger heads up.
+    Hestia: [Neutral] Of course, I’m sorry.
+    Aelius: [Neutral] Thanks Hestia, but you need to stop apologizing. It’s why the other Olympians step all over you.
+    Hestia: [Neutral] Oh, I- I will try to work on that.
+    Aelius: [Neutral] Maybe there’s some change to be had here too.
+    <<jump Aelius_Day_EndBottle>>
+-> Aelius: [Positive] Ah, pick up your head Hestia, you haven’t done anything wrong.
+    Hestia: [Neutral] Oh, of course. Sorry for everything.
+    Aelius: [Neutral] Hestia, you need to stop apologizing.
+    Aelius: [Neutral] It’s likely one of the main reasons why the other Olympians step all over you.
+    Hestia: [Neutral] You think so? I... hadn’t noticed.
+    Hestia: [Neutral] I’ll work on that.
+    Aelius: [Neutral] Maybe there’s some changes to be had here in the diner too.
+    <<jump Aelius_Day_EndBottle>>
+-> Aelius: [Negative] I would appreciate it if you didn’t do that without talking to me again.
+    Hestia: [Negative] I’m sorry, truly.
+    Hestia: [Negative] I didn’t mean to make today as terrible as it was.
+    Hestia: [Negative] I’m so sorry.
+    Aelius: [Neutral] Hestia, I appreciate your apology, but you need to knock it off with all the apologizing.
+    Aelius: [Neutral] It might not be my place to say this, but I think that’s probably why the other Olympians walk all over you.
+    Hestia: [Neutral] Oh... um... I suppose so. Sorry.
+    Aelius: [Neutral] Hestia!
+    Hestia: [Neutral] Ah, sor- I mean, I understand.
+    Aelius: [Neutral] Well, perhaps there are some changes to be had here in the diner too.
+    <<jump Aelius_Day_EndBottle>>
+===
+
+
+title: Aelius_Day_EndBottle
+---
+Hestia: [Neutral] Anyways, I’ve taken up a lot of your day, so I’ll let you go for today.
+Hestia: [Neutral] I see you tomorrow morning right?
+Aelius: [Neutral] Of course, I'll see you then.
+
+<<Fade "#000000" 0 1 0.6>>
+<<wait 0.7>>
+<<LoadVNScene "Day6">>
+===

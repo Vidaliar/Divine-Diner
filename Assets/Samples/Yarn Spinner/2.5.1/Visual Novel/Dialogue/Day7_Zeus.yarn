@@ -10,6 +10,7 @@ tags:
 Hephaestus: Aelius.
 
 -> Hephaestus. (deference)
+    <<AddHephaestusAffinity 0>>
 -> H-dog! Good to see you! (humor)
     Hephaestus: ...
     Hephaestus: Do not call me that.
@@ -28,15 +29,18 @@ Hephaestus: Oh no.
 <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 Zeus: HEPHAESTUS, MY BOY!
 Aelius: Hello, King Zeus.
+<<SyncAffinity>>
 
--> High relationship
+<<if $zeusAffinity >= 28>>
     Zeus: AELIUS! HAHA! LOOK, IT'S MY BOY!
--> Medium relationship
+<<elseif $zeusAffinity >= 19>>
     Zeus: CHILD! HAHA! LOOK, IT’S MY BOY!
--> Low relationship
+<<else>>
     Zeus: CHILD! THIS IS MY BOY!
+<<endif>>
 
 -> Is that so? (deference)
+    <<AddZeusAffinity 2>>
     <<Hide Zeus>>
     <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
     Hephaestus: I-
@@ -45,6 +49,7 @@ Aelius: Hello, King Zeus.
     Zeus: YES! DON’T YOU KNOW? HEPHAESTUS IS MY CHILD!
     <<Hide Zeus>>
 -> Who? (humor)
+    <<AddZeusAffinity 1>>
     Zeus: HEPHAESTUS! MY SON! HE’S RIGHT HERE!
 -> Yeah, we've met. (aggressive)
     Zeus: Oh? GOOD! YES!
@@ -71,6 +76,7 @@ Hephaestus: The <b>Helios Steak,</b> if you would.
 Aelius: Right away.
 
 // HELIOS STEAK
+<<AddZeusAffinity 2>>
 <<StartCooking MakenaTestScene4>>
 <<HideAll>>
 ===
@@ -80,6 +86,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+<<AddZeusAffinity 3>>
 
 Aelius: Your food.
 <<Hide Hephaestus>>
@@ -90,6 +97,7 @@ Zeus: ...
 Hephaestus: Thank you, Aelius.
 
 -> Is everything okay? (deference)
+    <<AddZeusAffinity 3>>
     <<Hide Hephaestus>>
     <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
     Zeus: ...
@@ -106,6 +114,7 @@ Hephaestus: Thank you, Aelius.
     Hephaestus: Father, it's not their fault-
     <<Hide Hephaestus>>
 -> I'm gonna go. (aggressive)
+    <<AddZeusAffinity 1>>
 
 <<Hide Aelius>>
 <<Act "Hephaestus" "Hephaestus" "left" "bottom" #FF8C00>>
@@ -137,6 +146,7 @@ Hephaestus: ...
     Zeus: What I mean to say is, even though she didn’t want me to find out about you, I did.
     Zeus: I only regret not realizing your brilliance back then.
     -> *Stay silent* (deference)
+        <<AddZeusAffinity 2>>
         Hephaestus: Is it her fault you never visited my forge?
         Zeus: ...
         Zeus: No.
@@ -148,7 +158,8 @@ Hephaestus: ...
         <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
         Aelius: Sorry.
         <<Hide Aelius>>
-    -> She didn’t make you ignore him for most of his life.
+    -> She didn’t make you ignore him for most of his life. (aggressive)
+        <<AddZeusAffinity 1>>
         Zeus: ...
         Zeus: No, she didn't.
         Zeus: That fault falls with me.
@@ -189,6 +200,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+<<AddZeusAffinity 2>>
 
 Aelius: Your food.
 <<Hide Hephaestus>>
@@ -199,6 +211,7 @@ Zeus: ...
 Hephaestus: Thank you, Aelius.
 
 -> Is everything okay? (deference)
+    <<AddZeusAffinity 3>>
     <<Hide Hephaestus>>
     <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
     Zeus: ...
@@ -215,6 +228,7 @@ Hephaestus: Thank you, Aelius.
     Hephaestus: Father, it's not their fault-
     <<Hide Hephaestus>>
 -> I'm gonna go. (aggressive)
+    <<AddZeusAffinity 1>>
 
 <<Hide Aelius>>
 <<Act "Hephaestus" "Hephaestus" "left" "bottom" #FF8C00>>
@@ -279,6 +293,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+<<AddZeusAffinity 1>>
 
 Aelius: Your food.
 <<Hide Hephaestus>>
@@ -289,6 +304,7 @@ Zeus: ...
 Hephaestus: Thank you, Aelius.
 
 -> Is everything okay? (deference)
+    <<AddZeusAffinity 3>>
     <<Hide Hephaestus>>
     <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
     Zeus: ...
@@ -305,6 +321,7 @@ Hephaestus: Thank you, Aelius.
     Hephaestus: Father, it's not their fault-
     <<Hide Hephaestus>>
 -> I'm gonna go. (aggressive)
+    <<AddZeusAffinity 1>>
 
 <<Hide Aelius>>
 <<Act "Hephaestus" "Hephaestus" "left" "bottom" #FF8C00>>
@@ -334,6 +351,7 @@ Hephaestus: ...
     Zeus: So, what is it? What do you want?
     Hephaestus: ...
     -> King Zeus, please... (deference)
+        <<AddZeusAffinity 1>>
         Zeus: ...
         Hephaestus: I would like to be left to myself.
     -> Play catch with him or something. (humor)
@@ -343,6 +361,7 @@ Hephaestus: ...
         Zeus: Yes, I can imagine.
         Hephaestus: I should be on my way.
     -> You can't act like nothing happened. (aggressive)
+        <<AddZeusAffinity 2>>
         Zeus: ...No. I suppose I can't.
         Zeus: I spent a lot of my life ignoring you, didn't I, son?
         Hephaestus: Hrumph

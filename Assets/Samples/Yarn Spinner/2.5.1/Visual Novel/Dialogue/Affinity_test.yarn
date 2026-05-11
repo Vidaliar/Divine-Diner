@@ -1,0 +1,18 @@
+﻿title: Affinity_test
+---
+Before command.
+
+<<Testing hello>>
+
+<<AddZeusAffinity 2>>
+
+After command.
+
+<<SyncAffinity>>
+
+<<if $zeusAffinity >= 2>>
+    Zeus affinity worked.
+<<else>>
+    Zeus affinity did not work.
+<<endif>>
+===

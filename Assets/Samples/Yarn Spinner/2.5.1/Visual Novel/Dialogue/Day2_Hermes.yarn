@@ -12,10 +12,12 @@ Hermes: Feeling better after dealing with Zeus?
 Hermes: I'm telling you, King of the Gods? More like the King of Pettiness.
 Hermes: I don't think I've ever seen such a strong man throw so many fits.
 
--> Yeah, seriously.
--> I din't know a grown man could get his robes in twist over a ham and chesse sandwich.
+-> Yeah, seriously. (deference)
+-> I din't know a grown man could get his robes in twist over a ham and chesse sandwich. (humorous)
     Hermes: <i>Laughs</i> Ha! You got some spunk to ya already. Good.
--> <i>Rolls eyes.</i>
+    <<AddHermesAffinity 3>>
+-> <i>Rolls eyes.</i> (aggressive)
+    <<AddHermesAffinity 1>>
     Hermes: Oh, I see. Zeus must be rubbing off on you. He has no eye for a good joke, that one.
 
 Hermes: Well, I wanted to let you know I actually have more time today to hang around.
@@ -23,11 +25,13 @@ Hermes: Won't have to eat my food at inhuman speeds - wait, don't think too hard
 Aelius: Deliveries light today? I've been curious about your job.
 Hermes: Yep, luckily for me! And ask away, it's nice to have time to have an actual chat for once.
 
--> How have the deliveries been going?
+-> How have the deliveries been going? (deference)
+    <<AddHermesAffinity 1>>
     Hermes: Just been traveling along. It's pretty tiring, but the views can't be beat - I love getting to see so many new places.
--> So, what kinda stuff do you get up to when delivering?
+-> So, what kinda stuff do you get up to when delivering? (humorous)
+    <<AddHermesAffinity 2>>
     Hermes: Well, between you and me, I manage to scrounge up some time to prank humans and the other gods.
--> Be honest real quick, how busy are you <i>really</i>?
+-> Be honest real quick, how busy are you <i>really</i>? (aggressive)
     Hermes: A nosy one, you are - don't believe me? It's pretty tiring, but I manage to find some free time here and there.
 
 Hermes: Enough chatter, my stomach 'bout to growl louder than Zeus snores!
@@ -35,7 +39,7 @@ Aelius: Alright, what can I get for you today?
 Hermes: Some <b>Lotus Parfait</b> sounds really good right about now.
 Aelius: I'll get started on that.
 Hermes: Thanks, Aelius.
-
+<<AddHermesAffinity 2>>
 <<StartCooking "LotusParfait">>
 ===
 
@@ -47,6 +51,7 @@ title: Day2_Hermes_ReturnFancy
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 Aelius: Whipped up your Lotus Parfait for you!
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+<<AddHermesAffinity 1>>
 Hermes: This Lotus Parfait looks great! Hope it tastes as good as it looks.
 
 <<jump Hermes_Day2_after_cooking>>
@@ -57,6 +62,7 @@ title: Day2_Hermes_ReturnPlayful
 <<wait 0.1>>
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<AddHermesAffinity 2>>
 Aelius: Whipped up your Lotus Parfait for you!
 
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
@@ -69,6 +75,7 @@ title: Day2_Hermes_ReturnSpicy
 <<wait 0.1>>
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<AddHermesAffinity 2>>
 Aelius: Whipped up your Lotus Parfait for you!
 
 
@@ -81,32 +88,37 @@ Hermes: Ares pay you off to get me to deliver his gift to Aphrodite ASAP?
 title: Hermes_Day2_after_cooking
 ---
 Hermes: That might be the best Lotus Parfait I've ever had, honestly.
+<<SyncAffinity>>
 
--> Medium
+<<if $hermesAffinity >= 15>>
     Hermes: I'm glad Hestia scooped you up, I alreay don't think I could go back to not eating your cooking.
--> Low
+<<else>>
     Hermes: Hestia had a good eye to scoop you up, I already don't think I could go back to not eating your cooking.
-    Aelius: Glad you appreciate it, it's nice getting to cook for someone again...
-    Hermes: I noticed you're in better spirits than yesterday - grinded out your problems with Zeus?
-    Aelius: Yeah, actually. I was shocked he decided to be... amicable.
-    Hermes: Really now? C'mon, don't be shy on the details, I'm curious.
-    Aelius: Well, Ares had come in to order, and Zeus barged in to talk to him.
-    Aelius: When I served them, they were getting along. Seemed like Zeus was actually in a good mood.
-    Hermes: Zeus? In a <i>good</i> mood? Blasphemy.
-    Aelius: I felt the same! But after Ares left, he actually <i>thanked</i> me.
-    Hermes: I was convinced Zeus didn't know having manners applied to him too.
-    Hermes: Old man must be goin' soft.
-    Aelius: I don't know how you've dealt with him for centuries, honestly. How do you manage it?
-    Hermes: Oh, uh...
-    Hermes: Ah, y'know. It's never dull!
-    Hermes: Get to see the theatrics over Zeus's love for woman... besided Hera, of course.
-    Hermes: Home-wrecking his own marriage.
-    Hermes: If the rumors about why you're here are true, then I bet you can relate, eh?
+<<endif>>
+Aelius: Glad you appreciate it, it's nice getting to cook for someone again...
+Hermes: I noticed you're in better spirits than yesterday - grinded out your problems with Zeus?
+Aelius: Yeah, actually. I was shocked he decided to be... amicable.
+Hermes: Really now? C'mon, don't be shy on the details, I'm curious.
+Aelius: Well, Ares had come in to order, and Zeus barged in to talk to him.
+Aelius: When I served them, they were getting along. Seemed like Zeus was actually in a good mood.
+Hermes: Zeus? In a <i>good</i> mood? Blasphemy.
+Aelius: I felt the same! But after Ares left, he actually <i>thanked</i> me.
+Hermes: I was convinced Zeus didn't know having manners applied to him too.
+Hermes: Old man must be goin' soft.
+Aelius: I don't know how you've dealt with him for centuries, honestly. How do you manage it?
+Hermes: Oh, uh...
+Hermes: Ah, y'know. It's never dull!
+Hermes: Get to see the theatrics over Zeus's love for woman... besided Hera, of course.
+Hermes: Home-wrecking his own marriage.
+Hermes: If the rumors about why you're here are true, then I bet you can relate, eh?
+
 
 -> I get it, I won't push it.(deference)
+    <<AddHermesAffinity 2>>
     Hermes: Thanks, kid.
     Hermes: Anyways, I should get going.
 -> Guess we're united in daddy issues.(humorous)
+    <<AddHermesAffinity 2>>
     Hermes: <i>Laughs</i> Ha! I suppose we are.
     Hermes: Anyway, I should get going.
 -> There's gotta be more to it.(aggressive)

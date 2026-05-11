@@ -28,6 +28,7 @@ Aelius: Apple cider, coming right up.
 Aelius: [Smirk] Hold tight- if you can.
 
 // Apple cider
+<<AddHermesAffinity 2>>
 <<StartCooking "AppleCider2">>
 <<HideAll>>
 ===
@@ -48,6 +49,7 @@ Hermes: You got a moment? I wanna do a test-run of my set – you in?
 -> Yeah, why not. (deference)
     Hermes: Nice! Trust me, you <i>won't<i> be disappointed.
 -> Alright, alright, shoot. (humorous)
+    <<AddHermesAffinity 1>>
     Hermes: Hell yeah, thanks. You aren't <i>ready</i> for my comedic prowresss.
 -> I guess.
     Hermes: At least <i>pretend</i> to be a little interested...
@@ -83,6 +85,7 @@ Hermes: You got a moment? I wanna do a test-run of my set – you in?
 -> Yeah, why not. (deference)
     Hermes: Nice! Trust me, you <i>won't<i> be disappointed.
 -> Alright, alright, shoot. (humorous)
+    <<AddHermesAffinity 1>>
     Hermes: Hell yeah, thanks. You aren't <i>ready</i> for my comedic prowresss.
 -> I guess.
     Hermes: At least <i>pretend</i> to be a little interested...
@@ -118,6 +121,7 @@ Hermes: You got a moment? I wanna do a test-run of my set – you in?
 -> Yeah, why not. (deference)
     Hermes: Nice! Trust me, you <i>won't<i> be disappointed.
 -> Alright, alright, shoot. (humorous)
+    <<AddHermesAffinity 1>>
     Hermes: Hell yeah, thanks. You aren't <i>ready</i> for my comedic prowresss.
 -> I guess.
     Hermes: At least <i>pretend</i> to be a little interested...

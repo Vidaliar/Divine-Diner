@@ -13,9 +13,11 @@ Aelius: Sounds like him.
 Aphrodite: So what do you think of him? You know him as he is now better than me.
 
 -> He's come a long way.
+    <<AddHephaestusAffinity 2>>
     Aphrodite: I hope so. It's been so long since I've spoken to him.
     Aphrodite: Thank you, that's calmed my nerves.
 -> I think he still has things to work on.
+    <<AddHephaestusAffinity 1>>
     Aphrodite: I suppose I should expect so.
     Aphrodite: Still, thank you - that's calmed my nerves.
 -> I'm not sure.
@@ -26,6 +28,7 @@ Aphrodite: No thank you, dear. That said, why don't you make something for Hepha
 Aelius: Yeah, I'll get on it.
 
 // HELIOS STEAK
+<<AddHephaestusAffinity 2>>
 <<StartCooking "HeliosSteak4">>
 
 <<HideAll>>
@@ -71,8 +74,10 @@ Aelius: So… did you find out anything about, like, you being my dad, maybe?
 Hephaestus: I’m sorry, I have no idea. There were, um, a few times it could have been, but it was a difficult period for me and my recollection is imperfect.
 
 -> That's alright, thank you all the same.
+    <<AddHephaestusAffinity 2>>
     Hephaestus: Thank you, Aelius, you have helped me a great deal. Let me know if you need anything in the future.
 -> Let me know if you remember anything later.
+    <<AddHephaestusAffinity 1>>
     Hephaestus: Of course, Aelius, you have helped me a great deal. Let me know if you need anything in the future.
 -> I still don’t get why Aphrodite can’t just tell me.
     Hephaestus: Love – she works in mysterious ways, as they say.
@@ -130,8 +135,10 @@ Aelius: So… did you find out anything about, like, you being my dad, maybe?
 Hephaestus: I’m sorry, I have no idea. There were, um, a few times it could have been, but it was a difficult period for me and my recollection is imperfect.
 
 -> That's alright, thank you all the same.
+    <<AddHephaestusAffinity 2>>
     Hephaestus: Thank you, Aelius, you have helped me a great deal. Let me know if you need anything in the future.
 -> Let me know if you remember anything later.
+    <<AddHephaestusAffinity 1>>
     Hephaestus: Of course, Aelius, you have helped me a great deal. Let me know if you need anything in the future.
 -> I still don’t get why Aphrodite can’t just tell me.
     Hephaestus: Love – she works in mysterious ways, as they say.
@@ -153,6 +160,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 <<Act "Aphrodite" "Aphrodite" "left" "bottom" #e06666>>
+<<AddHephaestusAffinity 1>>
 Hephaestus: Oh, Aelius, there you are.
 Aphrodite: Welcome back, dear. That looks wonderful.
 <<Hide Aphrodite>>
@@ -189,8 +197,10 @@ Aelius: So… did you find out anything about, like, you being my dad, maybe?
 Hephaestus: I’m sorry, I have no idea. There were, um, a few times it could have been, but it was a difficult period for me and my recollection is imperfect.
 
 -> That's alright, thank you all the same.
+    <<AddHephaestusAffinity 2>>
     Hephaestus: Thank you, Aelius, you have helped me a great deal. Let me know if you need anything in the future.
 -> Let me know if you remember anything later.
+    <<AddHephaestusAffinity 1>>
     Hephaestus: Of course, Aelius, you have helped me a great deal. Let me know if you need anything in the future.
 -> I still don’t get why Aphrodite can’t just tell me.
     Hephaestus: Love – she works in mysterious ways, as they say.

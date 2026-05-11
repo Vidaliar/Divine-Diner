@@ -43,6 +43,7 @@ Zeus: [Neutral] Hold on... are you the mortal?
 
 -> [Neutral] What can I get you?
 	//Aelius: [Neutral] What can I get you?
+	<<AddZeusAffinity 1>>
 	Zeus: [Neutral] My usual.
 	Aelius: [Neutral] Yes, uh, what would that be?
 -> [Positive] Same, dude.
@@ -78,6 +79,7 @@ Aelius: [Neutral] Of course, sir.
 <<HideAll>>
 <<Fade "#000000" 0 1 0.35>>
 <<wait 0.4>>
+<<AddZeusAffinity 2>>
 <<StartCooking "MakenaTestScene">>
 //<<jump after_cooking>>
 
@@ -116,9 +118,7 @@ Zeus: [Annoyed] What is this?
 	Zeus: [Negative]WHO IN MY NAME DO YOU THINK YOU ARE?
 	Zeus: [Negative]I WILL SEE YOU CAST FROM THE HEIGHTS OF OLYMPUS TO THE DEPTHS OF TARTARUS!
 	Zeus: [Negative]GO! MAKE IT AGAIN! REMOVE YOURSELF AND YOUR INSULTING DISH FROM MY PRESENCE!
-
-	
-Aelius: [Neutral] Hmph.
+	Aelius: [Neutral] Hmph.
 
 <<Move Aelius -0.25 center 0.5>>
 <<wait  0.5>>
@@ -159,9 +159,9 @@ Aelius: [Neutral] He said to remake his food, so-
 
 <<if $cooking is true>>
 	Hestia: [Neutral] Not that food you’re holding, surely.
-	-> [Neutral] Uh, yes…
-	-> [Neutral] Yeah, the ham and cheese.
-	-> [Neutral] No, Hestia. I’m just holding this for fun.
+	-> [Neutral] Uh, yes… (deference)
+	-> [Neutral] Yeah, the ham and cheese. (humor)
+	-> [Neutral] No, Hestia. I’m just holding this for fun. (aggressive)
 
 	Hestia: [Neutral] Aelius… that looks far better than any meal I’ve ever made for Zeus.
 	Aelius: [Neutral] He said it was an insult to his eyes.
@@ -195,7 +195,7 @@ Aelius: [Neutral] He said to remake his food, so-
 		Zeus: [Neutral] Good. Stay there. Us Gods don't want to hear your life story.
 		Zeus: [Neutral] …
 		Zeus: [Neutral] You know, I’ve heard why you’re here…
-		Zeus: [Neutral] Looking for your father… Dreadful business.
+		Zeus: [Neutral] What happened to your mother… Dreadful business.
 		-> [Neutral] *Interrupt him*
 			Aelius: [Neutral] I'm so sorry, King-
 			Zeus: [Neutral] Oh? Do you have something to say, worm?
@@ -268,23 +268,6 @@ Aelius: [Neutral] He said to remake his food, so-
 		<<Fade "#000000" 0 1 0.35>>
 		<<wait 0.4>>
 		<<jump Hermes_test>>
-	-> You're gonna have to make do with this.
-		Aelius: [Neutral] You’re gonna have to make do with this.
-		Zeus: [Annoyed] Excuse me?
-		Aelius: [Neutral] We’re not making your food again. This is all you’re getting.
-		Zeus: [Angry] I am the <i>king<i> of the gods. You will make me what I ask for, child.
-		Aelius: [Neutral] My name’s Aelius, and no, I won’t.
-		Zeus: [Annoyed] A bit of advice, child: Know your place. 
-		Zeus: [Annoyed] You won’t be here long if you continue like this.
-		Aelius: [Smile] I’ll take that to mean you don’t want the food.
-		Zeus: [Annoyed] I seem to have lost my appetite.
-		Aelius: [Smile] See you again soon?
-		Zeus: [Annoyed] For your sake, you should hope not.
-		<<StopMuzic 0.35>>
-		<<HideAll>>
-		<<Fade "#000000" 0 1 0.35>>
-		<<wait 0.4>>
-		<<jump Hermes_test>>
 	-> Your new-and-improved munchies, my holiness.
 		<<AddZeusAffinity 1>>
 		Zeus: My... what?
@@ -305,6 +288,23 @@ Aelius: [Neutral] He said to remake his food, so-
 		//<<StopAudio "Wind">>              // ensure Wind is off before Hermes
 		//<<HideAll>>                       // clear Zeus/Hestia/etc.
 		//<<StopMuzic 1.25>>
+		<<StopMuzic 0.35>>
+		<<HideAll>>
+		<<Fade "#000000" 0 1 0.35>>
+		<<wait 0.4>>
+		<<jump Hermes_test>>
+	-> You're gonna have to make do with this.
+		Aelius: [Neutral] You’re gonna have to make do with this.
+		Zeus: [Annoyed] Excuse me?
+		Aelius: [Neutral] We’re not making your food again. This is all you’re getting.
+		Zeus: [Angry] I am the <i>king<i> of the gods. You will make me what I ask for, child.
+		Aelius: [Neutral] My name’s Aelius, and no, I won’t.
+		Zeus: [Annoyed] A bit of advice, child: Know your place. 
+		Zeus: [Annoyed] You won’t be here long if you continue like this.
+		Aelius: [Smile] I’ll take that to mean you don’t want the food.
+		Zeus: [Annoyed] I seem to have lost my appetite.
+		Aelius: [Smile] See you again soon?
+		Zeus: [Annoyed] For your sake, you should hope not.
 		<<StopMuzic 0.35>>
 		<<HideAll>>
 		<<Fade "#000000" 0 1 0.35>>
@@ -352,9 +352,7 @@ Zeus: [Annoyed] What is this?
 	Zeus: [Negative]WHO IN MY NAME DO YOU THINK YOU ARE?
 	Zeus: [Negative]I WILL SEE YOU CAST FROM THE HEIGHTS OF OLYMPUS TO THE DEPTHS OF TARTARUS!
 	Zeus: [Negative]GO! MAKE IT AGAIN! REMOVE YOURSELF AND YOUR INSULTING DISH FROM MY PRESENCE!
-
-	
-Aelius: [Neutral] Hmph.
+	Aelius: [Neutral] Hmph.
 
 <<Move Aelius -0.25 center 0.5>>
 <<wait  0.5>>
@@ -395,9 +393,9 @@ Aelius: [Neutral] He said to remake his food, so-
 
 <<if $cooking is true>>
 	Hestia: [Neutral] Not that food you’re holding, surely.
-	-> [Neutral] Uh, yes…
-	-> [Neutral] Yeah, the ham and cheese.
-	-> [Neutral] No, Hestia. I’m just holding this for fun.
+	-> [Neutral] Uh, yes… (deference)
+	-> [Neutral] Yeah, the ham and cheese. (humor)
+	-> [Neutral] No, Hestia. I’m just holding this for fun. (aggressive)
 
 	Hestia: [Neutral] Aelius… that looks far better than any meal I’ve ever made for Zeus.
 	Aelius: [Neutral] He said it was an insult to his eyes.
@@ -431,7 +429,7 @@ Aelius: [Neutral] He said to remake his food, so-
 		Zeus: [Neutral] Good. Stay there. Us Gods don't want to hear your life story.
 		Zeus: [Neutral] …
 		Zeus: [Neutral] You know, I’ve heard why you’re here…
-		Zeus: [Neutral] Looking for your father… Dreadful business.
+		Zeus: [Neutral] What happened to your mother… Dreadful business.
 		-> [Neutral] *Interrupt him*
 			Aelius: [Neutral] I'm so sorry, King-
 			Zeus: [Neutral] Oh? Do you have something to say, worm?
@@ -504,23 +502,6 @@ Aelius: [Neutral] He said to remake his food, so-
 		<<Fade "#000000" 0 1 0.35>>
 		<<wait 0.4>>
 		<<jump Hermes_test>>
-	-> You're gonna have to make do with this.
-		Aelius: [Neutral] You’re gonna have to make do with this.
-		Zeus: [Annoyed] Excuse me?
-		Aelius: [Neutral] We’re not making your food again. This is all you’re getting.
-		Zeus: [Angry] I am the <i>king<i> of the gods. You will make me what I ask for, child.
-		Aelius: [Neutral] My name’s Aelius, and no, I won’t.
-		Zeus: [Annoyed] A bit of advice, child: Know your place. 
-		Zeus: [Annoyed] You won’t be here long if you continue like this.
-		Aelius: [Smile] I’ll take that to mean you don’t want the food.
-		Zeus: [Annoyed] I seem to have lost my appetite.
-		Aelius: [Smile] See you again soon?
-		Zeus: [Annoyed] For your sake, you should hope not.
-		<<StopMuzic 0.35>>
-		<<HideAll>>
-		<<Fade "#000000" 0 1 0.35>>
-		<<wait 0.4>>
-		<<jump Hermes_test>>
 	-> Your new-and-improved munchies, my holiness.
 		<<AddZeusAffinity 1>>
 		Zeus: My... what?
@@ -541,6 +522,23 @@ Aelius: [Neutral] He said to remake his food, so-
 		//<<StopAudio "Wind">>              // ensure Wind is off before Hermes
 		//<<HideAll>>                       // clear Zeus/Hestia/etc.
 		//<<StopMuzic 1.25>>
+		<<StopMuzic 0.35>>
+		<<HideAll>>
+		<<Fade "#000000" 0 1 0.35>>
+		<<wait 0.4>>
+		<<jump Hermes_test>>
+	-> You're gonna have to make do with this.
+		Aelius: [Neutral] You’re gonna have to make do with this.
+		Zeus: [Annoyed] Excuse me?
+		Aelius: [Neutral] We’re not making your food again. This is all you’re getting.
+		Zeus: [Angry] I am the <i>king<i> of the gods. You will make me what I ask for, child.
+		Aelius: [Neutral] My name’s Aelius, and no, I won’t.
+		Zeus: [Annoyed] A bit of advice, child: Know your place. 
+		Zeus: [Annoyed] You won’t be here long if you continue like this.
+		Aelius: [Smile] I’ll take that to mean you don’t want the food.
+		Zeus: [Annoyed] I seem to have lost my appetite.
+		Aelius: [Smile] See you again soon?
+		Zeus: [Annoyed] For your sake, you should hope not.
 		<<StopMuzic 0.35>>
 		<<HideAll>>
 		<<Fade "#000000" 0 1 0.35>>
@@ -567,6 +565,7 @@ title: after_cookingSpicy
 <<wait 0.5>>
 
 
+
 //<<Move Aelius left center 0.5>>
 //<<Move Zeus right center 0.5>>
 <<wait  0.5>>
@@ -588,9 +587,7 @@ Zeus: [Annoyed] What is this?
 	Zeus: [Negative]WHO IN MY NAME DO YOU THINK YOU ARE?
 	Zeus: [Negative]I WILL SEE YOU CAST FROM THE HEIGHTS OF OLYMPUS TO THE DEPTHS OF TARTARUS!
 	Zeus: [Negative]GO! MAKE IT AGAIN! REMOVE YOURSELF AND YOUR INSULTING DISH FROM MY PRESENCE!
-
-	
-Aelius: [Neutral] Hmph.
+	Aelius: [Neutral] Hmph.
 
 <<Move Aelius -0.25 center 0.5>>
 <<wait  0.5>>
@@ -631,9 +628,9 @@ Aelius: [Neutral] He said to remake his food, so-
 
 <<if $cooking is true>>
 	Hestia: [Neutral] Not that food you’re holding, surely.
-	-> [Neutral] Uh, yes…
-	-> [Neutral] Yeah, the ham and cheese.
-	-> [Neutral] No, Hestia. I’m just holding this for fun.
+	-> [Neutral] Uh, yes… (deference)
+	-> [Neutral] Yeah, the ham and cheese. (humor)
+	-> [Neutral] No, Hestia. I’m just holding this for fun. (aggressive)
 
 	Hestia: [Neutral] Aelius… that looks far better than any meal I’ve ever made for Zeus.
 	Aelius: [Neutral] He said it was an insult to his eyes.
@@ -667,7 +664,7 @@ Aelius: [Neutral] He said to remake his food, so-
 		Zeus: [Neutral] Good. Stay there. Us Gods don't want to hear your life story.
 		Zeus: [Neutral] …
 		Zeus: [Neutral] You know, I’ve heard why you’re here…
-		Zeus: [Neutral] Looking for your father… Dreadful business.
+		Zeus: [Neutral] What happened to your mother… Dreadful business.
 		-> [Neutral] *Interrupt him*
 			Aelius: [Neutral] I'm so sorry, King-
 			Zeus: [Neutral] Oh? Do you have something to say, worm?
@@ -740,23 +737,6 @@ Aelius: [Neutral] He said to remake his food, so-
 		<<Fade "#000000" 0 1 0.35>>
 		<<wait 0.4>>
 		<<jump Hermes_test>>
-	-> You're gonna have to make do with this.
-		Aelius: [Neutral] You’re gonna have to make do with this.
-		Zeus: [Annoyed] Excuse me?
-		Aelius: [Neutral] We’re not making your food again. This is all you’re getting.
-		Zeus: [Angry] I am the <i>king<i> of the gods. You will make me what I ask for, child.
-		Aelius: [Neutral] My name’s Aelius, and no, I won’t.
-		Zeus: [Annoyed] A bit of advice, child: Know your place. 
-		Zeus: [Annoyed] You won’t be here long if you continue like this.
-		Aelius: [Smile] I’ll take that to mean you don’t want the food.
-		Zeus: [Annoyed] I seem to have lost my appetite.
-		Aelius: [Smile] See you again soon?
-		Zeus: [Annoyed] For your sake, you should hope not.
-		<<StopMuzic 0.35>>
-		<<HideAll>>
-		<<Fade "#000000" 0 1 0.35>>
-		<<wait 0.4>>
-		<<jump Hermes_test>>
 	-> Your new-and-improved munchies, my holiness.
 		<<AddZeusAffinity 1>>
 		Zeus: My... what?
@@ -777,6 +757,23 @@ Aelius: [Neutral] He said to remake his food, so-
 		//<<StopAudio "Wind">>              // ensure Wind is off before Hermes
 		//<<HideAll>>                       // clear Zeus/Hestia/etc.
 		//<<StopMuzic 1.25>>
+		<<StopMuzic 0.35>>
+		<<HideAll>>
+		<<Fade "#000000" 0 1 0.35>>
+		<<wait 0.4>>
+		<<jump Hermes_test>>
+	-> You're gonna have to make do with this.
+		Aelius: [Neutral] You’re gonna have to make do with this.
+		Zeus: [Annoyed] Excuse me?
+		Aelius: [Neutral] We’re not making your food again. This is all you’re getting.
+		Zeus: [Angry] I am the <i>king<i> of the gods. You will make me what I ask for, child.
+		Aelius: [Neutral] My name’s Aelius, and no, I won’t.
+		Zeus: [Annoyed] A bit of advice, child: Know your place. 
+		Zeus: [Annoyed] You won’t be here long if you continue like this.
+		Aelius: [Smile] I’ll take that to mean you don’t want the food.
+		Zeus: [Annoyed] I seem to have lost my appetite.
+		Aelius: [Smile] See you again soon?
+		Zeus: [Annoyed] For your sake, you should hope not.
 		<<StopMuzic 0.35>>
 		<<HideAll>>
 		<<Fade "#000000" 0 1 0.35>>

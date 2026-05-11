@@ -23,6 +23,7 @@ Hephaestus: Nah, I got nothing against it.
 Hephaestus: But I can’t tell a story with a dry mouth.
 Hephaestus: Why don't you make me a <b>Lotus Parfait</b> first?
 Aelius: Coming right up!
+<<AddHephaestusAffinity 2>>
 <<StartCooking "LotusParfait2">>
 <<HideAll>>
 ===
@@ -64,12 +65,14 @@ Hephaestus: I’ve been getting on okay since before you mortals knew how to mak
 Hephaestus: I still live my life, I just have to take it easy some days.
 
 -> Well, let me know if you need any help.
+    <<AddHephaestusAffinity 1>>
     Hephaestus: Thank you.
     Hephaestus: But this food is more than enough.
     Aelius: You sure?
     Hephaestus: I’m sure, I’m going to return to my forge and rest after this.
     Aelius: Alright, but I'll keep the offer open.
 -> I'm glad you have a positive outlook.
+    <<AddHephaestusAffinity 2>>
     Hephaestus: It has always been a part of my life.
     Hephaestus: I do the best I can.
     Aelius: [Negative] I wish I could be that casual about my own problems.
@@ -152,9 +155,11 @@ Aelius: The show, I'm guessing?
 Hermes: Yeah! They must be sense-of-humour-ly challenged. I put in a lot of work for that set.
 
 -> Chin up, they just wouldn’t know a good joke even if it hit them right upside the head. (deference)
+    <<AddHermesAffinity 1>>
     Hermes: You're right with that. Thanks, Aelius.
     Aelius: No problem, it's weird seeing you down in the dumps anyways.
 -> They just couldn’t handle it. You could say their heads were ‘up in the clouds,’ eh, eh? (humorous)
+    <<AddHermesAffinity 2>>
     Hermes: That's a good one!
     Hermes: You’re right, they just couldn’t handle my godly sense of humor.
     Aelius: That's more like the Hermes I know.
@@ -184,6 +189,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+<<AddHephaestusAffinity 2>>
 Aelius: Here you are.
 Hephaestus: Well spiced - fitting for a tale of pain.
 
@@ -213,12 +219,14 @@ Hephaestus: I’ve been getting on okay since before you mortals knew how to mak
 Hephaestus: I still live my life, I just have to take it easy some days.
 
 -> Well, let me know if you need any help.
+    <<AddHephaestusAffinity 1>>
     Hephaestus: Thank you.
     Hephaestus: But this food is more than enough.
     Aelius: You sure?
     Hephaestus: I’m sure, I’m going to return to my forge and rest after this.
     Aelius: Alright, but I'll keep the offer open.
 -> I'm glad you have a positive outlook.
+    <<AddHephaestusAffinity 2>>
     Hephaestus: It has always been a part of my life.
     Hephaestus: I do the best I can.
     Aelius: [Negative] I wish I could be that casual about my own problems.
@@ -301,9 +309,11 @@ Aelius: The show, I'm guessing?
 Hermes: Yeah! They must be sense-of-humour-ly challenged. I put in a lot of work for that set.
 
 -> Chin up, they just wouldn’t know a good joke even if it hit them right upside the head. (deference)
+    <<AddHermesAffinity 1>>
     Hermes: You're right with that. Thanks, Aelius.
     Aelius: No problem, it's weird seeing you down in the dumps anyways.
 -> They just couldn’t handle it. You could say their heads were ‘up in the clouds,’ eh, eh? (humorous)
+    <<AddHermesAffinity 2>>
     Hermes: That's a good one!
     Hermes: You’re right, they just couldn’t handle my godly sense of humor.
     Aelius: That's more like the Hermes I know.
@@ -333,6 +343,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+<<AddHephaestusAffinity 1>>
 Aelius: Here you are.
 Hephaestus: Very sweet - a welcome contrast to this tale of pain.
 
@@ -362,12 +373,14 @@ Hephaestus: I’ve been getting on okay since before you mortals knew how to mak
 Hephaestus: I still live my life, I just have to take it easy some days.
 
 -> Well, let me know if you need any help.
+    <<AddHephaestusAffinity 1>>
     Hephaestus: Thank you.
     Hephaestus: But this food is more than enough.
     Aelius: You sure?
     Hephaestus: I’m sure, I’m going to return to my forge and rest after this.
     Aelius: Alright, but I'll keep the offer open.
 -> I'm glad you have a positive outlook.
+    <<AddHephaestusAffinity 2>>
     Hephaestus: It has always been a part of my life.
     Hephaestus: I do the best I can.
     Aelius: [Negative] I wish I could be that casual about my own problems.
@@ -450,9 +463,11 @@ Aelius: The show, I'm guessing?
 Hermes: Yeah! They must be sense-of-humour-ly challenged. I put in a lot of work for that set.
 
 -> Chin up, they just wouldn’t know a good joke even if it hit them right upside the head. (deference)
+    <<AddHermesAffinity 1>>
     Hermes: You're right with that. Thanks, Aelius.
     Aelius: No problem, it's weird seeing you down in the dumps anyways.
 -> They just couldn’t handle it. You could say their heads were ‘up in the clouds,’ eh, eh? (humorous)
+    <<AddHermesAffinity 1>>
     Hermes: That's a good one!
     Hermes: You’re right, they just couldn’t handle my godly sense of humor.
     Aelius: That's more like the Hermes I know.

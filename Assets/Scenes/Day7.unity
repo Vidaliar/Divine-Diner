@@ -699,7 +699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runner: {fileID: 1086498460}
-  defaultStartNode: Day7_Start
+  defaultStartNode: Day7_Zeus_Intro
 --- !u!4 &940884904
 Transform:
   m_ObjectHideFlags: 0

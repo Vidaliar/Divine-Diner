@@ -11,10 +11,13 @@ Aelius: [Positive] King Zeus, hello!
 Zeus: Just Zeus.
 
 -> Of course. Zeus. (deference)
+    <<AddZeusAffinity 2>>
 -> Does that mean we're friends? (humor)
+    <<Add AddZeusAffinity 1>>
     Zeus: ...
     Zeus: Silence.
 -> Why. (aggressive)
+    <<AddZeusAffinity 1>>
     Zeus: Because!
     Zeus: That is my name!
     Aelius: Okay, dude.
@@ -25,6 +28,7 @@ Aelius: [Positive] Oh, Hera?
 Zeus: Yes! Have you met?
 
 -> Yes, she's lovely. (deference)
+    <<AddZeusAffinity 3>>
     Zeus: She is, isn’t she? The light of my life, that woman.
 -> Yeah, we hung out for a bit. (humor)
     Zeus: What does that mean?
@@ -48,6 +52,7 @@ Aelius: Of course.
 
 // Nectar
 <<StartCooking "Nectar3">>
+<<AddZeusAffinity 2>>
 <<Hide Aelius>>
 <<Hide Hera>>
 <<Hide Zeus>>
@@ -58,6 +63,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 <<Act "Hera" "Hera" "left" "bottom" #008B8B>>
+<<AddZeusAffinity 2>>
 Hera: It's good to hear Ares is doing well.
 Zeus: Yes. A shame about him and Hephaestus, though.
 Hera: Oh, haven’t you heard? They’re working things out, dear.
@@ -73,19 +79,22 @@ Zeus: Thank you.
 Hera: Zeus!
 Zeus: What is it, my beloved?
 Hera: Are you thanking people, now?
+<<SyncAffinity>>
 
--> HIGH relationship
+<<if $zeusAffinity >= 28>>
     Zeus: Oh, yes. Yes! Aelius has been quite the positive influence.
     Hera: I'll say.
--> MEDIUM relationship
+<<elseif $zeusAffinity >= 19>>
     Zeus: Ah… I suppose the mortal has had a positive effect on me.
     Hera: I'll say.
--> LOW relationship
+<<else>>
     Zeus: What are you talking about?
     Hera: Aelius must be rubbing off on you.
     Zeus: I don’t know about that…
+<<endif>>
 
 -> He did most of the work. (deference)
+    <<AddZeusAffinity 2>>
     <<Hide Hera>>
     <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
     Aelius: He’s really been trying lately.
@@ -94,6 +103,7 @@ Hera: Are you thanking people, now?
     Hera: Well, I appreciate you helping him along, regaardless.
     <<Hide Hera>>
 -> Yeah, I'm pretty great. (humor)
+    <<AddZeusAffinity 1>>
     Hera: You… certainly are something.
     Zeus: Annoying, but effective.
     <<Hide Hera>>
@@ -147,6 +157,7 @@ Zeus: Thank you.
 
 
 -> No, thank you. (deference)
+    <<AddZeusAffinity 2>>
     Aelius: My time here has been defined by the people I met.
     Aelius: And that includes you.
     Zeus: Ah... that is...
@@ -155,16 +166,19 @@ Zeus: Thank you.
     Zeus: I wasn't!
     Zeus: ...
 -> You're too sweet. (humor)
+    <<AddZeusAffinity 1>>
     Zeus: Sometimes you remind me far too much of Hermes.
     Aelius: That guy rules.
     Zeus: Okay.
 -> Whatever. (aggressive)
+    <<AddZeusAffinity 1>>
     Zeus: ...
     Zeus: Okay. Well.
 
 Zeus: I should be off.
+<<SyncAffinity>>
 
--> HIGH relationship
+<<if $zeusAffinity >= 28>>
     Zeus: But I mean it, Aelius. All of it.
     Zeus: It means a lot.
     Zeus:  You know… I struggle to imagine how we would be getting on without you.
@@ -172,10 +186,11 @@ Zeus: I should be off.
     Aelius: I’m glad Hestia brought me here.
     Zeus: Farewell.
     Aelius: Bye!
--> MEDIUM
+<<elseif $zeusAffinity >= 19>>
     Zeus: Thank you for the food. And... the other stuff.
--> LOW
+<<else>>
     Zeus: Thank you for the food.
+<<endif>>
 
 Aelius: Tell Hera I said thanks for coming by!
 Zeus: Yes, I will.
@@ -188,6 +203,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 <<Act "Hera" "Hera" "left" "bottom" #008B8B>>
+<<AddZeusAffinity 1>>
 Hera: It's good to hear Ares is doing well.
 Zeus: Yes. A shame about him and Hephaestus, though.
 Hera: Oh, haven’t you heard? They’re working things out, dear.
@@ -203,19 +219,22 @@ Zeus: Thank you.
 Hera: Zeus!
 Zeus: What is it, my beloved?
 Hera: Are you thanking people, now?
+<<SyncAffinity>>
 
--> HIGH relationship
+<<if $zeusAffinity >= 28>>
     Zeus: Oh, yes. Yes! Aelius has been quite the positive influence.
     Hera: I'll say.
--> MEDIUM relationship
+<<elseif $zeusAffinity >= 19>>
     Zeus: Ah… I suppose the mortal has had a positive effect on me.
     Hera: I'll say.
--> LOW relationship
+<<else>>
     Zeus: What are you talking about?
     Hera: Aelius must be rubbing off on you.
     Zeus: I don’t know about that…
+<<endif>>
 
 -> He did most of the work. (deference)
+    <<AddZeusAffinity 2>>
     <<Hide Hera>>
     <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
     Aelius: He’s really been trying lately.
@@ -224,6 +243,7 @@ Hera: Are you thanking people, now?
     Hera: Well, I appreciate you helping him along, regaardless.
     <<Hide Hera>>
 -> Yeah, I'm pretty great. (humor)
+    <<AddZeusAffinity 1>>
     Hera: You… certainly are something.
     Zeus: Annoying, but effective.
     <<Hide Hera>>
@@ -284,6 +304,7 @@ Zeus: Oh… Oh, this Nectar is…
 
 
 -> No, thank you. (deference)
+    <<AddZeusAffinity 2>>
     Aelius: My time here has been defined by the people I met.
     Aelius: And that includes you.
     Zeus: Ah... that is...
@@ -292,16 +313,19 @@ Zeus: Oh… Oh, this Nectar is…
     Zeus: I wasn't!
     Zeus: ...
 -> You're too sweet. (humor)
+    <<AddZeusAffinity 1>>
     Zeus: Sometimes you remind me far too much of Hermes.
     Aelius: That guy rules.
     Zeus: Okay.
 -> Whatever. (aggressive)
+    <<AddZeusAffinity 1>>
     Zeus: ...
     Zeus: Okay. Well.
 
 Zeus: I should be off.
+<<SyncAffinity>>
 
--> HIGH relationship
+<<if $zeusAffinity >= 28>>
     Zeus: But I mean it, Aelius. All of it.
     Zeus: It means a lot.
     Zeus:  You know… I struggle to imagine how we would be getting on without you.
@@ -309,9 +333,9 @@ Zeus: I should be off.
     Aelius: I’m glad Hestia brought me here.
     Zeus: Farewell.
     Aelius: Bye!
--> MEDIUM
+<<elseif $zeusAffinity >= 19>>
     Zeus: Thank you for the food. And... the other stuff.
--> LOW
+<<endif>>
     Zeus: Thank you for the food.
 
 Aelius: Tell Hera I said thanks for coming by!
@@ -325,6 +349,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 <<Act "Hera" "Hera" "left" "bottom" #008B8B>>
+<<AddZeusAffinity 3>>
 Hera: It's good to hear Ares is doing well.
 Zeus: Yes. A shame about him and Hephaestus, though.
 Hera: Oh, haven’t you heard? They’re working things out, dear.
@@ -340,19 +365,22 @@ Zeus: Thank you.
 Hera: Zeus!
 Zeus: What is it, my beloved?
 Hera: Are you thanking people, now?
+<<SyncAffinity>>
 
--> HIGH relationship
+<<if $zeusAffinity >= 28>>
     Zeus: Oh, yes. Yes! Aelius has been quite the positive influence.
     Hera: I'll say.
--> MEDIUM relationship
+<<elseif $zeusAffinity >= 19>>
     Zeus: Ah… I suppose the mortal has had a positive effect on me.
     Hera: I'll say.
--> LOW relationship
+<<else>>
     Zeus: What are you talking about?
     Hera: Aelius must be rubbing off on you.
     Zeus: I don’t know about that…
+<<endif>>
 
 -> He did most of the work. (deference)
+    <<AddZeusAffinity 2>>
     <<Hide Hera>>
     <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
     Aelius: He’s really been trying lately.
@@ -361,6 +389,7 @@ Hera: Are you thanking people, now?
     Hera: Well, I appreciate you helping him along, regaardless.
     <<Hide Hera>>
 -> Yeah, I'm pretty great. (humor)
+    <<AddZeusAffinity 1>>
     Hera: You… certainly are something.
     Zeus: Annoying, but effective.
     <<Hide Hera>>
@@ -417,6 +446,7 @@ Zeus: Oh… Oh, this Nectar is…
     Zeus: So. Thank you!
 
 -> No, thank you. (deference)
+    <<AddZeusAffinity 2>>
     Aelius: My time here has been defined by the people I met.
     Aelius: And that includes you.
     Zeus: Ah... that is...
@@ -425,10 +455,12 @@ Zeus: Oh… Oh, this Nectar is…
     Zeus: I wasn't!
     Zeus: ...
 -> You're too sweet. (humor)
+    <<AddZeusAffinity 1>>
     Zeus: Sometimes you remind me far too much of Hermes.
     Aelius: That guy rules.
     Zeus: Okay.
 -> Whatever. (aggressive)
+    <<AddZeusAffinity 1>>
     Zeus: ...
     Zeus: Okay. Well.
 

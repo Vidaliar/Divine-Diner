@@ -800,7 +800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runner: {fileID: 1820480116}
-  defaultStartNode: Aelius_Day
+  defaultStartNode: aelius_day_declarations
 --- !u!4 &940884904
 Transform:
   m_ObjectHideFlags: 0

@@ -30,12 +30,15 @@ Aelius: [Positive] Really> <i>You</i> took a break?
 Hermes: Crazy, I know. Ole’ Hermes still knows how to kick back and relax sometimes.
 
 -> Good for you, honestly. You deserve a break after running around for others for centuries. (deference)
+    <<AddHermesAffinity 3>>
     Hermes: Good thing I’m a divine being – my legs might be jelly by now if not.
     Aelius: [Smirk] I think they'd be rotted.
     Hermes: Eh, semantics.
 -> Glad you’re taking some time off. But don’t think that means you can bow outta helping me later. (humorous)
+    <<AddHermesAffinity 2>>
     Hermes: You run a tight ship, but I <i>suppose</i> I can findd the time in between my beauty rests to help my favorite chef out.
 -> You should’ve done this centuries ago, but better late than never. (aggressive)
+    <<AddHermesAffinity 1>>
     Hermes: Guess I'm <i>delivering</i> myself a break.
 
 Aelius: [Smirk] Well, what do you want to have on this <i>momentous</i> day?
@@ -44,6 +47,7 @@ Hermes: How about an <b>Ambrosia cake</b>?
 Aelius: [Positive] You got it. I'll be back soon.
 
 // CAKE minigame
+<<AddHermesAffinity 2>>
 <<StartCooking "AmbrosiaCake4">>
 <<HideAll>>
 ===
@@ -53,6 +57,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+<<AddHermesAffinity 1>>
 
 
 Aelius: [Positive] Here's your cake, <i>delivered</i> just for you.
@@ -68,11 +73,14 @@ Hermes: I mean, just look at it, even! Tastes even better than it looks.
 Aelius: [Positive] I'm glad you like it, Hermes.
 
 -> I'm doing my best. (deference)
+    <<AddHermesAffinity 2>>
     Hermes: Well, your best is plenty damn good in everyone’s books, I’d say.
 -> Have my skills reached <i>godly</i> status? (humorous)
+    <<AddHermesAffinity 3>>
     Hermes: Oho! Feeling coy, are we?
     Hermes: I'd say more... <i>demigodly</i> status.
 -> I would hope it would be good after all the hard work I’ve done. (aggressive)
+    <<AddHermesAffinity 2>>
     Hermes: You’re starting to sound like the Olympians.
     Hermes: Good to have confidence, though.
 
@@ -88,17 +96,19 @@ Hermes: To try and face things with thought rather than humor all the time-
 Hermes: Still working on that one.
 Aelius: [Positive] I’m… really glad, Hermes. I’m glad I could actually help out on Olympus.
 Aelius: You’ve been the most welcoming by far – besides Hestia – and that really helped me settle in.
+<<SyncAffinity>>
 
--> HIGH
+<<if $hermesAffinity >= 29>>
     Aelius: [Positive] I'm glad we've gotten close.
     Hermes: Me too, kid.
--> MEDIUM
+<<elseif $hermesAffinity >= 15>>
     Aelius: I feel like we're starting to get closer.
     Hermes: I'm inclined to agree.
--> LOW
+<<else>>
     Aelius: Your humor has really helped me out.
     Hermes: I'm glad.
     Hermes: (Mumbling) Finally, <i>someone</i> appreciates my sense of humor.
+<<endif>>
 
 Hermes: I see a bit of myself in you, y’know?
 Hermes: We’ve both got daddy issu- I mean, both have some trouble with our fathers.
@@ -106,21 +116,23 @@ Aelius: [Smirk] Good save there, buddy.
 Hermes: Ha! Same coping mechanisms too, clearly.
 Aelius: I’m seeing that – we are pretty similar.
 Hermes: Maybe you might be my kid after all.
+<<SyncAffinity>>
 
--> HIGH
+<<if $hermesAffinity >= 29>>
     Hermes: And honestly, I think I wouldn’t mind if you were.
     Aelius: [Positive] ... Hermes. I'm- I'm touched.
     Hermes: Alright, alright. Don’t get emotional on me now. C’mere.
     Aelius: placeholder, they hug here
--> MEDIUM
+<<elseif $hermesAffinity >= 15>>
     Hermes: That, or you’ve just spent too much time with me lately.
     Aelius: [Smirk] Ya think?
     Hermes: Alright, alright. C'mere.
     Aelius: placeholder, they fist-bump.
--> LOW
+<<else>>
     Hermes: Who's to say, really?
     Hermes: C'mere, high-five me.
     Aelius: placeholder, they high-five.
+<<endif>>
 
 Hermes: I’m glad you came to Olympus.
 Aelius: [Positive] Yeah... I am too.
@@ -130,13 +142,18 @@ Hermes: She’d have a handful of angry Olympians at the diner door if she did t
 Hermes: Want me to deliver something for your mom?
 Aelius: [Positive] Yeah, thank you. Especially since it’s your day off.
 Hermes: Don’t sweat it; least I can do for you after all your hard work.
+<<SyncAffinity>>
 
--> HIGH/MEDIUM
+<<if $hermesAffinity >= 29>>
     Hermes: I'll see ya around, kid.
     Aelius: [Positive] Bye, Hermes!
--> LOW
+<<elseif $hermesAffinity >= 15>>
+    Hermes: I'll see ya around, kid.
+    Aelius: [Positive] Bye, Hermes!
+<<else>>
     Hermes: I'll see ya around, Aelius.
     Aelius: [Positive] Bye, Hermes.
+<<endif>>
 
 <<HideAll>>
 <<jump Hestia_Day8_AfterShift>>
@@ -148,6 +165,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+<<AddHermesAffinity 2>>
 
 
 Aelius: [Positive] Here's your cake, <i>delivered</i> just for you.
@@ -158,19 +176,19 @@ Hermes: No following in my footsteps – I forbid it. It would be cruel to rob O
 Aelius: [Positive] Hehe.
 Hermes: [Positive] ... Your mom was right, you <i>have</i> gotten better.
 
-
-
-Hermes: It’s so cute too – amazing visual design there.
-
+Hermes: I mean, just look at it, even! Tastes even better than it looks.
 
 Aelius: [Positive] I'm glad you like it, Hermes.
 
 -> I'm doing my best. (deference)
+    <<AddHermesAffinity 2>>
     Hermes: Well, your best is plenty damn good in everyone’s books, I’d say.
 -> Have my skills reached <i>godly</i> status? (humorous)
+    <<AddHermesAffinity 3>>
     Hermes: Oho! Feeling coy, are we?
     Hermes: I'd say more... <i>demigodly</i> status.
 -> I would hope it would be good after all the hard work I’ve done. (aggressive)
+    <<AddHermesAffinity 2>>
     Hermes: You’re starting to sound like the Olympians.
     Hermes: Good to have confidence, though.
 
@@ -186,17 +204,19 @@ Hermes: To try and face things with thought rather than humor all the time-
 Hermes: Still working on that one.
 Aelius: [Positive] I’m… really glad, Hermes. I’m glad I could actually help out on Olympus.
 Aelius: You’ve been the most welcoming by far – besides Hestia – and that really helped me settle in.
+<<SyncAffinity>>
 
--> HIGH
+<<if $hermesAffinity >= 29>>
     Aelius: [Positive] I'm glad we've gotten close.
     Hermes: Me too, kid.
--> MEDIUM
+<<elseif $hermesAffinity >= 15>>
     Aelius: I feel like we're starting to get closer.
     Hermes: I'm inclined to agree.
--> LOW
+<<else>>
     Aelius: Your humor has really helped me out.
     Hermes: I'm glad.
     Hermes: (Mumbling) Finally, <i>someone</i> appreciates my sense of humor.
+<<endif>>
 
 Hermes: I see a bit of myself in you, y’know?
 Hermes: We’ve both got daddy issu- I mean, both have some trouble with our fathers.
@@ -204,21 +224,23 @@ Aelius: [Smirk] Good save there, buddy.
 Hermes: Ha! Same coping mechanisms too, clearly.
 Aelius: I’m seeing that – we are pretty similar.
 Hermes: Maybe you might be my kid after all.
+<<SyncAffinity>>
 
--> HIGH
+<<if $hermesAffinity >= 29>>
     Hermes: And honestly, I think I wouldn’t mind if you were.
     Aelius: [Positive] ... Hermes. I'm- I'm touched.
     Hermes: Alright, alright. Don’t get emotional on me now. C’mere.
     Aelius: placeholder, they hug here
--> MEDIUM
+<<elseif $hermesAffinity >= 15>>
     Hermes: That, or you’ve just spent too much time with me lately.
     Aelius: [Smirk] Ya think?
     Hermes: Alright, alright. C'mere.
     Aelius: placeholder, they fist-bump.
--> LOW
+<<else>>
     Hermes: Who's to say, really?
     Hermes: C'mere, high-five me.
     Aelius: placeholder, they high-five.
+<<endif>>
 
 Hermes: I’m glad you came to Olympus.
 Aelius: [Positive] Yeah... I am too.
@@ -228,13 +250,18 @@ Hermes: She’d have a handful of angry Olympians at the diner door if she did t
 Hermes: Want me to deliver something for your mom?
 Aelius: [Positive] Yeah, thank you. Especially since it’s your day off.
 Hermes: Don’t sweat it; least I can do for you after all your hard work.
+<<SyncAffinity>>
 
--> HIGH/MEDIUM
+<<if $hermesAffinity >= 29>>
     Hermes: I'll see ya around, kid.
     Aelius: [Positive] Bye, Hermes!
--> LOW
+<<elseif $hermesAffinity >= 15>>
+    Hermes: I'll see ya around, kid.
+    Aelius: [Positive] Bye, Hermes!
+<<else>>
     Hermes: I'll see ya around, Aelius.
     Aelius: [Positive] Bye, Hermes.
+<<endif>>
 
 <<HideAll>>
 <<jump Hestia_Day8_AfterShift>>
@@ -246,6 +273,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+<<AddHermesAffinity 1>>
 
 
 Aelius: [Positive] Here's your cake, <i>delivered</i> just for you.
@@ -256,18 +284,19 @@ Hermes: No following in my footsteps – I forbid it. It would be cruel to rob O
 Aelius: [Positive] Hehe.
 Hermes: [Positive] ... Your mom was right, you <i>have</i> gotten better.
 
-
-
-Hermes: And it’s got just the amount of spice to leave me tingling and not sobbing.
+Hermes: I mean, just look at it, even! Tastes even better than it looks.
 
 Aelius: [Positive] I'm glad you like it, Hermes.
 
 -> I'm doing my best. (deference)
+    <<AddHermesAffinity 2>>
     Hermes: Well, your best is plenty damn good in everyone’s books, I’d say.
 -> Have my skills reached <i>godly</i> status? (humorous)
+    <<AddHermesAffinity 3>>
     Hermes: Oho! Feeling coy, are we?
     Hermes: I'd say more... <i>demigodly</i> status.
 -> I would hope it would be good after all the hard work I’ve done. (aggressive)
+    <<AddHermesAffinity 2>>
     Hermes: You’re starting to sound like the Olympians.
     Hermes: Good to have confidence, though.
 
@@ -283,17 +312,19 @@ Hermes: To try and face things with thought rather than humor all the time-
 Hermes: Still working on that one.
 Aelius: [Positive] I’m… really glad, Hermes. I’m glad I could actually help out on Olympus.
 Aelius: You’ve been the most welcoming by far – besides Hestia – and that really helped me settle in.
+<<SyncAffinity>>
 
--> HIGH
+<<if $hermesAffinity >= 29>>
     Aelius: [Positive] I'm glad we've gotten close.
     Hermes: Me too, kid.
--> MEDIUM
+<<elseif $hermesAffinity >= 15>>
     Aelius: I feel like we're starting to get closer.
     Hermes: I'm inclined to agree.
--> LOW
+<<else>>
     Aelius: Your humor has really helped me out.
     Hermes: I'm glad.
     Hermes: (Mumbling) Finally, <i>someone</i> appreciates my sense of humor.
+<<endif>>
 
 Hermes: I see a bit of myself in you, y’know?
 Hermes: We’ve both got daddy issu- I mean, both have some trouble with our fathers.
@@ -301,21 +332,23 @@ Aelius: [Smirk] Good save there, buddy.
 Hermes: Ha! Same coping mechanisms too, clearly.
 Aelius: I’m seeing that – we are pretty similar.
 Hermes: Maybe you might be my kid after all.
+<<SyncAffinity>>
 
--> HIGH
+<<if $hermesAffinity >= 29>>
     Hermes: And honestly, I think I wouldn’t mind if you were.
     Aelius: [Positive] ... Hermes. I'm- I'm touched.
     Hermes: Alright, alright. Don’t get emotional on me now. C’mere.
     Aelius: placeholder, they hug here
--> MEDIUM
+<<elseif $hermesAffinity >= 15>>
     Hermes: That, or you’ve just spent too much time with me lately.
     Aelius: [Smirk] Ya think?
     Hermes: Alright, alright. C'mere.
     Aelius: placeholder, they fist-bump.
--> LOW
+<<else>>
     Hermes: Who's to say, really?
     Hermes: C'mere, high-five me.
     Aelius: placeholder, they high-five.
+<<endif>>
 
 Hermes: I’m glad you came to Olympus.
 Aelius: [Positive] Yeah... I am too.
@@ -325,13 +358,18 @@ Hermes: She’d have a handful of angry Olympians at the diner door if she did t
 Hermes: Want me to deliver something for your mom?
 Aelius: [Positive] Yeah, thank you. Especially since it’s your day off.
 Hermes: Don’t sweat it; least I can do for you after all your hard work.
+<<SyncAffinity>>
 
--> HIGH/MEDIUM
+<<if $hermesAffinity >= 29>>
     Hermes: I'll see ya around, kid.
     Aelius: [Positive] Bye, Hermes!
--> LOW
+<elseif $hermesAffinity >= 15>>
+    Hermes: I'll see ya around, kid.
+    Aelius: [Positive] Bye, Hermes!
+<<else>>
     Hermes: I'll see ya around, Aelius.
     Aelius: [Positive] Bye, Hermes.
+<<endif>>
 
 <<HideAll>>
 <<jump Hestia_Day8_AfterShift>>

@@ -28,25 +28,30 @@ Zeus: You, child, bring my boy his food.
 
 -> Of course (deference)
         Ares: I'll have the <b>Hesperides apple cider.</b>
+        <<AddZeusAffinity 2>>
         Aelius: I'll get that to you right away.
 -> Nice to see you, too! (humor)
+
         Zeus: Are you mocking me?
         Aelius: Huh? No, uh... it really is! Nice!
         Zeus: Hrm... Be off, then, child.
         Ares: I'll have the <b>Hesperides apple cider.</b>
 -> Don't tell me what to do. (aggressive)
+        <<AddZeusAffinity 1>>
         Zeus: Is it not... your job, child?
         Aelius: ...
         Aelius: Whatever. What do you want, Lord?
         Ares: I'll have the <b>Hesperides apple cider.</b>
 
 // COOKING
+<<AddZeusAffinity 2>>
 <<StartCooking "AppleCider">>
 ===
 title: Day2_Zeus_ReturnFancy
 ---
 <<Act "Zeus" "Zeus 3_4s" "center" "bottom" #c0392b>>
 <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+<<AddZeusAffinity 3>>
 Zeus: His head?
 Ares: Yes, clean off!
 Zeus: THAT'S MY BOY! HAHAHA!
@@ -58,14 +63,17 @@ Aelius: Your cider, Ares.
 Ares: Oh, my! This looks rather nice!
 Zeus: Yes. Not unpleasant to look at, I suppose.
 -> Would you like anything for yourself? (deference)
+    <<AddZeusAffinity 3>>
     Zeus: No, no. That is quite alright, child.
     Zeus: Your name is Aelius, yes?
     Aelius: Yes, King Zeus.
     Zeus: You've made a beautiful drink for my son here.
 -> Thank you! (humor)
+    <<AddZeusAffinity 1>>
     Zeus: Yes, mortal...
     Zeus: A drink as beautiful as this deserves recognition.
 -> Yeah, because I'm good at my job. (aggressive)
+    <<AddZeusAffinity 2>>
     Zeus: ...
     Zeus: As much as I may want to, I will not turn you into an ant for saying that.
     Zeus: If only because you've made my son such a beautiful drink.
@@ -86,6 +94,7 @@ title: Day2_Zeus_ReturnSpicy
 ---
 <<Act "Zeus" "Zeus 3_4s" "center" "bottom" #c0392b>>
 <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+<<AddZeusAffinity 2>>
 Zeus: His head?
 Ares: Yes, clean off!
 Zeus: THAT'S MY BOY! HAHAHA!
@@ -100,9 +109,12 @@ Ares: Oh, <i>please</i>. DO not get me started on him.
 Zeus: Oh? Is something the matter between you two?
 Ares: ...
 -> <*>Stay silent.</*> (deference)
+    <<AddZeusAffinity 3>>
 -> You hungry, Zeus? (humor)
     Zeus: Child, do you mind? My son and I are speaking.
+    <<AddZeusAffinity 2>>
 -> Even I knew that. (aggressive)
+    <<AddZeusAffinity 1>>
     Zeus: Oh, did you? DID YOU, CHILD?
     Aelius: ...
     Aelius: Yeah.
@@ -118,6 +130,7 @@ title: Day2_Zeus_ReturnPlayful
 ---
 <<Act "Zeus" "Zeus 3_4s" "center" "bottom" #c0392b>>
 <<Act "Ares" "Ares" "center" "bottom" #c0392b>>
+<<AddZeusAffinity 1>>
 Zeus: His head?
 Ares: Yes, clean off!
 Zeus: THAT'S MY BOY! HAHAHA!
@@ -180,11 +193,13 @@ Zeus: Upset? To you?
     Zeus: ...
     Zeus: Hm.
 -> Just a bit, yeah. (humor)
+    <<AddZeusAffinity 2>>
     Zeus: It would seem you're not the only one in need of a father figure.
     Aelius: Daddy issues around.
     Zeus: ...
     Zeus: Right.
 -> You've been neglecting him for centuries. (aggressive)
+    <<AddZeusAffinity 3>>
     Zeus: ...
     Zeus: Yes, I have been, haven't I?
     Zeus: I've been neglecting many of my children...

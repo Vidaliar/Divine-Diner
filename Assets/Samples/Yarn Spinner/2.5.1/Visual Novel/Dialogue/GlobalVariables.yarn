@@ -1,0 +1,17 @@
+﻿title: GlobalVariables
+tags:
+---
+<<declare $zeusAffinity = 0>>
+<<declare $hermesAffinity = 0>>
+<<declare $hephaestusAffinity = 0>>
+
+<<declare $talkedToZeusEnding = false>>
+<<declare $talkedToHermesEnding = false>>
+<<declare $talkedToHephaestusEnding = false>>
+<<declare $talkedToHestiaEnding = false>>
+
+<<declare $choseZeusEnding = false>>
+<<declare $choseHermesEnding = false>>
+<<declare $choseHephaestusEnding = false>>
+<<declare $choseHestiaEnding = false>>
+===

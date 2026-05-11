@@ -710,7 +710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runner: {fileID: 1593286796}
-  defaultStartNode: Day2_Start
+  defaultStartNode: Day2_Hermes
 --- !u!4 &940884904
 Transform:
   m_ObjectHideFlags: 0

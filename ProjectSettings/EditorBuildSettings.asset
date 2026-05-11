@@ -116,5 +116,26 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cooking/AmbrosiaCake4.unity
     guid: a990089b53f1d8a408bdec2a6017e68b
+  - enabled: 1
+    path: Assets/Scenes/Cooking/LotusParfait4.unity
+    guid: 59c716c8a12abfb46b3e2a733b0bf814
+  - enabled: 1
+    path: Assets/Scenes/Cooking/AmbrosiaCake5.unity
+    guid: c14c9c2f5f8f52748bf1dc519174d155
+  - enabled: 1
+    path: Assets/Scenes/Cooking/AppleCider4.unity
+    guid: 31a84f86f955cb84bbd7bc363ec174c7
+  - enabled: 1
+    path: Assets/Scenes/Cooking/HeliosSteak5.unity
+    guid: c5ed0c6e4a86b4441a5fb2a2acc5f0fa
+  - enabled: 1
+    path: Assets/Scenes/Cooking/Lemonade2.unity
+    guid: c15653f91974ee64cb3e091b7458c58f
+  - enabled: 1
+    path: Assets/Scenes/Cooking/MakenaTestScene5.unity
+    guid: fe244a73f29512c4d87a5c8ba0201078
+  - enabled: 1
+    path: Assets/Scenes/Cooking/Nectar4.unity
+    guid: 69b288d40d1833a479dcda46408fceeb
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e4832c56fbe1f64f8e9d21d1f4aeb53, type: 2}

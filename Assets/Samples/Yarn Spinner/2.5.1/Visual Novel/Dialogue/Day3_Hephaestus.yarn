@@ -12,6 +12,7 @@ Aelius: What for?
 Hephaestus: It's just- I know I'm not always the easiest to get along with sometimes.
 
 -> Apology accepted, thank you.
+    <<AddHephaestusAffinity 1>>
     Hephaestus: Thank you.
     Aelius: Of course.
     Hephaestus: But if I don't seem hard to talk to in the future, let me know.
@@ -22,6 +23,7 @@ Hephaestus: It's just- I know I'm not always the easiest to get along with somet
     Hephaestus: But if I do seem hard to talk to in the future, let me know.
     Aelius: Really, don't worry about it.
 -> Oh, don't worry about that, I can handle it.
+    <<AddHephaestusAffinity 2>>
     Hephaestus: ... Well, you don't have to rub it in.
     Aelius: My apologies, it's really not that big of a problem.
 
@@ -32,9 +34,11 @@ Aelius: Well, according to Hestia, either you, Hermes, or Zeus could be my fathe
 Hephaestus: ...
 
 -> So I'd love to help you, if I can.
+    <<AddHephaestusAffinity 2>>
     Hephaestus: If you're sure...
     Aelius: Of course I am, tell me about it.
 -> [Smirk] So I don't mind.
+    <<AddHephaestusAffinity 1>>
     Hephaestus: Thank you, Aelius, that means a lot.
     Aelius: Of course, Hephaestus.
 -> So you should probably let me know.
@@ -59,10 +63,12 @@ Aelius: I’m sorry. I can kinda get it; there are times I wish I'd been there m
 Hephaestus: Aye, having a craft… it can be a beautiful thing, but it breaks your heart.
 
 -> I'm sorry, I had no idea.
+    <<AddHephaestusAffinity 2>>
     Hephaestus: Don’t worry about it, as you say, you didn’t know. It’s been a long time now anyway, I ought to act like it.
 -> I suppose there's nothing to do but move forward.
     Hephaestus: Wise words, I wish I could follow them.
 -> Well now I'm here; the best place there is to practice.
+    <<AddHephaestusAffinity 1>>
     Hephaestus: Ha! I suppose that's true. I wish I could share your enthusiasm.
 
 Aelius: What do you mean?
@@ -72,6 +78,7 @@ Hephaestus: In fact, I've got half a mind to go and wipe that smile off his big 
 Aelius: You sure that's the best way to deal with this?
 Hephaestus: Just get me some food.
 <<HideAll>>
+<<AddHephaestusAffinity 2>>
 <<StartCooking "MakenaTestScene2">>
 // we will come back to this
 ===
@@ -80,6 +87,7 @@ title: Day3_Hephaestus_ReturnPlayful
 <<Scene "lounge bg draft 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+<<AddHephaestusAffinity 1>>
 
     Hephaestus: Mmm, this is delightful!
     Hephaestus: Okay, I'll tell you what – you may be right about confronting Ares.

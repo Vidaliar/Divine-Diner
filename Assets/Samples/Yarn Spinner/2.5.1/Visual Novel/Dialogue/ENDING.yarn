@@ -1,14 +1,27 @@
 ﻿title: ENDING_Start
 tags:
 ---
+<<SyncAffinity>>
+<<set $talkedToZeusEnding = false>>
+<<set $talkedToHermesEnding = false>>
+<<set $talkedToHephaestusEnding = false>>
+<<set $talkedToHestiaEnding = false>>
+
+<<set $choseZeusEnding = false>>
+<<set $choseHermesEnding = false>>
+<<set $choseHephaestusEnding = false>>
+<<set $choseHestiaEnding = false>>
 //KITCHEN bg
-<<Scene "lounge bg draft 3">>
+<<Scene main_kitchen_bg_2>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
 Hestia: Good morning, Aelius! Glad to see that you could make it.
 Hestia: I know it’s probably not exactly how you wanted to be reunited with your mother, but the other Olympians and I wanted to be here to support you.
-Hestia: Hades said you are only allotted <b>one person</b> with you, as well.
-// hades can take you line
+<<if $zeusAffinity < 28 and $hermesAffinity < 29 and $hephaestusAffinity < 29>>
+    Hestia: Hades said you can take me with you, as well.
+<<else>>
+    Hestia: Hades said you are only allotted <b>one person</b> with you, as well.
+<<endif>>
 Aelius: [Positive] Really? I’m… touched, honestly.
 Aelius: [Positive] Everyone here is part of my family now, even if some of them would scoff at the idea.
 Hestia: *<i>Laughs softly.</i>*
@@ -16,31 +29,473 @@ Hestia: Well, I best not delay you any longer. I’m sure you’ve been waiting 
 Aelius: [Positive] Thanks, Hestia. I know that none of this would’ve been possible if you hadn’t brought me here, so thank you. Thank you so much.
 Hestia: Of course, now go see the others!
 
+<<if $zeusAffinity < 28 and $hermesAffinity < 29 and $hephaestusAffinity < 29>>
+    <<jump Ending_Hestia>>
+<<else>>
+    <<jump Ending_CompanionChoice>>
+<<endif>>
+===
+
+title: Ending_CompanionChoice
+---
+<<SyncAffinity>>
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+
 // KITCHEN bg
 // ONLY DADS WITH HIGH RELATIONSHIP point
 
 Aelius: [Positive] Who to talk to with first...
--> Zeus
-    <<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
-    Zeus: Good to see you, Aelius.
-    Aelius: Likewise.
-    Zeus: It’s a big day. Do you think you’re ready?
-    Aelius: I guess I have to be, right?
-    Zeus: Yes… It would be quite uncouth of Hestia to gather us all here only for you to lose your nerve.
-    Aelius: ... Yeah, that would really suck for <i>you.</i>
-    Zeus: Quite.
-    -> I’d like for you to come, if you’re up for it.
-        Zeus: Oh, I would be more than happy to accompany you, Aelius.
-        Aelius: Thanks Big Z.
-        Zeus: Hm… Big Z… I like that.
-        Zeus: I may have the other gods refer to me as such…
-        Zeus: Well! We should be on our way, yes?
-        Aelius: Yes. Let us be off, Big Z.
-    -> I'm gonna go see what Hermes is up to.
-        Zeus: Of course.
-        
-//END OF DAY
+-> Zeus <<if $zeusAffinity >= 28>>
+    <<jump Ending_Zeus>>
+-> Hermes <<if $hermesAffinity >= 29>>
+    <<jump Ending_Hermes>>
+-> Hephaestus <<if $hephaestusAffinity >= 29>>
+    <<jump Ending_Hephaestus>>
+-> Hestia
+    <<jump Ending_Hestia>>
+===
+title: Ending_Zeus
+---
 <<HideAll>>
-<<LoadVNScene "Credits">>
+<<Scene new_dining_area>>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
 
+<<if $talkedToZeusEnding is false>>
+    <<set $talkedToZeusEnding = true>>
+
+    Zeus: Good to see you, Aelius.
+    Aelius: Likewide.
+    Zeus: It's a big day. Do you think you're ready?
+    Aelius: I guess I have to be, right?
+    Zeus: Yes...It would be quite uncouth of Hestia to gather us all here only for you to lose your nerve.
+    Aelius: ... Yeah, that would really suck for <i>you</i>.
+    Zeus: Quite.
+<<else>>
+    Zeus: Hello again.
+<<endif>>
+
+-> Aelius: [Neutral] I’d like for you to come, if you’re up for it.
+    Zeus: Oh, I would be more than happy to accompany you, Aelius.
+    Aelius: Thanks Big Z.
+    Zeus: Hm… Big Z… I like that.
+    Zeus: I may have the other gods refer to me as such…
+    Zeus: Well! We should be on our way, yes?
+    Aelius: Yes. Let us be off, Big Z.
+    <<set $choseZeusEnding = true>>
+    <<jump Ending_GroupGoodbye>>
+-> I’m gonna go see what Hermes is up to. <<if $hermesAffinity >= 29>>
+    Zeus: Of course.
+    <<jump Ending_Hermes>>
+-> I should talk to Hephaestus before I go. <<if $hephaestusAffinity >= 29>>
+    Zeus: Of course.
+    <<jump Ending_Hephaestus>>
+-> I'm gonna chat with Hestia.
+    Zeus: Of course.
+    <<jump Ending_Hestia>>
+===
+title: Ending_Hermes
+---
+<<HideAll>>
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Hermes" "Hermes 3_4" right bottom #00ffff>>
+
+<<if $talkedToHermesEnding is false>>
+    <<set $talkedToHermesEnding = true>>
+
+    Hermes: [Positive] Hey kid, how ya feeling?
+    Aelius: [Positive] Good. Really good, actually.
+    Aelius: [Negative] I honestly never thought I’d get to see her again.
+    Hermes: [Neutral] Fate has a way of delivering things to us, I’d say.
+    Hermes: [Positive] I’m happy for you, though.
+    Hermes: [Positive] You deserve this.
+    Aelius: [Positive] Thanks, Hermes. I just still can’t believe it.
+    Hermes: [Wink] Well, better start believing.
+<<else>>
+    Hermes: [Positive] Hm? Yeah?
+<<endif>>
+
+-> Aelius: [Positive] Hermes, I’d like you to go with me.
+    Hermes: [Wink] Lil ole’ me?
+    Hermes: [Positive] I’d be happy to go with you.
+    Hermes: [Wink] Plus, I got a few tips and tricks for navigating.
+    Aelius: [Smirk] I’m sure those will come in handy.
+    Aelius: [Positive] Let’s start getting ready then, I suppose.
+    Hermes: [Positive] Good idea, it’s quite the trek.
+    <<set $choseHermesEnding = true>>
+    <<jump Ending_GroupGoodbye>>
+-> Aelius: [Neutral] I’m gonna go talk with Zeus. <<if $zeusAffinity >= 28>>
+    Hermes: [Positive] Alright kid, I’ll be here if you need me.
+    <<jump Ending_Zeus>>
+-> Aelius: [Neutral] I’m gonna go check in with Hephaestus. <<if $hephaestusAffinity >= 29>>
+    Hermes: [Positive] Alright kid, I’ll be here if you need me.
+    <<jump Ending_Hephaestus>>
+-> Aelius: [Neutral] I’m gonna chat with Hestia.
+    Hermes: [Positive] Alright kid, I’ll be here if you need me.
+    <<jump Ending_Hestia>>
+===
+title: Ending_Hephaestus
+---
+<<HideAll>>
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Hephaestus" "Hephaestus" right bottom #cc0000>>
+
+<<if $talkedToHephaestusEnding is false>>
+    <<set $talkedToHephaestusEnding = true>>
+
+    Hephaestus: [Pos] Aelius…
+    Aelius: [Pos] Hey, Hephaestus.
+    Hephaestus: [Pos] I’m glad I got the chance to be here to see you off.
+    Aelius: [Pos] Of course, there's no way I wouldn’t want you here for it.
+    Hephaestus: [Pos] Thank you, Aelius. That means a lot.
+<<else>>
+    Hephaestus: [Pos] Hello again, Aelius.
+<<endif>>
+
+-> Aelius: [Pos] In fact, Hephaestus, I’d like you to come with me.
+    Hephaestus: [Neu] You’re sure?
+    Aelius: [Pos] Of course I am.
+    Hephaestus: [Pos] Thank you, I’d like nothing more.
+    <<set $choseHephaestusEnding = true>>
+    <<jump Ending_GroupGoodbye>>
+-> Aelius: [Neu] I’d better go see Zeus. <<if $zeusAffinity >= 28>>
+    Hephaestus: [Neu] Good to see you.
+    <<jump Ending_Zeus>>
+-> Aelius: [Neu] I should talk to Hermes. <<if $hermesAffinity >= 29>>
+    Hephaestus: [Neu] Good to see you.
+    <<jump Ending_Hermes>>
+-> Aelius: [Neutral] I’m gonna chat with Hestia.
+    Hephaestus: [Neu] Good to see you.
+    <<jump Ending_Hestia>>
+===
+title: Ending_Hestia
+---
+<<HideAll>>
+<<Scene "lounge bg draft 3">>
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Hestia" "Hestia 3_4s" right bottom #3d85c6>>
+
+<<if $talkedToHestiaEnding is false>>
+    <<set $talkedToHestiaEnding = true>>
+
+    Hestia: [Positive] Hi Aelius, is there something you need?
+    Hestia: [Positive] I’m happy to support you however I can.
+<<else>>
+    Hestia: [Positive] Yes, Aelius dear?
+<<endif>>
+
+-> Aelius: [Positive] Will you go with me, Hestia?
+    Hestia: [Positive] Of course, dear. I would be happy to accompany you.
+    Aelius: [Positive] Thank you, Hestia. It means a lot. Let’s get ready then.
+    Hestia: [Positive] Yes, let’s do that.
+    <<set $choseHestiaEnding = true>>
+    <<jump Ending_GroupGoodbye>>
+-> Aelius: [Neutral] I’m gonna go talk with Zeus. <<if $zeusAffinity >= 28>>
+    Hestia: [Positive] Of course dear, take all the time you need.
+    <<jump Ending_Zeus>>
+-> Aelius: [Neutral] I should talk to Hermes. <<if $hermesAffinity >= 29>>
+    Hestia: [Positive] Of course dear, take all the time you need.
+    <<jump Ending_Hermes>>
+-> Aelius: [Neutral] I’m gonna go check in with Hephaestus. <<if $hephaestusAffinity >= 29>>
+    Hestia: [Positive] Of course dear, take all the time you need.
+    <<jump Ending_Hephaestus>>
+===
+title: Ending_GroupGoodbye
+---
+<<HideAll>>
+<<Scene "lounge bg draft 3">>
+
+<<Act "Aelius" "Aelius 3_4s" left bottom #674ea7>>
+<<Act "Hestia" "Hestia 3_4s" right bottom #3d85c6>>
+
+Hestia: [Neutral] Are you ready to go, my dear?
+Aelius: [Neutral] Yeah… yeah, I think so.
+Hestia: [Neutral] The others came to wish you well before you left.
+
+Aphrodite: [Positive] Good luck, my dear. Enjoy your time with her.
+Ares: [Positive] A worthy journey to take. Have a good time, Aelius.
+Hera: [Positive] I’m happy for you, Aelius. Tell your mother she should be proud of the young adult she raised.
+
+<<if $choseZeusEnding is false>>
+Zeus: [Positive] AELIUS! HAVE A GOOD TRIP! SAY HI TO HER FOR ME!!
+<<endif>>
+
+<<if $choseHermesEnding is false>>
+Hermes: [Positive] See you when you get back, kid. Give your mom my regards, she’s been fun to chat with.
+<<endif>>
+
+<<if $choseHephaestusEnding is false>>
+Hephaestus: [Positive] Enjoy yourself, Aelius. I know this means a lot to you.
+<<endif>>
+
+<<if $choseHestiaEnding is true>>
+    Hestia: [Positive] We best get going, we have quite the trip ahead of us.
+    <<jump Ending_HestiaRoute>>
+<<else>>
+    Hestia: [Positive] Off you two go!
+    Hestia: [Positive] I’ll see you back when you’re done, Aelius. Take all the time you need.
+
+    <<if $choseZeusEnding is true>>
+        <<jump Ending_ZeusRoute>>
+    <<elseif $choseHermesEnding is true>>
+        <<jump Ending_HermesRoute>>
+    <<elseif $choseHephaestusEnding is true>>
+        <<jump Ending_HephaestusRoute>>
+    <<else>>
+        <<jump Ending_HestiaRoute>>
+    <<endif>>
+<<endif>>
+===
+title: Ending_ZeusRoute
+---
+<<HideAll>>
+//CLOUD BG
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Zeus" "Zeus 3_4s" right bottom #bf9000>>
+Zeus: Your mother… she must be something special.
+Aelius: She is.
+Zeus: If she’s anything like you, I don’t doubt it for a moment.
+Zeus: And she...never told you anything about your father?
+Aelius: It was a touchy subject. I didn’t push it.
+Zeus: Ah...I see.
+Zeus: Yes, having a godly parent can be, um... <i>taxing</i>.
+Aelius: Doesn’t seem all that different from having normal parents, to be honest. Just a bit…
+
+-> more emotional.
+-> more fun.
+-> more obnoxious.
+
+Zeus: Hah! I can’t disagree with you there, Aelius.
+Zeus: Regardless of what you think of us, we are <i>certainly</i> better off for having you.
+Zeus: And I’m sure your mother will be better off once she’s seen you!
+
+Aelius: She's...
+Aelius: [Negative] Oh, gods. What if she’s not better off seeing me?
+Zeus: Huh?
+Aelius: [Negative] What if seeing me now only makes eternity in the Underworld more painful?
+Zeus: What are you-
+Aelius: [Negative] This is a mistake. We should turn back. Let's-
+Zeus: AELIUS!
+Zeus: Would you <i>please</i> just...
+Zeus: ...
+ZeusL I did not <i>intend</i> for my words to make you nervous.
+
+Aelius: [Negative] You didn’t! I just-
+Zeus: Aelius. Child. You must believe me when I say I understand the difficulties of family.
+Zeus: It does not always feel like a blessing to have these connections.
+Zeus: But if you’ve taught me and my family anything, it’s that avoiding problems only makes them worse with time.
+Zeus: If you do not see her now, she will forever wonder how her child is doing without her.
+Zeus: I am <i>sure</i> that your love and comfort will only be a blessing to her in the eons to come.
+Zeus: AND! If I may be so bold...
+Zeus: I think it will do you some good, too. To see her once again.
+Aelius: [Negative] Zeus… Thank you.
+Aelius: [Neutral] I may not know who my dad is...
+Aelius: [Neutral] But I think I know who my family is.
+Zeus: That is… quite the powerful sentiment.
+Zeus: Your mother must be proud of you.
+Aelius: ...Yeah.
+Zeus: Go get 'em, champ.
+<<HideAll>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+Aelius: ...
+Aelius: Hey, mom.
+<<HideAll>>
+
+
+<<LoadVNScene "Credits">>
+===
+
+title: Ending_HermesRoute
+---
+<<HideAll>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+//CLOUDS BG
+Hermes: It’ll be your first time down there, eh?
+Aelius: Oh, yeah. Anything I should know?
+Hermes: Meh, not really. Pretty gloomy, but I’m sure you guessed that.
+Hermes: Just don’t go getting lost, I don’t want Hades getting ideas about opening up an Underworld diner with you as chef.
+Aelius: [Smirk] I can’t imagine that’s a very good idea.
+Hermes: Right? Like who would even go? Most of the Olympians avoid it there.
+...
+Hermes: ... You nervous?
+Aelius: About what?
+Hermes: Seeing your mom again. I can’t imagine it’ll be easy.
+Aelius: ...
+Aelius: [Negative] Yeah, I am.
+Aelius: [Negative] It’s just… it’s still hard to believe she’s gone sometimes.
+Aelius: [Negative] I’ll think to tell her something, and then I remember…
+Hermes: I’m sorry, kid. I know that must be hard.
+Aelius: [Negative] … It is. As much as I hate to show it.
+Aelius: And now that I’ve been so caught up here… I realized I don't think about her every day.
+Aelius: It feels like I’m betraying her, somehow.
+Hermes: Hey, don’t think like that, Aelius.
+Hermes: I’m sure she’d be happy to know you’re doing alright without her.
+Hermes: You’re not a bad person for continuing on. It’s what she’d want.
+Aelius: [Negative] ...
+Aelius: Yeah, you're right. It's just hard to accept sometimes.
+Hermes: Baby steps. Anything that’s worth doing is hard.
+Aelius: [Negative] Do you think seeing her might be worse for me than just… well, not?
+Hermes: [Neutral] Hm.
+Hermes: I think it’ll be good, honestly.
+Hermes: A way to get closure, to see that she’s doing well where she’s at.
+Hermes: It’ll ease your mind, I’d bet.
+Aelius: You really think so?
+Hermes: Yeah. I’m not saying it’ll be easy, but it will help your grief in the long run.
+Aelius: ...Yeah.
+Aelius: [Smirk] Since when did you get so good at this emotion stuff?
+Hermes: Oho! Teasing now? I really am rubbing off on you.
+Hermes: Guess I’ll have to start calling you my kid.
+Aelius: Haha! <i>Ole' Hermes</i>, already channeling his inner dad.
+Hermes: Let's hope my knees don't start aching next.
+...
+Hermes: We're almost there.
+Aelius: Wait, really?
+Hermes: Mhm, the portal is just up ahead.
+Aelius: ...
+Aelius: Gods, I feel like an idiot. Being nervous over this.
+Hermes: Don't be so hard on yourself. It'll be easier than you think, I can feel it.
+Aelius: I hope you’re right.
+Aelius: … I’m still excited, though.
+Hermes: That’s good. I’m glad, Aelius.
+Hermes: And I’ll be right there with ya.
+Hermes: I ain’t planning on running away.
+Aelius: [Positive] Thanks, Hermes.
+Hermes: Here we are.
+Hermes: [Positive] Take as much time as you need, we can head through whenever you're ready.
+Aelius: ...
+Aelius: I'm ready.
+Hermes: Alright. You got this, kid.
+<<HideAll>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+Aelius: ... Woah.
+<<Act "Hermes" "Hermes 3_4" "right" "bottom" #023020>>
+Hermes: Crazy here, eh? As I said – don’t mind the doom and gloom, you’ll get used to it.
+A figure appears in the distance.
+Aelius: Is that...?
+Hermes: Yeah, yeah it is.
+Hermes: Go on, kid. I'll be here if you need me.
+<<Hide Hermes>>
+Aelius: ...
+Aelius: [Positive] Hey, mom.
+<<HideAll>>
+
+<<LoadVNScene "Credits">>
+===
+
+title: Ending_HephaestusRoute
+---
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+//CLOUDS BG
+Hephaestus: I'm not the best at expressing myself.
+Hephaestus: Although I’m sure that’s obvious.
+Aelius: [Positive] I think you do okay.
+Hephaestus: You don’t have to flatter me.
+Hephaestus: But thank you.
+Hephaestus: What I wanted to say is that you’ve been someone that I can talk to.
+Hephaestus: And I want you to know that you can talk to me.
+Hephaestus: You must be nervous; seeing your mom again is a big deal.
+Hephaestus: If you need it, I’ll be here. It’s what a father ought to do.
+-> I'm just not sure what I'm going to say.
+    Aelius: Like, what if I get there and I can't say anything, and I just stand there?
+    Aelius: Or if I say the wrong thing and I mess everything up?
+    Hephaestus: Aelius...
+    Aelius: Is it wrong that I don’t have anything to say?
+    Hephaestus: Aelius. Not many mortals could do what you’ve done in just a week.
+    Hephaestus: Nor could many gods.
+    Hephaestus: You have the strength and wisdom of Olympus in you, remember that.
+    Aelius: Yes… I will. Thank you.
+    Hephaestus: When the time comes, you’ll know what to say.
+    Aelius: Alright… alright. I’m ready.
+-> Thank you, but I’m more excited than anything.
+    Aelius: I've missed her a lot.
+    Aelius: There's so much I’ve wanted to say.
+    Hephaestus: I’m glad.
+    Aelius: Hephaestus…
+    Hephaestus: Yes?
+    Aelius: Is it wrong that I’m not more sad?
+    Hephaestus: Of course not.
+    Hephaestus: You’re seeing her again after all.
+    Hephaestus: And I know, seeing someone you love after a long time apart is the best feeling in the world.
+    Aelius: [Positive] Yeah, I think you're right.
+    Hephaestus: Besides, death isn’t like how you mortals imagine it.
+    Hephaestus: Her soul remains, and I’m sure this won’t be the last time you see her.
+-> It’s been so long, what if I’m making the wrong choice?
+    Hephaestus: What do you mean?
+    Aelius: I mean, what's it been like for her in the Underworld?
+    Aelius: What if she doesn’t want to see me?
+    Aelius: What if she never wanted me to get mixed up with the gods?
+    Hephaestus: Aelius. It’s worth it to see a loved one again, even if it's a risk.
+    Hephaestus: That's what you helped me to understand.
+    Hephaestus: And she raised an intelligent and resourceful child. An excellent craftsperson.
+    Hephaestus: She’ll want to see how you’ve grown, and you were more than prepared to meet the gods.
+    Hephaestus: If she wanted to protect you, she did the best job she could.
+    Aelius: Alright... alright. I'm ready.
+
+Hephaestus: Before you step through the portal, one last thing.
+Hephaestus: I'm proud of you.
+Hephaestus: And so is Aphrodite, and I’m sure that Hestia is, too.
+Aelius: Oh… Thank you so much.
+Hephaestus: I don’t know what you will see in the Underworld.
+Hephaestus: But I know your mother will be proud of you as well.
+Aelius: [Positive] And I am proud of you too, Hephaestus.
+Aelius: [Positive] You and the rest of the Olympians are my family now.
+Aelius: [Positive] Even if I don’t know who my dad is.
+Hephaestus: Aphrodite will be delighted to hear that.
+Hephaestus: It- It means a lot to me as well…
+Aelius: [Positive] Thank you for coming with me.
+Hephaestus: Of course. I’ll be right outside.
+Aelius: [Positive] Alright, I am ready.
+<<Hide Hephaestus>>
+Aelius: ...
+Aelius: [Positive] Hey, mom.
+
+
+<<LoadVNScene "Credits">>
+===
+
+title: Ending_HestiaRoute
+---
+<<HideAll>>
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+<<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
+//CLOUDS BG
+Hestia: We will be headed to Hades’ realm, Aelius. I’m… sure it’s probably not what you had in mind when reuniting with your mother.
+Aelius: Well, I’m not sure how I was picturing the Underworld – I guess just dark and dreary.
+Hestia: That about sums his territory up, though he is trying to improve that. Something about needing engineers…
+Hestia: I agree that he does need to spruce this place up a bit, though. Maybe you’d have some ideas for him?
+Aelius: Maybe later down the line, for now I’m just trying to hold it all together right now.
+Hestia: *<i>Soft chuckle.</i>*
+Hestia: Let me guide you then so you don’t have to think about that part at all. I’ve been down there a few times before when Zeus has allowed it.
+Aelius: You’ve been down there before?
+Hestia: Yes, I’ve been down there on a… ‘business trip,’ you could say.
+Aelius: What was it about? I’m sure it was pretty important if you were allowed to leave Olympus.
+Hestia: Hades and I were considering opening an establishment down there soon, but I’m not sure what will happen with that.
+Hestia: But we’re not here for that, we’re here for you. How are you feeling about all this?
+Aelius: I don’t know, I’m feeling a whole lotta everything at the moment.
+Aelius: Happy, sad, anxious… everything just feels surreal.
+Hestia: We can take as much time as you need, there’s no rush.
+Hestia: I will be with you every step of the way.
+Aelius: Thanks, Hestia.
+Aelius: I think I'm ready now.
+//BLACK BG
+Hestia: We’ve made it down to Hades’ realm, lots of dark and more darkness to behold.
+Aelius: … We’ve really made it.
+Hestia: We’ve made it to the spot Hades said to be…
+A figure appears in the distance.
+Aelius: Is- is that...?
+Hestia: Yes dear, your mother is here.
+Aelius: *<i>Sniffle</i>*
+Hestia: Go, see her. I will be here whenever you might need me.
+<<Hide Hestia>>
+Aelius: ...
+Aelius: [Positive] Hey, mom.
+
+
+
+<<LoadVNScene "Credits">>
 ===

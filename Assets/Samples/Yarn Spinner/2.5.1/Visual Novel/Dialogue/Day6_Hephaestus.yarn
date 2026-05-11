@@ -13,11 +13,13 @@ Hephaestus: Uh, well... not really, I guess.
 Aelius: [Smirk] You didn’t? You realized there was a better way to work this out? That's a relief.
 Hephaestus: I wanted to, it's just...
 
--> Hard?
+-> Hard? (deference)
+    <<AddHephaestusAffinity 1>>
     Hephaestus: Yes, quite so. I can craft metal, but crafting words - that is harder. I was afraid to confront him; I had- I <i>have</i> no idea how I could.
--> Intimidating?
+-> Intimidating? (humorous)
     Hephaestus: Yes, I don’t want to. I'll admit that. It’s a daunting task, and the  courage I built up was gone soon after I left.
--> A bad idea?
+-> A bad idea? (aggressive)
+    <<AddHephaestusAffinity 3>>
     Hephaestus: I think you may be right, much as I loathe to admit it. Thank you. I was really just afraid of confronting him – maybe it's good I didn’t.
 
 Aelius: That takes a lot to admit, thank you.
@@ -28,10 +30,12 @@ Aelius: I don’t mean confront him. I mean just, like… talk to him. You don�
 Hephaestus: I just don’t know...
 
 -> This is the only way to move forward; it has to happen at some point.
+    <<AddHephaestusAffinity 2>>
     Hephaestus: Do you really think so?
     Hephaestus: Yes, it seems logical. I suppose nothing can happen if things stay the same.
     Hephaestus: Thank you, Aelius.
 -> Well I can tell you Aphrodite won’t like it if you get into a fight with him.
+    <<AddHephaestusAffinity 1>>
     Hephaestus: You’re right, you’re right. I can’t be selfish.
     Hephaestus: Thank you, Aelius.
     Aelius: Of course.
@@ -44,6 +48,7 @@ Aelius: Yes, of course.
 Hephaestus: Thank you. I would like <b>Hesperides apple cider.</b>
 
 //COOKING
+<<AddHephaestusAffinity 2>>
 <<StartCooking "AppleCider3>>
 <<HideAll>>
 ===
@@ -54,6 +59,7 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+<<AddHephaestusAffinity 2>>
 
 Hephaestus: Oh... it's very sweet.
 Hephaestus: I almost want to stay here and savor this.
@@ -61,7 +67,10 @@ Hephaestus: I almost want to stay here and savor this.
 
 Aelius: Hephaestus.
 Hephaestus: I know, sorry. I'm going.
-//FIGUREE OUT HEPH AND ARES TALKING  
+//FIGUREE OUT HEPH AND ARES TALKING
+Aelius watches as Hephaestus approaches Ares. Anxiety is evident in his every movement, tempered by his newfound determination.
+Hephaestus greets Ares warmly, and the outward politeness belies the tension between them.
+Aelius watches them from a distance, unable to make out what the two men say to each other. As the conversation heats up, Ares silences Hephaestus with a furious declaration – one that leaves Hephaestus speechless as Ares storms off.
 
 Hephaestus: Oh dear, Aelius, were you aware?
 Aelius: Aware of what?
@@ -83,15 +92,20 @@ tags:
 <<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
+<<AddHephaestusAffinity 1>>
 
 Hephaestus: Oh… this is very rich. Wow.
 Hephaestus: I almost want to stay here and savor this.
 
 
+
+
 Aelius: Hephaestus.
 Hephaestus: I know, sorry. I'm going.
 //FIGUREE OUT HEPH AND ARES TALKING  
-
+Aelius watches as Hephaestus approaches Ares. Anxiety is evident in his every movement, tempered by his newfound determination.
+Hephaestus puffs out his chest as he meets Ares, attempting to engage in the ritualistic contests of masculinity that remind Aelius of animal nature.
+Aelius watches them from a distance, unable to make out what the two men say to each other. As the conversation heats up, Ares silences Hephaestus with a furious declaration – one that leaves Hephaestus speechless as Ares storms off.
 Hephaestus: Oh dear, Aelius, were you aware?
 Aelius: Aware of what?
 Hephaestus: Aphrodite isn’t in a relationship with Ares anymore, apparently not for a long time.
@@ -118,7 +132,10 @@ Hephaestus: Ouch... I see, you are trying to get me to moving.
 
 Aelius: Hephaestus.
 Hephaestus: I know, sorry. I'm going.
-//FIGUREE OUT HEPH AND ARES TALKING  
+//FIGUREE OUT HEPH AND ARES TALKING
+Aelius watches as Hephaestus approaches Ares. Anxiety is evident in his every movement, tempered by his newfound determination.
+Hephaestus barges into conversation with an accusatory assault, rebuffed narrowly by an aggressive response from Ares.
+Aelius watches them from a distance, unable to make out what the two men say to each other. As the conversation heats up, Ares silences Hephaestus with a furious declaration – one that leaves Hephaestus speechless as Ares storms off.
 
 Hephaestus: Oh dear, Aelius, were you aware?
 Aelius: Aware of what?

@@ -13,7 +13,7 @@ Aelius: And you are…?
 
 
 Hephaestus: Hephaestus.
-Aelius: Good morning Hephaestus!
+Aelius: Well, good morrning then.
 
 Hephaestus: Hrumph.
 Aelius: Okay…
@@ -23,28 +23,29 @@ Aelius: It's nice to meet you! I'm Aelius.
 Hephaestus: Hrumph.
 Aelius: So, what would you like to eat?
 Hephaestus: Hrm.
-Aelius: Okay…
+Aelius: ...
 
 Hephaestus: So Hestia hired you?
 Aelius: She did, I'm new to Olympus.
-Hephaestus: There must be something to you if she took a liking to a mortal.
+Hephaestus: There must be something to you if she took a liking to a human.
 
--> What's wrong with being a mortal?
-	//Aelius: What's wrong with being a mortal?
-	Hephaestus: Ha! Nothing I suppose.
-	Aelius: Okay…
-	Hephaestus: What brings you to Olympus, mortal?
-	Aelius: Part mortal actually, I'm looking for my dad.
-	<<jump h_after_choice>>
+
+-> You know, I'm not really sure.
+	<<AddHephaestusAffinity 1>>
+	Hephaestus: Interesting, how would you be so unsure?
+	Aelius: Well, Hestia says I could see my mom again, but I don’t know what it is that made her choose me.
 -> Probably my winning smile.
 	//Aelius: Probably my winning smile.
 	Hephaestus: No, I think it must be something more than that…
-	Aelius: Oh, it was a joke. She's helping me look for my father, who is apparently one of the gods.
+	Aelius: Oh, I was joking. She's helping me see my mom again, but I'm not sure why she chose me.
 	<<jump h_after_choice>>
--> I'm not mortal, mostly, I think…
-	//Aelius: I'm not mortal, mostly, I think...
-	Hephaestus: Interesting, how would you be so unsure?
-	Aelius: Well Hestia says my father is a god, but I'm not sure what that means.
+-> What's wrong with being a human?
+	//Aelius: What's wrong with being a mortal?
+	<<AddHephaestusAffinity 2>>
+	Hephaestus: Ha! Nothing I suppose.
+	Aelius: Okay…
+	Hephaestus: What brings you to Olympus, human?
+	Aelius: My mom, actually. She's going to help me see my mom again, but I'm not sure why she chose me.
 	<<jump h_after_choice>>
 
 ===
@@ -67,6 +68,7 @@ Aelius: Coming right up!
 <<HideAll>>
 <<Fade "#000000" 0 1 0.35>>
 <<wait 0.4>>
+<<AddHephaestusAffinity 2>>
 <<StartCooking "HeliosSteak">>
 ===
 title: Hephaestus_ReturnFancy
@@ -77,7 +79,7 @@ title: Hephaestus_ReturnFancy
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 <<PlayMusic Hephaestus_Theme>>
-
+<<AddHephaestusAffinity 1>>
 Hephaestus: Oh, yes I can taste the care you took. You have done well, Aelius.
 <<jump Hephaestus_Day1_after_cooking>>
 
@@ -90,6 +92,7 @@ title: Hephaestus_ReturnSpicy
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hephaestus" "Hephaestus" "right" "bottom" #FF8C00>>
 <<PlayMusic Hephaestus_Theme>>
+<<AddHephaestusAffinity 2>>
 
 Hephaestus: Oh, this has some bite to it, just the way I like it. You have done well, Aelius.
 <<jump Hephaestus_Day1_after_cooking>>
@@ -114,12 +117,15 @@ title: Hephaestus_Day1_after_cooking
 -> Oh, it was nothing.
 	//Aelius: Oh, it was nothing.
 	Hephaestus: Nothing? Nonsense, A craftsperson should take pride in their work!
--> I know.
-	//Aelius: I know.
-	Hephaestus: Exactly, A craftsperson should take pride in their work!
 -> Anytime.
 	//Aelius: Anytime.
+	<<AddHephaestusAffinity 1>>
 	Hephaestus: Exactly, A craftsperson should take pride in their work!
+-> I know.
+	//Aelius: I know.
+	<<AddHephaestusAffinity 2>>
+	Hephaestus: Exactly, A craftsperson should take pride in their work!
+
 
 Aelius: Oh, um, thank you, Sir.
 Hephaestus: Sir? Ah, you've already met his majesty Zeus.
