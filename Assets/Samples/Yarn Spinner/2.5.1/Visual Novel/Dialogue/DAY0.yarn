@@ -12,6 +12,10 @@ Aelius: Tomorrow is another day.
 Aelius: … Maybe I’ll cook her old tuna recipe.
 
 // CLOUD BG, AELIUS
+<<Scene "Cloud 2">>
+<<Scene "Cloud 4">>
+<<Scene "Cloud 1">>
+<<Scene "Cloud 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 Mother: Aelius, dear?
 Aelius: [Negative] ... Mom?
@@ -106,9 +110,13 @@ Mother: A final touch, to give the dish what it needs.
 Mother: Now, could I please have a glass?
 Aelius: Yeah, um... yeah.
 
-// AELIUS FREEZES
+AELIUS FREEZES
 
 // CLOUD BG, AELIUS AND HESTIA
+<<Scene "Cloud 2">>
+<<Scene "Cloud 4">>
+<<Scene "Cloud 1">>
+<<Scene "Cloud 3">>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
 Aelius: Are you... a <i>god</i>?
@@ -146,7 +154,7 @@ Aelius: (<i>Yeah... this is the right decision.</i>)
 
 // CLOUD BG
 // KITCHEN BG
-<<Scene new_dining_area>>
+<<Scene main_kitchen_bg_2>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
 Hestia: And this is the kitchen. I hope it has everything you should need.
