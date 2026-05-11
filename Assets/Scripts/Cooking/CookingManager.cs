@@ -31,6 +31,7 @@ public class CookingManager : MonoBehaviour
     [SerializeField] string returnSuccessNode = "Hephaestus_Return"; // <-- node to resume
     [SerializeField] string returnFailNode = "Hephaestus_Return";
     [SerializeField] float returnDelay = 0.5f;
+    [SerializeField] bool castingReq = true;
 
 
     [Header("Managers")]
@@ -80,6 +81,12 @@ public class CookingManager : MonoBehaviour
             }
         }
 
+        if(recipeManagers.Count == 0)
+        {
+            step = CookStep.Cast;
+            canActivateCast = true;
+        }
+
         // AudioManager.Instance.PlaySound("KitchenBackground");    //Use once stopping audio is solved
     }
 
@@ -107,64 +114,13 @@ public class CookingManager : MonoBehaviour
     //Called by recipe managers to go to the next section
     public void Transition()
     {
-    //     switch (step)
-    //     {
-    //         case CookStep.Prep:
-    // if (step == CookStep.Cast) finalFood.transform.position = waypointHolder.GetChild(waypointInd).position;
-    //             if (numPrep == numTotalPrep) step = CookStep.Cast;
-                
-                //Whole if statement below is part of direct movement
-                // if (step == CookStep.Cast)
-                // {
-                //     finalFood.transform.position = waypointHolder.GetChild(waypointInd).position;
-                //     finalFood.SetActive(true);
-                // }
-                // {
-                    // step = CookStep.Cast;
-    //                 // Camera.main.transform.position = new Vector3(worldCamLength * numPrep++, 0, -10);
-    //                 canActivateCast = true;
-    //                 //castManager.SetActive(true);
-    //                 if(Input.GetMouseButton(0))
-    //                 {
-    //                     canActivateCast = false;
-    //                 }
-    //             }
-    //             else
-    //             {
-    //                 // Camera.main.transform.position = new Vector3(worldCamLength * numPrep, 0, -10);
-    //                 // recipeManagers[numPrep].transform.parent.position = new Vector3(worldCamLength * numPrep, 0, 0);
-                    
-                    //Line below is part of direct movement
-                    // if(numPrep < numTotalPrep) recipeManagers[numPrep].transform.parent.position = waypointHolder.GetChild(waypointInd).position;
-    //                 recipeManagers[numPrep].SetActive(true);
-    //                 numPrep++;
-    //             }
-
-                //2 lines below are direct movement
-                // cameraManager.MoveTo(waypointHolder.GetChild(waypointInd));
-                // waypointInd++;
-
-        //         break;
-
-        //     case CookStep.Cast:
-        //         // Camera.main.transform.position = new Vector3(worldCamLength * (numPrep++), 0, -10);
-        //         cameraManager.MoveTo(waypointHolder.GetChild(waypointInd));
-
-        //         finalFood.SetActive(true);
-                // finalFood.transform.position = new Vector2(Camera.main.transform.position.x, finalFood.transform.position.y);
-                
-        //         step = CookStep.Complete;
-
-        //         // Auto-return after a short beat:
-        //         if (returnDelay > 0f) Invoke(nameof(FinishCooking), returnDelay);
-        //         else FinishCooking();
-        //         break;
-
-
-        //     default:
-        //         Debug.Log("Hit default in transition");
-        //         break;
-        // }
+        Debug.Log(castingReq + " and numprep " + (numPrep == numTotalPrep));
+        if(!castingReq && numPrep == numTotalPrep)
+        {
+            Debug.Log("Casting req check");
+            if (returnDelay > 0f) Invoke(nameof(FinishCooking), returnDelay);
+            return;
+        }
 
         if (waypointInd >= waypointHolder.childCount)
         return;
@@ -208,24 +164,14 @@ public class CookingManager : MonoBehaviour
                 }
                 else
                 {
-                    // Camera.main.transform.position = new Vector3(worldCamLength * numPrep, 0, -10);
-                    // recipeManagers[numPrep].transform.parent.position = new Vector3(worldCamLength * numPrep, 0, 0);
-                    // recipeManagers[numPrep].transform.parent.position = waypointHolder.GetChild(numPrep-1).position;
                     recipeManagers[numPrep].SetActive(true);
                     numPrep++;
                 }
 
-                // cameraManager.MoveTo(waypointHolder.GetChild(waypointInd));
-                // waypointInd++;
-
                 break;
 
             case CookStep.Cast:
-                // Camera.main.transform.position = new Vector3(worldCamLength * (numPrep++), 0, -10);
-                // cameraManager.MoveTo(waypointHolder.GetChild(waypointInd));
-
                 finalFood.SetActive(true);
-                // finalFood.transform.position = new Vector2(Camera.main.transform.position.x, finalFood.transform.position.y);
                 step = CookStep.Complete;
 
                 // Auto-return after a short beat:
