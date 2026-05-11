@@ -512,16 +512,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
-      propertyPath: vnSceneName
-      value: Day0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
       propertyPath: cameraManager
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
       propertyPath: returnFailNode
-      value: Day0_after_mixing_
+      value: Hermes_test_Success
       objectReference: {fileID: 0}
     - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
       propertyPath: waypointHolder
@@ -529,7 +525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
       propertyPath: returnSuccessNode
-      value: Day0_after_mixing_
+      value: Hermes_test_Success
       objectReference: {fileID: 0}
     - target: {fileID: 6229044721462473646, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
       propertyPath: recipeManagers.Array.size

@@ -137,5 +137,17 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cooking/Nectar4.unity
     guid: 69b288d40d1833a479dcda46408fceeb
+  - enabled: 1
+    path: Assets/Scenes/Cooking/CastLemonade.unity
+    guid: fa0b8f40c3af8214d9b44948b4fb4305
+  - enabled: 1
+    path: Assets/Scenes/Cooking/MixingLemonade.unity
+    guid: a78c8a4ccc0432641b384c6347e71d43
+  - enabled: 1
+    path: Assets/Scenes/Cooking/LemonSqueeze1.unity
+    guid: cfcf8c5186acb6448ae85dcba9a79b63
+  - enabled: 1
+    path: Assets/Scenes/Cooking/LemonSqueeze.unity
+    guid: be96e96cd9dade241a6fe45b16376a88
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e4832c56fbe1f64f8e9d21d1f4aeb53, type: 2}

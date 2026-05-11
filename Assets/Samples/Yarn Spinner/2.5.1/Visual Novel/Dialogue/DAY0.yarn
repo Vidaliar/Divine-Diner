@@ -26,21 +26,53 @@ Mother: There’s nothing better to drink under the warmth of the sun, I’d say
 Aelius: … I’ll get right on it, mom. Just hang on for a bit.
 
 // Cooking bg
+
 <<Hide Aelius>>
 Aelius: (<i>Haven't made this in a while. Not since she passed...</i>)
 Aelius: (<i>Let's see if I still got it.</i>)
 // LEMON SQUEEZING HERE
+<<HideAll>>
+<<StartCooking "LemonSqueeze1">>
+===
+
+
+title: DAY0_after_squeeing_
+---
 Mother: Mm, I already can't wait.
-Aelius: (<i>It's so nice to hear her voice again. Like she's still around. </i>)
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+Aelius: (<i>It's so nice to hear her voice again. Like she's still around.</i>)
 Aelius: (<i>...And not as weathered from her illness as it was near the end.</i>)
+<<HideAll>>
+<<StartCooking "LemonSqueeze">>
+===
+
+
 // LEMON SQUEEZING again
-Aelius: (<i>It sounds like she's just behind me, like she alwayss was when I cooked.</i>)
+title: DAY0_after_squeeing2_
+---
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
+Aelius: (<i>It sounds like she's just behind me, like she always was when I cooked.</i>)
 Aelius: (<i>... I wish I could believe it was her.</i>)
 Aelius: (<i>But she’s passed on, taken by her illness; and I know that.</i>)
 Aelius: (<i>I just wanna see her again, see her as she was. But if I turn around…</i>)
 Aelius: (<i>I know she won’t be there. I can’t deal with that hurt all over again.</i>)
 Aelius: (<i>I just… I wish I could cook for my family again.</i>)
-//MIXING
+<<HideAll>>
+<<jump Day0_mixing>>
+===
+
+
+title: Day0_mixing
+---
+<<HideAll>>
+<<StartCooking "MixingLemonade">>
+===
+
+
+title: Day0_after_mixing_
+---
+// MIXING
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 Aelius: (<i>It’s done. At least it still looks good.</i>)
 Mother: Wait, Aelius. Before you serve it.
 Aelius: Yeah, mom?
@@ -49,19 +81,38 @@ Aelius: ... Okay.
 Mother: Channel that feeling. Put your everything into the dish.
 Aelius: How?
 Mother: Just try it, dear.
-//CAST STEP
+<<HideAll>>
+<<StartCooking "CastLemonade">>
+===
+title: Day0_after_casting_Playful
+---
+<<jump Day0_after_casting_>>
+===
+
+title: Day0_after_casting_Fancy
+---
+<<jump Day0_after_casting_>>
+===
+
+title: Day0_after_casting_Spicy
+---
+<<jump Day0_after_casting_>>
+===
+title: Day0_after_casting_
+---
+<<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 Aelius: I- I... I don't get it. What was that?
-Mother: A final touch - to give the dish what it needs.
+Mother: A final touch, to give the dish what it needs.
 Mother: Now, could I please have a glass?
 Aelius: Yeah, um... yeah.
 
-//AELIUS FREEZES
+// AELIUS FREEZES
 
-//CLOUD BG, AELIUS AND Hestia
+// CLOUD BG, AELIUS AND HESTIA
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
 Aelius: Are you... a <i>god</i>?
-Hestia: I supposse I am. I'm glad to finally make your acquaintance, Aelius.
+Hestia: I suppose I am. I'm glad to finally make your acquaintance, Aelius.
 Hestia: I've heard a lot about you.
 Aelius: This isn’t… this is a dream. You’re not really here. This is not happening.
 Hestia: I understand your confusion, my dear. But I can assure you, this is real.
@@ -70,12 +121,12 @@ Aelius: How did you…? Nevermind.
 Aelius: ... Yeah, I do.
 Hestia: I can aid you in that, Aelius.
 Hestia: Come work for me at my diner. We could use someone with talents like yours.
-Aelius: <i>You</i> own a diner? I didn't think godss need to even eat.
-Hestia: *<i>Laughs ssoftly</i>* Yes, but it's not what you're thinking, I'd wager.
+Aelius: <i>You</i> own a diner? I didn't think gods need to even eat.
+Hestia: *<i>Laughs softly</i>* Yes, but it's not what you're thinking, I'd wager.
 Hestia: It’s a diner for the Olympians. Located on Mount Olympus, of course.
 Aelius: <i>Mount Olympus</i>? And you're inviting <i>me</i>?
 Hestia: Yes, my dear.
-Hestia:  I can give you time to consider, if you’d like.
+Hestia: I can give you time to consider, if you’d like.
 Aelius: ...
 Aelius: (<i>This is really happening. I’m standing in front of one of the gods. And she wants my assistance. Me, of all people.</i>)
 Aelius: (<i>It’s hard to wrap my mind around it. But I can tell she’s serious. It would be a big change…</i>)
@@ -85,18 +136,17 @@ Aelius: ... I'll go.
 Hestia: Excellent, my dear. It will be a joy to have you.
 Hestia: I’ll give you the day to gather yourself. Come dusk, I will return for you.
 Hestia: I look forward to seeing you again, Aelius.
-
-<<HideAll>>
 Aelius: (<i>I’m really doing this. I’m going to Mount Olympus to cook for the gods.</i>)
 Aelius: (<i>Gods, what am I doing?</i>)
 Aelius: (<i>This is either my dumbest idea I’ve ever had, or…</i>)
 Aelius: (<i>... Nah, definitely gotta be the dumbest.</i>)
-Aelius: (<i>But... whatever. Could be fun, too.)
+Aelius: (<i>But... whatever. Could be fun, too.</i>)
 Aelius: (<i>And I'll get to see my mom again.</i>)
 Aelius: (<i>Yeah... this is the right decision.</i>)
 
 // CLOUD BG
 // KITCHEN BG
+<<Scene new_dining_area>>
 <<Act "Aelius" "Aelius 3_4s" "left" "bottom" #674ea7>>
 <<Act "Hestia" "Hestia 3_4s" "right" "bottom" #e06666>>
 Hestia: And this is the kitchen. I hope it has everything you should need.
@@ -110,8 +160,5 @@ Hestia: I’m sure tomorrow will be full of surprises.
 Aelius: Thank you, Hestia. I think I’ll be okay.
 Hestia: Good. I wish you a good night, Aelius.
 Aelius: Night, Hestia.
-<<HideAll>>
 <<LoadVNScene "ZeusBeat1">>
-
-
 ===

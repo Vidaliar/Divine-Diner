@@ -649,7 +649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runner: {fileID: 224000118}
-  defaultStartNode: DAY0
+  defaultStartNode: Day0_after_casting_
 --- !u!4 &940884904
 Transform:
   m_ObjectHideFlags: 0
