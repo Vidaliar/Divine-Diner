@@ -1179,7 +1179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runner: {fileID: 224757274}
-  defaultStartNode: Day3_Hera_Start
+  defaultStartNode: Day3_Start
 --- !u!4 &940884904
 Transform:
   m_ObjectHideFlags: 0
