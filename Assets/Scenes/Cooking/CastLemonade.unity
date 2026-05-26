@@ -1262,8 +1262,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5230600300772385815, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1439165836}
   m_SourcePrefab: {fileID: 100100000, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
+--- !u!1 &1439165835 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5230600300772385815, guid: a536253287867164d8d5c4e214b9b81f, type: 3}
+  m_PrefabInstance: {fileID: 1439165834}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1439165836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439165835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f11c4865199b05479300dbb155c2cd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: cf3ed1fc9ca8c7f45bbebd5154fc841e, type: 3}
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &1451013006
 GameObject:
   m_ObjectHideFlags: 0

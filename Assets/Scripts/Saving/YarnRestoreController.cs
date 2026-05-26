@@ -69,24 +69,28 @@ public class YarnRestoreController : MonoBehaviour
 
     Debug.Log($"[YarnRestoreController] Begin restore -> node={targetNode}, lineIndex={targetLineIndex}, textID={targetTextID}");
 
-    if (dialogueRunner.IsDialogueRunning)
-    {
-        dialogueRunner.Stop();
+        if (dialogueRunner.IsDialogueRunning)
+        {
+            dialogueRunner.Stop();
+            yield return null;
+        }
+
+        // Clear old spawned actors/background before restarting saved Yarn.
+        ClearCurrentVNVisuals();
         yield return null;
-    }
 
-    IsRestoring = true;
+        IsRestoring = true;
 
-    // IMPORTANT:
-    // Clear the live tracker values so we don't immediately think
-    // we've already reached the target before dialogue actually restarts.
-    stateProvider.currentYarnNode = string.Empty;
-    stateProvider.currentYarnLineIndex = -999;
-    stateProvider.currentYarnLineTextID = string.Empty;
+        // IMPORTANT:
+        // Clear the live tracker values so we don't immediately think
+        // we've already reached the target before dialogue actually restarts.
+        stateProvider.currentYarnNode = string.Empty;
+        stateProvider.currentYarnLineIndex = -999;
+        stateProvider.currentYarnLineTextID = string.Empty;
 
-    dialogueRunner.StartDialogue(targetNode);
+        dialogueRunner.StartDialogue(targetNode);
 
-    int safety = 0;
+        int safety = 0;
 
     // Wait until dialogue is running
     while (!dialogueRunner.IsDialogueRunning && safety < safetyFrameLimit)
@@ -180,6 +184,25 @@ private bool HasReachedTargetAfterRestart(StateProvider provider, int targetLine
                 continue;
 
             view.UserRequestedViewAdvancement();
+        }
+    }
+    private void ClearCurrentVNVisuals()
+    {
+        Yarn.Unity.Example.VNManager vnManager = FindFirstObjectByType<Yarn.Unity.Example.VNManager>();
+
+        if (vnManager == null)
+        {
+            vnManager = FindObjectOfType<Yarn.Unity.Example.VNManager>();
+        }
+
+        if (vnManager != null)
+        {
+            vnManager.ResetScene();
+            Debug.Log("[YarnRestoreController] Cleared current VN visuals before restore.");
+        }
+        else
+        {
+            Debug.LogWarning("[YarnRestoreController] VNManager not found, could not clear VN visuals.");
         }
     }
 }
